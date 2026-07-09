@@ -1,2 +1,2 @@
 # jumperweb
-Jumper web project files
+Projetos criados para Jumper Studio
