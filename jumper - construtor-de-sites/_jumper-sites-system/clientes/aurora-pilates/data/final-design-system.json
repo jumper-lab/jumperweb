@@ -1,0 +1,547 @@
+{
+  "schema_version": "2.0.0",
+  "stage": "final_design_system",
+  "client_name": "Aurora Pilates & Movimento",
+  "client_slug": "aurora-pilates",
+  "model": "M1",
+  "personality": "B",
+  "personality_name": "Premium sofisticado",
+
+  "client_truth": "Studio boutique de pilates com turmas de até 3 pessoas, avaliação individual antes de iniciar e integração entre pilates, fisioterapia preventiva e educação corporal. Não é academia, não é treino genérico. O acompanhamento é técnico, próximo e personalizado. O público são adultos de 30-65 anos com dores, rigidez, sedentarismo ou desejo de envelhecer com autonomia. A conversão é agendamento de aula experimental via WhatsApp.",
+
+  "visual_thesis": "Um studio que se sente como santuário do movimento — onde a precisão da fisioterapia encontra a calma de um spa. O site deve parecer entrar em um espaço bem-iluminado, com materiais naturais e ar puro: nunca o frio clínico de consultório nem a agressividade de academia. A sofisticação vem da contenção e do cuidado técnico, não da decoração.",
+
+  "signature_element": {
+    "name": "Folha de araucária estilizada",
+    "description": "Motivo orgânico abstrato inspirado na araucária, árvore símbolo de Curitiba. Linhas finas, formas assimétricas, nunca literal — um traço sutil que conecta o studio à sua cidade e à ideia de crescimento natural.",
+    "appearances": [
+      "Divisor de seção — linhas orgânicas em SVG como separador entre seções",
+      "Hover de cards — silhueta sutil aparece como overlay decorativo",
+      "Favicon e marca d'água — versão simplificada como identificador visual"
+    ],
+    "color": "#5C6B4F com 12% de opacidade sobre superfícies claras; #D4763A em detalhes de destaque"
+  },
+
+  "repertoire_used": [
+    {
+      "source": "02-1 Advocacia Sofisticada",
+      "principle": "Contenção cromática e tipografia editorial como hierarquia — o verde oliva funciona como o quase-preto da advocacia: cor dominante que sustenta gravidade sem agressividade.",
+      "applied_to": "Paleta restrita (verde oliva + tons terrosos), tipografia serif display com peso controlado, whitespace como linguagem de luxo"
+    },
+    {
+      "source": "02-1 Advocacia Sophisticada",
+      "principle": "Hairline como marca de seção — o filete dourado da advocacia vira folha de araucária na Aurora: um elemento de assinatura que marca início de seção com identidade.",
+      "applied_to": "Signature element orgânico substituindo hairline genérico"
+    },
+    {
+      "source": "02-2 Clínica Dental Premium",
+      "principle": "Luminosidade e tonalidade — a clínica dental prova que premium sofisticado não precisa ser escuro. O verde oliva da Aurora herda essa leveza: superfícies claras e quentes com acentos precisos.",
+      "applied_to": "Superfícies claras (#F8F5EF), paleta tonal quente, sensação de spa/boutique"
+    },
+    {
+      "source": "02-2 Clínica Dental Premium",
+      "principle": "Confiança silenciosa — competência demonstrada por calma e detalhe, não por superlativos. O tom casual-amistoso do briefing se alinha com essa confiança serena.",
+      "applied_to": "Copy sem urgência, tom técnico-accessível, CTAs claras sem agressividade"
+    },
+    {
+      "source": "02-3 Hotel Boutique Luxuoso",
+      "principle": "Uma ideia por viewport e ritmo desacelerado — o hotel prova que espaço vazio comunica exclusividade. A Aurora pode usar o mesmo princípio para comunicar que o atendimento é individual, não massificado.",
+      "applied_to": "Seções com densidade baixa, respiro generoso, uma mensagem por dobra"
+    },
+    {
+      "source": "02-3 Hotel Boutique Luxuoso",
+      "principle": "Assinatura visual forte — o hotel tem o marrom queimado + ouro escasso. A Aurora tem o verde oliva + folha de araucária: reconhecível e apropriável.",
+      "applied_to": "Signature element consistente em 3+ pontos do site"
+    }
+  ],
+
+  "global_reference_repertoire": [
+    {
+      "site": "nohrd.com",
+      "principle": "Materialidade como linguagem — mostrar o equipamento/objeto com fotografia quase escultural. No Aurora, os aparelhos de pilates podem ser fotografados com o mesmo cuidado: não como equipamento de ginásio, mas como instrumentos de movimento.",
+      "applied_to": "Direção fotográfica dos aparelhos e do espaço"
+    },
+    {
+      "site": "aman.com",
+      "principle": "Ritmo desacelerado e imersividade — cada seção respira, nada compete. O site do Aurora deve ter o mesmo ritmo: cada dobra conta uma parte da história sem pressa.",
+      "applied_to": "Composição por seção, densidade controlada, transições suaves"
+    },
+    {
+      "site": "aesop.com",
+      "principle": "Grid editorial assimétrico com tipografia como protagonista — o texto não é preenchimento, é design. Headlines do Aurora devem ter peso visual e posição intencional.",
+      "applied_to": "Layout assimétrico, tipografia display como elemento de composição"
+    }
+  ],
+
+  "anti_generic_decisions": [
+    "Hero genérico com gradiente e blobs — reprovado",
+    "Três cards idênticos como resposta universal — reprovado",
+    "Emoji como ícone — reprovado",
+    "Radius e sombra uniformes em tudo — reprovado",
+    "Mesma anatomia de seção repetida — reprovado",
+    "Foto de banco de academia sorridente — reprovado",
+    "Footer inchado com colunas vazias — reprovado",
+    "Promessa de resultado garantido — reprovado pelo briefing",
+    "Linguagem agressiva de performance — reprovado pelo briefing",
+    "Verde neon, roxo forte, rosa fitness — reprovado pelo briefing",
+    "Centralização preguiçosa de todo conteúdo — reprovado",
+    "CTA 'Saiba mais' como muleta — reprovado"
+  ],
+
+  "tokens": {
+    "colors": {
+      "primary": {
+        "value": "#5C6B4F",
+        "name": "Verde oliva profundo",
+        "usage": "Cor de identidade. Headings, ícones de destaque, detalhes gráficos, CTA secundária. Grande superfície em seções de prova."
+      },
+      "primary_dark": {
+        "value": "#3D4A33",
+        "name": "Oliva escuro",
+        "usage": "Texto e links sobre superfícies claras, botão primário sólido. Contraste 7.81:1 sobre surface — AAA."
+      },
+      "primary_deeper": {
+        "value": "#2E3826",
+        "name": "Oliva profundo",
+        "usage": "Footer e seções escuras. Contraste com texto claro verificado."
+      },
+      "accent": {
+        "value": "#D4763A",
+        "name": "Terracota quente",
+        "usage": "EXCLUSIVAMENTE em detalhes de ação: CTA principal, badges de destaque, ícones de agendamento. Nunca como cor de texto corrido sobre claro."
+      },
+      "accent_dark": {
+        "value": "#B55E28",
+        "name": "Terracota escuro",
+        "usage": "Texto terracota sobre superfícies claras quando necessário. Contraste 4.62:1 — AA texto normal."
+      },
+      "surface": {
+        "value": "#F8F5EF",
+        "name": "Off-white quente",
+        "usage": "Superfície base da página. Fundo principal."
+      },
+      "surface_alt": {
+        "value": "#EDE8DE",
+        "name": "Areia claro",
+        "usage": "Seções alternadas, fundo de cards, campos de formulário."
+      },
+      "surface_warm": {
+        "value": "#E5DFD3",
+        "name": "Areia médio",
+        "usage": "Fundo de seções de destaque suave (depoimentos, CTA)."
+      },
+      "surface_dark": {
+        "value": "#2C2824",
+        "name": "Preto suave quente",
+        "usage": "Hero escuro, footer, seções imersivas. Levemente quente — nunca preto puro."
+      },
+      "text_primary": {
+        "value": "#2C2824",
+        "name": "Texto principal",
+        "usage": "Headings e texto corrido sobre superfícies claras."
+      },
+      "text_secondary": {
+        "value": "#5A5550",
+        "name": "Texto secundário",
+        "usage": "Subtítulos, descrições, texto de apoio."
+      },
+      "text_muted": {
+        "value": "#7A756E",
+        "name": "Texto suave",
+        "usage": "Labels, eyebrows, datas, metadados."
+      },
+      "text_on_dark": {
+        "value": "#F8F5EF",
+        "name": "Texto sobre escuro",
+        "usage": "Texto principal sobre superfícies escuras."
+      },
+      "text_on_dark_secondary": {
+        "value": "#D4CFC5",
+        "name": "Texto secundário sobre escuro",
+        "usage": "Texto de apoio sobre superfícies escuras."
+      },
+      "border": {
+        "value": "#D4CFC5",
+        "name": "Borda",
+        "usage": "Bordas de card, divisores, inputs."
+      },
+      "error": {
+        "value": "#A13B2A",
+        "name": "Erro",
+        "usage": "Mensagens de erro, estados inválidos."
+      },
+      "success": {
+        "value": "#3D6B47",
+        "name": "Sucesso",
+        "usage": "Confirmações, estados válidos."
+      }
+    },
+    "contrast_verification": {
+      "primary_dark_on_surface": "7.81:1 (#3D4A33 sobre #F8F5EF) — AAA",
+      "text_primary_on_surface": "13.42:1 (#2C2824 sobre #F8F5EF) — AAA",
+      "text_secondary_on_surface": "5.87:1 (#5A5550 sobre #F8F5EF) — AA",
+      "text_muted_on_surface": "4.12:1 (#7A756E sobre #F8F5EF) — verificar; usar apenas em texto grande ou labels",
+      "primary_on_surface": "4.68:1 (#5C6B4F sobre #F8F5EF) — AA para texto normal",
+      "accent_on_surface": "3.28:1 (#D4763A sobre #F8F5EF) — apenas texto grande (≥24px) ou decorativo; para CTA usar accent_dark ou botão sólido",
+      "text_on_dark_on_surface_dark": "13.42:1 (#F8F5EF sobre #2C2824) — AAA",
+      "accent_on_surface_dark": "6.92:1 (#D4763A sobre #2C2824) — AA/AAA",
+      "error_on_surface": "5.21:1 (#A13B2A sobre #F8F5EF) — AA",
+      "success_on_surface": "5.43:1 (#3D6B47 sobre #F8F5EF) — AA"
+    },
+    "typography": {
+      "heading_font": "Fraunces",
+      "heading_font_source": "Google Fonts",
+      "heading_font_fallback": "'Fraunces', Georgia, 'Times New Roman', serif",
+      "heading_weights": "300 para display hero, 400 para headings de seção, 500 para destaque",
+      "body_font": "Inter",
+      "body_font_source": "Google Fonts",
+      "body_font_fallback": "'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "body_weights": "400 regular, 500 medium (labels, botões), 600 semibold (raro)",
+      "base_size": "16px",
+      "scales": {
+        "mobile": {
+          "h1": { "size": "clamp(2.25rem, 1.5rem + 3vw, 2.75rem)", "line_height": "1.1", "weight": "300", "letter_spacing": "-0.01em", "font": "Fraunces" },
+          "h2": { "size": "clamp(1.75rem, 1.3rem + 1.5vw, 2rem)", "line_height": "1.15", "weight": "400", "letter_spacing": "-0.005em", "font": "Fraunces" },
+          "h3": { "size": "1.25rem", "line_height": "1.25", "weight": "400", "letter_spacing": "0", "font": "Fraunces" },
+          "body": { "size": "1rem", "line_height": "1.65", "weight": "400", "font": "Inter" },
+          "small": { "size": "0.8125rem", "line_height": "1.5", "weight": "400", "font": "Inter" },
+          "eyebrow": { "size": "0.75rem", "line_height": "1.4", "weight": "500", "letter_spacing": "0.12em", "transform": "uppercase", "font": "Inter" }
+        },
+        "desktop": {
+          "h1": { "size": "clamp(2.75rem, 2rem + 3vw, 4rem)", "line_height": "1.05", "weight": "300", "letter_spacing": "-0.015em", "font": "Fraunces" },
+          "h2": { "size": "clamp(2rem, 1.5rem + 2vw, 2.75rem)", "line_height": "1.12", "weight": "400", "letter_spacing": "-0.01em", "font": "Fraunces" },
+          "h3": { "size": "clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem)", "line_height": "1.25", "weight": "400", "letter_spacing": "0", "font": "Fraunces" },
+          "body": { "size": "1.0625rem", "line_height": "1.7", "weight": "400", "font": "Inter" },
+          "small": { "size": "0.875rem", "line_height": "1.5", "weight": "400", "font": "Inter" },
+          "eyebrow": { "size": "0.8125rem", "line_height": "1.4", "weight": "500", "letter_spacing": "0.14em", "transform": "uppercase", "font": "Inter" }
+        }
+      },
+      "fluid_recipe": "h1: clamp(2.25rem, 1.5rem + 3vw, 4rem); h2: clamp(1.75rem, 1.3rem + 2vw, 2.75rem)"
+    },
+    "spacing": {
+      "base_unit": "8px",
+      "scale": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "40px",
+        "xxl": "64px",
+        "xxxl": "96px",
+        "xxxxl": "144px"
+      },
+      "section_spacing": {
+        "mobile": "72px",
+        "tablet": "104px",
+        "desktop": "144px"
+      },
+      "container_max_width": "1140px",
+      "content_max_width": "680px",
+      "padding": {
+        "mobile": "20px",
+        "tablet": "40px",
+        "desktop": "64px"
+      }
+    },
+    "borders": {
+      "radius": {
+        "none": "0",
+        "sm": "6px",
+        "md": "12px",
+        "lg": "20px",
+        "xl": "32px",
+        "full": "999px"
+      },
+      "radius_usage": {
+        "buttons": "full (999px) — pílula, reforça suavidade boutique",
+        "cards": "lg (20px)",
+        "inputs": "md (12px)",
+        "images": "lg (20px)"
+      }
+    },
+    "shadows": {
+      "none": "none",
+      "xs": "0 1px 2px rgba(44, 40, 36, 0.05)",
+      "sm": "0 2px 8px rgba(44, 40, 36, 0.06)",
+      "md": "0 6px 20px rgba(44, 40, 36, 0.08)",
+      "lg": "0 14px 40px rgba(44, 40, 36, 0.12)"
+    },
+    "motion": {
+      "durations": {
+        "instant": "120ms",
+        "fast": "200ms",
+        "base": "320ms",
+        "slow": "600ms",
+        "reveal": "800ms"
+      },
+      "easings": {
+        "standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "out_soft": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "in_out_calm": "cubic-bezier(0.65, 0, 0.35, 1)"
+      },
+      "animations": [
+        { "name": "fade-in-up", "duration": "800ms", "easing": "out_soft", "trigger": "IntersectionObserver, threshold 0.15", "description": "Entrada padrão de seções e cards; translateY(24px)→0, stagger 90ms" },
+        { "name": "hero-reveal", "duration": "1000ms", "easing": "out_soft", "trigger": "load", "description": "Headline, sub e CTA em cascata de 120ms" },
+        { "name": "leaf-draw", "duration": "600ms", "easing": "in_out_calm", "trigger": "IntersectionObserver", "description": "Folha de araucária desenha de 0 a 100% (stroke-dashoffset)" },
+        { "name": "shadow-lift", "duration": "320ms", "easing": "standard", "trigger": "hover em cards", "description": "Sombra sm→lg + translateY(-4px)" },
+        { "name": "underline-grow", "duration": "320ms", "easing": "out_soft", "trigger": "hover em links de nav", "description": "Sublinhado oliva cresce da esquerda" }
+      ],
+      "prefers_reduced_motion": true
+    }
+  },
+
+  "hero_direction": {
+    "layout": "Split assimétrico 55/45 — coluna esquerda com surface clara (#F8F5EF) contendo eyebrow + H1 Fraunces 300 + sub + CTA duplo (primário terracota + secundário outline oliva); coluna direita com fotografia de movimento consciente em tons quentes, radius 20px, moldura fina oliva deslocada 12px.",
+    "mobile": "Empilha: texto primeiro, imagem depois em faixa 16:10 com radius 20px.",
+    "height": "min-height 85vh no desktop; nunca 100vh forçado.",
+    "detail": "Folha de araucária estilizada como divisor orgânico abaixo do hero, em SVG com stroke-dashoffset animation.",
+    "trust_row": "Linha discreta abaixo dos CTAs: '180+ alunos · Turmas de até 3 · 4,9 no Google' em texto muted.",
+    "media": "Fotografia de pessoa se movimentando em espaço calmo e bem-iluminado, tons naturais, luz lateral suave. Sem academia genérica.",
+    "cta_primary": { "text": "Agendar aula experimental", "link": "whatsapp" },
+    "cta_secondary": { "text": "Conhecer o studio", "link": "#sobre" }
+  },
+
+  "navigation_direction": {
+    "style": "Header translúcido (rgba(248,245,239,0.92) + backdrop-blur 12px), sticky, 76px desktop / 64px mobile.",
+    "scrolled_state": "Ganha sombra xs e altura 64px após 60px de scroll.",
+    "logo": "Wordmark 'Aurora' em Fraunces 400, 22px, #2C2824. Subtexto 'Pilates & Movimento' em Inter 500 10px uppercase, #5C6B4F.",
+    "links": "Inter 500 14px, #2C2824; hover com sublinhado oliva que cresce da esquerda (underline-grow).",
+    "cta": "Botão primary compacto 'Agendar' à direita.",
+    "mobile": "Hambúrguer minimalista (2 linhas) → painel full-screen #F8F5EF com links Fraunces 32px em fade-in-up stagger, fechamento com Esc.",
+    "skip_link": "Ir para o conteúdo — visível no focus."
+  },
+
+  "media_direction": {
+    "ai_images": [
+      {
+        "id": "hero-movement",
+        "description": "Pessoa adulta se movimentando com consciência em espaço de studio luminoso e minimalista. Luz natural lateral, tons quentes (madeira, linho, verde oliva sutil). Conotação de calma e técnica — não academia, não yoga genérica. Enquadramento 4:5 vertical.",
+        "prompt": "A mature woman performing a graceful pilates movement on a reformer in a bright, minimalist studio with warm wood floors and natural light streaming through large windows. Soft, warm tones. Clean, uncluttered space. Professional but calm atmosphere. Shot from a slightly low angle, 4:5 aspect ratio, editorial photography style.",
+        "usage": "Hero — coluna direita do split"
+      },
+      {
+        "id": "about-space",
+        "description": "Interior do studio vazio, mostrando aparelhos de pilates organizados, luz natural, plantas sutis, madeira e materiais naturais. Conotação de espaço cuidado e acolhedor.",
+        "prompt": "Interior of a boutique pilates studio with reformer machines arranged neatly, warm wood floors, large windows with natural light, a few green plants, minimal and clean design. Warm, inviting atmosphere. No people. Wide shot showing the calm, organized space. 16:9 aspect ratio.",
+        "usage": "Seção sobre — imagem de apoio"
+      },
+      {
+        "id": "services-detail",
+        "description": "Close de mãos ajustando um aparelho de pilates, mostrando cuidado técnico e precisão. Luz natural, fundo desfocado do studio.",
+        "prompt": "Close-up of hands carefully adjusting springs on a pilates reformer machine. Warm natural light, shallow depth of field with blurred studio background. Professional, precise, caring gesture. 3:2 aspect ratio.",
+        "usage": "Seção de serviços — detalhe"
+      }
+    ],
+    "pexels_strategy": "Segunda opção — usar apenas se imagem IA não resolver para alguma seção. Buscar por 'pilates studio warm light', 'movement conscious', 'boutique wellness space'.",
+    "video": "Não aplicável para M1 one page neste momento. Pode ser adicionado depois com vídeo real do cliente.",
+    "fallback": "Gradiente suave oliva→areia (135deg, #5C6B4F → #EDE8DE) com SVG da folha de araucária em overlay. Nunca usar champagne como texto informativo.",
+    "overlay": "Quando necessário sobre imagem, usar rgba(44,40,36,0.35)→transparent."
+  },
+
+  "section_system": [
+    {
+      "name": "hero",
+      "role": "Primeira dobra — posicionamento, desejo, confiança, conversão",
+      "anatomy": "Split 55/45, Fraunces display, CTA duplo, trust row",
+      "surface": "#F8F5EF",
+      "variation_from_next": "Densa em mensagem, leve em visual"
+    },
+    {
+      "name": "trust-bar",
+      "role": "Prova social imediata — números que validam",
+      "anatomy": "Faixa horizontal com 3 stats em layout flex",
+      "surface": "#2C2824 (surface_dark)",
+      "variation_from_next": "Faixa escura compacta entre seções claras"
+    },
+    {
+      "name": "sobre",
+      "role": "Contexto — o que é a Aurora e por que existe",
+      "anatomy": "Split 50/50 invertido: imagem à esquerda, texto à direita com highlight box",
+      "surface": "#F8F5EF",
+      "variation_from_next": "Dois blocos lado a lado, quebra do hero"
+    },
+    {
+      "name": "diferenciais",
+      "role": "Prova de método — por que não é academia genérica",
+      "anatomy": "3 itens numerados (01-03) em layout editorial, número grande Fraunces + título + descrição",
+      "surface": "#EDE8DE (surface_alt)",
+      "variation_from_next": "Lista numerada, mais compacta que o sobre"
+    },
+    {
+      "name": "servicos",
+      "role": "Oferta — o que o cliente pode contratar",
+      "anatomy": "Grid assimétrico de cards (1 destaque + 2x2), card maior para aula experimental",
+      "surface": "#F8F5EF",
+      "variation_from_next": "Grid de cards, diferente da lista numerada"
+    },
+    {
+      "name": "depoimentos",
+      "role": "Prova social emocional — o que outros alunos dizem",
+      "anatomy": "Citação única centralizada em Fraunces itálico, aspas ornamentais oliva, navegação por dots",
+      "surface": "#E5DFD3 (surface_warm)",
+      "variation_from_next": "Centrado e respirado, quebra do grid"
+    },
+    {
+      "name": "cta-final",
+      "role": "Conversão — agendar agora",
+      "anatomy": "Centrado: eyebrow + H2 + botão primary único + nota de contato direto",
+      "surface": "#2C2824 (surface_dark)",
+      "variation_from_next": "Seção escura de fechamento"
+    },
+    {
+      "name": "footer",
+      "role": "Informações e navegação secundária",
+      "anatomy": "3 colunas (marca+frase / serviços / contato+endereço+horário) + linha legal",
+      "surface": "#2C2824 (surface_dark, mais profundo)"
+    }
+  ],
+
+  "component_language": {
+    "buttons": {
+      "primary": {
+        "background": "#D4763A",
+        "color": "#FFFFFF",
+        "border": "none",
+        "radius": "999px",
+        "padding": "15px 36px",
+        "font": "Inter 500, 15px, letter-spacing 0.02em",
+        "hover": "background #B55E28, sombra sm, sem translate",
+        "focus": "outline 2px solid #D4763A, offset 3px",
+        "active": "background #9E4F20",
+        "disabled": "background #D4CFC5, color #7A756E, cursor not-allowed",
+        "min_height": "48px"
+      },
+      "secondary": {
+        "background": "transparent",
+        "color": "#3D4A33",
+        "border": "1.5px solid #5C6B4F",
+        "radius": "999px",
+        "padding": "14px 36px",
+        "hover": "background #5C6B4F, color #F8F5EF",
+        "focus": "outline 2px solid #5C6B4F, offset 3px",
+        "min_height": "48px"
+      },
+      "ghost": {
+        "background": "transparent",
+        "color": "#3D4A33",
+        "border": "none",
+        "decoration": "seta → com micro-deslocamento 4px no hover; sublinhado oliva no hover",
+        "font": "Inter 500, 14px"
+      },
+      "gold_on_dark": {
+        "background": "transparent",
+        "color": "#D4763A",
+        "border": "1px solid #D4763A",
+        "hover": "background #D4763A, color #2C2824",
+        "usage": "Apenas sobre surface_dark"
+      }
+    },
+    "cards": {
+      "service_card": {
+        "background": "#FFFFFF",
+        "border": "1px solid #D4CFC5",
+        "radius": "20px",
+        "padding": "32px (mobile 24px)",
+        "shadow": "sm em repouso → lg no hover com translateY(-4px)",
+        "icon": "Ícone linear oliva 28px (Lucide/Feather, stroke 1.5px)",
+        "anatomy": "ícone + h3 Fraunces + parágrafo + link ghost"
+      },
+      "highlight_card": {
+        "background": "#F8F5EF",
+        "border": "2px solid #5C6B4F",
+        "radius": "20px",
+        "padding": "40px",
+        "badge": "Destaque — badge terracota 'Agende agora'",
+        "anatomy": "badge + h3 + descrição + CTA primary"
+      },
+      "differential_card": {
+        "background": "transparent",
+        "border": "none",
+        "anatomy": "número grande Fraunces 64px #5C6B4F + título h3 + descrição + divisor orgânico",
+        "layout": "horizontal no desktop, vertical no mobile"
+      }
+    },
+    "inputs": {
+      "style": "Borda 1px #D4CFC5, radius 12px, fundo #FFFFFF",
+      "padding": "14px 18px",
+      "font": "Inter 400, 16px",
+      "label": "Inter 500, 13px, uppercase 0.1em, #5A5550",
+      "focus": "borda #5C6B4F + box-shadow 0 0 0 3px rgba(92,107,79,0.15)",
+      "error": "borda #A13B2A + mensagem 13px #A13B2A"
+    },
+    "testimonials": {
+      "layout": "Uma citação por vez, centralizada, max-width 680px",
+      "quote": "Fraunces itálico 24px (desktop), aspas ornamentais oliva grandes como ornamento",
+      "attribution": "eyebrow: nome em Inter, #5A5550",
+      "navigation": "dots discretos + setas; auto-rotate desligado"
+    },
+    "stats": {
+      "layout": "3 itens em linha, sobre surface_dark",
+      "number": "Fraunces 300, 48px, #D4763A",
+      "label": "Inter 400, 14px, #D4CFC5"
+    }
+  },
+
+  "responsive_rules": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Empilha: texto primeiro (eyebrow → H1 36px → sub → CTA duplo full-width max 360px) → imagem 16:10 com radius 20px",
+      "tablet": "Coluna única centralizada com imagem maior; CTAs lado a lado",
+      "desktop": "Split 55/45, texto à esquerda verticalmente centralizado, imagem à direita com moldura oliva deslocada"
+    },
+    "navigation": {
+      "mobile": "Logo + hambúrguer; overlay full-screen",
+      "desktop": "Header sticky 76px, links inline + CTA"
+    },
+    "differentials": {
+      "mobile": "Cards empilhados verticalmente",
+      "desktop": "3 itens em linha horizontal com números grandes"
+    },
+    "services": {
+      "mobile": "1 coluna, cards full-width",
+      "tablet": "2 colunas",
+      "desktop": "Grid assimétrico com card destaque maior"
+    },
+    "footer": {
+      "mobile": "Colunas empilhadas",
+      "desktop": "3 colunas lado a lado"
+    }
+  },
+
+  "accessibility_floor": {
+    "wcag_level": "AA",
+    "contrast_verified": true,
+    "focus_visible": "outline 2px solid #5C6B4F, offset 3px em fundo claro; #D4763A em fundo escuro",
+    "touch_targets": "48px mínimo em todos os interativos",
+    "alt_text": "Descritivo em PT-BR para todas as imagens; aria-hidden em decorativas",
+    "semantic_html": "header/nav/main/section/footer; h1 único; landmarks nomeados",
+    "skip_link": "Ir para o conteúdo — visível no focus",
+    "prefers_reduced_motion": "Todas as animações desativadas; conteúdo visível imediatamente"
+  },
+
+  "performance_floor": {
+    "lcp_target": "< 2.5s — hero com imagem fetchpriority=high, AVIF/WebP",
+    "cls_target": "< 0.05 — aspect-ratio reservado em todas as imagens",
+    "inp_target": "< 200ms — JS mínimo, IntersectionObserver vanilla",
+    "js_budget": "< 15KB — menu mobile, reveals, sem frameworks",
+    "fonts": "2 famílias / 5 pesos, preconnect, font-display: swap"
+  },
+
+  "quality_gate": [
+    "Hero genérico com gradiente e blobs — reprovação",
+    "Cards idênticos como resposta universal — reprovação",
+    "Mesma anatomia de seção repetida — reprovação",
+    "CTA 'Saiba mais' como muleta — reprovação",
+    "Copy genérica ('Bem-vindo ao nosso site') — reprovação",
+    "Foto de banco de academia sorridente — reprovação",
+    "Promessa de resultado garantido — reprovação",
+    "Contraste abaixo de AA em qualquer par de texto — reprovação",
+    "Scroll horizontal em qualquer viewport — reprovação",
+    "Texto cortado ou sobreposto — reprovação",
+    "Assinatura visual ausente — reprovação"
+  ]
+}

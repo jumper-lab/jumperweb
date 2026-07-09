@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Crav Red Order Board System</title>
+<style>
+:root{--primary:#E6342A;--secondary:#FFD447;--surface:#FFF2D5;--alt:#FFE29A;--text:#24110E;--muted:#6D392E;--border:#F08A6E;--ctaText:#000000;--heading:"Anton",serif;--body:"Barlow Condensed",system-ui,sans-serif;--mono:"Roboto Mono",monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}a{color:inherit}.burger{min-height:100vh;display:grid;grid-template-columns:320px 1fr;background:var(--surface);color:var(--text)}
+.burger__rail{padding:22px;border-right:1px solid var(--border);background:var(--primary);color:var(--ctaText);position:sticky;top:0;height:100vh}
+.burger__page{padding:clamp(22px,5vw,78px);display:grid;gap:clamp(26px,5vw,64px)}
+.burger__nav{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px;font-family:var(--mono);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.burger__hero{display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,52px);align-items:center;min-height:62vh}
+.burger__hero h1{font-family:var(--heading);font-size:clamp(3rem,7vw,7rem);line-height:.92;margin:0;max-width:14ch;color:inherit}
+.burger__media{min-height:300px;border:1px solid var(--border);border-radius:28px;background:linear-gradient(135deg,var(--alt),var(--secondary));box-shadow:10px 10px 0 var(--secondary)}
+.burger__cta,.burger__submit{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--primary);color:var(--ctaText);border:0;border-radius:999px;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer}.burger__hidden{display:none}
+.burger__controls{display:flex;gap:8px;flex-wrap:wrap}.burger__option{border:1px solid var(--border);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;cursor:pointer}.burger__option[aria-pressed="true"]{background:var(--secondary);color:#111111;border-color:var(--secondary)}
+.burger__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.burger__item{text-align:left;min-height:150px;border:1px solid var(--border);background:#fff;color:inherit;border-radius:16px;padding:18px;cursor:pointer}.burger__item[aria-pressed="true"]{outline:3px solid var(--secondary);transform:translateY(-3px)}
+.burger__split{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:22px}.burger__panel{border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 78%,white);padding:22px;border-radius:16px}
+.burger__form{display:grid;gap:12px}.burger__form label{display:grid;gap:6px;font-weight:800}.burger__form input,.burger__form select{min-height:44px;border:1px solid var(--border);background:#fff;color:var(--text);border-radius:8px;padding:10px}.burger__form input:focus,.burger__form select:focus,.burger__option:focus-visible,.burger__item:focus-visible,.burger__chip:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.burger__status{font-family:var(--mono);border-left:5px solid var(--secondary);padding:16px;background:var(--alt)}
+.burger__sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.burger__section-card{border-top:3px solid var(--primary);padding:16px;background:#fff}
+.burger__palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.burger__chip{background:var(--chip);color:var(--ink);min-height:88px;border:1px solid var(--border);padding:10px;text-align:left;display:grid;align-content:space-between;cursor:pointer;border-radius:16px}
+.burger__audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.burger__audit div{padding:16px;border:1px solid var(--border);background:var(--alt)}
+@media(max-width:860px){.burger{display:block}.burger__rail{position:relative;height:auto}.burger__hero,.burger__split{grid-template-columns:1fr}.burger__audit{grid-template-columns:1fr}.burger__page{padding:20px}.burger__hero h1{font-size:clamp(3rem,18vw,6rem)}}
+@media(prefers-reduced-motion:no-preference){.burger__item,.burger__cta,.burger__submit,.burger__chip{transition:transform .2s ease,filter .2s ease}.burger__item:hover,.burger__chip:hover{transform:translateY(-3px)}.burger__cta:hover,.burger__submit:hover{filter:contrast(1.1)}}
+</style>
+</head>
+<body>
+<main class="burger" data-mode="burgers">
+<aside class="burger__rail"><strong>menu board de pedido</strong><p>hamburgueria sem carrinho, combos ou escolha de entrega</p><a class="burger__cta" href="#form">Adicionar pedido</a></aside>
+<div class="burger__page">
+<nav class="burger__nav"><strong>03.2 · Crav Red Order Board System</strong><span>order-board</span></nav>
+<section class="burger__hero" id="top">
+<div><p>menu board de pedido</p><h1>menu board hero with burger stack, price chips and immediate order action</h1><p>hungry, direct and loud</p><a class="burger__cta" href="#form">Adicionar pedido</a></div>
+<div class="burger__media" aria-hidden="true"></div>
+</section>
+<section class="burger__panel"><h2>Categoria</h2><div class="burger__controls"><button class="burger__option" type="button" data-mode="burgers" aria-pressed="true">burgers</button>
+<button class="burger__option" type="button" data-mode="combos" aria-pressed="false">combos</button>
+<button class="burger__option" type="button" data-mode="molhos" aria-pressed="false">molhos</button></div><p class="burger__status" aria-live="polite">Modo ativo: burgers · Carrinho simulado atualizado</p></section>
+<section><h2>Componentes funcionais</h2><div class="burger__items"><button class="burger__item" type="button" data-item="Smash duplo" aria-pressed="true"><span>01</span><strong>Smash duplo</strong><small>menu-price-chip</small></button>
+<button class="burger__item" type="button" data-item="Combo batata" aria-pressed="false"><span>02</span><strong>Combo batata</strong><small>combo-builder-card</small></button>
+<button class="burger__item" type="button" data-item="Molho da casa" aria-pressed="false"><span>03</span><strong>Molho da casa</strong><small>sauce-selector</small></button>
+<button class="burger__item" type="button" data-item="Drop picante" aria-pressed="false"><span>04</span><strong>Drop picante</strong><small>limited-drop-badge</small></button></div></section>
+<section class="burger__split" id="form"><div class="burger__panel"><h2>Formulario real do DS</h2><form class="burger__form"><label>Nome<input name="field0" value="Exemplo teste" placeholder="Nome" /></label>
+<label>Entrega<select name="field1"><option>burgers</option><option>combos</option><option>molhos</option></select></label>
+<label>Observacao<input name="field2" value="" placeholder="Observacao" /></label><button class="burger__submit" type="submit">Adicionar pedido</button></form></div><div class="burger__panel"><h2>Resultado / estado</h2><p class="burger__status burger__output" aria-live="polite">Nenhum envio ainda.</p><p>O preview precisa testar foco, estado ativo, formulario, responsividade e copy do componente.</p></div></section>
+<section><h2>Fluxo de secoes coberto</h2><div class="burger__sections"><article class="burger__section-card"><span>01</span><h3>Hero order board</h3><p>menu-price-chip</p></article>
+<article class="burger__section-card"><span>02</span><h3>Best sellers</h3><p>combo-builder-card</p></article>
+<article class="burger__section-card"><span>03</span><h3>Build your combo</h3><p>sauce-selector</p></article>
+<article class="burger__section-card"><span>04</span><h3>Limited drop</h3><p>limited-drop-badge</p></article>
+<article class="burger__section-card"><span>05</span><h3>Pickup/delivery choice</h3><p>delivery-toggle</p></article>
+<article class="burger__section-card"><span>06</span><h3>Sauce selector</h3><p>receipt-summary</p></article>
+<article class="burger__section-card"><span>07</span><h3>Social proof wall</h3><p>menu-price-chip</p></article>
+<article class="burger__section-card"><span>08</span><h3>Footer as receipt</h3><p>combo-builder-card</p></article></div></section>
+<section><h2>Paleta clicavel</h2><div class="burger__palette"><button class="burger__chip" type="button" data-copy="#E6342A" style="--chip:#E6342A;--ink:#111111"><span>Primary</span><strong>#E6342A</strong></button>
+<button class="burger__chip" type="button" data-copy="#FFD447" style="--chip:#FFD447;--ink:#111111"><span>Secondary</span><strong>#FFD447</strong></button>
+<button class="burger__chip" type="button" data-copy="#FFF2D5" style="--chip:#FFF2D5;--ink:#111111"><span>Surface</span><strong>#FFF2D5</strong></button>
+<button class="burger__chip" type="button" data-copy="#FFE29A" style="--chip:#FFE29A;--ink:#111111"><span>Alt</span><strong>#FFE29A</strong></button>
+<button class="burger__chip" type="button" data-copy="#24110E" style="--chip:#24110E;--ink:#ffffff"><span>Text</span><strong>#24110E</strong></button>
+<button class="burger__chip" type="button" data-copy="#6D392E" style="--chip:#6D392E;--ink:#ffffff"><span>Muted</span><strong>#6D392E</strong></button>
+<button class="burger__chip" type="button" data-copy="#F08A6E" style="--chip:#F08A6E;--ink:#111111"><span>Border</span><strong>#F08A6E</strong></button></div></section>
+<section class="burger__audit"><div><strong>Acessibilidade</strong><p>Focus ring, aria-live e touch target 44px.</p></div><div><strong>Responsivo</strong><p>Mobile preserva thumb-first category rail and cart summary.</p></div><div><strong>Erro corrigido</strong><p>hamburgueria sem carrinho, combos ou escolha de entrega.</p></div></section>
+</div>
+</main>
+<script>
+(() => {
+ const root = document.querySelector('.burger');
+ const status = document.querySelector('.burger__status');
+ const output = document.querySelector('.burger__output');
+ document.querySelectorAll('.burger__option').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.burger__option').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  root.dataset.mode = btn.dataset.mode;
+  status.textContent = 'Modo ativo: ' + btn.dataset.mode + ' · Carrinho simulado atualizado';
+ }));
+ document.querySelectorAll('.burger__item').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.burger__item').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  output.textContent = 'Selecionado: ' + btn.dataset.item + ' · componente pronto para estado ativo.';
+ }));
+ document.querySelector('.burger__form').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  output.textContent = 'Carrinho simulado atualizado: ' + [...data.values()].filter(Boolean).join(' / ');
+ });
+ document.querySelectorAll('.burger__chip').forEach(chip => chip.addEventListener('click', async () => {
+  const value = chip.dataset.copy;
+  try { await navigator.clipboard.writeText(value); output.textContent = 'Cor copiada: ' + value; }
+  catch { output.textContent = 'Token selecionado: ' + value; }
+ }));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,598 @@
+{
+  "id": "reference-ds-04-magnolia-com",
+  "clientSlug": "magnolia-com",
+  "clientName": "Magnolia",
+  "personalitySlug": "01-acolhedor-familiar",
+  "regeneratedAt": "2026-06-05",
+  "referenceQualityBaseline": "reference-ds-01-pinchmans-ca-visual-preview.html",
+  "source": {
+    "type": "single-reference-design-system",
+    "folder": "_jumper-sites-system/_referencias-visuais/01-acolhedor-familiar/design-systems/preview-assets/magnolia.com",
+    "assetsUsed": [
+      "105178579da4868d_Bedding_3.jpg",
+      "d5ad21432c596ab9_M10320041024.jpg",
+      "62355cd19d4f6fbf_Home_Page_Visit_Rail_SHOP_4483.jpg",
+      "0965d26ecba89dd9_Home_Page_Visit_Rail_FOOD_e59f.jpg",
+      "692df82e1413c0f8_HP-_Banner__2_Left.jpg"
+    ],
+    "inferredDecisions": [
+      "Ecommerce precisa parecer editorial e humano, nao uma grade fria de produto.",
+      "Paleta neutra ganha Table Blue e Garden Sage para evitar monotonia.",
+      "Drawer e carrinho sao interacoes centrais e devem estar no preview visual.",
+      "Swatches sao parte do sistema de decisao de compra."
+    ],
+    "sourceReferenceId": "magnolia.com",
+    "sourceReferenceNote": "Referencia visual ja convertida em DS-base; arquivo pesado original nao e necessario no fluxo oficial.",
+    "extractedSitePath": "_jumper-sites-system/_referencias-visuais/01-acolhedor-familiar/design-systems/preview-assets/magnolia.com",
+    "extractedSignals": {
+      "siteDir": "magnolia.com",
+      "extractedAt": "2026-06-05",
+      "fileCount": 1553,
+      "imageCount": 502,
+      "fontCount": 9,
+      "scriptCount": 609,
+      "cssCount": 75,
+      "colors": [
+        "rgb(var(--color-background)",
+        "rgb(var(--color-foreground)",
+        "#fefefe",
+        "rgb(254 254 254)",
+        "#101010",
+        "rgb(16 16 16)",
+        "#232323",
+        "rgb(35 35 35)",
+        "#f7f7f7",
+        "rgb(247 247 247)",
+        "#f3f1e9",
+        "rgb(243 241 233)",
+        "#e9e5d5",
+        "rgb(233 229 213)",
+        "#575449",
+        "rgb(87 84 73)",
+        "#85650b",
+        "rgb(133 101 11)",
+        "#79765d",
+        "rgb(121 118 93)",
+        "#4c6063",
+        "rgb(76 96 99)",
+        "#3d452e",
+        "rgb(61 69 46)"
+      ],
+      "fontFamilies": [
+        "var(--font-body-family)",
+        "\\\\\\Merriweather\\\\\\, serif",
+        "\\\\\\Montserrat\\\\\\, sans-serif",
+        "\\\\\\MinionPro-Regular\\\\\\, serif !important",
+        "\\\\\\Playfair Display\\\\\\, serif",
+        "var(--font-heading-family)"
+      ],
+      "fontFiles": [
+        "1c9d0fdf30a5e0cf_font-minion-w05-italic.woff2",
+        "2dda39790292f332_GTStandard-MRegular.woff2",
+        "36de4e79362c9827_font-minion-w05-regular.woff2",
+        "655dd90c446b48b0_font-brandon-grotesque-w05-bol.woff2",
+        "721d71f3b6c2cca4_font-minion-w05-medium.woff2",
+        "9bc623e505de8162_font-brandon-grotesque-w05-reg.woff2",
+        "d2910416447682f4_GTStandard-MSemibold.woff2",
+        "dfb0284cbdccb204_font-brandon-grotesque-w05-med.woff2",
+        "ff0c73e3a06b8ee7_font-minion-w05-semibold.woff2"
+      ],
+      "imageSamples": [
+        "assets/0009c5d30092e322_12182025_su26_hillcrest_picnic.jpg",
+        "assets/00b5c10bc27399dd_Screenshot_2026-05-14_162948_1.jpg",
+        "assets/022d1df24821f18a_04292026_fa26_wall_decor61771.jpg",
+        "assets/023a5127d2e25e5f_M01106002180.jpg",
+        "assets/0323b3d7ce4def60_M10320041024.jpg",
+        "assets/03344c4a515530f8_M10320040989.jpg",
+        "assets/0372da2699d97f24_M02206015077SETM01106002224L.jpg",
+        "assets/03961b18784b449d_M10320040628M10320040629HW.jpg",
+        "assets/03ba20fc2f6b9e05_M01106002235L_1.jpg",
+        "assets/043d33fb547b92ac_M02106006018_2_a3ec4a09-3e67-4.jpg",
+        "assets/0460b429e8ce5728_Home_Page_Visit_rail_STAY_8990.jpg",
+        "assets/04b6cb23924a5ef7_FOOD_4923_Q1_2026_cpg-target-n.jpg",
+        "assets/07170412ac1d8408_M01106002180.jpg",
+        "assets/0721792febeb992c_C-MM-53465.jpg",
+        "assets/0835a42730b74698_5_SBC_image_20_c0137be4-26ec-4.jpg",
+        "assets/090d1eb054535d0f_Sats_1.jpg"
+      ],
+      "textSnippets": [
+        "Floral + Vase Pairings &ndash; Magnolia",
+        "Floral + Vase Pairings",
+        "Find timeless home décor, furniture, kitchen essentials, and lifestyle goods at Magnolia. Thoughtfully designed pieces that help you create a home with purpose.",
+        "Shop furniture on sale.",
+        "Furniture Markdowns",
+        "Elevate any place setting with dining chargers. Shop charger plates designed to frame your dinnerware and give any table a finished, intentional look.",
+        "Plate Chargers for the Dining Table | Magnolia"
+      ]
+    }
+  },
+  "designIntent": {
+    "voice": "Sistema visual para ecommerce acolhedor: drawer, carrinho, produtos com swatches, faixas editoriais e fotografia de casa com movimento calmo.",
+    "heroPolicy": "first hero session is full viewport and demonstrates DS capabilities visually",
+    "noFlowUsage": true,
+    "sitePersonality": "Editorial commerce acolhedor: casa, produto, swatches, drawer, carrinho e fotografia de lifestyle em ritmo calmo.",
+    "componentLens": "Cada componente deve misturar catalogo e revista: composicao editorial, gesto suave, superficies quentes e CTAs discretos."
+  },
+  "colors": {
+    "palette": [
+      {
+        "name": "Warm Ivory",
+        "hex": "#F6F0E7",
+        "rgb": "rgb(246,240,231)",
+        "hsl": "hsl(34 45% 92%)",
+        "usage": "background"
+      },
+      {
+        "name": "Soft Charcoal",
+        "hex": "#2E2925",
+        "rgb": "rgb(46,41,37)",
+        "hsl": "hsl(27 11% 18%)",
+        "usage": "primary text"
+      },
+      {
+        "name": "Garden Sage",
+        "hex": "#7A8068",
+        "rgb": "rgb(122,128,104)",
+        "hsl": "hsl(75 10% 45%)",
+        "usage": "secondary calm accent"
+      },
+      {
+        "name": "Table Blue",
+        "hex": "#3E7FAE",
+        "rgb": "rgb(62,127,174)",
+        "hsl": "hsl(202 47% 43%)",
+        "usage": "editorial accent"
+      },
+      {
+        "name": "Clay Rose",
+        "hex": "#B37B6A",
+        "rgb": "rgb(179,123,106)",
+        "hsl": "hsl(14 31% 52%)",
+        "usage": "swatch / product accent"
+      },
+      {
+        "name": "Brass",
+        "hex": "#C3A15D",
+        "rgb": "rgb(195,161,93)",
+        "hsl": "hsl(40 46% 56%)",
+        "usage": "focus / detail"
+      },
+      {
+        "name": "Linen White",
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255,255,255)",
+        "hsl": "hsl(0 0% 100%)",
+        "usage": "surface"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Linen Wash",
+        "value": "linear-gradient(135deg, rgba(246,240,231,.96), rgba(255,255,255,.92))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Blue Table",
+        "value": "linear-gradient(135deg, rgba(62,127,174,.96), rgba(122,128,104,.74))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Clay Veil",
+        "value": "radial-gradient(circle at 20% 30%, rgba(179,123,106,.24), transparent 34%)",
+        "participation": "background / overlay / hover / active states"
+      }
+    ],
+    "semantic": {
+      "primary": "Warm Ivory",
+      "text": "Garden Sage",
+      "surface": "Soft Charcoal",
+      "accent": "Table Blue",
+      "focus": "Linen White",
+      "contrastIntent": "AA minimum for body text; overlay required on image text."
+    },
+    "opacityPolicy": "A escala de opacidade e global para evitar repeticao. Cada cor herda globalTokens.opacityScale e so deve variar quando houver necessidade real de contraste/contexto.",
+    "contextualUsageRules": {
+      "text": "Escolher token semantico de texto; sobre imagem usar overlay antes de reduzir contraste.",
+      "background": "Usar surface/background conforme personalidade do site; evitar aplicar cor decorativa como fundo dominante sem motivo.",
+      "border": "Usar neutral/accent em opacidade baixa pela escala global.",
+      "hover": "Usar accent/focus ou overlay curto conforme componente.",
+      "active": "Aumentar contraste ou reduzir elevacao por 120-180ms.",
+      "disabled": "Aplicar globalTokens.opacityScale.disabled sem apagar legibilidade."
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "Georgia, Cambria, Times New Roman, serif",
+      "ui": "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif",
+      "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+      "load": "system/local-first with editorial serif fallback"
+    },
+    "scale": {
+      "h1": {
+        "family": "Display",
+        "weight": "760",
+        "size": "clamp(3.4rem, 7.2vw, 8rem)",
+        "lineHeight": ".9",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "h2": {
+        "family": "Display",
+        "weight": "720",
+        "size": "clamp(2.6rem, 5.4vw, 6rem)",
+        "lineHeight": ".95",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "h3": {
+        "family": "Display",
+        "weight": "680",
+        "size": "clamp(1.9rem, 3vw, 3.2rem)",
+        "lineHeight": "1.05",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "h4": {
+        "family": "UI",
+        "weight": "760",
+        "size": "1.55rem",
+        "lineHeight": "1.16",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "h5": {
+        "family": "UI",
+        "weight": "820",
+        "size": "1.08rem",
+        "lineHeight": "1.2",
+        "letterSpacing": ".08em",
+        "textTransform": "uppercase"
+      },
+      "h6": {
+        "family": "UI",
+        "weight": "860",
+        "size": ".86rem",
+        "lineHeight": "1.2",
+        "letterSpacing": ".14em",
+        "textTransform": "uppercase"
+      },
+      "body-lg": {
+        "family": "UI",
+        "weight": "420",
+        "size": "1.22rem",
+        "lineHeight": "1.6",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "body": {
+        "family": "UI",
+        "weight": "420",
+        "size": "1rem",
+        "lineHeight": "1.58",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "body-sm": {
+        "family": "UI",
+        "weight": "420",
+        "size": ".9rem",
+        "lineHeight": "1.45",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "caption": {
+        "family": "Mono/UI",
+        "weight": "820",
+        "size": ".76rem",
+        "lineHeight": "1.35",
+        "letterSpacing": ".12em",
+        "textTransform": "uppercase"
+      },
+      "label": {
+        "family": "Mono/UI",
+        "weight": "850",
+        "size": ".8rem",
+        "lineHeight": "1.2",
+        "letterSpacing": ".12em",
+        "textTransform": "uppercase"
+      },
+      "helper": {
+        "family": "UI",
+        "weight": "420",
+        "size": ".78rem",
+        "lineHeight": "1.35",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      }
+    },
+    "siteSpecificRoles": [
+      "editorial-title: serif de revista",
+      "product-name: serif para produto",
+      "promo-label: mono para faixa/swatch",
+      "body-commerce: UI calmo para cuidado/preco"
+    ]
+  },
+  "icons": {
+    "description": "Home ecommerce line icons: menu, bag, search, chevron, plus/minus, heart, info, close. Stroke 1.6 e foco Brass.",
+    "stroke": "1.6-1.9",
+    "behavior": "currentColor, hover accent, focus visible"
+  },
+  "components": {
+    "mg-drawer-nav": {
+      "role": "drawer de navegacao",
+      "motion": "slide left 320ms, overlay blur, Esc e link close",
+      "motionType": "flyout",
+      "uniqueBehavior": "slide left 320ms, overlay blur, Esc e link close"
+    },
+    "mg-cart-modal": {
+      "role": "modal carrinho",
+      "motion": "scale .97, summary, stepper e close overlay",
+      "motionType": "modal-transition",
+      "uniqueBehavior": "scale .97, summary, stepper e close overlay"
+    },
+    "mg-product-card": {
+      "role": "card de produto",
+      "motion": "image zoom, swatch row, quick add reveal",
+      "motionType": "hover-depth",
+      "uniqueBehavior": "image zoom, swatch row, quick add reveal"
+    },
+    "mg-swatch-row": {
+      "role": "linha de variantes",
+      "motion": "active ring Brass, labels acessiveis",
+      "motionType": "focus-form",
+      "uniqueBehavior": "active ring Brass, labels acessiveis"
+    },
+    "mg-editorial-tile": {
+      "role": "tile editorial",
+      "motion": "image parallax, caption overlay, hover veil",
+      "motionType": "parallax",
+      "uniqueBehavior": "image parallax, caption overlay, hover veil"
+    },
+    "mg-promo-band": {
+      "role": "faixa promocional",
+      "motion": "Table Blue, CTA alto contraste",
+      "motionType": "microinteraction",
+      "uniqueBehavior": "Table Blue, CTA alto contraste"
+    },
+    "mg-tooltip-care": {
+      "role": "tooltip cuidado",
+      "motion": "hover/focus, posicao sem cobrir preco",
+      "motionType": "hover-depth",
+      "uniqueBehavior": "hover/focus, posicao sem cobrir preco"
+    },
+    "mg-section-tabs": {
+      "role": "tabs shop/visit/food",
+      "motion": "underline lento e active Charcoal",
+      "motionType": "microinteraction",
+      "uniqueBehavior": "underline lento e active Charcoal"
+    }
+  },
+  "motion": {
+    "entry": [
+      "fade-up",
+      "fade-left",
+      "draw-line",
+      "stagger"
+    ],
+    "exit": [
+      "flyout-x",
+      "modal-fade-down",
+      "caption-exit"
+    ],
+    "background": [
+      "hero-zoom",
+      "ambient-drift"
+    ],
+    "parallax": [
+      "data-speed controlled; reduced-motion fallback"
+    ],
+    "replay": true
+  },
+  "accessibility": {
+    "focus": "visible outline using focus token",
+    "reducedMotion": "animations disabled or static",
+    "keyboard": "menu/modal close by Esc",
+    "contrast": "4.5:1 target"
+  },
+  "risks": [
+    "Ivory sobre white perde hierarquia; usar bordas e sombra leve.",
+    "Swatches precisam foco e label.",
+    "Drawer/cart devem fechar por Esc."
+  ],
+  "outputs": {
+    "json": "design-systems/json/reference-ds-04-magnolia-com.json",
+    "markdown": "design-systems/previews/markdown/reference-ds-04-magnolia-com-preview.md",
+    "html": "design-systems/previews/html/reference-ds-04-magnolia-com-visual-preview.html",
+    "screenshots": "design-systems/previews/screenshots/reference-ds-04-magnolia-com/"
+  },
+  "schemaVersion": "reference-ds.compact.v2",
+  "globalTokens": {
+    "opacityScale": {
+      "solid": "100%",
+      "raisedSurface": "86%",
+      "overlayText": "64%",
+      "pressedSurface": "40%",
+      "disabled": "18%",
+      "hairline": "8%"
+    },
+    "componentStateContract": [
+      "default",
+      "hover",
+      "focus-visible",
+      "active",
+      "loading",
+      "disabled"
+    ],
+    "interactionContract": {
+      "focus": "2px outline usando token focus/accent, outline-offset 4px, nunca depender apenas de cor.",
+      "hover": "Transform/overlay curto, sem deslocar layout nem esconder CTA principal.",
+      "active": "Reduzir elevacao ou aumentar contraste por 120-180ms.",
+      "disabled": "Opacidade global disabled + cursor sem acao + contraste ainda legivel quando houver texto."
+    },
+    "motionContract": {
+      "entry": "fade/slide curto com easing do site; conteudo importante nao depende de animacao para existir.",
+      "exit": "fade/scale/slide reversivel para menu, modal, caption e toast.",
+      "parallax": "Camadas com limite de deslocamento, fallback estatico em prefers-reduced-motion.",
+      "replay": "Preview HTML deve permitir auditoria visual do motion principal."
+    }
+  },
+  "componentsDefaults": {
+    "stateContract": [
+      "default",
+      "hover",
+      "focus-visible",
+      "active",
+      "loading",
+      "disabled"
+    ],
+    "focus": "2px outline usando token focus/accent, outline-offset 4px, nunca depender apenas de cor.",
+    "reducedMotion": "Desativar transforms continuos e manter conteudo estatico equivalente.",
+    "opacityScaleRef": "globalTokens.opacityScale",
+    "implementationRule": "Nao repetir contrato global em cada componente; documentar apenas papel, motionType, uniqueBehavior e risco quando existir."
+  },
+  "heroSystem": {
+    "anatomy": [
+      "Stack editorial de imagens antes da interface",
+      "Titulo serifado com ritmo de revista",
+      "Swatches visiveis desde a hero",
+      "CTA escuro e discreto para ecommerce calmo"
+    ],
+    "fullViewport": true,
+    "detailPolicy": "Hero deve documentar layout, camadas, media, CTA, motion e menu relacionado no proprio preview visual."
+  },
+  "menuSystem": {
+    "characteristics": [
+      "Drawer com linguagem de revista/casa",
+      "Categorias shop/visit/food/story",
+      "Overlay blur leve sem peso tecnico"
+    ],
+    "interaction": "Abrir por hamburger, fechar por link, botao fechar e tecla Esc; overlay deve preservar a personalidade do site."
+  },
+  "effects": {
+    "signature": [
+      "swatch ativo com anel",
+      "quick add revelado sem empurrar layout",
+      "veil editorial claro",
+      "drawer fecha em slide left suave"
+    ]
+  },
+  "referenceUsage": {
+    "type": "visual-reference-input",
+    "folder": "01-acolhedor-familiar",
+    "crossesWith": "clientes/[slug]/data/design-system.json",
+    "purpose": "Referencia de editorial commerce domestico. Fornece ritmo de revista, produto com historia, swatches, drawer/cart suave, ivory wash e composicao de casa para cruzar com o DS do cliente; nao e checkout nem formulario final.",
+    "nonGoals": [
+      "nao criar DS final do cliente",
+      "nao representar fluxo de formulario do cliente",
+      "nao misturar personalidade de outros sites"
+    ],
+    "differentiationRules": [
+      "Diferenciar por hero de revista, produto + ambiente, serif calma e drawer editorial.",
+      "Usar motion sutil: image fade, product lift discreto, swatch focus e cart drawer.",
+      "Evitar busca/pins ou menu de fornada: o comportamento central e casa, cuidado e compra calma."
+    ],
+    "siteSpecific": true,
+    "notPersonalityWide": true,
+    "qualityRule": "Usar como referencia individual do site; nao padronizar componentes, hero, motion ou menus entre DSs."
+  },
+  "referenceSite": "magnolia.com",
+  "previewNavigation": [
+    {
+      "id": "menu-top",
+      "label": "Menu / top",
+      "menuLabel": "Drawer topo"
+    },
+    {
+      "id": "top",
+      "label": "Top",
+      "menuLabel": "Topo editorial"
+    },
+    {
+      "id": "hero",
+      "label": "Sessao Hero",
+      "menuLabel": "Hero casa / revista"
+    },
+    {
+      "id": "color-tokens",
+      "label": "Tokens de cor",
+      "menuLabel": "Tokens de casa"
+    },
+    {
+      "id": "gradients",
+      "label": "Gradientes / opacidade",
+      "menuLabel": "Linho / madeira opacity"
+    },
+    {
+      "id": "type-system",
+      "label": "Type system",
+      "menuLabel": "Serif editorial"
+    },
+    {
+      "id": "type-detail",
+      "label": "Tipografia detalhada",
+      "menuLabel": "Produto / legenda"
+    },
+    {
+      "id": "effects",
+      "label": "Efeitos e mouse overs",
+      "menuLabel": "Hover produto"
+    },
+    {
+      "id": "components",
+      "label": "Componentes",
+      "menuLabel": "Componentes loja"
+    },
+    {
+      "id": "contract",
+      "label": "Contrato sem repeticao",
+      "menuLabel": "Contrato editorial"
+    },
+    {
+      "id": "menu-board",
+      "label": "Menu board component",
+      "menuLabel": "Menu board de colecao"
+    },
+    {
+      "id": "reference-slip",
+      "label": "Reference slip",
+      "menuLabel": "Slip de carrinho"
+    },
+    {
+      "id": "cards-sections",
+      "label": "Cards e secoes",
+      "menuLabel": "Cards de decor"
+    },
+    {
+      "id": "story",
+      "label": "Story split parallax",
+      "menuLabel": "Story casa parallax"
+    },
+    {
+      "id": "icons",
+      "label": "Icones",
+      "menuLabel": "Icones home"
+    },
+    {
+      "id": "handoff",
+      "label": "Handoff de referencia",
+      "menuLabel": "Handoff editorial"
+    },
+    {
+      "id": "motion",
+      "label": "Motion contract",
+      "menuLabel": "Motion calmo"
+    },
+    {
+      "id": "replay-motion",
+      "label": "Replay motion",
+      "menuLabel": "Replay calmo"
+    }
+  ],
+  "requiredPreviewContract": {
+    "allMenuLinksMustResolve": true,
+    "heroMustOccupyFullViewport": true,
+    "noRepeatedGenericSections": true,
+    "noClippedTextOrOverlaps": true,
+    "showGradientsOpacityHoverEntryExitParallaxIcons": true
+  }
+}

@@ -1,0 +1,114 @@
+/* ==========================================================================
+   DS 04.2 — Fintech Confiança · animations.css
+   Derivado fielmente de motion{} do JSON.
+   Filosofia: movimento mínimo e determinístico (120–450ms), nada em loop,
+   nada decorativo. A animação confirma ações e ordena a leitura.
+   ========================================================================== */
+
+:root{
+  /* durations (motion.durations) */
+  --dur-instant: 120ms;
+  --dur-fast:    200ms;
+  --dur-base:    300ms;
+  --dur-slow:    450ms;
+
+  /* easings (motion.easings) */
+  --ease-standard:    cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:         cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out-soft: cubic-bezier(0.45, 0, 0.25, 1);
+
+  /* tokens de cor */
+  --primary:       #0F3460;
+  --primary-hover: #1B2C4A;
+  --secondary:     #16A085;
+  --green-text:    #0E7A65;
+  --surface:       #FFFFFF;
+  --surface-alt:   #F6F9FC;
+  --border:        #E3E8EF;
+  --sh-xs: 0 1px 2px rgba(15,31,53,.05);
+  --sh-md: 0 6px 16px rgba(15,31,53,.08);
+}
+
+/* --------------------------------------------------------------------------
+   fade-in-up — 300ms · ease-out · reveal on scroll (IntersectionObserver)
+   translateY(12px) → 0 + opacity. Stagger de 60ms entre irmãos.
+   -------------------------------------------------------------------------- */
+@keyframes fade-in-up{
+  from{ opacity:0; transform:translateY(12px); }
+  to  { opacity:1; transform:translateY(0); }
+}
+.fade-in-up{ opacity:0; transform:translateY(12px); }
+.fade-in-up.is-visible{ animation:fade-in-up var(--dur-base) var(--ease-out) forwards; }
+.fade-in-up.is-visible:nth-child(1){ animation-delay:0ms; }
+.fade-in-up.is-visible:nth-child(2){ animation-delay:60ms; }
+.fade-in-up.is-visible:nth-child(3){ animation-delay:120ms; }
+.fade-in-up.is-visible:nth-child(4){ animation-delay:180ms; }
+
+/* --------------------------------------------------------------------------
+   fade-in — 300ms · standard · carga da página (hero) e troca de conteúdo
+   Somente opacidade, sem deslocamento.
+   -------------------------------------------------------------------------- */
+@keyframes fade-in{ from{opacity:0;} to{opacity:1;} }
+.fade-in{ animation:fade-in var(--dur-base) var(--ease-standard) forwards; }
+
+/* --------------------------------------------------------------------------
+   button-hover — 200ms · standard · hover/focus em botões
+   Escurece o fundo e desloca a seta interna 2px. Sem scale, sem bounce.
+   -------------------------------------------------------------------------- */
+.button-hover{
+  background:var(--primary); color:#fff;
+  transition:background var(--dur-fast) var(--ease-standard);
+}
+.button-hover:hover,
+.button-hover:focus-visible{ background:var(--primary-hover); }
+.button-hover .arrow{ transition:transform var(--dur-fast) var(--ease-standard); }
+.button-hover:hover .arrow{ transform:translateX(2px); }
+
+/* --------------------------------------------------------------------------
+   card-lift — 200ms · ease-out · hover em cards
+   translateY(-2px) + sombra xs→md. Elevação mínima, profissional.
+   -------------------------------------------------------------------------- */
+.card-lift{
+  box-shadow:var(--sh-xs);
+  transition:transform var(--dur-fast) var(--ease-out),
+             box-shadow var(--dur-fast) var(--ease-out);
+}
+.card-lift:hover{ transform:translateY(-2px); box-shadow:var(--sh-md); }
+
+/* --------------------------------------------------------------------------
+   number-settle — 450ms · in-out-soft · reveal on scroll em métricas mono
+   Fade + leve translateY. NÃO usar counters longos — precisão > espetáculo.
+   -------------------------------------------------------------------------- */
+@keyframes number-settle{
+  from{ opacity:0; transform:translateY(8px); }
+  to  { opacity:1; transform:translateY(0); }
+}
+.number-settle{ opacity:0; transform:translateY(8px); }
+.number-settle.is-visible{ animation:number-settle var(--dur-slow) var(--ease-in-out-soft) forwards; }
+
+/* --------------------------------------------------------------------------
+   underline-grow — 200ms · ease-out · hover em links de navegação
+   Sublinhado cresce da esquerda (scaleX).
+   -------------------------------------------------------------------------- */
+.underline-grow{ position:relative; text-decoration:none; }
+.underline-grow::after{
+  content:''; position:absolute; left:0; bottom:0;
+  width:100%; height:2px; background:var(--secondary);
+  transform:scaleX(0); transform-origin:left;
+  transition:transform var(--dur-fast) var(--ease-out);
+}
+.underline-grow:hover::after,
+.underline-grow:focus-visible::after{ transform:scaleX(1); }
+
+/* --------------------------------------------------------------------------
+   prefers-reduced-motion — desliga reveal e transições de transform.
+   Conteúdo aparece imediatamente.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  .fade-in-up,.number-settle{ opacity:1 !important; transform:none !important; animation:none !important; }
+}

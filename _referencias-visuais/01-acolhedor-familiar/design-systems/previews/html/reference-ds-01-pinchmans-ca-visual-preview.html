@@ -1,0 +1,2123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pinchmans.ca - Design System Visual Preview</title>
+  <style>
+    @font-face {
+      font-family: Gilroy;
+      src: url("../../preview-assets/pinchmans.ca/assets/4feabe8db7d618b7_Gilroy-Regular.woff") format("woff");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: Gilroy;
+      src: url("../../preview-assets/pinchmans.ca/assets/97ff627efe96ef59_Gilroy-Bold.woff") format("woff");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: Gilroy;
+      src: url("../../preview-assets/pinchmans.ca/assets/b8c34b169f567a62_Gilroy-Black.woff") format("woff");
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: LoraLocal;
+      src: url("../../preview-assets/pinchmans.ca/assets/6b102ab35aa1f2b3_0QIvMX1D_JOuMwr7I_FMl_E.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --cacao: #352824;
+      --ink: #2C211E;
+      --espresso: #231F1F;
+      --roast: #2D211E;
+      --cream: #FFF8EB;
+      --paper: #FFF7EA;
+      --blush: #FFD0D0;
+      --white: #FFFFFF;
+      --ease: cubic-bezier(.77, 0, .175, 1);
+      --fly: cubic-bezier(.645, .045, .355, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 62.5%;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: LoraLocal, Georgia, serif;
+      font-size: 1.6rem;
+      line-height: 1.65;
+      letter-spacing: .04rem;
+      overflow-x: hidden;
+    }
+
+    body.is-locked {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    svg {
+      display: block;
+    }
+
+    .ds-pinch-ticker {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      background: var(--ink);
+      color: var(--cream);
+      font-family: Gilroy, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: .1rem;
+      text-transform: uppercase;
+    }
+
+    .ds-pinch-ticker__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      height: 3.8rem;
+      padding: 0 2.4rem;
+    }
+
+    .ticker-item,
+    .ds-pinch-order-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      white-space: nowrap;
+    }
+
+    .ticker-item svg,
+    .proof-icon svg,
+    .icon-token svg {
+      width: 1.4rem;
+      height: 1.4rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .ds-pinch-order-chip {
+      position: relative;
+      align-self: stretch;
+      padding: 0 1.1rem;
+      background: var(--cream);
+      color: var(--cacao);
+    }
+
+    .ds-pinch-order-chip::after,
+    .ds-pinch-link-arrow::after,
+    .menu-overlay a::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: .45rem;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transform: translateX(-50%);
+      transition: width .25s ease;
+    }
+
+    .ds-pinch-order-chip:hover::after,
+    .ds-pinch-link-arrow:hover::after,
+    .menu-overlay a:hover::after {
+      width: 82%;
+    }
+
+    .ds-pinch-hero-poster {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      background: var(--cacao);
+      color: var(--cream);
+      isolation: isolate;
+      padding-top: 3.8rem;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background:
+        linear-gradient(90deg, rgba(44, 33, 30, .96), rgba(53, 40, 36, .68), rgba(35, 31, 31, .92)),
+        url("../../preview-assets/pinchmans.ca/assets/da5b87c4445f96bc_header.jpg") center / cover no-repeat;
+      transform: scale(1.04);
+      animation: warmZoom 12s ease-in-out infinite alternate;
+    }
+
+    .hero-nav {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 3rem clamp(2rem, 5vw, 7rem);
+      font-family: Gilroy, sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: .14rem;
+      text-transform: uppercase;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 5rem;
+      height: 5rem;
+      border: 2px solid currentColor;
+      animation: pulseBorder 4s infinite;
+    }
+
+    .brand-mark img {
+      width: 3.1rem;
+      height: 3.1rem;
+      filter: brightness(0) invert(1);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .nav-links a,
+    .menu-toggle,
+    .menu-close {
+      position: relative;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .menu-toggle {
+      display: grid;
+      gap: .7rem;
+      width: 4.4rem;
+      padding: .5rem 0;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: currentColor;
+      transform-origin: center;
+      transition: transform .3s var(--ease);
+    }
+
+    .menu-toggle:hover span:nth-child(1) {
+      transform: translateX(-.4rem);
+    }
+
+    .menu-toggle:hover span:nth-child(3) {
+      transform: translateX(.4rem);
+    }
+
+    .hero-main {
+      position: relative;
+      z-index: 4;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(28rem, 42rem);
+      align-items: center;
+      gap: clamp(2rem, 4vw, 5rem);
+      width: min(118rem, calc(100% - 4rem));
+      min-height: calc(100vh - 13.8rem);
+      margin: 0 auto;
+      padding: 2rem 0 7rem;
+    }
+
+    .hero-content {
+      position: relative;
+      min-width: 0;
+    }
+
+    .line-h,
+    .line-v {
+      position: absolute;
+      background: var(--cream);
+      transform-origin: left;
+      animation: drawScale .95s var(--ease) both;
+      pointer-events: none;
+    }
+
+    .line-h {
+      top: 7.2rem;
+      left: -12vw;
+      width: 50vw;
+      height: 5px;
+    }
+
+    .line-v {
+      top: 15rem;
+      right: 12%;
+      width: 5px;
+      height: min(42rem, 44vh);
+      animation-delay: .25s;
+    }
+
+    .hero-kicker {
+      margin: 0 0 1.5rem;
+      font-family: Gilroy, sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: .16rem;
+      text-transform: uppercase;
+      animation: fadeLeft .75s var(--ease) both .2s;
+    }
+
+    .hero-title {
+      max-width: 9.2ch;
+      margin: 0;
+      font-family: Gilroy, sans-serif;
+      font-size: clamp(5rem, 8.2vw, 10.8rem);
+      font-weight: 900;
+      letter-spacing: .06rem;
+      line-height: .92;
+      text-transform: uppercase;
+      text-shadow: 0 1rem 3rem rgba(0, 0, 0, .22);
+      animation: fadeUp .85s var(--ease) both .35s;
+    }
+
+    .hero-copy {
+      max-width: 39rem;
+      margin: 2.5rem 0 0;
+      color: rgba(255, 248, 235, .95);
+      font-size: clamp(1.7rem, 1.5vw, 2.15rem);
+      line-height: 1.75;
+      letter-spacing: .06rem;
+      animation: fadeUp .85s var(--ease) both .75s;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      margin-top: 2.8rem;
+      font-family: Gilroy, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      letter-spacing: .1rem;
+      text-transform: uppercase;
+      animation: fadeUp .85s var(--ease) both .95s;
+    }
+
+    .ds-pinch-link-arrow,
+    .chip {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-height: 3.3rem;
+    }
+
+    .chip {
+      border: 1px solid currentColor;
+      padding: .55rem .8rem;
+      background: rgba(255, 248, 235, .08);
+    }
+
+    .system-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      max-width: 52rem;
+      margin-top: 2.4rem;
+      font-family: Gilroy, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .12rem;
+      text-transform: uppercase;
+      animation: fadeUp .85s var(--ease) both 1.15s;
+    }
+
+    .system-tags span {
+      border: 1px solid rgba(255, 248, 235, .7);
+      padding: .55rem .7rem;
+      background: rgba(44, 33, 30, .38);
+    }
+
+    .hero-side {
+      position: relative;
+      display: grid;
+      align-items: center;
+      gap: 1.8rem;
+      min-width: 0;
+      animation: fadeRight .85s var(--ease) both .8s;
+    }
+
+    .photo-card {
+      position: relative;
+      min-height: min(52rem, 56vh);
+      border: 1.2rem solid var(--cream);
+      background: url("../../preview-assets/pinchmans.ca/assets/3e27b81382cbf8be_bread.jpg") center / cover no-repeat;
+      box-shadow: -2rem 2rem 0 rgba(255, 248, 235, .16);
+    }
+
+    .photo-card::before {
+      content: "fresh / local / slow";
+      position: absolute;
+      top: -4.2rem;
+      right: -1.2rem;
+      background: var(--cream);
+      color: var(--ink);
+      padding: .9rem 1.2rem;
+      font-family: Gilroy, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      letter-spacing: .14rem;
+      text-transform: uppercase;
+    }
+
+    .contract-panel {
+      border: 2px solid var(--cream);
+      background: rgba(44, 33, 30, .66);
+      padding: 1.6rem;
+      font-family: Gilroy, sans-serif;
+      letter-spacing: .1rem;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+
+    .contract-panel h3 {
+      margin: 0 0 1.2rem;
+      font-size: 1.15rem;
+    }
+
+    .contract-panel p {
+      margin: .45rem 0;
+      color: rgba(255, 248, 235, .88);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .proof-rail {
+      position: absolute;
+      left: clamp(2rem, 4vw, 5rem);
+      bottom: 3rem;
+      z-index: 8;
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap;
+      max-width: 34rem;
+    }
+
+    .proof-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      min-height: 3.7rem;
+      border: 1px solid rgba(255, 248, 235, .48);
+      padding: .8rem 1rem;
+      background: rgba(44, 33, 30, .5);
+      font-family: Gilroy, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .1rem;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+
+    .menu-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: grid;
+      grid-template-columns: minmax(2rem, 1fr) minmax(0, 72rem) minmax(2rem, 1fr);
+      align-items: center;
+      background: var(--ink);
+      color: var(--cream);
+      transform: translateX(100%);
+      transition: transform .3s var(--fly);
+      pointer-events: none;
+    }
+
+    .menu-overlay.is-active {
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+
+    .menu-overlay__inner {
+      grid-column: 2;
+      padding: 8rem 0;
+    }
+
+    .menu-close {
+      position: absolute;
+      top: 3rem;
+      right: clamp(2rem, 5vw, 7rem);
+      width: 5rem;
+      height: 5rem;
+      border: 2px solid currentColor;
+      font-size: 0;
+    }
+
+    .menu-close::before,
+    .menu-close::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 2.8rem;
+      height: 3px;
+      background: currentColor;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .menu-close::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .menu-overlay h2 {
+      margin: 0 0 3rem;
+      font-family: Gilroy, sans-serif;
+      font-size: clamp(4.4rem, 8vw, 9rem);
+      font-weight: 900;
+      line-height: .92;
+      letter-spacing: .08rem;
+      text-transform: uppercase;
+    }
+
+    .menu-overlay nav {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid currentColor;
+    }
+
+    .menu-overlay a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      border-bottom: 1px solid currentColor;
+      padding: 1.6rem 0;
+      font-family: LoraLocal, Georgia, serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      letter-spacing: .04rem;
+    }
+
+    .menu-overlay a span {
+      font-family: Gilroy, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      letter-spacing: .16rem;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 10rem clamp(2rem, 5vw, 7rem);
+    }
+
+    [id] {
+      scroll-margin-top: 5.2rem;
+    }
+
+    .section.dark {
+      background: var(--cacao);
+      color: var(--cream);
+    }
+
+    .section.paper {
+      background: var(--paper);
+    }
+
+    .section.white {
+      background: var(--white);
+    }
+
+    .section-head {
+      max-width: 92rem;
+      margin: 0 auto 5rem;
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-family: Gilroy, sans-serif;
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: .2rem;
+      text-transform: uppercase;
+    }
+
+    .section h2 {
+      margin: .8rem 0 1.4rem;
+      font-family: Gilroy, sans-serif;
+      font-size: clamp(3rem, 5vw, 6.2rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: .1rem;
+      text-transform: uppercase;
+    }
+
+    .section p {
+      max-width: 70ch;
+    }
+
+    .palette-grid,
+    .component-grid,
+    .motion-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    .swatch {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 20rem;
+      border: 2px solid currentColor;
+      padding: 1.6rem;
+    }
+
+    .swatch strong,
+    .swatch small,
+    .component-card h3,
+    .motion-card h3,
+    .icon-token,
+    .spec-row {
+      font-family: Gilroy, sans-serif;
+      letter-spacing: .12rem;
+      text-transform: uppercase;
+    }
+
+    .type-lab {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .type-poster {
+      position: relative;
+      min-height: 45rem;
+      overflow: hidden;
+      background: var(--ink);
+      color: var(--cream);
+      padding: 4rem;
+    }
+
+    .type-poster::after {
+      content: "";
+      position: absolute;
+      right: -6rem;
+      bottom: -6rem;
+      width: 18rem;
+      height: 18rem;
+      border: 5px solid var(--cream);
+      animation: slowTurn 14s linear infinite;
+    }
+
+    .type-poster h3 {
+      margin: 0;
+      font-family: Gilroy, sans-serif;
+      font-size: clamp(4rem, 7vw, 9rem);
+      line-height: .9;
+      letter-spacing: .12rem;
+      text-transform: uppercase;
+    }
+
+    .type-spec {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .spec-row {
+      display: grid;
+      grid-template-columns: 9rem 1fr;
+      gap: 1rem;
+      border-top: 1px solid currentColor;
+      padding: 1rem 0;
+      font-size: 1.1rem;
+    }
+
+    .component-card,
+    .motion-card {
+      position: relative;
+      min-height: 24rem;
+      overflow: hidden;
+      border: 2px solid currentColor;
+      padding: 2rem;
+    }
+
+    .component-card::before {
+      content: "";
+      position: absolute;
+      inset: 1rem;
+      border: 1px solid currentColor;
+      opacity: .25;
+      pointer-events: none;
+    }
+
+    .component-card h3,
+    .motion-card h3 {
+      margin: 0 0 1rem;
+      font-size: 1.8rem;
+    }
+
+    .component-card p,
+    .motion-card p {
+      font-size: 1.35rem;
+    }
+
+    .component-lab {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.4rem;
+    }
+
+    .lab-panel {
+      min-width: 0;
+      border: 2px solid var(--ink);
+      background: var(--paper);
+      padding: 2rem;
+    }
+
+    .lab-panel.dark {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .lab-panel.wide {
+      grid-column: 1 / -1;
+    }
+
+    .lab-title {
+      margin: 0 0 1.6rem;
+      font-family: Gilroy, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: .16rem;
+      text-transform: uppercase;
+    }
+
+    .demo-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .ds-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 4.2rem;
+      border: 2px solid currentColor;
+      border-radius: 0;
+      padding: 0 1.4rem;
+      background: transparent;
+      color: inherit;
+      font-family: Gilroy, sans-serif;
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: .12rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform .25s var(--ease), background .25s ease, color .25s ease;
+    }
+
+    .ds-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .ds-btn.primary {
+      background: var(--ink);
+      color: var(--cream);
+      border-color: var(--ink);
+    }
+
+    .dark .ds-btn.primary {
+      background: var(--cream);
+      color: var(--ink);
+      border-color: var(--cream);
+    }
+
+    .ds-btn.text {
+      min-height: auto;
+      border: 0;
+      padding: .4rem 0;
+    }
+
+    .ds-btn[disabled] {
+      opacity: .45;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 3rem;
+      border: 1px solid currentColor;
+      padding: .4rem .75rem;
+      font-family: Gilroy, sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: .12rem;
+      text-transform: uppercase;
+    }
+
+    .badge.filled {
+      background: var(--cream);
+      color: var(--ink);
+      border-color: var(--cream);
+    }
+
+    .tooltip-wrap {
+      position: relative;
+      display: inline-flex;
+    }
+
+    .tooltip-wrap::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + .8rem);
+      width: max-content;
+      max-width: 22rem;
+      border: 1px solid var(--cream);
+      background: var(--ink);
+      color: var(--cream);
+      padding: .75rem .9rem;
+      font-family: Gilroy, sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: .1rem;
+      text-transform: uppercase;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, .4rem);
+      transition: opacity .18s ease, transform .18s ease;
+    }
+
+    .tooltip-wrap:hover::after,
+    .tooltip-wrap:focus-within::after {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    .mini-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border: 2px solid currentColor;
+      padding: 1rem;
+      font-family: Gilroy, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: .12rem;
+      text-transform: uppercase;
+    }
+
+    .mini-nav div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    .mini-form {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(10rem, auto);
+      gap: 1.4rem;
+      align-items: stretch;
+      margin-top: 1.8rem;
+    }
+
+    .mini-form input {
+      display: block;
+      min-width: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 0;
+      padding: 1.4rem 1rem;
+      font: 400 1.4rem LoraLocal, Georgia, serif;
+    }
+
+    .mini-form .field-frame {
+      position: relative;
+      min-width: 0;
+    }
+
+    .mini-form .field-frame::before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      width: calc(100% - 1px);
+      height: calc(100% - 1px);
+      border: 2px solid currentColor;
+      pointer-events: none;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      background: rgba(35, 31, 31, .72);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+
+    .modal-backdrop.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      width: min(52rem, 100%);
+      border: 2px solid var(--ink);
+      background: var(--paper);
+      color: var(--ink);
+      padding: 2.4rem;
+      box-shadow: -1rem 1rem 0 rgba(255, 248, 235, .18);
+      transform: translateY(2rem);
+      transition: transform .25s var(--ease);
+    }
+
+    .modal-backdrop.is-active .modal-card {
+      transform: translateY(0);
+    }
+
+    .modal-card h3 {
+      margin: 0 0 1rem;
+      font-family: Gilroy, sans-serif;
+      font-size: 2.6rem;
+      font-weight: 900;
+      letter-spacing: .12rem;
+      text-transform: uppercase;
+    }
+
+    .effects-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .effect-panel {
+      position: relative;
+      min-height: 28rem;
+      overflow: hidden;
+      border: 2px solid currentColor;
+      padding: 2rem;
+    }
+
+    .effect-panel.wide {
+      grid-column: 1 / -1;
+    }
+
+    .effect-panel h3 {
+      position: relative;
+      z-index: 2;
+      margin: 0 0 1rem;
+      font-family: Gilroy, sans-serif;
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: .14rem;
+      text-transform: uppercase;
+    }
+
+    .effect-panel p,
+    .effect-panel code {
+      position: relative;
+      z-index: 2;
+    }
+
+    .gradient-oven {
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 78% 18%, rgba(255, 248, 235, .13), rgba(255, 248, 235, 0) 32%),
+        linear-gradient(90deg, rgba(44, 33, 30, .96), rgba(53, 40, 36, .68), rgba(35, 31, 31, .92)),
+        url("../../preview-assets/pinchmans.ca/assets/27f5def1ded62581_coffee.jpg") center / cover;
+    }
+
+    .gradient-paper {
+      background: linear-gradient(180deg, #FFF8EB 0%, #FFFFFF 66%, #FFF7EA 100%);
+      color: var(--ink);
+    }
+
+    .opacity-stack {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .opacity-chip {
+      min-height: 8rem;
+      display: grid;
+      place-items: end start;
+      padding: 1rem;
+      background: var(--cacao);
+      color: var(--cream);
+      font-family: Gilroy, sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: .1rem;
+      text-transform: uppercase;
+    }
+
+    .opacity-chip:nth-child(1) {
+      opacity: .72;
+    }
+
+    .opacity-chip:nth-child(2) {
+      opacity: .55;
+    }
+
+    .opacity-chip:nth-child(3) {
+      opacity: .28;
+      color: var(--ink);
+    }
+
+    .hover-demo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .hover-tile {
+      position: relative;
+      min-height: 18rem;
+      overflow: hidden;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .hover-tile::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(44, 33, 30, 0), rgba(44, 33, 30, .62));
+      opacity: .28;
+      transition: opacity .35s var(--ease);
+    }
+
+    .hover-tile::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      padding: .8rem;
+      background: rgba(53, 40, 36, .76);
+      color: var(--cream);
+      transform: translateY(130%);
+      transition: transform .35s var(--ease);
+    }
+
+    .hover-tile:hover::before {
+      opacity: .82;
+    }
+
+    .hover-tile:hover::after {
+      transform: translateY(0);
+    }
+
+    .motion-stage {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .motion-sample {
+      min-height: 16rem;
+      border: 2px solid currentColor;
+      padding: 1.2rem;
+      font-family: Gilroy, sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: .12rem;
+      text-transform: uppercase;
+    }
+
+    .motion-sample.fade-up {
+      animation: fadeUp 1.1s var(--ease) both infinite alternate;
+    }
+
+    .motion-sample.fade-left {
+      animation: fadeLeft 1.1s var(--ease) both infinite alternate;
+    }
+
+    .motion-sample.exit-down {
+      animation: modalPulse 1.4s var(--ease) infinite alternate;
+    }
+
+    .motion-sample.caption-exit {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .motion-sample.caption-exit::after {
+      content: "caption-slide";
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      padding: .7rem;
+      background: var(--ink);
+      color: var(--cream);
+      animation: captionSlide 1.3s var(--ease) infinite alternate;
+    }
+
+    .icon-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .icon-token {
+      display: grid;
+      place-items: center;
+      width: 8.4rem;
+      height: 8.4rem;
+      border: 2px solid currentColor;
+      font-size: .85rem;
+      text-align: center;
+    }
+
+    .icon-token svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-bottom: .4rem;
+    }
+
+    .specialty-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+      background: var(--cacao);
+      padding: 3rem;
+    }
+
+    .specialty {
+      position: relative;
+      min-height: 24rem;
+      overflow: hidden;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .specialty::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      padding: .8rem 1rem;
+      background: rgba(44, 33, 30, .76);
+      color: var(--cream);
+      letter-spacing: .1rem;
+      transform: translateY(130%);
+      transition: transform .35s var(--ease);
+    }
+
+    .specialty:hover::after {
+      transform: translateY(0);
+    }
+
+    .story-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 64rem;
+    }
+
+    .story-text {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--cacao);
+      color: var(--cream);
+      padding: 8rem;
+    }
+
+    .story-text::before,
+    .story-text::after {
+      content: "";
+      position: absolute;
+      background: var(--cream);
+      animation: drawScale 1s var(--ease) both;
+    }
+
+    .story-text::before {
+      top: 4rem;
+      left: 4rem;
+      width: 5px;
+      height: 16rem;
+    }
+
+    .story-text::after {
+      right: -8rem;
+      bottom: 8rem;
+      width: 22rem;
+      height: 5px;
+    }
+
+    .story-text h2 {
+      margin: 0 0 3rem;
+      font-family: Gilroy, sans-serif;
+      font-size: clamp(3.8rem, 5vw, 7rem);
+      line-height: .95;
+      text-transform: uppercase;
+    }
+
+    .story-img {
+      min-height: 64rem;
+      background: url("../../preview-assets/pinchmans.ca/assets/af1d4dbed9ed6c45_ourstory.jpg") center / cover no-repeat;
+      animation: floatImage 9s var(--ease) infinite alternate;
+    }
+
+    .form-demo {
+      width: min(112rem, 100%);
+      margin: 0 auto;
+      background: var(--paper);
+      padding: 6rem 5rem;
+    }
+
+    .form-demo h2 {
+      text-align: center;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-wrap::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: calc(100% - 2px);
+      height: calc(100% - 1px);
+      border: 2px solid var(--roast);
+      pointer-events: none;
+    }
+
+    .input-wrap.full {
+      grid-column: 1 / -1;
+    }
+
+    .input-wrap input,
+    .input-wrap textarea,
+    .input-wrap select {
+      width: 100%;
+      border: 0;
+      border-radius: 0;
+      background: var(--white);
+      padding: 2.1rem 1.5rem;
+      font: 400 1.5rem LoraLocal, Georgia, serif;
+      letter-spacing: .08rem;
+    }
+
+    .input-wrap textarea {
+      min-height: 16rem;
+    }
+
+    .submit-demo {
+      grid-column: 1 / -1;
+      justify-self: center;
+      margin-top: 3rem;
+      border: 0;
+      background: var(--ink);
+      color: var(--cream);
+      padding: 1.2rem 6rem;
+      font: 700 1.3rem Gilroy, sans-serif;
+      letter-spacing: .12rem;
+      text-transform: uppercase;
+      transition: background .3s ease;
+    }
+
+    .submit-demo:hover {
+      background: #3f302b;
+    }
+
+    .motion-line {
+      height: 5px;
+      background: currentColor;
+      animation: drawScale 1.5s var(--ease) infinite alternate;
+    }
+
+    .motion-demo {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 14rem;
+      margin: 1.6rem 0;
+      overflow: hidden;
+      border: 1px solid rgba(255, 248, 235, .42);
+      background: rgba(255, 248, 235, .04);
+    }
+
+    .motion-demo::before {
+      content: "";
+      position: absolute;
+      inset: 1rem;
+      border: 1px solid rgba(255, 248, 235, .18);
+      pointer-events: none;
+    }
+
+    .demo-line {
+      width: 72%;
+      height: 5px;
+      background: var(--cream);
+      transform-origin: left;
+      animation: drawScale 1.1s var(--ease) infinite alternate;
+    }
+
+    .demo-block {
+      width: 11rem;
+      height: 7rem;
+      border: 2px solid var(--cream);
+      background: rgba(255, 248, 235, .12);
+      color: var(--cream);
+      display: grid;
+      place-items: center;
+      font-family: Gilroy, sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: .12rem;
+      text-transform: uppercase;
+    }
+
+    .demo-block.fade-up-live {
+      animation: fadeUp 1.15s var(--ease) infinite alternate;
+    }
+
+    .flyout-demo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 68%;
+      padding: 1.6rem;
+      background: var(--cream);
+      color: var(--ink);
+      transform: translateX(100%);
+      animation: flyoutLoop 2.4s var(--fly) infinite;
+      font-family: Gilroy, sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: .12rem;
+      text-transform: uppercase;
+    }
+
+    .parallax-demo {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(44, 33, 30, .96), rgba(53, 40, 36, .42)),
+        url("../../preview-assets/pinchmans.ca/assets/27f5def1ded62581_coffee.jpg") center / cover;
+      transform: translateY(var(--parallax-shift, 0px)) scale(1.08);
+      transition: transform .12s linear;
+    }
+
+    .parallax-label {
+      position: relative;
+      z-index: 2;
+      border: 2px solid var(--cream);
+      padding: .8rem 1rem;
+      background: rgba(44, 33, 30, .64);
+      font-family: Gilroy, sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: .12rem;
+      text-transform: uppercase;
+    }
+
+    .replay-motion {
+      margin: 0 auto 3rem;
+    }
+
+    .motion-replay .demo-line,
+    .motion-replay .demo-block,
+    .motion-replay .flyout-demo,
+    .motion-replay .motion-line,
+    .motion-replay .motion-sample {
+      animation: none !important;
+    }
+
+    .motion-replay.motion-playing .demo-line {
+      animation: drawScale 1.1s var(--ease) infinite alternate !important;
+    }
+
+    .motion-replay.motion-playing .demo-block.fade-up-live {
+      animation: fadeUp 1.15s var(--ease) infinite alternate !important;
+    }
+
+    .motion-replay.motion-playing .flyout-demo {
+      animation: flyoutLoop 2.4s var(--fly) infinite !important;
+    }
+
+    .footer-proof {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 5rem;
+      font-family: Gilroy, sans-serif;
+      letter-spacing: .15rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .footer-proof img {
+      display: block;
+      width: 12rem;
+      margin: 0 auto 2rem;
+      filter: brightness(0) invert(1);
+    }
+
+    @keyframes drawScale {
+      from {
+        transform: scaleX(0);
+        opacity: 0;
+      }
+      to {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 4rem, 0);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @keyframes fadeLeft {
+      from {
+        opacity: 0;
+        transform: translate3d(-4rem, 0, 0);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @keyframes fadeRight {
+      from {
+        opacity: 0;
+        transform: translate3d(4rem, 0, 0);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @keyframes warmZoom {
+      from {
+        transform: scale(1.02);
+        filter: brightness(.82) saturate(.98);
+      }
+      to {
+        transform: scale(1.08);
+        filter: brightness(.94) saturate(1.08);
+      }
+    }
+
+    @keyframes floatImage {
+      from {
+        transform: translate3d(0, -1.2rem, 0) scale(1.01);
+      }
+      to {
+        transform: translate3d(0, 1.2rem, 0) scale(1.04);
+      }
+    }
+
+    @keyframes pulseBorder {
+      0%,
+      100% {
+        box-shadow: 0 0 0 rgba(255, 248, 235, 0);
+      }
+      50% {
+        box-shadow: 0 0 0 1rem rgba(255, 248, 235, .08);
+      }
+    }
+
+    @keyframes slowTurn {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes modalPulse {
+      from {
+        opacity: .45;
+        transform: translateY(2rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes captionSlide {
+      from {
+        transform: translateY(130%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes flyoutLoop {
+      0%,
+      18% {
+        transform: translateX(100%);
+      }
+      42%,
+      72% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .ds-pinch-ticker__inner {
+        gap: 1rem;
+        padding: 0 1rem;
+        font-size: .95rem;
+        overflow: hidden;
+      }
+
+      .ticker-item:nth-of-type(n+2) {
+        display: none;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-main {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        min-height: calc(100vh - 13.8rem);
+        padding-bottom: 14rem;
+      }
+
+      .hero-side {
+        display: none;
+      }
+
+      .hero-title {
+        max-width: 8.5ch;
+        font-size: clamp(4.4rem, 15vw, 7rem);
+      }
+
+      .line-h {
+        top: 6.4rem;
+        left: -35vw;
+        width: 70vw;
+      }
+
+      .line-v {
+        display: none;
+      }
+
+      .proof-rail {
+        right: 2rem;
+        bottom: 3rem;
+        max-width: none;
+      }
+
+      .palette-grid,
+      .component-grid,
+      .motion-grid,
+      .component-lab,
+      .effects-grid,
+      .type-lab,
+      .story-split,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hover-demo-grid,
+      .motion-stage,
+      .opacity-stack {
+        grid-template-columns: 1fr;
+      }
+
+      .lab-panel.wide {
+        grid-column: auto;
+      }
+
+      .effect-panel.wide {
+        grid-column: auto;
+      }
+
+      .mini-form {
+        grid-template-columns: 1fr;
+      }
+
+      .specialty-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .story-text {
+        padding: 5rem 2rem;
+      }
+
+      .story-text::after {
+        right: 2rem;
+        width: 12rem;
+      }
+
+      .form-demo {
+        padding: 4rem 2rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .brand-lockup span:last-child {
+        font-size: 1.05rem;
+      }
+
+      .ds-pinch-order-chip {
+        padding: 0 .9rem;
+      }
+
+      .hero-nav {
+        padding: 2.4rem 2rem;
+      }
+
+      .hero-actions,
+      .system-tags {
+        gap: .8rem;
+      }
+
+      .hero-copy {
+        max-width: 29rem;
+      }
+
+      .proof-icon {
+        min-height: 3.2rem;
+        padding: .7rem .85rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* final DS audit: complete menu anchors, overflow protection, and anchor aliases */
+    .anchor-alias { position: relative; display: block; height: 0; overflow: hidden; scroll-margin-top: 8rem; }
+    .menu-overlay { overflow: auto; }
+    .menu-overlay nav.ds-full-index { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 2rem; }
+    .menu-overlay nav.ds-full-index a { min-width: 0; font-size: clamp(1.35rem, 2.25vw, 2.55rem); line-height: 1.08; overflow-wrap: anywhere; }
+    .menu-overlay nav.ds-full-index a span { display: block; margin-top: .35rem; font-size: .85rem; line-height: 1.25; opacity: .72; }
+    .component-contract-pinch { margin: 0 0 2rem; border: 2px solid currentColor; padding: 2rem; background: var(--paper); color: var(--ink); }
+    .handoff-note-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 2rem; width: min(112rem, 100%); margin: 0 auto 2.4rem; }
+    .handoff-note-grid article { border: 2px solid var(--ink); padding: 2rem; background: var(--white); }
+    @media (max-width: 860px) { .menu-overlay nav.ds-full-index, .handoff-note-grid { grid-template-columns: 1fr; } .menu-overlay nav.ds-full-index a { font-size: clamp(1.25rem, 6vw, 2.35rem); } }
+  </style>
+</head>
+<body>
+  <div class="ds-pinch-ticker">
+    <div class="ds-pinch-ticker__inner">
+      <span class="ticker-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 2.8l2.3 4.9-1.7 1.4c1.2 2.4 3.1 4.3 5.6 5.7l1.5-1.8 4.9 2.3-.8 4.2c-.2 1-1.1 1.7-2.1 1.6C8.8 20.5 3.5 15.2 2.9 7.7c-.1-1 .6-1.9 1.6-2.1l4.1-.8z"/></svg>
+        705-470-PNCH
+      </span>
+      <span class="ticker-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.5 7-13a7 7 0 1 0-14 0c0 6.5 7 13 7 13z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        2037 Long Lake Road
+      </span>
+      <span class="ticker-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3.5 2"/></svg>
+        Hours of operation
+      </span>
+      <a class="ds-pinch-order-chip" href="#order">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+        Order Online
+      </a>
+    </div>
+  </div>
+
+  <header class="ds-pinch-hero-poster" id="top">
+    <span id="hero" class="anchor-alias" aria-hidden="true"></span>
+    <div class="hero-media"></div>
+    <nav id="menu-top" class="hero-nav" aria-label="Preview principal">
+      <a class="brand-lockup" href="#top">
+        <span class="brand-mark"><img src="../../preview-assets/pinchmans.ca/assets/afae56ae26a5cbdf_cross.svg" alt=""></span>
+        <span>Pinchmans DS</span>
+      </a>
+      <div class="nav-links">
+        <a href="#tokens">Tokens</a>
+        <a href="#type">Tipo</a>
+        <a href="#effects">Efeitos</a>
+        <a href="#components">Componentes</a>
+        <a href="#motion">Motion</a>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="menu-overlay" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <main id="main" class="hero-main">
+      <div class="hero-content" aria-label="Hero do Design System">
+        <span class="line-h"></span>
+        <span class="line-v"></span>
+        <p class="hero-kicker">01-acolhedor-familiar / reference DS</p>
+        <h1 class="hero-title">Forno editorial, feito a mao</h1>
+        <p class="hero-copy">Um sistema visual de padaria artesanal com fundo cacao, texto farinha, linhas desenhadas, fotos reais e movimento em camadas.</p>
+        <div class="hero-actions">
+          <a class="ds-pinch-link-arrow" href="#components">&gt; Ver componentes</a>
+          <a class="chip" href="#top">Full viewport hero</a>
+          <a class="chip" href="#motion">Parallax layers</a>
+        </div>
+        <div class="system-tags" aria-label="Classes do contrato">
+          <span>ds-pinch-hero-poster</span>
+          <span>ds-pinch-ticker</span>
+          <span>ds-pinch-drawn-rule</span>
+          <span>ds-pinch-flyout-menu</span>
+        </div>
+      </div>
+
+      <aside class="hero-side" aria-label="Demonstração lateral">
+        <div class="contract-panel">
+          <h3>Implementation Contract</h3>
+          <p>prefix: ds-pinch-</p>
+          <p>motion: draw-line / fade-up / flyout-x</p>
+          <p>grid: skeleton translated</p>
+          <p>radius: 0px</p>
+          <p>contrast: cream on cacao</p>
+        </div>
+        <div class="photo-card" role="img" aria-label="Paes artesanais como plano de produto"></div>
+      </aside>
+    </main>
+
+    <div class="proof-rail" aria-label="Ícones de prova do sistema">
+      <a class="proof-icon" href="#order">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3.5 2"/></svg>
+        Horarios
+      </a>
+      <a class="proof-icon" href="#story">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.5 7-13a7 7 0 1 0-14 0c0 6.5 7 13 7 13z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        Local
+      </a>
+      <a class="proof-icon" href="#components">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v10H4z"/><path d="M12 10v10M4 14h16M7.5 6.5C7.5 5.1 9.3 4.4 10.4 5.4L12 7l1.6-1.6c1.1-1 2.9-.3 2.9 1.1 0 1.5-1.8 2.5-4.5 2.5S7.5 8 7.5 6.5z"/></svg>
+        Gift
+      </a>
+      <a class="proof-icon" href="#tokens">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h11v5a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5V8z"/><path d="M16 10h2.2a2.2 2.2 0 0 1 0 4.4H16"/><path d="M8 3v2M12 3v2M16 3v2"/></svg>
+        Cafe
+      </a>
+    </div>
+  </header>
+
+  <aside class="menu-overlay" id="menu-overlay" aria-hidden="true">
+    <button class="menu-close" type="button" aria-label="Fechar menu">Fechar</button>
+    <div class="menu-overlay__inner">
+      <p class="eyebrow">Menu overlay funcional</p>
+      <h2>Specialties</h2>
+      <nav class="ds-full-index" aria-label="Menu completo do preview"><a href="#menu-top">Ticker + nav <span>01 / Menu / top</span></a><a href="#top">Topo poster <span>02 / Top</span></a><a href="#hero">Hero forno editorial <span>03 / Sessao Hero</span></a><a href="#color-tokens">Cacao / farinha <span>04 / Tokens de cor</span></a><a href="#gradients">Oven shadow <span>05 / Gradientes / opacidade</span></a><a href="#type-system">Gilroy + Lora <span>06 / Type system</span></a><a href="#type-detail">Escala de padaria <span>07 / Tipografia detalhada</span></a><a href="#effects">Hover de produto <span>08 / Efeitos e mouse overs</span></a><a href="#components">Componentes de balcao <span>09 / Componentes</span></a><a href="#contract">Estados globais Pinchmans <span>10 / Contrato sem repeticao</span></a><a href="#menu-board">Menu board escuro <span>11 / Menu board component</span></a><a href="#reference-slip">Slip de pedido artesanal <span>12 / Reference slip</span></a><a href="#cards-sections">Cards de especialidades <span>13 / Cards e secoes</span></a><a href="#story">Historia parallax <span>14 / Story split parallax</span></a><a href="#icons">Icones de loja <span>15 / Icones</span></a><a href="#handoff">Handoff bakery <span>16 / Handoff de referencia</span></a><a href="#motion">Motion draw-line <span>17 / Motion contract</span></a><a href="#replay-motion">Replay draw-line <span>18 / Replay motion</span></a></nav>
+    </div>
+  </aside>
+
+  <section class="section paper" id="tokens">
+    <span id="color-tokens" class="anchor-alias" aria-hidden="true"></span>
+    <div class="section-head">
+      <p class="eyebrow">tokens de cor</p>
+      <h2>Escuro quente + papel de padaria</h2>
+      <p>A paleta vem dos fundos e estados reais do CSS. O azul detectado no Skeleton foi isolado como ruido tecnico.</p>
+    </div>
+    <div class="palette-grid">
+      <div class="swatch" style="background:#352824;color:#FFF8EB"><strong>Cacao Ground</strong><small>#352824<br>main dark</small></div>
+      <div class="swatch" style="background:#2C211E;color:#FFF8EB"><strong>Espresso Ink</strong><small>#2C211E<br>ticker / flyout</small></div>
+      <div class="swatch" style="background:#231F1F;color:#FFF8EB"><strong>Charcoal Ink</strong><small>#231F1F<br>lines / text</small></div>
+      <div class="swatch" style="background:#FFF8EB;color:#2C211E"><strong>Warm Flour</strong><small>#FFF8EB<br>text / panels</small></div>
+    </div>
+  </section>
+
+  <section class="section dark" id="type">
+    <div class="type-lab">
+      <div id="type-system" class="type-poster">
+        <p class="eyebrow">type system</p>
+        <h3>Gilroy alto, Lora lento</h3>
+        <p>Headlines em caixa alta carregam a energia de cartaz. Lora segura a parte humana, menu e historia.</p>
+      </div>
+      <div id="type-detail" class="type-spec">
+        <div class="spec-row"><span>H1</span><strong>Gilroy 900 / uppercase / clamp ate 9.8rem</strong></div>
+        <div class="spec-row"><span>H2</span><strong>Gilroy 900 / seco / editorial</strong></div>
+        <div class="spec-row"><span>Body</span><strong>Lora 400 / 1.75 / tracking .088rem</strong></div>
+        <div class="spec-row"><span>Label</span><strong>Gilroy 700 / uppercase / ticker</strong></div>
+        <div class="spec-row"><span>Mono</span><strong>JetBrains Mono fallback / docs tecnicos</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section paper" id="effects">
+    <span id="gradients" class="anchor-alias" aria-hidden="true"></span>
+    <div class="section-head">
+      <p class="eyebrow">efeitos e estados</p>
+      <h2>Gradientes, opacidades, hovers e entradas</h2>
+      <p>Esta camada define como o DS respira: overlays discretos, estados de mouse claros, revelacoes de entrada e saidas direcionais.</p>
+    </div>
+    <div class="effects-grid">
+      <article class="effect-panel gradient-oven">
+        <h3>Oven shadow overlay</h3>
+        <p>Gradiente escuro sobre fotografia para manter texto creme legivel sem perder profundidade.</p>
+        <code>rgba(.96) -> rgba(.68) -> rgba(.92)</code>
+      </article>
+      <article class="effect-panel gradient-paper">
+        <h3>Paper wash</h3>
+        <p>Transicao creme, branco e papel quente para formularios, documentacao e sessoes de respiro.</p>
+        <div class="opacity-stack">
+          <span class="opacity-chip">.72 strong</span>
+          <span class="opacity-chip">.55 standard</span>
+          <span class="opacity-chip">.28 soft</span>
+        </div>
+      </article>
+      <article class="effect-panel wide">
+        <h3>Mouse overs em produto</h3>
+        <p>O hover aprofunda a imagem, revela caption por baixo e preserva cantos retos. Passe o mouse nos tiles.</p>
+        <div class="hover-demo-grid">
+          <div class="hover-tile" data-label="caption-slide-in" style="background-image:url('../../preview-assets/pinchmans.ca/assets/b0f546d22b051989_croissants.jpg')"></div>
+          <div class="hover-tile" data-label="overlay-deepens" style="background-image:url('../../preview-assets/pinchmans.ca/assets/a8cc9b13c20288c1_tarts.jpg')"></div>
+          <div class="hover-tile" data-label="product-hover" style="background-image:url('../../preview-assets/pinchmans.ca/assets/c994f40d18f88d8c_cookies.jpg')"></div>
+        </div>
+      </article>
+      <article class="effect-panel wide">
+        <h3>Entradas e saidas</h3>
+        <p>As entradas revelam craft; as saidas sao mais decisivas: menu sai no eixo X, modal desce em fade, captions recolhem.</p>
+        <div class="motion-stage">
+          <div class="motion-sample fade-up">fade-up-in</div>
+          <div class="motion-sample fade-left">fade-left-in</div>
+          <div class="motion-sample exit-down">modal-fade</div>
+          <div class="motion-sample caption-exit">caption-exit</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section white" id="components">
+    <div class="section-head">
+      <p class="eyebrow">componentes</p>
+      <h2>Do site para o sistema</h2>
+    </div>
+    <div id="contract" class="component-contract-pinch"><p class="eyebrow">contrato sem repeticao</p><p>Estados globais ficam aqui: foco visivel creme/cacao, hover underline, menu flyout-x, modal com Esc, inputs de borda deslocada, reduced-motion e contraste AA. Os cards abaixo so mostram usos especificos da referencia Pinchmans.</p></div>
+    <div class="component-grid">
+      <article class="component-card">
+        <h3>Ticker</h3>
+        <p>Contato, endereco, horario e pedido online com chip invertido.</p>
+        <a class="ds-pinch-link-arrow" href="#top">&gt; hover underline</a>
+      </article>
+      <article class="component-card">
+        <h3>Flyout Menu</h3>
+        <p>Overlay full-screen lateral com variante escura e clara, scroll lock e foco preso.</p>
+      </article>
+      <article class="component-card">
+        <h3>Offset Form</h3>
+        <p>Inputs quadrados com moldura deslocada, estado blush e submit escuro.</p>
+      </article>
+      <article class="component-card">
+        <h3>Callout Frame</h3>
+        <p>Papel quente com borda deslocada e declaracao editorial central.</p>
+      </article>
+    </div>
+    <div class="component-lab" aria-label="Bancada funcional de componentes">
+      <div class="lab-panel">
+        <h3 class="lab-title">Buttons / estados</h3>
+        <div class="demo-row">
+          <button class="ds-btn primary" type="button">Primary</button>
+          <button class="ds-btn" type="button">Outline</button>
+          <button class="ds-btn text" type="button">&gt; Text link</button>
+          <button class="ds-btn" type="button" disabled>Disabled</button>
+        </div>
+      </div>
+      <div class="lab-panel dark">
+        <h3 class="lab-title">Badges / tooltip</h3>
+        <div class="demo-row">
+          <span class="badge filled">Fresh batch</span>
+          <span class="badge">Catering</span>
+          <span class="tooltip-wrap" data-tooltip="Tooltip quadrado, alto contraste">
+            <button class="ds-btn primary" type="button">Hover tooltip</button>
+          </span>
+        </div>
+      </div>
+      <div class="lab-panel wide">
+        <h3 class="lab-title">Navbar compacta + input offset</h3>
+        <div id="menu-board" class="mini-nav">
+          <strong>Menu board</strong>
+          <div>
+            <a href="#tokens">Tokens</a>
+            <a href="#type">Tipo</a>
+            <a href="#motion">Motion</a>
+          </div>
+        </div>
+        <form class="mini-form" action="#order">
+          <div class="field-frame"><input type="text" placeholder="Nome"></div>
+          <div class="field-frame"><input type="email" placeholder="Email"></div>
+          <button class="ds-btn primary" type="submit">Enviar</button>
+        </form>
+      </div>
+      <div id="reference-slip" class="lab-panel">
+        <h3 class="lab-title">Reference slip</h3>
+        <p>Slip de referencia para pedidos, horarios e catering: etiqueta clara, contato visivel, nota curta e estado de foco. Serve como artefato de handoff, nao como formulario final do cliente.</p>
+        <div class="demo-row"><span class="badge filled">pickup 09:30</span><span class="badge">catering</span><span class="badge">fresh batch</span></div>
+      </div>
+      <div class="lab-panel">
+        <h3 class="lab-title">Modal</h3>
+        <p>Modal com overlay cacao, painel papel, borda reta e fechamento por botao ou Esc.</p>
+        <button class="ds-btn primary modal-open" type="button">Abrir modal</button>
+      </div>
+      <div class="lab-panel">
+        <h3 class="lab-title">Card editorial</h3>
+        <p>Card nao arredondado, com frame interno leve e texto Lora. Uso indicado para item repetido, nao para embrulhar sessoes inteiras.</p>
+        <span class="badge">component-card</span>
+      </div>
+    </div>
+    <div id="icons" class="icon-row">
+      <div class="icon-token"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 2.8l2.3 4.9-1.7 1.4c1.2 2.4 3.1 4.3 5.6 5.7l1.5-1.8 4.9 2.3-.8 4.2c-.2 1-1.1 1.7-2.1 1.6C8.8 20.5 3.5 15.2 2.9 7.7c-.1-1 .6-1.9 1.6-2.1l4.1-.8z"/></svg><span>Phone</span></div>
+      <div class="icon-token"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.5 7-13a7 7 0 1 0-14 0c0 6.5 7 13 7 13z"/><circle cx="12" cy="9" r="2.4"/></svg><span>Map</span></div>
+      <div class="icon-token"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3.5 2"/></svg><span>Clock</span></div>
+      <div class="icon-token"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span>Order</span></div>
+    </div>
+  </section>
+
+  <section id="cards-sections" class="section dark">
+    <div class="section-head">
+      <p class="eyebrow">cards e secoes / specialty grid</p>
+      <h2>Produto real como textura do sistema</h2>
+    </div>
+    <div class="specialty-grid">
+      <div class="specialty" data-label="Bread" style="background-image:url('../../preview-assets/pinchmans.ca/assets/3e27b81382cbf8be_bread.jpg')"></div>
+      <div class="specialty" data-label="Croissants" style="background-image:url('../../preview-assets/pinchmans.ca/assets/b0f546d22b051989_croissants.jpg')"></div>
+      <div class="specialty" data-label="Tarts" style="background-image:url('../../preview-assets/pinchmans.ca/assets/a8cc9b13c20288c1_tarts.jpg')"></div>
+      <div class="specialty" data-label="Coffee" style="background-image:url('../../preview-assets/pinchmans.ca/assets/27f5def1ded62581_coffee.jpg')"></div>
+      <div class="specialty" data-label="Pies" style="background-image:url('../../preview-assets/pinchmans.ca/assets/f7c80da77fd0b1b4_pies.jpg')"></div>
+      <div class="specialty" data-label="Cookies" style="background-image:url('../../preview-assets/pinchmans.ca/assets/c994f40d18f88d8c_cookies.jpg')"></div>
+    </div>
+  </section>
+
+  <section class="story-split" id="story">
+    <div class="story-text">
+      <p class="eyebrow">story split parallax</p>
+      <h2>Historia em metade escura, metade imagem</h2>
+      <p>A referencia usa painel escuro com texto Lora e imagem em parallax. O DS conserva esse contraste: humano no texto, sensorial na foto, craft nas linhas.</p>
+    </div>
+    <div class="story-img"></div>
+  </section>
+
+  <section class="section paper" id="order">
+    <div id="handoff" class="handoff-note-grid">
+      <article><p class="eyebrow">handoff de referencia</p><h2>O que levar do Pinchmans</h2><p>Levar calor de forno, fotografia de produto, ticker operacional, menu lateral escuro, lettering Gilroy e corpo Lora. Nao copiar o formulario como tela final; ele documenta comportamento de input.</p></article>
+      <article><p class="eyebrow">riscos e mitigacoes</p><p>Fotos claras exigem overlay cacao; uppercase longo precisa quebrar linha; menu completo precisa scroll interno; botoes nao podem sobrepor inputs em mobile.</p></article>
+    </div>
+    <div class="form-demo">
+      <p class="eyebrow" style="text-align:center">order form</p>
+      <h2>Inputs com moldura deslocada</h2>
+      <div class="form-grid">
+        <div class="input-wrap"><input placeholder="Full Name*"></div>
+        <div class="input-wrap"><input placeholder="Phone Number*"></div>
+        <div class="input-wrap"><input placeholder="Email Address"></div>
+        <div class="input-wrap"><select><option>I'm interested in...</option></select></div>
+        <div class="input-wrap full"><textarea placeholder="Your Message..."></textarea></div>
+        <button class="submit-demo" type="button">Submit</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="motion">
+    <div class="section-head">
+      <p class="eyebrow">motion</p>
+      <h2>Entrada, saida e profundidade</h2>
+    </div>
+    <button id="replay-motion" class="ds-btn primary replay-motion" type="button">Replay motion</button>
+    <div class="motion-grid motion-replay motion-playing">
+      <article class="motion-card">
+        <h3>draw-line</h3>
+        <div class="motion-demo">
+          <span class="demo-line"></span>
+        </div>
+        <p>Stroke-dashoffset 400 para linhas que aparecem desenhadas.</p>
+      </article>
+      <article class="motion-card">
+        <h3>fade-in-up</h3>
+        <div class="motion-demo">
+          <span class="demo-block fade-up-live">entry</span>
+        </div>
+        <p>Entrada com opacidade e translateY. Usada em cards, produtos e blocos editoriais.</p>
+      </article>
+      <article class="motion-card">
+        <h3>flyout-x</h3>
+        <div class="motion-demo">
+          <span class="flyout-demo">menu entra / menu sai</span>
+        </div>
+        <p>Overlay lateral entra e sai no eixo X com easing cubic-bezier(.645,.045,.355,1).</p>
+      </article>
+      <article class="motion-card">
+        <h3>parallax</h3>
+        <div class="motion-demo">
+          <span class="parallax-demo"></span>
+          <span class="parallax-label">scroll layer</span>
+        </div>
+        <p>Camada visual responde ao scroll com deslocamento controlado e fallback reduced-motion.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer class="footer-proof">
+    <img src="../../preview-assets/pinchmans.ca/assets/4683011c8fdb3475_logo.svg" alt="">
+    <p>Reference DS rebuilt from zero / aguardando aprovacao</p>
+  </footer>
+
+  <div class="modal-backdrop" id="component-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="component-modal-title">
+      <h3 id="component-modal-title">Modal DS</h3>
+      <p>Este modal demonstra a regra do sistema: fundo cacao translúcido, painel em papel quente, cantos retos, foco claro e fechamento por botão ou Esc.</p>
+      <div class="demo-row">
+        <button class="ds-btn primary modal-close" type="button">Fechar</button>
+        <a class="ds-btn" href="#components">Voltar aos componentes</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menuOverlay = document.querySelector("#menu-overlay");
+    const menuClose = document.querySelector(".menu-close");
+    const menuLinks = [...document.querySelectorAll(".menu-overlay a")];
+    const modal = document.querySelector("#component-modal");
+    const modalOpen = document.querySelector(".modal-open");
+    const modalClose = document.querySelector(".modal-close");
+    const replayMotion = document.querySelector(".replay-motion");
+    const motionReplay = document.querySelector(".motion-replay");
+    const parallaxDemo = document.querySelector(".parallax-demo");
+
+    function setMenu(open) {
+      menuOverlay.classList.toggle("is-active", open);
+      menuOverlay.setAttribute("aria-hidden", String(!open));
+      menuToggle.setAttribute("aria-expanded", String(open));
+      document.body.classList.toggle("is-locked", open);
+      if (open) menuClose.focus();
+      else menuToggle.focus();
+    }
+
+    function setModal(open) {
+      modal.classList.toggle("is-active", open);
+      modal.setAttribute("aria-hidden", String(!open));
+      document.body.classList.toggle("is-locked", open);
+      if (open) modalClose.focus();
+      else modalOpen.focus();
+    }
+
+    menuToggle.addEventListener("click", () => setMenu(true));
+    menuClose.addEventListener("click", () => setMenu(false));
+    menuLinks.forEach((link) => link.addEventListener("click", () => setMenu(false)));
+    modalOpen.addEventListener("click", () => setModal(true));
+    modalClose.addEventListener("click", () => setModal(false));
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) setModal(false);
+    });
+
+    replayMotion.addEventListener("click", () => {
+      motionReplay.classList.remove("motion-playing");
+      window.setTimeout(() => motionReplay.classList.add("motion-playing"), 80);
+    });
+
+    function updateParallaxDemo() {
+      if (!parallaxDemo) return;
+      const rect = parallaxDemo.closest(".motion-demo").getBoundingClientRect();
+      const viewportCenter = window.innerHeight / 2;
+      const elementCenter = rect.top + rect.height / 2;
+      const shift = Math.max(-28, Math.min(28, (viewportCenter - elementCenter) * 0.08));
+      parallaxDemo.style.setProperty("--parallax-shift", `${shift.toFixed(1)}px`);
+    }
+
+    updateParallaxDemo();
+    window.addEventListener("scroll", updateParallaxDemo, { passive: true });
+    window.addEventListener("resize", updateParallaxDemo);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menuOverlay.classList.contains("is-active")) {
+        setMenu(false);
+      }
+      if (event.key === "Escape" && modal.classList.contains("is-active")) {
+        setModal(false);
+      }
+    });
+  </script>
+</body>
+</html>

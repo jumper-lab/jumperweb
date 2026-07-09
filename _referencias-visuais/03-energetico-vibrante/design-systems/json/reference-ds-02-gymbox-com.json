@@ -1,0 +1,729 @@
+{
+  "id": "reference-ds-02-gymbox-com",
+  "clientSlug": "gymbox-com",
+  "clientName": "Gymbox",
+  "personalitySlug": "03-energetico-vibrante",
+  "regeneratedAt": "2026-06-05",
+  "referenceQualityBaseline": "reference-ds-01-pinchmans-ca-visual-preview.html + pasta 01 aprovada",
+  "source": {
+    "site": "gymbox.com",
+    "localPath": "_jumper-sites-system/_referencias-visuais/03-energetico-vibrante/design-systems/preview-assets/gymbox.com",
+    "sourceReferenceId": "gymbox.com",
+    "sourceReferenceNote": "Referencia visual ja convertida em DS-base; arquivo pesado original nao e necessario no fluxo oficial.",
+    "imagesUsed": [
+      "../../preview-assets/gymbox.com/assets/b6433b5b918b6fbd_gymbox-classes-holistic.jpg",
+      "../../preview-assets/gymbox.com/assets/72b7b1160db59ceb_header-image-soon.png",
+      "../../preview-assets/gymbox.com/assets/e95d75c7ba20f4eb_submenu-back.jpg",
+      "../../preview-assets/gymbox.com/assets/2f559d8b9c390845_gymbox-classes-rythm.jpg",
+      "../../preview-assets/gymbox.com/assets/7a17231914062502_home-classes-2.png",
+      "../../preview-assets/gymbox.com/assets/7d2f14923bc0b6a4_gymbox-classes-ride.jpg",
+      "../../preview-assets/gymbox.com/assets/7160203ae1e11f55_Gymbox_Best_Equipment_001.webp",
+      "../../preview-assets/gymbox.com/assets/0c1fd3ca3e04e790_Gymbox_Personal_Training_001.webp",
+      "../../preview-assets/gymbox.com/assets/3ff8b88199207909_Gymbox_Boxing_Ring_001.webp",
+      "../../preview-assets/gymbox.com/assets/3a0b61aac8f67fd7_Gymbox_10_Locations_001.webp"
+    ],
+    "extractedSignals": {
+      "sourceColors": [
+        {
+          "hex": "#90908E",
+          "count": 30,
+          "hsl": "hsl(60 1% 56%)"
+        },
+        {
+          "hex": "#FBF8F7",
+          "count": 17,
+          "hsl": "hsl(15 33% 98%)"
+        },
+        {
+          "hex": "#524B48",
+          "count": 16,
+          "hsl": "hsl(18 6% 30%)"
+        },
+        {
+          "hex": "#706F6F",
+          "count": 9,
+          "hsl": "hsl(0 0% 44%)"
+        },
+        {
+          "hex": "#EBE6E4",
+          "count": 9,
+          "hsl": "hsl(17 15% 91%)"
+        },
+        {
+          "hex": "#69727D",
+          "count": 8,
+          "hsl": "hsl(213 9% 45%)"
+        },
+        {
+          "hex": "#0C0D0E",
+          "count": 8,
+          "hsl": "hsl(210 8% 5%)"
+        },
+        {
+          "hex": "#D6D5D5",
+          "count": 8,
+          "hsl": "hsl(0 1% 84%)"
+        },
+        {
+          "hex": "#F2F2F2",
+          "count": 8,
+          "hsl": "hsl(0 0% 95%)"
+        },
+        {
+          "hex": "#1F2124",
+          "count": 7,
+          "hsl": "hsl(216 7% 13%)"
+        }
+      ],
+      "fonts": [
+        "1af5f38ce1d6c55b_gymbox-monument-medium.woff2",
+        "277da81d8c436961_gymbox-monument-black.woff2",
+        "41e4dc6629e21898_Montserrat-Bold.woff2",
+        "4b261649a19e75a4_gymbox-monument-bold.woff2",
+        "6438d7b8ea9c7c39_JTUSjIg1_i6t8kCHKm459WlhyyTh89.woff2",
+        "a96360dfbf53d838_gymbox-monument-regular.woff2",
+        "baf9da580a6a03e8_Montserrat-Regular.woff2"
+      ],
+      "title": "Gymbox | 10 London Gyms. 70+ Classes. Book Your Free Trial.",
+      "sourceText": [
+        [
+          "Gymbox | 10 London Gyms.",
+          "Book Your Free Trial.",
+          "Ours let us beef up personalised content as well as track our traffic.",
+          "If you keep using our site, we’ll take it that you’re cool with that.",
+          "This is beneficial for the website, in order to make valid reports on the use of their website.",
+          "_ga Used to send data to Google Analytics about the visitor's device and behavior.",
+          "Tracks the visitor across devices and marketing channels.",
+          "Tracks the visitor across devices and marketing channels.",
+          "Used for internal analytics by the website operator.",
+          "This is used to compile statistical reports and heatmaps for the website owner.",
+          "Used for internal analytics by the website operator.",
+          "This is used for internal analysis and website optimization.",
+          "Maximum Storage Duration : Session Type : HTML Local Storage gymbox.com 4 FPAU Assigns a specific ID to the visitor.",
+          "This allows the website to determine the number of specific user-visits for analysis and statistics.",
+          "Used for internal analytics by the website operator.",
+          "This is used for internal analysis and website optimization.",
+          "This is a tool used to combine or change content on the website.",
+          "This allows the website to find the best variation/edition of the site.",
+          "3 Learn more about this provider lastExternalReferrer Detects how the user reached the website by registering their last URL-address.",
+          "Maximum Storage Duration : Persistent Type : HTML Local Storage MUID Used widely by Microsoft as a unique user ID.",
+          "This pairing service is provided by third party advertisement hubs, which facilitates real-time bidding for advertisers.",
+          "This pairing service is provided by third party advertisement hubs, which facilitates real-time bidding for advertisers.",
+          "This pairing service is provided by third party advertisement hubs, which facilitates real-time bidding for advertisers.",
+          "This pairing service is provided by third party advertisement hubs, which facilitates real-time bidding for advertisers.",
+          "This pairing service is provided by third party advertisement hubs, which facilitates real-time bidding for advertisers.",
+          "This pairing service is provided by third party advertisement hubs, which facilitates real-time bidding for advertisers.",
+          "Please state your consent ID and date when you contact us regarding your consent.",
+          "Grab the deal About GymBox Inside London's most creative gym with 10 locations Gymbox is London’s (in)famous challenger of the fitness landscape.",
+          "Emerging from the remnants of an old West End car park, we built a distinct community that has revolutionised the industry.",
+          "Energetic, trendy and genuinely enjoyable, our clubs are designed to keep your spirits high.",
+          "With an unmistakable nightclub atmosphere, specialised studios and top-notch equipment, we make working out as fun as going out.",
+          "You want it, we’ve got it!",
+          "What is included in a Gymbox membership?",
+          "Inclusions vary depending on what each location offers.",
+          "Gymbox is London’s most creative gym chain, with 10 locations across the city.",
+          "Known for nightclub-inspired décor, resident DJs, boxing rings, aerial studios and 70+ classes, Gymbox makes working out feel like going out.",
+          "How many Gymbox locations are there?",
+          "How much does a Gymbox membership cost?",
+          "Gymbox membership starts from £82 per month on a 12-month contract.",
+          "Prices vary by location, with memberships available on 12-month, 3-month and rolling monthly contracts.",
+          "All memberships include 5 guest passes.",
+          "Does Gymbox offer a free trial?",
+          "Yes, Gymbox offers a free trial at all 10 London locations.",
+          "You can book directly at free-trial.gymbox.com.",
+          "Does Gymbox offer student membership?",
+          "Yes, Gymbox offers student membership with up to 30% off standard prices.",
+          "Full details are available at gymbox.com/students.",
+          "Does Gymbox offer corporate membership?",
+          "Yes, Gymbox offers corporate membership with 10% off standard prices.",
+          "Full details are available at gymbox.com/corporate-wellness.",
+          "What classes does Gymbox offer?",
+          "Gymbox offers 100+ classes per week across seven categories: aerial, fight, ride, strength, holistic, rhythm and sweat.",
+          "Classes include boxing, spin, BJJ, Hyrox, aerial hoop, pole, yoga, Reformer Pilates and commercial dance.",
+          "What makes Gymbox different from other London gyms?",
+          "No two locations are the same, and every club is designed to make working out genuinely enjoyable.",
+          "Does Gymbox have personal trainers?",
+          "Yes, personal training is available at all Gymbox locations.",
+          "You can find and book a personal trainer at gymbox.com/personal-training.",
+          "What recovery facilities does Gymbox have?",
+          "Can I join Gymbox online?",
+          "Yes, you can join Gymbox online at https://join-now.gymbox.com/ ."
+        ]
+      ],
+      "assetCounts": {
+        "images": 38,
+        "css": 27,
+        "fonts": 7
+      }
+    }
+  },
+  "designIntent": {
+    "tone": "fitness irreverente / neon / urbano",
+    "summary": "Referencia de marca energetica com caos controlado, tipografia pesada, cores acidas e grids de classes.",
+    "hero": "Classes, cultura e neon sem pedir desculpa.",
+    "nonGoal": "Nao e DS final do cliente; nao contem fluxo real de formulario."
+  },
+  "colors": {
+    "palette": [
+      {
+        "name": "Acid Yellow",
+        "hex": "#E7FF00",
+        "rgb": "rgb(231,255,0)",
+        "hsl": "hsl(66 100% 50%)",
+        "usage": "accent / focus"
+      },
+      {
+        "name": "Club Black",
+        "hex": "#060608",
+        "rgb": "rgb(6,6,8)",
+        "hsl": "hsl(240 14% 3%)",
+        "usage": "main bg"
+      },
+      {
+        "name": "Hot Magenta",
+        "hex": "#FF2EA6",
+        "rgb": "rgb(255,46,166)",
+        "hsl": "hsl(326 100% 59%)",
+        "usage": "hover / decorative"
+      },
+      {
+        "name": "Electric Cyan",
+        "hex": "#00D8FF",
+        "rgb": "rgb(0,216,255)",
+        "hsl": "hsl(189 100% 50%)",
+        "usage": "secondary accent"
+      },
+      {
+        "name": "Concrete Grey",
+        "hex": "#2F2F36",
+        "rgb": "rgb(47,47,54)",
+        "hsl": "hsl(240 7% 20%)",
+        "usage": "panel"
+      },
+      {
+        "name": "White Noise",
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255,255,255)",
+        "hsl": "hsl(0 0% 100%)",
+        "usage": "text"
+      },
+      {
+        "name": "Warning Orange",
+        "hex": "#FF7A00",
+        "rgb": "rgb(255,122,0)",
+        "hsl": "hsl(29 100% 50%)",
+        "usage": "active / promo"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Neon Clash",
+        "value": "linear-gradient(135deg, rgba(6,6,8,.96), rgba(255,46,166,.58), rgba(231,255,0,.36))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Club Fog",
+        "value": "linear-gradient(180deg, rgba(0,216,255,.22), rgba(6,6,8,.88))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Acid Pulse",
+        "value": "radial-gradient(circle at 16% 20%, rgba(231,255,0,.34), transparent 30%), radial-gradient(circle at 82% 70%, rgba(255,46,166,.3), transparent 38%)",
+        "participation": "background / overlay / hover / active states"
+      }
+    ],
+    "semantic": {
+      "primary": "Acid Yellow",
+      "text": "#060608",
+      "surface": "#FFFFFF",
+      "accent": "Electric Cyan",
+      "focus": "Warning Orange",
+      "contrastIntent": "AA minimum for body text; generated preview overrides --c2 as light surface and --c3 as dark text to avoid low-contrast sections."
+    },
+    "opacityPolicy": "Escala global para evitar repeticao: 100,86,64,40,18,8.",
+    "contextualUsageRules": {
+      "text": "Usar token semantico com contraste AA.",
+      "background": "Usar surface/background conforme personalidade do site.",
+      "border": "Usar neutral/accent em baixa opacidade.",
+      "hover": "Accent/focus ou overlay curto.",
+      "active": "Aumentar contraste ou reduzir elevacao 120-180ms.",
+      "disabled": "Opacidade global sem apagar legibilidade."
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "Monument, Impact, Arial Black, sans-serif",
+      "ui": "Montserrat, Inter, system-ui, sans-serif",
+      "mono": "ui-monospace, Menlo, monospace",
+      "loading": "local when available; fallback stack otherwise"
+    },
+    "scale": {
+      "h1": {
+        "size": "clamp(3rem,7vw,7.8rem)",
+        "weight": 760,
+        "lineHeight": 0.88,
+        "letterSpacing": 0
+      },
+      "h2": {
+        "size": "clamp(2.15rem,4.9vw,5.35rem)",
+        "weight": 720,
+        "lineHeight": 0.94,
+        "letterSpacing": 0
+      },
+      "h3": {
+        "size": "clamp(1.6rem,3vw,3rem)",
+        "weight": 680,
+        "lineHeight": 1.05,
+        "letterSpacing": 0
+      },
+      "bodyLg": {
+        "size": "1.22rem",
+        "weight": 420,
+        "lineHeight": 1.6,
+        "letterSpacing": 0
+      },
+      "body": {
+        "size": "1rem",
+        "weight": 420,
+        "lineHeight": 1.58,
+        "letterSpacing": 0
+      },
+      "bodySm": {
+        "size": ".9rem",
+        "weight": 420,
+        "lineHeight": 1.45,
+        "letterSpacing": 0
+      },
+      "caption": {
+        "size": ".76rem",
+        "weight": 820,
+        "lineHeight": 1.35,
+        "letterSpacing": ".12em",
+        "textTransform": "uppercase"
+      }
+    },
+    "siteSpecificRoles": [
+      {
+        "role": "club-title",
+        "family": "Display black",
+        "weight": "900",
+        "size": "clamp(4rem,10vw,10rem)",
+        "lineHeight": ".82",
+        "letterSpacing": "0",
+        "usage": "Headline neon."
+      },
+      {
+        "role": "chaos-label",
+        "family": "Mono/UI",
+        "weight": "900",
+        "size": ".7rem",
+        "lineHeight": "1.1",
+        "letterSpacing": ".16em",
+        "usage": "Classe, nivel, local."
+      },
+      {
+        "role": "body-urban",
+        "family": "UI",
+        "weight": "600",
+        "size": "1rem",
+        "lineHeight": "1.45",
+        "letterSpacing": "0",
+        "usage": "Texto direto e provocativo."
+      }
+    ]
+  },
+  "icons": {
+    "set": [
+      "zap",
+      "music",
+      "timer",
+      "map",
+      "star",
+      "arrow"
+    ],
+    "stroke": 1.8,
+    "color": "currentColor",
+    "hover": "focus/accent token",
+    "rule": "icone nao desloca layout no hover"
+  },
+  "components": {
+    "class-chaos-grid": {
+      "role": "class chaos grid",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "acid hover",
+      "visual": "Referencia Gymbox: fitness irreverente / neon / urbano",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "neon-timetable": {
+      "role": "neon timetable",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "glitch underline",
+      "visual": "Referencia Gymbox: fitness irreverente / neon / urbano",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "trainer-badge": {
+      "role": "trainer badge",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "card shove",
+      "visual": "Referencia Gymbox: fitness irreverente / neon / urbano",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "location-card": {
+      "role": "location card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "accordion snap",
+      "visual": "Referencia Gymbox: fitness irreverente / neon / urbano",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "challenge-modal": {
+      "role": "challenge modal",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "acid hover",
+      "visual": "Referencia Gymbox: fitness irreverente / neon / urbano",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "accordion": {
+      "role": "accordion",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "glitch underline",
+      "visual": "Referencia Gymbox: fitness irreverente / neon / urbano",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "price-chip": {
+      "role": "price chip",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "card shove",
+      "visual": "Referencia Gymbox: fitness irreverente / neon / urbano",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "club-night-banner": {
+      "role": "club night banner",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "accordion snap",
+      "visual": "Referencia Gymbox: fitness irreverente / neon / urbano",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    }
+  },
+  "motion": {
+    "entry": [
+      "fade-up",
+      "draw-line",
+      "stagger"
+    ],
+    "exit": [
+      "flyout-x",
+      "modal-fade-down",
+      "caption-exit"
+    ],
+    "background": [
+      "ambient drift",
+      "hero zoom"
+    ],
+    "parallax": "limited scroll response with reduced-motion fallback",
+    "siteSpecific": [
+      "acid hover",
+      "glitch underline",
+      "card shove",
+      "accordion snap"
+    ]
+  },
+  "accessibility": {
+    "contrast": "AA minimo; overlay obrigatorio sobre imagem",
+    "focus": "2px solid focus token",
+    "reducedMotion": true,
+    "skipLinks": true,
+    "modal": "Esc/overlay/botao fecham"
+  },
+  "risks": [
+    "Neon em excesso causa fadiga.",
+    "Texto magenta pequeno falha em preto.",
+    "Quebras de grid nao podem criar overflow."
+  ],
+  "heroSystem": {
+    "layout": "neon",
+    "rules": [
+      "Hero full viewport com tipografia gigante e visual de clube.",
+      "Menu pode ser brutalista/neon, com categorias grandes.",
+      "Cards de classe usam inclinacao e alto contraste.",
+      "Motion entra em cortes e shifts, sem sobrepor texto."
+    ],
+    "fullViewport": true
+  },
+  "menuSystem": {
+    "items": [
+      "Classes",
+      "Gyms",
+      "Personal Training",
+      "Recovery",
+      "Join"
+    ],
+    "note": "Menu club board: alto contraste, acido e direto.",
+    "behavior": "overlay flyout, Esc closes, link closes"
+  },
+  "effects": {
+    "signature": [
+      "acid hover",
+      "glitch underline",
+      "card shove",
+      "accordion snap"
+    ]
+  },
+  "referenceUsage": {
+    "type": "visual-reference-input",
+    "folder": "03-energetico-vibrante",
+    "crossesWith": "clientes/[slug]/data/design-system.json",
+    "purpose": "Insumo de cultura fitness urbana. O DS final herda atitude, mas ajusta intensidade conforme cliente.",
+    "nonGoals": [
+      "nao criar DS final do cliente",
+      "nao representar personalidade da pasta",
+      "nao usar padrao generico para todos os sites"
+    ],
+    "differentiationRules": [
+      "Hero full viewport com tipografia gigante e visual de clube.",
+      "Menu pode ser brutalista/neon, com categorias grandes.",
+      "Cards de classe usam inclinacao e alto contraste.",
+      "Motion entra em cortes e shifts, sem sobrepor texto."
+    ],
+    "siteSpecific": true,
+    "qualityRule": "Preview precisa demonstrar personalidade do site extraido, com menu completo, hero, tokens, gradientes, tipo, efeitos, componentes, cards/secoes, story parallax, icones, handoff e motion linkados.",
+    "notPersonalityWide": true
+  },
+  "outputs": {
+    "json": "design-systems/json/reference-ds-02-gymbox-com.json",
+    "markdown": "design-systems/previews/markdown/reference-ds-02-gymbox-com-preview.md",
+    "html": "design-systems/previews/html/reference-ds-02-gymbox-com-visual-preview.html"
+  },
+  "schemaVersion": "reference-ds-v2",
+  "globalTokens": {
+    "opacityScale": {
+      "solid": 1,
+      "strong": 0.86,
+      "medium": 0.64,
+      "soft": 0.4,
+      "wash": 0.18,
+      "hairline": 0.08
+    },
+    "radius": "0-10px conforme referencia; cards ate 8px salvo marcas arredondadas",
+    "spacing": "clamp responsive"
+  },
+  "componentsDefaults": {
+    "states": [
+      "default",
+      "hover",
+      "focus-visible",
+      "active",
+      "loading",
+      "disabled"
+    ],
+    "referenceOnly": true
+  },
+  "previewNavigation": [
+    {
+      "order": 1,
+      "id": "menu-top",
+      "label": "Menu / top",
+      "href": "#menu-top"
+    },
+    {
+      "order": 2,
+      "id": "top",
+      "label": "Top",
+      "href": "#top"
+    },
+    {
+      "order": 3,
+      "id": "hero",
+      "label": "Sessao Hero",
+      "href": "#hero"
+    },
+    {
+      "order": 4,
+      "id": "color-tokens",
+      "label": "tokens de cor",
+      "href": "#color-tokens"
+    },
+    {
+      "order": 5,
+      "id": "gradients",
+      "label": "gradientes / opacidade",
+      "href": "#gradients"
+    },
+    {
+      "order": 6,
+      "id": "type-system",
+      "label": "type system",
+      "href": "#type-system"
+    },
+    {
+      "order": 7,
+      "id": "type-detail",
+      "label": "tipografia detalhada",
+      "href": "#type-detail"
+    },
+    {
+      "order": 8,
+      "id": "effects",
+      "label": "efeitos e mouse overs",
+      "href": "#effects"
+    },
+    {
+      "order": 9,
+      "id": "components",
+      "label": "componentes",
+      "href": "#components"
+    },
+    {
+      "order": 10,
+      "id": "contract",
+      "label": "contrato sem repeticao",
+      "href": "#contract"
+    },
+    {
+      "order": 11,
+      "id": "menu-board",
+      "label": "menu board component",
+      "href": "#menu-board"
+    },
+    {
+      "order": 12,
+      "id": "reference-slip",
+      "label": "reference slip",
+      "href": "#reference-slip"
+    },
+    {
+      "order": 13,
+      "id": "cards-sections",
+      "label": "cards e secoes",
+      "href": "#cards-sections"
+    },
+    {
+      "order": 14,
+      "id": "story",
+      "label": "story split parallax",
+      "href": "#story"
+    },
+    {
+      "order": 15,
+      "id": "icons",
+      "label": "icones",
+      "href": "#icons"
+    },
+    {
+      "order": 16,
+      "id": "handoff",
+      "label": "handoff de referencia",
+      "href": "#handoff"
+    },
+    {
+      "order": 17,
+      "id": "motion",
+      "label": "motion contract",
+      "href": "#motion"
+    },
+    {
+      "order": 18,
+      "id": "replay-motion",
+      "label": "Replay motion",
+      "href": "#replay-motion"
+    }
+  ],
+  "requiredPreviewSections": [
+    "Menu / top",
+    "Sessao Hero",
+    "tokens de cor",
+    "gradientes / opacidade",
+    "type system",
+    "tipografia detalhada",
+    "efeitos e mouse overs",
+    "componentes",
+    "contrato sem repeticao",
+    "menu board component",
+    "reference slip",
+    "cards e secoes",
+    "story split parallax",
+    "icones",
+    "handoff de referencia",
+    "motion contract",
+    "Replay motion"
+  ],
+  "requiredPreviewContract": {
+    "allMenuLinksMustResolve": true,
+    "menuHasTopAndHeroAsSeparateAnchors": true,
+    "heroMustOccupyFullViewport": true,
+    "noRepeatedGenericSections": true,
+    "noClippedTextOrOverlaps": true,
+    "showGradientsOpacityHoverEntryExitParallaxIcons": true
+  }
+}

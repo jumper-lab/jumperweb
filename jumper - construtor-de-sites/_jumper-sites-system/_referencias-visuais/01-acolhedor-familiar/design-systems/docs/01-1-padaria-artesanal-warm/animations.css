@@ -1,0 +1,248 @@
+/* ============================================================
+   DS 01.1 — Padaria Artesanal Warm · animations.css
+   Princípio: movimento lento e caloroso (400–600ms).
+   Nada pisca, nada salta — tudo se acomoda como massa descansando.
+   Só transform/opacity (compositor) — zero layout thrash.
+   ============================================================ */
+
+:root {
+  --dur-fast: 250ms;
+  --dur-base: 400ms;
+  --dur-slow: 600ms;
+  --dur-story: 800ms;
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-gentle: cubic-bezier(0.45, 0, 0.25, 1);
+}
+
+/* ------------------------------------------------------------
+   1. FADE-IN-UP — entrada padrão de seções e cards
+   Uso: adicione .reveal no HTML; JS adiciona .is-visible
+   quando o elemento entra na viewport (threshold 0.15).
+   ------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--dur-slow) var(--ease-soft),
+    transform var(--dur-slow) var(--ease-soft);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ------------------------------------------------------------
+   2. FADE-IN puro — imagens e decorativos
+   ------------------------------------------------------------ */
+.fade-in {
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-standard);
+}
+.fade-in.is-visible {
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------
+   3. HERO STAGGER — eyebrow → h1 → parágrafo → CTA
+   Delay de 120ms entre itens. Máximo 4 itens.
+   Uso: .stagger no container; .is-visible via JS no load.
+   ------------------------------------------------------------ */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--dur-slow) var(--ease-soft),
+    transform var(--dur-slow) var(--ease-soft);
+}
+.stagger.is-visible > * {
+  opacity: 1;
+  transform: none;
+}
+.stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.stagger.is-visible > *:nth-child(2) { transition-delay: 120ms; }
+.stagger.is-visible > *:nth-child(3) { transition-delay: 240ms; }
+.stagger.is-visible > *:nth-child(4) { transition-delay: 360ms; }
+
+/* ------------------------------------------------------------
+   4. HOVER-LIFT — cards. Discreto: convite, não susto.
+   ------------------------------------------------------------ */
+.card {
+  transition:
+    transform var(--dur-base) var(--ease-standard),
+    box-shadow var(--dur-base) var(--ease-standard);
+}
+.card:hover,
+.card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(62, 42, 32, 0.09);
+}
+/* Touch: sem hover — feedback no toque */
+@media (hover: none) {
+  .card:active { transform: scale(0.98); }
+}
+
+/* ------------------------------------------------------------
+   5. BUTTON-WARM — botões: cor + glow terracota, sem scale
+   ------------------------------------------------------------ */
+.btn {
+  transition:
+    background var(--dur-base) var(--ease-standard),
+    box-shadow var(--dur-base) var(--ease-standard),
+    color var(--dur-base) var(--ease-standard);
+}
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: #9A4A2B;
+  box-shadow: 0 4px 14px rgba(184, 92, 56, 0.25);
+}
+
+/* ------------------------------------------------------------
+   6. IMAGE-SOFT-ZOOM — imagem dentro de card arredondado
+   Container precisa de overflow: hidden.
+   ------------------------------------------------------------ */
+.card-img { overflow: hidden; }
+.card-img img,
+.card-img > div {
+  transition: transform var(--dur-slow) var(--ease-gentle);
+}
+.card:hover .card-img img,
+.card:hover .card-img > div {
+  transform: scale(1.04);
+}
+
+/* ------------------------------------------------------------
+   7. UNDERLINE-GROW — links de navegação e ghost links
+   Sublinhado terracota cresce da esquerda.
+   ------------------------------------------------------------ */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #B85C38;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-soft);
+}
+.link-underline:hover::after,
+.link-underline:focus-visible::after,
+.link-underline[aria-current]::after {
+  transform: scaleX(1);
+}
+
+/* ------------------------------------------------------------
+   8. MENU MOBILE — painel fullscreen com fade suave
+   ------------------------------------------------------------ */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: #FDF8F3;
+  display: grid;
+  place-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--dur-base) var(--ease-standard),
+    visibility 0s linear var(--dur-base);
+}
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--dur-base) var(--ease-standard),
+    visibility 0s;
+}
+.mobile-menu a {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 26px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--dur-base) var(--ease-soft),
+    transform var(--dur-base) var(--ease-soft);
+}
+.mobile-menu.is-open a { opacity: 1; transform: none; }
+.mobile-menu.is-open a:nth-child(1) { transition-delay: 80ms; }
+.mobile-menu.is-open a:nth-child(2) { transition-delay: 160ms; }
+.mobile-menu.is-open a:nth-child(3) { transition-delay: 240ms; }
+.mobile-menu.is-open a:nth-child(4) { transition-delay: 320ms; }
+
+/* ------------------------------------------------------------
+   9. NAV SCROLLED — sombra sutil ao rolar (classe via JS)
+   ------------------------------------------------------------ */
+.nav {
+  transition: box-shadow var(--dur-base) var(--ease-standard);
+}
+.nav.is-scrolled {
+  box-shadow: 0 1px 2px rgba(62, 42, 32, 0.05);
+}
+
+/* ------------------------------------------------------------
+   10. Keyframes utilitários (uso pontual)
+   ------------------------------------------------------------ */
+@keyframes warm-fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes warm-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+/* Spinner do estado loading de botões */
+@keyframes warm-spin {
+  to { transform: rotate(360deg); }
+}
+.btn-loading::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: warm-spin 800ms linear infinite;
+}
+
+/* ------------------------------------------------------------
+   JS mínimo de referência (IntersectionObserver):
+
+   const io = new IntersectionObserver((entries) => {
+     entries.forEach((e) => {
+       if (e.isIntersecting) {
+         e.target.classList.add('is-visible');
+         io.unobserve(e.target);
+       }
+     });
+   }, { threshold: 0.15 });
+   document.querySelectorAll('.reveal, .fade-in, .stagger')
+     .forEach((el) => io.observe(el));
+   ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------
+   PREFERS-REDUCED-MOTION — obrigatório.
+   Estado final aplicado: nenhum conteúdo fica escondido.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal,
+  .fade-in,
+  .stagger > *,
+  .mobile-menu a {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

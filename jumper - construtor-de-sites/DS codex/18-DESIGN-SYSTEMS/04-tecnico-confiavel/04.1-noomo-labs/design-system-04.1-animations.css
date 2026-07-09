@@ -1,0 +1,119 @@
+:root{--primary:#060B12;--secondary:#4F7CFF;--surface:#EAF1FF;--surface-alt:#D9E7FF;--text:#1A2433;--muted:#526070;--border:#9AB8FF;--heading:"Space Grotesk";--body:"Inter";--mono:"JetBrains Mono";--radius:8px;}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-operational-console { animation: reveal-operational-console 620ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes reveal-operational-console { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+  .motion-signature { transition: transform 220ms ease, filter 220ms ease, background 220ms ease; }
+  .motion-signature:hover { transform: translateY(-3px); }
+  .nav-active-marker { transition: width 180ms ease; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+:focus-visible { outline: 2px solid var(--secondary); outline-offset: 3px; }
+
+
+/* Component motion map for Noomo Lab Console System */
+.console-command-bar-motion {
+  --component-index: 1;
+  transform-origin: center right;
+  transition: transform 180ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.console-command-bar-motion:hover {
+  transform: translateY(-2px);
+}
+.console-command-bar-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.metric-proof-card-motion {
+  --component-index: 2;
+  transform-origin: center left;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.metric-proof-card-motion:hover {
+  transform: translateY(-2px);
+}
+.metric-proof-card-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.stack-diagram-node-motion {
+  --component-index: 3;
+  transform-origin: center right;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.stack-diagram-node-motion:hover {
+  transform: translateY(-2px);
+}
+.stack-diagram-node-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.sprint-stepper-motion {
+  --component-index: 4;
+  transform-origin: center left;
+  transition: transform 180ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.sprint-stepper-motion:hover {
+  transform: translateY(-2px);
+}
+.sprint-stepper-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.case-terminal-panel-motion {
+  --component-index: 5;
+  transform-origin: center right;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.case-terminal-panel-motion:hover {
+  transform: translateY(-2px);
+}
+.case-terminal-panel-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.system-status-footer-motion {
+  --component-index: 6;
+  transform-origin: center left;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.system-status-footer-motion:hover {
+  transform: translateY(-2px);
+}
+.system-status-footer-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .section-capability-console-enter { animation: section-capability-console-enter 360ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-capability-console-enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+  .section-prototype-lab-cards-enter { animation: section-prototype-lab-cards-enter 380ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-prototype-lab-cards-enter { from { opacity: 0; transform: translateY(19px); } to { opacity: 1; transform: none; } }
+
+  .section-technical-proof-matrix-enter { animation: section-technical-proof-matrix-enter 400ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-technical-proof-matrix-enter { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+  .section-stack-diagram-enter { animation: section-stack-diagram-enter 420ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-stack-diagram-enter { from { opacity: 0; transform: translateY(21px); } to { opacity: 1; transform: none; } }
+
+  .section-process-sprints-enter { animation: section-process-sprints-enter 440ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-process-sprints-enter { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+
+  .section-case-study-terminal-enter { animation: section-case-study-terminal-enter 460ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-case-study-terminal-enter { from { opacity: 0; transform: translateY(23px); } to { opacity: 1; transform: none; } }
+
+  .section-contact-command-enter { animation: section-contact-command-enter 480ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-contact-command-enter { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+  .section-footer-as-system-status-enter { animation: section-footer-as-system-status-enter 500ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-footer-as-system-status-enter { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: none; } }
+
+}

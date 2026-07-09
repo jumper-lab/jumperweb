@@ -1,0 +1,255 @@
+/* ============================================================
+   DS 01.3 — Floricultura Delicada · animations.css
+   Motion muito sutil: parallax delicado (700–900ms), reveals lentos.
+   Regras de ouro:
+   - Só transform e opacity (compositor-friendly, CLS 0)
+   - Nada de bounce, rotação ou elastic — a delicadeza é o limite
+   - prefers-reduced-motion respeitado em 100% dos casos
+   ============================================================ */
+
+:root {
+  /* Durações */
+  --motion-instant: 150ms;
+  --motion-fast:    300ms;
+  --motion-base:    500ms;
+  --motion-slow:    700ms;
+  --motion-slower:  900ms;
+
+  /* Easings */
+  --ease-petal:  cubic-bezier(0.22, 1, 0.36, 1);   /* saída suave, como pétala assentando */
+  --ease-breeze: cubic-bezier(0.33, 0, 0.15, 1);   /* brisa: começa firme, termina leve  */
+  --ease-gentle: cubic-bezier(0.4, 0, 0.6, 1);     /* quase linear, para loops           */
+}
+
+/* ------------------------------------------------------------
+   1. BLOOM-REVEAL — reveal-assinatura (900ms)
+   Fade + subida 24px + scale 0.985→1. Lento como flor abrindo.
+   Aplicar .reveal no elemento; JS adiciona .in ao entrar 20% na viewport.
+   ------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+}
+.reveal.in {
+  animation: bloom-reveal var(--motion-slower) var(--ease-petal) forwards;
+}
+@keyframes bloom-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ------------------------------------------------------------
+   2. GALLERY-STAGGER — cascata lenta na galeria (120ms entre itens)
+   Aplicar .stagger no container (ul.gallery); JS adiciona .in.
+   ------------------------------------------------------------ */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+}
+.stagger.in > * {
+  animation: bloom-reveal var(--motion-slower) var(--ease-petal) forwards;
+}
+.stagger.in > *:nth-child(2) { animation-delay: 120ms; }
+.stagger.in > *:nth-child(3) { animation-delay: 240ms; }
+.stagger.in > *:nth-child(4) { animation-delay: 360ms; }
+.stagger.in > *:nth-child(5) { animation-delay: 480ms; }
+.stagger.in > *:nth-child(6) { animation-delay: 600ms; }
+.stagger.in > *:nth-child(7) { animation-delay: 720ms; }
+.stagger.in > *:nth-child(8) { animation-delay: 840ms; }
+
+/* ------------------------------------------------------------
+   3. PETAL-HOVER — cards de produto (700ms)
+   Card sobe 4px + sombra rosada; imagem escala 1.03 dentro de
+   máscara fixa (overflow hidden). Sem rotação, sem bounce.
+   ------------------------------------------------------------ */
+.card {
+  transition:
+    transform var(--motion-slow) var(--ease-petal),
+    box-shadow var(--motion-slow) var(--ease-petal);
+}
+.card:hover,
+.card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(156, 92, 92, 0.08);
+}
+.card .card-media { overflow: hidden; }
+.card .card-media img,
+.card .card-media .sim {
+  transition: transform var(--motion-slow) var(--ease-petal);
+}
+.card:hover .card-media img,
+.card:hover .card-media .sim,
+.card:focus-within .card-media img {
+  transform: scale(1.03);
+}
+
+/* ------------------------------------------------------------
+   4. STEM-UNDERLINE — links de navegação e ghost (500ms)
+   Sublinhado jade cresce da esquerda, como caule.
+   ------------------------------------------------------------ */
+.stem-link {
+  position: relative;
+  text-decoration: none;
+}
+.stem-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1.5px;
+  background: #4E7A5A;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--motion-base) var(--ease-breeze);
+}
+.stem-link:hover::after,
+.stem-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ------------------------------------------------------------
+   5. BUTTON-BLOOM — botões (300ms)
+   Escurece + eleva 2px. Sem mudança de tamanho.
+   ------------------------------------------------------------ */
+.btn {
+  transition:
+    background-color var(--motion-fast) var(--ease-breeze),
+    color            var(--motion-fast) var(--ease-breeze),
+    border-color     var(--motion-fast) var(--ease-breeze),
+    transform        var(--motion-fast) var(--ease-breeze),
+    box-shadow       var(--motion-fast) var(--ease-breeze);
+}
+.btn-primary:hover  { transform: translateY(-2px); }
+.btn-primary:active { transform: translateY(0); }
+
+/* ------------------------------------------------------------
+   6. PARALLAX-DELICADO — hero (scroll-driven, fator 0.12–0.2)
+   Deslocamento máximo ±40px. CSS prepara a camada; JS move.
+   ------------------------------------------------------------ */
+.parallax-layer {
+  will-change: transform;
+}
+
+/* JS de referência (rAF + passive listener):
+
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) return;
+  var layers = document.querySelectorAll('[data-parallax]');
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      var y = window.scrollY;
+      layers.forEach(function (l) {
+        var f = parseFloat(l.getAttribute('data-parallax')) || 0.12;
+        var d = Math.max(-40, Math.min(40, y * f * -0.25));
+        l.style.transform = 'translate3d(0,' + d + 'px,0)';
+      });
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+   JS de referência para os reveals (IntersectionObserver único):
+
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal, .stagger');
+  if (!('IntersectionObserver' in window) || reduced) {
+    els.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.2 });
+  els.forEach(function (el) { io.observe(el); });
+})();
+*/
+
+/* ------------------------------------------------------------
+   7. SWAY — balanço botânico decorativo (loop 6s, amplitude 1.4°)
+   Apenas em SVGs decorativos (aria-hidden). Nunca em conteúdo.
+   ------------------------------------------------------------ */
+.sway {
+  animation: sway 6s var(--ease-gentle) infinite;
+  transform-origin: bottom center;
+}
+@keyframes sway {
+  0%, 100% { transform: rotate(-1.4deg); }
+  50%      { transform: rotate(1.4deg); }
+}
+
+/* ------------------------------------------------------------
+   8. INPUT-FOCUS — anel rosa suave (300ms)
+   ------------------------------------------------------------ */
+.field input,
+.field textarea {
+  transition:
+    border-color var(--motion-fast) var(--ease-breeze),
+    box-shadow   var(--motion-fast) var(--ease-breeze);
+}
+.field input:focus,
+.field textarea:focus {
+  border-color: #9C5C5C;
+  box-shadow: 0 0 0 3px rgba(212, 165, 165, 0.35);
+}
+
+/* ------------------------------------------------------------
+   9. MENU MOBILE — painel deslizante (500ms breeze)
+   ------------------------------------------------------------ */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform var(--motion-base) var(--ease-breeze);
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+.mobile-menu-backdrop {
+  opacity: 0;
+  transition: opacity var(--motion-base) var(--ease-breeze);
+}
+.mobile-menu-backdrop.open {
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------
+   10. PREFERS-REDUCED-MOTION — obrigatório
+   Reveals viram fade curto, parallax e loops desligam,
+   hovers mantêm apenas mudança de cor.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 150ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 150ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal,
+  .stagger > * {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  .parallax-layer {
+    transform: none !important;
+    will-change: auto;
+  }
+  .sway {
+    animation: none;
+  }
+  .card:hover,
+  .btn-primary:hover {
+    transform: none;
+  }
+}

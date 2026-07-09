@@ -1,0 +1,613 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "01.1",
+  "design_system_name": "Padaria Artesanal Warm",
+  "category": "01 — Acolhedor e Familiar",
+  "subcategory": "Terracota artesanal com storytelling de origem familiar",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Pinchman's Café & Artisan Bakery",
+    "url": "https://pinchmans.ca",
+    "location": "Sudbury, Ontario, Canadá",
+    "designed_by": "Studio123 (studio123.ca)",
+    "awards": [
+      "Awwwards Nominee (2022)"
+    ],
+    "why_chosen": "O site do Pinchman's traduz artesania de padaria em linguagem digital: paleta terrosa quente, serif elegante, fotografia real de pessoas e produto, e um ritmo de página calmo que transmite confiança e craft. A Studio123 construiu a marca para comunicar 'confiança, artesania e personalidade' — exatamente a essência que este DS captura para negócios locais brasileiros que vivem de proximidade e calor humano.",
+    "essence_captured": "Terracota quente + serif warm + espaço generoso + storytelling familiar. Capturamos o mood e o ritmo, nunca o layout literal."
+  },
+  "colors": {
+    "primary": "#B85C38",
+    "primary_usage": "Cor de marca. Botões primários (com texto branco), destaques de headline, ícones de ênfase, faixas decorativas. Como TEXTO sobre surface, usar apenas em texto grande (>= 24px ou 18.5px bold); para links e texto normal usar primary_dark.",
+    "primary_dark": "#9A4A2B",
+    "primary_dark_usage": "Versão escurecida do terracota para links, texto de destaque em corpo e estados hover/active de botões. Passa AA (5.87:1) em texto normal sobre surface.",
+    "secondary": "#E8B696",
+    "secondary_usage": "Bege quente. Exclusivamente decorativo: fundos de seção, cards de destaque, tags, formas orgânicas SVG, bordas suaves. NUNCA como texto sobre surface (1.72:1).",
+    "surface": "#FDF8F3",
+    "surface_alt": "#F5E9DD",
+    "text_primary": "#3E2A20",
+    "text_secondary": "#6B4F41",
+    "text_muted": "#7A5F50",
+    "border": "#E3D3C3",
+    "error": "#A63D2B",
+    "success": "#4A7C59",
+    "warning": "#8F6420",
+    "neutral_scale": {
+      "50": "#FDF8F3",
+      "100": "#F5E9DD",
+      "200": "#EAD8C6",
+      "300": "#D9BFA9",
+      "400": "#BC9A81",
+      "500": "#9C7A63",
+      "600": "#7A5F50",
+      "700": "#5C463A",
+      "800": "#3E2A20",
+      "900": "#2A1B14"
+    },
+    "contrast_verification": {
+      "primary_on_surface": "4.30:1 — #B85C38 sobre #FDF8F3. PASSA apenas para texto grande (>= 3:1). Para texto normal usar primary_dark.",
+      "primary_dark_on_surface": "5.87:1 — #9A4A2B sobre #FDF8F3. PASSA AA para texto normal (>= 4.5:1).",
+      "white_on_primary": "4.54:1 — #FFFFFF sobre #B85C38. PASSA AA para texto normal. Botões primários aprovados.",
+      "text_primary_on_surface": "12.77:1 — #3E2A20 sobre #FDF8F3. PASSA AAA.",
+      "text_secondary_on_surface": "7.06:1 — #6B4F41 sobre #FDF8F3. PASSA AAA.",
+      "text_muted_on_surface": "5.56:1 — #7A5F50 sobre #FDF8F3. PASSA AA.",
+      "secondary_on_surface": "1.72:1 — #E8B696 sobre #FDF8F3. DECORATIVO APENAS, nunca texto.",
+      "text_primary_on_secondary": "7.42:1 — #3E2A20 sobre #E8B696. PASSA AAA (texto sobre bege aprovado).",
+      "success_on_surface": "4.61:1 — #4A7C59 sobre #FDF8F3. PASSA AA.",
+      "notes": "Ajuste documentado: o terracota do brief (#B85C38) fica em 4.30:1 sobre o creme #FDF8F3 e falharia AA em texto normal. Mantivemos #B85C38 como cor de marca (botões e texto grande) e criamos primary_dark #9A4A2B para links e texto corrido — mesma família de tom, essência preservada. text_muted foi calibrado em #7A5F50 para garantir 5.56:1."
+    }
+  },
+  "typography": {
+    "heading_font": "Lora",
+    "heading_font_source": "Google Fonts",
+    "heading_fallback": "'Lora', Georgia, 'Times New Roman', serif",
+    "body_font": "Inter",
+    "body_font_source": "Google Fonts",
+    "body_fallback": "'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+    "mono_font": "não aplicável — personalidade sem código/dados técnicos",
+    "base_size": "16px",
+    "heading_weights": {
+      "display": 600,
+      "default": 500,
+      "note": "Lora Medium/SemiBold; itálico da Lora liberado para destaques emocionais curtos ('feito com carinho')"
+    },
+    "body_weights": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600
+    },
+    "scales": {
+      "mobile": {
+        "h1": { "size": "34px", "line_height": "1.15", "weight": 600, "letter_spacing": "-0.01em", "font": "Lora" },
+        "h2": { "size": "26px", "line_height": "1.2", "weight": 600, "letter_spacing": "-0.005em", "font": "Lora" },
+        "h3": { "size": "20px", "line_height": "1.3", "weight": 500, "letter_spacing": "0", "font": "Lora" },
+        "body": { "size": "16px", "line_height": "1.65", "weight": 400, "letter_spacing": "0", "font": "Inter" },
+        "small": { "size": "14px", "line_height": "1.5", "weight": 400, "letter_spacing": "0.01em", "font": "Inter" }
+      },
+      "desktop": {
+        "h1": { "size": "56px", "line_height": "1.1", "weight": 600, "letter_spacing": "-0.015em", "font": "Lora" },
+        "h2": { "size": "38px", "line_height": "1.15", "weight": 600, "letter_spacing": "-0.01em", "font": "Lora" },
+        "h3": { "size": "26px", "line_height": "1.25", "weight": 500, "letter_spacing": "-0.005em", "font": "Lora" },
+        "body": { "size": "17px", "line_height": "1.7", "weight": 400, "letter_spacing": "0", "font": "Inter" },
+        "small": { "size": "14px", "line_height": "1.5", "weight": 400, "letter_spacing": "0.01em", "font": "Inter" }
+      }
+    },
+    "fluid_recommendation": "h1: clamp(2.125rem, 1.5rem + 2.5vw, 3.5rem); h2: clamp(1.625rem, 1.3rem + 1.4vw, 2.375rem); h3: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem)",
+    "eyebrow": {
+      "size": "13px",
+      "weight": 600,
+      "letter_spacing": "0.12em",
+      "transform": "uppercase",
+      "color": "primary_dark",
+      "usage": "Rótulo curto acima de headlines ('Desde 1985', 'Nossa história')"
+    }
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto",
+    "tokens": {
+      "--color-primary": "#B85C38",
+      "--color-primary-dark": "#9A4A2B",
+      "--color-primary-darker": "#8A4226",
+      "--color-secondary": "#E8B696",
+      "--color-surface": "#FDF8F3",
+      "--color-surface-alt": "#F5E9DD",
+      "--color-text": "#3E2A20",
+      "--color-text-secondary": "#6B4F41",
+      "--color-text-muted": "#7A5F50",
+      "--color-border": "#E3D3C3",
+      "--color-error": "#A63D2B",
+      "--color-success": "#4A7C59",
+      "--color-warning": "#8F6420",
+      "--color-neutral-50": "#FDF8F3",
+      "--color-neutral-100": "#F5E9DD",
+      "--color-neutral-200": "#EAD8C6",
+      "--color-neutral-300": "#D9BFA9",
+      "--color-neutral-400": "#BC9A81",
+      "--color-neutral-500": "#9C7A63",
+      "--color-neutral-600": "#7A5F50",
+      "--color-neutral-700": "#5C463A",
+      "--color-neutral-800": "#3E2A20",
+      "--color-neutral-900": "#2A1B14",
+      "--font-heading": "'Lora', Georgia, 'Times New Roman', serif",
+      "--font-body": "'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "--text-h1": "clamp(2.125rem, 1.5rem + 2.5vw, 3.5rem)",
+      "--text-h2": "clamp(1.625rem, 1.3rem + 1.4vw, 2.375rem)",
+      "--text-h3": "clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem)",
+      "--text-body": "clamp(1rem, 0.96rem + 0.15vw, 1.0625rem)",
+      "--text-small": "0.875rem",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "32px",
+      "--space-xxl": "48px",
+      "--space-xxxl": "64px",
+      "--space-xxxxl": "96px",
+      "--section-gap": "clamp(64px, 5vw + 40px, 120px)",
+      "--radius-sm": "8px",
+      "--radius-md": "16px",
+      "--radius-lg": "24px",
+      "--radius-xl": "32px",
+      "--radius-full": "9999px",
+      "--shadow-xs": "0 1px 2px rgba(62, 42, 32, 0.05)",
+      "--shadow-sm": "0 2px 8px rgba(62, 42, 32, 0.07)",
+      "--shadow-md": "0 6px 20px rgba(62, 42, 32, 0.09)",
+      "--shadow-lg": "0 12px 32px rgba(62, 42, 32, 0.12)",
+      "--shadow-xl": "0 20px 48px rgba(62, 42, 32, 0.14)",
+      "--shadow-btn-hover": "0 4px 14px rgba(184, 92, 56, 0.25)",
+      "--duration-fast": "250ms",
+      "--duration-base": "400ms",
+      "--duration-slow": "600ms",
+      "--ease-standard": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+      "--ease-soft-out": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "--ease-gentle": "cubic-bezier(0.45, 0, 0.25, 1)",
+      "--container-max": "1200px",
+      "--content-max": "680px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "xxl": "48px",
+      "xxxl": "64px",
+      "xxxxl": "96px"
+    },
+    "section_spacing": {
+      "mobile": "64px",
+      "tablet": "88px",
+      "desktop": "120px",
+      "note": "Espaço em branco generoso é parte da personalidade — nunca comprimir seções abaixo destes valores."
+    },
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "40px",
+      "container_desktop": "64px"
+    },
+    "container_max_width": "1200px",
+    "content_max_width": "680px (texto corrido / storytelling)",
+    "gutters": "24px mobile / 32px desktop (grid de cards)"
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "full": "9999px"
+    },
+    "radius_usage": {
+      "buttons": "full (pill) — botões arredondados reforçam o acolhimento",
+      "cards": "lg (24px) — cantos generosos, sensação de 'pão fofinho'",
+      "inputs": "md (16px)",
+      "images": "lg (24px); imagens de destaque podem usar xl (32px) ou formas orgânicas via border-radius assimétrico (ex: 48% 52% 50% 50% / 55% 48% 52% 45%)",
+      "containers": "xl (32px) para seções em card sobre surface_alt"
+    },
+    "stroke": {
+      "thin": "1px solid #E3D3C3",
+      "medium": "2px solid #B85C38"
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "xs": "0 1px 2px rgba(62, 42, 32, 0.05)",
+    "sm": "0 2px 8px rgba(62, 42, 32, 0.07)",
+    "md": "0 6px 20px rgba(62, 42, 32, 0.09)",
+    "lg": "0 12px 32px rgba(62, 42, 32, 0.12)",
+    "xl": "0 20px 48px rgba(62, 42, 32, 0.14)",
+    "shadow_usage": {
+      "cards_default": "sm",
+      "cards_hover": "md — combinado com translateY(-4px)",
+      "buttons_hover": "sm com tom do primary: 0 4px 14px rgba(184, 92, 56, 0.25)",
+      "navigation_scrolled": "xs",
+      "modals": "xl",
+      "note": "Sombras SEMPRE em tom marrom quente (base #3E2A20), nunca preto puro — mantém o calor da paleta."
+    }
+  },
+  "motion": {
+    "durations": {
+      "fast": "250ms",
+      "base": "400ms",
+      "slow": "600ms",
+      "storytelling": "800ms"
+    },
+    "easings": {
+      "standard": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+      "soft_out": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "gentle_in_out": "cubic-bezier(0.45, 0, 0.25, 1)"
+    },
+    "animations": [
+      {
+        "name": "fade-in-up",
+        "duration": "600ms",
+        "easing": "soft_out",
+        "trigger": "IntersectionObserver ao entrar na viewport (threshold 0.15)",
+        "description": "opacity 0→1 + translateY(24px)→0. Animação principal de entrada de seções e cards."
+      },
+      {
+        "name": "fade-in",
+        "duration": "600ms",
+        "easing": "standard",
+        "trigger": "viewport / load",
+        "description": "opacity 0→1 puro. Para imagens e elementos decorativos."
+      },
+      {
+        "name": "hero-stagger",
+        "duration": "600ms por item, delay 120ms entre itens",
+        "easing": "soft_out",
+        "trigger": "page load",
+        "description": "Eyebrow → H1 → parágrafo → CTA entram em sequência suave, como quem abre a porta da padaria."
+      },
+      {
+        "name": "hover-lift",
+        "duration": "400ms",
+        "easing": "standard",
+        "trigger": "hover/focus em cards",
+        "description": "translateY(-4px) + sombra sm→md. Discreto — convite, não susto."
+      },
+      {
+        "name": "button-warm",
+        "duration": "400ms",
+        "easing": "standard",
+        "trigger": "hover/focus em botões",
+        "description": "background primary→primary_dark + sombra quente suave. Sem scale."
+      },
+      {
+        "name": "image-soft-zoom",
+        "duration": "600ms",
+        "easing": "gentle_in_out",
+        "trigger": "hover no card com imagem",
+        "description": "scale(1) → scale(1.04) na imagem interna, overflow hidden no container arredondado."
+      },
+      {
+        "name": "underline-grow",
+        "duration": "400ms",
+        "easing": "soft_out",
+        "trigger": "hover/focus em links de navegação",
+        "description": "Sublinhado terracota cresce da esquerda (transform: scaleX 0→1, transform-origin: left)."
+      }
+    ],
+    "principles": "Movimento lento e caloroso (400–600ms). Nada pisca, nada salta. Tudo se acomoda como massa descansando. Máximo 1 animação de entrada por elemento; stagger máximo de 4 itens.",
+    "prefers_reduced_motion": true
+  },
+  "components": {
+    "buttons": {
+      "variants": {
+        "primary": {
+          "background": "#B85C38",
+          "color": "#FFFFFF",
+          "border": "none",
+          "radius": "full",
+          "hover": "background #9A4A2B + box-shadow 0 4px 14px rgba(184,92,56,0.25)",
+          "focus": "outline 3px solid rgba(184,92,56,0.4), outline-offset 2px",
+          "active": "background #8A4226",
+          "disabled": "background #D9BFA9, color #FDF8F3, cursor not-allowed"
+        },
+        "secondary": {
+          "background": "transparent",
+          "color": "#9A4A2B",
+          "border": "2px solid #B85C38",
+          "radius": "full",
+          "hover": "background rgba(184,92,56,0.08)",
+          "focus": "outline 3px solid rgba(184,92,56,0.4), outline-offset 2px",
+          "disabled": "border-color #D9BFA9, color #BC9A81"
+        },
+        "ghost": {
+          "background": "transparent",
+          "color": "#9A4A2B",
+          "border": "none",
+          "underline": "sublinhado que cresce no hover (underline-grow)",
+          "usage": "Links de apoio ('Conheça nossa história →')"
+        }
+      },
+      "sizes": {
+        "sm": { "padding": "10px 20px", "font_size": "14px", "min_height": "40px" },
+        "md": { "padding": "14px 28px", "font_size": "16px", "min_height": "48px" },
+        "lg": { "padding": "18px 36px", "font_size": "17px", "min_height": "56px" }
+      },
+      "typography": "Inter 600, sem uppercase — botões falam como gente: 'Vem tomar um café', não 'SAIBA MAIS'"
+    },
+    "cards": {
+      "background": "#FFFFFF",
+      "radius": "24px",
+      "padding": "28px (mobile) / 32px (desktop)",
+      "border": "1px solid #E3D3C3",
+      "shadow": "sm",
+      "hover": "hover-lift (translateY(-4px) + shadow md) em 400ms",
+      "image_area": "Topo do card, radius 16px interno, aspect-ratio 4/3, tratamento warm (gradiente terracota→bege quando sem foto)",
+      "variants": {
+        "product": "Imagem + título Lora h3 + descrição curta + preço em Inter 600 primary_dark",
+        "story": "Fundo surface_alt, sem sombra, eyebrow + título + texto — usado para blocos de história",
+        "highlight": "Fundo #E8B696, texto #3E2A20, para destaque de promessa ('Fornadas fresquinhas 3x ao dia')"
+      }
+    },
+    "inputs": {
+      "background": "#FFFFFF",
+      "border": "1px solid #E3D3C3",
+      "radius": "16px",
+      "padding": "14px 18px",
+      "font": "Inter 16px (nunca menor — evita zoom no iOS)",
+      "placeholder_color": "#7A5F50",
+      "label": "Inter 500 14px, #3E2A20, sempre visível acima do campo (nunca placeholder como label)",
+      "focus": "border-color #B85C38 + box-shadow 0 0 0 3px rgba(184,92,56,0.15)",
+      "error": "border-color #A63D2B + mensagem 14px #A63D2B com ícone; nunca só cor",
+      "success": "border-color #4A7C59",
+      "min_height": "48px"
+    },
+    "hero": {
+      "layout": "Split assimétrico 55/45 no desktop: texto à esquerda, fotografia grande com cantos orgânicos à direita. Mobile: texto primeiro, imagem abaixo.",
+      "background": "#FDF8F3 com forma orgânica #E8B696 (SVG blob) atrás da imagem",
+      "content": "Eyebrow ('Desde 1985') + H1 Lora com uma palavra em itálico terracota + parágrafo warm + CTA primário + link ghost",
+      "photography": "Foto REAL de pessoas (padeiro, família, cliente sorrindo) — nunca stock genérico. Cantos radius xl ou blob orgânico.",
+      "animation": "hero-stagger no load",
+      "height": "auto — nunca 100vh forçado; conteúdo respira"
+    },
+    "navigation": {
+      "type": "Header fixo simples, fundo #FDF8F3 com blur leve ao rolar (backdrop-filter) + sombra xs",
+      "height": "72px desktop / 64px mobile",
+      "logo": "Wordmark em Lora 600 ou logo do cliente à esquerda",
+      "links": "Inter 500 15px, #3E2A20, hover com underline-grow terracota",
+      "cta": "Botão primary sm à direita ('Faça sua encomenda')",
+      "mobile": "Menu hambúrguer (44px de toque) abre painel fullscreen surface com links em Lora 26px empilhados, fade-in 400ms"
+    },
+    "footer": {
+      "background": "#3E2A20",
+      "text": "#F5E9DD",
+      "links_hover": "#E8B696",
+      "layout": "3 colunas desktop (história curta + navegação + contato/horários), empilhado no mobile",
+      "signature": "Frase de fechamento em Lora itálico #E8B696 ('Feito com carinho, todos os dias.')",
+      "radius_top": "32px 32px 0 0 — o footer 'abraça' a página por baixo"
+    },
+    "testimonials": {
+      "layout": "Carrossel manual ou grid de 2–3 cards; citação em Lora itálico 20–22px",
+      "card": "Fundo #FFFFFF, radius 24px, aspas decorativas grandes em #E8B696",
+      "author": "Foto redonda 48px (ou inicial em círculo bege) + nome Inter 600 + contexto ('cliente há 12 anos')",
+      "tone": "Depoimentos com nome e história real — proximidade, nunca depoimento genérico"
+    },
+    "badges": {
+      "style": "Pill, fundo #F5E9DD, texto #6B4F41 Inter 600 13px, padding 6px 14px",
+      "variants": {
+        "highlight": "fundo #E8B696, texto #3E2A20 ('Mais pedido')",
+        "success": "fundo rgba(74,124,89,0.12), texto #3D6749 ('Sem conservantes')"
+      }
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Acolhedor, próximo, conversa de família. Fala como quem recebe você na porta com cheiro de pão saindo do forno. Primeira pessoa do plural ('nossa massa', 'nosso forno'), convites diretos ('vem', 'chega mais'), memória afetiva sem pieguice.",
+    "headline_examples": [
+      "Feito com carinho desde 1985.",
+      "O pão que a sua família merece, do jeito que a nossa faz.",
+      "Aqui, todo mundo é recebido pelo nome.",
+      "Fornada fresquinha, três vezes ao dia. Todos os dias.",
+      "Vem sentir o cheiro de casa de vó."
+    ],
+    "cta_examples": [
+      "Vem tomar um café conosco",
+      "Faça sua encomenda",
+      "Conheça nossa história",
+      "Reserve sua fornada",
+      "Fale com a gente no WhatsApp"
+    ],
+    "microcopy_examples": [
+      "Prontinho! Recebemos seu pedido e já avisamos o forno.",
+      "Ops, faltou o seu nome — a gente gosta de saber com quem fala.",
+      "Aberto hoje até as 19h. Passa aqui!"
+    ],
+    "avoid": [
+      "Jargão corporativo ('soluções em panificação', 'excelência')",
+      "Urgência agressiva ('SÓ HOJE', 'ÚLTIMA CHANCE')",
+      "Uppercase gritado em CTAs",
+      "Tom impessoal na terceira pessoa ('a empresa oferece')",
+      "Superlativos vazios ('o melhor da cidade') sem história que sustente"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas / 1200px máx / gutter 24–32px. Texto corrido limitado a 680px. Assimetria proposital: blocos de texto deslocados do centro criam ritmo artesanal, não industrial.",
+    "page_flow": [
+      { "section": "hero", "layout": "split 55/45 texto+foto com blob bege atrás da imagem", "purpose": "primeira impressão calorosa + CTA de visita/encomenda" },
+      { "section": "promessa", "layout": "faixa surface_alt com 3 cards highlight lado a lado (fornada fresca / ingredientes locais / receita de família)", "purpose": "razões para confiar, em linguagem humana" },
+      { "section": "produtos", "layout": "grid 3 colunas de cards product (2 no tablet, 1 no mobile), títulos Lora", "purpose": "vitrine com preço transparente" },
+      { "section": "historia", "layout": "duas colunas invertidas (foto à esquerda, texto à direita) com eyebrow 'Nossa história' e citação Lora itálico grande", "purpose": "storytelling de origem familiar — coração do DS" },
+      { "section": "depoimentos", "layout": "2 cards de citação sobre fundo surface", "purpose": "prova social com nome e rosto" },
+      { "section": "visita", "layout": "card xl centralizado com mapa/horários + CTA WhatsApp", "purpose": "conversão local: ir até a loja" },
+      { "section": "footer", "layout": "3 colunas escuras com cantos superiores arredondados", "purpose": "fechamento afetivo + informações práticas" }
+    ],
+    "image_treatment": "Fotografia real, luz natural quente, pessoas em primeiro plano. Cantos arredondados generosos (24–32px) ou blobs orgânicos. Overlay opcional rgba(184,92,56,0.08) para unificar temperatura. Sem filtros frios, sem preto e branco.",
+    "density": "Baixa. Uma ideia por seção. Máximo 3 cards por linha.",
+    "whitespace": "Generoso e intencional — 120px entre seções no desktop. O vazio é o 'descanso da massa': dá valor ao que está ao redor."
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "body_text": "#3E2A20 sobre #FDF8F3 = 12.77:1 (AAA)",
+      "secondary_text": "#6B4F41 sobre #FDF8F3 = 7.06:1 (AAA)",
+      "muted_text": "#7A5F50 sobre #FDF8F3 = 5.56:1 (AA)",
+      "links": "#9A4A2B sobre #FDF8F3 = 5.87:1 (AA) + sublinhado em contexto de texto corrido",
+      "buttons": "#FFFFFF sobre #B85C38 = 4.54:1 (AA)",
+      "rule": "#B85C38 como texto apenas >= 24px; #E8B696 nunca como texto sobre surface"
+    },
+    "keyboard_navigation": "Toda interação alcançável por Tab na ordem visual. Menu mobile com focus trap e fechamento por Esc. Skip link 'Pular para o conteúdo' como primeiro elemento focável. Carrossel de depoimentos operável por setas e botões visíveis.",
+    "focus_states": "outline 3px rgba(184,92,56,0.4) + offset 2px em todos os interativos — visível sobre surface e surface_alt. Nunca outline:none sem substituto.",
+    "alt_text": "Fotos de pessoas e produtos com alt descritivo em PT-BR ('Padeiro retirando pães do forno a lenha'). Blobs e formas decorativas com aria-hidden='true'.",
+    "semantic_html": "header/nav/main/section/article/footer; h1 único no hero; hierarquia sem saltos; depoimentos em blockquote com cite; horários em dl.",
+    "touch_targets": "44px minimum",
+    "reduced_motion": "@media (prefers-reduced-motion: reduce): todas as animações reduzidas a 0.01ms e elementos com estado final aplicado (sem conteúdo escondido atrás de animação)."
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Coluna única: eyebrow → h1 34px → parágrafo → CTA full-width (max 360px) → imagem 4/3 abaixo",
+      "tablet": "Coluna única centralizada com imagem maior; CTA lado a lado com link ghost",
+      "desktop": "Split 55/45, texto verticalmente centralizado, imagem com blob bege deslocado -24px"
+    },
+    "product_grid": {
+      "mobile": "1 coluna, cards full-width, gap 24px",
+      "tablet": "2 colunas, gap 24px",
+      "desktop": "3 colunas, gap 32px"
+    },
+    "historia": {
+      "mobile": "Imagem acima do texto (ordem visual: foto → eyebrow → título → texto)",
+      "desktop": "Foto à esquerda 45%, texto à direita 55% com padding-left 64px"
+    },
+    "navigation": {
+      "mobile_tablet": "Logo + hambúrguer 44px; painel fullscreen com links Lora 26px",
+      "desktop": "Logo + 4-5 links inline + botão CTA sm"
+    },
+    "footer": {
+      "mobile": "Colunas empilhadas, contato primeiro (informação mais buscada)",
+      "desktop": "3 colunas: história / navegação / contato+horários"
+    },
+    "touch_adjustments": "Hover-lift vira active-state (scale 0.98) no touch; carrossel com scroll-snap nativo"
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente",
+    "button_primary": ["default", "hover", "focus-visible", "active", "disabled", "loading (spinner 16px branco + texto 'Enviando...')"],
+    "button_secondary": ["default", "hover", "focus-visible", "active", "disabled"],
+    "link_nav": ["default", "hover (underline-grow)", "focus-visible", "current (sublinhado fixo terracota)"],
+    "card_product": ["default", "hover (lift)", "focus-within"],
+    "input": ["default", "focus", "filled", "error (borda + mensagem + aria-describedby)", "disabled", "success"],
+    "nav_header": ["topo (fundo sólido)", "rolado (blur + sombra xs)", "menu mobile aberto (focus trap)"]
+  },
+  "photography_direction": {
+    "style": "Documental afetivo — pessoas reais do negócio em momentos genuínos de trabalho e convivência",
+    "subjects": [
+      "Mãos trabalhando a massa, farinha no ar",
+      "Padeiro/dono sorrindo atrás do balcão",
+      "Família ou cliente recorrente na mesa, luz de manhã",
+      "Produto em close com vapor/textura visível",
+      "Fachada e interior com gente circulando"
+    ],
+    "light": "Natural, quente, direção lateral suave (janela). Golden hour para externas.",
+    "color_grading": "Temperatura quente (+200K a +400K), sombras levemente amarrronzadas, saturação natural. Proibido: filtros frios, dessaturação dramática, HDR artificial.",
+    "framing": "Alturas de olhar humanas; closes com profundidade de campo rasa; sempre ao menos 1 foto com contato visual direto no site.",
+    "avoid": [
+      "Stock genérico com sorrisos falsos",
+      "Fotos escuras/moody de gastronomia fine dining (pertence a outra personalidade)",
+      "Imagens sem pessoas em um site que promete calor humano"
+    ],
+    "fallback_sem_foto": "Gradientes terracota→bege (135deg, #B85C38 → #E8B696), blobs SVG em #E8B696/#F5E9DD e ilustrações lineares simples traço #9A4A2B"
+  },
+  "iconography": {
+    "style": "Linha (stroke 1.75px), cantos arredondados (stroke-linecap round), 24x24 grid",
+    "color": "#9A4A2B sobre claro, #E8B696 sobre escuro",
+    "recommended_set": "Lucide ou Feather (open source, MIT), ajustando stroke para 1.75",
+    "usage": "Ícones sempre acompanhados de texto — nunca ícone sozinho como única affordance",
+    "decorative_shapes": "Blobs orgânicos SVG (border-radius assimétrico), meia-lua, arcos de forno — sempre aria-hidden"
+  },
+  "do_dont": {
+    "do": [
+      "Usar Lora itálico para 1 palavra emocional por headline ('feito com <em>carinho</em>')",
+      "Repetir o CTA de WhatsApp no header, meio e fim da página",
+      "Contar a história de origem com datas e nomes reais",
+      "Deixar 120px de respiro entre seções no desktop",
+      "Usar sombras marrons quentes, nunca preto puro",
+      "Botões pill com texto em sentence case"
+    ],
+    "dont": [
+      "Usar #B85C38 como cor de texto corrido (falha AA — usar #9A4A2B)",
+      "Usar #E8B696 como texto sobre fundos claros (1.72:1)",
+      "Forçar hero em 100vh empurrando o conteúdo",
+      "Animar mais de 4 elementos em stagger",
+      "Usar uppercase em CTAs ou headlines",
+      "Misturar mais de 2 famílias tipográficas",
+      "Encher a página — máximo 3 cards por linha, 1 ideia por seção"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Lora:ital,wght@0,500;0,600;1,500 e Inter:wght@400;500;600 com display=swap",
+    "js_budget": "Apenas 3 comportamentos: menu mobile (toggle + focus trap), IntersectionObserver para fade-in-up, carrossel de depoimentos opcional. Zero frameworks obrigatórios.",
+    "seo_local": "Schema.org LocalBusiness/Bakery com horários, geo e telefone; título com bairro/cidade ('Padaria X — Pães artesanais na Vila Y')",
+    "whatsapp_cta": "Link wa.me com mensagem pré-preenchida acolhedora ('Oi! Vi o site de vocês e queria...')",
+    "adaptation_guide": "Ao adaptar para outro segmento (clínica, pet shop): manter paleta/tipografia/motion, trocar vocabulário do voice_and_tone e a metáfora fotográfica. A essência é o calor, não o pão."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true
+  },
+  "metadata": {
+    "created": "2026-07-03",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "acolhedor",
+      "familiar",
+      "terracota",
+      "serif-warm",
+      "artesanal",
+      "storytelling",
+      "negocio-local",
+      "fotografia-real",
+      "cards-arredondados",
+      "whitespace-generoso"
+    ],
+    "related_docs": [
+      "previews/markdown/01-1-padaria-artesanal-warm.md",
+      "previews/html/01-1-padaria-artesanal-warm.html",
+      "docs/01-1-padaria-artesanal-warm/components.md",
+      "docs/01-1-padaria-artesanal-warm/animations.css",
+      "docs/01-1-padaria-artesanal-warm/accessibility-report.md",
+      "docs/01-1-padaria-artesanal-warm/benchmarking.md",
+      "docs/01-1-padaria-artesanal-warm/color-variations.md",
+      "docs/01-1-padaria-artesanal-warm/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "padaria artesanal",
+      "cafeteria de bairro",
+      "confeitaria",
+      "clínica de família / consultório pediátrico",
+      "pet shop de bairro",
+      "empório / mercearia local",
+      "restaurante familiar"
+    ],
+    "conversion_factors": [
+      "CTA de WhatsApp/encomenda visível no header e repetido na seção 'visita' — conversão local direta",
+      "Preços transparentes nos cards de produto — reduz atrito e transmite honestidade",
+      "Storytelling de origem ('desde 1985') — diferenciação impossível de copiar por franquias",
+      "Depoimentos com nome, foto e tempo de relação — prova social crível",
+      "Horários e mapa em destaque — negócio local vive de visita física",
+      "Fotografia real de pessoas — rostos aumentam confiança e tempo de permanência"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "Imagem do hero com fetchpriority='high', width/height explícitos, formato AVIF/WebP <= 180KB, preload da Lora subset latin",
+      "cls_strategy": "aspect-ratio reservado em todas as imagens; fontes com font-display: swap + fallback metricamente próximo (Georgia para Lora)",
+      "inp_strategy": "Animações só com transform/opacity (compositor); IntersectionObserver em vez de scroll listener; zero bibliotecas de animação",
+      "budget": "CSS < 40KB, JS < 15KB (menu + observer + carrossel), 2 famílias tipográficas em 4 pesos no total"
+    }
+  }
+}

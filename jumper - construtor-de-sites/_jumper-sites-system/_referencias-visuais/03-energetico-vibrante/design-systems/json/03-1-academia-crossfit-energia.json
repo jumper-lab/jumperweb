@@ -1,0 +1,575 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "03.1",
+  "design_system_name": "Academia CrossFit Energia",
+  "category": "03 — Energético e Vibrante",
+  "subcategory": "Fitness dark + neon — energia atlética de alta intensidade",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Gymbox",
+    "url": "https://gymbox.com",
+    "location": "Londres, Reino Unido",
+    "awards": [
+      "Perfil listado no Awwwards (awwwards.com/sites/gymbox) — reconhecido como referência de web design no segmento fitness",
+      "Campanha 'Cutting Through The Bulls**t' (2023) — case de disrupção da categoria fitness citado em publicações de marketing (Econsultancy, Trendhunter)"
+    ],
+    "why_chosen": "A Gymbox se posiciona como o 'antídoto para academias chatas': site ousado, vídeos de fundo em alta energia, tipografia gigante, animações vivas e tom de voz provocador. Capturamos essa essência — preto absoluto, amarelo neon, tipografia condensada em caixa alta, marquees em loop e CTAs impossíveis de ignorar — sem copiar layout, textos ou estrutura. A sensação-alvo é 'quero fazer isso AGORA'.",
+    "note_on_awards": "Prêmios específicos com data/nota não confirmados individualmente; tratar como referência estilística de alto nível."
+  },
+  "colors": {
+    "primary": "#FFD600",
+    "primary_usage": "Amarelo neon — cor de ação e energia. Usar em CTAs, headlines de destaque, marquees, sublinhados grossos, badges de urgência, contadores e ícones de impacto. Nunca usar como fundo de textos longos; blocos amarelos sempre com texto PRETO (#000000).",
+    "secondary": "#000000",
+    "secondary_usage": "Preto absoluto — base de todo o sistema. Fundo dominante de páginas, hero, cards e footer. Também é a cor de texto obrigatória sobre qualquer superfície amarela (#FFD600), garantindo 14.87:1 de contraste.",
+    "surface": "#000000",
+    "surface_alt": "#111111",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#B3B3B3",
+    "text_muted": "#8A8A8A",
+    "border": "#2A2A2A",
+    "error": "#FF5C51",
+    "success": "#4ADE80",
+    "warning": "#FFB020",
+    "neutral_scale": {
+      "50": "#F7F7F7",
+      "100": "#E6E6E6",
+      "200": "#CCCCCC",
+      "300": "#B3B3B3",
+      "400": "#8A8A8A",
+      "500": "#666666",
+      "600": "#444444",
+      "700": "#2A2A2A",
+      "800": "#111111",
+      "900": "#000000"
+    },
+    "accent_scale": {
+      "yellow_100": "#FFF9C4",
+      "yellow_300": "#FFEE58",
+      "yellow_500": "#FFD600",
+      "yellow_700": "#E6C000",
+      "yellow_900": "#7A6A00",
+      "notes": "yellow_500 é o tom oficial. yellow_300 apenas para glow/gradientes decorativos. yellow_700/900 reservados para variações claras da paleta (ver color-variations.md) — nunca sobre preto."
+    },
+    "contrast_verification": {
+      "primary_on_surface": "14.87:1 (#FFD600 sobre #000000) — passa AA e AAA para qualquer tamanho de texto",
+      "text_primary_on_surface": "21.00:1 (#FFFFFF sobre #000000) — máximo possível",
+      "secondary_on_surface": "não aplicável como texto (preto sobre preto); o preto atua como fundo e como texto sobre amarelo: 14.87:1 (#000000 sobre #FFD600)",
+      "text_secondary_on_surface": "10.02:1 (#B3B3B3 sobre #000000) — passa AAA",
+      "text_muted_on_surface": "6.08:1 (#8A8A8A sobre #000000) — passa AA para texto normal",
+      "error_on_surface": "6.90:1 (#FF5C51 sobre #000000) — passa AA",
+      "success_on_surface": "12.05:1 (#4ADE80 sobre #000000) — passa AAA",
+      "warning_on_surface": "11.48:1 (#FFB020 sobre #000000) — passa AAA",
+      "primary_on_surface_alt": "13.37:1 (#FFD600 sobre #111111) — passa AAA",
+      "text_primary_on_surface_alt": "18.88:1 (#FFFFFF sobre #111111) — passa AAA",
+      "notes": "REGRA DE OURO: sobre amarelo (#FFD600), o texto é SEMPRE preto (#000000) — nunca branco (branco sobre amarelo = 1.41:1, reprovado). Sobre preto, texto branco ou amarelo. Amarelo nunca sobre branco (#FFD600 sobre #FFFFFF = 1.41:1). Razões calculadas pela fórmula de luminância relativa WCAG 2.1."
+    }
+  },
+  "typography": {
+    "heading_font": "Anton",
+    "heading_font_source": "Google Fonts",
+    "heading_font_fallback": "'Anton', 'Arial Narrow', Impact, sans-serif",
+    "heading_treatment": "SEMPRE UPPERCASE. Letter-spacing levemente positivo (0.01em–0.02em) para compensar a condensação. Line-height apertado (0.92–1.0) para blocos tipográficos massivos. Headlines podem ocupar 90vw — a tipografia É a imagem.",
+    "body_font": "Inter",
+    "body_font_source": "Google Fonts",
+    "body_font_fallback": "'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif",
+    "mono_font": "JetBrains Mono (Google Fonts) — usado em timers, contadores de WOD, placares e dados de performance",
+    "base_size": "16px",
+    "scales": {
+      "mobile": {
+        "display": { "size": "clamp(56px, 18vw, 88px)", "weight": 400, "line_height": 0.92, "letter_spacing": "0.01em", "case": "uppercase", "font": "Anton" },
+        "h1": { "size": "48px", "weight": 400, "line_height": 0.95, "letter_spacing": "0.01em", "case": "uppercase", "font": "Anton" },
+        "h2": { "size": "36px", "weight": 400, "line_height": 1.0, "letter_spacing": "0.01em", "case": "uppercase", "font": "Anton" },
+        "h3": { "size": "24px", "weight": 400, "line_height": 1.05, "letter_spacing": "0.02em", "case": "uppercase", "font": "Anton" },
+        "body": { "size": "16px", "weight": 400, "line_height": 1.6, "font": "Inter" },
+        "small": { "size": "14px", "weight": 400, "line_height": 1.5, "font": "Inter" },
+        "eyebrow": { "size": "13px", "weight": 700, "line_height": 1.2, "letter_spacing": "0.18em", "case": "uppercase", "font": "Inter" }
+      },
+      "desktop": {
+        "display": { "size": "clamp(96px, 11vw, 176px)", "weight": 400, "line_height": 0.9, "letter_spacing": "0.01em", "case": "uppercase", "font": "Anton" },
+        "h1": { "size": "96px", "weight": 400, "line_height": 0.92, "letter_spacing": "0.01em", "case": "uppercase", "font": "Anton" },
+        "h2": { "size": "64px", "weight": 400, "line_height": 0.95, "letter_spacing": "0.01em", "case": "uppercase", "font": "Anton" },
+        "h3": { "size": "32px", "weight": 400, "line_height": 1.0, "letter_spacing": "0.02em", "case": "uppercase", "font": "Anton" },
+        "body": { "size": "18px", "weight": 400, "line_height": 1.65, "font": "Inter" },
+        "small": { "size": "14px", "weight": 400, "line_height": 1.5, "font": "Inter" },
+        "eyebrow": { "size": "14px", "weight": 700, "line_height": 1.2, "letter_spacing": "0.2em", "case": "uppercase", "font": "Inter" }
+      }
+    },
+    "fluid_recommendation": "Usar clamp() em todos os headings: ex. h1 = clamp(48px, 8vw, 96px). O salto tipográfico entre mobile e desktop é intencional e dramático — este DS vive de escala."
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — derivados fielmente das cores, tipografia, spacing, borders, shadows e motion deste DS",
+    "tokens": {
+      "--color-primary": "#FFD600",
+      "--color-secondary": "#000000",
+      "--color-surface": "#000000",
+      "--color-surface-alt": "#111111",
+      "--color-text": "#FFFFFF",
+      "--color-text-secondary": "#B3B3B3",
+      "--color-text-muted": "#8A8A8A",
+      "--color-border": "#2A2A2A",
+      "--color-error": "#FF5C51",
+      "--color-success": "#4ADE80",
+      "--color-warning": "#FFB020",
+      "--color-yellow-100": "#FFF9C4",
+      "--color-yellow-300": "#FFEE58",
+      "--color-yellow-500": "#FFD600",
+      "--color-yellow-700": "#E6C000",
+      "--color-yellow-900": "#7A6A00",
+      "--color-neutral-50": "#F7F7F7",
+      "--color-neutral-100": "#E6E6E6",
+      "--color-neutral-200": "#CCCCCC",
+      "--color-neutral-300": "#B3B3B3",
+      "--color-neutral-400": "#8A8A8A",
+      "--color-neutral-500": "#666666",
+      "--color-neutral-600": "#444444",
+      "--color-neutral-700": "#2A2A2A",
+      "--color-neutral-800": "#111111",
+      "--color-neutral-900": "#000000",
+      "--font-heading": "'Anton', 'Arial Narrow', Impact, sans-serif",
+      "--font-body": "'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif",
+      "--font-mono": "'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace",
+      "--text-display": "clamp(56px, 11vw, 176px)",
+      "--text-h1": "clamp(48px, 8vw, 96px)",
+      "--text-h2": "clamp(36px, 6vw, 64px)",
+      "--text-h3": "clamp(24px, 3vw, 32px)",
+      "--text-body": "clamp(16px, 0.95rem + 0.2vw, 18px)",
+      "--text-small": "14px",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "32px",
+      "--space-xxl": "48px",
+      "--space-xxxl": "80px",
+      "--space-xxxxl": "128px",
+      "--section-gap": "clamp(64px, 6vw + 32px, 128px)",
+      "--radius-none": "0px",
+      "--radius-sm": "2px",
+      "--radius-md": "4px",
+      "--radius-lg": "8px",
+      "--radius-full": "9999px",
+      "--stroke-thin": "1px solid #2A2A2A",
+      "--stroke-medium": "2px solid #FFD600",
+      "--stroke-heavy": "4px solid #FFD600",
+      "--shadow-sm": "0 2px 8px rgba(0, 0, 0, 0.6)",
+      "--shadow-md": "0 8px 24px rgba(0, 0, 0, 0.7)",
+      "--shadow-lg": "0 16px 48px rgba(0, 0, 0, 0.8)",
+      "--glow-primary": "0 0 24px rgba(255, 214, 0, 0.35)",
+      "--glow-primary-strong": "0 0 48px rgba(255, 214, 0, 0.5)",
+      "--duration-instant": "120ms",
+      "--duration-fast": "200ms",
+      "--duration-base": "250ms",
+      "--duration-slow": "300ms",
+      "--duration-marquee": "18s",
+      "--duration-marquee-fast": "10s",
+      "--duration-pulse": "1.6s",
+      "--ease-punch": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "--ease-snap": "cubic-bezier(0.7, 0, 0.3, 1)",
+      "--ease-linear": "linear",
+      "--ease-out": "ease-out",
+      "--container-max": "1440px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "xxl": "48px",
+      "xxxl": "80px",
+      "xxxxl": "128px"
+    },
+    "section_spacing": {
+      "mobile": "64px",
+      "tablet": "96px",
+      "desktop": "128px"
+    },
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "40px",
+      "container_desktop": "64px"
+    },
+    "container_max_width": "1440px",
+    "gutters": "24px (mobile) / 32px (desktop)",
+    "density_note": "Seções alternam densidade: hero e marquees ocupam full-bleed sem respiro; blocos de conteúdo respiram com section_spacing generoso. O contraste denso/vazio cria o ritmo de treino — sprint e descanso."
+  },
+  "borders": {
+    "radius": {
+      "none": "0px",
+      "sm": "2px",
+      "md": "4px",
+      "lg": "8px",
+      "full": "9999px"
+    },
+    "radius_usage": {
+      "buttons": "0px — botões retos, brutais, sem suavização",
+      "cards": "0px — cards em blocos retos com borda #2A2A2A de 1px",
+      "inputs": "0px — inputs com underline ou caixa reta",
+      "images": "0px — mídia sempre em bloco reto full-bleed ou recortado em diagonal via clip-path",
+      "containers": "0px — nenhum container arredondado; a única exceção é a badge 'pill' (radius full) usada em tags de modalidade"
+    },
+    "stroke": {
+      "thin": "1px solid #2A2A2A",
+      "medium": "2px solid #FFD600",
+      "heavy": "4px solid #FFD600 — usado em destaque de card ativo e sublinhado de headline"
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "sm": "0 2px 8px rgba(0, 0, 0, 0.6)",
+    "md": "0 8px 24px rgba(0, 0, 0, 0.7)",
+    "lg": "0 16px 48px rgba(0, 0, 0, 0.8)",
+    "glow_primary": "0 0 24px rgba(255, 214, 0, 0.35)",
+    "glow_primary_strong": "0 0 48px rgba(255, 214, 0, 0.5)",
+    "shadow_usage": "Em fundo preto, sombras escuras quase não aparecem — o sistema usa GLOW amarelo como 'sombra de energia': hover de CTA ganha glow_primary, card ativo ganha glow_primary_strong. Sombras escuras (sm/md) apenas em overlays e modais sobre surface_alt."
+  },
+  "motion": {
+    "durations": {
+      "instant": "120ms",
+      "fast": "200ms",
+      "base": "250ms",
+      "slow": "300ms",
+      "marquee_loop": "18s",
+      "marquee_loop_fast": "10s",
+      "pulse_loop": "1.6s"
+    },
+    "easings": {
+      "punch": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "snap": "cubic-bezier(0.7, 0, 0.3, 1)",
+      "linear": "linear",
+      "out": "ease-out"
+    },
+    "animations": [
+      { "name": "marquee-slide", "duration": "18s", "easing": "linear", "trigger": "loop infinito", "description": "Faixa de texto Anton deslizando horizontalmente (translateX -50%), duplicada para loop perfeito. Versão rápida (10s) para faixas de urgência." },
+      { "name": "cta-invert", "duration": "200ms", "easing": "snap", "trigger": "hover/focus", "description": "Inversão de cor do CTA: fundo amarelo/texto preto vira fundo preto/texto amarelo com borda amarela 2px, + glow amarelo." },
+      { "name": "headline-slam", "duration": "300ms", "easing": "punch", "trigger": "scroll into view", "description": "Headline entra com translateY(40px) + scale(0.96) → posição final. Stagger de 60ms por linha. Impacto de peso caindo." },
+      { "name": "card-charge", "duration": "250ms", "easing": "punch", "trigger": "hover", "description": "Card sobe translateY(-6px), borda vira amarela, glow_primary aparece. Sensação de card 'energizado'." },
+      { "name": "pulse-badge", "duration": "1.6s", "easing": "ease-in-out", "trigger": "loop infinito", "description": "Badge de urgência ('VAGAS LIMITADAS') pulsa opacidade 1→0.55→1 e scale 1→1.04→1." },
+      { "name": "stripe-sweep", "duration": "300ms", "easing": "snap", "trigger": "hover em link de navegação", "description": "Sublinhado amarelo 4px varre da esquerda para a direita (transform: scaleX 0→1, origin left)." },
+      { "name": "counter-up", "duration": "1.2s", "easing": "out", "trigger": "scroll into view (uma vez)", "description": "Números de prova social (alunos, aulas/semana, box m²) contam de 0 ao valor final em JetBrains Mono." },
+      { "name": "video-sim-gradient", "duration": "8s", "easing": "linear", "trigger": "loop infinito", "description": "Simulação de vídeo de fundo: gradiente animado preto→cinza-chumbo com faixas diagonais amarelas em movimento lento (background-position). No produto final, substituível por vídeo real com overlay preto 60%." }
+    ],
+    "prefers_reduced_motion": true,
+    "reduced_motion_strategy": "Com prefers-reduced-motion: marquees congelam (animation: none) e viram texto estático truncado com fade lateral; slam/charge viram transição de opacidade simples; pulse desliga; counter mostra valor final direto."
+  },
+  "components": {
+    "buttons": {
+      "variants": {
+        "primary": {
+          "background": "#FFD600",
+          "color": "#000000",
+          "border": "2px solid #FFD600",
+          "radius": "0px",
+          "font": "Anton, uppercase, letter-spacing 0.04em",
+          "hover": "background #000000, color #FFD600, border mantém #FFD600, box-shadow glow_primary, 200ms snap",
+          "focus": "outline 3px solid #FFFFFF, outline-offset 3px",
+          "active": "transform scale(0.97)",
+          "disabled": "background #444444, color #8A8A8A, border #444444, cursor not-allowed, sem glow"
+        },
+        "secondary": {
+          "background": "transparent",
+          "color": "#FFFFFF",
+          "border": "2px solid #FFFFFF",
+          "radius": "0px",
+          "font": "Anton, uppercase, letter-spacing 0.04em",
+          "hover": "background #FFFFFF, color #000000, 200ms snap",
+          "focus": "outline 3px solid #FFD600, outline-offset 3px",
+          "disabled": "border #444444, color #666666"
+        },
+        "ghost": {
+          "background": "transparent",
+          "color": "#FFD600",
+          "border": "none",
+          "decoration": "sublinhado 4px #FFD600 com stripe-sweep no hover",
+          "font": "Inter 700, uppercase, letter-spacing 0.12em, 14px",
+          "usage": "links de apoio ('VER TODAS AS MODALIDADES →')"
+        }
+      },
+      "sizes": {
+        "sm": { "padding": "10px 20px", "font_size": "14px", "min_height": "40px" },
+        "md": { "padding": "14px 32px", "font_size": "18px", "min_height": "48px" },
+        "lg": { "padding": "18px 48px", "font_size": "22px", "min_height": "56px" },
+        "xl_cta": { "padding": "24px 64px", "font_size": "28px", "min_height": "72px", "usage": "CTA principal do hero e da seção final — impossível de ignorar" }
+      },
+      "touch_target_note": "Todos os tamanhos ≥ 44px de altura tocável (sm tem 40px de altura visual mas padding externo garante 44px de área de toque)."
+    },
+    "cards": {
+      "class_card": {
+        "background": "#111111",
+        "border": "1px solid #2A2A2A",
+        "radius": "0px",
+        "padding": "32px",
+        "structure": "eyebrow amarelo (modalidade) + H3 Anton uppercase + descrição Inter #B3B3B3 + ghost link",
+        "hover": "card-charge: translateY(-6px), border-color #FFD600, glow_primary",
+        "active_state": "borda esquerda heavy (4px #FFD600) para card selecionado/destaque"
+      },
+      "plan_card": {
+        "background": "#111111",
+        "featured_background": "#FFD600 com TODO o texto em #000000",
+        "structure": "nome do plano Anton + preço gigante JetBrains Mono + lista de benefícios + CTA primary (no featured, CTA inverte: fundo preto/texto amarelo)",
+        "badge": "badge 'MAIS ESCOLHIDO' rotacionada -3deg no topo do card featured"
+      },
+      "media_card": "Bloco de 'foto' simulado por gradiente diagonal (#111 → #2A2A2A) com faixa amarela clip-path; no produto real, foto de treino P&B de alto contraste com overlay preto 40% e duotone opcional preto/amarelo."
+    },
+    "inputs": {
+      "default": {
+        "background": "#111111",
+        "border": "1px solid #2A2A2A",
+        "radius": "0px",
+        "color": "#FFFFFF",
+        "placeholder": "#8A8A8A",
+        "padding": "16px",
+        "min_height": "48px",
+        "label": "Inter 700 uppercase 13px letter-spacing 0.12em, cor #B3B3B3, acima do campo"
+      },
+      "focus": "border-color #FFD600 (2px), box-shadow 0 0 0 3px rgba(255,214,0,0.25), sem mudança de layout",
+      "error": "border-color #FF5C51, mensagem Inter 14px #FF5C51 com ícone, abaixo do campo",
+      "success": "border-color #4ADE80",
+      "checkbox_radio": "Quadrados retos 20px; checked = fundo #FFD600 com check preto"
+    },
+    "hero": {
+      "layout": "Full-bleed 100vh (min-height 640px). Fundo = vídeo simulado (gradiente animado + faixas diagonais). Headline display Anton ocupando até 90vw, alinhada à ESQUERDA e ancorada na metade inferior. Eyebrow amarelo em cima, CTA xl + ghost link abaixo. Marquee de urgência colado na base do hero.",
+      "headline_pattern": "2–3 linhas curtas, imperativo: 'SEM DESCULPAS. / COMECE HOJE.'",
+      "overlay": "Overlay preto 55–65% sobre a mídia para garantir contraste do texto branco/amarelo",
+      "mobile": "min-height 100svh, headline clamp(56px, 18vw, 88px), CTA full-width"
+    },
+    "navigation": {
+      "desktop": "Barra fixa preta com borda inferior 1px #2A2A2A. Logo à esquerda (Anton). Links centro/direita: Inter 700 uppercase 14px letter-spacing 0.12em, branco → hover stripe-sweep amarelo. CTA 'AULA GRÁTIS' como botão primary sm sempre visível à direita.",
+      "scroll_behavior": "Ao rolar > 80px, barra reduz padding (72px → 56px) em 200ms e ganha fundo rgba(0,0,0,0.92) com backdrop-blur",
+      "mobile": "Header preto com logo + botão hamburger 48px. Menu abre em overlay fullscreen preto com links em Anton 40px uppercase, stagger de entrada 60ms, CTA amarelo fixo na base."
+    },
+    "footer": {
+      "background": "#000000",
+      "border_top": "4px solid #FFD600",
+      "structure": "Marquee lento com nome da marca no topo do footer + 3 colunas (contato/horários, modalidades, redes) + barra final com CNPJ e créditos em #8A8A8A 13px",
+      "hours_treatment": "Horários em JetBrains Mono — legibilidade de dado",
+      "social": "Ícones SVG 24px brancos → hover amarelo 200ms"
+    },
+    "testimonials": {
+      "layout": "Faixa horizontal em surface_alt #111111. Quote em Anton uppercase 28–40px branco com aspas amarelas gigantes. Autor em Inter: nome branco 700 + tempo de box em #8A8A8A ('6 meses de box'). Resultado em destaque amarelo ('-14kg em 5 meses').",
+      "carousel": "Deslize horizontal com scroll-snap; setas quadradas 48px com borda branca → hover inverte",
+      "avoid": "Nada de cards fofos com foto redonda — depoimento aqui é MANCHETE de resultado"
+    },
+    "badges": {
+      "urgency": "Fundo #FFD600, texto #000000 Inter 800 uppercase 12px, padding 6px 12px, radius 0, animação pulse-badge. Ex: 'ÚLTIMAS VAGAS'",
+      "modality_tag": "Pill (radius full) com borda 1px #2A2A2A, texto #B3B3B3 uppercase 12px → hover borda amarela",
+      "result_stat": "Número gigante JetBrains Mono amarelo + label Inter branco. Ex: '+500 ALUNOS'"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Imperativo, direto, motivacional. Frases curtas como socos. Caixa alta nos momentos-chave. Fala com o aluno como um coach: exige, provoca e celebra. Zero jargão corporativo, zero promessa vazia — sempre ação concreta com próximo passo claro.",
+    "headline_examples": [
+      "SEM DESCULPAS. COMECE HOJE.",
+      "SEU ÚNICO ADVERSÁRIO É O VOCÊ DE ONTEM.",
+      "TREINO FORTE. COMUNIDADE MAIS FORTE.",
+      "O SOFÁ NÃO VAI SENTIR SUA FALTA.",
+      "AQUI NINGUÉM TREINA SOZINHO."
+    ],
+    "cta_examples": [
+      "Sua primeira aula é grátis",
+      "AGENDAR AULA EXPERIMENTAL",
+      "QUERO COMEÇAR AGORA",
+      "GARANTIR MINHA VAGA",
+      "VER HORÁRIOS DE HOJE"
+    ],
+    "microcopy_examples": [
+      "Vagas limitadas por turma — 16 atletas no máximo",
+      "Sem fidelidade. Sem letra miúda.",
+      "Responderemos em até 2h no horário do box."
+    ],
+    "avoid": [
+      "Tom passivo ou condicional ('talvez você goste de...')",
+      "Clichês genéricos de academia ('venha fazer parte da família fitness')",
+      "Promessas irreais ('perca 10kg em 1 semana')",
+      "Texto longo e explicativo no hero — máximo 2 frases",
+      "Diminutivos e tom infantilizado ('treininho', 'corpinho')",
+      "Body shaming ou culpa — a provocação é sempre pró-ação, nunca humilhação"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas / 1440px max / gutter 32px desktop. Headlines e marquees QUEBRAM o grid de propósito (full-bleed, 100vw). Conteúdo de leitura respeita o container.",
+    "page_flow": [
+      { "section": "hero", "layout": "100vh full-bleed, vídeo simulado + headline display à esquerda na metade inferior + CTA xl", "note": "primeira dobra já vende a aula grátis" },
+      { "section": "marquee de urgência", "layout": "faixa amarela full-width com texto preto deslizando: 'PRIMEIRA AULA GRÁTIS ★ SEM FIDELIDADE ★'", "note": "separador energético entre hero e conteúdo" },
+      { "section": "modalidades", "layout": "grid 3 colunas de class_cards (1 col mobile, 2 tablet), header da seção com H2 gigante + ghost link", "note": "cards com hover card-charge" },
+      { "section": "prova social numérica", "layout": "faixa surface_alt com 3-4 result_stats em counter-up (+500 alunos, 40 aulas/semana, 600m²)", "note": "números em JetBrains Mono amarelo" },
+      { "section": "metodologia / diferenciais", "layout": "split 50/50 — bloco de mídia simulada à esquerda, lista numerada com headlines Anton à direita; alterna lados a cada item em desktop", "note": "ritmo zigue-zague" },
+      { "section": "depoimentos", "layout": "carousel horizontal de manchetes de resultado", "note": "quote como headline, não como card fofo" },
+      { "section": "planos", "layout": "3 plan_cards, o central featured em amarelo com badge rotacionada", "note": "preço gigante em mono" },
+      { "section": "CTA final", "layout": "seção full-bleed preta com headline display 'COMECE HOJE.' + botão xl amarelo centralizado + badge pulse 'ÚLTIMAS VAGAS DA TURMA DAS 19H'", "note": "última chance de conversão antes do footer" },
+      { "section": "footer", "layout": "marquee da marca + 3 colunas + barra legal", "note": "borda superior amarela 4px" }
+    ],
+    "image_treatment": "Fotografia de treino em P&B de alto contraste (atletas em movimento, suor, barra carregada) com overlay preto 40–60%. Opcional: duotone preto/amarelo. No preview e em protótipos, simular com gradientes animados e faixas diagonais amarelas — nunca imagem externa.",
+    "density": "Alta nos momentos de energia (hero, marquees, stats), respiro generoso nos blocos de decisão (planos, formulário). O ritmo denso→vazio imita intervalos de treino.",
+    "whitespace": "O 'espaço em branco' aqui é PRETO: vazio absoluto ao redor das headlines gigantes para amplificar o impacto. Nunca preencher todo canto — a escuridão é parte da composição."
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "body_text": "#FFFFFF sobre #000000 = 21:1 (AAA)",
+      "secondary_text": "#B3B3B3 sobre #000000 = 10.02:1 (AAA)",
+      "muted_text": "#8A8A8A sobre #000000 = 6.08:1 (AA texto normal)",
+      "primary_cta": "#000000 sobre #FFD600 = 14.87:1 (AAA)",
+      "yellow_headline": "#FFD600 sobre #000000 = 14.87:1 (AAA)",
+      "rule": "Proibido branco sobre amarelo (1.41:1) e amarelo sobre branco (1.41:1). Todo bloco amarelo usa texto preto."
+    },
+    "keyboard_navigation": "Ordem de tab lógica (nav → hero CTA → conteúdo → footer). Menu mobile com focus trap e fechamento por Esc. Carousel de depoimentos navegável por setas do teclado. Skip-link 'Pular para o conteúdo' visível no focus.",
+    "focus_states": "Outline 3px sólido com offset 3px — branco sobre elementos amarelos, amarelo sobre elementos pretos/brancos. Nunca remover outline sem substituto visível.",
+    "alt_text": "Toda mídia de treino com alt descritivo em PT-BR ('Atleta executando levantamento terra durante aula de CrossFit'). Mídia decorativa (gradientes, marquees) com aria-hidden='true'.",
+    "semantic_html": "header/nav/main/section/article/footer; headlines em hierarquia real (um h1 por página); marquee implementado como div aria-hidden com conteúdo textual duplicado + versão para leitor de tela fora da animação; botões são <button>/<a>, nunca divs clicáveis.",
+    "touch_targets": "44px minimum",
+    "motion_safety": "prefers-reduced-motion desliga marquees, pulses e slams (ver motion.reduced_motion_strategy). Nenhum flash acima de 3 por segundo. Autoplay de vídeo sempre mudo, com botão de pausa acessível."
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Full-bleed min-height 100svh. Vídeo simulado ao fundo, eyebrow amarelo → headline display clamp(56px, 18vw, 88px) alinhada à esquerda na metade inferior → CTA xl full-width + ghost link. Marquee de urgência colado na base.",
+      "tablet": "min-height 100vh, headline crescendo com a escala fluida, CTA xl lado a lado com ghost link; marquee full-width mantido.",
+      "desktop": "100vh (min 640px), headline display até clamp(96px, 11vw, 176px) ocupando até 90vw, overlay preto 55–65% sobre a mídia; CTA xl + ghost à esquerda."
+    },
+    "modalidades_grid": {
+      "mobile": "1 coluna de class_cards full-width, gap 24px",
+      "tablet": "2 colunas, gap 24px",
+      "desktop": "3 colunas, gap 32px, hover card-charge ativo"
+    },
+    "navigation": {
+      "mobile_tablet": "Header preto com logo Anton + hamburger 48px; menu abre em overlay fullscreen preto, links Anton 40px uppercase com stagger 60ms, CTA amarelo fixo na base.",
+      "desktop": "Barra fixa preta com borda inferior 1px #2A2A2A; logo à esquerda, links Inter 700 uppercase 14px centro/direita com stripe-sweep no hover, CTA 'AULA GRÁTIS' primary sm sempre visível. Ao rolar > 80px reduz padding 72px→56px."
+    },
+    "footer": {
+      "mobile": "Colunas empilhadas (contato/horários primeiro), marquee da marca no topo, barra legal ao final; borda superior amarela 4px.",
+      "desktop": "Marquee da marca + 3 colunas (contato/horários, modalidades, redes) + barra final com CNPJ e créditos #8A8A8A 13px."
+    },
+    "touch_adjustments": "Hover card-charge e cta-invert viram active-state no touch (translateY leve / inversão ao pressionar); carousel de depoimentos com scroll-snap nativo; todos os alvos tocáveis ≥ 44px (botões sm têm 40px visuais mas 44px de área via padding externo)."
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente, coerentes com components deste DS",
+    "button_primary": ["default (fundo #FFD600, texto #000000, borda 2px #FFD600)", "hover (cta-invert: fundo #000000, texto #FFD600, glow_primary, 200ms snap)", "focus-visible (outline 3px #FFFFFF, offset 3px)", "active (scale 0.97)", "disabled (fundo #444444, texto #8A8A8A, sem glow, not-allowed)", "loading (spinner 16px preto + texto 'ENVIANDO...')"],
+    "button_secondary": ["default (transparente, texto #FFFFFF, borda 2px #FFFFFF)", "hover (fundo #FFFFFF, texto #000000, 200ms snap)", "focus-visible (outline 3px #FFD600, offset 3px)", "active (scale 0.97)", "disabled (borda #444444, texto #666666)"],
+    "link_nav": ["default (Inter 700 uppercase branco)", "hover (stripe-sweep: sublinhado amarelo 4px varre da esquerda)", "focus-visible (outline 3px #FFD600)", "current (sublinhado amarelo 4px fixo)"],
+    "card_class": ["default (fundo #111111, borda 1px #2A2A2A)", "hover (card-charge: translateY(-6px), borda #FFD600, glow_primary)", "focus-within (borda #FFD600)", "active/selecionado (borda esquerda heavy 4px #FFD600)"],
+    "input": ["default (fundo #111111, borda 1px #2A2A2A)", "focus (borda 2px #FFD600 + box-shadow 0 0 0 3px rgba(255,214,0,0.25))", "filled", "error (borda #FF5C51 + mensagem #FF5C51 com ícone + aria-describedby)", "disabled", "success (borda #4ADE80)"],
+    "nav_header": ["topo (fundo preto sólido, padding 72px)", "rolado (padding 56px, fundo rgba(0,0,0,0.92) + backdrop-blur)", "menu mobile aberto (overlay fullscreen preto, focus trap, fechamento por Esc)"]
+  },
+  "photography_direction": {
+    "style": "Fotografia de treino em P&B de alto contraste — atletas em movimento, esforço real, energia atlética de alta intensidade",
+    "subjects": [
+      "Atleta executando levantamento terra / clean com barra carregada",
+      "Suor, veias, tensão muscular em close de alto contraste",
+      "Turma em WOD sincronizado, movimento congelado",
+      "Detalhe de equipamento (barra, kettlebell, corda naval, box de salto)",
+      "Coach corrigindo postura — comunidade em ação"
+    ],
+    "light": "Dura e direcional, contraste alto, sombras profundas quase pretas. Luz de contorno (rim light) recortando o atleta do fundo escuro.",
+    "color_grading": "Preto e branco de alto contraste; opcional duotone preto/amarelo (#000000 → #FFD600). Blacks esmagados, highlights fortes. Proibido: tons pastel, HDR chapado, saturação colorida naturalista.",
+    "framing": "Ângulos baixos heroicos e closes de esforço; movimento com leve motion blur ou congelamento seco; sempre pelo menos 1 imagem de energia coletiva.",
+    "avoid": [
+      "Stock genérico sorridente de 'academia limpa e vazia'",
+      "Fotos claras e coloridas de bem-estar/spa (pertence a outra personalidade)",
+      "Imagens fofas ou infantilizadas — nada de tom leve"
+    ],
+    "fallback_sem_foto": "Gradiente diagonal preto→cinza-chumbo (#000000 → #2A2A2A) com faixas diagonais amarelas em movimento lento (video-sim-gradient) e overlay preto 40–60%. Nunca imagem externa em preview. Amarelo (#FFD600) apenas como faixa/glow decorativo — nunca como fundo de bloco de texto (texto sobre amarelo é sempre preto #000000)."
+  },
+  "iconography": {
+    "style": "Linha grossa (stroke 2px–2.5px), pontas retas (stroke-linecap butt/square), grid 24x24 — coerente com a brutalidade reta dos botões e cards (radius 0)",
+    "color": "#FFFFFF sobre preto, #FFD600 para ícones de impacto/ação; hover branco→amarelo em 200ms",
+    "recommended_set": "Lucide (open source, MIT) com stroke ajustado para 2–2.5px; ícones geométricos e retos combinam melhor que linhas arredondadas",
+    "usage": "Ícones sempre acompanhados de texto — nunca ícone sozinho como única affordance. Ícones de redes sociais 24px brancos → hover amarelo.",
+    "decorative_shapes": "Faixas diagonais amarelas, marquees, setas quadradas, sublinhados heavy 4px, badges pill de modalidade e recortes via clip-path — sempre aria-hidden='true'"
+  },
+  "do_dont": {
+    "do": [
+      "Usar preto (#000000) como texto sobre qualquer bloco amarelo (#FFD600) — contraste 14.87:1",
+      "Manter headlines Anton SEMPRE em uppercase com line-height apertado (0.9–1.0)",
+      "Repetir o CTA 'aula grátis' no header, no hero e na seção final",
+      "Usar GLOW amarelo (glow_primary) como 'sombra de energia' em hover de CTA e card ativo",
+      "Cravar botões e cards retos (radius 0) — a única exceção é a badge pill de modalidade",
+      "Usar JetBrains Mono em timers, preços e result_stats para leitura de dado",
+      "Deixar vazio PRETO generoso ao redor das headlines gigantes"
+    ],
+    "dont": [
+      "Usar branco como texto sobre amarelo (#FFFFFF sobre #FFD600 = 1.41:1, reprovado)",
+      "Usar amarelo como texto ou fundo de bloco sobre branco (#FFD600 sobre #FFFFFF = 1.41:1)",
+      "Usar yellow_700/yellow_900 sobre preto — reservados para variações claras da paleta",
+      "Usar #8A8A8A (text_muted) em texto pequeno abaixo de 16px — só passa AA em texto normal (6.08:1)",
+      "Deixar marquees, pulses e slams ativos sob prefers-reduced-motion",
+      "Provocar com body shaming ou culpa — a energia é pró-ação, nunca humilhação",
+      "Arredondar botões/cards ou suavizar a estética reta e brutal"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Anton (400), Inter:wght@400;700;800 e JetBrains Mono:wght@500;700 com display=swap; preload do Anton woff2 (headline é o elemento LCP).",
+    "js_budget": "JS total < 30KB. Comportamentos: menu mobile (toggle + focus trap), IntersectionObserver para headline-slam e counter-up, carousel de depoimentos com scroll-snap. Marquees e gradiente de vídeo simulado em CSS puro (zero JS).",
+    "seo_local": "Schema.org LocalBusiness/HealthClub (ou SportsActivityLocation) com horários, geo, telefone e aggregateRating; título com bairro/cidade ('CrossFit X — Box de treino funcional na Vila Y').",
+    "whatsapp_cta": "Link wa.me com mensagem pré-preenchida direta ('Quero agendar minha aula experimental grátis!'); botão flutuante amarelo com texto preto, coerente com a regra de contraste.",
+    "adaptation_guide": "Ao adaptar para outro segmento da mesma personalidade (escola de luta, HIIT, e-sports/gaming house): manter dark absoluto + neon único, Anton uppercase, marquees, glow e motion punch/snap; trocar vocabulário do voice_and_tone e a metáfora fotográfica. A essência é a alta intensidade, não o CrossFit em si."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true,
+    "uniqueness_notes": "Distinto dos irmãos 03.2 (Hamburgueria: #E63946+#F1C232, Bebas Neue, food photography, fundo claro) e 03.3 (Sorveteria: #FF1493+#FFD700, Oswald, stickers playful). Aqui: dark absoluto + neon único, Anton, marquees, glow e fotografia P&B atlética."
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "energetico",
+      "vibrante",
+      "fitness",
+      "dark-neon",
+      "amarelo-neon",
+      "anton-uppercase",
+      "marquee",
+      "glow",
+      "alta-intensidade",
+      "fotografia-pb-atletica"
+    ],
+    "related_docs": [
+      "previews/markdown/03-1-academia-crossfit-energia.md",
+      "previews/html/03-1-academia-crossfit-energia.html",
+      "docs/03-1-academia-crossfit-energia/components.md",
+      "docs/03-1-academia-crossfit-energia/animations.css",
+      "docs/03-1-academia-crossfit-energia/accessibility-report.md",
+      "docs/03-1-academia-crossfit-energia/benchmarking.md",
+      "docs/03-1-academia-crossfit-energia/color-variations.md",
+      "docs/03-1-academia-crossfit-energia/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Academia e box de CrossFit",
+      "Escola de luta (muay thai, jiu-jitsu, boxe)",
+      "Personal trainer e assessoria esportiva",
+      "Estúdio de treino funcional/HIIT",
+      "Arena de e-sports e gaming house"
+    ],
+    "conversion_factors": [
+      "CTA 'aula grátis' presente na navegação, no hero e na seção final — oferta de entrada sem atrito repetida em 3 pontos",
+      "Urgência honesta: badges de vagas limitadas por turma e marquee de oferta, sem falsa escassez",
+      "Prova social numérica animada (counter-up) — credibilidade em 3 segundos de scroll",
+      "Depoimentos formatados como manchete de RESULTADO mensurável, não como elogio genérico",
+      "Plano featured em amarelo com ancoragem de preço — direciona a escolha",
+      "Tipografia gigante + contraste 14.87:1 = mensagem principal lida em qualquer condição, inclusive mobile na rua",
+      "Fricção zero declarada: 'Sem fidelidade. Sem letra miúda.'"
+    ],
+    "core_web_vitals": {
+      "LCP_strategy": "Headline em texto (não imagem) como elemento LCP; fontes com font-display: swap e preload de Anton woff2; vídeo/gradiente de fundo carregado após o texto",
+      "CLS_strategy": "Alturas reservadas para hero (min-height) e marquees; animações só com transform/opacity — nunca propriedades de layout",
+      "FID_INP_strategy": "Marquees e gradientes em CSS puro (zero JS); counter-up com IntersectionObserver leve; JS total < 30KB",
+      "targets": { "LCP": "< 2.5s", "INP": "< 200ms", "CLS": "< 0.1" }
+    }
+  }
+}

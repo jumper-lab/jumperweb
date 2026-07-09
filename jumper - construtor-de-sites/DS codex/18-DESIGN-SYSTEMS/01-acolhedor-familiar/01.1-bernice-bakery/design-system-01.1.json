@@ -1,0 +1,1056 @@
+{
+  "schema_version": "3.0.0-codex-distinct",
+  "design_system_id": "01.1",
+  "design_system_name": "Bernice Counter Ritual System",
+  "category": "01 — Acolhedor e Familiar",
+  "subcategory": "Padaria artesanal de bairro",
+  "import_policy": "Pacote separado para validação manual em DS codex. Não mover para o sistema oficial sem revisão humana de originalidade, cobertura e compatibilidade.",
+  "inspiration_site": {
+    "name": "Bernice Bakery",
+    "url": "https://bernicebakery.com/",
+    "awards": [
+      "Referencia visual em validacao autoral; premios/reconhecimentos nao devem ser tratados como verificados ate auditoria humana com fontes."
+    ],
+    "design_studio_or_author": "Independent hospitality brand team",
+    "why_chosen": "Bernice Bakery foi usado como repertório para warm counter ritual, product shelves, hand-written daily rhythm. O DS traduz a lógica de experiência do site em decisões reutilizáveis sem copiar layout, texto, imagens ou componentes."
+  },
+  "source_site_translation": {
+    "observed_visual_pattern": "warm counter ritual, product shelves, hand-written daily rhythm",
+    "site_anatomy_to_cover": {
+      "navigation": "painted window sign nav with daily bake ticker",
+      "hero": "low counter hero with pastry close-up, human hands, and opening-hours ribbon",
+      "primary_sections": [
+        "Daily bake counter",
+        "Neighbourhood welcome",
+        "Signature pastries shelf",
+        "Pre-order and pickup flow",
+        "Baker notes",
+        "Community praise",
+        "Visit card",
+        "Footer as receipt"
+      ],
+      "conversion_paths": [
+        "Pre-order today",
+        "See the bakes",
+        "contact/support route"
+      ],
+      "footer_role": "Footer as receipt"
+    },
+    "what_to_reinterpret": [
+      "Ritmo principal: counter-story vertical",
+      "Padrão de navegação: painted window sign nav with daily bake ticker",
+      "Componentes próprios: bake-shelf-card, daily-batch-ticker, crumb-trail-link, pickup-window-form, neighbor-quote-strip, receipt-footer",
+      "Motion signature: slow oven-warm reveal, soft vertical steam drift, tiny shelf lift"
+    ],
+    "what_not_to_copy": [
+      "layout exato do site fonte",
+      "copy real do site fonte",
+      "imagens reais do site fonte",
+      "classes CSS do site fonte",
+      "componentes proprietários do site fonte"
+    ],
+    "jumper_usage_boundary": "Usar como repertório visual e estrutural. O cliente final ainda precisa nascer do briefing, do DS final do cliente e do plano autoral."
+  },
+  "uniqueness_fingerprint": {
+    "layout_architecture": "counter-story vertical",
+    "navigation_pattern": "painted window sign nav with daily bake ticker",
+    "hero_architecture": "low counter hero with pastry close-up, human hands, and opening-hours ribbon",
+    "section_flow": [
+      "Daily bake counter",
+      "Neighbourhood welcome",
+      "Signature pastries shelf",
+      "Pre-order and pickup flow",
+      "Baker notes",
+      "Community praise",
+      "Visit card",
+      "Footer as receipt"
+    ],
+    "component_set": [
+      "bake-shelf-card",
+      "daily-batch-ticker",
+      "crumb-trail-link",
+      "pickup-window-form",
+      "neighbor-quote-strip",
+      "receipt-footer"
+    ],
+    "motion_signature": "slow oven-warm reveal, soft vertical steam drift, tiny shelf lift",
+    "responsive_strategy": "single-column bakery board with sticky pickup button",
+    "density": "cozy",
+    "whitespace": "soft",
+    "prohibited_similarity_checks": [
+      "não reutilizar hero split automático",
+      "não usar grid genérico de três cards sem função",
+      "não repetir ordem de seções de outro DS",
+      "não usar botão e card com mesmo comportamento dos demais DSs"
+    ]
+  },
+  "colors": {
+    "primary": "#8A3F2B",
+    "primary_usage": "ação principal, ponto de marca e destaque de navegação",
+    "secondary": "#E7B86A",
+    "secondary_usage": "ênfase secundária, estado ativo e composição visual",
+    "surface": "#FFF7EC",
+    "surface_alt": "#F4DFC8",
+    "text_primary": "#2B1710",
+    "text_secondary": "#765B4E",
+    "text_muted": "#765B4E",
+    "border": "#D9BFA4",
+    "error": "#B42318",
+    "success": "#027A48",
+    "warning": "#B54708",
+    "neutral_scale": {
+      "50": "#FFF7ED",
+      "100": "#FFF7EC",
+      "200": "#F4DFC8",
+      "300": "#D9BFA4",
+      "400": "#765B4E",
+      "500": "#E7B86A",
+      "600": "#8A3F2B",
+      "700": "#713423",
+      "800": "#5B2A1C",
+      "900": "#2B1710"
+    },
+    "contrast_verification": {
+      "text_on_surface": "16.04:1 (AAA)",
+      "cta_on_primary": "7.43:1 (AAA)",
+      "text_on_surface_alt": "13.17:1 (AAA)",
+      "notes": "Pares críticos recalculados. Em implementação real, imagens e overlays precisam passar nova checagem."
+    }
+  },
+  "typography": {
+    "heading_font": "Fraunces",
+    "body_font": "Nunito Sans",
+    "mono_font": "IBM Plex Mono",
+    "base_size": "16px",
+    "tone_reason": "Fraunces sustenta warm counter ritual, product shelves, hand-written daily rhythm; Nunito Sans mantém leitura funcional.",
+    "scales": {
+      "mobile": {
+        "h1": {
+          "size": "2.35rem",
+          "weight": "800",
+          "line_height": "0.98"
+        },
+        "h2": {
+          "size": "1.65rem",
+          "weight": "700",
+          "line_height": "1.12"
+        },
+        "h3": {
+          "size": "1.2rem",
+          "weight": "700",
+          "line_height": "1.25"
+        },
+        "body": {
+          "size": "1rem",
+          "weight": "400",
+          "line_height": "1.62"
+        },
+        "small": {
+          "size": "0.875rem",
+          "weight": "500",
+          "line_height": "1.45"
+        }
+      },
+      "desktop": {
+        "h1": {
+          "size": "4.6rem",
+          "weight": "800",
+          "line_height": "0.92"
+        },
+        "h2": {
+          "size": "3.2rem",
+          "weight": "760",
+          "line_height": "1.02"
+        },
+        "h3": {
+          "size": "1.65rem",
+          "weight": "720",
+          "line_height": "1.18"
+        },
+        "body": {
+          "size": "1.08rem",
+          "weight": "400",
+          "line_height": "1.68"
+        },
+        "small": {
+          "size": "0.86rem",
+          "weight": "600",
+          "line_height": "1.42"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "xxl": "48px",
+      "xxxl": "72px",
+      "xxxxl": "96px"
+    },
+    "section_spacing": {
+      "mobile": "48px",
+      "tablet": "68px",
+      "desktop": "92px"
+    },
+    "container_max_width": "1320px"
+  },
+  "borders": {
+    "radius": {
+      "none": "0px",
+      "xs": "2px",
+      "sm": "4px",
+      "md": "10px",
+      "lg": "10px",
+      "xl": "10px",
+      "full": "999px"
+    },
+    "usage": {
+      "buttons": "10px",
+      "cards": "10px",
+      "inputs": "10px",
+      "reason": "Raio definido para combinar com warm counter ritual, product shelves, hand-written daily rhythm."
+    }
+  },
+  "shadows": {
+    "xs": "0 1px 2px rgba(0,0,0,.06)",
+    "sm": "0 4px 14px rgba(0,0,0,.08)",
+    "md": "0 14px 42px rgba(0,0,0,.12)",
+    "lg": "0 28px 80px rgba(0,0,0,.18)",
+    "usage": "sombras discretas conforme hierarquia"
+  },
+  "motion": {
+    "durations": {
+      "fast": "220ms",
+      "base": "340ms",
+      "slow": "620ms"
+    },
+    "easings": {
+      "standard": "cubic-bezier(.2,0,.2,1)",
+      "entrance": "cubic-bezier(.16,1,.3,1)",
+      "exit": "cubic-bezier(.7,0,.84,0)"
+    },
+    "animations": [
+      {
+        "name": "slow-oven-warm-reveal-soft-vertical-steam-drift-tiny-shelf-lift",
+        "duration": "520ms",
+        "easing": "entrance",
+        "trigger": "section enters viewport",
+        "notes": "slow oven-warm reveal, soft vertical steam drift, tiny shelf lift"
+      },
+      {
+        "name": "counter-story-vertical-hover",
+        "duration": "180ms",
+        "easing": "standard",
+        "trigger": "interactive hover/focus",
+        "notes": "o hover deve reforçar o componente específico, não apenas subir card"
+      }
+    ],
+    "reduced_motion": "Manter hierarquia com cor, borda e estado ativo; remover parallax, drift e deslocamentos."
+  },
+  "components": {
+    "navigation": {
+      "pattern": "painted window sign nav with daily bake ticker",
+      "behavior": "context-aware sticky header",
+      "mobile": "single-column bakery board with sticky pickup button",
+      "states": [
+        "default",
+        "active section",
+        "menu open",
+        "focus visible"
+      ]
+    },
+    "hero": {
+      "height": "68-84vh",
+      "composition": "low counter hero with pastry close-up, human hands, and opening-hours ribbon",
+      "text_color": "colors.text_primary",
+      "media_rule": "imagem, produto, diagrama ou textura real precisa ter função comercial/narrativa",
+      "forbidden": "hero split automático com texto sempre à esquerda e imagem decorativa sem função"
+    },
+    "buttons": {
+      "primary": {
+        "bg": "colors.primary",
+        "text": "#FFFFFF",
+        "padding": "14px 24px",
+        "border_radius": "borders.radius.md",
+        "hover": "contextual state tied to DS motion",
+        "focus": "2px outline colors.secondary offset 3px"
+      },
+      "secondary": {
+        "bg": "transparent",
+        "text": "colors.text_primary",
+        "border": "1px colors.border",
+        "padding": "12px 20px",
+        "hover": "surface_alt + active border"
+      },
+      "ghost": {
+        "bg": "transparent",
+        "text": "colors.text_primary",
+        "border": "none",
+        "hover": "underline or active rail marker"
+      }
+    },
+    "unique_components": [
+      {
+        "name": "bake-shelf-card",
+        "role": "Daily bake counter",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar bake-shelf-card para Bernice Counter Ritual System; não substituir por card genérico."
+      },
+      {
+        "name": "daily-batch-ticker",
+        "role": "Neighbourhood welcome",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar daily-batch-ticker para Bernice Counter Ritual System; não substituir por card genérico."
+      },
+      {
+        "name": "crumb-trail-link",
+        "role": "Signature pastries shelf",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar crumb-trail-link para Bernice Counter Ritual System; não substituir por card genérico."
+      },
+      {
+        "name": "pickup-window-form",
+        "role": "Pre-order and pickup flow",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar pickup-window-form para Bernice Counter Ritual System; não substituir por card genérico."
+      },
+      {
+        "name": "neighbor-quote-strip",
+        "role": "Baker notes",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar neighbor-quote-strip para Bernice Counter Ritual System; não substituir por card genérico."
+      },
+      {
+        "name": "receipt-footer",
+        "role": "Community praise",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar receipt-footer para Bernice Counter Ritual System; não substituir por card genérico."
+      }
+    ],
+    "forms": {
+      "style": "pickup-window-form",
+      "fields": [
+        "name/email or intent",
+        "business-specific selector",
+        "message/notes"
+      ],
+      "error_state": "inline, explicit and high contrast",
+      "success_state": "keeps user in same context"
+    },
+    "footer": {
+      "role": "Footer as receipt",
+      "layout": "functional grouped footer",
+      "must_include": [
+        "primary action",
+        "contact path",
+        "navigation recap",
+        "legal/accessibility links"
+      ]
+    }
+  },
+  "composition": {
+    "grid_system": "counter-story vertical",
+    "max_width": "1320px",
+    "density": "cozy",
+    "whitespace": "soft",
+    "image_treatment": "Imagens devem sustentar warm counter ritual, product shelves, hand-written daily rhythm.",
+    "page_flow": [
+      {
+        "order": 1,
+        "section": "Daily bake counter",
+        "layout": "low counter hero with pastry close-up, human hands, and opening-hours ribbon",
+        "component": "bake-shelf-card"
+      },
+      {
+        "order": 2,
+        "section": "Neighbourhood welcome",
+        "layout": "asymmetric editorial block",
+        "component": "daily-batch-ticker"
+      },
+      {
+        "order": 3,
+        "section": "Signature pastries shelf",
+        "layout": "functional conversion module",
+        "component": "crumb-trail-link"
+      },
+      {
+        "order": 4,
+        "section": "Pre-order and pickup flow",
+        "layout": "wide proof band",
+        "component": "pickup-window-form"
+      },
+      {
+        "order": 5,
+        "section": "Baker notes",
+        "layout": "asymmetric editorial block",
+        "component": "neighbor-quote-strip"
+      },
+      {
+        "order": 6,
+        "section": "Community praise",
+        "layout": "functional conversion module",
+        "component": "receipt-footer"
+      },
+      {
+        "order": 7,
+        "section": "Visit card",
+        "layout": "wide proof band",
+        "component": "bake-shelf-card"
+      },
+      {
+        "order": 8,
+        "section": "Footer as receipt",
+        "layout": "asymmetric editorial block",
+        "component": "daily-batch-ticker"
+      }
+    ],
+    "structural_variations": [
+      {
+        "name": "baseline source-informed",
+        "description": "counter-story vertical"
+      },
+      {
+        "name": "conversion-heavy variant",
+        "description": "Antecipar Pre-order today sem trocar a anatomia counter-story vertical."
+      },
+      {
+        "name": "editorial-deep variant",
+        "description": "Aumentar storytelling de Neighbourhood welcome mantendo componentes bake-shelf-card e daily-batch-ticker."
+      }
+    ],
+    "selected_variation": "baseline source-informed with business-specific conversion accents"
+  },
+  "voice_and_tone": {
+    "tone": "neighborly, sensorial and concrete",
+    "examples_headlines": [
+      "low counter hero with pastry close-up, human hands, and opening-hours ribbon",
+      "Daily bake counter",
+      "warm counter ritual, product shelves, hand-written daily rhythm"
+    ],
+    "examples_cta": [
+      "Pre-order today",
+      "See the bakes"
+    ],
+    "avoid": [
+      "never turn warmth into beige generic lifestyle cards",
+      "claims without visible proof",
+      "generic template language"
+    ]
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "text_on_surface": "16.04:1 (AAA)",
+      "cta_on_primary": "7.43:1 (AAA)"
+    },
+    "keyboard_navigation": "ordem lógica; estados ativos e foco visível em navegação, cards e formulários",
+    "focus_states": "2px outline com offset 3px usando secondary ou primary conforme contraste",
+    "alt_text": "Descrever função da imagem no padrão warm counter ritual, product shelves, hand-written daily rhythm, não apenas aparência.",
+    "touch_targets": "44px mínimo; ações principais não dependem de hover"
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Padaria artesanal de bairro",
+      "local families, walkers and weekend regulars"
+    ],
+    "conversion_factors": [
+      "Pre-order today",
+      "See the bakes",
+      "Signature pastries shelf",
+      "bake-shelf-card"
+    ],
+    "core_web_vitals": {
+      "lcp_target": "< 2.5s",
+      "inp_target": "< 200ms",
+      "cls_target": "< 0.1"
+    },
+    "seo_schema": [
+      "Organization",
+      "LocalBusiness/Product/Service conforme cliente",
+      "BreadcrumbList",
+      "FAQPage quando houver FAQ"
+    ]
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "accessibility_wcag_aa": true,
+    "source_site_covered": true,
+    "clean_room_ready": true,
+    "not_a_template_skin": true
+  },
+  "implementation_depth_checks": [
+    {
+      "check": 1,
+      "area": "nav",
+      "rule": "Validar Bernice Counter Ritual System: nav deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra bake-shelf-card conectado à seção Daily bake counter.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 2,
+      "area": "hero",
+      "rule": "Validar Bernice Counter Ritual System: hero deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra daily-batch-ticker conectado à seção Neighbourhood welcome.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 3,
+      "area": "sections",
+      "rule": "Validar Bernice Counter Ritual System: sections deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra crumb-trail-link conectado à seção Signature pastries shelf.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 4,
+      "area": "components",
+      "rule": "Validar Bernice Counter Ritual System: components deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra pickup-window-form conectado à seção Pre-order and pickup flow.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 5,
+      "area": "forms",
+      "rule": "Validar Bernice Counter Ritual System: forms deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra neighbor-quote-strip conectado à seção Baker notes.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 6,
+      "area": "motion",
+      "rule": "Validar Bernice Counter Ritual System: motion deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra receipt-footer conectado à seção Community praise.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 7,
+      "area": "responsive",
+      "rule": "Validar Bernice Counter Ritual System: responsive deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra bake-shelf-card conectado à seção Visit card.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 8,
+      "area": "accessibility",
+      "rule": "Validar Bernice Counter Ritual System: accessibility deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra daily-batch-ticker conectado à seção Footer as receipt.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 9,
+      "area": "conversion",
+      "rule": "Validar Bernice Counter Ritual System: conversion deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra crumb-trail-link conectado à seção Daily bake counter.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 10,
+      "area": "nav",
+      "rule": "Validar Bernice Counter Ritual System: nav deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra pickup-window-form conectado à seção Neighbourhood welcome.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 11,
+      "area": "hero",
+      "rule": "Validar Bernice Counter Ritual System: hero deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra neighbor-quote-strip conectado à seção Signature pastries shelf.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 12,
+      "area": "sections",
+      "rule": "Validar Bernice Counter Ritual System: sections deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra receipt-footer conectado à seção Pre-order and pickup flow.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 13,
+      "area": "components",
+      "rule": "Validar Bernice Counter Ritual System: components deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra bake-shelf-card conectado à seção Baker notes.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 14,
+      "area": "forms",
+      "rule": "Validar Bernice Counter Ritual System: forms deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra daily-batch-ticker conectado à seção Community praise.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 15,
+      "area": "motion",
+      "rule": "Validar Bernice Counter Ritual System: motion deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra crumb-trail-link conectado à seção Visit card.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 16,
+      "area": "responsive",
+      "rule": "Validar Bernice Counter Ritual System: responsive deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra pickup-window-form conectado à seção Footer as receipt.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 17,
+      "area": "accessibility",
+      "rule": "Validar Bernice Counter Ritual System: accessibility deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra neighbor-quote-strip conectado à seção Daily bake counter.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 18,
+      "area": "conversion",
+      "rule": "Validar Bernice Counter Ritual System: conversion deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra receipt-footer conectado à seção Neighbourhood welcome.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 19,
+      "area": "nav",
+      "rule": "Validar Bernice Counter Ritual System: nav deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra bake-shelf-card conectado à seção Signature pastries shelf.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 20,
+      "area": "hero",
+      "rule": "Validar Bernice Counter Ritual System: hero deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra daily-batch-ticker conectado à seção Pre-order and pickup flow.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 21,
+      "area": "sections",
+      "rule": "Validar Bernice Counter Ritual System: sections deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra crumb-trail-link conectado à seção Baker notes.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 22,
+      "area": "components",
+      "rule": "Validar Bernice Counter Ritual System: components deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra pickup-window-form conectado à seção Community praise.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 23,
+      "area": "forms",
+      "rule": "Validar Bernice Counter Ritual System: forms deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra neighbor-quote-strip conectado à seção Visit card.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 24,
+      "area": "motion",
+      "rule": "Validar Bernice Counter Ritual System: motion deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra receipt-footer conectado à seção Footer as receipt.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 25,
+      "area": "responsive",
+      "rule": "Validar Bernice Counter Ritual System: responsive deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra bake-shelf-card conectado à seção Daily bake counter.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 26,
+      "area": "accessibility",
+      "rule": "Validar Bernice Counter Ritual System: accessibility deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra daily-batch-ticker conectado à seção Neighbourhood welcome.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 27,
+      "area": "conversion",
+      "rule": "Validar Bernice Counter Ritual System: conversion deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra crumb-trail-link conectado à seção Signature pastries shelf.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 28,
+      "area": "nav",
+      "rule": "Validar Bernice Counter Ritual System: nav deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra pickup-window-form conectado à seção Pre-order and pickup flow.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 29,
+      "area": "hero",
+      "rule": "Validar Bernice Counter Ritual System: hero deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra neighbor-quote-strip conectado à seção Baker notes.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 30,
+      "area": "sections",
+      "rule": "Validar Bernice Counter Ritual System: sections deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra receipt-footer conectado à seção Community praise.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 31,
+      "area": "components",
+      "rule": "Validar Bernice Counter Ritual System: components deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra bake-shelf-card conectado à seção Visit card.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 32,
+      "area": "forms",
+      "rule": "Validar Bernice Counter Ritual System: forms deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra daily-batch-ticker conectado à seção Footer as receipt.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 33,
+      "area": "motion",
+      "rule": "Validar Bernice Counter Ritual System: motion deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra crumb-trail-link conectado à seção Daily bake counter.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 34,
+      "area": "responsive",
+      "rule": "Validar Bernice Counter Ritual System: responsive deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra pickup-window-form conectado à seção Neighbourhood welcome.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 35,
+      "area": "accessibility",
+      "rule": "Validar Bernice Counter Ritual System: accessibility deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra neighbor-quote-strip conectado à seção Signature pastries shelf.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 36,
+      "area": "conversion",
+      "rule": "Validar Bernice Counter Ritual System: conversion deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra receipt-footer conectado à seção Pre-order and pickup flow.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 37,
+      "area": "nav",
+      "rule": "Validar Bernice Counter Ritual System: nav deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra bake-shelf-card conectado à seção Baker notes.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 38,
+      "area": "hero",
+      "rule": "Validar Bernice Counter Ritual System: hero deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra daily-batch-ticker conectado à seção Community praise.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 39,
+      "area": "sections",
+      "rule": "Validar Bernice Counter Ritual System: sections deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra crumb-trail-link conectado à seção Visit card.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 40,
+      "area": "components",
+      "rule": "Validar Bernice Counter Ritual System: components deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra pickup-window-form conectado à seção Footer as receipt.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 41,
+      "area": "forms",
+      "rule": "Validar Bernice Counter Ritual System: forms deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra neighbor-quote-strip conectado à seção Daily bake counter.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 42,
+      "area": "motion",
+      "rule": "Validar Bernice Counter Ritual System: motion deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra receipt-footer conectado à seção Neighbourhood welcome.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 43,
+      "area": "responsive",
+      "rule": "Validar Bernice Counter Ritual System: responsive deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra bake-shelf-card conectado à seção Signature pastries shelf.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 44,
+      "area": "accessibility",
+      "rule": "Validar Bernice Counter Ritual System: accessibility deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra daily-batch-ticker conectado à seção Pre-order and pickup flow.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 45,
+      "area": "conversion",
+      "rule": "Validar Bernice Counter Ritual System: conversion deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra crumb-trail-link conectado à seção Baker notes.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 46,
+      "area": "nav",
+      "rule": "Validar Bernice Counter Ritual System: nav deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra pickup-window-form conectado à seção Community praise.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 47,
+      "area": "hero",
+      "rule": "Validar Bernice Counter Ritual System: hero deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra neighbor-quote-strip conectado à seção Visit card.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 48,
+      "area": "sections",
+      "rule": "Validar Bernice Counter Ritual System: sections deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra receipt-footer conectado à seção Footer as receipt.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 49,
+      "area": "components",
+      "rule": "Validar Bernice Counter Ritual System: components deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra bake-shelf-card conectado à seção Daily bake counter.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 50,
+      "area": "forms",
+      "rule": "Validar Bernice Counter Ritual System: forms deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra daily-batch-ticker conectado à seção Neighbourhood welcome.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 51,
+      "area": "motion",
+      "rule": "Validar Bernice Counter Ritual System: motion deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra crumb-trail-link conectado à seção Signature pastries shelf.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 52,
+      "area": "responsive",
+      "rule": "Validar Bernice Counter Ritual System: responsive deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra pickup-window-form conectado à seção Pre-order and pickup flow.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 53,
+      "area": "accessibility",
+      "rule": "Validar Bernice Counter Ritual System: accessibility deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra neighbor-quote-strip conectado à seção Baker notes.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 54,
+      "area": "conversion",
+      "rule": "Validar Bernice Counter Ritual System: conversion deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra receipt-footer conectado à seção Community praise.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 55,
+      "area": "nav",
+      "rule": "Validar Bernice Counter Ritual System: nav deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra bake-shelf-card conectado à seção Visit card.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 56,
+      "area": "hero",
+      "rule": "Validar Bernice Counter Ritual System: hero deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra daily-batch-ticker conectado à seção Footer as receipt.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 57,
+      "area": "sections",
+      "rule": "Validar Bernice Counter Ritual System: sections deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra crumb-trail-link conectado à seção Daily bake counter.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 58,
+      "area": "components",
+      "rule": "Validar Bernice Counter Ritual System: components deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra pickup-window-form conectado à seção Neighbourhood welcome.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 59,
+      "area": "forms",
+      "rule": "Validar Bernice Counter Ritual System: forms deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra neighbor-quote-strip conectado à seção Signature pastries shelf.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 60,
+      "area": "motion",
+      "rule": "Validar Bernice Counter Ritual System: motion deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra receipt-footer conectado à seção Pre-order and pickup flow.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 61,
+      "area": "responsive",
+      "rule": "Validar Bernice Counter Ritual System: responsive deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra bake-shelf-card conectado à seção Baker notes.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 62,
+      "area": "accessibility",
+      "rule": "Validar Bernice Counter Ritual System: accessibility deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra daily-batch-ticker conectado à seção Community praise.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 63,
+      "area": "conversion",
+      "rule": "Validar Bernice Counter Ritual System: conversion deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra crumb-trail-link conectado à seção Visit card.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 64,
+      "area": "nav",
+      "rule": "Validar Bernice Counter Ritual System: nav deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra pickup-window-form conectado à seção Footer as receipt.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 65,
+      "area": "hero",
+      "rule": "Validar Bernice Counter Ritual System: hero deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra neighbor-quote-strip conectado à seção Daily bake counter.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 66,
+      "area": "sections",
+      "rule": "Validar Bernice Counter Ritual System: sections deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra receipt-footer conectado à seção Neighbourhood welcome.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 67,
+      "area": "components",
+      "rule": "Validar Bernice Counter Ritual System: components deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra bake-shelf-card conectado à seção Signature pastries shelf.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 68,
+      "area": "forms",
+      "rule": "Validar Bernice Counter Ritual System: forms deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra daily-batch-ticker conectado à seção Pre-order and pickup flow.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 69,
+      "area": "motion",
+      "rule": "Validar Bernice Counter Ritual System: motion deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra crumb-trail-link conectado à seção Baker notes.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 70,
+      "area": "responsive",
+      "rule": "Validar Bernice Counter Ritual System: responsive deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra pickup-window-form conectado à seção Community praise.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 71,
+      "area": "accessibility",
+      "rule": "Validar Bernice Counter Ritual System: accessibility deve expressar counter-story vertical.",
+      "evidence": "Preview ou implementação mostra neighbor-quote-strip conectado à seção Visit card.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 72,
+      "area": "conversion",
+      "rule": "Validar Bernice Counter Ritual System: conversion deve expressar warm counter ritual, product shelves, hand-written daily rhythm.",
+      "evidence": "Preview ou implementação mostra receipt-footer conectado à seção Footer as receipt.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    }
+  ],
+  "source_verification": {
+    "status": "needs-human-source-verification-before-official-import",
+    "correction_reason": "Removidas formulacoes que pareciam premios/benchmarks comprovados sem evidencia anexada ao pacote.",
+    "source_url": "https://bernicebakery.com/"
+  },
+  "functional_requirements": {
+    "preview_must_include": [
+      "navigation",
+      "hero",
+      "interactive mode selector",
+      "active component state",
+      "real form controls",
+      "aria-live result area",
+      "clickable color tokens",
+      "section coverage",
+      "responsive behavior",
+      "focus-visible states"
+    ],
+    "business_specific_interaction": "Filtro de fornada",
+    "expected_result": "Pedido simulado atualizado no recibo",
+    "failure_fixed": "preview antigo era cartaz estatico sem pedido, horario ou produto acionavel"
+  },
+  "visual_quality_review": {
+    "previous_failure": "Preview visual era superficial e/ou estatico; nao provava funcionalidade do DS.",
+    "current_standard": "Preview deve funcionar como balcao de padaria, com controle Filtro de fornada, formulario e estado ativo.",
+    "reject_if": [
+      "parecer poster estatico",
+      "nao tiver formulario ou estado ativo",
+      "nao mostrar componentes do segmento",
+      "usar grid generico de cards sem funcao"
+    ]
+  }
+}

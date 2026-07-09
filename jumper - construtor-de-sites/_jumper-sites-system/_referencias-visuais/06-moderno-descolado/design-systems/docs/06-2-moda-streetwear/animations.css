@@ -1,0 +1,303 @@
+/* Moda Streetwear — Animações */
+
+:root {
+  /* Durações exatas do JSON */
+  --duration-instant: 100ms;
+  --duration-fast: 180ms;
+  --duration-base: 300ms;
+  --duration-slow: 600ms;
+  --duration-marquee: 18s;
+  --duration-glitch: 320ms;
+
+  /* Easings exatos do JSON */
+  --easing-snap: cubic-bezier(0.85, 0, 0.15, 1);
+  --easing-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --easing-linear: linear;
+  --easing-steps: steps(2, jump-none);
+
+  /* Cores */
+  --color-lime-primary: #00FF41;
+  --color-surface: #000000;
+  --color-text-primary: #FFFFFF;
+}
+
+/**
+ * marquee-loop
+ * Duração: 18s | Easing: linear | Trigger: autoplay em loop infinito
+ * Faixas de texto correndo. Pausa em hover e em reduced-motion.
+ */
+@keyframes marquee-loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-loop {
+  animation: marquee-loop var(--duration-marquee) var(--easing-linear) infinite;
+  will-change: transform;
+}
+
+.marquee-loop:hover {
+  animation-play-state: paused;
+}
+
+/**
+ * glitch-burst
+ * Duração: 320ms | Easing: steps(2, jump-none) | Trigger: hover em display/hero
+ * RGB split + clip-path jitter. Burst único.
+ */
+@keyframes glitch-burst {
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 45%, 0% 45%);
+    text-shadow:
+      -2px 0 #FF0055,
+      2px 0 #00FFFF,
+      0 0 10px rgba(0, 255, 65, 0.3);
+  }
+  50% {
+    clip-path: polygon(0% 55%, 100% 55%, 100% 100%, 0% 100%);
+    text-shadow:
+      2px 0 #00FFFF,
+      -2px 0 #FF0055,
+      0 0 20px rgba(0, 255, 65, 0.5);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    text-shadow:
+      0 0 #FF0055,
+      0 0 #00FFFF,
+      0 0 0px rgba(0, 255, 65, 0);
+  }
+}
+
+.glitch-burst {
+  animation: glitch-burst var(--duration-glitch) var(--easing-steps) 1;
+}
+
+.glitch-burst:hover {
+  animation-play-state: running;
+}
+
+/**
+ * card-tilt-3d
+ * Duração: 300ms | Easing: out_expo | Trigger: hover em card de produto
+ * perspective(800px) rotateX/rotateY até 6deg + translateZ
+ */
+@keyframes card-tilt-3d {
+  from {
+    transform: perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0px);
+  }
+  to {
+    transform: perspective(800px) rotateX(4deg) rotateY(-6deg) translateZ(20px);
+  }
+}
+
+.card-tilt-3d {
+  animation: card-tilt-3d var(--duration-base) var(--easing-out-expo) forwards;
+  transform-origin: center center;
+}
+
+/**
+ * slide-up-reveal
+ * Duração: 600ms | Easing: out_expo | Trigger: entrada de blocos no viewport
+ * translateY(60px)→0 com stagger 80ms em elementos filhos
+ */
+@keyframes slide-up-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up-reveal {
+  animation: slide-up-reveal var(--duration-slow) var(--easing-out-expo) forwards;
+}
+
+/* Stagger em filhos: 80ms entre cada */
+.slide-up-reveal > * {
+  animation: slide-up-reveal var(--duration-slow) var(--easing-out-expo) forwards;
+}
+
+.slide-up-reveal > *:nth-child(1) { animation-delay: 0ms; }
+.slide-up-reveal > *:nth-child(2) { animation-delay: 80ms; }
+.slide-up-reveal > *:nth-child(3) { animation-delay: 160ms; }
+.slide-up-reveal > *:nth-child(4) { animation-delay: 240ms; }
+.slide-up-reveal > *:nth-child(5) { animation-delay: 320ms; }
+.slide-up-reveal > *:nth-child(n+6) { animation-delay: 400ms; }
+
+/**
+ * btn-shift
+ * Duração: 180ms | Easing: snap | Trigger: hover de botão
+ * translate(-4px,-4px) revelando hard offset lime
+ */
+@keyframes btn-shift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-4px, -4px);
+  }
+}
+
+.btn-shift {
+  animation: btn-shift var(--duration-fast) var(--easing-snap) forwards;
+}
+
+/**
+ * flicker-in
+ * Duração: 450ms | Easing: steps(4) | Trigger: títulos lime piscam como neon
+ * Pisca ao entrar no viewport
+ */
+@keyframes flicker-in {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 24px rgba(0, 255, 65, 0.8);
+  }
+  20%, 24%, 55% {
+    opacity: 0.5;
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.3);
+  }
+}
+
+.flicker-in {
+  animation: flicker-in 450ms steps(4) forwards;
+  color: var(--color-lime-primary);
+}
+
+/**
+ * horizontal-drag-scroll
+ * Contínuo | Easing: scroll nativo + scroll-snap
+ * Galerias de drop em scroll horizontal com snap por item
+ * (Este é comportamento nativo CSS, não keyframes)
+ */
+.horizontal-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 24px;
+  padding: 0 24px;
+}
+
+.horizontal-scroll-item {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/**
+ * MEDIA: prefers-reduced-motion
+ *
+ * Estratégia de redução de movimento conforme JSON:
+ * - Marquees: congelam (animation-play-state: paused)
+ * - Glitch e flicker: viram opacity fade simples
+ * - Tilt 3D: desligam
+ * - Scroll horizontal: permanece (é navegação)
+ */
+@media (prefers-reduced-motion: reduce) {
+  /* Desativar todas as animações globalmente */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Marquee: congelar mantendo legível */
+  .marquee-loop {
+    animation: none;
+    animation-play-state: paused;
+  }
+
+  /* Glitch e Flicker: fade simples */
+  .glitch-burst {
+    animation: none;
+  }
+
+  .glitch-burst::after {
+    display: none;
+  }
+
+  .flicker-in {
+    animation: fade-in 300ms ease-out forwards;
+  }
+
+  /* Tilt 3D: desligar */
+  .card-tilt-3d {
+    animation: none;
+    transform: none;
+  }
+
+  /* Fade de entrada suave (alternativa ao glitch) */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Slide-up-reveal: apenas opacidade */
+  .slide-up-reveal {
+    animation: fade-in var(--duration-base) ease-out forwards;
+  }
+
+  .slide-up-reveal > * {
+    animation: none;
+  }
+
+  /* Button shift desligado */
+  .btn-shift {
+    animation: none;
+  }
+
+  /* Scroll horizontal continua, mas sem smooth */
+  .horizontal-scroll-container {
+    scroll-behavior: auto;
+  }
+}
+
+/**
+ * Utilitários de Delay para Animações Sequenciais
+ */
+.delay-100 { animation-delay: var(--duration-instant); }
+.delay-180 { animation-delay: var(--duration-fast); }
+.delay-300 { animation-delay: var(--duration-base); }
+.delay-600 { animation-delay: var(--duration-slow); }
+
+/**
+ * Utilitários de Iteração
+ */
+.animate-infinite {
+  animation-iteration-count: infinite;
+}
+
+.animate-once {
+  animation-iteration-count: 1;
+}
+
+/**
+ * Glow Neon
+ * Efeito de brilho aplicado em hover de CTAs
+ */
+.glow-neon {
+  box-shadow: 0 0 24px rgba(0, 255, 65, 0.35);
+  filter: drop-shadow(0 0 8px rgba(0, 255, 65, 0.2));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-neon {
+    box-shadow: none;
+    filter: none;
+  }
+}

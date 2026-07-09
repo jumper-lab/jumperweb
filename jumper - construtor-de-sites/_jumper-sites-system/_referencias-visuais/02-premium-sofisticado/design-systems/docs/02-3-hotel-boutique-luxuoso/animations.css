@@ -1,0 +1,277 @@
+/* ============================================================
+   DS 02.3 — Hotel Boutique Luxuoso · animations.css
+   Princípio: "exclusividade através de espaço, não de decoração".
+   Reveals lentos, inevitáveis, silenciosos. Nada vertiginoso.
+   Só transform/opacity/background (compositor).
+   Durações e easings extraídos fielmente do JSON.
+   ============================================================ */
+
+:root {
+  --dur-instant: 120ms;
+  --dur-fast: 300ms;
+  --dur-base: 600ms;
+  --dur-slow: 900ms;
+  --dur-reveal: 1200ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-luxe: cubic-bezier(0.16, 1, 0.3, 1);
+  --gold: #D4A574;
+}
+
+/* ------------------------------------------------------------
+   1. REVEAL-UP — o reveal assinatura do DS
+   Fade + translateY(32px)→0. 1200ms luxe_out. Uma vez só.
+   JS adiciona .is-visible via IntersectionObserver (20% no viewport).
+   ------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-luxe),
+    transform var(--dur-reveal) var(--ease-luxe);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ------------------------------------------------------------
+   2. REVEAL-LINE — filete dourado cresce 0 → 64px
+   900ms luxe_out. Precede títulos de seção.
+   ------------------------------------------------------------ */
+.reveal-line {
+  display: block;
+  width: 64px;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-slow) var(--ease-luxe);
+}
+.is-visible .reveal-line,
+.reveal-line.is-visible {
+  transform: scaleX(1);
+}
+
+/* ------------------------------------------------------------
+   3. IMAGE-SCALE-SETTLE — imagem "respira" na entrada
+   scale(1.06) → scale(1). 1200ms luxe_out.
+   Simula a respiração de um vídeo de hero.
+   ------------------------------------------------------------ */
+.scale-settle {
+  overflow: hidden;
+}
+.scale-settle img,
+.scale-settle .bg {
+  transform: scale(1.06);
+  transition: transform var(--dur-reveal) var(--ease-luxe);
+}
+.scale-settle.is-visible img,
+.scale-settle.is-visible .bg,
+.hero.is-loaded .hero-img {
+  transform: scale(1);
+}
+
+/* ------------------------------------------------------------
+   4. PARALLAX-SOFT — imagens de fundo deslocam no MÁXIMO 6%
+   Contínuo, linear, via scroll progress (JS seta --p 0→1).
+   Muito sutil — nunca vertiginoso. will-change só no scroll visível.
+   ------------------------------------------------------------ */
+.parallax {
+  --p: 0;
+  overflow: hidden;
+}
+.parallax .bg {
+  transform: translateY(calc(var(--p) * 6%));
+  will-change: transform;
+}
+
+/* ------------------------------------------------------------
+   5. BTN-FILL-GOLD — botão outline preenche de ouro esq→dir
+   300ms standard.
+   ------------------------------------------------------------ */
+.btn-secondary {
+  background: linear-gradient(to right, var(--gold) 0 100%) no-repeat;
+  background-size: 0% 100%;
+  background-position: left;
+  color: #F5EDE1;
+  border: 1px solid rgba(212, 165, 116, 0.5);
+  transition:
+    background-size var(--dur-fast) var(--ease-standard),
+    color var(--dur-fast) var(--ease-standard),
+    border-color var(--dur-fast) var(--ease-standard);
+}
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background-size: 100% 100%;
+  color: #2A1F14;
+  border-color: var(--gold);
+}
+
+/* PRIMARY — leve elevação no hover (translateY -1px), sem escala */
+.btn-primary {
+  transition:
+    background var(--dur-fast) var(--ease-standard),
+    transform var(--dur-fast) var(--ease-standard);
+}
+.btn-primary:hover,
+.btn-primary:focus-visible { background: #E0BA8E; transform: translateY(-1px); }
+.btn-primary:active { background: #C29257; transform: translateY(0); }
+
+/* ------------------------------------------------------------
+   6. LINK-UNDERLINE-GROW — underline dourado 1px cresce do CENTRO
+   300ms standard.
+   ------------------------------------------------------------ */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -4px;
+  height: 1px;
+  background: var(--gold);
+  transition:
+    left var(--dur-fast) var(--ease-standard),
+    right var(--dur-fast) var(--ease-standard);
+}
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  left: 0;
+  right: 0;
+}
+.link-underline[aria-current]::after {
+  left: 0;
+  right: 0;
+  height: 2px;   /* underline ativo persistente 2px */
+}
+
+/* ------------------------------------------------------------
+   7. STAGGER-CASCADE — cards do grid magazine em cascata assimétrica
+   1200ms + 150ms/item. luxe_out.
+   ------------------------------------------------------------ */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-luxe),
+    transform var(--dur-reveal) var(--ease-luxe);
+}
+.stagger.is-visible > * { opacity: 1; transform: none; }
+.stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.stagger.is-visible > *:nth-child(2) { transition-delay: 150ms; }
+.stagger.is-visible > *:nth-child(3) { transition-delay: 300ms; }
+.stagger.is-visible > *:nth-child(4) { transition-delay: 450ms; }
+
+/* ------------------------------------------------------------
+   8. CARD — imagem escala 1.03 no hover; título vira ouro; sem sombra
+   ------------------------------------------------------------ */
+.suite-media img {
+  transition: transform var(--dur-slow) var(--ease-luxe);
+}
+.suite-title {
+  transition: color var(--dur-fast) var(--ease-standard);
+}
+@media (hover: hover) and (pointer: fine) {
+  .suite-card:hover .suite-media img { transform: scale(1.03); }
+  .suite-card:hover .suite-title { color: var(--gold); }
+}
+.suite-card:focus-within { box-shadow: 0 0 0 1px rgba(212, 165, 116, 0.35); } /* glow_gold */
+
+/* ------------------------------------------------------------
+   9. NAV — transparente sobre hero → surface após 80px de scroll
+   ------------------------------------------------------------ */
+.nav {
+  transition:
+    background var(--dur-fast) var(--ease-standard),
+    border-color var(--dur-fast) var(--ease-standard);
+  border-bottom: 1px solid transparent;
+}
+.nav.is-scrolled {
+  background: #2A1F14;
+  border-bottom-color: rgba(212, 165, 116, 0.25);
+}
+
+/* ------------------------------------------------------------
+   10. MENU MOBILE — overlay fullscreen neutral-900
+   Links Fraunces 32px em reveal cascata (stagger 80ms).
+   ------------------------------------------------------------ */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: #241A10;
+  display: grid;
+  place-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--dur-base) var(--ease-standard),
+    visibility 0s linear var(--dur-base);
+}
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--dur-base) var(--ease-standard);
+}
+.mobile-menu a {
+  font-family: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  font-weight: 300;
+  font-size: 32px;
+  color: #F5EDE1;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-luxe),
+    transform var(--dur-reveal) var(--ease-luxe);
+}
+.mobile-menu.is-open a { opacity: 1; transform: none; }
+.mobile-menu.is-open a:nth-child(1) { transition-delay: 80ms; }
+.mobile-menu.is-open a:nth-child(2) { transition-delay: 160ms; }
+.mobile-menu.is-open a:nth-child(3) { transition-delay: 240ms; }
+.mobile-menu.is-open a:nth-child(4) { transition-delay: 320ms; }
+.mobile-menu.is-open a:nth-child(5) { transition-delay: 400ms; }
+
+/* ------------------------------------------------------------
+   JS mínimo de referência:
+
+   const io = new IntersectionObserver((entries) => {
+     entries.forEach((e) => {
+       if (e.isIntersecting) {
+         e.target.classList.add('is-visible');
+         io.unobserve(e.target);
+       }
+     });
+   }, { threshold: 0.2 });
+   document.querySelectorAll('.reveal, .reveal-line, .scale-settle, .stagger')
+     .forEach((el) => io.observe(el));
+
+   // Parallax (só enquanto visível): atualiza --p 0→1 no scroll.
+   ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------
+   PREFERS-REDUCED-MOTION — obrigatório.
+   Reveals viram fade 200ms sem translate/scale; parallax OFF.
+   (Comportamento exato pedido pelo JSON.)
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal,
+  .stagger > *,
+  .scale-settle img,
+  .scale-settle .bg,
+  .mobile-menu a {
+    transform: none !important;
+    transition: opacity 200ms linear !important;   /* fade curto, sem deslocamento */
+  }
+  .reveal-line { transform: scaleX(1) !important; transition: none !important; }
+  .parallax .bg { transform: none !important; will-change: auto; }   /* parallax desligado */
+}

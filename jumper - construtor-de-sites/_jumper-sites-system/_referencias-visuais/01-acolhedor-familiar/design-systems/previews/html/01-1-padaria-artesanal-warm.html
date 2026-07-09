@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DS 01.1 — Padaria Artesanal Warm · Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --color-primary:#B85C38;
+  --color-primary-dark:#9A4A2B;
+  --color-primary-darker:#8A4226;
+  --color-secondary:#E8B696;
+  --color-surface:#FDF8F3;
+  --color-surface-alt:#F5E9DD;
+  --color-text:#3E2A20;
+  --color-text-secondary:#6B4F41;
+  --color-text-muted:#7A5F50;
+  --color-border:#E3D3C3;
+  --color-error:#A63D2B;
+  --color-success:#4A7C59;
+  --font-heading:'Lora',Georgia,'Times New Roman',serif;
+  --font-body:'Inter',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --text-h1:clamp(2.125rem,1.5rem + 2.5vw,3.5rem);
+  --text-h2:clamp(1.625rem,1.3rem + 1.4vw,2.375rem);
+  --text-h3:clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --radius-md:16px;--radius-lg:24px;--radius-xl:32px;--radius-full:9999px;
+  --shadow-xs:0 1px 2px rgba(62,42,32,.05);
+  --shadow-sm:0 2px 8px rgba(62,42,32,.07);
+  --shadow-md:0 6px 20px rgba(62,42,32,.09);
+  --shadow-btn:0 4px 14px rgba(184,92,56,.25);
+  --dur-base:400ms;--dur-slow:600ms;
+  --ease-standard:cubic-bezier(.25,.1,.25,1);
+  --ease-soft:cubic-bezier(.16,1,.3,1);
+  --ease-gentle:cubic-bezier(.45,0,.25,1);
+  --container:1200px;
+  --section-gap:clamp(64px,5vw + 40px,120px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);font-size:clamp(1rem,.96rem + .15vw,1.0625rem);
+  line-height:1.7;color:var(--color-text);background:var(--color-surface);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3{font-family:var(--font-heading);color:var(--color-text)}
+h1{font-size:var(--text-h1);font-weight:600;line-height:1.1;letter-spacing:-.015em}
+h2{font-size:var(--text-h2);font-weight:600;line-height:1.15;letter-spacing:-.01em}
+h3{font-size:var(--text-h3);font-weight:500;line-height:1.25}
+img,svg{max-width:100%}
+a{color:var(--color-primary-dark)}
+.container{max-width:var(--container);margin:0 auto;padding:0 clamp(20px,4vw,64px)}
+section{padding:var(--section-gap) 0}
+.eyebrow{
+  display:inline-block;font-size:13px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--color-primary-dark);margin-bottom:16px;
+}
+.em-warm{font-style:italic;color:var(--color-primary)}
+.lead{color:var(--color-text-secondary);max-width:680px}
+
+/* ============ DS BADGE (identificação do preview) ============ */
+.ds-badge{
+  background:var(--color-text);color:var(--color-surface-alt);
+  text-align:center;padding:10px 20px;font-size:13px;letter-spacing:.06em;
+}
+.ds-badge strong{color:var(--color-secondary)}
+
+/* ============ NAV ============ */
+.nav{
+  position:sticky;top:0;z-index:50;height:72px;
+  background:rgba(253,248,243,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--color-border);
+  display:flex;align-items:center;
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav-logo{font-family:var(--font-heading);font-weight:600;font-size:22px;color:var(--color-text);text-decoration:none}
+.nav-logo span{color:var(--color-primary)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{
+  position:relative;text-decoration:none;color:var(--color-text);
+  font-weight:500;font-size:15px;padding:6px 2px;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;
+  background:var(--color-primary);transform:scaleX(0);transform-origin:left;
+  transition:transform var(--dur-base) var(--ease-soft);
+}
+.nav-links a:hover::after,.nav-links a:focus-visible::after{transform:scaleX(1)}
+@media(max-width:767px){.nav-links{display:none}}
+
+/* ============ BOTÕES ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:var(--font-body);font-weight:600;text-decoration:none;cursor:pointer;
+  border-radius:var(--radius-full);border:none;
+  transition:background var(--dur-base) var(--ease-standard),
+             box-shadow var(--dur-base) var(--ease-standard),
+             color var(--dur-base) var(--ease-standard);
+}
+.btn-md{padding:14px 28px;font-size:16px;min-height:48px}
+.btn-sm{padding:10px 20px;font-size:14px;min-height:40px}
+.btn-lg{padding:18px 36px;font-size:17px;min-height:56px}
+.btn-primary{background:var(--color-primary);color:#fff}
+.btn-primary:hover{background:var(--color-primary-dark);box-shadow:var(--shadow-btn)}
+.btn-primary:active{background:var(--color-primary-darker)}
+.btn-primary:disabled{background:#D9BFA9;color:var(--color-surface);cursor:not-allowed;box-shadow:none}
+.btn-secondary{background:transparent;color:var(--color-primary-dark);border:2px solid var(--color-primary)}
+.btn-secondary:hover{background:rgba(184,92,56,.08)}
+.btn-secondary:disabled{border-color:#D9BFA9;color:#BC9A81;cursor:not-allowed;background:transparent}
+.btn:focus-visible,.link-ghost:focus-visible,.nav-links a:focus-visible,.card:focus-within{
+  outline:3px solid rgba(184,92,56,.4);outline-offset:2px;
+}
+.link-ghost{
+  display:inline-flex;align-items:center;gap:6px;position:relative;
+  color:var(--color-primary-dark);font-weight:600;text-decoration:none;padding:6px 2px;
+}
+.link-ghost::after{
+  content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;
+  background:var(--color-primary);transform:scaleX(0);transform-origin:left;
+  transition:transform var(--dur-base) var(--ease-soft);
+}
+.link-ghost:hover::after{transform:scaleX(1)}
+.btn-focus-demo{outline:3px solid rgba(184,92,56,.4);outline-offset:2px}
+.btn-hover-demo.btn-primary{background:var(--color-primary-dark);box-shadow:var(--shadow-btn)}
+
+/* ============ HERO ============ */
+.hero{padding-top:clamp(48px,6vw,96px)}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+@media(min-width:1024px){.hero-grid{grid-template-columns:55fr 45fr;gap:64px}}
+.hero h1{margin:0 0 24px}
+.hero .lead{margin-bottom:32px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.hero-figure{position:relative}
+.hero-blob{
+  position:absolute;inset:-24px -16px auto auto;width:78%;height:82%;
+  background:var(--color-secondary);opacity:.55;z-index:0;
+  border-radius:48% 52% 50% 50%/55% 48% 52% 45%;
+}
+.hero-photo{
+  position:relative;z-index:1;aspect-ratio:4/3;width:100%;
+  border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-md);
+  background:linear-gradient(135deg,#B85C38 0%,#D08A5F 45%,#E8B696 100%);
+  display:flex;align-items:flex-end;
+}
+.hero-photo .photo-caption{
+  width:100%;padding:16px 20px;font-size:13px;color:#fff;
+  background:linear-gradient(transparent,rgba(42,27,20,.55));
+}
+
+/* ============ SEÇÕES DE PREVIEW ============ */
+.section-alt{background:var(--color-surface-alt)}
+.section-head{max-width:680px;margin-bottom:48px}
+.grid-3{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:480px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.grid-3{grid-template-columns:repeat(3,1fr);gap:32px}}
+.grid-2{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:768px){.grid-2{grid-template-columns:repeat(2,1fr);gap:32px}}
+
+/* ============ SWATCHES ============ */
+.swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+.swatch{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--color-border);background:#fff}
+.swatch-color{height:88px}
+.swatch-info{padding:12px 14px;font-size:13px}
+.swatch-info strong{display:block;font-size:13px}
+.swatch-info code{font-size:12px;color:var(--color-text-muted)}
+.neutral-strip{display:flex;border-radius:var(--radius-md);overflow:hidden;margin-top:24px;border:1px solid var(--color-border)}
+.neutral-strip div{flex:1;height:56px}
+
+/* ============ CARDS ============ */
+.card{
+  background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm);overflow:hidden;
+  transition:transform var(--dur-base) var(--ease-standard),box-shadow var(--dur-base) var(--ease-standard);
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.card-img{
+  aspect-ratio:4/3;overflow:hidden;
+}
+.card-img>div{
+  width:100%;height:100%;
+  transition:transform var(--dur-slow) var(--ease-gentle);
+}
+.card:hover .card-img>div{transform:scale(1.04)}
+.card-body{padding:28px}
+.card-body h3{margin-bottom:8px}
+.card-body p{color:var(--color-text-secondary);font-size:15px;margin-bottom:16px}
+.price{font-weight:600;color:var(--color-primary-dark)}
+.badge{
+  display:inline-block;background:var(--color-surface-alt);color:var(--color-text-secondary);
+  font-size:13px;font-weight:600;padding:6px 14px;border-radius:var(--radius-full);margin-bottom:12px;
+}
+.badge-highlight{background:var(--color-secondary);color:var(--color-text)}
+.badge-success{background:rgba(74,124,89,.12);color:#3D6749}
+.card-highlight{
+  background:var(--color-secondary);border:none;padding:32px;border-radius:var(--radius-lg);
+}
+.card-highlight h3{margin-bottom:8px}
+.card-highlight p{color:var(--color-text-secondary)}
+
+/* ============ TIPOGRAFIA DEMO ============ */
+.type-row{border-bottom:1px solid var(--color-border);padding:24px 0}
+.type-row:last-child{border-bottom:none}
+.type-meta{font-size:12px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;display:block}
+
+/* ============ INPUTS ============ */
+.form-demo{display:grid;grid-template-columns:1fr;gap:24px;max-width:680px}
+@media(min-width:768px){.form-demo{grid-template-columns:repeat(2,1fr)}}
+.field label{display:block;font-size:14px;font-weight:500;margin-bottom:8px}
+.field input,.field textarea{
+  width:100%;min-height:48px;padding:14px 18px;font:400 16px var(--font-body);
+  color:var(--color-text);background:#fff;border:1px solid var(--color-border);
+  border-radius:var(--radius-md);
+  transition:border-color var(--dur-base) var(--ease-standard),box-shadow var(--dur-base) var(--ease-standard);
+}
+.field input::placeholder{color:var(--color-text-muted)}
+.field input:focus,.field textarea:focus{
+  outline:none;border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(184,92,56,.15);
+}
+.field.demo-focus input{border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(184,92,56,.15)}
+.field.error input{border-color:var(--color-error)}
+.field .msg-error{display:flex;gap:6px;align-items:center;font-size:14px;color:var(--color-error);margin-top:8px}
+
+/* ============ DEPOIMENTOS ============ */
+.quote-card{position:relative;background:#fff;border-radius:var(--radius-lg);padding:40px 32px 32px;border:1px solid var(--color-border);box-shadow:var(--shadow-sm)}
+.quote-mark{position:absolute;top:16px;left:24px;font-family:var(--font-heading);font-size:72px;line-height:1;color:var(--color-secondary);user-select:none}
+.quote-card blockquote{font-family:var(--font-heading);font-style:italic;font-size:clamp(1.125rem,1rem + .5vw,1.375rem);line-height:1.5;margin:16px 0 24px;position:relative;z-index:1}
+.quote-author{display:flex;align-items:center;gap:12px}
+.quote-avatar{
+  width:48px;height:48px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));
+  color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;
+}
+.quote-author strong{display:block;font-size:15px}
+.quote-author span{font-size:13px;color:var(--color-text-muted)}
+
+/* ============ ANIMAÇÃO DEMO ============ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity var(--dur-slow) var(--ease-soft),transform var(--dur-slow) var(--ease-soft)}
+.reveal.is-visible{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(24px);transition:opacity var(--dur-slow) var(--ease-soft),transform var(--dur-slow) var(--ease-soft)}
+.stagger.is-visible>*{opacity:1;transform:none}
+.stagger.is-visible>*:nth-child(1){transition-delay:0ms}
+.stagger.is-visible>*:nth-child(2){transition-delay:120ms}
+.stagger.is-visible>*:nth-child(3){transition-delay:240ms}
+.stagger.is-visible>*:nth-child(4){transition-delay:360ms}
+.motion-note{font-size:14px;color:var(--color-text-muted);margin-top:16px}
+.replay{margin-top:24px}
+
+/* ============ FOOTER ============ */
+.footer{
+  background:var(--color-text);color:var(--color-surface-alt);
+  border-radius:var(--radius-xl) var(--radius-xl) 0 0;margin-top:var(--section-gap);
+  padding:clamp(48px,6vw,80px) 0 32px;
+}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:40px;margin-bottom:48px}
+@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+.footer h3{color:#fff;font-size:20px;margin-bottom:16px}
+.footer p{color:#D9BFA9;font-size:15px;max-width:340px}
+.footer ul{list-style:none}
+.footer li{margin-bottom:10px}
+.footer a{color:var(--color-surface-alt);text-decoration:none;font-size:15px;transition:color var(--dur-base) var(--ease-standard)}
+.footer a:hover{color:var(--color-secondary)}
+.footer-signature{
+  border-top:1px solid rgba(245,233,221,.15);padding-top:32px;text-align:center;
+  font-family:var(--font-heading);font-style:italic;color:var(--color-secondary);font-size:18px;
+}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .reveal,.stagger>*{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="ds-badge">Jumper Site Factory · DS <strong>01.1 — Padaria Artesanal Warm</strong> · categoria 01 Acolhedor e Familiar · repertório, nunca molde</div>
+
+<!-- NAVEGAÇÃO -->
+<nav class="nav" aria-label="Navegação principal">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="#">Forno<span>&amp;</span>Família</a>
+    <ul class="nav-links">
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#historia">Nossa história</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#visita">Visite-nos</a></li>
+    </ul>
+    <a href="#" class="btn btn-primary btn-sm">Faça sua encomenda</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div class="stagger" id="hero-stagger">
+      <span class="eyebrow">Desde 1985</span>
+      <h1>Feito com <span class="em-warm">carinho</span>, do nosso forno para a sua mesa.</h1>
+      <p class="lead">Todo dia, antes do sol nascer, a nossa família começa a sovar a massa que vai receber a sua. Pão quentinho, café passado na hora e um bom dia de verdade.</p>
+      <div class="hero-ctas">
+        <a href="#visita" class="btn btn-primary btn-lg">Vem tomar um café conosco</a>
+        <a href="#historia" class="link-ghost">Conheça nossa história →</a>
+      </div>
+    </div>
+    <figure class="hero-figure" aria-hidden="true">
+      <div class="hero-blob"></div>
+      <div class="hero-photo">
+        <div class="photo-caption">[ fotografia real: padeiro retirando pães do forno, luz de manhã ]</div>
+      </div>
+    </figure>
+  </div>
+</header>
+
+<!-- PALETA -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Design System</span>
+      <h2>Paleta de cores</h2>
+      <p class="lead">Terracota quente sobre creme, com neutros marrons. Contraste verificado WCAG 2.1 AA.</p>
+    </div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#B85C38"></div><div class="swatch-info"><strong>Primary</strong><code>#B85C38</code></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#9A4A2B"></div><div class="swatch-info"><strong>Primary Dark</strong><code>#9A4A2B</code></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#E8B696"></div><div class="swatch-info"><strong>Secondary</strong><code>#E8B696</code></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FDF8F3"></div><div class="swatch-info"><strong>Surface</strong><code>#FDF8F3</code></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F5E9DD"></div><div class="swatch-info"><strong>Surface Alt</strong><code>#F5E9DD</code></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#3E2A20"></div><div class="swatch-info"><strong>Text Primary</strong><code>#3E2A20</code></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#6B4F41"></div><div class="swatch-info"><strong>Text Secondary</strong><code>#6B4F41</code></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#E3D3C3"></div><div class="swatch-info"><strong>Border</strong><code>#E3D3C3</code></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#A63D2B"></div><div class="swatch-info"><strong>Error</strong><code>#A63D2B</code></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#4A7C59"></div><div class="swatch-info"><strong>Success</strong><code>#4A7C59</code></div></div>
+    </div>
+    <div class="neutral-strip" role="img" aria-label="Escala neutra warm do 50 ao 900">
+      <div style="background:#FDF8F3"></div><div style="background:#F5E9DD"></div><div style="background:#EAD8C6"></div><div style="background:#D9BFA9"></div><div style="background:#BC9A81"></div><div style="background:#9C7A63"></div><div style="background:#7A5F50"></div><div style="background:#5C463A"></div><div style="background:#3E2A20"></div><div style="background:#2A1B14"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPOGRAFIA -->
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Tipografia</span>
+      <h2>Lora &amp; Inter, ao vivo</h2>
+    </div>
+    <div class="type-row"><span class="type-meta">H1 · Lora 600 · 34→56px</span><h1>O pão que a sua família merece</h1></div>
+    <div class="type-row"><span class="type-meta">H2 · Lora 600 · 26→38px</span><h2>Fornada fresquinha, três vezes ao dia</h2></div>
+    <div class="type-row"><span class="type-meta">H3 · Lora 500 · 20→26px</span><h3>Receita da nossa avó, no capricho</h3></div>
+    <div class="type-row"><span class="type-meta">Body · Inter 400 · 16→17px</span><p style="max-width:680px">Aqui, todo mundo é recebido pelo nome. A gente acredita que padaria boa é aquela onde o cheiro de pão se mistura com conversa de vizinho — e onde ninguém sai sem um sorriso e um embrulho quentinho debaixo do braço.</p></div>
+    <div class="type-row"><span class="type-meta">Small · Inter 400 · 14px</span><p style="font-size:14px;color:var(--color-text-muted)">Aberto de terça a domingo, das 6h às 19h. Fechamos só na segunda, pra descansar a massa (e a gente).</p></div>
+    <div class="type-row"><span class="type-meta">Eyebrow · Inter 600 · uppercase</span><span class="eyebrow" style="margin:0">Nossa História</span></div>
+  </div>
+</section>
+
+<!-- BOTÕES -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Componentes</span>
+      <h2>Botões em todos os estados</h2>
+      <p class="lead">Pill, sentence case, transição de 400ms. Passe o mouse e use Tab para ver os estados reais.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:32px">
+      <button class="btn btn-primary btn-md">Vem tomar um café</button>
+      <button class="btn btn-primary btn-md btn-hover-demo">Hover (simulado)</button>
+      <button class="btn btn-primary btn-md btn-focus-demo">Focus (simulado)</button>
+      <button class="btn btn-primary btn-md" disabled>Indisponível</button>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:32px">
+      <button class="btn btn-secondary btn-md">Conheça o cardápio</button>
+      <button class="btn btn-secondary btn-md" disabled>Indisponível</button>
+      <a href="#" class="link-ghost" onclick="return false">Ver todos os pães →</a>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center">
+      <button class="btn btn-primary btn-sm">Pequeno (40px)</button>
+      <button class="btn btn-primary btn-md">Médio (48px)</button>
+      <button class="btn btn-primary btn-lg">Grande (56px)</button>
+    </div>
+  </div>
+</section>
+
+<!-- CARDS DE PRODUTO -->
+<section class="section-alt" id="produtos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Cards</span>
+      <h2>Vitrine com hover-lift</h2>
+      <p class="lead">Raio 24px, sombra marrom quente, imagem com zoom suave de 600ms.</p>
+    </div>
+    <div class="grid-3 reveal">
+      <article class="card">
+        <div class="card-img"><div style="background:linear-gradient(135deg,#B85C38,#E8B696)" role="img" aria-label="Foto de pão de fermentação natural"></div></div>
+        <div class="card-body">
+          <span class="badge badge-highlight">Mais pedido</span>
+          <h3>Pão de fermentação natural</h3>
+          <p>48 horas de fermentação lenta, casca crocante e miolo macio.</p>
+          <span class="price">R$ 24,00</span>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-img"><div style="background:linear-gradient(135deg,#D08A5F,#F5E9DD)" role="img" aria-label="Foto de croissant folhado"></div></div>
+        <div class="card-body">
+          <span class="badge badge-success">Sem conservantes</span>
+          <h3>Croissant de manteiga</h3>
+          <p>Folhado no capricho, com manteiga de verdade e paciência.</p>
+          <span class="price">R$ 12,50</span>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-img"><div style="background:linear-gradient(135deg,#9A4A2B,#D9BFA9)" role="img" aria-label="Foto de bolo caseiro de fubá"></div></div>
+        <div class="card-body">
+          <span class="badge">Receita de família</span>
+          <h3>Bolo de fubá da vó Cida</h3>
+          <p>O mesmo desde 1985. Com erva-doce e cobertura de carinho.</p>
+          <span class="price">R$ 8,00 <span style="font-weight:400;color:var(--color-text-muted)">a fatia</span></span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HISTÓRIA + CARDS HIGHLIGHT -->
+<section id="historia">
+  <div class="container">
+    <div class="grid-2" style="align-items:center;margin-bottom:64px">
+      <figure aria-hidden="true" style="position:relative">
+        <div style="aspect-ratio:4/3;border-radius:48% 52% 50% 50%/55% 48% 52% 45%;background:linear-gradient(160deg,#E8B696,#B85C38);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;padding:24px;text-align:center">[ fotografia real: família fundadora na porta da padaria ]</div>
+      </figure>
+      <div class="reveal">
+        <span class="eyebrow">Nossa história</span>
+        <h2>Três gerações, o mesmo <span class="em-warm">fermento</span></h2>
+        <p class="lead" style="margin:16px 0 24px">Seu Antônio abriu a porta pela primeira vez em 1985, com um forno a lenha e uma receita da mãe. Hoje quem sova a massa é a neta, Marina — mas o abraço na chegada continua igual.</p>
+        <a href="#" class="link-ghost" onclick="return false">Leia a história completa →</a>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="card-highlight"><h3>Fornadas 3x ao dia</h3><p>Às 6h, ao meio-dia e às 16h. Pão quente de verdade, sempre.</p></div>
+      <div class="card-highlight"><h3>Ingredientes do bairro</h3><p>Ovos do sítio da Dona Zefa, leite da cooperativa local.</p></div>
+      <div class="card-highlight"><h3>Receita de família</h3><p>Quarenta anos de massa, sem atalho e sem conservante.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INPUTS -->
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Formulários</span>
+      <h2>Inputs: default, focus e erro</h2>
+    </div>
+    <form class="form-demo" onsubmit="return false">
+      <div class="field">
+        <label for="nome">Seu nome</label>
+        <input id="nome" type="text" placeholder="Como podemos te chamar?">
+      </div>
+      <div class="field demo-focus">
+        <label for="tel">WhatsApp (estado focus)</label>
+        <input id="tel" type="tel" placeholder="(11) 90000-0000">
+      </div>
+      <div class="field error">
+        <label for="email">E-mail (estado erro)</label>
+        <input id="email" type="email" value="maria@" aria-invalid="true" aria-describedby="email-error">
+        <span class="msg-error" id="email-error"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="#A63D2B" stroke-width="1.5"/><path d="M8 4.5v4M8 11h.01" stroke="#A63D2B" stroke-width="1.5" stroke-linecap="round"/></svg>Ops, esse e-mail parece incompleto.</span>
+      </div>
+      <div class="field">
+        <label for="msg">Sua encomenda</label>
+        <input id="msg" type="text" placeholder="Ex: 2 pães italianos para sábado">
+      </div>
+      <div style="grid-column:1/-1">
+        <button class="btn btn-primary btn-md" type="submit">Enviar pedido</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Depoimentos</span>
+      <h2>Quem chega, volta</h2>
+    </div>
+    <div class="grid-2 reveal">
+      <div class="quote-card">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <blockquote>Meus filhos cresceram comendo o pão daqui. Sábado sem a fila do Forno&amp;Família não é sábado.</blockquote>
+        <div class="quote-author">
+          <div class="quote-avatar" aria-hidden="true">R</div>
+          <div><strong>Rosana Martins</strong><span>cliente há 12 anos</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <blockquote>A Marina sabe meu pedido de cor. É café coado, pão na chapa e conversa boa — todo santo dia.</blockquote>
+        <div class="quote-author">
+          <div class="quote-avatar" aria-hidden="true">J</div>
+          <div><strong>Seu Joaquim</strong><span>vizinho e freguês desde 1987</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOTION DEMO -->
+<section class="section-alt" id="visita">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Motion</span>
+      <h2>Animações do DS</h2>
+      <p class="lead">Fade-in-up de 600ms com easing suave, stagger de 120ms, hover-lift de 400ms. Respeita <code>prefers-reduced-motion</code>.</p>
+    </div>
+    <div class="stagger" id="motion-demo">
+      <div class="card" style="padding:24px;margin-bottom:16px"><strong>1.</strong> Primeiro item entra…</div>
+      <div class="card" style="padding:24px;margin-bottom:16px"><strong>2.</strong> …depois o segundo (+120ms)…</div>
+      <div class="card" style="padding:24px;margin-bottom:16px"><strong>3.</strong> …e o terceiro (+240ms).</div>
+      <p class="motion-note">Tudo se acomoda como massa descansando — nada pisca, nada salta.</p>
+    </div>
+    <button class="btn btn-secondary btn-sm replay" id="replay-btn" type="button">Repetir animação</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>Forno<span style="color:var(--color-secondary)">&amp;</span>Família</h3>
+        <p>Desde 1985 acordando cedo pra receber você com pão quentinho, café passado e um bom dia de verdade.</p>
+      </div>
+      <div>
+        <h3>Navegue</h3>
+        <ul>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#historia">Nossa história</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Visite-nos</h3>
+        <ul>
+          <li><a href="#" onclick="return false">Rua do Forno, 85 — Vila Aurora</a></li>
+          <li><a href="#" onclick="return false">WhatsApp: (11) 99999-1985</a></li>
+          <li>Ter–Dom · 6h às 19h</li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-signature">Feito com carinho, todos os dias.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal,.stagger');
+  if (reduced || !('IntersectionObserver' in window)) {
+    reveals.forEach(function(el){ el.classList.add('is-visible'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+  var replay = document.getElementById('replay-btn');
+  var demo = document.getElementById('motion-demo');
+  if (replay && demo) {
+    replay.addEventListener('click', function(){
+      demo.classList.remove('is-visible');
+      void demo.offsetWidth;
+      requestAnimationFrame(function(){ demo.classList.add('is-visible'); });
+    });
+  }
+})();
+</script>
+</body>
+</html>

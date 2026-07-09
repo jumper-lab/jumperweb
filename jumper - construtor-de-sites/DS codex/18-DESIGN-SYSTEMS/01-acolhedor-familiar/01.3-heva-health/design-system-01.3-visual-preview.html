@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Heva Calm Care Journal System</title>
+<style>
+:root{--primary:#5D6F43;--secondary:#CDBB8E;--surface:#FAF7EF;--alt:#E7E1D2;--text:#22281D;--muted:#6C725F;--border:#CAC2AD;--ctaText:#FFFFFF;--heading:"Cormorant Garamond",serif;--body:"Inter",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}a{color:inherit}.care{min-height:100vh;display:grid;grid-template-columns:260px 1fr;background:var(--surface);color:var(--text)}
+.care__rail{padding:22px;border-right:1px solid var(--border);background:var(--alt);color:inherit;position:sticky;top:0;height:100vh}
+.care__page{padding:clamp(22px,5vw,78px);display:grid;gap:clamp(26px,5vw,64px)}
+.care__nav{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px;font-family:var(--mono);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.care__hero{display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,52px);align-items:center;min-height:62vh}
+.care__hero h1{font-family:var(--heading);font-size:clamp(3rem,7vw,7rem);line-height:.92;margin:0;max-width:14ch;color:inherit}
+.care__media{min-height:300px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(135deg,var(--alt),var(--secondary));box-shadow:0 24px 70px rgba(0,0,0,.16)}
+.care__cta,.care__submit{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--primary);color:var(--ctaText);border:0;border-radius:12px;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer}.care__hidden{display:none}
+.care__controls{display:flex;gap:8px;flex-wrap:wrap}.care__option{border:1px solid var(--border);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;cursor:pointer}.care__option[aria-pressed="true"]{background:var(--secondary);color:#111111;border-color:var(--secondary)}
+.care__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.care__item{text-align:left;min-height:150px;border:1px solid var(--border);background:#fff;color:inherit;border-radius:16px;padding:18px;cursor:pointer}.care__item[aria-pressed="true"]{outline:3px solid var(--secondary);transform:translateY(-3px)}
+.care__split{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:22px}.care__panel{border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 78%,white);padding:22px;border-radius:16px}
+.care__form{display:grid;gap:12px}.care__form label{display:grid;gap:6px;font-weight:800}.care__form input,.care__form select{min-height:44px;border:1px solid var(--border);background:#fff;color:var(--text);border-radius:8px;padding:10px}.care__form input:focus,.care__form select:focus,.care__option:focus-visible,.care__item:focus-visible,.care__chip:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.care__status{font-family:var(--mono);border-left:5px solid var(--secondary);padding:16px;background:var(--alt)}
+.care__sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.care__section-card{border-top:3px solid var(--primary);padding:16px;background:#fff}
+.care__palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.care__chip{background:var(--chip);color:var(--ink);min-height:88px;border:1px solid var(--border);padding:10px;text-align:left;display:grid;align-content:space-between;cursor:pointer;border-radius:10px}
+.care__audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.care__audit div{padding:16px;border:1px solid var(--border);background:var(--alt)}
+@media(max-width:860px){.care{display:block}.care__rail{position:relative;height:auto}.care__hero,.care__split{grid-template-columns:1fr}.care__audit{grid-template-columns:1fr}.care__page{padding:20px}.care__hero h1{font-size:clamp(3rem,18vw,6rem)}}
+@media(prefers-reduced-motion:no-preference){.care__item,.care__cta,.care__submit,.care__chip{transition:transform .2s ease,filter .2s ease}.care__item:hover,.care__chip:hover{transform:translateY(-3px)}.care__cta:hover,.care__submit:hover{filter:contrast(1.1)}}
+</style>
+</head>
+<body>
+<main class="care" data-mode="familia">
+<aside class="care__rail"><strong>agenda clinica calma</strong><p>nao havia fluxo de consulta, rota de cuidado nem formulario</p><a class="care__cta" href="#form">Simular agendamento</a></aside>
+<div class="care__page">
+<nav class="care__nav"><strong>01.3 · Heva Calm Care Journal System</strong><span>care-journal</span></nav>
+<section class="care__hero" id="top">
+<div><p>agenda clinica calma</p><h1>full-width calm portrait masthead with care route chips and appointment bar</h1><p>reassuring, precise and low-pressure</p><a class="care__cta" href="#form">Simular agendamento</a></div>
+<div class="care__media" aria-hidden="true"></div>
+</section>
+<section class="care__panel"><h2>Escolher rota de cuidado</h2><div class="care__controls"><button class="care__option" type="button" data-mode="familia" aria-pressed="true">familia</button>
+<button class="care__option" type="button" data-mode="pediatria" aria-pressed="false">pediatria</button>
+<button class="care__option" type="button" data-mode="bem-estar" aria-pressed="false">bem-estar</button></div><p class="care__status" aria-live="polite">Modo ativo: familia · Resumo de agendamento atualizado</p></section>
+<section><h2>Componentes funcionais</h2><div class="care__items"><button class="care__item" type="button" data-item="Consulta inicial" aria-pressed="true"><span>01</span><strong>Consulta inicial</strong><small>care-route-chip</small></button>
+<button class="care__item" type="button" data-item="Profissional" aria-pressed="false"><span>02</span><strong>Profissional</strong><small>practitioner-profile-slab</small></button>
+<button class="care__item" type="button" data-item="Seguro" aria-pressed="false"><span>03</span><strong>Seguro</strong><small>visit-detail-row</small></button>
+<button class="care__item" type="button" data-item="FAQ calma" aria-pressed="false"><span>04</span><strong>FAQ calma</strong><small>appointment-rail</small></button></div></section>
+<section class="care__split" id="form"><div class="care__panel"><h2>Formulario real do DS</h2><form class="care__form"><label>Paciente<input name="field0" value="Exemplo teste" placeholder="Paciente" /></label>
+<label>Rota<select name="field1"><option>familia</option><option>pediatria</option><option>bem-estar</option></select></label>
+<label>Horario<input name="field2" value="" placeholder="Horario" /></label><button class="care__submit" type="submit">Simular agendamento</button></form></div><div class="care__panel"><h2>Resultado / estado</h2><p class="care__status care__output" aria-live="polite">Nenhum envio ainda.</p><p>O preview precisa testar foco, estado ativo, formulario, responsividade e copy do componente.</p></div></section>
+<section><h2>Fluxo de secoes coberto</h2><div class="care__sections"><article class="care__section-card"><span>01</span><h3>Care route finder</h3><p>care-route-chip</p></article>
+<article class="care__section-card"><span>02</span><h3>Practitioner trust panel</h3><p>practitioner-profile-slab</p></article>
+<article class="care__section-card"><span>03</span><h3>Treatment journal</h3><p>visit-detail-row</p></article>
+<article class="care__section-card"><span>04</span><h3>Insurance and visit details</h3><p>appointment-rail</p></article>
+<article class="care__section-card"><span>05</span><h3>Calm FAQ</h3><p>calm-faq-card</p></article>
+<article class="care__section-card"><span>06</span><h3>Patient story</h3><p>insurance-pill</p></article>
+<article class="care__section-card"><span>07</span><h3>Booking bar</h3><p>care-route-chip</p></article>
+<article class="care__section-card"><span>08</span><h3>Footer as clinic dossier</h3><p>practitioner-profile-slab</p></article></div></section>
+<section><h2>Paleta clicavel</h2><div class="care__palette"><button class="care__chip" type="button" data-copy="#5D6F43" style="--chip:#5D6F43;--ink:#ffffff"><span>Primary</span><strong>#5D6F43</strong></button>
+<button class="care__chip" type="button" data-copy="#CDBB8E" style="--chip:#CDBB8E;--ink:#111111"><span>Secondary</span><strong>#CDBB8E</strong></button>
+<button class="care__chip" type="button" data-copy="#FAF7EF" style="--chip:#FAF7EF;--ink:#111111"><span>Surface</span><strong>#FAF7EF</strong></button>
+<button class="care__chip" type="button" data-copy="#E7E1D2" style="--chip:#E7E1D2;--ink:#111111"><span>Alt</span><strong>#E7E1D2</strong></button>
+<button class="care__chip" type="button" data-copy="#22281D" style="--chip:#22281D;--ink:#ffffff"><span>Text</span><strong>#22281D</strong></button>
+<button class="care__chip" type="button" data-copy="#6C725F" style="--chip:#6C725F;--ink:#ffffff"><span>Muted</span><strong>#6C725F</strong></button>
+<button class="care__chip" type="button" data-copy="#CAC2AD" style="--chip:#CAC2AD;--ink:#111111"><span>Border</span><strong>#CAC2AD</strong></button></div></section>
+<section class="care__audit"><div><strong>Acessibilidade</strong><p>Focus ring, aria-live e touch target 44px.</p></div><div><strong>Responsivo</strong><p>Mobile preserva mobile-first booking rail after hero with sticky call action.</p></div><div><strong>Erro corrigido</strong><p>nao havia fluxo de consulta, rota de cuidado nem formulario.</p></div></section>
+</div>
+</main>
+<script>
+(() => {
+ const root = document.querySelector('.care');
+ const status = document.querySelector('.care__status');
+ const output = document.querySelector('.care__output');
+ document.querySelectorAll('.care__option').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.care__option').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  root.dataset.mode = btn.dataset.mode;
+  status.textContent = 'Modo ativo: ' + btn.dataset.mode + ' · Resumo de agendamento atualizado';
+ }));
+ document.querySelectorAll('.care__item').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.care__item').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  output.textContent = 'Selecionado: ' + btn.dataset.item + ' · componente pronto para estado ativo.';
+ }));
+ document.querySelector('.care__form').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  output.textContent = 'Resumo de agendamento atualizado: ' + [...data.values()].filter(Boolean).join(' / ');
+ });
+ document.querySelectorAll('.care__chip').forEach(chip => chip.addEventListener('click', async () => {
+  const value = chip.dataset.copy;
+  try { await navigator.clipboard.writeText(value); output.textContent = 'Cor copiada: ' + value; }
+  catch { output.textContent = 'Token selecionado: ' + value; }
+ }));
+})();
+</script>
+</body>
+</html>

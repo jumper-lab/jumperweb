@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DS 04.1 — SaaS Minimalista | Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#5E3DD2; --primary-hover:#6D4BE0; --primary-active:#4F32B8;
+    --primary-light:#9D8CFF; --secondary:#FFFFFF;
+    --surface:#0A0A0F; --surface-alt:#16161D; --surface-raised:#1C1C25;
+    --text-1:#F7F8F8; --text-2:#B4B6C0; --text-3:#8A8F98;
+    --border:#26262F; --border-strong:#3E4046;
+    --error:#F87171; --success:#4ADE80; --warning:#FBBF24;
+    --n50:#F7F8F8; --n100:#E3E4E8; --n200:#C9CBD4; --n300:#B4B6C0; --n400:#8A8F98;
+    --n500:#62666D; --n600:#3E4046; --n700:#26262F; --n800:#16161D; --n900:#0A0A0F;
+    --font-h:'Inter Tight', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --font-b:'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --font-m:'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+    --sh-sm:0 1px 2px rgba(0,0,0,.5); --sh-md:0 4px 16px rgba(0,0,0,.45); --sh-lg:0 12px 40px rgba(0,0,0,.55);
+    --glow-primary:0 0 0 1px rgba(94,61,210,.45), 0 0 24px rgba(94,61,210,.25);
+    --glow-soft:0 0 32px rgba(157,140,255,.12);
+    --r-sm:6px; --r-md:10px; --r-lg:14px; --r-xl:20px; --r-full:9999px;
+    --dur-fast:200ms; --dur-base:300ms; --dur-reveal:600ms;
+    --ease-out:cubic-bezier(.16,1,.3,1); --ease-inout:cubic-bezier(.65,0,.35,1);
+    --hero-glow:radial-gradient(ellipse 60% 45% at 50% 0%, rgba(94,61,210,.28), transparent 70%);
+    --text-gradient:linear-gradient(120deg, #F7F8F8 30%, #9D8CFF 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-b);font-size:16px;line-height:1.65;color:var(--text-1);background:var(--surface);-webkit-font-smoothing:antialiased}
+  .container{max-width:1180px;margin:0 auto;padding:0 20px}
+  @media(min-width:480px){.container{padding:0 40px}}
+  @media(min-width:1024px){.container{padding:0 64px}}
+  h1,h2,h3,h4{font-family:var(--font-h);color:var(--text-1)}
+  h1{font-size:clamp(2.375rem,1.6rem + 3.4vw,4rem);line-height:1.05;font-weight:800;letter-spacing:-.03em}
+  h2{font-size:clamp(1.75rem,1.3rem + 2vw,2.75rem);line-height:1.1;font-weight:700;letter-spacing:-.03em}
+  h3{font-size:clamp(1.25rem,1.15rem + .5vw,1.5rem);line-height:1.3;font-weight:600;letter-spacing:-.02em}
+  p{color:var(--text-2)}
+  a{color:var(--primary-light)}
+  section{padding:72px 0}
+  @media(min-width:480px){section{padding:104px 0}}
+  @media(min-width:1024px){section{padding:144px 0}}
+  .section-alt{background:var(--surface-alt)}
+  .mono{font-family:var(--font-m);font-variant-numeric:tabular-nums}
+  .mono-label{font-family:var(--font-m);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--primary-light);display:inline-block}
+  .section-head{max-width:640px;margin:0 0 56px}
+  .section-head p{margin-top:16px;font-size:17px}
+
+  /* skip link */
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--primary);color:#fff;padding:12px 24px;border-radius:0 0 10px 0;z-index:99}
+  .skip-link:focus{left:0}
+
+  /* navbar */
+  .nav{position:sticky;top:0;z-index:50;background:transparent;border-bottom:1px solid transparent;transition:background var(--dur-base) var(--ease-inout),border-color var(--dur-base) var(--ease-inout),backdrop-filter var(--dur-base) var(--ease-inout)}
+  .nav.scrolled{background:rgba(10,10,15,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:9px;font-family:var(--font-h);font-weight:700;font-size:20px;color:var(--text-1);text-decoration:none}
+  .nav-links{display:none;align-items:center;gap:32px;list-style:none}
+  @media(min-width:1024px){.nav-links{display:flex}}
+  .nav-links a{font-size:15px;font-weight:500;color:var(--text-2);text-decoration:none;position:relative;padding:4px 0}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--primary-light);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-fast) var(--ease-out)}
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--text-1)}
+  .nav-links a:hover::after,.nav-links a:focus-visible::after{transform:scaleX(1)}
+  .nav-cta{display:none}
+  @media(min-width:1024px){.nav-cta{display:inline-flex}}
+  .hamburger{display:inline-flex;flex-direction:column;gap:5px;background:none;border:none;padding:12px;cursor:pointer;border-radius:8px}
+  .hamburger span{width:22px;height:2px;background:var(--text-1);border-radius:2px}
+  .hamburger:focus-visible{outline:2px solid var(--primary-light);outline-offset:2px}
+  @media(min-width:1024px){.hamburger{display:none}}
+  .mobile-menu{display:none;position:fixed;inset:0;background:var(--surface);z-index:60;padding:24px 20px;flex-direction:column}
+  .mobile-menu.open{display:flex}
+  .mobile-menu ul{list-style:none;margin-top:48px;display:flex;flex-direction:column;gap:8px}
+  .mobile-menu a{font-family:var(--font-h);font-size:24px;font-weight:600;color:var(--text-1);text-decoration:none;display:block;padding:12px 0}
+  .mobile-menu .close-btn{align-self:flex-end;background:none;border:1px solid var(--border-strong);border-radius:10px;padding:10px 16px;font-family:var(--font-b);font-size:14px;cursor:pointer;color:var(--text-2)}
+  .mobile-menu .btn{margin-top:auto}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-b);font-weight:600;font-size:15px;border-radius:var(--r-md);padding:12px 24px;min-height:44px;border:none;cursor:pointer;text-decoration:none;transition:background var(--dur-base) var(--ease-out),color var(--dur-base) var(--ease-out),border-color var(--dur-base) var(--ease-out),box-shadow var(--dur-base) var(--ease-out)}
+  .btn-lg{padding:16px 32px;font-size:16px;min-height:52px}
+  .btn-sm{padding:8px 16px;font-size:14px;min-height:36px}
+  .btn .arr{transition:transform var(--dur-fast) var(--ease-out)}
+  .btn:hover .arr{transform:translateX(2px)}
+  .btn-primary{background:var(--primary);color:#fff}
+  .btn-primary:hover{background:var(--primary-hover);box-shadow:var(--glow-primary)}
+  .btn-primary:active{background:var(--primary-active)}
+  .btn-primary:focus-visible{outline:2px solid var(--primary-light);outline-offset:2px}
+  .btn-primary:disabled{background:var(--border);color:var(--n500);cursor:not-allowed;box-shadow:none}
+  .btn-secondary{background:#fff;color:var(--surface)}
+  .btn-secondary:hover{background:var(--n100)}
+  .btn-secondary:focus-visible{outline:2px solid var(--primary-light);outline-offset:2px}
+  .btn-ghost{background:transparent;color:var(--text-1);border:1px solid var(--border-strong)}
+  .btn-ghost:hover{border-color:rgba(157,140,255,.5);background:rgba(157,140,255,.06)}
+  .btn-ghost:focus-visible{outline:2px solid var(--primary-light);outline-offset:2px}
+  .link{display:inline-flex;align-items:center;gap:6px;color:var(--primary-light);font-weight:500;font-size:15px;text-decoration:none;position:relative}
+  .link::after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:1.5px;background:var(--primary-light);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-fast) var(--ease-out)}
+  .link:hover::after,.link:focus-visible::after{transform:scaleX(1)}
+  .link:focus-visible{outline:2px solid var(--primary-light);outline-offset:3px;border-radius:2px}
+
+  /* badges */
+  .tag{display:inline-flex;align-items:center;gap:6px;border-radius:var(--r-full);border:1px solid var(--border-strong);background:rgba(157,140,255,.08);color:var(--primary-light);font-family:var(--font-m);font-size:12px;padding:5px 12px}
+  .kbd{font-family:var(--font-m);font-size:12px;background:var(--surface-raised);border:1px solid var(--border-strong);border-radius:6px;padding:2px 7px;color:var(--text-2)}
+  .status-dot{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--text-2)}
+  .status-dot::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--success);box-shadow:0 0 0 0 rgba(74,222,128,.5);animation:pulse 2.4s var(--ease-out) infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,.5)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;padding:96px 0 72px}
+  @media(min-width:1024px){.hero{padding:128px 0 96px}}
+  .hero::before{content:'';position:absolute;inset:0;background:var(--hero-glow);pointer-events:none;animation:breathe 8s ease-in-out infinite}
+  @keyframes breathe{0%,100%{opacity:.7}50%{opacity:1}}
+  .hero-grid{position:relative;display:grid;gap:48px;align-items:center}
+  @media(min-width:1024px){.hero-grid{grid-template-columns:7fr 5fr;gap:48px}}
+  .hero .eyebrow{margin-bottom:20px}
+  .hero h1 .hl{background:var(--text-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--primary-light)}
+  .hero .sub{font-size:clamp(1.0625rem,1rem + .4vw,1.25rem);color:var(--text-2);margin:24px 0 32px;max-width:52ch}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .hero-micro{margin-top:20px;font-size:14px;color:var(--text-3);display:flex;gap:16px;flex-wrap:wrap}
+  .hero-visual{position:relative}
+  /* janela de produto simulada */
+  .window{background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--glow-soft),var(--sh-lg);overflow:hidden}
+  .window-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid var(--border);background:var(--surface-raised)}
+  .window-bar .dot{width:11px;height:11px;border-radius:50%}
+  .window-body{padding:20px}
+  .win-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;margin-bottom:8px;background:var(--surface)}
+  .win-row .pill{width:8px;height:8px;border-radius:50%}
+  .win-row .bar{height:8px;border-radius:4px;background:var(--border)}
+  .win-row .val{margin-left:auto;font-family:var(--font-m);font-size:13px;color:var(--text-1)}
+
+  /* metric band */
+  .metrics-grid{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;grid-template-columns:1fr}
+  @media(min-width:480px){.metrics-grid{grid-template-columns:repeat(3,1fr)}}
+  .metric{background:var(--surface-alt);padding:32px 28px}
+  .metric .num{font-family:var(--font-m);font-variant-numeric:tabular-nums;font-size:clamp(2.25rem,1.8rem + 1.6vw,3.25rem);line-height:1;font-weight:500;color:var(--text-1)}
+  .metric .lbl{font-family:var(--font-m);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin-top:12px}
+  .logos-row{display:flex;flex-wrap:wrap;gap:36px;align-items:center;justify-content:center;margin-bottom:56px;opacity:.85}
+  .logos-row svg{color:var(--n500);transition:color var(--dur-base) var(--ease-out)}
+  .logos-row svg:hover{color:var(--text-2)}
+  .logos-label{text-align:center;color:var(--text-3);font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px}
+
+  /* features */
+  .features-grid{display:grid;gap:20px;grid-template-columns:1fr}
+  @media(min-width:768px){.features-grid{grid-template-columns:2fr 1fr 1fr}}
+  .card{background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px;transition:background var(--dur-base) var(--ease-out),border-color var(--dur-base) var(--ease-out)}
+  .card:hover{background:var(--surface-raised);border-color:rgba(157,140,255,.4)}
+  .card .ico{color:var(--primary-light);margin-bottom:20px}
+  .card h3{margin-bottom:10px}
+  .card p{font-size:15px;margin-bottom:18px}
+  .card.span2{grid-column:auto}
+  @media(min-width:768px){.card.span2{grid-row:span 1}}
+  .card .mini-win{margin-top:20px;border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;background:var(--surface)}
+
+  /* product detail */
+  .detail{display:grid;gap:40px;align-items:center}
+  @media(min-width:1024px){.detail{grid-template-columns:1fr 1fr;gap:64px}}
+
+  /* testimonials */
+  .quotes-grid{display:grid;gap:20px;grid-template-columns:1fr}
+  @media(min-width:768px){.quotes-grid{grid-template-columns:repeat(2,1fr)}}
+  .quote{background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px;transition:background var(--dur-base) var(--ease-out),border-color var(--dur-base) var(--ease-out)}
+  .quote:hover{background:var(--surface-raised);border-color:rgba(157,140,255,.4)}
+  .quote.anchor{grid-column:auto}
+  @media(min-width:768px){.quote.anchor{grid-column:span 2}}
+  .quote.anchor p.q{font-size:22px;line-height:1.4;font-family:var(--font-h);font-weight:600;color:var(--text-1)}
+  .quote p.q{font-size:16px;color:var(--text-1);line-height:1.55}
+  .quote .who{display:flex;align-items:center;gap:12px;margin-top:20px}
+  .quote .avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#5E3DD2,#9D8CFF);display:flex;align-items:center;justify-content:center;font-family:var(--font-h);font-weight:700;font-size:14px;color:#fff;flex-shrink:0}
+  .quote .who .name{color:var(--text-1);font-weight:500;font-size:14px}
+  .quote .who .role{font-family:var(--font-m);font-size:12px;color:var(--text-3)}
+
+  /* form */
+  .form-grid{display:grid;gap:24px;grid-template-columns:1fr;max-width:560px}
+  @media(min-width:480px){.form-grid{grid-template-columns:1fr 1fr}}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field.full{grid-column:1/-1}
+  .field label{font-size:14px;font-weight:500;color:var(--text-2)}
+  .field input,.field select{font-family:var(--font-b);font-size:16px;color:var(--text-1);background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--r-md);padding:12px 16px;min-height:44px;transition:border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
+  .field input::placeholder{color:var(--n500)}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--primary-light);box-shadow:0 0 0 3px rgba(157,140,255,.18)}
+  .field.has-error input{border-color:var(--error)}
+  .field .err{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--error)}
+
+  /* cta final */
+  .cta-final{position:relative;text-align:center;overflow:hidden}
+  .cta-final::before{content:'';position:absolute;inset:0;background:var(--hero-glow);pointer-events:none}
+  .cta-final .inner{position:relative;max-width:640px;margin:0 auto}
+  .cta-final p{margin:16px auto 32px;font-size:18px;max-width:48ch}
+  .cta-final .ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+  /* footer */
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:64px 0 32px}
+  .footer-grid{display:grid;gap:40px;grid-template-columns:1fr 1fr}
+  @media(min-width:768px){.footer-grid{grid-template-columns:1.4fr repeat(4,1fr)}}
+  .footer-grid h4{font-family:var(--font-m);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:16px}
+  .footer-grid ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-grid a{color:var(--text-3);text-decoration:none;font-size:14px}
+  .footer-grid a:hover{color:var(--text-1)}
+  .footer-brand .logo{margin-bottom:16px}
+  .footer-brand p{font-size:14px;color:var(--text-3);max-width:34ch}
+  .footer-bottom{border-top:1px solid var(--border);margin-top:48px;padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:13px;color:var(--n500)}
+  .footer-bottom .socials{display:flex;gap:16px}
+  .footer-bottom .socials a{color:var(--n500)}
+  .footer-bottom .socials a:hover{color:var(--text-1)}
+
+  /* style guide */
+  .guide-note{background:rgba(157,140,255,.06);border:1px solid rgba(157,140,255,.25);border-radius:var(--r-lg);padding:20px 24px;font-size:14px;color:var(--primary-light);margin-bottom:48px}
+  .swatch-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  .swatch{border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;background:var(--surface-alt)}
+  .swatch .chip{height:72px}
+  .swatch .meta{padding:12px 14px;font-size:13px}
+  .swatch .meta strong{display:block;color:var(--text-1)}
+  .swatch .meta code{font-family:var(--font-m);font-size:12px;color:var(--text-3)}
+  .type-specimen{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:var(--r-lg);padding:32px;background:var(--surface-alt)}
+  .type-specimen .cap{font-size:12px;font-family:var(--font-m);color:var(--text-3);margin-bottom:6px}
+  .states-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:24px}
+  .fake-focus{outline:2px solid var(--primary-light);outline-offset:2px}
+  .demo-anim-box{display:flex;flex-wrap:wrap;gap:20px}
+  .demo-anim-box .card{width:240px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity var(--dur-reveal) var(--ease-out),transform var(--dur-reveal) var(--ease-out)}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal.d1{transition-delay:80ms}.reveal.d2{transition-delay:160ms}.reveal.d3{transition-delay:240ms}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+    .hero::before,.cta-final::before{animation:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#main" aria-label="Página inicial — Kernel">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="9" height="9" rx="2.5" fill="#5E3DD2"/><rect x="13" y="2" width="9" height="9" rx="2.5" fill="#9D8CFF"/><rect x="2" y="13" width="9" height="9" rx="2.5" fill="#9D8CFF" opacity=".5"/><rect x="13" y="13" width="9" height="9" rx="2.5" fill="#5E3DD2"/></svg>
+      Kernel
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#produto">Produto</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#clientes">Clientes</a></li>
+        <li><a href="#docs">Documentação</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="#comecar" class="btn btn-primary btn-sm nav-cta">Comece grátis</a>
+      <button class="hamburger" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="close-btn" id="closeBtn">Fechar ✕</button>
+  <ul>
+    <li><a href="#produto">Produto</a></li>
+    <li><a href="#recursos">Recursos</a></li>
+    <li><a href="#clientes">Clientes</a></li>
+    <li><a href="#docs">Documentação</a></li>
+  </ul>
+  <a href="#comecar" class="btn btn-primary btn-lg">Comece grátis</a>
+</div>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div>
+      <span class="mono-label eyebrow">// lançamento v2.0</span>
+      <h1 id="hero-title">Construído para times que <span class="hl">entregam</span>.</h1>
+      <p class="sub">Do commit ao cliente em minutos. Infraestrutura de deploy, observabilidade e rollback em um só painel — feito para quem leva prazo a sério.</p>
+      <div class="hero-ctas">
+        <a href="#comecar" class="btn btn-primary btn-lg">Comece grátis <span class="arr" aria-hidden="true">→</span></a>
+        <a href="#produto" class="btn btn-ghost btn-lg">Ver demonstração</a>
+      </div>
+      <div class="hero-micro">
+        <span>Grátis para começar. Sem cartão.</span>
+        <span>Setup em menos de 5 minutos.</span>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="window" role="img" aria-label="Painel de deploys com três ambientes ativos e status de build">
+        <div class="window-bar" aria-hidden="true">
+          <span class="dot" style="background:#F87171"></span>
+          <span class="dot" style="background:#FBBF24"></span>
+          <span class="dot" style="background:#4ADE80"></span>
+          <span class="mono" style="margin-left:12px;font-size:12px;color:var(--text-3)">deploys — production</span>
+        </div>
+        <div class="window-body">
+          <div class="win-row"><span class="pill" style="background:#4ADE80"></span><span class="bar" style="width:38%"></span><span class="val">v2.4.1 · 12s</span></div>
+          <div class="win-row"><span class="pill" style="background:#4ADE80"></span><span class="bar" style="width:52%"></span><span class="val">v2.4.0 · 9s</span></div>
+          <div class="win-row"><span class="pill" style="background:#FBBF24"></span><span class="bar" style="width:30%;background:#5E3DD2;opacity:.5"></span><span class="val" style="color:var(--warning)">build · 04s</span></div>
+          <div class="win-row"><span class="pill" style="background:#4ADE80"></span><span class="bar" style="width:44%"></span><span class="val">v2.3.9 · 11s</span></div>
+          <div style="display:flex;gap:8px;margin-top:16px">
+            <span class="tag">production</span><span class="tag">staging</span><span class="tag">preview</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROVA SOCIAL ===================== -->
+<section class="section-alt" style="padding:64px 0" aria-label="Prova social e métricas">
+  <div class="container">
+    <p class="logos-label">Confiado por times de engenharia</p>
+    <div class="logos-row" aria-label="Logos de clientes (exemplos ilustrativos)">
+      <svg width="96" height="22" viewBox="0 0 96 22" aria-hidden="true" fill="currentColor"><rect x="0" y="4" width="14" height="14" rx="3"/><rect x="22" y="6" width="68" height="9" rx="4.5"/></svg>
+      <svg width="88" height="22" viewBox="0 0 88 22" aria-hidden="true" fill="currentColor"><circle cx="11" cy="11" r="9"/><rect x="28" y="6" width="58" height="9" rx="4.5"/></svg>
+      <svg width="92" height="22" viewBox="0 0 92 22" aria-hidden="true" fill="currentColor"><path d="M2 20 L11 3 L20 20 Z"/><rect x="28" y="6" width="62" height="9" rx="4.5"/></svg>
+      <svg width="84" height="22" viewBox="0 0 84 22" aria-hidden="true" fill="currentColor"><rect x="0" y="6" width="6" height="12"/><rect x="8" y="2" width="6" height="16"/><rect x="16" y="9" width="6" height="9"/><rect x="30" y="7" width="52" height="9" rx="4.5"/></svg>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric reveal"><p class="num" data-count="99.9" data-suffix="%">99.9%</p><p class="lbl">uptime · 12 meses</p></div>
+      <div class="metric reveal d1"><p class="num" data-count="2400" data-suffix="+">2.400+</p><p class="lbl">deploys por mês</p></div>
+      <div class="metric reveal d2"><p class="num" data-count="42" data-prefix="−" data-suffix="%">−42%</p><p class="lbl">tempo de build médio</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURES ===================== -->
+<section id="recursos" aria-labelledby="feat-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="mono-label">// recursos</span>
+      <h2 id="feat-title" style="margin-top:16px">Menos reunião. Mais deploy.</h2>
+      <p>Cada recurso existe para reduzir o tempo entre a ideia e a produção. Nada de painel enfeitado.</p>
+    </div>
+    <div class="features-grid">
+      <article class="card span2 reveal">
+        <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12l3 3 5-6"/></svg></span>
+        <h3>Deploy contínuo com rollback instantâneo</h3>
+        <p>Cada push vira um ambiente de preview. Promova para produção com um clique — e volte atrás em segundos se algo quebrar.</p>
+        <a class="link" href="#produto">Ver documentação <span aria-hidden="true">→</span></a>
+        <div class="mini-win" aria-hidden="true">
+          <div class="window-bar"><span class="dot" style="width:9px;height:9px;background:#5E3DD2"></span><span class="mono" style="font-size:11px;color:var(--text-3)">rollback --to v2.3.9</span></div>
+          <div style="padding:14px;display:flex;gap:8px;align-items:center"><span class="status-dot">Revertido · 1,2s</span></div>
+        </div>
+      </article>
+      <article class="card reveal d1">
+        <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20V10M9 20V4M15 20v-8M21 20V7"/></svg></span>
+        <h3>Observabilidade nativa</h3>
+        <p>Logs, métricas e traces no mesmo lugar. Sem integração de terceiro.</p>
+        <a class="link" href="#produto">Explorar <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="card reveal d2">
+        <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M12 22v-6M4 12H2M22 12h-2"/><circle cx="12" cy="12" r="4"/></svg></span>
+        <h3>API-first</h3>
+        <p>Tudo o que o painel faz, a API faz. <span class="kbd">⌘K</span> para tudo.</p>
+        <a class="link" href="#docs">Ler a API <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUTO EM DETALHE ===================== -->
+<section id="produto" class="section-alt" aria-labelledby="prod-title">
+  <div class="container detail">
+    <div class="reveal">
+      <span class="mono-label">// produto</span>
+      <h2 id="prod-title" style="margin:16px 0">A infraestrutura que o seu produto merece.</h2>
+      <p>Ambientes reproduzíveis, secrets criptografados e um pipeline que você lê de cabo a rabo. Seus dados ficam no Brasil. LGPD por padrão.</p>
+      <ul style="list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:14px">
+        <li style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--success);flex-shrink:0">✓</span><span style="color:var(--text-2)">Rollback em menos de 2 segundos, sem downtime.</span></li>
+        <li style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--success);flex-shrink:0">✓</span><span style="color:var(--text-2)">Preview por pull request, destruído no merge.</span></li>
+        <li style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--success);flex-shrink:0">✓</span><span style="color:var(--text-2)">Auditoria completa de quem fez deploy do quê.</span></li>
+      </ul>
+    </div>
+    <div class="reveal d1">
+      <div class="window" role="img" aria-label="Editor de pipeline com blocos de build, teste e deploy">
+        <div class="window-bar" aria-hidden="true">
+          <span class="dot" style="background:#F87171"></span><span class="dot" style="background:#FBBF24"></span><span class="dot" style="background:#4ADE80"></span>
+          <span class="mono" style="margin-left:12px;font-size:12px;color:var(--text-3)">pipeline.yml</span>
+        </div>
+        <div class="window-body mono" style="font-size:13px;line-height:1.9;color:var(--text-2)">
+          <div><span style="color:var(--primary-light)">stages:</span></div>
+          <div>&nbsp;&nbsp;- build&nbsp;&nbsp;<span style="color:var(--success)"># 12s</span></div>
+          <div>&nbsp;&nbsp;- test&nbsp;&nbsp;&nbsp;<span style="color:var(--success)"># 08s</span></div>
+          <div>&nbsp;&nbsp;- deploy <span style="color:var(--success)"># 04s</span></div>
+          <div style="margin-top:8px"><span style="color:var(--primary-light)">region:</span> br-sao-1</div>
+          <div><span style="color:var(--primary-light)">rollback:</span> auto</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DEPOIMENTOS ===================== -->
+<section id="clientes" aria-labelledby="dep-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="mono-label">// clientes</span>
+      <h2 id="dep-title" style="margin-top:16px">Software sério para quem leva prazo a sério.</h2>
+    </div>
+    <div class="quotes-grid">
+      <article class="quote anchor reveal">
+        <p class="q">“Cortamos o tempo de deploy de 40 minutos para menos de um. O rollback instantâneo mudou como o time encara sexta-feira à tarde.”</p>
+        <div class="who">
+          <span class="avatar" aria-hidden="true">RM</span>
+          <div><div class="name">Rafael Moura</div><div class="role">CTO · Vext (fintech B2B)</div></div>
+        </div>
+      </article>
+      <article class="quote reveal d1">
+        <p class="q">“Documentação impecável e API que faz tudo. Integramos em uma tarde.”</p>
+        <div class="who">
+          <span class="avatar" aria-hidden="true">JS</span>
+          <div><div class="name">Juliana Santos</div><div class="role">Head de Eng · Nodo</div></div>
+        </div>
+      </article>
+      <article class="quote reveal d2">
+        <p class="q">“Observabilidade nativa nos economizou duas ferramentas e uma dor de cabeça.”</p>
+        <div class="who">
+          <span class="avatar" aria-hidden="true">PA</span>
+          <div><div class="name">Pedro Aoki</div><div class="role">Staff Engineer · Grafo</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STYLE GUIDE ===================== -->
+<section id="docs" class="section-alt" aria-labelledby="guide-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="mono-label">// style guide 04.1</span>
+      <h2 id="guide-title" style="margin-top:16px">Tokens ao vivo</h2>
+      <p>Paleta, tipografia, estados e animações deste design system, demonstrados na prática.</p>
+    </div>
+
+    <p class="guide-note"><strong>Regra de contraste:</strong> #5E3DD2 (2.89:1 sobre o dark) só como preenchimento — nunca como texto. Texto e links roxos usam #9D8CFF (7.18:1). Botão primário: branco sobre roxo = 6.83:1.</p>
+
+    <h3 style="margin-bottom:24px">Paleta</h3>
+    <div class="swatch-grid" style="margin-bottom:64px">
+      <div class="swatch"><div class="chip" style="background:#5E3DD2"></div><div class="meta"><strong>Primary · Roxo</strong><code>#5E3DD2</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#9D8CFF"></div><div class="meta"><strong>Primary light</strong><code>#9D8CFF</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#0A0A0F;border-bottom:1px solid #26262F"></div><div class="meta"><strong>Surface</strong><code>#0A0A0F</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#16161D"></div><div class="meta"><strong>Surface alt</strong><code>#16161D</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#1C1C25"></div><div class="meta"><strong>Surface raised</strong><code>#1C1C25</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#F7F8F8"></div><div class="meta"><strong>Text primary</strong><code>#F7F8F8</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#B4B6C0"></div><div class="meta"><strong>Text secondary</strong><code>#B4B6C0</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#8A8F98"></div><div class="meta"><strong>Text muted</strong><code>#8A8F98</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#4ADE80"></div><div class="meta"><strong>Success</strong><code>#4ADE80</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#F87171"></div><div class="meta"><strong>Error</strong><code>#F87171</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#FBBF24"></div><div class="meta"><strong>Warning</strong><code>#FBBF24</code></div></div>
+    </div>
+
+    <h3 style="margin-bottom:24px">Tipografia ao vivo</h3>
+    <div class="type-specimen" style="margin-bottom:64px">
+      <div><p class="cap">H1 · Inter Tight 800 · 64/38px · -0.03em</p><h1>Do commit ao cliente</h1></div>
+      <div><p class="cap">H2 · Inter Tight 700 · 44/28px · -0.03em</p><h2>Precisão comunica confiança</h2></div>
+      <div><p class="cap">H3 · Inter Tight 600 · 24/20px · -0.02em</p><h3>Cada elemento parece calculado</h3></div>
+      <div><p class="cap">Body · Inter 400 · 17/16px (substitui a grotesca proprietária)</p><p>A essência é confiança pela clareza: cada elemento parece calculado, e é essa precisão que transmite que estes profissionais sabem o que estão fazendo.</p></div>
+      <div><p class="cap">Mono · JetBrains Mono 500 · tabular-nums</p><p class="mono" style="font-size:24px;color:var(--primary-light)">99.9% · 2.400+ · v2.4.1 · <span class="kbd">⌘K</span></p></div>
+    </div>
+
+    <h3 style="margin-bottom:24px">Botões — todos os estados</h3>
+    <div class="states-row">
+      <button class="btn btn-primary">Default</button>
+      <button class="btn btn-primary" style="background:var(--primary-hover);box-shadow:var(--glow-primary)">Hover</button>
+      <button class="btn btn-primary fake-focus">Focus</button>
+      <button class="btn btn-primary" disabled>Disabled</button>
+    </div>
+    <div class="states-row" style="margin-bottom:64px">
+      <button class="btn btn-secondary">Branco (alto impacto)</button>
+      <button class="btn btn-ghost">Ghost</button>
+      <button class="btn btn-ghost fake-focus">Ghost focus</button>
+      <a class="link" href="#docs">Link roxo <span aria-hidden="true">→</span></a>
+    </div>
+
+    <h3 style="margin-bottom:24px">Inputs — default, focus e erro</h3>
+    <form class="form-grid" style="margin-bottom:64px" novalidate>
+      <div class="field">
+        <label for="email-g">E-mail (default)</label>
+        <input id="email-g" type="email" placeholder="voce@empresa.com.br">
+      </div>
+      <div class="field">
+        <label for="foco-g">Campo em foco</label>
+        <input id="foco-g" type="text" value="foco visível" style="border-color:var(--primary-light);box-shadow:0 0 0 3px rgba(157,140,255,.18)">
+      </div>
+      <div class="field has-error full">
+        <label for="err-g">E-mail (erro)</label>
+        <input id="err-g" type="email" value="ana@empresa" aria-invalid="true" aria-describedby="err-msg">
+        <p class="err" id="err-msg"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6.2" fill="none" stroke="#F87171" stroke-width="1.5"/><path d="M7 3.6v4" stroke="#F87171" stroke-width="1.6" stroke-linecap="round"/><circle cx="7" cy="10.2" r=".9" fill="#F87171"/></svg> Informe um e-mail válido (ex.: ana@empresa.com.br)</p>
+      </div>
+    </form>
+
+    <h3 style="margin-bottom:24px">Badges e elementos técnicos</h3>
+    <div class="states-row" style="margin-bottom:64px">
+      <span class="tag">production</span>
+      <span class="tag">v2.4.1</span>
+      <span class="status-dot">Todos os sistemas operacionais</span>
+      <span class="kbd">⌘</span><span class="kbd">K</span>
+    </div>
+
+    <h3 style="margin-bottom:24px">Animações do DS (hover nos cards, reveal ao rolar)</h3>
+    <div class="demo-anim-box">
+      <div class="card reveal"><p class="cap mono" style="font-size:12px;color:var(--text-3)">card-lift · 300ms</p><p style="font-size:15px">Passe o mouse: elevação por cor — borda roxa e fundo mais claro, sem movimento.</p></div>
+      <div class="card reveal d1"><p class="cap mono" style="font-size:12px;color:var(--text-3)">fade-rise · 600ms</p><p style="font-size:15px">Esta caixa subiu 16px com fade e stagger de 80ms.</p></div>
+      <div class="card reveal d2"><p class="cap mono" style="font-size:12px;color:var(--text-3)">prefers-reduced-motion</p><p style="font-size:15px">Com movimento reduzido, o glow para e tudo aparece direto.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA FINAL ===================== -->
+<section id="comecar" class="cta-final" aria-labelledby="cta-title">
+  <div class="container inner">
+    <h2 id="cta-title">Comece a entregar hoje.</h2>
+    <p>Grátis para começar. Sem cartão de crédito. Setup em menos de 5 minutos.</p>
+    <div class="ctas">
+      <a href="#comecar" class="btn btn-primary btn-lg">Comece grátis <span class="arr" aria-hidden="true">→</span></a>
+      <a href="#docs" class="btn btn-ghost btn-lg">Falar com engenharia</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#main" aria-label="Kernel"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="9" height="9" rx="2.5" fill="#5E3DD2"/><rect x="13" y="2" width="9" height="9" rx="2.5" fill="#9D8CFF"/><rect x="2" y="13" width="9" height="9" rx="2.5" fill="#9D8CFF" opacity=".5"/><rect x="13" y="13" width="9" height="9" rx="2.5" fill="#5E3DD2"/></svg> Kernel</a>
+        <p>A infraestrutura de deploy que times de engenharia brasileiros escolhem.</p>
+        <p class="status-dot" style="margin-top:20px">Todos os sistemas operacionais</p>
+      </div>
+      <div>
+        <h4>Produto</h4>
+        <ul><li><a href="#produto">Deploys</a></li><li><a href="#recursos">Observabilidade</a></li><li><a href="#recursos">API</a></li><li><a href="#docs">Preços</a></li></ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul><li><a href="#main">Sobre</a></li><li><a href="#main">Carreiras</a></li><li><a href="#main">Blog</a></li></ul>
+      </div>
+      <div>
+        <h4>Recursos</h4>
+        <ul><li><a href="#docs">Documentação</a></li><li><a href="#docs">Changelog</a></li><li><a href="#docs">Status</a></li></ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul><li><a href="#main">Privacidade</a></li><li><a href="#main">Termos</a></li><li><a href="#main">LGPD</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="mono">© 2026 Kernel Tecnologia · CNPJ 00.000.000/0001-00</span>
+      <div class="socials">
+        <a href="#main" aria-label="GitHub"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 0C4.48 0 0 4.48 0 10c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 20 10c0-5.52-4.48-10-10-10z"/></svg></a>
+        <a href="#main" aria-label="X"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M15.3 1.8h2.9l-6.4 7.3 7.5 9.9h-5.9l-4.6-6-5.3 6H.6l6.8-7.8L.1 1.8h6l4.2 5.5 4.9-5.5zm-1 15.4h1.6L5.6 3.5H3.8l10.5 13.7z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var nav = document.getElementById('nav');
+  addEventListener('scroll', function(){ nav.classList.toggle('scrolled', scrollY > 24); }, {passive:true});
+
+  var menu = document.getElementById('mobileMenu'),
+      btn = document.getElementById('menuBtn'),
+      closeBtn = document.getElementById('closeBtn');
+  function openMenu(){ menu.classList.add('open'); btn.setAttribute('aria-expanded','true'); closeBtn.focus(); }
+  function closeMenu(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.focus(); }
+  btn.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  menu.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeMenu();
+    if(e.key === 'Tab'){
+      var f = menu.querySelectorAll('a,button');
+      var first = f[0], last = f[f.length-1];
+      if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
+  });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduced || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('visible'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); } });
+    }, {threshold:.15});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  // counter-up (respeita prefers-reduced-motion)
+  var counters = document.querySelectorAll('[data-count]');
+  function animateCount(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var suffix = el.getAttribute('data-suffix') || '';
+    var prefix = el.getAttribute('data-prefix') || '';
+    var decimals = (String(target).split('.')[1]||'').length;
+    if(reduced){ el.textContent = prefix + fmt(target,decimals) + suffix; return; }
+    var start = null, dur = 1200;
+    function fmt(v,d){ return v.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d}); }
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts-start)/dur,1);
+      var eased = 1 - Math.pow(1-p,3);
+      el.textContent = prefix + fmt(target*eased,decimals) + suffix;
+      if(p<1) requestAnimationFrame(step); else el.textContent = prefix + fmt(target,decimals) + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  function fmt(v,d){ return v.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d}); }
+  if('IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ animateCount(en.target); cio.unobserve(en.target); } });
+    }, {threshold:.4});
+    counters.forEach(function(el){ cio.observe(el); });
+  }
+</script>
+</body>
+</html>

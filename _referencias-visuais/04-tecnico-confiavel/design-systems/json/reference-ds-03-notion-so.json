@@ -1,0 +1,694 @@
+{
+  "id": "reference-ds-03-notion-so",
+  "clientSlug": "notion-so",
+  "clientName": "Notion",
+  "personalitySlug": "04-tecnico-confiavel",
+  "regeneratedAt": "2026-06-05",
+  "referenceQualityBaseline": "reference-ds-01-pinchmans-ca-visual-preview.html + pasta 01 aprovada",
+  "source": {
+    "site": "notion.so",
+    "localPath": "_jumper-sites-system/_referencias-visuais/04-tecnico-confiavel/design-systems/preview-assets/notion.so",
+    "sourceReferenceId": "notion.so",
+    "sourceReferenceNote": "Referencia visual ja convertida em DS-base; arquivo pesado original nao e necessario no fluxo oficial.",
+    "imagesUsed": [
+      "../../preview-assets/notion.so/assets/1b721d1e1a01e9a0_image.png",
+      "../../preview-assets/notion.so/assets/e828f3f87ed4adf8_image.png",
+      "../../preview-assets/notion.so/assets/4c6fac64e090d44c_image.png",
+      "../../preview-assets/notion.so/assets/f9978355acbb1a76_image.png",
+      "../../preview-assets/notion.so/assets/1384fb88ab8f0c33_web-quality-agent-4x3_final.jpg",
+      "../../preview-assets/notion.so/assets/f208dbcf23d73959_web-task-router-1488x1116-colo.jpg",
+      "../../preview-assets/notion.so/assets/a887839a9aa6ee5e_image.webp",
+      "../../preview-assets/notion.so/assets/b278fad519d4043a_image.png",
+      "../../preview-assets/notion.so/assets/41330b4140285e34_image.webp",
+      "../../preview-assets/notion.so/assets/9baebb6309d6d61b_image.png"
+    ],
+    "extractedSignals": {
+      "sourceColors": [
+        {
+          "hex": "#2537B1",
+          "count": 16,
+          "hsl": "hsl(232 65% 42%)"
+        },
+        {
+          "hex": "#1A73E8",
+          "count": 15,
+          "hsl": "hsl(214 82% 51%)"
+        },
+        {
+          "hex": "#333",
+          "count": 4,
+          "hsl": "hsl(0 0% 20%)"
+        },
+        {
+          "hex": "#0052CC",
+          "count": 3,
+          "hsl": "hsl(216 100% 40%)"
+        },
+        {
+          "hex": "#6B778C",
+          "count": 3,
+          "hsl": "hsl(218 13% 48%)"
+        },
+        {
+          "hex": "#42526E",
+          "count": 3,
+          "hsl": "hsl(218 25% 35%)"
+        },
+        {
+          "hex": "#F7F7F5",
+          "count": 3,
+          "hsl": "hsl(60 11% 96%)"
+        },
+        {
+          "hex": "#E8EAED",
+          "count": 3,
+          "hsl": "hsl(216 12% 92%)"
+        },
+        {
+          "hex": "#FDEBEC",
+          "count": 2,
+          "hsl": "hsl(357 82% 96%)"
+        },
+        {
+          "hex": "#FFE2DD",
+          "count": 2,
+          "hsl": "hsl(9 100% 93%)"
+        }
+      ],
+      "fonts": [
+        "04404d7bffc67f0e_LyonText-Regular-Web.d7bfb4be.woff2",
+        "0ade10dbfe021507_NotionInter-Bold.woff2",
+        "2cdc187bb887d5d4_NotionInter-SemiBold.woff2",
+        "3103265abc1d432f_NotionInter-Regular.woff2",
+        "b341f61a58a86c01_NotionInter-Medium.woff2"
+      ],
+      "title": "The AI workspace that works for you. | Notion",
+      "sourceText": [
+        [
+          "The AI workspace that works for you.",
+          "| Notion New Notion's developer platform: Any data.",
+          "Notion agents keep work moving 24/7.",
+          "They capture knowledge, answer questions, and push projects forward—all while you sleep.",
+          "Get Notion free Request a demo Pause Trusted by 98% of the Forbes Cloud 100 Keep work moving 24/7.",
+          "Custom Agents Automate repetitive work for your team.",
+          "→ Q A agents Answers questions instantly using knowledge you already have.",
+          "Task routing agents Assigns, prioritizes, and routes tasks on its own.",
+          "Reporting agents Summarizes, writes, and sends reports for you.",
+          "Create your own Make a Custom Agent for any work that repeats.",
+          "Q A agents Answers questions instantly using knowledge you already have.",
+          "Notion Agent You assign the tasks.",
+          "Notion Agent does the work.",
+          "→ Enterprise Search One search for everything.",
+          "→ AI Meeting Notes Perfect notes, every time.",
+          "→ Bring all your work together.",
+          "Docs Simple and powerful.",
+          "→ Knowledge Base One source of truth for teams and agents.",
+          "→ Projects Less tracking.",
+          "→ Your AI everything app.",
+          "Bring all your tools and teams under one roof.",
+          "Calculate savings below.",
+          "There’s power in a single platform where you can do all your work.",
+          "Notion is that single place.",
+          "Read the full story → View the video Streamlined workflows to reduce timelines by 3x.",
+          "Get started on Notion Your AI workspace with built-in agents.",
+          "Download for Mac Design System This design system provides guidelines, components, and tools to ensure consistency in digital product development.",
+          "Notion Mail The AI inbox that thinks like you."
+        ]
+      ],
+      "assetCounts": {
+        "images": 88,
+        "css": 43,
+        "fonts": 5
+      }
+    }
+  },
+  "designIntent": {
+    "tone": "produtividade / modular / amigavel",
+    "summary": "Referencia tecnica confiavel com blocos, sidebar, templates, AI command e colaboracao sem peso corporativo.",
+    "hero": "Blocos, IA e workspace com calor humano.",
+    "nonGoal": "Nao e DS final do cliente; nao contem fluxo real de formulario."
+  },
+  "colors": {
+    "palette": [
+      {
+        "name": "Notion White",
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255,255,255)",
+        "hsl": "hsl(0 0% 100%)",
+        "usage": "surface"
+      },
+      {
+        "name": "Ink Black",
+        "hex": "#191919",
+        "rgb": "rgb(25,25,25)",
+        "hsl": "hsl(0 0% 10%)",
+        "usage": "text"
+      },
+      {
+        "name": "Warm Grey",
+        "hex": "#F7F6F3",
+        "rgb": "rgb(247,246,243)",
+        "hsl": "hsl(45 20% 96%)",
+        "usage": "background"
+      },
+      {
+        "name": "Block Line",
+        "hex": "#E9E5DE",
+        "rgb": "rgb(233,229,222)",
+        "hsl": "hsl(38 20% 89%)",
+        "usage": "border"
+      },
+      {
+        "name": "Blue AI",
+        "hex": "#2F6BFF",
+        "rgb": "rgb(47,107,255)",
+        "hsl": "hsl(223 100% 59%)",
+        "usage": "accent / AI"
+      },
+      {
+        "name": "Yellow Note",
+        "hex": "#F2C94C",
+        "rgb": "rgb(242,201,76)",
+        "hsl": "hsl(45 86% 62%)",
+        "usage": "highlight"
+      },
+      {
+        "name": "Red Comment",
+        "hex": "#EB5757",
+        "rgb": "rgb(235,87,87)",
+        "hsl": "hsl(0 79% 63%)",
+        "usage": "feedback"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Workspace Wash",
+        "value": "linear-gradient(135deg, rgba(247,246,243,.98), rgba(47,107,255,.16), rgba(242,201,76,.16))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Block Shadow",
+        "value": "linear-gradient(180deg, rgba(25,25,25,.82), rgba(25,25,25,.28))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "AI Glow",
+        "value": "radial-gradient(circle at 20% 18%, rgba(47,107,255,.2), transparent 34%), radial-gradient(circle at 78% 72%, rgba(242,201,76,.22), transparent 38%)",
+        "participation": "background / overlay / hover / active states"
+      }
+    ],
+    "semantic": {
+      "primary": "Notion White",
+      "text": "#191919",
+      "surface": "#F7F6F3",
+      "accent": "Block Line",
+      "focus": "Red Comment",
+      "contrastIntent": "AA minimum for body text; generated preview overrides --c2 as light surface and --c3 as dark text to avoid low-contrast sections."
+    },
+    "opacityPolicy": "Escala global para evitar repeticao: 100,86,64,40,18,8.",
+    "contextualUsageRules": {
+      "text": "Usar token semantico com contraste AA.",
+      "background": "Usar surface/background conforme personalidade do site.",
+      "border": "Usar neutral/accent em baixa opacidade.",
+      "hover": "Accent/focus ou overlay curto.",
+      "active": "Aumentar contraste ou reduzir elevacao 120-180ms.",
+      "disabled": "Opacidade global sem apagar legibilidade."
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "Lyon Text, Georgia, serif",
+      "ui": "NotionInter, Inter, system-ui, sans-serif",
+      "mono": "ui-monospace, Menlo, monospace",
+      "loading": "local when available; fallback stack otherwise"
+    },
+    "scale": {
+      "h1": {
+        "size": "clamp(3rem,7vw,7.8rem)",
+        "weight": 760,
+        "lineHeight": 0.88,
+        "letterSpacing": 0
+      },
+      "h2": {
+        "size": "clamp(2.15rem,4.9vw,5.35rem)",
+        "weight": 720,
+        "lineHeight": 0.94,
+        "letterSpacing": 0
+      },
+      "h3": {
+        "size": "clamp(1.6rem,3vw,3rem)",
+        "weight": 680,
+        "lineHeight": 1.05,
+        "letterSpacing": 0
+      },
+      "bodyLg": {
+        "size": "1.22rem",
+        "weight": 420,
+        "lineHeight": 1.6,
+        "letterSpacing": 0
+      },
+      "body": {
+        "size": "1rem",
+        "weight": 420,
+        "lineHeight": 1.58,
+        "letterSpacing": 0
+      },
+      "bodySm": {
+        "size": ".9rem",
+        "weight": 420,
+        "lineHeight": 1.45,
+        "letterSpacing": 0
+      },
+      "caption": {
+        "size": ".76rem",
+        "weight": 820,
+        "lineHeight": 1.35,
+        "letterSpacing": ".12em",
+        "textTransform": "uppercase"
+      }
+    },
+    "siteSpecificRoles": [
+      {
+        "role": "page-title",
+        "family": "Display serif",
+        "weight": "650",
+        "size": "clamp(3.8rem,7vw,8rem)",
+        "lineHeight": ".92",
+        "letterSpacing": "0",
+        "usage": "Titulo de pagina/documento."
+      },
+      {
+        "role": "block-label",
+        "family": "Mono/UI",
+        "weight": "760",
+        "size": ".72rem",
+        "lineHeight": "1.2",
+        "letterSpacing": ".1em",
+        "usage": "Tipo de bloco/status."
+      },
+      {
+        "role": "body-doc",
+        "family": "UI",
+        "weight": "430",
+        "size": "1rem",
+        "lineHeight": "1.62",
+        "letterSpacing": "0",
+        "usage": "Texto de documento."
+      }
+    ]
+  },
+  "icons": {
+    "set": [
+      "doc",
+      "spark",
+      "table",
+      "comment",
+      "share",
+      "arrow"
+    ],
+    "stroke": 1.8,
+    "color": "currentColor",
+    "hover": "focus/accent token",
+    "rule": "icone nao desloca layout no hover"
+  },
+  "components": {
+    "workspace-board": {
+      "role": "workspace board",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "block insert",
+      "visual": "Referencia Notion: produtividade / modular / amigavel",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "block-card": {
+      "role": "block card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "command glow",
+      "visual": "Referencia Notion: produtividade / modular / amigavel",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "ai-command": {
+      "role": "ai command",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "comment pop",
+      "visual": "Referencia Notion: produtividade / modular / amigavel",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "template-gallery": {
+      "role": "template gallery",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "tab underline",
+      "visual": "Referencia Notion: produtividade / modular / amigavel",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "sidebar-nav": {
+      "role": "sidebar nav",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "block insert",
+      "visual": "Referencia Notion: produtividade / modular / amigavel",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "comment-chip": {
+      "role": "comment chip",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "command glow",
+      "visual": "Referencia Notion: produtividade / modular / amigavel",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "share-modal": {
+      "role": "share modal",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "comment pop",
+      "visual": "Referencia Notion: produtividade / modular / amigavel",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "database-view-tabs": {
+      "role": "database view tabs",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "tab underline",
+      "visual": "Referencia Notion: produtividade / modular / amigavel",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    }
+  },
+  "motion": {
+    "entry": [
+      "fade-up",
+      "draw-line",
+      "stagger"
+    ],
+    "exit": [
+      "flyout-x",
+      "modal-fade-down",
+      "caption-exit"
+    ],
+    "background": [
+      "ambient drift",
+      "hero zoom"
+    ],
+    "parallax": "limited scroll response with reduced-motion fallback",
+    "siteSpecific": [
+      "block insert",
+      "command glow",
+      "comment pop",
+      "tab underline"
+    ]
+  },
+  "accessibility": {
+    "contrast": "AA minimo; overlay obrigatorio sobre imagem",
+    "focus": "2px solid focus token",
+    "reducedMotion": true,
+    "skipLinks": true,
+    "modal": "Esc/overlay/botao fecham"
+  },
+  "risks": [
+    "Cinza quente com texto pequeno exige contraste.",
+    "Cards demais podem parecer dashboard.",
+    "Nao copiar produto final; usar linguagem modular."
+  ],
+  "heroSystem": {
+    "layout": "workspace",
+    "rules": [
+      "Hero full viewport como workspace vivo, nao landing page vazia.",
+      "Menu deve parecer sidebar/template switcher.",
+      "Componentes usam bordas leves e cards funcionais.",
+      "Motion e util: block insert, command open, tab switch."
+    ],
+    "fullViewport": true
+  },
+  "menuSystem": {
+    "items": [
+      "Docs",
+      "AI",
+      "Projects",
+      "Templates",
+      "Share"
+    ],
+    "note": "Menu workspace: modular, claro e com contexto de colaboracao.",
+    "behavior": "overlay flyout, Esc closes, link closes"
+  },
+  "effects": {
+    "signature": [
+      "block insert",
+      "command glow",
+      "comment pop",
+      "tab underline"
+    ]
+  },
+  "referenceUsage": {
+    "type": "visual-reference-input",
+    "folder": "04-tecnico-confiavel",
+    "crossesWith": "clientes/[slug]/data/design-system.json",
+    "purpose": "Insumo de produtividade confiavel e amigavel. Cruza com cliente para criar sistema tecnico modular.",
+    "nonGoals": [
+      "nao criar DS final do cliente",
+      "nao representar personalidade da pasta",
+      "nao usar padrao generico para todos os sites"
+    ],
+    "differentiationRules": [
+      "Hero full viewport como workspace vivo, nao landing page vazia.",
+      "Menu deve parecer sidebar/template switcher.",
+      "Componentes usam bordas leves e cards funcionais.",
+      "Motion e util: block insert, command open, tab switch."
+    ],
+    "siteSpecific": true,
+    "qualityRule": "Preview precisa demonstrar personalidade do site extraido, com menu completo, hero, tokens, gradientes, tipo, efeitos, componentes, cards/secoes, story parallax, icones, handoff e motion linkados.",
+    "notPersonalityWide": true
+  },
+  "outputs": {
+    "json": "design-systems/json/reference-ds-03-notion-so.json",
+    "markdown": "design-systems/previews/markdown/reference-ds-03-notion-so-preview.md",
+    "html": "design-systems/previews/html/reference-ds-03-notion-so-visual-preview.html"
+  },
+  "schemaVersion": "reference-ds-v2",
+  "globalTokens": {
+    "opacityScale": {
+      "solid": 1,
+      "strong": 0.86,
+      "medium": 0.64,
+      "soft": 0.4,
+      "wash": 0.18,
+      "hairline": 0.08
+    },
+    "radius": "0-10px conforme referencia; cards ate 8px salvo marcas arredondadas",
+    "spacing": "clamp responsive"
+  },
+  "componentsDefaults": {
+    "states": [
+      "default",
+      "hover",
+      "focus-visible",
+      "active",
+      "loading",
+      "disabled"
+    ],
+    "referenceOnly": true
+  },
+  "previewNavigation": [
+    {
+      "order": 1,
+      "id": "menu-top",
+      "label": "Menu / top",
+      "href": "#menu-top"
+    },
+    {
+      "order": 2,
+      "id": "top",
+      "label": "Top",
+      "href": "#top"
+    },
+    {
+      "order": 3,
+      "id": "hero",
+      "label": "Sessao Hero",
+      "href": "#hero"
+    },
+    {
+      "order": 4,
+      "id": "color-tokens",
+      "label": "tokens de cor",
+      "href": "#color-tokens"
+    },
+    {
+      "order": 5,
+      "id": "gradients",
+      "label": "gradientes / opacidade",
+      "href": "#gradients"
+    },
+    {
+      "order": 6,
+      "id": "type-system",
+      "label": "type system",
+      "href": "#type-system"
+    },
+    {
+      "order": 7,
+      "id": "type-detail",
+      "label": "tipografia detalhada",
+      "href": "#type-detail"
+    },
+    {
+      "order": 8,
+      "id": "effects",
+      "label": "efeitos e mouse overs",
+      "href": "#effects"
+    },
+    {
+      "order": 9,
+      "id": "components",
+      "label": "componentes",
+      "href": "#components"
+    },
+    {
+      "order": 10,
+      "id": "contract",
+      "label": "contrato sem repeticao",
+      "href": "#contract"
+    },
+    {
+      "order": 11,
+      "id": "menu-board",
+      "label": "menu board component",
+      "href": "#menu-board"
+    },
+    {
+      "order": 12,
+      "id": "reference-slip",
+      "label": "reference slip",
+      "href": "#reference-slip"
+    },
+    {
+      "order": 13,
+      "id": "cards-sections",
+      "label": "cards e secoes",
+      "href": "#cards-sections"
+    },
+    {
+      "order": 14,
+      "id": "story",
+      "label": "story split parallax",
+      "href": "#story"
+    },
+    {
+      "order": 15,
+      "id": "icons",
+      "label": "icones",
+      "href": "#icons"
+    },
+    {
+      "order": 16,
+      "id": "handoff",
+      "label": "handoff de referencia",
+      "href": "#handoff"
+    },
+    {
+      "order": 17,
+      "id": "motion",
+      "label": "motion contract",
+      "href": "#motion"
+    },
+    {
+      "order": 18,
+      "id": "replay-motion",
+      "label": "Replay motion",
+      "href": "#replay-motion"
+    }
+  ],
+  "requiredPreviewSections": [
+    "Menu / top",
+    "Sessao Hero",
+    "tokens de cor",
+    "gradientes / opacidade",
+    "type system",
+    "tipografia detalhada",
+    "efeitos e mouse overs",
+    "componentes",
+    "contrato sem repeticao",
+    "menu board component",
+    "reference slip",
+    "cards e secoes",
+    "story split parallax",
+    "icones",
+    "handoff de referencia",
+    "motion contract",
+    "Replay motion"
+  ],
+  "requiredPreviewContract": {
+    "allMenuLinksMustResolve": true,
+    "menuHasTopAndHeroAsSeparateAnchors": true,
+    "heroMustOccupyFullViewport": true,
+    "noRepeatedGenericSections": true,
+    "noClippedTextOrOverlaps": true,
+    "showGradientsOpacityHoverEntryExitParallaxIcons": true
+  }
+}

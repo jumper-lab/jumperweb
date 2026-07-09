@@ -1,0 +1,543 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "02.2",
+  "design_system_name": "Clínica Dental Premium — Sage & Champagne",
+  "category": "02 — Premium e Sofisticado",
+  "subcategory": "Saúde estética boutique — minimalismo clínico tonal",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Grind Dentistry",
+    "url": "https://grinddentistry.com",
+    "location": "Estados Unidos (dados de estúdio/localização não verificados — usar apenas como referência estilística)",
+    "awards": [
+      "Nenhum prêmio verificado em pesquisa — o site é citado aqui como referência estilística de minimalismo Webflow aplicado a odontologia, não como case premiado"
+    ],
+    "why_chosen": "O Grind Dentistry demonstra como uma clínica dental pode se apresentar como um estúdio boutique: estética Webflow minimalista, tipografia sofisticada, fotografia tonal e espaço em branco generoso no lugar da agressividade comercial típica do segmento. A essência capturada é a 'confiança silenciosa' — o refinamento comunica competência sem gritar promoções. Este DS traduz esse mood para o contexto brasileiro com sage green e champagne suave sobre superfícies claras e quentes.",
+    "font_note": "A referência usa tipografia grotesca comercial no estilo Söhne (Klim Type). Söhne não está no Google Fonts; a substituição oficial deste DS é Inter, a alternativa aberta mais próxima em desenho e neutralidade. Para headings, o DS adota Cormorant Garamond para reforçar o eixo 'tratado como arte'."
+  },
+  "colors": {
+    "primary": "#6B8E6F",
+    "primary_usage": "Sage green — cor de identidade. Usar em grandes superfícies (faixas de seção, hero overlay), ícones decorativos, headings grandes (≥ 24px bold / 18.66px+ bold) e detalhes gráficos. NÃO usar como cor de texto normal sobre superfícies claras (contraste 3.48:1 — só passa AA para texto grande). Para texto e CTAs, usar primary_dark.",
+    "primary_dark": "#4A6B4F",
+    "primary_dark_usage": "Derivado escurecido do sage para uso textual e interativo: links, botões sólidos (com texto branco), labels, texto verde sobre superfícies claras. Contraste 5.69:1 sobre surface — AA para texto normal. Este ajuste foi feito porque o #6B8E6F original falha para texto normal; a essência sage é mantida no mesmo hue.",
+    "secondary": "#E8D5B7",
+    "secondary_usage": "Champagne suave — exclusivamente decorativo: fundos de seção alternados (ou o tint #F5EEE0), badges, molduras de imagem, sublinhados de heading, hover states suaves. NUNCA usar como texto sobre superfícies claras (1.36:1). Sobre champagne, o texto deve ser #2C332E (9.03:1).",
+    "surface": "#FAF9F6",
+    "surface_alt": "#EEF2EC",
+    "surface_champagne": "#F5EEE0",
+    "surface_usage": "surface é o off-white quente base da página; surface_alt é um tint de sage para seções alternadas; surface_champagne é o tint de champanhe para seções de destaque suave (depoimentos, CTA final).",
+    "text_primary": "#2C332E",
+    "text_secondary": "#5A625C",
+    "text_muted": "#656C67",
+    "border": "#DDE2DC",
+    "error": "#B5482F",
+    "success": "#3F6B4A",
+    "warning": "#8A6D1F",
+    "neutral_scale": {
+      "50": "#FAF9F6",
+      "100": "#F1F0EB",
+      "200": "#E3E4DE",
+      "300": "#CDD1CB",
+      "400": "#AAB0AB",
+      "500": "#878E89",
+      "600": "#6E7570",
+      "700": "#5A625C",
+      "800": "#404742",
+      "900": "#2C332E"
+    },
+    "contrast_verification": {
+      "primary_on_surface": "3.48:1 (#6B8E6F sobre #FAF9F6) — passa AA apenas para texto grande (≥3:1); reprovado para texto normal, por isso existe primary_dark",
+      "primary_dark_on_surface": "5.69:1 (#4A6B4F sobre #FAF9F6) — AA texto normal",
+      "white_on_primary_dark": "5.99:1 (#FFFFFF sobre #4A6B4F) — AA texto normal; usado em botões sólidos",
+      "text_primary_on_surface": "12.31:1 (#2C332E sobre #FAF9F6) — AAA",
+      "text_secondary_on_surface": "5.98:1 (#5A625C sobre #FAF9F6) — AA texto normal",
+      "text_muted_on_surface": "5.12:1 (#656C67 sobre #FAF9F6) — AA texto normal (verificado)",
+      "secondary_on_surface": "1.36:1 (#E8D5B7 sobre #FAF9F6) — decorativo apenas, nunca texto",
+      "text_primary_on_secondary": "9.03:1 (#2C332E sobre #E8D5B7) — AAA; par oficial para seções champagne",
+      "error_on_surface": "5.07:1 (#B5482F sobre #FAF9F6) — AA",
+      "success_on_surface": "5.84:1 (#3F6B4A sobre #FAF9F6) — AA",
+      "warning_on_surface": "4.65:1 (#8A6D1F sobre #FAF9F6) — AA",
+      "notes": "Razões calculadas pela fórmula WCAG 2.1 (luminância relativa). Regra prática do DS: sage claro (#6B8E6F) e champagne (#E8D5B7) são cores de atmosfera; toda informação textual usa primary_dark, text_primary, text_secondary ou text_muted."
+    }
+  },
+  "typography": {
+    "heading_font": "Cormorant Garamond",
+    "heading_font_source": "Google Fonts",
+    "heading_font_fallback": "'Cormorant Garamond', 'Times New Roman', Georgia, serif",
+    "heading_weights": "500 para display, 600 para headings de seção; itálico 500 para destaques editoriais",
+    "body_font": "Inter",
+    "body_font_source": "Google Fonts",
+    "body_font_fallback": "'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+    "body_weights": "400 regular, 500 medium (labels e botões), 600 semibold (raro)",
+    "mono_font": "não aplicável neste DS",
+    "commercial_substitution_note": "Referência usa Söhne (comercial, Klim Type Foundry) → substituída por Inter (Google Fonts). Cormorant Garamond entra como voz serifada de refinamento nos headings.",
+    "base_size": "16px",
+    "letter_spacing_rules": "Headings Cormorant: -0.01em. Labels/eyebrows Inter: +0.14em, uppercase, 12-13px. Body: 0.",
+    "scales": {
+      "mobile": {
+        "h1": { "size": "38px", "line_height": "1.12", "weight": "500", "font": "Cormorant Garamond" },
+        "h2": { "size": "30px", "line_height": "1.18", "weight": "500", "font": "Cormorant Garamond" },
+        "h3": { "size": "23px", "line_height": "1.25", "weight": "600", "font": "Cormorant Garamond" },
+        "body": { "size": "16px", "line_height": "1.65", "weight": "400", "font": "Inter" },
+        "small": { "size": "13px", "line_height": "1.5", "weight": "400", "font": "Inter" }
+      },
+      "desktop": {
+        "h1": { "size": "64px", "line_height": "1.06", "weight": "500", "font": "Cormorant Garamond" },
+        "h2": { "size": "44px", "line_height": "1.12", "weight": "500", "font": "Cormorant Garamond" },
+        "h3": { "size": "28px", "line_height": "1.25", "weight": "600", "font": "Cormorant Garamond" },
+        "body": { "size": "17px", "line_height": "1.7", "weight": "400", "font": "Inter" },
+        "small": { "size": "14px", "line_height": "1.5", "weight": "400", "font": "Inter" }
+      }
+    },
+    "fluid_recipe": "h1: clamp(38px, 3vw + 28px, 64px); h2: clamp(30px, 2vw + 22px, 44px); h3: clamp(23px, 1vw + 19px, 28px); body: clamp(16px, 0.2vw + 15.4px, 17px)"
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — valores idênticos aos definidos em colors, typography, spacing, borders, shadows e motion deste DS.",
+    "tokens": {
+      "--color-primary": "#6B8E6F",
+      "--color-primary-dark": "#4A6B4F",
+      "--color-primary-darker": "#3E5A42",
+      "--color-secondary": "#E8D5B7",
+      "--color-surface": "#FAF9F6",
+      "--color-surface-alt": "#EEF2EC",
+      "--color-surface-champagne": "#F5EEE0",
+      "--color-text": "#2C332E",
+      "--color-text-secondary": "#5A625C",
+      "--color-text-muted": "#656C67",
+      "--color-border": "#DDE2DC",
+      "--color-error": "#B5482F",
+      "--color-success": "#3F6B4A",
+      "--color-warning": "#8A6D1F",
+      "--color-neutral-50": "#FAF9F6",
+      "--color-neutral-100": "#F1F0EB",
+      "--color-neutral-200": "#E3E4DE",
+      "--color-neutral-300": "#CDD1CB",
+      "--color-neutral-400": "#AAB0AB",
+      "--color-neutral-500": "#878E89",
+      "--color-neutral-600": "#6E7570",
+      "--color-neutral-700": "#5A625C",
+      "--color-neutral-800": "#404742",
+      "--color-neutral-900": "#2C332E",
+      "--font-heading": "'Cormorant Garamond', 'Times New Roman', Georgia, serif",
+      "--font-body": "'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "--text-h1": "clamp(38px, 3vw + 28px, 64px)",
+      "--text-h2": "clamp(30px, 2vw + 22px, 44px)",
+      "--text-h3": "clamp(23px, 1vw + 19px, 28px)",
+      "--text-body": "clamp(16px, 0.2vw + 15.4px, 17px)",
+      "--text-small": "14px",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "40px",
+      "--space-xxl": "64px",
+      "--space-xxxl": "96px",
+      "--space-xxxxl": "144px",
+      "--section-gap": "clamp(72px, 6vw + 40px, 144px)",
+      "--radius-none": "0",
+      "--radius-sm": "6px",
+      "--radius-md": "12px",
+      "--radius-lg": "20px",
+      "--radius-xl": "32px",
+      "--radius-full": "999px",
+      "--shadow-xs": "0 1px 2px rgba(44, 51, 46, 0.05)",
+      "--shadow-sm": "0 2px 8px rgba(44, 51, 46, 0.06)",
+      "--shadow-md": "0 6px 20px rgba(44, 51, 46, 0.08)",
+      "--shadow-lg": "0 14px 40px rgba(44, 51, 46, 0.12)",
+      "--shadow-xl": "0 24px 64px rgba(44, 51, 46, 0.14)",
+      "--duration-instant": "120ms",
+      "--duration-fast": "200ms",
+      "--duration-base": "320ms",
+      "--duration-slow": "600ms",
+      "--duration-reveal": "800ms",
+      "--ease-standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--ease-out-soft": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "--ease-in-out-calm": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "--container-max": "1140px",
+      "--content-max": "680px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "40px",
+      "xxl": "64px",
+      "xxxl": "96px",
+      "xxxxl": "144px"
+    },
+    "section_spacing": {
+      "mobile": "72px vertical",
+      "tablet": "104px vertical",
+      "desktop": "144px vertical"
+    },
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "40px",
+      "container_desktop": "64px"
+    },
+    "container_max_width": "1140px",
+    "content_max_width": "680px para blocos de texto corrido (legibilidade editorial)",
+    "gutters": "24px mobile, 32px desktop (grid de 12 colunas)",
+    "whitespace_philosophy": "O espaço em branco é o principal material do DS. Seções respiram com 144px no desktop; nenhum elemento encosta em outro. Densidade baixa é intencional e não deve ser 'otimizada'."
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "6px",
+      "md": "12px",
+      "lg": "20px",
+      "xl": "32px",
+      "full": "999px"
+    },
+    "radius_usage": {
+      "buttons": "full (999px) — pílula, reforça suavidade boutique",
+      "cards": "lg (20px)",
+      "inputs": "md (12px)",
+      "images": "lg (20px); imagem-assinatura do hero usa xl (32px) no canto superior para gesto orgânico sutil",
+      "containers": "none — seções em largura total, sem molduras"
+    },
+    "stroke": {
+      "thin": "1px solid #DDE2DC",
+      "medium": "1.5px solid #6B8E6F (apenas estados interativos e botão outline)"
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "xs": "0 1px 2px rgba(44, 51, 46, 0.05)",
+    "sm": "0 2px 8px rgba(44, 51, 46, 0.06)",
+    "md": "0 6px 20px rgba(44, 51, 46, 0.08)",
+    "lg": "0 14px 40px rgba(44, 51, 46, 0.12)",
+    "xl": "0 24px 64px rgba(44, 51, 46, 0.14)",
+    "shadow_usage": "Sombras sempre difusas e tingidas do verde-grafite do texto (nunca preto puro). Cards descansam em sm e sobem para lg no hover ('upgrade de sombra' — assinatura de movimento do DS). Nav sticky ganha xs ao rolar. xl é reservado para modal/imagem hero. Nada de sombras duras ou coloridas."
+  },
+  "motion": {
+    "durations": {
+      "instant": "120ms",
+      "fast": "200ms",
+      "base": "320ms",
+      "slow": "600ms",
+      "reveal": "800ms"
+    },
+    "easings": {
+      "standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "out_soft": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "in_out_calm": "cubic-bezier(0.65, 0, 0.35, 1)"
+    },
+    "animations": [
+      { "name": "fade-in-up", "duration": "800ms", "easing": "out_soft", "trigger": "scroll (IntersectionObserver, threshold 0.15) — deslocamento sutil de 24px, uma vez só", "description": "Entrada padrão de seções e cards; stagger de 90ms entre irmãos" },
+      { "name": "hero-reveal", "duration": "1000ms", "easing": "out_soft", "trigger": "load — headline, sub e CTA em cascata de 120ms", "description": "Única animação de load; discreta, sem parallax" },
+      { "name": "shadow-lift", "duration": "320ms", "easing": "standard", "trigger": "hover em cards — sombra sm→lg + translateY(-4px)", "description": "Assinatura do DS: o hover 'levanta' via sombra, sem escala nem cor berrante" },
+      { "name": "button-soften", "duration": "200ms", "easing": "standard", "trigger": "hover em botões — fundo escurece um passo (#4A6B4F→#3E5A42) + sombra sm", "description": "Sem bounce, sem ripple" },
+      { "name": "underline-grow", "duration": "320ms", "easing": "out_soft", "trigger": "hover em links de navegação — sublinhado champagne cresce da esquerda", "description": "1.5px, cor #E8D5B7 sobre nav clara com texto escuro" },
+      { "name": "image-tone-shift", "duration": "600ms", "easing": "in_out_calm", "trigger": "hover em imagens de card — overlay sage 12% desvanece para 0", "description": "Reforça o tratamento tonal da fotografia" }
+    ],
+    "philosophy": "Sutis e funcionais: toda animação comunica estado ou hierarquia. Nada decorativo em loop, nada de parallax pesado. A calma É a marca.",
+    "prefers_reduced_motion": true
+  },
+  "components": {
+    "buttons": {
+      "variants": {
+        "primary": {
+          "background": "#4A6B4F",
+          "color": "#FFFFFF",
+          "border": "none",
+          "radius": "999px",
+          "hover": "background #3E5A42, sombra sm, sem translate",
+          "focus": "outline 2px solid #4A6B4F com offset 3px",
+          "active": "background #35503A",
+          "disabled": "background #CDD1CB, color #6E7570, cursor not-allowed",
+          "note": "Usa primary_dark (não o sage claro) para garantir 5.99:1 do texto branco"
+        },
+        "secondary": {
+          "background": "transparent",
+          "color": "#4A6B4F",
+          "border": "1.5px solid #6B8E6F",
+          "radius": "999px",
+          "hover": "background #EEF2EC, borda #4A6B4F",
+          "focus": "outline 2px solid #4A6B4F com offset 3px",
+          "disabled": "borda #CDD1CB, color #AAB0AB"
+        },
+        "ghost": {
+          "background": "transparent",
+          "color": "#4A6B4F",
+          "border": "none",
+          "decoration": "seta → com micro-deslocamento de 4px no hover; sublinhado champagne no hover",
+          "usage": "links de apoio ('Conheça os tratamentos')"
+        }
+      },
+      "sizes": {
+        "md": { "padding": "13px 28px", "font": "Inter 500, 15px, letter-spacing 0.02em" },
+        "lg": { "padding": "17px 36px", "font": "Inter 500, 16px", "usage": "CTA do hero e CTA final" }
+      },
+      "min_height": "48px (touch target confortável, acima do mínimo 44px)"
+    },
+    "cards": {
+      "background": "#FFFFFF",
+      "border": "1px solid #DDE2DC",
+      "radius": "20px",
+      "padding": "32px (mobile 24px)",
+      "shadow": "sm em repouso → lg no hover com translateY(-4px)",
+      "image_treatment": "topo da imagem com radius 20px 20px 0 0; overlay sage 12% que desvanece no hover",
+      "variants": {
+        "tratamento": "ícone linear sage 28px + h3 Cormorant + parágrafo curto + link ghost",
+        "profissional": "retrato tonal 4:5 + nome em Cormorant 600 + CRO/especialidade em small muted",
+        "resultado": "imagem antes/depois com legenda discreta — sem estrelas nem selos chamativos"
+      }
+    },
+    "inputs": {
+      "background": "#FFFFFF",
+      "border": "1px solid #DDE2DC",
+      "radius": "12px",
+      "padding": "14px 18px",
+      "font": "Inter 400, 16px (evita zoom no iOS)",
+      "label": "Inter 500, 13px, uppercase 0.1em, #5A625C, acima do campo",
+      "placeholder": "#656C67",
+      "focus": "borda #4A6B4F + box-shadow 0 0 0 3px rgba(107,142,111,0.18)",
+      "error": "borda #B5482F + mensagem 13px #B5482F com ícone; nunca só cor — texto sempre presente",
+      "min_height": "48px"
+    },
+    "hero": {
+      "layout": "split assimétrico 55/45: coluna esquerda com eyebrow + H1 Cormorant + sub + CTA duplo; coluna direita com fotografia tonal sutil (radius 20px, canto sup. direito 32px, moldura fina champagne deslocada 12px)",
+      "background": "#FAF9F6 puro — sem gradientes chamativos; a foto é o único ponto de cor",
+      "eyebrow": "'ODONTOLOGIA ESTÉTICA' — Inter 500, 12px, uppercase 0.14em, #4A6B4F",
+      "headline_style": "Cormorant Garamond 500, clamp(38px→64px), com uma palavra em itálico como gesto editorial",
+      "cta_pattern": "primário ('Agende sua avaliação') + ghost ('Conheça o espaço')",
+      "trust_row": "linha discreta abaixo dos CTAs: 3 microprovas em texto muted (ex: '15 anos de experiência · Tecnologia digital · Atendimento particular')",
+      "mobile": "empilha: texto primeiro, foto depois com altura 56vw"
+    },
+    "navigation": {
+      "style": "barra clara translúcida (rgba(250,249,246,0.92) + backdrop-blur 12px), sticky, 76px de altura",
+      "logo": "wordmark em Cormorant Garamond 600, 22px, #2C332E",
+      "links": "Inter 500, 15px, #2C332E; hover com sublinhado champagne (underline-grow)",
+      "cta": "botão primary md à direita",
+      "scrolled_state": "ganha sombra xs e altura 64px",
+      "mobile": "hambúrguer minimalista (2 linhas) → painel full-screen #FAF9F6 com links em Cormorant 32px e fade-in-up em stagger"
+    },
+    "footer": {
+      "background": "#2C332E",
+      "text": "#F1F0EB, links #E8D5B7 no hover",
+      "layout": "4 colunas desktop (marca+frase, tratamentos, clínica, contato/horários) → empilhado mobile",
+      "signature": "frase da marca em Cormorant itálico 20px no topo do footer: 'Seu sorriso, tratado como arte.'",
+      "legal": "linha inferior com CRO, responsável técnico e políticas — 13px #AAB0AB",
+      "contrast_note": "#F1F0EB sobre #2C332E = 11.36:1; #E8D5B7 sobre #2C332E = 9.03:1"
+    },
+    "testimonials": {
+      "layout": "seção de fundo #F5EEE0 (champagne tint); um depoimento por vez em largura 680px, centrado — citação em Cormorant itálico 26px, autor em Inter 13px uppercase",
+      "decoration": "aspas grandes em #E8D5B7 (decorativas, aria-hidden)",
+      "navigation": "dots discretos + setas com área de toque 44px",
+      "tone": "depoimentos curtos e específicos, sem hipérbole"
+    },
+    "badges": {
+      "style": "pílula #EEF2EC, texto #4A6B4F Inter 500 12px uppercase 0.1em, padding 6px 14px",
+      "usage": "categorias de tratamento, 'Novo', selo 'Atendimento particular' — com moderação (máx. 1 por card)"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Sereno, preciso, elegante. Fala como uma curadoria, não como uma promoção: frases curtas, vocabulário exato, zero urgência artificial. Confiança silenciosa — competência demonstrada por calma e detalhe, nunca por superlativos.",
+    "headline_examples": [
+      "Seu sorriso, tratado como arte.",
+      "Odontologia com a precisão de um ateliê.",
+      "A estética do seu sorriso, no seu tempo.",
+      "Cada detalhe do seu sorriso merece atenção de especialista."
+    ],
+    "cta_examples": [
+      "Agende sua avaliação",
+      "Conheça os tratamentos",
+      "Converse com a nossa equipe",
+      "Visite o espaço"
+    ],
+    "avoid": [
+      "Urgência artificial ('Últimas vagas!', 'Só hoje!')",
+      "Promoções gritadas, preços riscados e percentuais em destaque",
+      "Superlativos vazios ('o melhor da cidade', 'nº 1')",
+      "Jargão técnico sem tradução ('lente de contato dental classe IV' sem contexto)",
+      "Tom de medo ('não deixe seu dente apodrecer')",
+      "Excesso de emojis e pontos de exclamação"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas, container 1140px, gutter 32px; blocos de texto limitados a 680px. Assimetria contida: hero 55/45 e seções alternando texto-imagem, sempre com folga de coluna vazia.",
+    "page_flow": [
+      { "section": "hero", "layout": "split 55/45 texto + foto tonal com moldura champagne deslocada; trust row discreta" },
+      { "section": "tratamentos", "layout": "intro centrada (eyebrow + h2 + parágrafo 680px) seguida de grid 3 colunas de cards com fade-in-up em stagger" },
+      { "section": "filosofia / o espaço", "layout": "fundo surface_alt #EEF2EC; imagem à esquerda (radius 20px), manifesto curto à direita com destaque em Cormorant itálico" },
+      { "section": "equipe", "layout": "grid 3 colunas de retratos tonais 4:5 com nome + CRO; sem biografias longas na home" },
+      { "section": "depoimento", "layout": "fundo champagne tint #F5EEE0, citação única centrada 680px, rotação discreta" },
+      { "section": "como funciona", "layout": "3 passos numerados em linha (número em Cormorant 44px sage), do agendamento ao plano de tratamento" },
+      { "section": "cta final", "layout": "centrado, generoso: h2 + um único botão primary lg; sem formulário na home — a conversa começa no agendamento" },
+      { "section": "footer", "layout": "4 colunas sobre #2C332E com assinatura em Cormorant itálico" }
+    ],
+    "image_treatment": "Fotografia tonal: luz natural, tons neutros quentes puxados para o sage — nunca o azul-frio clínico genérico. Overlay sage 8-12% para unificar. Sem fotos de banco óbvias, sem dentes flutuando em fundo branco estourado. Retratos com fundo desfocado do próprio espaço.",
+    "density": "Baixa. Máximo de 3 cards por linha, uma ideia por seção, uma CTA principal por dobra.",
+    "whitespace": "Generoso e estrutural: 144px entre seções no desktop, 72px no mobile. O vazio comunica o mesmo refinamento da sala de espera silenciosa."
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "body_text": "#2C332E sobre #FAF9F6 = 12.31:1 (AAA)",
+      "secondary_text": "#5A625C sobre #FAF9F6 = 5.98:1 (AA)",
+      "muted_text": "#656C67 sobre #FAF9F6 = 5.12:1 (AA)",
+      "links_ctas": "#4A6B4F sobre #FAF9F6 = 5.69:1 (AA); branco sobre #4A6B4F = 5.99:1 (AA)",
+      "large_text_sage": "#6B8E6F sobre #FAF9F6 = 3.48:1 — permitido apenas ≥24px ou ≥18.66px bold",
+      "rule": "champagne #E8D5B7 nunca carrega informação textual"
+    },
+    "keyboard_navigation": "Toda a interface operável por teclado: ordem de tabulação segue o fluxo visual, skip-link 'Ir para o conteúdo' visível no focus, menu mobile com foco preso (focus trap) e fechamento por Esc, carrossel de depoimentos operável por setas.",
+    "focus_states": "outline 2px solid #4A6B4F com outline-offset 3px em todos os interativos (contraste do indicador 5.69:1); nunca remover outline sem substituto visível.",
+    "alt_text": "Fotos do espaço e equipe com alt descritivo em PT-BR ('Consultório com luz natural e cadeira odontológica'); imagens decorativas (aspas, texturas) com alt vazio e aria-hidden.",
+    "semantic_html": "header/nav/main/section/article/footer; um h1 por página; headings sem pular níveis; botões são <button>, links são <a>; formulário com <label> explícito e aria-describedby nas mensagens de erro.",
+    "touch_targets": "44px minimum — botões têm 48px de altura; links de nav e dots de carrossel com área expandida via padding.",
+    "motion": "Todas as animações desativadas sob prefers-reduced-motion (conteúdo aparece imediatamente); nenhuma animação em loop infinito; sem autoplay de vídeo com som."
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Empilha em coluna única: eyebrow → H1 Cormorant 38px → sub → CTA duplo → foto tonal abaixo com altura 56vw; trust row em texto muted após os CTAs. Padding do container 20px.",
+      "tablet": "Coluna única centralizada com foto maior; CTAs primário + ghost lado a lado; padding do container 40px; espaçamento vertical de seção 104px.",
+      "desktop": "Split assimétrico 55/45: texto verticalmente centralizado à esquerda, foto tonal (radius 20px, canto sup. direito 32px) com moldura fina champagne deslocada 12px à direita; padding do container 64px; H1 em 64px."
+    },
+    "tratamentos_grid": {
+      "mobile": "1 coluna, cards full-width, gap 24px, fade-in-up com stagger de 90ms",
+      "tablet": "2 colunas, gap 24px",
+      "desktop": "3 colunas, gap 32px (grid de 12 colunas), intro centrada limitada a 680px acima da grade"
+    },
+    "navigation": {
+      "mobile_tablet": "Logo wordmark + hambúrguer minimalista (2 linhas, toque 44px) → painel full-screen #FAF9F6 com links em Cormorant 32px e fade-in-up em stagger; focus trap e fechamento por Esc.",
+      "desktop": "Barra translúcida sticky 76px (rgba(250,249,246,0.92) + backdrop-blur 12px): logo Cormorant 22px + links inline Inter 500 15px + botão primary md à direita; ao rolar ganha sombra xs e altura 64px."
+    },
+    "footer": {
+      "mobile": "4 colunas empilhadas sobre #2C332E; contato/horários primeiro; assinatura em Cormorant itálico no topo.",
+      "desktop": "4 colunas lado a lado (marca+frase / tratamentos / clínica / contato+horários); linha legal inferior 13px #AAB0AB."
+    },
+    "touch_adjustments": "shadow-lift de hover vira active-state discreto no touch (sem translateY residual preso); carrossel de depoimentos com scroll-snap nativo e setas com área de toque 44px; botões e dots respeitam o mínimo de 48px/44px."
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente — coerentes com components.buttons, components.inputs, components.navigation e components.cards.",
+    "button_primary": ["default (#4A6B4F, texto branco)", "hover (background #3E5A42 + sombra sm, sem translate)", "focus-visible (outline 2px solid #4A6B4F, offset 3px)", "active (background #35503A)", "disabled (background #CDD1CB, color #6E7570, cursor not-allowed)", "loading (spinner 16px branco + texto 'Enviando...')"],
+    "button_secondary": ["default (transparente, borda 1.5px #6B8E6F, texto #4A6B4F)", "hover (background #EEF2EC, borda #4A6B4F)", "focus-visible (outline 2px solid #4A6B4F, offset 3px)", "active", "disabled (borda #CDD1CB, color #AAB0AB)"],
+    "link_nav": ["default (Inter 500 15px #2C332E)", "hover (underline-grow champagne #E8D5B7 crescendo da esquerda)", "focus-visible (outline 2px solid #4A6B4F, offset 3px)", "current (sublinhado champagne fixo)"],
+    "card_tratamento": ["default (fundo #FFFFFF, borda 1px #DDE2DC, sombra sm)", "hover (shadow-lift sm→lg + translateY(-4px), overlay sage 12%→0 na imagem)", "focus-within (outline 2px solid #4A6B4F)"],
+    "input": ["default (borda 1px #DDE2DC)", "focus (borda #4A6B4F + box-shadow 0 0 0 3px rgba(107,142,111,0.18))", "filled", "error (borda #B5482F + mensagem 13px #B5482F com ícone + aria-describedby; nunca só cor)", "disabled"],
+    "nav_header": ["topo (barra translúcida 76px, sem sombra)", "rolado (altura 64px + sombra xs)", "menu mobile aberto (painel full-screen #FAF9F6 com focus trap)"]
+  },
+  "photography_direction": {
+    "style": "Tonal editorial sereno — o espaço e as pessoas reais da clínica em luz natural quente, refinamento de ateliê no lugar do clínico genérico.",
+    "subjects": [
+      "Consultório e sala de espera com luz natural e materiais quentes (madeira, linho, verde)",
+      "Retratos tonais 4:5 da equipe com fundo desfocado do próprio espaço",
+      "Detalhes de tratamento em close discreto, sem instrumentais agressivos em evidência",
+      "Mãos/gestos de cuidado com profundidade de campo rasa",
+      "Antes/depois sóbrios com legenda discreta, sem selos ou estrelas"
+    ],
+    "light": "Natural, quente, difusa e lateral suave (janela); nunca a luz azul-fria clínica de banco de imagem.",
+    "color_grading": "Tons neutros quentes puxados levemente para o sage; overlay sage 8–12% para unificar; saturação natural. Proibido: azul-frio, HDR artificial, branco estourado.",
+    "framing": "Alturas de olhar humanas; retratos verticais 4:5; imagem-assinatura do hero com radius 20px (canto sup. direito 32px) e moldura fina champagne deslocada 12px.",
+    "avoid": [
+      "Dentes flutuando em fundo branco estourado",
+      "Stock genérico de sorrisos perfeitos e instrumentais assépticos",
+      "Fotos frias/azuladas de consultório clínico impessoal",
+      "Selos, estrelas e antes/depois sensacionalistas"
+    ],
+    "fallback_sem_foto": "Blocos tonais na paleta: gradiente suave sage→champagne (135deg, #6B8E6F → #E8D5B7) sobre surface, superfícies #EEF2EC / #F5EEE0 com radius 20px e moldura champagne deslocada, ou SVG linear traço #4A6B4F. Champagne (#E8D5B7) e sage claro (#6B8E6F) apenas como atmosfera decorativa — nunca carregando texto."
+  },
+  "iconography": {
+    "style": "Linha fina e serena (stroke 1.5px), cantos arredondados (stroke-linecap round), grid 24x24; usados a ~28px nos cards de tratamento.",
+    "color": "#4A6B4F sobre superfícies claras; #E8D5B7 sobre o footer escuro #2C332E.",
+    "recommended_set": "Lucide ou Feather (open source, MIT), ajustando o stroke para 1.5 e mantendo o traço delicado coerente com o mood boutique.",
+    "usage": "Ícone sempre acompanhado de texto — nunca como única affordance; decorativos com aria-hidden. Uso comedido, um ícone por card.",
+    "decorative_shapes": "Aspas grandes em #E8D5B7 nos depoimentos (aria-hidden), molduras finas champagne deslocadas e números em Cormorant 44px sage na seção 'como funciona' — sempre decorativos."
+  },
+  "do_dont": {
+    "do": [
+      "Usar Cormorant Garamond itálico para 1 palavra editorial por headline (gesto de refinamento)",
+      "Manter uma única CTA consistente ('Agende sua avaliação') em nav, hero e fechamento",
+      "Deixar 144px de respiro entre seções no desktop (72px no mobile) — densidade baixa é intencional",
+      "Usar primary_dark #4A6B4F para todo texto e link verde (5.69:1 AA) e branco sobre ele nos botões (5.99:1)",
+      "Usar sombras difusas tingidas do verde-grafite (base rgba(44,51,46,...)), nunca preto puro",
+      "Aplicar o 'upgrade de sombra' (sm→lg + translateY(-4px)) como assinatura de hover dos cards",
+      "Limitar blocos de texto corrido a 680px para legibilidade editorial"
+    ],
+    "dont": [
+      "Usar sage claro #6B8E6F como texto normal sobre surface (3.48:1 — falha AA; só ≥24px ou ≥18.66px bold; para texto usar #4A6B4F)",
+      "Usar champagne #E8D5B7 como texto sobre superfícies claras (1.36:1 — decorativo apenas)",
+      "Usar urgência artificial, promoções gritadas, superlativos ou tom de medo (contra o voice_and_tone)",
+      "Adicionar parallax pesado, bounce, ripple ou animação decorativa em loop — a calma é a marca",
+      "Ultrapassar 3 cards por linha ou colocar mais de uma ideia/CTA principal por dobra",
+      "Misturar mais de 2 famílias tipográficas além de Cormorant Garamond + Inter",
+      "Remover o outline de foco sem substituto visível"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Cormorant+Garamond:ital,wght@0,500;0,600;1,500 e Inter:wght@400;500 com display=swap. Total: 2 famílias / 5 pesos.",
+    "js_budget": "JS mínimo, zero frameworks: menu mobile (toggle + focus trap + Esc), IntersectionObserver para fade-in-up/hero-reveal e um carrossel leve de depoimentos. Sem bibliotecas de animação. CSS < 40KB, JS < 15KB.",
+    "seo_local": "Schema.org Dentist/MedicalBusiness (ou MedicalClinic) com endereço, geo, telefone, horários e responsável técnico (CRO); título com bairro/cidade ('Clínica Odontológica Estética na Vila Y').",
+    "whatsapp_cta": "Link wa.me com mensagem pré-preenchida sóbria e sem urgência ('Olá, gostaria de agendar uma avaliação.'); apresentado com o mesmo tom sereno da marca, sem badges promocionais.",
+    "adaptation_guide": "Ao adaptar para outro segmento premium (dermatologia, spa, oftalmologia boutique): manter paleta sage/champagne, Cormorant Garamond + Inter, motion sutil e o whitespace generoso; trocar apenas o vocabulário do voice_and_tone e a metáfora fotográfica. A essência é a confiança silenciosa, não a odontologia."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true,
+    "uniqueness_note": "Radicalmente distinto dos irmãos da personalidade 02: 02.1 Advocacia é dark editorial (#1A1A1A + dourado, Playfair, split B&W) e 02.3 Hotel Boutique é dark quente (#2A1F14 + âmbar, grid magazine). O 02.2 é o único CLARO e tonal da família — leveza sage/champagne, Cormorant Garamond + Inter, hero split claro com moldura deslocada e ritmo centrado de spa."
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "premium",
+      "sofisticado",
+      "sage-green",
+      "champagne",
+      "serif-elegante",
+      "minimalismo-clinico",
+      "tonal",
+      "saude-estetica",
+      "confianca-silenciosa",
+      "whitespace-generoso"
+    ],
+    "related_docs": [
+      "previews/markdown/02-2-clinica-dental-premium.md",
+      "previews/html/02-2-clinica-dental-premium.html",
+      "docs/02-2-clinica-dental-premium/components.md",
+      "docs/02-2-clinica-dental-premium/animations.css",
+      "docs/02-2-clinica-dental-premium/accessibility-report.md",
+      "docs/02-2-clinica-dental-premium/benchmarking.md",
+      "docs/02-2-clinica-dental-premium/color-variations.md",
+      "docs/02-2-clinica-dental-premium/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Odontologia estética e reabilitação oral",
+      "Dermatologia e harmonização facial",
+      "Spa premium e clínica de estética avançada",
+      "Consultórios de profissionais liberais premium (nutrologia, oftalmologia boutique)"
+    ],
+    "conversion_factors": [
+      "CTA única e consistente ('Agende sua avaliação') repetida em nav, hero e fechamento — sem competição de ofertas",
+      "Trust row discreta no hero (experiência, tecnologia, atendimento particular) responde objeções sem poluir",
+      "Fotografia tonal do espaço real reduz a ansiedade típica de consultório e diferencia de sites dentários genéricos",
+      "Depoimento único e específico por vez tem mais peso percebido que grades de 5 estrelas",
+      "Seção 'como funciona' em 3 passos reduz fricção do primeiro agendamento",
+      "Estética premium filtra o público: atrai paciente particular que valoriza refinamento e aceita ticket mais alto"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "Hero sem imagem de fundo pesada: texto renderiza primeiro; foto do hero com fetchpriority='high', AVIF/WebP ≤ 120KB, width/height explícitos",
+      "cls_strategy": "Dimensões reservadas para todas as imagens e para a nav sticky; fontes com font-display: swap + fallbacks métricos próximos",
+      "fid_inp_strategy": "JS mínimo: IntersectionObserver para reveals e um carrossel leve sem framework; zero bibliotecas de animação",
+      "font_strategy": "Apenas 2 famílias / 5 pesos no total (Cormorant 500+600+itálico, Inter 400+500), subset latin, preconnect ao Google Fonts"
+    }
+  }
+}

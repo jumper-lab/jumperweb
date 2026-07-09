@@ -1,0 +1,58 @@
+{
+  "schema_version": "2.0.0",
+  "stage": "initial_design_system",
+  "client_name": "Aurora Pilates & Movimento",
+  "client_slug": "aurora-pilates-2",
+  "model": "M1",
+  "personality": "B",
+  "personality_name": "Premium sofisticado",
+  "source_briefing": "briefing/briefing-normalizado.md",
+  "client_specific_rules": {
+    "must_feel_like": [
+      "studio boutique",
+      "calmo",
+      "tecnico",
+      "humano",
+      "premium sem ostentacao"
+    ],
+    "must_not_feel_like": [
+      "academia generica",
+      "clinica fria",
+      "fitness neon",
+      "promessa agressiva de performance",
+      "banco de imagem sorridente"
+    ],
+    "primary_goal": "agendamento de aula experimental avaliativa pelo WhatsApp",
+    "core_message": "Movimento bem orientado muda a forma como a pessoa vive o proprio corpo todos os dias."
+  },
+  "visual_preferences": {
+    "primary_color": "#283322",
+    "accent_color": "#C96F3E",
+    "surface": "#F4EFE6",
+    "surface_alt": "#E7DDCE",
+    "text_primary": "#1F241D",
+    "text_secondary": "#5F6659",
+    "typography_feeling": "serif editorial sofisticada para display e sans-serif limpa para corpo",
+    "image_feeling": "luz natural, madeira clara, aparelhos de pilates, linho, sombra suave e vegetacao discreta"
+  },
+  "reference_sites": [
+    {
+      "url": "https://www.nohrd.com",
+      "principle_extracted": "materialidade fisica, equipamentos tratados como objetos de desejo e fotografia limpa"
+    },
+    {
+      "url": "https://www.aman.com",
+      "principle_extracted": "calma por escala, respiro, uma ideia por tela e experiencia de refugio"
+    },
+    {
+      "url": "https://www.aesop.com",
+      "principle_extracted": "organizacao editorial, minimalismo sensorial e uso preciso de texto"
+    }
+  ],
+  "initial_direction": {
+    "hero": "primeira dobra imersiva quase full-bleed com fotografia de studio calmo, texto editorial sobreposto em area de contraste e CTA claro",
+    "navigation": "menu horizontal discreto com wordmark forte, links curtos e CTA de agendamento tratado como acento",
+    "sections": "fluxo one page com manifesto, metodo, servicos, prova social, localizacao e CTA final",
+    "signature_possibility": "linhas de respiracao: pequenos marcadores editoriais inspirados em alinhamento corporal e controle de movimento"
+  }
+}

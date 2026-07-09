@@ -1,0 +1,676 @@
+{
+  "id": "reference-ds-05-vercel-com",
+  "clientSlug": "vercel-com",
+  "clientName": "Vercel",
+  "personalitySlug": "04-tecnico-confiavel",
+  "regeneratedAt": "2026-06-05",
+  "referenceQualityBaseline": "reference-ds-01-pinchmans-ca-visual-preview.html + pasta 01 aprovada",
+  "source": {
+    "site": "vercel.com",
+    "localPath": "_jumper-sites-system/_referencias-visuais/04-tecnico-confiavel/design-systems/preview-assets/vercel.com",
+    "sourceReferenceId": "vercel.com",
+    "sourceReferenceNote": "Referencia visual ja convertida em DS-base; arquivo pesado original nao e necessario no fluxo oficial.",
+    "imagesUsed": [],
+    "extractedSignals": {
+      "sourceColors": [
+        {
+          "hex": "#333",
+          "count": 7,
+          "hsl": "hsl(0 0% 20%)"
+        },
+        {
+          "hex": "#E92A67",
+          "count": 6,
+          "hsl": "hsl(341 81% 54%)"
+        },
+        {
+          "hex": "#111",
+          "count": 6,
+          "hsl": "hsl(0 0% 7%)"
+        },
+        {
+          "hex": "#EAEAEA",
+          "count": 6,
+          "hsl": "hsl(0 0% 92%)"
+        },
+        {
+          "hex": "#FAFAFA",
+          "count": 5,
+          "hsl": "hsl(0 0% 98%)"
+        },
+        {
+          "hex": "#FF1E56",
+          "count": 4,
+          "hsl": "hsl(345 100% 56%)"
+        },
+        {
+          "hex": "#A853BA",
+          "count": 4,
+          "hsl": "hsl(290 43% 53%)"
+        },
+        {
+          "hex": "#2A8AF6",
+          "count": 4,
+          "hsl": "hsl(212 92% 56%)"
+        },
+        {
+          "hex": "#666",
+          "count": 4,
+          "hsl": "hsl(0 0% 40%)"
+        },
+        {
+          "hex": "#999",
+          "count": 3,
+          "hsl": "hsl(0 0% 60%)"
+        }
+      ],
+      "fonts": [
+        "9b6f5ff45b278c74_caa3a2e1cccd8315.p.0wgildi0cnw.woff2",
+        "f2da1b1b4ebdc63f_GeistMono_Variable.p.1bcgm0qa2.woff2"
+      ],
+      "title": "Vercel: Build and deploy the best web experiences with the AI Cloud",
+      "sourceText": [
+        [
+          "Vercel provides the developer tools and cloud infrastructure to build, scale, and secure a faster, more personalized web.",
+          "Deploy Start Deploying Get a Demo Build and deploy on the AI Cloud.",
+          "Vercel provides the developer tools and cloud infrastructure to build, scale, and secure a faster, more personalized web.",
+          "Deploy Start Deploying Get a Demo build times went from 7m to 40s.",
+          "saw a 95% reduction in page load times.",
+          "saw 24x faster builds.",
+          "AI Apps AI Apps Web Apps Web Apps Ecommerce Ecommerce Marketing Marketing Platforms Platforms Get started using our pre-built templates.",
+          "Easily stream long-running LLM responses for a better user experience with zero-config infrastructure that's always globally performant.",
+          "Fast load times, zero overhead with Vercel's highly optimized infrastructure and CDN, reducing bounce rates and improving SEO.",
+          "Streamline content creation publishing with built-in previews.",
+          "Deploy AI Apps in seconds Your product, delivered.",
+          "Security, speed, and AI included, so you can focus on your user.",
+          "Agents Deliver more value to users by executing complex workflows.",
+          "AI Apps Enrich any product or feature with the latest models and tools.",
+          "Fluid AI SDK AI Gateway Workflow Sandbox BotID Web Apps Ship beautiful interfaces that don’t compromise speed or functionality.",
+          "Composable Commerce Increase conversion with fast, branded storefronts.",
+          "Multi-tenant Platform Serve millions securely across isolated environments.",
+          "Vercel deeply understands your app to provision the right resources and optimize for high-performance apps.",
+          "Scale your Enterprise without compromising Security Deploy once, deliver everywhere.",
+          "When you push code to Vercel, we make it instantly available across the globe.",
+          "With Active CPU pricing.",
+          "Learn more AI Gateway The AI Gateway For Developers.",
+          "Effortlessly access and deploy hundreds of AI models from one interface.",
+          "Select a display theme: system light dark"
+        ]
+      ],
+      "assetCounts": {
+        "images": 10,
+        "css": 28,
+        "fonts": 2
+      }
+    }
+  },
+  "designIntent": {
+    "tone": "developer / confiavel / minimal",
+    "summary": "Referencia tecnica para plataforma dev: terminal, deploy cards, status, docs e rede edge com preto/branco e foco preciso.",
+    "hero": "Deploy preview, terminal e status em tempo real.",
+    "nonGoal": "Nao e DS final do cliente; nao contem fluxo real de formulario."
+  },
+  "colors": {
+    "palette": [
+      {
+        "name": "Vercel Black",
+        "hex": "#000000",
+        "rgb": "rgb(0,0,0)",
+        "hsl": "hsl(0 0% 0%)",
+        "usage": "primary bg / text"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255,255,255)",
+        "hsl": "hsl(0 0% 100%)",
+        "usage": "surface / text on dark"
+      },
+      {
+        "name": "Geist Grey",
+        "hex": "#FAFAFA",
+        "rgb": "rgb(250,250,250)",
+        "hsl": "hsl(0 0% 98%)",
+        "usage": "background"
+      },
+      {
+        "name": "Line Grey",
+        "hex": "#EAEAEA",
+        "rgb": "rgb(234,234,234)",
+        "hsl": "hsl(0 0% 92%)",
+        "usage": "border"
+      },
+      {
+        "name": "Success Green",
+        "hex": "#00B341",
+        "rgb": "rgb(0,179,65)",
+        "hsl": "hsl(142 100% 35%)",
+        "usage": "deploy success"
+      },
+      {
+        "name": "Deploy Blue",
+        "hex": "#0070F3",
+        "rgb": "rgb(0,112,243)",
+        "hsl": "hsl(212 100% 48%)",
+        "usage": "focus / link"
+      },
+      {
+        "name": "Warning Amber",
+        "hex": "#F5A623",
+        "rgb": "rgb(245,166,35)",
+        "hsl": "hsl(37 91% 55%)",
+        "usage": "warning"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Deploy Beam",
+        "value": "linear-gradient(135deg, rgba(0,0,0,.96), rgba(0,112,243,.28), rgba(250,250,250,.92))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Terminal Shadow",
+        "value": "linear-gradient(180deg, rgba(0,0,0,.88), rgba(0,0,0,.34))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Edge Halo",
+        "value": "radial-gradient(circle at 20% 22%, rgba(0,179,65,.22), transparent 34%), radial-gradient(circle at 78% 70%, rgba(0,112,243,.22), transparent 38%)",
+        "participation": "background / overlay / hover / active states"
+      }
+    ],
+    "semantic": {
+      "primary": "Vercel Black",
+      "text": "#000000",
+      "surface": "#FAFAFA",
+      "accent": "Line Grey",
+      "focus": "Warning Amber",
+      "contrastIntent": "AA minimum for body text; generated preview overrides --c2 as light surface and --c3 as dark text to avoid low-contrast sections."
+    },
+    "opacityPolicy": "Escala global para evitar repeticao: 100,86,64,40,18,8.",
+    "contextualUsageRules": {
+      "text": "Usar token semantico com contraste AA.",
+      "background": "Usar surface/background conforme personalidade do site.",
+      "border": "Usar neutral/accent em baixa opacidade.",
+      "hover": "Accent/focus ou overlay curto.",
+      "active": "Aumentar contraste ou reduzir elevacao 120-180ms.",
+      "disabled": "Opacidade global sem apagar legibilidade."
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "Geist, Inter, system-ui, sans-serif",
+      "ui": "Geist, Inter, system-ui, sans-serif",
+      "mono": "Geist Mono, ui-monospace, Menlo, monospace",
+      "loading": "local when available; fallback stack otherwise"
+    },
+    "scale": {
+      "h1": {
+        "size": "clamp(3rem,7vw,7.8rem)",
+        "weight": 760,
+        "lineHeight": 0.88,
+        "letterSpacing": 0
+      },
+      "h2": {
+        "size": "clamp(2.15rem,4.9vw,5.35rem)",
+        "weight": 720,
+        "lineHeight": 0.94,
+        "letterSpacing": 0
+      },
+      "h3": {
+        "size": "clamp(1.6rem,3vw,3rem)",
+        "weight": 680,
+        "lineHeight": 1.05,
+        "letterSpacing": 0
+      },
+      "bodyLg": {
+        "size": "1.22rem",
+        "weight": 420,
+        "lineHeight": 1.6,
+        "letterSpacing": 0
+      },
+      "body": {
+        "size": "1rem",
+        "weight": 420,
+        "lineHeight": 1.58,
+        "letterSpacing": 0
+      },
+      "bodySm": {
+        "size": ".9rem",
+        "weight": 420,
+        "lineHeight": 1.45,
+        "letterSpacing": 0
+      },
+      "caption": {
+        "size": ".76rem",
+        "weight": 820,
+        "lineHeight": 1.35,
+        "letterSpacing": ".12em",
+        "textTransform": "uppercase"
+      }
+    },
+    "siteSpecificRoles": [
+      {
+        "role": "deploy-title",
+        "family": "Display sans",
+        "weight": "760",
+        "size": "clamp(4rem,8vw,8.6rem)",
+        "lineHeight": ".88",
+        "letterSpacing": "0",
+        "usage": "Headline de plataforma."
+      },
+      {
+        "role": "terminal-label",
+        "family": "Mono",
+        "weight": "720",
+        "size": ".76rem",
+        "lineHeight": "1.4",
+        "letterSpacing": "0",
+        "usage": "Logs, branch, build."
+      },
+      {
+        "role": "body-dev",
+        "family": "UI",
+        "weight": "430",
+        "size": "1rem",
+        "lineHeight": "1.56",
+        "letterSpacing": "0",
+        "usage": "Texto tecnico objetivo."
+      }
+    ]
+  },
+  "icons": {
+    "set": [
+      "terminal",
+      "branch",
+      "cloud",
+      "check",
+      "lock",
+      "arrow"
+    ],
+    "stroke": 1.8,
+    "color": "currentColor",
+    "hover": "focus/accent token",
+    "rule": "icone nao desloca layout no hover"
+  },
+  "components": {
+    "deployment-card": {
+      "role": "deployment card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "terminal cursor",
+      "visual": "Referencia Vercel: developer / confiavel / minimal",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "terminal-panel": {
+      "role": "terminal panel",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "status pulse",
+      "visual": "Referencia Vercel: developer / confiavel / minimal",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "framework-grid": {
+      "role": "framework grid",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "edge sweep",
+      "visual": "Referencia Vercel: developer / confiavel / minimal",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "edge-network-map": {
+      "role": "edge network map",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "modal snap",
+      "visual": "Referencia Vercel: developer / confiavel / minimal",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "preview-branch": {
+      "role": "preview branch",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "terminal cursor",
+      "visual": "Referencia Vercel: developer / confiavel / minimal",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "env-modal": {
+      "role": "env modal",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "status pulse",
+      "visual": "Referencia Vercel: developer / confiavel / minimal",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "docs-command": {
+      "role": "docs command",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "edge sweep",
+      "visual": "Referencia Vercel: developer / confiavel / minimal",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "status-pill": {
+      "role": "status pill",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "modal snap",
+      "visual": "Referencia Vercel: developer / confiavel / minimal",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    }
+  },
+  "motion": {
+    "entry": [
+      "fade-up",
+      "draw-line",
+      "stagger"
+    ],
+    "exit": [
+      "flyout-x",
+      "modal-fade-down",
+      "caption-exit"
+    ],
+    "background": [
+      "ambient drift",
+      "hero zoom"
+    ],
+    "parallax": "limited scroll response with reduced-motion fallback",
+    "siteSpecific": [
+      "terminal cursor",
+      "status pulse",
+      "edge sweep",
+      "modal snap"
+    ]
+  },
+  "accessibility": {
+    "contrast": "AA minimo; overlay obrigatorio sobre imagem",
+    "focus": "2px solid focus token",
+    "reducedMotion": true,
+    "skipLinks": true,
+    "modal": "Esc/overlay/botao fecham"
+  },
+  "risks": [
+    "Monocromia pode ficar fria; usar status com criterio.",
+    "Linhas finas precisam contraste em retina/mobile.",
+    "Nao virar painel operacional final."
+  ],
+  "heroSystem": {
+    "layout": "terminal",
+    "rules": [
+      "Hero full viewport com terminal/painel, nao decoracao abstrata.",
+      "Menu developer: docs, templates, customers, enterprise.",
+      "Estado de deploy e protagonista.",
+      "Motion e instantaneo: status, cursor e branch reveal."
+    ],
+    "fullViewport": true
+  },
+  "menuSystem": {
+    "items": [
+      "Docs",
+      "Templates",
+      "Deploy",
+      "Enterprise",
+      "Status"
+    ],
+    "note": "Menu dev platform: minimal, direto e sem ornamento.",
+    "behavior": "overlay flyout, Esc closes, link closes"
+  },
+  "effects": {
+    "signature": [
+      "terminal cursor",
+      "status pulse",
+      "edge sweep",
+      "modal snap"
+    ]
+  },
+  "referenceUsage": {
+    "type": "visual-reference-input",
+    "folder": "04-tecnico-confiavel",
+    "crossesWith": "clientes/[slug]/data/design-system.json",
+    "purpose": "Insumo dev confiavel e minimal. Cruza com briefing para criar tecnologia clara e rapida.",
+    "nonGoals": [
+      "nao criar DS final do cliente",
+      "nao representar personalidade da pasta",
+      "nao usar padrao generico para todos os sites"
+    ],
+    "differentiationRules": [
+      "Hero full viewport com terminal/painel, nao decoracao abstrata.",
+      "Menu developer: docs, templates, customers, enterprise.",
+      "Estado de deploy e protagonista.",
+      "Motion e instantaneo: status, cursor e branch reveal."
+    ],
+    "siteSpecific": true,
+    "qualityRule": "Preview precisa demonstrar personalidade do site extraido, com menu completo, hero, tokens, gradientes, tipo, efeitos, componentes, cards/secoes, story parallax, icones, handoff e motion linkados.",
+    "notPersonalityWide": true
+  },
+  "outputs": {
+    "json": "design-systems/json/reference-ds-05-vercel-com.json",
+    "markdown": "design-systems/previews/markdown/reference-ds-05-vercel-com-preview.md",
+    "html": "design-systems/previews/html/reference-ds-05-vercel-com-visual-preview.html"
+  },
+  "schemaVersion": "reference-ds-v2",
+  "globalTokens": {
+    "opacityScale": {
+      "solid": 1,
+      "strong": 0.86,
+      "medium": 0.64,
+      "soft": 0.4,
+      "wash": 0.18,
+      "hairline": 0.08
+    },
+    "radius": "0-10px conforme referencia; cards ate 8px salvo marcas arredondadas",
+    "spacing": "clamp responsive"
+  },
+  "componentsDefaults": {
+    "states": [
+      "default",
+      "hover",
+      "focus-visible",
+      "active",
+      "loading",
+      "disabled"
+    ],
+    "referenceOnly": true
+  },
+  "previewNavigation": [
+    {
+      "order": 1,
+      "id": "menu-top",
+      "label": "Menu / top",
+      "href": "#menu-top"
+    },
+    {
+      "order": 2,
+      "id": "top",
+      "label": "Top",
+      "href": "#top"
+    },
+    {
+      "order": 3,
+      "id": "hero",
+      "label": "Sessao Hero",
+      "href": "#hero"
+    },
+    {
+      "order": 4,
+      "id": "color-tokens",
+      "label": "tokens de cor",
+      "href": "#color-tokens"
+    },
+    {
+      "order": 5,
+      "id": "gradients",
+      "label": "gradientes / opacidade",
+      "href": "#gradients"
+    },
+    {
+      "order": 6,
+      "id": "type-system",
+      "label": "type system",
+      "href": "#type-system"
+    },
+    {
+      "order": 7,
+      "id": "type-detail",
+      "label": "tipografia detalhada",
+      "href": "#type-detail"
+    },
+    {
+      "order": 8,
+      "id": "effects",
+      "label": "efeitos e mouse overs",
+      "href": "#effects"
+    },
+    {
+      "order": 9,
+      "id": "components",
+      "label": "componentes",
+      "href": "#components"
+    },
+    {
+      "order": 10,
+      "id": "contract",
+      "label": "contrato sem repeticao",
+      "href": "#contract"
+    },
+    {
+      "order": 11,
+      "id": "menu-board",
+      "label": "menu board component",
+      "href": "#menu-board"
+    },
+    {
+      "order": 12,
+      "id": "reference-slip",
+      "label": "reference slip",
+      "href": "#reference-slip"
+    },
+    {
+      "order": 13,
+      "id": "cards-sections",
+      "label": "cards e secoes",
+      "href": "#cards-sections"
+    },
+    {
+      "order": 14,
+      "id": "story",
+      "label": "story split parallax",
+      "href": "#story"
+    },
+    {
+      "order": 15,
+      "id": "icons",
+      "label": "icones",
+      "href": "#icons"
+    },
+    {
+      "order": 16,
+      "id": "handoff",
+      "label": "handoff de referencia",
+      "href": "#handoff"
+    },
+    {
+      "order": 17,
+      "id": "motion",
+      "label": "motion contract",
+      "href": "#motion"
+    },
+    {
+      "order": 18,
+      "id": "replay-motion",
+      "label": "Replay motion",
+      "href": "#replay-motion"
+    }
+  ],
+  "requiredPreviewSections": [
+    "Menu / top",
+    "Sessao Hero",
+    "tokens de cor",
+    "gradientes / opacidade",
+    "type system",
+    "tipografia detalhada",
+    "efeitos e mouse overs",
+    "componentes",
+    "contrato sem repeticao",
+    "menu board component",
+    "reference slip",
+    "cards e secoes",
+    "story split parallax",
+    "icones",
+    "handoff de referencia",
+    "motion contract",
+    "Replay motion"
+  ],
+  "requiredPreviewContract": {
+    "allMenuLinksMustResolve": true,
+    "menuHasTopAndHeroAsSeparateAnchors": true,
+    "heroMustOccupyFullViewport": true,
+    "noRepeatedGenericSections": true,
+    "noClippedTextOrOverlaps": true,
+    "showGradientsOpacityHoverEntryExitParallaxIcons": true
+  }
+}

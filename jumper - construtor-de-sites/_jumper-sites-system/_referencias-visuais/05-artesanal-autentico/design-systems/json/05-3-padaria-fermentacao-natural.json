@@ -1,0 +1,558 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "05.3",
+  "design_system_name": "Padaria Fermentação Natural",
+  "category": "05 — Artesanal e Autêntico",
+  "subcategory": "Padaria artesanal de fermentação natural — editorial moody, dourado-grão sobre creme",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Debaere Bakery",
+    "url": "https://www.debaere.co.uk/",
+    "location": "Reino Unido",
+    "awards": [
+      "Great Taste Awards (prêmios de produto da padaria, fundada por Ric De Baere, campeão mundial de panificação artesanal — não são prêmios de web design)",
+      "Site destacado como referência estilística em curadorias de web design para padarias (Sitebuilder Report, Colorlib) — citado aqui como referência estilística, sem prêmio de design confirmado"
+    ],
+    "why_chosen": "O Debaere resume a estética que este DS captura: fotografia moody com luz lateral natural sobre fundos escuros e quentes, tipografia com influência vintage-editorial e copy concentrado em poucas palavras de alto peso ('Pure Joy, Baked In'). A padaria trata o processo — fermentação lenta, tradição belga — como argumento central de venda, transformando educação em conversão. Capturamos a essência (mood, ritmo, hierarquia, tom educativo), nunca o layout literal. Poppy Roastery serve como referência secundária de atmosfera artesanal quente.",
+    "secondary_reference": {
+      "name": "Poppy Roastery (referência estilística secundária)",
+      "essence": "atmosfera artesanal quente, paleta terrosa dourada, storytelling de processo"
+    },
+    "commercial_font_note": "A referência usa tipografia no espírito de Editorial New (PangramPangram, comercial). Substituída oficialmente por Newsreader (Google Fonts), serif editorial de eixo inclinado e contraste moderado, a alternativa aberta mais próxima."
+  },
+  "colors": {
+    "primary": "#C19A6B",
+    "primary_usage": "Dourado-grão. ATENÇÃO: contraste de apenas 2.30:1 sobre o creme #F7F1E5 — NUNCA usar como cor de texto pequeno nem como fundo de botão com texto claro sobre superfícies claras. Usar como: cor de accent (filetes, marcadores, ícones grandes decorativos), superfícies de destaque (faixas, tags sobre fundo escuro), realce tipográfico apenas em display ≥ 32px bold sobre fundo escuro #2A2117 (6.10:1, AA para texto grande). Para texto e CTAs sobre creme, usar o tom derivado primary_deep.",
+    "primary_deep": "#7A5C2E",
+    "primary_deep_usage": "Dourado-grão escurecido, derivado do primary para uso funcional: cor de CTAs sólidos (texto creme #FBF5E9 sobre ele = 5.69:1 AA), links e texto de destaque sobre creme (5.49:1 AA). É a 'versão trabalhável' do dourado — mantém a temperatura do grão tostado.",
+    "secondary": "#8B7355",
+    "secondary_usage": "Marrom-pão. 3.99:1 sobre creme — aprovado APENAS para texto grande (≥ 24px regular ou ≥ 18.66px bold) e elementos gráficos. Para texto normal, usar a variante secondary_deep #6B573F (6.10:1 AA). Uso principal: subtítulos display, bordas expressivas, fundos de cards escuros com texto creme.",
+    "secondary_deep": "#6B573F",
+    "surface": "#F7F1E5",
+    "surface_alt": "#EFE6D2",
+    "surface_dark": "#2A2117",
+    "surface_dark_usage": "Marrom-café profundo para seções moody (hero alternativo, faixa de processo, footer). Sobre ele: texto creme #F7F1E5 (12.66:1 AAA) e dourado #C19A6B (6.10:1, AA texto grande / AA texto normal até 4.5 ok pois 6.10 ≥ 4.5).",
+    "text_primary": "#33291C",
+    "text_secondary": "#5C4E3A",
+    "text_muted": "#7C6B54",
+    "border": "#D9CBB0",
+    "error": "#B0413E",
+    "success": "#3F6B3F",
+    "warning": "#8A5A1B",
+    "neutral_scale": {
+      "50": "#FBF7EE",
+      "100": "#F7F1E5",
+      "200": "#EFE6D2",
+      "300": "#D9CBB0",
+      "400": "#BCA37E",
+      "500": "#9C825E",
+      "600": "#7C6547",
+      "700": "#5E4B34",
+      "800": "#423424",
+      "900": "#2A2117"
+    },
+    "contrast_verification": {
+      "primary_on_surface": "2.30:1 — REPROVADO para texto; por isso o primary é rebaixado a accent/superfície e o primary_deep #7A5C2E assume texto/CTAs",
+      "primary_deep_on_surface": "5.49:1 — AA texto normal ✓",
+      "cream_on_primary_deep": "#FBF5E9 sobre #7A5C2E = 5.69:1 — AA texto normal ✓ (botões)",
+      "text_primary_on_surface": "#33291C sobre #F7F1E5 = 12.66:1 — AAA ✓",
+      "text_secondary_on_surface": "#5C4E3A sobre #F7F1E5 = 7.16:1 — AAA ✓",
+      "text_muted_on_surface": "#7C6B54 sobre #F7F1E5 = 4.57:1 — AA texto normal ✓",
+      "secondary_on_surface": "#8B7355 sobre #F7F1E5 = 3.99:1 — apenas texto grande (AA large ✓)",
+      "secondary_deep_on_surface": "#6B573F sobre #F7F1E5 = 6.10:1 — AA texto normal ✓",
+      "primary_on_surface_dark": "#C19A6B sobre #2A2117 = 6.10:1 — AA ✓ (uso editorial em seções moody)",
+      "surface_on_surface_dark": "#F7F1E5 sobre #2A2117 = 12.66:1 — AAA ✓",
+      "text_primary_on_surface_alt": "#33291C sobre #EFE6D2 = 11.47:1 — AAA ✓",
+      "primary_deep_on_surface_alt": "#7A5C2E sobre #EFE6D2 = 4.98:1 — AA ✓",
+      "error_on_surface": "#B0413E sobre #F7F1E5 = 5.08:1 — AA ✓",
+      "success_on_surface": "#3F6B3F sobre #F7F1E5 = 5.51:1 — AA ✓",
+      "warning_on_surface": "#8A5A1B sobre #F7F1E5 = 5.25:1 — AA ✓",
+      "notes": "Todas as razões calculadas com a fórmula de luminância relativa WCAG 2.1. O ajuste central do DS: o dourado-grão #C19A6B pedido no brief falha para texto sobre creme (2.30:1), então foi mantido como alma visual (accents, superfícies, display sobre escuro) e o derivado #7A5C2E — mesmo matiz, luminância reduzida — carrega toda a função de texto/CTA. Essência preservada, acessibilidade garantida."
+    }
+  },
+  "typography": {
+    "heading_font": "Newsreader",
+    "heading_font_source": "Google Fonts",
+    "heading_font_note": "Substitui Editorial New (comercial, PangramPangram) usada na referência. Newsreader tem o mesmo DNA editorial: serif de texto contemporânea com eixo inclinado, ótima em opsz alto para display. Carregar com axis opsz e itálico para os destaques de processo.",
+    "body_font": "Lato",
+    "body_font_source": "Google Fonts",
+    "body_font_note": "Humanista, quente e neutra — não compete com a serif editorial. Pesos usados: 400, 500(=medium via 400+letter-spacing quando indisponível), 700.",
+    "mono_font": "não aplicável — números de fermentação usam Newsreader itálico como recurso expressivo",
+    "base_size": "16px",
+    "scales": {
+      "mobile": {
+        "h1": { "size": "36px", "line_height": "1.12", "weight": "500", "letter_spacing": "-0.01em", "font": "Newsreader" },
+        "h2": { "size": "28px", "line_height": "1.18", "weight": "500", "letter_spacing": "-0.005em", "font": "Newsreader" },
+        "h3": { "size": "21px", "line_height": "1.3", "weight": "500", "letter_spacing": "0", "font": "Newsreader" },
+        "body": { "size": "16px", "line_height": "1.65", "weight": "400", "font": "Lato" },
+        "small": { "size": "13px", "line_height": "1.5", "weight": "400", "letter_spacing": "0.02em", "font": "Lato" },
+        "eyebrow": { "size": "12px", "line_height": "1.4", "weight": "700", "letter_spacing": "0.18em", "transform": "uppercase", "font": "Lato" },
+        "display_number": { "size": "48px", "line_height": "1", "weight": "400", "style": "italic", "font": "Newsreader", "usage": "números de fermentação: 48h, 100%, 1889" }
+      },
+      "desktop": {
+        "h1": { "size": "60px", "line_height": "1.06", "weight": "500", "letter_spacing": "-0.015em", "font": "Newsreader" },
+        "h2": { "size": "42px", "line_height": "1.12", "weight": "500", "letter_spacing": "-0.01em", "font": "Newsreader" },
+        "h3": { "size": "26px", "line_height": "1.25", "weight": "500", "letter_spacing": "0", "font": "Newsreader" },
+        "body": { "size": "17px", "line_height": "1.7", "weight": "400", "font": "Lato" },
+        "small": { "size": "14px", "line_height": "1.5", "weight": "400", "letter_spacing": "0.02em", "font": "Lato" },
+        "eyebrow": { "size": "13px", "line_height": "1.4", "weight": "700", "letter_spacing": "0.2em", "transform": "uppercase", "font": "Lato" },
+        "display_number": { "size": "88px", "line_height": "1", "weight": "400", "style": "italic", "font": "Newsreader" }
+      },
+      "fluid_recipe": "h1: clamp(2.25rem, 1.55rem + 3vw, 3.75rem); h2: clamp(1.75rem, 1.3rem + 1.9vw, 2.625rem); display_number: clamp(3rem, 2rem + 5vw, 5.5rem)"
+    }
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — valores idênticos aos definidos em colors, typography, spacing, borders, shadows e motion deste DS.",
+    "tokens": {
+      "--color-primary": "#C19A6B",
+      "--color-primary-deep": "#7A5C2E",
+      "--color-primary-deep-darker": "#5E4623",
+      "--color-primary-deep-active": "#4E3A1D",
+      "--color-secondary": "#8B7355",
+      "--color-secondary-deep": "#6B573F",
+      "--color-surface": "#F7F1E5",
+      "--color-surface-alt": "#EFE6D2",
+      "--color-surface-dark": "#2A2117",
+      "--color-surface-card": "#FBF7EE",
+      "--color-cream-on-deep": "#FBF5E9",
+      "--color-text": "#33291C",
+      "--color-text-secondary": "#5C4E3A",
+      "--color-text-muted": "#7C6B54",
+      "--color-border": "#D9CBB0",
+      "--color-error": "#B0413E",
+      "--color-success": "#3F6B3F",
+      "--color-warning": "#8A5A1B",
+      "--color-neutral-50": "#FBF7EE",
+      "--color-neutral-100": "#F7F1E5",
+      "--color-neutral-200": "#EFE6D2",
+      "--color-neutral-300": "#D9CBB0",
+      "--color-neutral-400": "#BCA37E",
+      "--color-neutral-500": "#9C825E",
+      "--color-neutral-600": "#7C6547",
+      "--color-neutral-700": "#5E4B34",
+      "--color-neutral-800": "#423424",
+      "--color-neutral-900": "#2A2117",
+      "--font-heading": "'Newsreader', Georgia, 'Times New Roman', serif",
+      "--font-body": "'Lato', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "--text-h1": "clamp(2.25rem, 1.55rem + 3vw, 3.75rem)",
+      "--text-h2": "clamp(1.75rem, 1.3rem + 1.9vw, 2.625rem)",
+      "--text-h3": "clamp(1.3125rem, 1.2rem + 0.5vw, 1.625rem)",
+      "--text-body": "clamp(1rem, 0.97rem + 0.13vw, 1.0625rem)",
+      "--text-small": "0.8125rem",
+      "--text-display-number": "clamp(3rem, 2rem + 5vw, 5.5rem)",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "40px",
+      "--space-xxl": "64px",
+      "--space-xxxl": "96px",
+      "--space-xxxxl": "144px",
+      "--section-gap": "clamp(64px, 6vw + 32px, 144px)",
+      "--radius-none": "0px",
+      "--radius-sm": "2px",
+      "--radius-md": "4px",
+      "--radius-lg": "8px",
+      "--radius-full": "999px",
+      "--shadow-sm": "0 1px 2px rgba(42, 33, 23, 0.08)",
+      "--shadow-md": "0 4px 12px rgba(42, 33, 23, 0.10)",
+      "--shadow-lg": "0 12px 32px rgba(42, 33, 23, 0.14)",
+      "--shadow-glow-warm": "0 0 48px rgba(193, 154, 107, 0.25)",
+      "--duration-fast": "400ms",
+      "--duration-base": "550ms",
+      "--duration-slow": "700ms",
+      "--ease-standard": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+      "--ease-entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "--ease-atmosphere": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--container-max": "1200px",
+      "--content-max": "720px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "40px",
+      "xxl": "64px",
+      "xxxl": "96px",
+      "xxxxl": "144px"
+    },
+    "section_spacing": {
+      "mobile": "64px",
+      "tablet": "96px",
+      "desktop": "144px"
+    },
+    "section_spacing_note": "Respiro generoso é parte do mood editorial — o copy concentrado exige silêncio ao redor. Seções moody escuras podem colar (0px) na seção anterior para efeito de mergulho.",
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "40px",
+      "container_desktop": "64px"
+    },
+    "container_max_width": "1200px",
+    "container_narrow": "720px (blocos de texto educativo — mede ~65ch)",
+    "gutters": "24px mobile / 32px desktop (grid de 12 colunas)"
+  },
+  "borders": {
+    "radius": {
+      "none": "0px",
+      "sm": "2px",
+      "md": "4px",
+      "lg": "8px",
+      "full": "999px"
+    },
+    "radius_usage": {
+      "buttons": "2px — quase reto, gesto editorial vintage",
+      "cards": "4px",
+      "inputs": "2px",
+      "images": "0px — fotografia moody sangrada ou em moldura reta, nunca arredondada",
+      "containers": "0px",
+      "badges": "999px — única exceção arredondada: selos 'Fermentação 48h', 'Levain próprio'"
+    },
+    "stroke": {
+      "thin": "1px solid #D9CBB0",
+      "medium": "2px solid #7A5C2E"
+    },
+    "expressive_rule": "filete horizontal de 1px #C19A6B com 48–96px de largura usado como marcador editorial acima de eyebrows"
+  },
+  "shadows": {
+    "none": "none",
+    "sm": "0 1px 2px rgba(42, 33, 23, 0.08)",
+    "md": "0 4px 12px rgba(42, 33, 23, 0.10)",
+    "lg": "0 12px 32px rgba(42, 33, 23, 0.14)",
+    "glow_warm": "0 0 48px rgba(193, 154, 107, 0.25)",
+    "shadow_usage": "Sombras mínimas e quentes (base marrom-café, nunca preto puro). Cards usam sm→md no hover. glow_warm é reservado para simular a luz lateral natural nos blocos fotográficos das seções escuras. Elevação nunca é o recurso principal — a hierarquia vem de cor e tipografia."
+  },
+  "motion": {
+    "durations": {
+      "fast": "400ms",
+      "base": "550ms",
+      "slow": "700ms"
+    },
+    "easings": {
+      "standard": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+      "entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "atmosphere": "cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "animations": [
+      { "name": "fade-in", "duration": "550ms", "easing": "entrance", "trigger": "IntersectionObserver ao entrar 15% no viewport", "description": "opacidade 0→1 com translateY(16px)→0; padrão para todo bloco de conteúdo" },
+      { "name": "reveal-lento", "duration": "700ms", "easing": "entrance", "trigger": "scroll — imagens e blocos fotográficos", "description": "clip-path inset(0 0 100% 0)→inset(0), como luz revelando a cena de cima para baixo" },
+      { "name": "amanhecer", "duration": "700ms", "easing": "atmosphere", "trigger": "load do hero", "description": "gradiente do hero anima background-position, simulando a luz lateral da manhã entrando na padaria" },
+      { "name": "stagger-processo", "duration": "550ms por item, delay 120ms entre itens", "easing": "entrance", "trigger": "scroll na timeline de fermentação", "description": "etapas do processo surgem em sequência — o ritmo lento É a mensagem" },
+      { "name": "hover-card", "duration": "400ms", "easing": "standard", "trigger": "hover/focus-visible", "description": "translateY(-4px) + sombra sm→md + filete dourado expande de 48px para 100%" },
+      { "name": "hover-botao", "duration": "400ms", "easing": "standard", "trigger": "hover/focus-visible", "description": "fundo #7A5C2E→#5E4623 (escurece como crosta assando); sem mudança de escala" }
+    ],
+    "prefers_reduced_motion": true,
+    "prefers_reduced_motion_note": "Com reduced-motion: todas as animações viram transição de opacidade de 150ms ou estado final direto; amanhecer e stagger são desativados."
+  },
+  "components": {
+    "buttons": {
+      "variants": {
+        "primary": {
+          "background": "#7A5C2E",
+          "color": "#FBF5E9",
+          "border": "none",
+          "radius": "2px",
+          "hover": "background #5E4623",
+          "focus": "outline 2px solid #7A5C2E, outline-offset 3px",
+          "active": "background #4E3A1D",
+          "disabled": "background #D9CBB0, color #7C6B54, cursor not-allowed",
+          "contrast": "5.69:1 (creme sobre dourado-profundo) AA ✓"
+        },
+        "secondary": {
+          "background": "transparent",
+          "color": "#7A5C2E",
+          "border": "1.5px solid #7A5C2E",
+          "radius": "2px",
+          "hover": "background rgba(193,154,107,0.14)",
+          "focus": "outline 2px solid #7A5C2E, outline-offset 3px",
+          "disabled": "border e color #BCA37E"
+        },
+        "ghost_dark": {
+          "context": "sobre surface_dark #2A2117",
+          "background": "transparent",
+          "color": "#C19A6B",
+          "border": "1.5px solid #C19A6B",
+          "hover": "background rgba(193,154,107,0.16)",
+          "contrast": "6.10:1 AA ✓"
+        }
+      },
+      "sizes": {
+        "md": { "padding": "14px 28px", "font": "Lato 700 15px", "letter_spacing": "0.06em", "transform": "uppercase", "min_height": "48px" },
+        "lg": { "padding": "18px 40px", "font": "Lato 700 16px", "letter_spacing": "0.06em", "transform": "uppercase", "min_height": "56px" }
+      },
+      "note": "Uppercase com tracking largo é o gesto vintage do botão; nunca usar radius > 2px"
+    },
+    "cards": {
+      "product_card": {
+        "background": "#FBF7EE",
+        "border": "1px solid #D9CBB0",
+        "radius": "4px",
+        "padding": "0 (imagem sangrada no topo) + 24px no corpo",
+        "image_area": "proporção 4:5, gradiente moody simulando foto com luz lateral",
+        "content": "filete dourado 48px → nome (Newsreader h3) → nota de fermentação (small, itálico) → preço (Lato 700) + CTA texto",
+        "hover": "translateY(-4px), sombra md, filete expande para 100%",
+        "focus_within": "outline 2px #7A5C2E offset 2px"
+      },
+      "process_card": {
+        "context": "timeline de fermentação sobre surface_alt ou surface_dark",
+        "structure": "display_number itálico (48h / 12h / 100%) + título curto + máx 2 linhas de texto",
+        "background_on_dark": "#423424 com texto #F7F1E5 e número #C19A6B"
+      }
+    },
+    "inputs": {
+      "background": "#FBF7EE",
+      "border": "1px solid #D9CBB0",
+      "radius": "2px",
+      "padding": "14px 16px",
+      "min_height": "48px",
+      "font": "Lato 400 16px",
+      "label": "Lato 700 13px uppercase tracking 0.12em, color #5C4E3A, sempre visível acima do campo",
+      "placeholder": "#7C6B54 (4.57:1 sobre #FBF7EE ~ ok, nunca substitui label)",
+      "focus": "border-color #7A5C2E + box-shadow 0 0 0 3px rgba(122,92,46,0.18)",
+      "error": "border #B0413E + mensagem 13px #B0413E com ícone; aria-describedby ligando campo à mensagem",
+      "success": "border #3F6B3F"
+    },
+    "hero": {
+      "layout": "split assimétrico 5/7: coluna esquerda estreita com copy concentrado (eyebrow + H1 de no máx. 6 palavras + 1 linha de apoio + CTA duplo), coluna direita larga com bloco fotográfico moody full-height (gradiente quente com luz lateral simulada)",
+      "background": "surface #F7F1E5 na coluna de texto; bloco fotográfico em gradiente #2A2117→#5E4B34→#C19A6B (luz entrando pela lateral direita)",
+      "copy_rule": "máximo 14 palavras somando headline + apoio — copy concentrado é regra, não sugestão",
+      "badge": "selo redondo 'Fermentação natural · 48h' girando lento (desativado em reduced-motion), posicionado na junção das colunas",
+      "mobile": "empilha: bloco fotográfico 55vh no topo com texto sobreposto na base em faixa creme"
+    },
+    "navigation": {
+      "style": "topbar fina 72px, fundo creme translúcido com blur ao rolar, logo tipográfico Newsreader à esquerda, 4 links no máximo + CTA 'Reserve seu pão'",
+      "links": "Lato 700 13px uppercase tracking 0.12em, cor #5C4E3A, hover #7A5C2E com underline 1px offset 6px",
+      "mobile": "hambúrguer → painel full-screen #2A2117 com links em Newsreader 32px creme, entrada stagger",
+      "announcement_bar": "faixa opcional #2A2117 com texto #C19A6B 13px: 'Fornada de sábado: reservas até sexta 18h'"
+    },
+    "footer": {
+      "background": "#2A2117",
+      "text": "#F7F1E5 e #C19A6B para títulos de coluna",
+      "structure": "4 colunas desktop / empilhado mobile: manifesto curto (2 linhas Newsreader itálico) + horários de fornada + contato/endereço + newsletter 'Receba o calendário de fornadas'",
+      "detail": "filete dourado 1px no topo; assinatura 'Feito à mão, fermentado com tempo.' em Newsreader itálico 15px #C19A6B",
+      "contrast": "creme 12.66:1 AAA / dourado 6.10:1 AA ✓"
+    },
+    "testimonials": {
+      "style": "citação editorial única por vez (não carrossel automático): aspas grandes Newsreader itálico 28-36px sobre surface_alt, autor em eyebrow, navegação por setas discretas",
+      "content_rule": "depoimentos que mencionem processo/saúde têm prioridade — reforçam a tese 'fermentação = qualidade'"
+    },
+    "badges": {
+      "style": "pill 999px, borda 1px #7A5C2E, texto Lato 700 12px uppercase #7A5C2E, fundo transparente",
+      "examples": ["Levain próprio", "48h de fermentação", "Sem aditivos", "Farinha orgânica moída na pedra"],
+      "dark_variant": "borda e texto #C19A6B sobre fundos escuros"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "educativo caloroso com autoridade calma — o tom de quem domina o ofício e ensina sem pressa. Frases curtas, números concretos, zero exagero publicitário. Educação sobre fermentação natural É a estratégia de conversão.",
+    "headline_examples": [
+      "48 horas de fermentação, zero pressa.",
+      "Pão de verdade leva tempo. O nosso leva dois dias.",
+      "Levain de 9 anos, farinha de moinho de pedra, mais nada.",
+      "Seu estômago sabe a diferença da fermentação natural."
+    ],
+    "cta_examples": [
+      "Reserve seu pão",
+      "Ver calendário de fornadas",
+      "Conheça nosso processo",
+      "Garanta a fornada de sábado"
+    ],
+    "microcopy_examples": [
+      "Retirada a partir das 9h — o pão sai do forno às 8h30.",
+      "Fornadas limitadas: fermentação lenta não aceita atalhos.",
+      "Sem glúten? Nosso levain quebra o glúten em até 90% — entenda como."
+    ],
+    "avoid": [
+      "tom infantil ou fofinho ('pãozinho quentinho da vovó') — isso é território do DS 01.1, não deste",
+      "jargão técnico sem tradução (explicar 'autólise' sempre em uma frase simples)",
+      "urgência artificial ('ÚLTIMAS UNIDADES!!') — a escassez aqui é real e narrada com calma",
+      "superlativos vazios ('o melhor pão da cidade')",
+      "emojis em headlines e CTAs"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas, gutter 24/32px, container 1200px; blocos de texto educativo em container estreito de 720px (~65ch)",
+    "page_flow": [
+      { "section": "announcement_bar", "layout": "faixa escura fina com aviso de fornada — escassez real como primeira mensagem" },
+      { "section": "hero", "layout": "split assimétrico 5/7, copy concentrado à esquerda, bloco fotográfico moody à direita" },
+      { "section": "manifesto", "layout": "container 720px centrado, 3 frases Newsreader 26px sobre creme, muito respiro — a pausa editorial" },
+      { "section": "processo_fermentacao", "layout": "seção escura #2A2117 full-bleed colada no manifesto: timeline horizontal (desktop) / vertical (mobile) com 4 etapas e display numbers dourados — o coração educativo do site" },
+      { "section": "produtos", "layout": "grid 3 colunas (1 no mobile) de product cards, cada pão com sua nota de fermentação — educação dentro do card" },
+      { "section": "depoimento", "layout": "citação editorial única sobre surface_alt, foco em saúde/digestão" },
+      { "section": "reserva", "layout": "split 50/50: calendário de fornadas + formulário curto 'Reserve seu pão' — conversão ancorada em tudo que foi ensinado acima" },
+      { "section": "footer", "layout": "escuro, 4 colunas, manifesto + horários de fornada + newsletter" }
+    ],
+    "image_treatment": "fotografia moody vintage: fundos escuros, luz lateral natural única (janela), grão sutil, tons quentes. Em previews e placeholders, simular com gradientes 135deg de #2A2117 via #5E4B34 até #C19A6B e vinheta radial. Imagens sempre retas (radius 0), sangradas ou em moldura fina.",
+    "density": "baixa — copy concentrado, uma ideia por seção",
+    "whitespace": "generoso no claro (144px desktop entre seções), comprimido no escuro (a seção de processo é imersiva e densa em atmosfera, não em texto)"
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "policy": "texto normal ≥ 4.5:1, texto grande ≥ 3:1, componentes de UI ≥ 3:1",
+      "key_decision": "#C19A6B nunca é texto sobre claro (2.30:1); função textual delegada a #7A5C2E (5.49:1)",
+      "verified_pairs": "ver colors.contrast_verification — todas as razões calculadas"
+    },
+    "keyboard_navigation": "toda a navegação operável por teclado; skip-link 'Pular para o conteúdo' visível no focus; painel mobile com focus-trap e fechamento por Esc; timeline de processo navegável por Tab com ordem lógica",
+    "focus_states": "outline 2px sólido #7A5C2E com offset 3px sobre claro; #C19A6B sobre escuro; nunca remover outline sem substituto visível",
+    "alt_text": "fotografias moody descritas incluindo a atmosfera quando relevante ('pão rústico sobre bancada de madeira, luz lateral de janela'); gradientes decorativos com aria-hidden",
+    "semantic_html": "landmarks header/nav/main/footer; uma h1 por página; timeline de processo como <ol>; preços com aria-label completo; formulário com label explícita e aria-describedby em erros",
+    "touch_targets": "44px minimum (botões 48-56px, links de nav com padding vertical estendido)",
+    "motion": "prefers-reduced-motion reduz tudo a opacidade 150ms; badge giratório e amanhecer desativados",
+    "forms": "erros anunciados via aria-live=polite; validação nunca só por cor (ícone + texto)"
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Empilha: bloco fotográfico moody 55vh no topo, texto sobreposto na base em faixa creme (eyebrow → h1 36px → 1 linha de apoio → CTA duplo empilhado full-width, máx 360px)",
+      "tablet": "Coluna única centralizada; bloco fotográfico maior acima do copy, CTAs lado a lado; badge de fermentação reaparece na junção",
+      "desktop": "Split assimétrico 5/7: copy concentrado à esquerda (h1 60px), bloco fotográfico full-height à direita com luz lateral simulada e badge girando lento na junção das colunas"
+    },
+    "product_grid": {
+      "mobile": "1 coluna, product cards full-width, gap 24px",
+      "tablet": "2 colunas, gap 24px",
+      "desktop": "3 colunas, gap 32px, cada pão com sua nota de fermentação"
+    },
+    "processo_fermentacao": {
+      "mobile": "timeline vertical: 4 etapas empilhadas sobre surface_dark, display numbers dourados, stagger reduzido a fade",
+      "desktop": "timeline horizontal full-bleed colada no manifesto, 4 etapas em sequência com stagger-processo (delay 120ms)"
+    },
+    "navigation": {
+      "mobile_tablet": "Logo Newsreader + hambúrguer 44px; painel full-screen #2A2117 com links Newsreader 32px creme, entrada stagger",
+      "desktop": "Logo + máx 4 links inline (Lato 700 13px uppercase) + CTA 'Reserve seu pão'; topbar 72px translúcida com blur ao rolar"
+    },
+    "footer": {
+      "mobile": "4 colunas empilhadas: contato/horários de fornada primeiro (informação mais buscada), depois manifesto e newsletter",
+      "desktop": "4 colunas: manifesto + horários de fornada + contato/endereço + newsletter, filete dourado 1px no topo"
+    },
+    "touch_adjustments": "hover-card e hover-botao viram active-state no touch (sem translateY); filete dourado dos cards aparece já expandido; badge giratório do hero e amanhecer desativados; timeline com scroll-snap horizontal no tablet"
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente — coerentes com components.buttons, components.inputs, components.cards e components.navigation.",
+    "button_primary": ["default (#7A5C2E, texto #FBF5E9)", "hover (#5E4623)", "focus-visible (outline 2px #7A5C2E, offset 3px)", "active (#4E3A1D)", "disabled (#D9CBB0, texto #7C6B54, not-allowed)", "loading (spinner 16px creme + texto 'Reservando...')"],
+    "button_secondary": ["default (transparente, borda 1.5px #7A5C2E)", "hover (fundo rgba(193,154,107,0.14))", "focus-visible (outline 2px #7A5C2E, offset 3px)", "active", "disabled (borda e color #BCA37E)"],
+    "link_nav": ["default (#5C4E3A uppercase)", "hover (#7A5C2E + underline 1px offset 6px)", "focus-visible (outline 2px #7A5C2E)", "current (underline dourado fixo)"],
+    "card_product": ["default (borda #D9CBB0, filete dourado 48px)", "hover (translateY(-4px) + sombra sm→md + filete expande a 100%)", "focus-within (outline 2px #7A5C2E offset 2px)"],
+    "input": ["default (#FBF7EE, borda #D9CBB0)", "focus (borda #7A5C2E + box-shadow 0 0 0 3px rgba(122,92,46,0.18))", "filled", "error (borda #B0413E + mensagem 13px com ícone + aria-describedby)", "disabled", "success (borda #3F6B3F)"],
+    "nav_header": ["topo (fundo creme sólido)", "rolado (creme translúcido + blur)", "menu mobile aberto (#2A2117 full-screen, focus trap, Esc para fechar)"]
+  },
+  "photography_direction": {
+    "style": "Moody vintage-editorial — atmosfera artesanal quente com processo em primeiro plano, luz lateral natural única de janela sobre fundos escuros",
+    "subjects": [
+      "Pão de fermentação natural com crosta rústica sobre bancada de madeira",
+      "Mãos moldando a massa / levain borbulhando em pote de vidro",
+      "Miolo alveolado em close, vapor e textura visíveis",
+      "Padeiro na penumbra da fornada, luz lateral recortando o rosto",
+      "Detalhe da farinha de moinho de pedra e utensílios de época"
+    ],
+    "light": "Natural, lateral única (janela), quente e direcional; sombras profundas mantidas — o escuro é intencional, não subexposição acidental",
+    "color_grading": "Temperatura quente, tons dourado-grão e marrom-café, grão de filme sutil, saturação contida. Proibido: filtros frios, dessaturação clínica, HDR, flash frontal chapado",
+    "framing": "Closes com profundidade de campo rasa; enquadramentos editoriais assimétricos; imagens sempre retas (radius 0), sangradas ou em moldura fina",
+    "avoid": [
+      "Fotografia clara e alegre estilo 'padaria da vovó' (território do DS 01.1)",
+      "Stock genérico com sorrisos falsos e fundos brancos",
+      "Iluminação frontal dura que apaga a textura da crosta e do miolo"
+    ],
+    "fallback_sem_foto": "Gradiente 135deg #2A2117 via #5E4B34 até #C19A6B com vinheta radial simulando a luz lateral; glow_warm (0 0 48px rgba(193,154,107,0.25)) nos blocos escuros; grão SVG sutil. O dourado #C19A6B só como luz/superfície decorativa aqui — nunca como texto sobre o creme (2.30:1 reprova)"
+  },
+  "iconography": {
+    "style": "Linha fina (stroke 1.5px), cantos vivos ou levemente arredondados, grid 24x24 — gesto editorial vintage, nunca ícone gordo ou preenchido",
+    "color": "#7A5C2E sobre claro (nunca #C19A6B como ícone funcional pequeno sobre creme); #C19A6B sobre surface_dark #2A2117 (6.10:1 AA)",
+    "recommended_set": "Lucide ou Feather (open source, MIT), stroke ajustado para 1.5; ícones temáticos de trigo/pão/relógio para a narrativa de fermentação",
+    "usage": "Ícones sempre acompanhados de texto — nunca ícone sozinho como única affordance; ícones grandes decorativos (trigo, forno) podem usar #C19A6B como accent",
+    "decorative_shapes": "Filete horizontal 1px #C19A6B (48–96px) acima de eyebrows; selos pill 999px de fermentação; espigas de trigo lineares e vinhetas radiais — sempre aria-hidden"
+  },
+  "do_dont": {
+    "do": [
+      "Usar Newsreader itálico nos display_numbers de fermentação (48h, 100%, 1889) e em destaques curtos de processo",
+      "Reservar #C19A6B para accents, superfícies escuras e display ≥ 32px bold sobre #2A2117; usar #7A5C2E para texto e CTAs sobre creme",
+      "Colar seções escuras (0px) na anterior para o efeito de mergulho editorial na timeline de processo",
+      "Manter respiro generoso (144px desktop) no claro e densidade atmosférica no escuro",
+      "Usar sombras quentes base marrom-café (rgba(42,33,23,...)), nunca preto puro; glow_warm só para simular luz lateral",
+      "Botões com radius 2px, uppercase e tracking largo — o gesto vintage"
+    ],
+    "dont": [
+      "Usar #C19A6B (dourado-grão) como cor de texto sobre creme — falha AA (2.30:1); usar #7A5C2E (5.49:1)",
+      "Usar #8B7355 (marrom-pão) como texto normal sobre creme (3.99:1, só texto grande ≥24px); para texto normal usar #6B573F (6.10:1)",
+      "Arredondar fotografia ou containers — imagens sempre retas (radius 0); arredondamento só nos selos pill",
+      "Ultrapassar 4 itens em stagger ou animar mais rápido que 400ms — o ritmo lento É a mensagem",
+      "Usar tom infantil/fofinho ('pãozinho da vovó') — pertence ao DS 01.1",
+      "Urgência artificial ('ÚLTIMAS UNIDADES!!'), superlativos vazios ou emojis em headlines e CTAs",
+      "Encher a seção — uma ideia por seção, copy concentrado (máx 14 palavras no hero)"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500 e Lato:wght@400;700 com display=swap",
+    "js_budget": "Apenas 3 comportamentos: menu mobile (toggle + focus trap + Esc), IntersectionObserver para fade-in/reveal-lento/stagger-processo, navegação por setas do depoimento único. Zero frameworks obrigatórios; um único observer.",
+    "seo_local": "Schema.org Bakery/LocalBusiness com openingHours (fornadas), geo, telefone e makesOffer para produtos; título com bairro/cidade ('Padaria de fermentação natural na Vila Y — pão de levain')",
+    "whatsapp_cta": "Link wa.me com mensagem pré-preenchida de tom calmo/educativo ('Olá! Gostaria de reservar a fornada de sábado...'), coerente com o CTA 'Reserve seu pão' presente em nav, hero e seção de reserva",
+    "adaptation_guide": "Ao adaptar para outro segmento da mesma personalidade (queijaria de maturação, cervejaria artesanal, cafeteria de torra própria, fermentados): manter paleta dourado-grão/creme/marrom-café, Newsreader+Lato, motion lento (400–700ms) e a seção escura de processo. Trocar o vocabulário do voice_and_tone e os números concretos (48h → tempo de maturação/torra). A essência é o processo lento como argumento, não o pão."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "visual_uniqueness_note": "vs 01.1 (padaria acolhedora): mood editorial-artesanal, dourado-grão/creme (não terracota #B85C38), Newsreader+Lato (não Lora+Inter), copy concentrado com educação de processo (não recepção calorosa), seções escuras moody (01.1 não tem). vs 05.1 café: sem #8B5E3C/verde-musgo/Cormorant. vs 05.2 cerâmica: sem #9B6B47/preto-fumaça/Fraunces; composição própria com timeline educativa e hero split 5/7.",
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "artesanal",
+      "autentico",
+      "fermentacao-natural",
+      "editorial-moody",
+      "dourado-grao",
+      "serif-editorial",
+      "newsreader-lato",
+      "fotografia-moody",
+      "educacao-de-processo",
+      "negocio-local"
+    ],
+    "related_docs": [
+      "previews/markdown/05-3-padaria-fermentacao-natural.md",
+      "previews/html/05-3-padaria-fermentacao-natural.html",
+      "docs/05-3-padaria-fermentacao-natural/components.md",
+      "docs/05-3-padaria-fermentacao-natural/animations.css",
+      "docs/05-3-padaria-fermentacao-natural/accessibility-report.md",
+      "docs/05-3-padaria-fermentacao-natural/benchmarking.md",
+      "docs/05-3-padaria-fermentacao-natural/color-variations.md",
+      "docs/05-3-padaria-fermentacao-natural/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "padaria de fermentação natural com reserva/pré-venda online",
+      "confeitaria artesanal de processo lento",
+      "queijaria artesanal (maturação como narrativa)",
+      "cervejaria artesanal (fermentação como educação)",
+      "cafeteria com torra própria",
+      "produtores de fermentados (kombucha, kimchi, miso)"
+    ],
+    "conversion_factors": [
+      "educação como conversão: a timeline de fermentação transforma preço premium em valor compreendido — quem entende as 48h aceita pagar mais",
+      "escassez real e narrada com calma: 'fornadas limitadas' + calendário de fornadas cria urgência honesta e recorrência",
+      "reserva antecipada reduz perda de fornada e cria compromisso — CTA 'Reserve seu pão' presente em nav, hero e seção final",
+      "argumento de saúde (digestibilidade, quebra do glúten) captura o público que pesquisa antes de comprar",
+      "copy concentrado com números concretos (48h, levain de 9 anos) gera credibilidade imediata acima da dobra",
+      "fotografia moody diferencia de padarias comuns e sinaliza preço premium antes de qualquer texto"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "hero sem imagem raster (gradientes CSS) ou com WebP/AVIF preload ≤ 120KB; fonts com display=swap e preconnect; alvo LCP < 2.0s",
+      "cls_strategy": "blocos fotográficos com aspect-ratio fixo; fontes com fallback métrico (Georgia para Newsreader, Helvetica para Lato) via size-adjust; alvo CLS < 0.05",
+      "fid_inp_strategy": "zero frameworks pesados; IntersectionObserver único para reveals; alvo INP < 200ms",
+      "weight_budget": "página inicial ≤ 900KB com fotos, ≤ 250KB sem"
+    }
+  }
+}

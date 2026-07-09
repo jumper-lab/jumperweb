@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shulman Case Authority System</title>
+<style>
+:root{--primary:#123C69;--secondary:#B08D57;--surface:#F6F4EF;--alt:#E8E3D7;--text:#111827;--muted:#5B6472;--border:#C9C2B5;--ctaText:#FFFFFF;--heading:"Lora",serif;--body:"Inter",system-ui,sans-serif;--mono:"Roboto Mono",monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}a{color:inherit}.case{min-height:100vh;display:grid;grid-template-columns:1fr;background:var(--surface);color:var(--text)}
+.case__rail{padding:22px;border-right:1px solid var(--border);background:var(--primary);color:var(--ctaText);position:relative;top:0;height:auto}
+.case__page{padding:clamp(22px,5vw,78px);display:grid;gap:clamp(26px,5vw,64px)}
+.case__nav{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px;font-family:var(--mono);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.case__hero{display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,52px);align-items:center;min-height:62vh}
+.case__hero h1{font-family:var(--heading);font-size:clamp(3rem,7vw,7rem);line-height:.92;margin:0;max-width:14ch;color:inherit}
+.case__media{min-height:300px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(135deg,var(--alt),var(--secondary));box-shadow:0 24px 70px rgba(0,0,0,.16)}
+.case__cta,.case__submit{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--primary);color:var(--ctaText);border:0;border-radius:12px;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer}.case__hidden{display:none}
+.case__controls{display:flex;gap:8px;flex-wrap:wrap}.case__option{border:1px solid var(--border);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;cursor:pointer}.case__option[aria-pressed="true"]{background:var(--secondary);color:#111111;border-color:var(--secondary)}
+.case__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.case__item{text-align:left;min-height:150px;border:1px solid var(--border);background:#fff;color:inherit;border-radius:16px;padding:18px;cursor:pointer}.case__item[aria-pressed="true"]{outline:3px solid var(--secondary);transform:translateY(-3px)}
+.case__split{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:22px}.case__panel{border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 78%,white);padding:22px;border-radius:16px}
+.case__form{display:grid;gap:12px}.case__form label{display:grid;gap:6px;font-weight:800}.case__form input,.case__form select{min-height:44px;border:1px solid var(--border);background:#fff;color:var(--text);border-radius:8px;padding:10px}.case__form input:focus,.case__form select:focus,.case__option:focus-visible,.case__item:focus-visible,.case__chip:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.case__status{font-family:var(--mono);border-left:5px solid var(--secondary);padding:16px;background:var(--alt)}
+.case__sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.case__section-card{border-top:3px solid var(--primary);padding:16px;background:#fff}
+.case__palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.case__chip{background:var(--chip);color:var(--ink);min-height:88px;border:1px solid var(--border);padding:10px;text-align:left;display:grid;align-content:space-between;cursor:pointer;border-radius:10px}
+.case__audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.case__audit div{padding:16px;border:1px solid var(--border);background:var(--alt)}
+@media(max-width:860px){.case{display:block}.case__rail{position:relative;height:auto}.case__hero,.case__split{grid-template-columns:1fr}.case__audit{grid-template-columns:1fr}.case__page{padding:20px}.case__hero h1{font-size:clamp(3rem,18vw,6rem)}}
+@media(prefers-reduced-motion:no-preference){.case__item,.case__cta,.case__submit,.case__chip{transition:transform .2s ease,filter .2s ease}.case__item:hover,.case__chip:hover{transform:translateY(-3px)}.case__cta:hover,.case__submit:hover{filter:contrast(1.1)}}
+</style>
+</head>
+<body>
+<main class="case" data-mode="acidente">
+
+<div class="case__page">
+<nav class="case__nav"><strong>02.3 · Shulman Case Authority System</strong><span>case-docket</span></nav>
+<section class="case__hero" id="top">
+<div><p>docket juridico funcional</p><h1>authority headline with verdict/stat docket and immediate case evaluation lane</h1><p>confident, protective and direct</p><a class="case__cta" href="#form">Avaliar caso</a></div>
+<div class="case__media" aria-hidden="true"></div>
+</section>
+<section class="case__panel"><h2>Tipo de caso</h2><div class="case__controls"><button class="case__option" type="button" data-mode="acidente" aria-pressed="true">acidente</button>
+<button class="case__option" type="button" data-mode="trabalho" aria-pressed="false">trabalho</button>
+<button class="case__option" type="button" data-mode="indenizacao" aria-pressed="false">indenizacao</button></div><p class="case__status" aria-live="polite">Modo ativo: acidente · Resumo de avaliacao atualizado</p></section>
+<section><h2>Componentes funcionais</h2><div class="case__items"><button class="case__item" type="button" data-item="Resultado" aria-pressed="true"><span>01</span><strong>Resultado</strong><small>case-docket-tab</small></button>
+<button class="case__item" type="button" data-item="Advogado" aria-pressed="false"><span>02</span><strong>Advogado</strong><small>result-verdict-card</small></button>
+<button class="case__item" type="button" data-item="Direitos" aria-pressed="false"><span>03</span><strong>Direitos</strong><small>attorney-brief-card</small></button>
+<button class="case__item" type="button" data-item="Prazos" aria-pressed="false"><span>04</span><strong>Prazos</strong><small>rights-callout</small></button></div></section>
+<section class="case__split" id="form"><div class="case__panel"><h2>Formulario real do DS</h2><form class="case__form"><label>Nome<input name="field0" value="Exemplo teste" placeholder="Nome" /></label>
+<label>Caso<select name="field1"><option>acidente</option><option>trabalho</option><option>indenizacao</option></select></label>
+<label>Urgencia<input name="field2" value="" placeholder="Urgencia" /></label><button class="case__submit" type="submit">Avaliar caso</button></form></div><div class="case__panel"><h2>Resultado / estado</h2><p class="case__status case__output" aria-live="polite">Nenhum envio ainda.</p><p>O preview precisa testar foco, estado ativo, formulario, responsividade e copy do componente.</p></div></section>
+<section><h2>Fluxo de secoes coberto</h2><div class="case__sections"><article class="case__section-card"><span>01</span><h3>Case type docket</h3><p>case-docket-tab</p></article>
+<article class="case__section-card"><span>02</span><h3>Results evidence</h3><p>result-verdict-card</p></article>
+<article class="case__section-card"><span>03</span><h3>Attorney profiles</h3><p>attorney-brief-card</p></article>
+<article class="case__section-card"><span>04</span><h3>Process timeline</h3><p>rights-callout</p></article>
+<article class="case__section-card"><span>05</span><h3>Client rights explainer</h3><p>claim-intake-form</p></article>
+<article class="case__section-card"><span>06</span><h3>Case evaluation form</h3><p>legal-proof-band</p></article>
+<article class="case__section-card"><span>07</span><h3>FAQ by claim type</h3><p>case-docket-tab</p></article>
+<article class="case__section-card"><span>08</span><h3>Footer as legal brief</h3><p>result-verdict-card</p></article></div></section>
+<section><h2>Paleta clicavel</h2><div class="case__palette"><button class="case__chip" type="button" data-copy="#123C69" style="--chip:#123C69;--ink:#ffffff"><span>Primary</span><strong>#123C69</strong></button>
+<button class="case__chip" type="button" data-copy="#B08D57" style="--chip:#B08D57;--ink:#111111"><span>Secondary</span><strong>#B08D57</strong></button>
+<button class="case__chip" type="button" data-copy="#F6F4EF" style="--chip:#F6F4EF;--ink:#111111"><span>Surface</span><strong>#F6F4EF</strong></button>
+<button class="case__chip" type="button" data-copy="#E8E3D7" style="--chip:#E8E3D7;--ink:#111111"><span>Alt</span><strong>#E8E3D7</strong></button>
+<button class="case__chip" type="button" data-copy="#111827" style="--chip:#111827;--ink:#ffffff"><span>Text</span><strong>#111827</strong></button>
+<button class="case__chip" type="button" data-copy="#5B6472" style="--chip:#5B6472;--ink:#ffffff"><span>Muted</span><strong>#5B6472</strong></button>
+<button class="case__chip" type="button" data-copy="#C9C2B5" style="--chip:#C9C2B5;--ink:#111111"><span>Border</span><strong>#C9C2B5</strong></button></div></section>
+<section class="case__audit"><div><strong>Acessibilidade</strong><p>Focus ring, aria-live e touch target 44px.</p></div><div><strong>Responsivo</strong><p>Mobile preserva claim types become thumb-friendly docket tabs.</p></div><div><strong>Erro corrigido</strong><p>advocacia sem triagem de caso, prova e intake real.</p></div></section>
+</div>
+</main>
+<script>
+(() => {
+ const root = document.querySelector('.case');
+ const status = document.querySelector('.case__status');
+ const output = document.querySelector('.case__output');
+ document.querySelectorAll('.case__option').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.case__option').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  root.dataset.mode = btn.dataset.mode;
+  status.textContent = 'Modo ativo: ' + btn.dataset.mode + ' · Resumo de avaliacao atualizado';
+ }));
+ document.querySelectorAll('.case__item').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.case__item').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  output.textContent = 'Selecionado: ' + btn.dataset.item + ' · componente pronto para estado ativo.';
+ }));
+ document.querySelector('.case__form').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  output.textContent = 'Resumo de avaliacao atualizado: ' + [...data.values()].filter(Boolean).join(' / ');
+ });
+ document.querySelectorAll('.case__chip').forEach(chip => chip.addEventListener('click', async () => {
+  const value = chip.dataset.copy;
+  try { await navigator.clipboard.writeText(value); output.textContent = 'Cor copiada: ' + value; }
+  catch { output.textContent = 'Token selecionado: ' + value; }
+ }));
+})();
+</script>
+</body>
+</html>

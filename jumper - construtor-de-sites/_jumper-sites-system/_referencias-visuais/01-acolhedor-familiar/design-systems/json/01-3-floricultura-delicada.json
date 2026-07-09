@@ -1,0 +1,780 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "01.3",
+  "design_system_name": "Floricultura Delicada",
+  "category": "01 — Acolhedor e Familiar",
+  "subcategory": "Botânico editorial delicado — boutique floral premium",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Dahlia Floral & Event Design",
+    "url": "https://www.awwwards.com/sites/dahlia-floral-event-design",
+    "location": "Estados Unidos",
+    "awards": [
+      "Awwwards Nominee"
+    ],
+    "why_chosen": "Boutique floral de alto padrão com fotografia natural em destaque, muito ar entre seções e elegância sem artificialismo. Captura exatamente a essência buscada: a beleza das flores vende sozinha, o design apenas emoldura. Serve como referência estilística de ritmo editorial calmo e grid de produtos tratado como galeria — nunca como molde de layout.",
+    "additional_style_references": [
+      "Boutiques florais de luxo em geral: paleta suave, serifas com personalidade, movimento sutil que transmite delicadeza sem parecer 'template de e-commerce'."
+    ]
+  },
+  "colors": {
+    "primary": "#D4A5A5",
+    "primary_usage": "Rosa antigo — cor de identidade. Contraste baixo sobre claro (2.03:1 sobre surface), portanto NUNCA usar como texto ou fundo de CTA com texto claro. Usar como: superfícies de destaque (cards de coleção, faixas decorativas), fundos de badge com texto escuro, detalhes botânicos em SVG, bordas de hover e realces de galeria.",
+    "primary_deep": "#9C5C5C",
+    "primary_deep_usage": "Rosa profundo derivado do primary (mesmo matiz, menos luminância) para uso funcional: CTAs sólidos com texto branco (5.12:1), links, texto de destaque sobre claro (4.81:1). Ajuste documentado conforme regra de contraste da spec.",
+    "secondary": "#8FBC8F",
+    "secondary_usage": "Verde-jade — cor de natureza. Também decorativa sobre claro (2.02:1): usar em folhagens SVG, fundos de seção suaves, tags e detalhes. Para texto/ícone funcional usar secondary_deep.",
+    "secondary_deep": "#4E7A5A",
+    "secondary_deep_usage": "Jade profundo para texto funcional verde (4.63:1 sobre surface), estados de sucesso e links secundários.",
+    "surface": "#FBF7F4",
+    "surface_alt": "#F4E9E6",
+    "surface_jade": "#EEF3EC",
+    "text_primary": "#33302E",
+    "text_secondary": "#544A46",
+    "text_muted": "#7A6B65",
+    "border": "#E4D5D0",
+    "error": "#B4534E",
+    "success": "#4E7A5A",
+    "warning": "#8A5F28",
+    "neutral_scale": {
+      "50": "#FBF7F4",
+      "100": "#F4EDE9",
+      "200": "#E8DED9",
+      "300": "#D6C9C3",
+      "400": "#B3A49E",
+      "500": "#8E7F79",
+      "600": "#6E615C",
+      "700": "#544A46",
+      "800": "#3F3733",
+      "900": "#2B2523"
+    },
+    "gradients": {
+      "hero_backdrop": "radial-gradient(60% 50% at 85% 10%, #F4E9E6 0%, transparent 70%)",
+      "photo_sim_rose": "linear-gradient(160deg, #F4E9E6 0%, #EAD3CE 34%, #DDBDB9 62%, #C9DBC9 100%)",
+      "photo_sim_jade": "linear-gradient(165deg, #EEF3EC 0%, #C9DBC9 50%, #8FBC8F 100%)",
+      "footer_filete": "linear-gradient(90deg, #D4A5A5, #8FBC8F)",
+      "usage": "Gradientes simulam a luz suave da fotografia natural em previews e placeholders; em produção ficam atrás das fotos reais como cor de carregamento (evita flash branco e mantém CLS 0)."
+    },
+    "contrast_verification": {
+      "primary_on_surface": "2.03:1 — #D4A5A5 sobre #FBF7F4. REPROVADO para texto; aprovado apenas como cor decorativa/superfície (WCAG 1.4.11 não se aplica a decoração).",
+      "primary_deep_on_surface": "4.81:1 — #9C5C5C sobre #FBF7F4. Aprovado AA para texto normal (≥ 4.5:1).",
+      "white_on_primary_deep": "5.12:1 — #FFFFFF sobre #9C5C5C. Aprovado AA para texto de botão.",
+      "text_primary_on_surface": "12.30:1 — #33302E sobre #FBF7F4. Aprovado AAA.",
+      "text_secondary_on_surface": "8.06:1 — #544A46 sobre #FBF7F4. Aprovado AAA.",
+      "text_muted_on_surface": "4.78:1 — #7A6B65 sobre #FBF7F4. Aprovado AA para texto normal.",
+      "secondary_on_surface": "2.02:1 — #8FBC8F sobre #FBF7F4. Decorativo apenas.",
+      "secondary_deep_on_surface": "4.63:1 — #4E7A5A sobre #FBF7F4. Aprovado AA.",
+      "error_on_surface": "4.60:1 — #B4534E sobre #FBF7F4. Aprovado AA.",
+      "warning_on_surface": "5.26:1 — #8A5F28 sobre #FBF7F4. Aprovado AA.",
+      "notes": "Razões calculadas pela fórmula de luminância relativa WCAG 2.1. A paleta indicada no brief (#D4A5A5 / #8FBC8F) falha para texto, então foram derivados tons profundos do MESMO matiz (#9C5C5C e #4E7A5A) para todo uso funcional, preservando a essência rosa antigo + jade. Os tons claros originais permanecem como protagonistas visuais em superfícies e decoração."
+    }
+  },
+  "typography": {
+    "heading_font": "Fraunces",
+    "heading_font_source": "Google Fonts",
+    "heading_font_notes": "Serif com personalidade e eixos ópticos ('SOFT', 'WONK'). Usar peso 300–500, nunca bold pesado — a delicadeza vem do traço fino. Itálico em destaques poéticos.",
+    "body_font": "Inter",
+    "body_font_source": "Google Fonts",
+    "body_font_notes": "Neutra e legível, contrapõe a personalidade da Fraunces. Pesos 400 e 500 apenas.",
+    "mono_font": "não aplicável",
+    "base_size": "16px",
+    "scales": {
+      "mobile": {
+        "h1": {
+          "size": "34px",
+          "line_height": "1.15",
+          "weight": "350",
+          "letter_spacing": "-0.01em",
+          "font": "Fraunces"
+        },
+        "h2": {
+          "size": "26px",
+          "line_height": "1.2",
+          "weight": "400",
+          "letter_spacing": "-0.005em",
+          "font": "Fraunces"
+        },
+        "h3": {
+          "size": "20px",
+          "line_height": "1.3",
+          "weight": "450",
+          "letter_spacing": "0",
+          "font": "Fraunces"
+        },
+        "body": {
+          "size": "16px",
+          "line_height": "1.7",
+          "weight": "400",
+          "letter_spacing": "0",
+          "font": "Inter"
+        },
+        "small": {
+          "size": "14px",
+          "line_height": "1.6",
+          "weight": "400",
+          "letter_spacing": "0.01em",
+          "font": "Inter"
+        },
+        "eyebrow": {
+          "size": "12px",
+          "line_height": "1.4",
+          "weight": "500",
+          "letter_spacing": "0.14em",
+          "transform": "uppercase",
+          "font": "Inter"
+        }
+      },
+      "desktop": {
+        "h1": {
+          "size": "56px",
+          "line_height": "1.08",
+          "weight": "350",
+          "letter_spacing": "-0.015em",
+          "font": "Fraunces"
+        },
+        "h2": {
+          "size": "38px",
+          "line_height": "1.15",
+          "weight": "400",
+          "letter_spacing": "-0.01em",
+          "font": "Fraunces"
+        },
+        "h3": {
+          "size": "24px",
+          "line_height": "1.3",
+          "weight": "450",
+          "letter_spacing": "0",
+          "font": "Fraunces"
+        },
+        "body": {
+          "size": "17px",
+          "line_height": "1.75",
+          "weight": "400",
+          "letter_spacing": "0",
+          "font": "Inter"
+        },
+        "small": {
+          "size": "14px",
+          "line_height": "1.6",
+          "weight": "400",
+          "letter_spacing": "0.01em",
+          "font": "Inter"
+        },
+        "eyebrow": {
+          "size": "13px",
+          "line_height": "1.4",
+          "weight": "500",
+          "letter_spacing": "0.16em",
+          "transform": "uppercase",
+          "font": "Inter"
+        }
+      }
+    },
+    "fluid_recipe": "h1: clamp(2.125rem, 1.4rem + 2.6vw, 3.5rem); h2: clamp(1.625rem, 1.2rem + 1.5vw, 2.375rem); body: clamp(1rem, 0.96rem + 0.15vw, 1.0625rem)"
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — refletem exatamente as cores, tipografia, espaçamento, raios, sombras, durações e easings já definidos neste DS.",
+    "tokens": {
+      "--color-primary": "#D4A5A5",
+      "--color-primary-deep": "#9C5C5C",
+      "--color-primary-deeper": "#7E4949",
+      "--color-secondary": "#8FBC8F",
+      "--color-secondary-deep": "#4E7A5A",
+      "--color-surface": "#FBF7F4",
+      "--color-surface-alt": "#F4E9E6",
+      "--color-surface-jade": "#EEF3EC",
+      "--color-text": "#33302E",
+      "--color-text-secondary": "#544A46",
+      "--color-text-muted": "#7A6B65",
+      "--color-border": "#E4D5D0",
+      "--color-error": "#B4534E",
+      "--color-success": "#4E7A5A",
+      "--color-warning": "#8A5F28",
+      "--color-neutral-50": "#FBF7F4",
+      "--color-neutral-100": "#F4EDE9",
+      "--color-neutral-200": "#E8DED9",
+      "--color-neutral-300": "#D6C9C3",
+      "--color-neutral-400": "#B3A49E",
+      "--color-neutral-500": "#8E7F79",
+      "--color-neutral-600": "#6E615C",
+      "--color-neutral-700": "#544A46",
+      "--color-neutral-800": "#3F3733",
+      "--color-neutral-900": "#2B2523",
+      "--font-heading": "'Fraunces', Georgia, 'Times New Roman', serif",
+      "--font-body": "'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "--text-h1": "clamp(2.125rem, 1.4rem + 2.6vw, 3.5rem)",
+      "--text-h2": "clamp(1.625rem, 1.2rem + 1.5vw, 2.375rem)",
+      "--text-body": "clamp(1rem, 0.96rem + 0.15vw, 1.0625rem)",
+      "--text-small": "0.875rem",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "40px",
+      "--space-xxl": "64px",
+      "--space-xxxl": "104px",
+      "--space-xxxxl": "160px",
+      "--section-gap": "clamp(72px, 6vw + 40px, 160px)",
+      "--radius-sm": "6px",
+      "--radius-md": "12px",
+      "--radius-lg": "20px",
+      "--radius-xl": "32px",
+      "--radius-arch": "999px 999px 0 0",
+      "--radius-full": "9999px",
+      "--shadow-xs": "0 1px 2px rgba(51, 48, 46, 0.04)",
+      "--shadow-sm": "0 2px 8px rgba(51, 48, 46, 0.05)",
+      "--shadow-md": "0 6px 24px rgba(156, 92, 92, 0.08)",
+      "--shadow-lg": "0 14px 40px rgba(156, 92, 92, 0.10)",
+      "--shadow-xl": "0 24px 64px rgba(51, 48, 46, 0.12)",
+      "--duration-instant": "150ms",
+      "--duration-fast": "300ms",
+      "--duration-base": "500ms",
+      "--duration-slow": "700ms",
+      "--duration-slower": "900ms",
+      "--ease-petal": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "--ease-breeze": "cubic-bezier(0.33, 0, 0.15, 1)",
+      "--ease-linear-gentle": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "--container-max": "1240px",
+      "--content-max": "640px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "40px",
+      "xxl": "64px",
+      "xxxl": "104px",
+      "xxxxl": "160px"
+    },
+    "section_spacing": {
+      "mobile": "72px",
+      "tablet": "104px",
+      "desktop": "160px"
+    },
+    "section_spacing_notes": "Muito ar é parte da identidade: seções desktop respiram 160px verticais — mais que o padrão da categoria 01. O vazio emoldura a 'fotografia'.",
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "40px",
+      "container_desktop": "64px"
+    },
+    "container_max_width": "1240px",
+    "gutters": "mobile 16px / tablet 24px / desktop 32px"
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "6px",
+      "md": "12px",
+      "lg": "20px",
+      "xl": "32px",
+      "arch": "999px 999px 0 0",
+      "full": "9999px"
+    },
+    "radius_usage": {
+      "buttons": "full (pill) — delicadeza e feminilidade sem infantilizar",
+      "cards": "lg (20px) — suave, nunca quadrado seco",
+      "inputs": "md (12px)",
+      "images": "lg (20px) padrão; imagens-destaque do hero e da galeria usam 'arch' (arco botânico, topo arredondado total) como assinatura visual do DS",
+      "containers": "xl (32px) em faixas internas destacadas"
+    },
+    "stroke": {
+      "thin": "1px solid #E4D5D0",
+      "medium": "1.5px solid #D6C9C3"
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "xs": "0 1px 2px rgba(51, 48, 46, 0.04)",
+    "sm": "0 2px 8px rgba(51, 48, 46, 0.05)",
+    "md": "0 6px 24px rgba(156, 92, 92, 0.08)",
+    "lg": "0 14px 40px rgba(156, 92, 92, 0.10)",
+    "xl": "0 24px 64px rgba(51, 48, 46, 0.12)",
+    "shadow_usage": "Sombras quase imperceptíveis, sempre com tinta rosada (#9C5C5C em baixa opacidade) para manter o calor. md em cards de produto no hover; lg no card flutuante do hero; xl reservado a modais. Nunca sombras duras — a profundidade vem do ar, não do drop-shadow."
+  },
+  "motion": {
+    "durations": {
+      "instant": "150ms",
+      "fast": "300ms",
+      "base": "500ms",
+      "slow": "700ms",
+      "slower": "900ms"
+    },
+    "easings": {
+      "petal": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "breeze": "cubic-bezier(0.33, 0, 0.15, 1)",
+      "linear_gentle": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "animations": [
+      {
+        "name": "bloom-reveal",
+        "duration": "900ms",
+        "easing": "petal",
+        "trigger": "IntersectionObserver ao entrar 20% na viewport",
+        "description": "Fade-in lento com translateY(24px)→0 e leve scale(0.985)→1. Reveal-assinatura do DS: lento como flor abrindo."
+      },
+      {
+        "name": "parallax-delicado",
+        "duration": "contínuo (scroll-driven, fator 0.12)",
+        "easing": "linear_gentle",
+        "trigger": "scroll",
+        "description": "Camadas botânicas SVG do hero deslocam-se a 12% da velocidade do scroll. Sutileza máxima: deslocamento total ≤ 40px."
+      },
+      {
+        "name": "petal-hover",
+        "duration": "700ms",
+        "easing": "petal",
+        "trigger": "hover em card de produto",
+        "description": "Imagem escala 1.03 dentro de máscara fixa; card sobe 4px; sombra md aparece. Sem rotação, sem bounce."
+      },
+      {
+        "name": "stem-underline",
+        "duration": "500ms",
+        "easing": "breeze",
+        "trigger": "hover/focus em links de navegação",
+        "description": "Sublinhado orgânico cresce da esquerda (scaleX 0→1, transform-origin left) em jade profundo."
+      },
+      {
+        "name": "button-bloom",
+        "duration": "300ms",
+        "easing": "breeze",
+        "trigger": "hover/focus em botões",
+        "description": "Fundo escurece de #9C5C5C para #7E4949, elevação sutil de 2px. Sem mudança de tamanho."
+      },
+      {
+        "name": "gallery-stagger",
+        "duration": "900ms por item, delay 120ms entre itens",
+        "easing": "petal",
+        "trigger": "IntersectionObserver na grade de galeria",
+        "description": "Itens do grid assimétrico revelam em cascata lenta, coluna a coluna."
+      }
+    ],
+    "prefers_reduced_motion": true,
+    "reduced_motion_strategy": "Com prefers-reduced-motion: reduce, todos os reveals viram opacity-only 150ms, parallax é desligado (transform: none) e hovers mantêm apenas mudança de cor."
+  },
+  "components": {
+    "buttons": {
+      "variants": {
+        "primary": {
+          "background": "#9C5C5C",
+          "color": "#FFFFFF",
+          "border": "none",
+          "radius": "full",
+          "hover": {
+            "background": "#7E4949",
+            "transform": "translateY(-2px)",
+            "shadow": "sm"
+          },
+          "focus": {
+            "outline": "2px solid #9C5C5C",
+            "outline_offset": "3px"
+          },
+          "active": {
+            "background": "#6E3F3F",
+            "transform": "translateY(0)"
+          },
+          "disabled": {
+            "background": "#E8DED9",
+            "color": "#8E7F79",
+            "cursor": "not-allowed"
+          }
+        },
+        "secondary": {
+          "background": "transparent",
+          "color": "#9C5C5C",
+          "border": "1.5px solid #9C5C5C",
+          "radius": "full",
+          "hover": {
+            "background": "#F4E9E6",
+            "border_color": "#7E4949",
+            "color": "#7E4949"
+          },
+          "focus": {
+            "outline": "2px solid #9C5C5C",
+            "outline_offset": "3px"
+          },
+          "disabled": {
+            "border_color": "#E8DED9",
+            "color": "#B3A49E"
+          }
+        },
+        "ghost": {
+          "background": "transparent",
+          "color": "#4E7A5A",
+          "border": "none",
+          "underline": "stem-underline no hover",
+          "hover": {
+            "color": "#3D6147"
+          },
+          "focus": {
+            "outline": "2px solid #4E7A5A",
+            "outline_offset": "3px"
+          }
+        }
+      },
+      "sizes": {
+        "sm": {
+          "padding": "10px 22px",
+          "font_size": "14px",
+          "min_height": "40px"
+        },
+        "md": {
+          "padding": "14px 32px",
+          "font_size": "16px",
+          "min_height": "48px"
+        },
+        "lg": {
+          "padding": "18px 44px",
+          "font_size": "17px",
+          "min_height": "56px"
+        }
+      },
+      "notes": "Texto do botão em Inter 500. Nunca uppercase em botões — o tom é delicado, não gritado."
+    },
+    "cards": {
+      "product_gallery": {
+        "background": "#FFFFFF",
+        "radius": "20px",
+        "border": "1px solid #E4D5D0",
+        "padding": "0 (imagem sangrada) + 20px no corpo de texto",
+        "image": "topo em radius 20px 20px 0 0; itens-destaque da galeria usam arco (999px 999px 0 0)",
+        "hover": "petal-hover: imagem scale 1.03, card translateY(-4px), sombra md",
+        "content": "eyebrow (categoria) + h3 Fraunces + preço em Inter 500 + link ghost 'Ver detalhes'"
+      },
+      "editorial": {
+        "background": "#F4E9E6",
+        "radius": "32px",
+        "padding": "40px",
+        "usage": "blocos de história/manifesto, sem sombra, respiro interno generoso"
+      },
+      "service": {
+        "background": "#EEF3EC",
+        "radius": "20px",
+        "padding": "32px",
+        "icon": "SVG botânico linha fina em #4E7A5A, 40px",
+        "usage": "serviços (eventos, assinaturas, ateliê)"
+      }
+    },
+    "inputs": {
+      "default": {
+        "background": "#FFFFFF",
+        "border": "1.5px solid #D6C9C3",
+        "radius": "12px",
+        "padding": "14px 18px",
+        "font": "Inter 16px",
+        "placeholder_color": "#7A6B65",
+        "label": "Inter 500 14px #544A46, acima do campo, margin-bottom 8px"
+      },
+      "focus": {
+        "border": "1.5px solid #9C5C5C",
+        "shadow": "0 0 0 3px rgba(212, 165, 165, 0.35)",
+        "outline": "none (substituído pelo ring)"
+      },
+      "error": {
+        "border": "1.5px solid #B4534E",
+        "message": "Inter 14px #B4534E com ícone, abaixo do campo",
+        "aria": "aria-invalid='true' + aria-describedby apontando para a mensagem"
+      },
+      "success": {
+        "border": "1.5px solid #4E7A5A"
+      },
+      "disabled": {
+        "background": "#F4EDE9",
+        "color": "#8E7F79"
+      }
+    },
+    "hero": {
+      "layout": "Assimétrico 7/5: coluna esquerda com eyebrow + H1 poético + parágrafo curto + CTA duplo; coluna direita com composição fotográfica em arco (radius 999px 999px 0 0) sobreposta por camada botânica SVG em parallax delicado. Em mobile, imagem em arco vem ACIMA do texto (a flor primeiro).",
+      "background": "#FBF7F4 com gradiente radial sutilíssimo rosa (#F4E9E6) no canto superior direito",
+      "height": "min-height 88vh desktop / auto mobile",
+      "media_treatment": "sem imagens externas em preview: gradientes suaves + SVG botânico inline simulando fotografia natural",
+      "cta_pattern": "primário 'Monte seu buquê' + ghost 'Conheça o ateliê'"
+    },
+    "navigation": {
+      "type": "header fixo translúcido: rgba(251, 247, 244, 0.88) com backdrop-filter blur(12px)",
+      "height": "76px desktop / 64px mobile",
+      "logo": "wordmark em Fraunces 450, com marca botânica SVG opcional",
+      "links": "Inter 15px #544A46, hover com stem-underline jade",
+      "cta": "botão primary sm no canto direito",
+      "mobile": "menu hambúrguer → painel deslizante da direita, fundo #F4E9E6, links em Fraunces 24px, transição 500ms breeze"
+    },
+    "footer": {
+      "background": "#2B2523",
+      "text": "#E8DED9 (contraste 10.9:1 sobre #2B2523)",
+      "accent": "títulos de coluna em Fraunces itálico #D4A5A5 (contraste 6.7:1 sobre #2B2523 — aprovado AA)",
+      "structure": "4 colunas desktop (marca+manifesto curto / navegação / atendimento / horário e endereço) → 1 coluna mobile",
+      "details": "filete superior de 3px em gradiente rosa→jade; selo 'feito à mão' em SVG"
+    },
+    "testimonials": {
+      "layout": "carrossel lento de 1 depoimento por vez, sem autoplay agressivo (8s, pausa no hover, controles visíveis)",
+      "style": "aspas grandes em Fraunces itálico #D4A5A5, texto do depoimento em Fraunces 22px #33302E, autor em Inter 14px #7A6B65",
+      "background": "seção em #F4E9E6 com pétalas SVG decorativas nos cantos (aria-hidden)"
+    },
+    "badges": {
+      "style": "pill, fundo #D4A5A5 com texto #33302E (contraste 6.05:1... ver nota) ou fundo #EEF3EC com texto #4E7A5A",
+      "usage": "'Colheita da semana', 'Edição limitada', 'Entrega hoje'",
+      "note": "badge rosa usa texto escuro #33302E sobre #D4A5A5 (6.05:1 aprovado AA); nunca texto branco sobre rosa claro"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Poético mas direto. Frases curtas com imagem sensorial, seguidas de instrução clara. Fala com quem presenteia e com quem celebra — mulheres em maioria, pessoas que valorizam beleza natural. Nunca meloso, nunca técnico.",
+    "headline_examples": [
+      "Flores que contam a sua história.",
+      "Colhidas de manhã, entregues com carinho.",
+      "Cada buquê é um pedaço de jardim.",
+      "A natureza já fez o mais bonito. Nós arrumamos o laço."
+    ],
+    "cta_examples": [
+      "Monte seu buquê",
+      "Quero presentear",
+      "Ver flores da semana",
+      "Falar com o ateliê"
+    ],
+    "microcopy_examples": [
+      "Entregamos hoje em toda a cidade — pedidos até 15h.",
+      "Escreva seu cartão. A gente caprichar na letra é por nossa conta.",
+      "Suas flores chegam frescas ou seu dinheiro de volta."
+    ],
+    "avoid": [
+      "Jargão de e-commerce agressivo ('COMPRE JÁ', 'OFERTA IMPERDÍVEL', contadores de urgência)",
+      "Adjetivos vazios empilhados ('lindas', 'maravilhosas', 'incríveis')",
+      "Tom infantil ou excesso de diminutivos ('florzinha', 'presentinho')",
+      "Linguagem artificial de luxo ('exclusivíssimo', 'premium experience')",
+      "CAPS LOCK e mais de um ponto de exclamação"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas / max-width 1240px / gutter 32px. Assinatura do DS: grade de galeria ASSIMÉTRICA — colunas alternam alturas (item par com margin-top 56px no desktop), misturando cards em arco e cards retos, como um jardim plantado à mão e não em fileira.",
+    "page_flow": [
+      {
+        "section": "hero",
+        "layout": "assimétrico 7/5, texto à esquerda, composição em arco à direita com parallax delicado"
+      },
+      {
+        "section": "manifesto-curto",
+        "layout": "1 coluna centrada, max-width 640px, Fraunces itálico 24px, MUITO ar acima e abaixo (160px)"
+      },
+      {
+        "section": "galeria-de-flores",
+        "layout": "grid assimétrico 3 colunas desktop / 2 tablet / 1 mobile, com gallery-stagger; alterna card em arco e card reto"
+      },
+      {
+        "section": "como-funciona",
+        "layout": "3 passos horizontais com numeração em Fraunces gigante (96px, cor #D4A5A5) e texto curto"
+      },
+      {
+        "section": "servicos",
+        "layout": "2 cards grandes lado a lado (eventos / assinatura semanal), fundo jade suave"
+      },
+      {
+        "section": "depoimento",
+        "layout": "1 depoimento por vez, centrado, fundo rosa pó"
+      },
+      {
+        "section": "cta-final",
+        "layout": "faixa centrada com headline poética + botão primary lg, filete botânico SVG"
+      },
+      {
+        "section": "footer",
+        "layout": "4 colunas sobre fundo #2B2523"
+      }
+    ],
+    "image_treatment": "Fotografia natural com luz suave é a alma do DS. Em previews/protótipos: gradientes suaves (rosa pó → jade claro) com SVG botânico inline por cima. Máscaras em arco (topo totalmente arredondado) são a assinatura. Nunca filtros saturados, nunca duotone artificial.",
+    "density": "Baixa. Máximo 3 elementos de informação por dobra. A página inteira deve parecer uma vitrine com poucas peças bem escolhidas.",
+    "whitespace": "Generoso ao extremo: 160px entre seções no desktop, 640px de largura máxima para blocos de leitura, respiro interno de 40px em cards editoriais. O vazio é tratado como material de design."
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "body_text": "#33302E sobre #FBF7F4 = 12.30:1 (AAA)",
+      "secondary_text": "#544A46 sobre #FBF7F4 = 8.06:1 (AAA)",
+      "muted_text": "#7A6B65 sobre #FBF7F4 = 4.78:1 (AA)",
+      "cta": "#FFFFFF sobre #9C5C5C = 5.12:1 (AA)",
+      "links": "#9C5C5C sobre #FBF7F4 = 4.81:1 (AA) + sublinhado em contexto de corrido",
+      "decorative_only": "#D4A5A5 e #8FBC8F reservados a decoração/superfícies — nunca carregam informação sozinhos"
+    },
+    "keyboard_navigation": "Toda a navegação operável por Tab/Shift+Tab; carrossel de depoimentos com botões reais <button> e suporte a setas; menu mobile com focus trap e fechamento por Esc; skip-link 'Ir para o conteúdo' visível no focus.",
+    "focus_states": "Anel de 2px na cor funcional do componente (#9C5C5C ou #4E7A5A) com outline-offset 3px — visível sobre qualquer superfície do DS. Nunca outline: none sem substituto.",
+    "alt_text": "Fotografias de produto com alt descritivo ('Buquê de peônias rosa com eucalipto'); SVGs botânicos decorativos com aria-hidden='true'.",
+    "semantic_html": "header/nav/main/section/article/footer; um único h1 por página; galeria em <ul>; preços com texto real (não pseudo-elementos).",
+    "touch_targets": "44px minimum — botões md têm 48px de altura; links de navegação mobile com padding que garante 44×44px.",
+    "motion": "prefers-reduced-motion respeitado em 100% das animações; parallax desligado; carrossel sem autoplay quando reduce ativo."
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Coluna única, a flor primeiro: composição em arco (radius 999px 999px 0 0) no topo → eyebrow → H1 34px poético → parágrafo curto → CTA duplo empilhado (primário 'Monte seu buquê' + ghost 'Conheça o ateliê'). min-height auto.",
+      "tablet": "Coluna única centralizada com o arco maior; CTAs lado a lado; parallax delicado ativo com deslocamento reduzido.",
+      "desktop": "Assimétrico 7/5, texto à esquerda verticalmente centrado, composição em arco à direita sob camada botânica SVG em parallax (fator 0.12, deslocamento ≤ 40px). min-height 88vh."
+    },
+    "galeria_de_flores": {
+      "mobile": "1 coluna, cards full-width, gap 16px, sem deslocamento assimétrico (alturas iguais).",
+      "tablet": "2 colunas, gap 24px, começa alternância de arco e card reto.",
+      "desktop": "grid assimétrico 3 colunas, gap 32px, itens pares com margin-top 56px, alterna card em arco e card reto, revelação gallery-stagger (delay 120ms)."
+    },
+    "navigation": {
+      "mobile_tablet": "Logo wordmark Fraunces + hambúrguer (toque 44px); painel deslizante da direita fundo #F4E9E6, links Fraunces 24px, transição 500ms breeze, focus trap + fecha por Esc.",
+      "desktop": "Header fixo translúcido 76px (rgba(251,247,244,0.88) + blur 12px), logo + links Inter 15px com stem-underline jade + botão primary sm à direita."
+    },
+    "footer": {
+      "mobile": "4 colunas empilhadas em 1, atendimento e horário/endereço primeiro; filete superior rosa→jade mantido.",
+      "desktop": "4 colunas sobre #2B2523 (marca+manifesto / navegação / atendimento / horário e endereço) com filete botânico de 3px."
+    },
+    "touch_adjustments": "petal-hover vira estado :active discreto (translateY 0, sombra sm) no touch; carrossel de depoimentos com scroll-snap nativo; alvos de toque mínimos de 44×44px em links e botões."
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente, coerentes com os estados já descritos em components.",
+    "button_primary": ["default (#9C5C5C, texto #FFFFFF)", "hover (button-bloom: fundo #7E4949, translateY(-2px), sombra sm)", "focus-visible (outline 2px #9C5C5C, offset 3px)", "active (#6E3F3F, translateY(0))", "disabled (fundo #E8DED9, texto #8E7F79, not-allowed)", "loading (spinner 16px branco + texto 'Enviando...')"],
+    "button_secondary": ["default (borda 1.5px #9C5C5C, texto #9C5C5C)", "hover (fundo #F4E9E6, borda/texto #7E4949)", "focus-visible (outline 2px #9C5C5C, offset 3px)", "disabled (borda #E8DED9, texto #B3A49E)"],
+    "link_nav": ["default (Inter 15px #544A46)", "hover (stem-underline jade cresce da esquerda)", "focus-visible (outline 2px #4E7A5A, offset 3px)", "current (sublinhado jade fixo)"],
+    "card_product_gallery": ["default (fundo #FFFFFF, radius 20px, borda #E4D5D0)", "hover (petal-hover: imagem scale 1.03, translateY(-4px), sombra md)", "focus-within"],
+    "input": ["default (borda 1.5px #D6C9C3, radius 12px)", "focus (borda 1.5px #9C5C5C + ring 3px rgba(212,165,165,0.35))", "filled", "error (borda #B4534E + mensagem com ícone + aria-invalid/aria-describedby)", "success (borda #4E7A5A)", "disabled (fundo #F4EDE9, texto #8E7F79)"],
+    "nav_header": ["topo (fundo translúcido, sem sombra)", "rolado (blur 12px reforçado)", "menu mobile aberto (painel direito, focus trap, fecha por Esc)"]
+  },
+  "photography_direction": {
+    "style": "Fotografia natural de luz suave — a beleza das flores vende sozinha, o enquadramento apenas emoldura. Editorial botânico calmo, nunca 'template de e-commerce'.",
+    "subjects": [
+      "Buquês e arranjos em close com profundidade de campo rasa",
+      "Mãos amarrando o laço ou colhendo caules, gesto delicado",
+      "Detalhe macro de pétalas, orvalho e textura de folhagem",
+      "Ateliê floral em luz de manhã, baldes e mesa de trabalho",
+      "Ocasião emocional (cartão, entrega, mesa de celebração) sem excesso de encenação"
+    ],
+    "light": "Natural e difusa, luz de manhã lateral suave; sombras leves e macias. Golden hour para externas do ateliê.",
+    "color_grading": "Temperatura neutra a levemente quente, saturação natural que preserve o rosa antigo e o verde-jade. Proibido: filtros saturados, duotone artificial, HDR, dessaturação dramática.",
+    "framing": "Composição arejada, muito espaço negativo em volta do arranjo; máscara em arco (topo totalmente arredondado, radius 999px 999px 0 0) como assinatura do DS em imagens-destaque.",
+    "avoid": [
+      "Filtros saturados ou duotone artificial",
+      "Fundos poluídos ou props em excesso — a densidade é baixa",
+      "Stock genérico de e-commerce com fundo branco duro e flash frontal",
+      "Recortes apertados sem respiro — o vazio é material de design"
+    ],
+    "fallback_sem_foto": "Gradientes que simulam a luz suave da fotografia natural: photo_sim_rose (linear-gradient(160deg, #F4E9E6 0%, #EAD3CE 34%, #DDBDB9 62%, #C9DBC9 100%)) e photo_sim_jade (linear-gradient(165deg, #EEF3EC 0%, #C9DBC9 50%, #8FBC8F 100%)) sob SVG botânico inline em linha fina. Cores claras (#D4A5A5, #8FBC8F) só como superfície/decoração — nunca carregam texto. Em produção os gradientes ficam atrás das fotos como cor de carregamento (evita flash branco, mantém CLS 0)."
+  },
+  "iconography": {
+    "style": "Linha fina (stroke 1.5px), traço botânico orgânico, cantos arredondados (stroke-linecap round), grid 24x24; ícones de serviço em 40px.",
+    "color": "#4E7A5A (jade profundo) sobre claro, #D4A5A5 (rosa antigo) sobre o footer escuro #2B2523.",
+    "recommended_set": "Lucide ou Feather (open source, MIT) com stroke ajustado para 1.5, complementados por SVGs botânicos autorais (folhas, caules, pétalas) para os detalhes-assinatura.",
+    "usage": "Ícone sempre acompanhado de texto — nunca como única affordance; ícones de serviço em SVG botânico linha fina #4E7A5A a 40px nos cards de serviço.",
+    "decorative_shapes": "Arcos botânicos (radius 999px 999px 0 0), pétalas e folhagens SVG nos cantos de seções e filete rosa→jade — sempre aria-hidden='true'."
+  },
+  "do_dont": {
+    "do": [
+      "Usar #D4A5A5 e #8FBC8F como protagonistas visuais em superfícies, arcos e decoração",
+      "Reservar #9C5C5C e #4E7A5A para todo texto, link e ação (contraste AA)",
+      "Deixar 160px de ar entre seções no desktop — o vazio é material de design",
+      "Usar o arco botânico (radius 999px 999px 0 0) como assinatura em imagens-destaque",
+      "Manter reveals lentos (900ms) e parallax ≤ 40px de deslocamento",
+      "Sombras suaves com tinta rosada (#9C5C5C em baixa opacidade), nunca preto puro",
+      "Escrever poético mas direto: imagem sensorial curta + instrução clara"
+    ],
+    "dont": [
+      "Nunca usar #D4A5A5 como texto sobre surface (2.03:1 — falha AA; usar #9C5C5C)",
+      "Nunca usar #8FBC8F como texto sobre surface (2.02:1 — decorativo apenas; usar #4E7A5A)",
+      "Nunca texto branco sobre rosa claro #D4A5A5 em badges — usar texto escuro #33302E",
+      "Nunca uppercase em botões nem mais de um ponto de exclamação",
+      "Nunca bounce, elastic ou rotação nas animações — a delicadeza é o limite",
+      "Nunca pop-up de desconto na entrada nem contadores de urgência artificiais",
+      "Nunca comprimir o espaçamento de seção para caber mais conteúdo"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,450;0,9..144,500;1,9..144,400 e Inter:wght@400;500 com display=swap. Explorar eixos ópticos 'SOFT'/'WONK' da Fraunces com moderação.",
+    "js_budget": "Apenas 4 comportamentos: menu mobile (toggle + focus trap), IntersectionObserver único para reveals (bloom-reveal, gallery-stagger), parallax delicado via requestAnimationFrame + translate3d, carrossel de depoimentos lento sem autoplay agressivo. Zero bibliotecas de animação, zero frameworks obrigatórios.",
+    "seo_local": "Schema.org LocalBusiness/Florist com horários, geo, telefone e área de entrega; título com bairro/cidade ('Floricultura X — Buquês e arranjos na Vila Y').",
+    "whatsapp_cta": "Link wa.me com mensagem pré-preenchida gentil ('Oi! Vi o site de vocês e queria montar um buquê para...') — negócio local vive de conversa; repetir no footer e no CTA final.",
+    "adaptation_guide": "Ao adaptar para outro segmento da mesma personalidade (ateliê floral, decoração de eventos, presentes artesanais, paisagismo, assinatura de flores): manter paleta rosa antigo + jade, Fraunces + Inter, motion delicado, arcos e grid assimétrico; trocar apenas o vocabulário do voice_and_tone e a metáfora fotográfica. A essência é a delicadeza botânica editorial, não a flor específica."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "visual_uniqueness_notes": "Distinto dos irmãos da categoria 01: 01.1 é terracota+Lora (mood padaria rústica), 01.2 é azul-céu+Nunito (mood pediatria lúdica). 01.3 é rosa antigo+Fraunces com grid assimétrico de galeria, arcos botânicos e reveals lentos — mood botânico editorial.",
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true,
+    "flexibility_notes": "Serve floricultura, ateliê floral, decoração de eventos, presentes artesanais e paisagismo residencial trocando fotografia e microcopy — os tokens permanecem."
+  },
+  "do_and_dont": {
+    "do": [
+      "Usar #D4A5A5 e #8FBC8F como protagonistas visuais em superfícies, arcos e decoração",
+      "Reservar #9C5C5C e #4E7A5A para todo texto, link e ação",
+      "Deixar 160px de ar entre seções no desktop — o vazio é material de design",
+      "Usar o arco botânico (radius 999px 999px 0 0) como assinatura em imagens-destaque",
+      "Manter reveals lentos (900ms) e parallax ≤ 40px de deslocamento",
+      "Escrever poético mas direto: imagem sensorial curta + instrução clara"
+    ],
+    "dont": [
+      "Nunca texto claro sobre #D4A5A5 ou #8FBC8F (contraste ~2:1)",
+      "Nunca uppercase em botões nem mais de um ponto de exclamação",
+      "Nunca bounce, elastic ou rotação nas animações — a delicadeza é o limite",
+      "Nunca pop-up de desconto na entrada nem contadores de urgência artificiais",
+      "Nunca comprimir o espaçamento de seção para caber mais conteúdo",
+      "Nunca copiar layout da referência de inspiração — capturar apenas essência"
+    ]
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "acolhedor",
+      "familiar",
+      "rosa-antigo",
+      "jade",
+      "serif-fraunces",
+      "botanico",
+      "editorial-delicado",
+      "floricultura",
+      "grid-assimetrico",
+      "arco-botanico",
+      "whitespace-generoso"
+    ],
+    "related_docs": [
+      "previews/markdown/01-3-floricultura-delicada.md",
+      "previews/html/01-3-floricultura-delicada.html",
+      "docs/01-3-floricultura-delicada/components.md",
+      "docs/01-3-floricultura-delicada/animations.css",
+      "docs/01-3-floricultura-delicada/accessibility-report.md",
+      "docs/01-3-floricultura-delicada/benchmarking.md",
+      "docs/01-3-floricultura-delicada/color-variations.md",
+      "docs/01-3-floricultura-delicada/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Floricultura de bairro com posicionamento premium",
+      "Ateliê floral / florista autoral",
+      "Decoração de eventos e casamentos",
+      "Presentes artesanais e cestas",
+      "Paisagismo residencial",
+      "Assinatura de flores semanais"
+    ],
+    "conversion_factors": [
+      "Hero com CTA duplo ('Monte seu buquê' + rota de descoberta) atende compra por impulso e compra pesquisada",
+      "Grid-galeria com preço visível reduz atrito: beleza + informação no mesmo card",
+      "Prova de frescor ('colhidas de manhã', 'entrega hoje até 15h') responde à principal objeção do segmento",
+      "Depoimentos com contexto de ocasião (casamento, aniversário) ativam projeção emocional",
+      "Seção 'como funciona' em 3 passos desarma a percepção de que encomendar arranjo é complicado",
+      "WhatsApp/contato direto no footer e no CTA final — negócio local vive de conversa"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "Hero sem imagem raster obrigatória (gradiente+SVG inline) → LCP é o H1; fontes com font-display: swap e preconnect a fonts.gstatic.com",
+      "cls_strategy": "Dimensões reservadas para toda mídia (aspect-ratio nos cards); animações só com transform/opacity",
+      "inp_strategy": "IntersectionObserver único para todos os reveals; parallax com requestAnimationFrame + translate3d; zero bibliotecas de animação",
+      "targets": {
+        "LCP": "< 2.5s",
+        "INP": "< 200ms",
+        "CLS": "< 0.1"
+      }
+    }
+  }
+}

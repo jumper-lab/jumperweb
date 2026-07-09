@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Noomo Lab Console System</title>
+<style>
+:root{--primary:#060B12;--secondary:#4F7CFF;--surface:#EAF1FF;--alt:#D9E7FF;--text:#1A2433;--muted:#526070;--border:#9AB8FF;--ctaText:#FFFFFF;--heading:"Space Grotesk",serif;--body:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}a{color:inherit}.lab{min-height:100vh;display:grid;grid-template-columns:1fr;background:var(--surface);color:var(--text)}
+.lab__rail{padding:22px;border-right:1px solid var(--border);background:color-mix(in srgb,var(--surface) 86%,white);color:inherit;position:relative;top:0;height:auto}
+.lab__page{padding:clamp(22px,5vw,78px);display:grid;gap:clamp(26px,5vw,64px)}
+.lab__nav{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px;font-family:var(--mono);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.lab__hero{display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,52px);align-items:center;min-height:62vh}
+.lab__hero h1{font-family:var(--heading);font-size:clamp(3rem,7vw,7rem);line-height:.92;margin:0;max-width:14ch;color:inherit}
+.lab__media{min-height:300px;border:1px solid var(--border);border-radius:18px;background:repeating-linear-gradient(0deg,#fff 0 32px,var(--alt) 32px 64px);box-shadow:0 24px 70px rgba(0,0,0,.16)}
+.lab__cta,.lab__submit{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--primary);color:var(--ctaText);border:0;border-radius:12px;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer}.lab__hidden{display:none}
+.lab__controls{display:flex;gap:8px;flex-wrap:wrap}.lab__option{border:1px solid var(--border);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;cursor:pointer}.lab__option[aria-pressed="true"]{background:var(--secondary);color:#111111;border-color:var(--secondary)}
+.lab__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.lab__item{text-align:left;min-height:150px;border:1px solid var(--border);background:#fff;color:inherit;border-radius:16px;padding:18px;cursor:pointer}.lab__item[aria-pressed="true"]{outline:3px solid var(--secondary);transform:translateY(-3px)}
+.lab__split{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:22px}.lab__panel{border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 78%,white);padding:22px;border-radius:16px}
+.lab__form{display:grid;gap:12px}.lab__form label{display:grid;gap:6px;font-weight:800}.lab__form input,.lab__form select{min-height:44px;border:1px solid var(--border);background:#fff;color:var(--text);border-radius:8px;padding:10px}.lab__form input:focus,.lab__form select:focus,.lab__option:focus-visible,.lab__item:focus-visible,.lab__chip:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.lab__status{font-family:var(--mono);border-left:5px solid var(--secondary);padding:16px;background:var(--alt)}
+.lab__sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.lab__section-card{border-top:3px solid var(--primary);padding:16px;background:#fff}
+.lab__palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.lab__chip{background:var(--chip);color:var(--ink);min-height:88px;border:1px solid var(--border);padding:10px;text-align:left;display:grid;align-content:space-between;cursor:pointer;border-radius:10px}
+.lab__audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.lab__audit div{padding:16px;border:1px solid var(--border);background:var(--alt)}
+@media(max-width:860px){.lab{display:block}.lab__rail{position:relative;height:auto}.lab__hero,.lab__split{grid-template-columns:1fr}.lab__audit{grid-template-columns:1fr}.lab__page{padding:20px}.lab__hero h1{font-size:clamp(3rem,18vw,6rem)}}
+@media(prefers-reduced-motion:no-preference){.lab__item,.lab__cta,.lab__submit,.lab__chip{transition:transform .2s ease,filter .2s ease}.lab__item:hover,.lab__chip:hover{transform:translateY(-3px)}.lab__cta:hover,.lab__submit:hover{filter:contrast(1.1)}}
+</style>
+</head>
+<body>
+<main class="lab" data-mode="audit">
+
+<div class="lab__page">
+<nav class="lab__nav"><strong>04.1 · Noomo Lab Console System</strong><span>lab-console</span></nav>
+<section class="lab__hero" id="top">
+<div><p>console tecnico</p><h1>console hero with live metrics, system cards and capability command prompt</h1><p>precise, experimental and evidence-led</p><a class="lab__cta" href="#form">Executar diagnostico</a></div>
+<div class="lab__media" aria-hidden="true"></div>
+</section>
+<section class="lab__panel"><h2>Comando</h2><div class="lab__controls"><button class="lab__option" type="button" data-mode="audit" aria-pressed="true">audit</button>
+<button class="lab__option" type="button" data-mode="prototype" aria-pressed="false">prototype</button>
+<button class="lab__option" type="button" data-mode="deploy" aria-pressed="false">deploy</button></div><p class="lab__status" aria-live="polite">Modo ativo: audit · Console output atualizado</p></section>
+<section><h2>Componentes funcionais</h2><div class="lab__items"><button class="lab__item" type="button" data-item="Metric proof" aria-pressed="true"><span>01</span><strong>Metric proof</strong><small>console-command-bar</small></button>
+<button class="lab__item" type="button" data-item="Stack node" aria-pressed="false"><span>02</span><strong>Stack node</strong><small>metric-proof-card</small></button>
+<button class="lab__item" type="button" data-item="Sprint" aria-pressed="false"><span>03</span><strong>Sprint</strong><small>stack-diagram-node</small></button>
+<button class="lab__item" type="button" data-item="Case terminal" aria-pressed="false"><span>04</span><strong>Case terminal</strong><small>sprint-stepper</small></button></div></section>
+<section class="lab__split" id="form"><div class="lab__panel"><h2>Formulario real do DS</h2><form class="lab__form"><label>Empresa<input name="field0" value="Exemplo teste" placeholder="Empresa" /></label>
+<label>Comando<select name="field1"><option>audit</option><option>prototype</option><option>deploy</option></select></label>
+<label>Prioridade<input name="field2" value="" placeholder="Prioridade" /></label><button class="lab__submit" type="submit">Executar diagnostico</button></form></div><div class="lab__panel"><h2>Resultado / estado</h2><p class="lab__status lab__output" aria-live="polite">Nenhum envio ainda.</p><p>O preview precisa testar foco, estado ativo, formulario, responsividade e copy do componente.</p></div></section>
+<section><h2>Fluxo de secoes coberto</h2><div class="lab__sections"><article class="lab__section-card"><span>01</span><h3>Capability console</h3><p>console-command-bar</p></article>
+<article class="lab__section-card"><span>02</span><h3>Prototype lab cards</h3><p>metric-proof-card</p></article>
+<article class="lab__section-card"><span>03</span><h3>Technical proof matrix</h3><p>stack-diagram-node</p></article>
+<article class="lab__section-card"><span>04</span><h3>Stack diagram</h3><p>sprint-stepper</p></article>
+<article class="lab__section-card"><span>05</span><h3>Process sprints</h3><p>case-terminal-panel</p></article>
+<article class="lab__section-card"><span>06</span><h3>Case-study terminal</h3><p>system-status-footer</p></article>
+<article class="lab__section-card"><span>07</span><h3>Contact command</h3><p>console-command-bar</p></article>
+<article class="lab__section-card"><span>08</span><h3>Footer as system status</h3><p>metric-proof-card</p></article></div></section>
+<section><h2>Paleta clicavel</h2><div class="lab__palette"><button class="lab__chip" type="button" data-copy="#060B12" style="--chip:#060B12;--ink:#ffffff"><span>Primary</span><strong>#060B12</strong></button>
+<button class="lab__chip" type="button" data-copy="#4F7CFF" style="--chip:#4F7CFF;--ink:#111111"><span>Secondary</span><strong>#4F7CFF</strong></button>
+<button class="lab__chip" type="button" data-copy="#EAF1FF" style="--chip:#EAF1FF;--ink:#111111"><span>Surface</span><strong>#EAF1FF</strong></button>
+<button class="lab__chip" type="button" data-copy="#D9E7FF" style="--chip:#D9E7FF;--ink:#111111"><span>Alt</span><strong>#D9E7FF</strong></button>
+<button class="lab__chip" type="button" data-copy="#1A2433" style="--chip:#1A2433;--ink:#ffffff"><span>Text</span><strong>#1A2433</strong></button>
+<button class="lab__chip" type="button" data-copy="#526070" style="--chip:#526070;--ink:#ffffff"><span>Muted</span><strong>#526070</strong></button>
+<button class="lab__chip" type="button" data-copy="#9AB8FF" style="--chip:#9AB8FF;--ink:#111111"><span>Border</span><strong>#9AB8FF</strong></button></div></section>
+<section class="lab__audit"><div><strong>Acessibilidade</strong><p>Focus ring, aria-live e touch target 44px.</p></div><div><strong>Responsivo</strong><p>Mobile preserva console cards collapse into ordered status feed.</p></div><div><strong>Erro corrigido</strong><p>agencia tecnica sem terminal, stack ou prova operacional.</p></div></section>
+</div>
+</main>
+<script>
+(() => {
+ const root = document.querySelector('.lab');
+ const status = document.querySelector('.lab__status');
+ const output = document.querySelector('.lab__output');
+ document.querySelectorAll('.lab__option').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.lab__option').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  root.dataset.mode = btn.dataset.mode;
+  status.textContent = 'Modo ativo: ' + btn.dataset.mode + ' · Console output atualizado';
+ }));
+ document.querySelectorAll('.lab__item').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.lab__item').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  output.textContent = 'Selecionado: ' + btn.dataset.item + ' · componente pronto para estado ativo.';
+ }));
+ document.querySelector('.lab__form').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  output.textContent = 'Console output atualizado: ' + [...data.values()].filter(Boolean).join(' / ');
+ });
+ document.querySelectorAll('.lab__chip').forEach(chip => chip.addEventListener('click', async () => {
+  const value = chip.dataset.copy;
+  try { await navigator.clipboard.writeText(value); output.textContent = 'Cor copiada: ' + value; }
+  catch { output.textContent = 'Token selecionado: ' + value; }
+ }));
+})();
+</script>
+</body>
+</html>

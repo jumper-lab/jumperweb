@@ -1,0 +1,550 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "04.2",
+  "design_system_name": "Fintech Confiança",
+  "category": "04 — Técnico e Confiável",
+  "subcategory": "Fintech B2B — clareza, dados e espaço em branco",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Stripe",
+    "url": "https://stripe.com",
+    "location": "San Francisco (EUA) / Dublin (Irlanda)",
+    "awards": [
+      "Referência estilística mundial em clareza de hierarquia e design de produto financeiro (citada como padrão-ouro de design system em fintech; sem prêmio específico verificado nesta pesquisa)"
+    ],
+    "why_chosen": "O Stripe é a referência global de como transmitir confiança financeira por CLAREZA em vez de ornamento: hierarquia tipográfica impecável, espaço em branco generoso, grids simétricos e dados apresentados como protagonistas. Este DS captura essa essência em light mode, trocando o gradiente vibrante do Stripe por ilustrações geométricas próprias em navy + verde-estabilidade, para que a sensação seja de solidez bancária com precisão de engenharia. Nota tipográfica: o Stripe usa a fonte comercial Söhne; este DS documenta a substituição por Inter (Google Fonts) no corpo de texto.",
+    "typography_note": "Fonte comercial da referência: Söhne (Klim Type Foundry) → substituída oficialmente neste DS por Inter (Google Fonts), a alternativa aberta mais próxima em métricas e neutralidade."
+  },
+  "colors": {
+    "primary": "#0F3460",
+    "primary_usage": "Cor de autoridade: headings de destaque, botões primários, navbar (texto/logo), ilustrações geométricas, links em hover, footer (fundo). É o navy que ancora a sensação de solidez bancária.",
+    "secondary": "#16A085",
+    "secondary_usage": "Verde-estabilidade: acentos gráficos, ícones, indicadores positivos, números grandes (large text ≥ 24px), detalhes das ilustrações geométricas e linhas de dados. NUNCA como texto normal sobre branco (contraste 3.28:1 — abaixo de 4.5:1). Para texto/link verde usar a variante segura #0E7A65.",
+    "secondary_text_safe": "#0E7A65",
+    "secondary_text_safe_usage": "Variante escurecida do verde para links, labels e texto de apoio verde sobre branco — contraste 5.26:1, aprovado AA para texto normal.",
+    "surface": "#FFFFFF",
+    "surface_alt": "#F6F9FC",
+    "surface_alt_usage": "Faixas alternadas de seção (ritmo claro/cinza-azulado), fundos de cards de dados e da área de código/tabelas. Inspirado no cinza-azulado frio típico de interfaces financeiras.",
+    "text_primary": "#0F1F35",
+    "text_secondary": "#42526E",
+    "text_muted": "#64748B",
+    "border": "#E3E8EF",
+    "error": "#B42318",
+    "success": "#0E7A65",
+    "warning": "#B45309",
+    "neutral_scale": {
+      "50": "#F6F9FC",
+      "100": "#EDF2F7",
+      "200": "#E3E8EF",
+      "300": "#CBD5E1",
+      "400": "#94A3B8",
+      "500": "#64748B",
+      "600": "#42526E",
+      "700": "#2C3E5C",
+      "800": "#1B2C4A",
+      "900": "#0F1F35"
+    },
+    "contrast_verification": {
+      "primary_on_surface": "#0F3460 sobre #FFFFFF = 12.50:1 (AAA, texto normal e grande)",
+      "text_primary_on_surface": "#0F1F35 sobre #FFFFFF = 16.57:1 (AAA)",
+      "text_secondary_on_surface": "#42526E sobre #FFFFFF = 7.89:1 (AAA)",
+      "text_muted_on_surface": "#64748B sobre #FFFFFF = 4.76:1 (AA texto normal)",
+      "secondary_on_surface": "#16A085 sobre #FFFFFF = 3.28:1 — REPROVADO para texto normal; aprovado apenas para texto grande (≥ 24px / 18.66px bold) e elementos gráficos",
+      "secondary_text_safe_on_surface": "#0E7A65 sobre #FFFFFF = 5.26:1 (AA texto normal) — usar esta variante sempre que o verde for texto",
+      "white_on_primary": "#FFFFFF sobre #0F3460 = 12.50:1 (AAA) — botões primários aprovados",
+      "white_on_success": "#FFFFFF sobre #0E7A65 = 5.26:1 (AA) — botões verdes usam o tom escuro, nunca #16A085 puro",
+      "notes": "Decisão documentada: o verde da paleta briefada (#16A085) foi mantido como cor de MARCA para usos gráficos e large text, e ganhou a variante #0E7A65 para qualquer uso tipográfico normal. Nenhum texto do DS usa #16A085 abaixo de 24px."
+    }
+  },
+  "typography": {
+    "heading_font": "IBM Plex Sans",
+    "heading_font_source": "Google Fonts",
+    "heading_weights": [500, 600, 700],
+    "body_font": "Inter",
+    "body_font_source": "Google Fonts",
+    "body_font_note": "Substitui a Söhne (comercial, usada pela referência Stripe). Inter é a alternativa Google Fonts mais próxima em neutralidade e legibilidade de UI.",
+    "body_weights": [400, 500, 600],
+    "mono_font": "IBM Plex Mono",
+    "mono_font_source": "Google Fonts",
+    "mono_usage": "Números financeiros, métricas, tabelas de taxas, snippets de integração e counters. Ativar tabular-nums para alinhamento de colunas numéricas.",
+    "base_size": "16px",
+    "letter_spacing_headings": "-0.02em",
+    "scales": {
+      "mobile": {
+        "h1": { "size": "34px", "line_height": "1.15", "weight": 700, "font": "IBM Plex Sans", "letter_spacing": "-0.02em" },
+        "h2": { "size": "26px", "line_height": "1.2", "weight": 600, "font": "IBM Plex Sans", "letter_spacing": "-0.015em" },
+        "h3": { "size": "20px", "line_height": "1.3", "weight": 600, "font": "IBM Plex Sans", "letter_spacing": "-0.01em" },
+        "body": { "size": "16px", "line_height": "1.65", "weight": 400, "font": "Inter" },
+        "small": { "size": "14px", "line_height": "1.55", "weight": 400, "font": "Inter" },
+        "data_number": { "size": "28px", "line_height": "1.1", "weight": 500, "font": "IBM Plex Mono" }
+      },
+      "desktop": {
+        "h1": { "size": "56px", "line_height": "1.08", "weight": 700, "font": "IBM Plex Sans", "letter_spacing": "-0.025em" },
+        "h2": { "size": "38px", "line_height": "1.15", "weight": 600, "font": "IBM Plex Sans", "letter_spacing": "-0.02em" },
+        "h3": { "size": "24px", "line_height": "1.3", "weight": 600, "font": "IBM Plex Sans", "letter_spacing": "-0.01em" },
+        "body": { "size": "17px", "line_height": "1.7", "weight": 400, "font": "Inter" },
+        "small": { "size": "14px", "line_height": "1.55", "weight": 400, "font": "Inter" },
+        "data_number": { "size": "44px", "line_height": "1.05", "weight": 500, "font": "IBM Plex Mono" }
+      }
+    },
+    "fluid_recipe": "h1: clamp(2.125rem, 1.4rem + 2.6vw, 3.5rem); h2: clamp(1.625rem, 1.2rem + 1.6vw, 2.375rem); body: clamp(1rem, 0.96rem + 0.15vw, 1.0625rem)"
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — derivados fielmente das cores, tipografia, spacing, borders, shadows e motion deste DS",
+    "tokens": {
+      "--color-primary": "#0F3460",
+      "--color-primary-hover": "#1B2C4A",
+      "--color-primary-active": "#0C2A4E",
+      "--color-secondary": "#16A085",
+      "--color-secondary-text-safe": "#0E7A65",
+      "--color-surface": "#FFFFFF",
+      "--color-surface-alt": "#F6F9FC",
+      "--color-text": "#0F1F35",
+      "--color-text-secondary": "#42526E",
+      "--color-text-muted": "#64748B",
+      "--color-border": "#E3E8EF",
+      "--color-error": "#B42318",
+      "--color-success": "#0E7A65",
+      "--color-warning": "#B45309",
+      "--color-neutral-50": "#F6F9FC",
+      "--color-neutral-100": "#EDF2F7",
+      "--color-neutral-200": "#E3E8EF",
+      "--color-neutral-300": "#CBD5E1",
+      "--color-neutral-400": "#94A3B8",
+      "--color-neutral-500": "#64748B",
+      "--color-neutral-600": "#42526E",
+      "--color-neutral-700": "#2C3E5C",
+      "--color-neutral-800": "#1B2C4A",
+      "--color-neutral-900": "#0F1F35",
+      "--font-heading": "'IBM Plex Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "--font-body": "'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "--font-mono": "'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace",
+      "--text-h1": "clamp(2.125rem, 1.4rem + 2.6vw, 3.5rem)",
+      "--text-h2": "clamp(1.625rem, 1.2rem + 1.6vw, 2.375rem)",
+      "--text-h3": "clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem)",
+      "--text-body": "clamp(1rem, 0.96rem + 0.15vw, 1.0625rem)",
+      "--text-small": "0.875rem",
+      "--letter-spacing-headings": "-0.02em",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "40px",
+      "--space-xxl": "64px",
+      "--space-xxxl": "96px",
+      "--space-xxxxl": "128px",
+      "--section-gap": "clamp(64px, 6vw + 32px, 128px)",
+      "--radius-none": "0",
+      "--radius-sm": "6px",
+      "--radius-md": "10px",
+      "--radius-lg": "16px",
+      "--radius-button": "8px",
+      "--radius-card": "12px",
+      "--radius-full": "9999px",
+      "--shadow-xs": "0 1px 2px rgba(15, 31, 53, 0.05)",
+      "--shadow-sm": "0 2px 6px rgba(15, 31, 53, 0.06)",
+      "--shadow-md": "0 6px 16px rgba(15, 31, 53, 0.08)",
+      "--shadow-lg": "0 16px 40px rgba(15, 31, 53, 0.10)",
+      "--focus-ring": "0 0 0 3px rgba(22, 160, 133, 0.35)",
+      "--duration-instant": "120ms",
+      "--duration-fast": "200ms",
+      "--duration-base": "300ms",
+      "--duration-slow": "450ms",
+      "--ease-standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--ease-out": "cubic-bezier(0, 0, 0.2, 1)",
+      "--ease-in-out-soft": "cubic-bezier(0.45, 0, 0.25, 1)",
+      "--container-max": "1160px",
+      "--content-max": "720px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "40px",
+      "xxl": "64px",
+      "xxxl": "96px",
+      "xxxxl": "128px"
+    },
+    "section_spacing": {
+      "mobile": "64px",
+      "tablet": "96px",
+      "desktop": "128px"
+    },
+    "section_spacing_note": "Espaço em branco é o principal instrumento de confiança deste DS — as seções respiram mais que a média (128px no desktop). Nunca comprimir para caber conteúdo; cortar conteúdo antes de cortar espaço.",
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "40px",
+      "container_desktop": "64px"
+    },
+    "container_max_width": "1160px",
+    "content_max_width": "720px",
+    "gutters": "32px (desktop), 24px (tablet), 16px (mobile)"
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "6px",
+      "md": "10px",
+      "lg": "16px",
+      "full": "9999px"
+    },
+    "radius_usage": {
+      "buttons": "8px — retos o suficiente para seriedade, suaves o suficiente para modernidade",
+      "cards": "12px",
+      "inputs": "8px",
+      "images": "12px (dashboards/diagramas simulados)",
+      "containers": "16px (blocos de destaque e faixas internas)",
+      "badges": "9999px (pills discretas)"
+    },
+    "stroke": {
+      "thin": "1px solid #E3E8EF",
+      "medium": "1.5px solid #CBD5E1"
+    },
+    "stroke_note": "Bordas hairline de 1px substituem sombras pesadas na maioria dos cards — estética de extrato bancário limpo."
+  },
+  "shadows": {
+    "none": "none",
+    "xs": "0 1px 2px rgba(15, 31, 53, 0.05)",
+    "sm": "0 2px 6px rgba(15, 31, 53, 0.06)",
+    "md": "0 6px 16px rgba(15, 31, 53, 0.08)",
+    "lg": "0 16px 40px rgba(15, 31, 53, 0.10)",
+    "focus_ring": "0 0 0 3px rgba(22, 160, 133, 0.35)",
+    "shadow_usage": "Sombras sempre frias (base navy #0F1F35) e sutis. Cards de dados usam xs + borda 1px; o dashboard-hero usa lg para flutuar sobre o grid geométrico; hover de cards eleva de xs para md. Nunca usar sombras quentes ou coloridas."
+  },
+  "motion": {
+    "durations": {
+      "instant": "120ms",
+      "fast": "200ms",
+      "base": "300ms",
+      "slow": "450ms"
+    },
+    "easings": {
+      "standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "out": "cubic-bezier(0, 0, 0.2, 1)",
+      "in_out_soft": "cubic-bezier(0.45, 0, 0.25, 1)"
+    },
+    "animations": [
+      { "name": "fade-in-up", "duration": "300ms", "easing": "cubic-bezier(0, 0, 0.2, 1)", "trigger": "reveal on scroll (IntersectionObserver), translateY(12px) → 0 + opacity", "notes": "revelação sutil de seções e cards; delay escalonado de 60ms entre irmãos" },
+      { "name": "fade-in", "duration": "300ms", "easing": "cubic-bezier(0.4, 0, 0.2, 1)", "trigger": "carga da página (hero) e troca de conteúdo", "notes": "somente opacidade, sem deslocamento" },
+      { "name": "button-hover", "duration": "200ms", "easing": "cubic-bezier(0.4, 0, 0.2, 1)", "trigger": "hover/focus em botões", "notes": "escurece o fundo e desloca a seta interna 2px; sem scale, sem bounce" },
+      { "name": "card-lift", "duration": "200ms", "easing": "cubic-bezier(0, 0, 0.2, 1)", "trigger": "hover em cards", "notes": "translateY(-2px) + sombra xs→md; elevação mínima, profissional" },
+      { "name": "number-settle", "duration": "450ms", "easing": "cubic-bezier(0.45, 0, 0.25, 1)", "trigger": "reveal on scroll em métricas mono", "notes": "fade + leve translateY; NÃO usar counters animados longos — precisão acima de espetáculo" },
+      { "name": "underline-grow", "duration": "200ms", "easing": "cubic-bezier(0, 0, 0.2, 1)", "trigger": "hover em links de navegação", "notes": "sublinhado cresce da esquerda (transform: scaleX)" }
+    ],
+    "philosophy": "Movimento mínimo e determinístico: tudo entre 120–450ms, nada em loop, nada decorativo. A animação existe para confirmar ações e ordenar a leitura, nunca para entreter.",
+    "prefers_reduced_motion": true
+  },
+  "components": {
+    "buttons": {
+      "variants": {
+        "primary": {
+          "background": "#0F3460",
+          "color": "#FFFFFF",
+          "border": "none",
+          "hover": { "background": "#1B2C4A", "arrow_shift": "2px" },
+          "focus": { "outline": "none", "box_shadow": "0 0 0 3px rgba(22, 160, 133, 0.35)" },
+          "active": { "background": "#0C2A4E" },
+          "disabled": { "background": "#CBD5E1", "color": "#64748B", "cursor": "not-allowed" },
+          "contrast": "12.50:1 (AAA)"
+        },
+        "secondary": {
+          "background": "transparent",
+          "color": "#0F3460",
+          "border": "1.5px solid #0F3460",
+          "hover": { "background": "#F6F9FC" },
+          "focus": { "box_shadow": "0 0 0 3px rgba(22, 160, 133, 0.35)" },
+          "disabled": { "border_color": "#CBD5E1", "color": "#94A3B8" }
+        },
+        "ghost_link": {
+          "background": "none",
+          "color": "#0E7A65",
+          "decoration": "seta → à direita; sublinhado cresce no hover",
+          "contrast": "5.26:1 (AA)",
+          "note": "usa o verde-texto seguro, nunca #16A085 puro"
+        }
+      },
+      "sizes": {
+        "md": { "padding": "12px 24px", "font_size": "15px", "min_height": "44px" },
+        "lg": { "padding": "16px 32px", "font_size": "16px", "min_height": "52px" }
+      },
+      "shape": "border-radius 8px; label em Inter 600; ícone de seta opcional alinhado à direita"
+    },
+    "cards": {
+      "default": {
+        "background": "#FFFFFF",
+        "border": "1px solid #E3E8EF",
+        "radius": "12px",
+        "padding": "32px",
+        "shadow": "0 1px 2px rgba(15, 31, 53, 0.05)",
+        "hover": "translateY(-2px) + sombra md, 200ms"
+      },
+      "data_card": {
+        "background": "#F6F9FC",
+        "border": "1px solid #E3E8EF",
+        "structure": "label pequeno (Inter 500, #42526E, uppercase, letter-spacing 0.06em) + número grande em IBM Plex Mono #0F3460 + delta verde #0E7A65",
+        "note": "o card de métrica é a unidade visual característica deste DS"
+      },
+      "feature_card": {
+        "structure": "ícone geométrico SVG (navy + verde, 40px) + h3 + parágrafo + link ghost com seta",
+        "grid": "3 colunas simétricas no desktop, 1 no mobile"
+      }
+    },
+    "inputs": {
+      "default": {
+        "background": "#FFFFFF",
+        "border": "1px solid #CBD5E1",
+        "radius": "8px",
+        "padding": "12px 16px",
+        "font": "Inter 16px",
+        "min_height": "48px",
+        "placeholder_color": "#64748B"
+      },
+      "focus": { "border": "1px solid #0F3460", "box_shadow": "0 0 0 3px rgba(22, 160, 133, 0.35)" },
+      "error": { "border": "1px solid #B42318", "message": "texto 14px #B42318 com ícone, abaixo do campo" },
+      "label": "Inter 500, 14px, #0F1F35, sempre visível acima do campo (nunca placeholder como label)"
+    },
+    "hero": {
+      "layout": "split assimétrico 55/45: texto à esquerda (h1 + subhead + 2 CTAs + linha de confiança com logos), ilustração geométrica SVG à direita (grid de formas navy/verde com card de dashboard flutuante)",
+      "background": "#FFFFFF puro com grid geométrico sutil (linhas 1px #EDF2F7) atrás da ilustração",
+      "headline_style": "IBM Plex Sans 700, navy #0F1F35, com UMA palavra-chave em #0F3460 ou sublinhada em verde",
+      "trust_row": "faixa 'Empresas que confiam' com 4-5 logos monocromáticos #94A3B8"
+    },
+    "navigation": {
+      "type": "navbar fixa branca, borda inferior 1px #E3E8EF ao rolar",
+      "height": "72px desktop / 64px mobile",
+      "content": "logo navy à esquerda, links centro-direita (Inter 500 15px #42526E, hover #0F3460 com sublinhado que cresce), CTA primário compacto à direita",
+      "mobile": "menu hambúrguer → painel branco de tela cheia com links grandes e CTA no rodapé do painel"
+    },
+    "footer": {
+      "background": "#0F3460",
+      "text": "#FFFFFF e #B8C7DC (links secundários)",
+      "structure": "4 colunas (produto, empresa, recursos, contato) + faixa inferior com CNPJ, selos de segurança e nota de compliance em IBM Plex Mono 12px",
+      "contrast_note": "#B8C7DC sobre #0F3460 ≈ 8.2:1 (AA/AAA)"
+    },
+    "testimonials": {
+      "style": "citação única em destaque por seção (não carrossel): aspas geométricas SVG verdes, texto 22-24px IBM Plex Sans 500, nome + cargo + empresa em Inter 14px #42526E, métrica de resultado ao lado em IBM Plex Mono",
+      "background": "#F6F9FC com borda 1px",
+      "note": "depoimento sempre acompanhado de um número verificável — prova social + prova quantitativa"
+    },
+    "badges": {
+      "style": "pill 9999px, fundo #F6F9FC, borda 1px #E3E8EF, texto 13px Inter 500 #42526E; variante verde: fundo #E6F5F1, texto #0E7A65",
+      "usage": "selos de compliance (LGPD, PCI-DSS), status de integração, categorias de conteúdo"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Claro, preciso e orientado a benefício. Frases curtas, verbos diretos, zero jargão vazio. Fala com decisores B2B que valorizam tempo: cada frase entrega uma informação verificável ou um próximo passo. Números sempre que possível.",
+    "headline_examples": [
+      "Sua operação financeira, simplificada.",
+      "Receba em 1 dia útil. Concilie em 1 clique.",
+      "A infraestrutura de pagamentos que cresce com a sua empresa.",
+      "Menos planilha, mais decisão: seus números em tempo real."
+    ],
+    "cta_examples": [
+      "Fale com um especialista",
+      "Comece a integrar",
+      "Ver taxas e prazos",
+      "Agendar demonstração"
+    ],
+    "avoid": [
+      "Superlativos vagos ('o melhor', 'revolucionário', 'incrível')",
+      "Urgência artificial ('só hoje!', 'últimas vagas')",
+      "Jargão financeiro sem tradução (explicar sigla na primeira ocorrência)",
+      "Tom brincalhão ou emojis — a marca sorri com clareza, não com piada",
+      "Promessas sem número ou prazo verificável"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas simétricas, max-width 1160px, gutter 32px. Simetria é regra: colunas 6/6, 4/4/4 e 3/3/3/3; a única assimetria permitida é o hero 55/45. Conteúdo textual corrido limitado a 720px.",
+    "page_flow": [
+      { "section": "navbar", "layout": "fixa, branca, 72px, borda ao rolar" },
+      { "section": "hero", "layout": "split 55/45 — texto + ilustração geométrica com dashboard flutuante; 2 CTAs + trust row de logos" },
+      { "section": "metrics_band", "layout": "faixa #F6F9FC com 4 data cards simétricos (números IBM Plex Mono) — prova quantitativa logo após o hero" },
+      { "section": "features", "layout": "3 feature cards simétricos com ícones geométricos SVG; título de seção centralizado com eyebrow verde" },
+      { "section": "how_it_works", "layout": "diagrama horizontal em 3 passos (SVG de linhas e nós navy/verde) alternado com texto — o 'dashboard/diagrama como imagem' característico" },
+      { "section": "testimonial", "layout": "citação única em destaque + métrica de resultado, fundo #F6F9FC" },
+      { "section": "pricing_or_plans", "layout": "2-3 cards simétricos com taxas em mono; linha de comparação simples, sem tabelão" },
+      { "section": "cta_final", "layout": "bloco navy #0F3460 de canto a canto, headline branca curta + CTA branco/verde + nota de compliance" },
+      { "section": "footer", "layout": "navy, 4 colunas + faixa legal em mono" }
+    ],
+    "image_treatment": "SEM fotografia. Toda imagem é construída: ilustrações geométricas SVG inline (retângulos, círculos e linhas em navy/verde sobre grid claro), mockups de dashboard desenhados em CSS/SVG e diagramas de fluxo. Isso garante unicidade e performance (zero requests de imagem).",
+    "density": "Baixa. Poucos elementos por viewport; cada seção defende UMA ideia.",
+    "whitespace": "Máximo — o espaço em branco é tratado como ativo de marca: 128px entre seções no desktop, margens internas generosas (32px+ em cards), respiro de 24px+ entre headline e corpo."
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "text_primary_on_surface": "16.57:1 (AAA)",
+      "text_secondary_on_surface": "7.89:1 (AAA)",
+      "text_muted_on_surface": "4.76:1 (AA)",
+      "primary_button": "branco sobre #0F3460 = 12.50:1 (AAA)",
+      "green_text_rule": "#16A085 proibido como texto normal (3.28:1); usar #0E7A65 (5.26:1). #16A085 permitido apenas em texto grande e grafismos."
+    },
+    "keyboard_navigation": "Ordem de tab segue a ordem visual; skip-link 'Pular para o conteúdo' como primeiro elemento focável; menu mobile opera com Escape para fechar e foco preso no painel enquanto aberto.",
+    "focus_states": "Anel de foco verde rgba(22,160,133,0.35) de 3px em todos os interativos, sempre visível (nunca outline:none sem substituto). Contraste do anel sobre branco e sobre navy verificado.",
+    "alt_text": "Ilustrações geométricas decorativas recebem aria-hidden='true'; diagramas informativos (como o 'como funciona') recebem descrição textual adjacente ou aria-label descritivo.",
+    "semantic_html": "header/nav/main/section/footer; um único h1 por página; landmarks nomeados; tabelas de taxas usam <table> real com <th scope>; números importantes também escritos por extenso no aria-label quando abreviados (ex: 'R$ 2,4 mi').",
+    "touch_targets": "44px minimum",
+    "reduced_motion": "@media (prefers-reduced-motion: reduce) desliga reveal on scroll e transições de transform; conteúdo aparece imediatamente."
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Coluna única: h1 34px → subhead → 2 CTAs empilhados (full-width, max 360px) → trust row de logos → ilustração geométrica SVG abaixo; padding lateral 20px",
+      "tablet": "Coluna única centralizada; ilustração geométrica reduzida acima ou abaixo do texto; padding lateral 40px",
+      "desktop": "Split assimétrico 55/45 — texto à esquerda (h1 56px), ilustração geométrica com dashboard flutuante à direita sobre grid de linhas 1px; padding lateral 64px"
+    },
+    "metrics_band": {
+      "mobile": "1 coluna de data cards empilhados, gap 16px; números data_number 28px",
+      "tablet": "2 colunas, gap 24px",
+      "desktop": "4 data cards simétricos em linha, gap 32px; números data_number 44px"
+    },
+    "features_grid": {
+      "mobile": "1 coluna, feature cards full-width, gap 16px",
+      "tablet": "2 colunas, gap 24px",
+      "desktop": "3 colunas simétricas, gap 32px"
+    },
+    "navigation": {
+      "mobile_tablet": "Logo navy + hambúrguer 44px; painel branco fullscreen com links grandes e CTA no rodapé do painel; altura 64px",
+      "desktop": "Logo + links inline (Inter 500 15px) + CTA primário compacto à direita; altura 72px; borda inferior 1px #E3E8EF ao rolar"
+    },
+    "footer": {
+      "mobile": "4 colunas empilhadas (produto → empresa → recursos → contato), faixa legal em IBM Plex Mono 12px por último",
+      "desktop": "4 colunas lado a lado sobre fundo navy #0F3460 + faixa inferior com CNPJ, selos e compliance em mono"
+    },
+    "touch_adjustments": "Card-lift (translateY(-2px)) vira active-state discreto no touch; alvos de toque mínimos de 44px; inputs 48px de altura para evitar zoom no iOS (font 16px); diagramas horizontais de 'como funciona' ganham scroll-snap nativo no mobile"
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente — coerentes com components deste DS",
+    "button_primary": ["default (#0F3460 / branco)", "hover (#1B2C4A + seta desloca 2px)", "focus-visible (box-shadow 0 0 0 3px rgba(22,160,133,0.35))", "active (#0C2A4E)", "disabled (#CBD5E1 / #64748B, cursor not-allowed)", "loading (spinner 16px branco + texto 'Processando...')"],
+    "button_secondary": ["default (transparente, borda 1.5px #0F3460, texto #0F3460)", "hover (fundo #F6F9FC)", "focus-visible (anel verde 3px)", "active (fundo #EDF2F7)", "disabled (borda #CBD5E1, texto #94A3B8)"],
+    "link_nav": ["default (#42526E)", "hover (#0F3460 + underline-grow da esquerda)", "focus-visible (anel verde 3px)", "current (sublinhado navy fixo)"],
+    "card_data": ["default (fundo #F6F9FC, borda 1px #E3E8EF, sombra xs)", "hover (translateY(-2px) + sombra md, 200ms)", "focus-within (anel verde 3px)"],
+    "card_feature": ["default (fundo branco, borda 1px #E3E8EF, sombra xs)", "hover (card-lift xs→md)", "focus-within (anel verde 3px)"],
+    "input": ["default (borda 1px #CBD5E1)", "focus (borda 1px #0F3460 + anel verde 3px)", "filled", "error (borda 1px #B42318 + mensagem 14px #B42318 com ícone + aria-describedby)", "disabled", "success (borda 1px #0E7A65)"],
+    "nav_header": ["topo (branca sem borda)", "rolado (borda inferior 1px #E3E8EF)", "menu mobile aberto (painel fullscreen, focus trap, Escape fecha)"]
+  },
+  "photography_direction": {
+    "style": "SEM fotografia — toda imagem é construída (ilustração geométrica SVG inline, mockups de dashboard em CSS/SVG e diagramas de fluxo). A linguagem visual é precisão de engenharia, não captura fotográfica.",
+    "subjects": [
+      "Ilustrações geométricas: retângulos, círculos e linhas em navy/verde sobre grid claro",
+      "Mockups de dashboard financeiro (gráficos de barra/linha, cards de métrica) desenhados em SVG",
+      "Diagramas de fluxo 'como funciona' com nós e conexões navy/verde",
+      "Grids sutis de linhas 1px #EDF2F7 como textura de fundo do hero",
+      "Ícones geométricos SVG (navy + verde, 40px) nos feature cards"
+    ],
+    "light": "Não aplicável — não há captura fotográfica. As ilustrações são flat, sem simulação de luz volumétrica; profundidade vem apenas de sombras frias sutis (base navy #0F1F35).",
+    "color_grading": "Paleta restrita a navy #0F3460 + verde #16A085 (grafismo) / #0E7A65 (texto) sobre branco #FFFFFF e cinza-azulado #F6F9FC. Proibido: gradientes vibrantes multicoloridos (o Stripe usa; este DS não), tons quentes, cor fora da paleta.",
+    "framing": "Composições simétricas e alinhadas ao grid de 12 colunas; ilustração do hero ocupa os 45% à direita com viewBox fixo para CLS zero; diagramas centralizados com respiro de 24px+.",
+    "avoid": [
+      "Fotografia stock genérica de 'pessoas de negócios apertando as mãos'",
+      "Gradientes coloridos vibrantes ou glows neon",
+      "Imagens rasterizadas (JPG/PNG) que gerem requests e prejudiquem LCP",
+      "Ilustrações decorativas sem função — cada grafismo comunica dado ou fluxo"
+    ],
+    "fallback_sem_foto": "É o padrão do DS: usar SVG inline geométrico. Fundos de bloco com gradiente frio sutil linear-gradient(180deg, #FFFFFF, #F6F9FC); cards de dashboard simulados com retângulos #F6F9FC + borda 1px #E3E8EF e barras/linhas em navy #0F3460 e verde #16A085; nunca usar #16A085 como texto (3.28:1) — apenas como preenchimento gráfico."
+  },
+  "iconography": {
+    "style": "Linha (stroke 1.75px), cantos levemente arredondados (stroke-linecap round), grid 24x24; geometria precisa e sóbria, sem preenchimentos ornamentais",
+    "color": "#0F3460 (navy) como cor principal do traço sobre claro; #16A085 permitido como acento gráfico do ícone (não é texto); #94A3B8 para ícones desativados/logos monocromáticos da trust row",
+    "recommended_set": "Lucide (open source, MIT) — linha limpa e neutra coerente com fintech; alternativa Feather. Ajustar stroke para 1.75px.",
+    "usage": "Ícones sempre acompanhados de texto (label ou heading) — nunca ícone sozinho como única affordance; ícone geométrico 40px encabeça cada feature card",
+    "decorative_shapes": "Formas geométricas SVG (retângulos, círculos, linhas de dados, nós de diagrama) em navy/verde, sempre com aria-hidden='true'; grid de linhas 1px #EDF2F7 como textura de fundo"
+  },
+  "do_dont": {
+    "do": [
+      "Apresentar prova quantitativa em IBM Plex Mono com tabular-nums logo após o hero",
+      "Usar #0E7A65 sempre que o verde for texto/link (5.26:1, AA)",
+      "Manter simetria estrita no grid (6/6, 4/4/4, 3/3/3/3); única assimetria permitida: hero 55/45",
+      "Deixar 128px de respiro entre seções no desktop — o espaço em branco é ativo de marca",
+      "Usar bordas hairline 1px #E3E8EF + sombra xs nos cards (estética de extrato bancário)",
+      "Parear todo depoimento com um número verificável",
+      "Manter movimento entre 120–450ms, determinístico e sem loop"
+    ],
+    "dont": [
+      "Usar #16A085 como texto normal sobre branco (3.28:1 — falha AA; usar #0E7A65)",
+      "Usar #16A085 abaixo de 24px em qualquer texto (permitido só em texto grande e grafismos)",
+      "Trocar o navy/verde por gradientes vibrantes do Stripe — este DS é light mode geométrico",
+      "Animar counters longos ou usar bounce/scale em botões (precisão acima de espetáculo)",
+      "Comprimir seções para caber conteúdo — cortar conteúdo antes de cortar espaço",
+      "Usar placeholder como label em inputs",
+      "Adicionar fotografia rasterizada — toda imagem é SVG/CSS construído",
+      "Usar sombras quentes ou coloridas (sempre base navy fria #0F1F35)"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + IBM+Plex+Sans:wght@500;600;700 e Inter:wght@400;500;600 e IBM+Plex+Mono:wght@500 com display=swap; ativar font-feature-settings 'tnum' 1 na mono para tabular-nums",
+    "js_budget": "JS mínimo: um IntersectionObserver para reveal (fade-in-up com stagger de 60ms) e um toggle de menu mobile com focus trap. Sem bibliotecas de animação; INP alvo < 100ms. CSS < 45KB, JS < 12KB.",
+    "seo_local": "Schema.org FinancialService/Organization (não LocalBusiness — B2B nacional): incluir name, url, logo, sameAs, e Product/Offer para planos com priceSpecification quando houver taxas públicas; título orientado a benefício ('Infraestrutura de pagamentos para empresas — Nome')",
+    "whatsapp_cta": "Menos central que em varejo local, mas útil no CTA 'Fale com um especialista': link wa.me com mensagem pré-preenchida sóbria ('Olá, gostaria de falar com um especialista sobre a solução de pagamentos.'); alternativa recomendada: agendamento de demonstração e formulário de contato B2B",
+    "adaptation_guide": "Ao adaptar para outro segmento da mesma personalidade técnico-confiável (contabilidade digital, seguros, consultoria financeira): manter light mode, navy+verde, ilustração geométrica SVG, simetria estrita e whitespace máximo; trocar o vocabulário do voice_and_tone (taxas/prazos → honorários/prazos contábeis, por ex.) e o conteúdo das métricas/diagramas. A essência é clareza que gera confiança, não o ornamento."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true,
+    "uniqueness_vs_siblings": "Distinto de 04.1 SaaS (dark mode, roxo #5E3DD2, dev-first) e 04.3 Contabilidade (charcoal #2C3E50 + dourado #D4AF37, badges/counters): aqui é light mode total, navy+verde, ilustração geométrica SVG como linguagem de imagem, simetria estrita e espaço em branco máximo."
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "tecnico",
+      "confiavel",
+      "fintech",
+      "b2b",
+      "light-mode",
+      "navy",
+      "verde-estabilidade",
+      "ilustracao-geometrica-svg",
+      "simetria",
+      "whitespace-maximo",
+      "dados-como-protagonista",
+      "clareza-de-hierarquia"
+    ],
+    "related_docs": [
+      "previews/markdown/04-2-fintech-confianca.md",
+      "previews/html/04-2-fintech-confianca.html",
+      "docs/04-2-fintech-confianca/components.md",
+      "docs/04-2-fintech-confianca/animations.css",
+      "docs/04-2-fintech-confianca/accessibility-report.md",
+      "docs/04-2-fintech-confianca/benchmarking.md",
+      "docs/04-2-fintech-confianca/color-variations.md",
+      "docs/04-2-fintech-confianca/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "fintech",
+      "contabilidade digital",
+      "seguros",
+      "meios de pagamento",
+      "consultoria financeira"
+    ],
+    "conversion_factors": [
+      "Prova quantitativa imediata: faixa de métricas em mono logo após o hero reduz ceticismo B2B",
+      "Dois CTAs complementares no hero (falar com especialista + começar a integrar) cobrem decisor e integrador",
+      "Trust row de logos + selos de compliance (LGPD/PCI) endereçam objeção de risco cedo",
+      "Depoimento sempre pareado com métrica verificável (prova social + prova numérica)",
+      "Clareza de taxas/prazos em tabela simples — transparência como argumento de venda",
+      "Espaço em branco e hierarquia reduzem carga cognitiva → leitura completa da página mais provável"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "hero 100% texto+SVG inline (zero imagem externa); fonts com preconnect + font-display:swap; LCP alvo < 1.8s",
+      "cls_strategy": "alturas reservadas para ilustrações SVG (viewBox fixo) e fontes com fallback metricamente próximo (Inter→system-ui); CLS alvo < 0.05",
+      "inp_strategy": "JS mínimo: um IntersectionObserver para reveal e um toggle de menu; sem bibliotecas de animação; INP alvo < 100ms"
+    }
+  }
+}

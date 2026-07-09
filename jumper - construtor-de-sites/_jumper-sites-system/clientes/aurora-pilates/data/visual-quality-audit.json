@@ -1,0 +1,137 @@
+{
+  "schema_version": "3.0.0",
+  "stage": "visual_quality_audit",
+  "client_name": "Aurora Pilates & Movimento",
+  "client_slug": "aurora-pilates",
+  "audit_date": "2026-07-07",
+  "status": "approved_with_fixes",
+  "success_tests": {
+    "five_second_test": {
+      "pass": true,
+      "justification": "O hero comunica claramente: é um studio de pilates em Curitiba (eyebrow), com posicionamento de movimento consciente e não academia genérica (headline), turmas pequenas e avaliação individual (sub), e CTA direto para agendamento (botão). Um visitante novo entende o que é, para quem é, por que confiar e o que fazer em menos de 5 segundos."
+    },
+    "print_test": {
+      "pass": true,
+      "justification": "Um screenshot do hero sem logo mostra: headline serif elegante em fundo quente, fotografia de movimento com moldura deslocada, botão terracota — identificaria o segmento como wellness/pilates boutique e a personalidade como premium sofisticado. Não serve para qualquer empresa."
+    },
+    "competitor_test": {
+      "pass": true,
+      "justification": "Comparado com os sites típicos de pilates em Curitiba (academias genéricas com gradientes, cards idênticos e 'Saiba mais'), este site parece mais intencional: tipografia autoral, paleta restrita, whitespace generoso e copy específica. A sensação é de studio boutique, não de franquia."
+    }
+  },
+  "first_fold": {
+    "composition": "Split assimétrico 55/45 com Fraunces display, trust row discreta e moldura fotográfica deslocada",
+    "messaging": "Eyebrow contextual + headline específica + sub com método + CTA duplo + prova social",
+    "media": "Placeholder SVG — fotografia real será substituída por imagem gerada por IA ou foto do cliente",
+    "verdict": "Direção clara e específica do cliente. Com fotografia real, atinge potencial máximo."
+  },
+  "visual_checks": {
+    "typography": {
+      "pass": true,
+      "notes": "Fraunces 300 display com hierarquia clara (h1→h2→h3), Inter para corpo, escala fluida com clamp(), line-height de display apertado (1.05) e leitura generoso (1.7). Labels uppercase com letter-spacing correto."
+    },
+    "composition": {
+      "pass": true,
+      "notes": "Variação estrutural entre seções: split hero → faixa horizontal → split invertido → lista numerada → grid de cards → citação centrada → seção escura centrada → footer em colunas. Nenhuma seção repete anatomia da vizinha."
+    },
+    "rhythm": {
+      "pass": true,
+      "notes": "Escala de espaçamento consistente (8px base), section-gap de 72px–144px, alternância claro/escuro/superfície quente/escura cria ritmo visual."
+    },
+    "media": {
+      "pass": false,
+      "notes": "Placeholders SVG no lugar de fotografias reais. Funcional para preview mas precisa de imagens geradas por IA ou reais do cliente para atingir padrão de entrega."
+    },
+    "signature_visual": {
+      "pass": true,
+      "notes": "Folha de araucária estilizada presente como divisor orgânico após o hero, como motivo no favicon e como elemento decorativo nos diferenciais. Consistente em 3+ pontos."
+    },
+    "anti_slope": {
+      "pass": true,
+      "notes": "Nenhum padrão anti-slop detectado: sem gradiente+blobs, sem cards idênticos, sem emoji como ícone, sem 'Saiba mais', sem copy genérica, sem footer inchado."
+    }
+  },
+  "functional_checks": {
+    "links": {
+      "pass": true,
+      "notes": "Todos os links de agendamento apontam para WhatsApp com mensagem pré-preenchida. Links internos de navegação apontam para seções corretas. Links de redes sociais com target='_blank' e rel='noopener'."
+    },
+    "forms": {
+      "pass": "n/a",
+      "notes": "M1 one page sem formulário — conversão via WhatsApp."
+    },
+    "states": {
+      "pass": true,
+      "notes": "Hover em botões (primary escurece, secondary preenche, ghost seta desloca), focus-visible com outline 2px em todos os interativos, cards elevam com sombra no hover."
+    },
+    "responsive": {
+      "pass": true,
+      "notes": "Grid responsivo de 320px a desktop: hero empilha no mobile, nav vira hambúrguer com overlay full-screen, diferenciais empilham, serviços em 1→2 colunas, footer empilha. Zero scroll horizontal verificado."
+    },
+    "accessibility": {
+      "pass": true,
+      "notes": "HTML semântico (header/nav/main/section/footer), h1 único, skip-link, aria-labels em botões e navegação, alt text descritivo, focus trap no menu mobile, fechamento por Esc, prefers-reduced-motion respeitado."
+    },
+    "performance": {
+      "pass": true,
+      "notes": "CSS < 10KB, JS < 5KB (vanilla), zero frameworks, fontes com preconnect e display=swap, imagens com dimensões reservadas. Build completo em < 1s."
+    }
+  },
+  "deep_review_passes": [
+    {
+      "pass_number": 1,
+      "focus": "Impacto e direção",
+      "findings": [
+        "Hero com direção clara — Fraunces display, split assimétrico, trust row. Direção forte.",
+        "CTA terracota com contraste verificado (#D4763A texto grande / #B55E28 como botão sólido). OK.",
+        "Copy lida: headline específica ('Movimento que cabe na sua vida'), sem clichês. CTAs com verbo+resultado.",
+        "Assinatura visual (folha de araucária) presente no divisor, favicon. Consistente.",
+        "Depoimentos com aspas ornamentais e Fraunces itálico — coerente com DS."
+      ],
+      "corrections": []
+    },
+    {
+      "pass_number": 2,
+      "focus": "Responsividade e acabamento",
+      "findings": [
+        "Nav mobile com hambúrguer 48px, overlay full-screen, focus trap e Esc — correto.",
+        "Cards de serviço com hover (translateY -4px + sombra lg) — funcionando.",
+        "Diferenciais alternam layout horizontal (desktop) / vertical (mobile) — correto.",
+        "Footer com 3 colunas no desktop, empilhado no mobile — correto.",
+        "Todos os interativos com focus-visible — verificado.",
+        "SVGs inline para placeholders — sem requisições externas adicionais."
+      ],
+      "corrections": [
+        "Adicionar stagger de animação nos cards de serviço para melhorar ritmo de entrada",
+        "Garantir que o hambúrguer tenha transição suave entre as duas linhas e o X"
+      ]
+    }
+  ],
+  "known_issues": [
+    {
+      "issue": "Fotografias reais ausentes — site usa placeholders SVG",
+      "severity": "medium",
+      "reason": "Cliente ainda não enviou fotos finais. Placeholders funcionam para preview mas não atingem padrão de entrega final. Próximo passo: gerar imagens por IA conforme direção do DS final.",
+      "action_required": "Gerar 3 imagens por IA (hero, sobre, serviços) ou aguardar fotos do cliente"
+    },
+    {
+      "issue": "Depoimentos sem carrossel automático — apenas dots manuais",
+      "severity": "low",
+      "reason": "Decisão do DS: auto-rotate desligado por padrão (respeito ao leitor). Funcional mas depende de interação do usuário.",
+      "action_required": "Nenhuma — decisão intencional do DS"
+    },
+    {
+      "issue": "Imagem-assinatura com moldura deslocada precisa de fotografia real para efeito completo",
+      "severity": "low",
+      "reason": "O deslocamento de 12px da moldura oliva é sutil com placeholder mas será impactante com fotografia real.",
+      "action_required": "Substituir placeholder por fotografia real ou gerada por IA"
+    },
+    {
+      "issue": "Google Analytics e Meta Pixel ausentes",
+      "severity": "low",
+      "reason": "Cliente não possui. Briefing diz para criar se fizer sentido.",
+      "action_required": "Confirmar com cliente se deseja rastreamento"
+    }
+  ],
+  "final_recommendation": "Site aprovado com correções menores. A direção visual é forte, específica do cliente e coerente com o DS final. A estrutura, tipografia, paleta, composição e copy atingem padrão premium. O ponto principal de melhoria é a substituição dos placeholders SVG por imagens geradas por IA ou reais do cliente — com essa troca, o site atinge potencial máximo de entrega. Build verde, HTML semântico, responsividade verificada, acessibilidade OK."
+}

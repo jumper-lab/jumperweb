@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DS 04.3 — Contabilidade Premium | Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#2C3E50; --primary-hover:#1B2733;
+    --gold:#D4AF37; --gold-hover:#C9A227; --gold-text:#8A6A1B; --gold-on-dark:#E8C766;
+    --gold-100:#F5EDD6; --gold-200:#EAD9A0;
+    --surface:#FFFFFF; --surface-alt:#F7F8FA; --surface-dark:#1B2733;
+    --text-1:#1B2733; --text-2:#4A5C6E; --text-3:#5F6E7D;
+    --text-on-dark:#FFFFFF; --text-on-dark-2:#B0BAC4;
+    --border:#D8DEE4;
+    --error:#C0392B; --success:#1E8449; --warning:#9C6500;
+    --n50:#F7F8FA; --n100:#EDF0F3; --n200:#D8DEE4; --n300:#B8C2CC; --n400:#8D9AA7;
+    --n500:#6B7A89; --n600:#4A5C6E; --n700:#3A4B5C; --n800:#2C3E50; --n900:#1B2733;
+    --font-h:'Archivo', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --font-b:'IBM Plex Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --font-m:'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+    --sh-xs:0 1px 2px rgba(27,39,51,.05); --sh-sm:0 1px 3px rgba(27,39,51,.08);
+    --sh-md:0 4px 12px rgba(27,39,51,.10); --sh-lg:0 10px 28px rgba(27,39,51,.14);
+    --ring:0 0 0 3px rgba(212,175,55,.45);
+    --r-sm:4px; --r-md:6px; --r-lg:10px; --r-full:9999px;
+    --dur-fast:180ms; --dur-base:260ms; --dur-slow:420ms;
+    --ease:cubic-bezier(.4,0,.2,1); --ease-dec:cubic-bezier(0,0,.2,1); --ease-count:cubic-bezier(.16,1,.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--text-1);background:var(--surface);-webkit-font-smoothing:antialiased;border-top:3px solid var(--gold)}
+  .container{max-width:1200px;margin:0 auto;padding:0 20px}
+  @media(min-width:480px){.container{padding:0 32px}}
+  @media(min-width:1024px){.container{padding:0 48px}}
+  h1,h2,h3,h4{font-family:var(--font-h);color:var(--text-1);font-weight:700}
+  h1{font-size:clamp(2.125rem,1.5rem + 2.8vw,3.25rem);line-height:1.1;letter-spacing:-.025em}
+  h2{font-size:clamp(1.625rem,1.3rem + 1.6vw,2.375rem);line-height:1.15;letter-spacing:-.02em}
+  h3{font-size:clamp(1.25rem,1.1rem + .6vw,1.625rem);line-height:1.25;font-weight:600;letter-spacing:-.01em}
+  p{color:var(--text-2)}
+  section{padding:56px 0}
+  @media(min-width:480px){section{padding:80px 0}}
+  @media(min-width:1024px){section{padding:104px 0}}
+  .section-alt{background:var(--surface-alt)}
+  .section-dark{background:var(--surface-dark);color:var(--text-on-dark)}
+  .mono{font-family:var(--font-m);font-variant-numeric:tabular-nums}
+  .overline{font-family:var(--font-b);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text);display:inline-block}
+  .section-dark .overline{color:var(--gold-on-dark)}
+  .section-head{max-width:680px;margin:0 0 48px}
+  .section-head h2{margin-top:12px;position:relative;padding-bottom:14px}
+  .section-head h2::after{content:'';position:absolute;left:0;bottom:0;width:56px;height:3px;background:var(--gold);transform-origin:left;transition:transform var(--dur-slow) var(--ease)}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .section-head.center h2::after{left:50%;transform:translateX(-50%)}
+  .section-head p{margin-top:16px;font-size:17px}
+
+  /* skip link */
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--primary);color:#fff;padding:12px 24px;z-index:99}
+  .skip-link:focus{left:0}
+
+  /* topbar */
+  .topbar{background:var(--surface-dark);color:var(--text-on-dark-2)}
+  .topbar-inner{display:flex;align-items:center;justify-content:space-between;height:40px;font-family:var(--font-m);font-size:13px;gap:16px}
+  .topbar a{color:var(--gold-on-dark);text-decoration:none}
+  .topbar .crc{white-space:nowrap}
+  @media(max-width:479px){.topbar .crc{display:none}}
+
+  /* navbar */
+  .nav{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--border);transition:box-shadow var(--dur-fast) var(--ease)}
+  .nav.scrolled{box-shadow:var(--sh-sm)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+  @media(min-width:1024px){.nav-inner{height:72px}}
+  .logo{display:flex;align-items:center;font-family:var(--font-h);font-weight:700;font-size:20px;color:var(--primary);text-decoration:none}
+  .logo .dot{color:var(--gold)}
+  .nav-links{display:none;align-items:center;gap:28px;list-style:none}
+  @media(min-width:1024px){.nav-links{display:flex}}
+  .nav-links a{font-size:15px;font-weight:500;color:var(--text-2);text-decoration:none;position:relative;padding:6px 0}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-fast) var(--ease)}
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--text-1)}
+  .nav-links a:hover::after,.nav-links a:focus-visible::after{transform:scaleX(1)}
+  .nav-cta{display:none}
+  @media(min-width:1024px){.nav-cta{display:inline-flex}}
+  .hamburger{display:inline-flex;flex-direction:column;gap:5px;background:none;border:none;padding:12px;cursor:pointer;border-radius:4px}
+  .hamburger span{width:22px;height:2px;background:var(--primary);border-radius:2px}
+  .hamburger:focus-visible{outline:none;box-shadow:var(--ring)}
+  @media(min-width:1024px){.hamburger{display:none}}
+  .mobile-menu{display:none;position:fixed;inset:0;background:var(--surface-dark);z-index:60;padding:24px 20px;flex-direction:column;color:#fff}
+  .mobile-menu.open{display:flex}
+  .mobile-menu ul{list-style:none;margin-top:48px;display:flex;flex-direction:column;gap:8px}
+  .mobile-menu a{font-family:var(--font-h);font-size:26px;font-weight:700;color:#fff;text-decoration:none;display:block;padding:12px 0}
+  .mobile-menu .close-btn{align-self:flex-end;background:none;border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:10px 16px;font-family:var(--font-b);font-size:14px;cursor:pointer;color:#fff}
+  .mobile-menu .btn{margin-top:auto}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-b);font-weight:600;font-size:16px;letter-spacing:.01em;border-radius:var(--r-sm);padding:14px 28px;min-height:48px;border:none;cursor:pointer;text-decoration:none;transition:background var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease)}
+  .btn-sm{padding:10px 18px;font-size:14px;min-height:40px}
+  .btn-lg{padding:17px 36px;font-size:17px;min-height:56px}
+  .btn .arr{transition:transform var(--dur-fast) var(--ease)}
+  .btn:hover .arr{transform:translateX(3px)}
+  .btn-primary{background:var(--primary);color:#fff}
+  .btn-primary:hover{background:var(--primary-hover);transform:translateY(-1px)}
+  .btn-primary:active{transform:translateY(0)}
+  .btn-primary:focus-visible{outline:none;box-shadow:var(--ring)}
+  .btn-primary:disabled{background:var(--border);color:var(--n500);cursor:not-allowed;transform:none}
+  .btn-gold{background:var(--gold);color:var(--primary)}
+  .btn-gold:hover{background:var(--gold-hover);transform:translateY(-1px)}
+  .btn-gold:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(44,62,80,.4)}
+  .btn-gold:disabled{background:var(--gold-200);color:var(--gold-text);opacity:.7;cursor:not-allowed;transform:none}
+  .btn-secondary{background:transparent;color:var(--primary);border:2px solid var(--primary);padding:12px 26px}
+  .btn-secondary:hover{background:var(--primary);color:#fff}
+  .btn-secondary:focus-visible{outline:none;box-shadow:var(--ring)}
+  .link-ghost{display:inline-flex;align-items:center;gap:6px;color:var(--gold-text);font-weight:600;font-size:15px;text-decoration:none;position:relative;padding:2px 0}
+  .link-ghost::after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-fast) var(--ease)}
+  .link-ghost:hover .arr{transform:translateX(3px)}
+  .link-ghost:hover::after,.link-ghost:focus-visible::after{transform:scaleX(1)}
+  .link-ghost:focus-visible{outline:none;box-shadow:var(--ring);border-radius:2px}
+
+  /* badges */
+  .credential{display:inline-flex;align-items:center;gap:6px;border-radius:var(--r-full);border:1px solid var(--gold);background:var(--surface);color:var(--gold-text);font-size:13px;font-weight:600;padding:6px 14px}
+  .credential svg{color:var(--gold-text)}
+  .dark-badge{display:inline-flex;align-items:center;gap:6px;border-radius:var(--r-full);border:1px solid var(--gold-on-dark);color:var(--gold-on-dark);font-size:13px;font-weight:600;padding:6px 14px}
+  .metric-badge{display:inline-flex;align-items:center;gap:4px;border-radius:var(--r-sm);background:var(--gold-100);color:#7A5C15;font-family:var(--font-m);font-size:14px;font-weight:600;padding:4px 10px}
+
+  /* hero */
+  .hero{padding:64px 0}
+  @media(min-width:1024px){.hero{padding:88px 0}}
+  .hero-grid{display:grid;gap:48px;align-items:center}
+  @media(min-width:1024px){.hero-grid{grid-template-columns:55fr 45fr;gap:56px}}
+  .hero h1{margin:16px 0 20px}
+  .hero h1 .num{color:var(--primary)}
+  .hero .sub{font-size:clamp(1.0625rem,1rem + .4vw,1.1875rem);color:var(--text-2);max-width:48ch;margin-bottom:32px}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+  /* painel de dados como imagem */
+  .data-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--sh-lg);overflow:hidden}
+  .data-panel .head{background:var(--primary);color:#fff;padding:16px 24px;font-family:var(--font-b);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+  .data-panel .head .tag{font-family:var(--font-m);font-size:12px;color:var(--gold-on-dark);letter-spacing:0}
+  .data-panel .body{padding:24px}
+  .panel-counters{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+  .panel-counters .c .n{font-family:var(--font-m);font-variant-numeric:tabular-nums;font-size:32px;font-weight:600;color:var(--primary);letter-spacing:-.01em;line-height:1}
+  .panel-counters .c .l{font-size:12px;color:var(--text-3);margin-top:6px}
+  .mini-table{width:100%;border-collapse:collapse;font-size:14px}
+  .mini-table th{text-align:left;font-family:var(--font-b);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--primary);padding:8px 12px}
+  .mini-table td{padding:9px 12px;border-bottom:1px solid var(--border)}
+  .mini-table td.val{font-family:var(--font-m);font-variant-numeric:tabular-nums;text-align:right;color:var(--text-1)}
+  .mini-table tr:nth-child(even) td{background:var(--surface-alt)}
+  .mini-table tr.total td{border-top:2px solid var(--gold);font-weight:600;border-bottom:none}
+  .mini-table tr.total td.val{color:var(--gold-text)}
+
+  /* trust bar */
+  .trust-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:0}
+  .trust-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:20px 28px;text-align:center;position:relative}
+  .trust-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:var(--border)}
+  @media(max-width:639px){.trust-item{width:50%}.trust-item:not(:last-child)::after{display:none}}
+  .trust-item .n{font-family:var(--font-m);font-variant-numeric:tabular-nums;font-size:26px;font-weight:600;color:var(--primary)}
+  .trust-item .l{font-size:13px;color:var(--text-3)}
+
+  /* services */
+  .services-grid{display:grid;gap:24px;grid-template-columns:1fr}
+  @media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+  .service-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:32px;box-shadow:var(--sh-xs);position:relative;transition:transform var(--dur-base) var(--ease),box-shadow var(--dur-base) var(--ease)}
+  .service-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform var(--dur-base) var(--ease);border-radius:var(--r-md) 0 0 var(--r-md)}
+  .service-card:hover{transform:translateY(-2px);box-shadow:var(--sh-md)}
+  .service-card:hover::before{transform:scaleY(1)}
+  .service-card .ico{color:var(--gold-text);margin-bottom:20px}
+  .service-card h3{margin-bottom:10px}
+  .service-card p{font-size:15px;margin-bottom:16px}
+  .service-card .result{margin-bottom:16px}
+
+  /* stats dark (assinatura) */
+  .stats-grid{display:grid;gap:32px;grid-template-columns:1fr 1fr;text-align:center}
+  @media(min-width:1024px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
+  .stat .n{font-family:var(--font-m);font-variant-numeric:tabular-nums;font-size:clamp(2.5rem,1.8rem + 3vw,4rem);font-weight:600;color:var(--gold-on-dark);line-height:1;letter-spacing:-.02em}
+  .stat .l{font-family:var(--font-b);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-on-dark-2);margin-top:14px}
+
+  /* metodologia */
+  .method-list{display:grid;gap:24px;grid-template-columns:1fr}
+  @media(min-width:768px){.method-list{grid-template-columns:repeat(2,1fr);gap:40px}}
+  .method-step{display:flex;gap:20px;align-items:flex-start}
+  .method-step .n{font-family:var(--font-m);font-size:20px;font-weight:600;color:var(--gold-text);flex-shrink:0;line-height:1.2}
+  .method-step h3{font-size:19px;margin-bottom:8px}
+  .method-step p{font-size:15px}
+
+  /* tabela */
+  .table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--r-md)}
+  table.plans{width:100%;border-collapse:collapse;min-width:560px}
+  table.plans caption{text-align:left;padding:0 0 16px;font-size:14px;color:var(--text-3)}
+  table.plans th{background:var(--primary);color:#fff;font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 20px;text-align:left}
+  table.plans th.num,table.plans td.num{text-align:right;font-family:var(--font-m);font-variant-numeric:tabular-nums}
+  table.plans td{padding:14px 20px;border-bottom:1px solid var(--border);font-size:15px}
+  table.plans tr:nth-child(even) td{background:var(--surface-alt)}
+  table.plans tbody tr:hover td{background:var(--n100)}
+  table.plans tr.total td{border-top:2px solid var(--gold);font-weight:600;border-bottom:none;background:var(--surface)}
+  table.plans tr.total td.num{color:var(--gold-text)}
+
+  /* depoimentos */
+  .test-grid{display:grid;gap:24px;grid-template-columns:1fr}
+  @media(min-width:768px){.test-grid{grid-template-columns:repeat(2,1fr)}}
+  .test-card{background:var(--surface-alt);border-left:3px solid var(--gold);border-radius:var(--r-md);padding:32px}
+  .test-card .result{font-family:var(--font-m);font-variant-numeric:tabular-nums;font-size:28px;font-weight:600;color:var(--gold-text);line-height:1;margin-bottom:16px}
+  .test-card blockquote{font-size:16px;color:var(--text-1);line-height:1.55;margin-bottom:20px}
+  .test-card .who{font-size:14px;color:var(--text-2)}
+  .test-card .who strong{color:var(--text-1);display:block}
+  .test-card.full{grid-column:1/-1}
+  .case-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
+  .case-nums .cn .n{font-family:var(--font-m);font-variant-numeric:tabular-nums;font-size:26px;font-weight:600;color:var(--gold-text)}
+  .case-nums .cn .l{font-size:13px;color:var(--text-3);margin-top:4px}
+
+  /* CTA diagnostico */
+  .cta-panel{background:var(--primary);border-radius:var(--r-lg);border-top:3px solid var(--gold);padding:clamp(32px,4vw,56px);color:#fff}
+  .cta-grid{display:grid;gap:40px;align-items:center}
+  @media(min-width:1024px){.cta-grid{grid-template-columns:1fr 1fr;gap:56px}}
+  .cta-panel h2{color:#fff}
+  .cta-panel p{color:var(--text-on-dark-2);margin:16px 0 0;font-size:17px}
+  .form{display:grid;gap:20px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field label{font-size:14px;font-weight:600;color:#fff}
+  .field input,.field select{font-family:var(--font-b);font-size:16px;color:var(--text-1);background:#fff;border:1px solid var(--border);border-radius:var(--r-sm);padding:13px 16px;min-height:48px;transition:border-color var(--dur-fast) var(--ease),box-shadow var(--dur-fast) var(--ease)}
+  .field input::placeholder{color:var(--text-3)}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.30)}
+  .field.has-error input{border-color:var(--error)}
+  .field .err{display:flex;gap:6px;align-items:center;font-size:14px;color:#FFB3AA}
+
+  /* footer */
+  footer{background:var(--surface-dark);color:var(--text-on-dark-2);padding:64px 0 32px}
+  .footer-grid{display:grid;gap:40px;grid-template-columns:1fr 1fr}
+  @media(min-width:1024px){.footer-grid{grid-template-columns:repeat(4,1fr)}}
+  .footer-grid h4{font-family:var(--font-b);color:var(--gold-on-dark);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;font-weight:600}
+  .footer-grid ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-grid a{color:var(--text-on-dark-2);text-decoration:none;font-size:15px}
+  .footer-grid a:hover{color:#fff}
+  .footer-grid .phone{font-family:var(--font-m);color:var(--gold-on-dark);font-size:18px}
+  .footer-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:48px;padding-top:24px;font-family:var(--font-m);font-size:13px;color:var(--text-on-dark-2);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+
+  /* style guide */
+  .guide-note{background:var(--gold-100);border:1px solid var(--gold-200);border-radius:var(--r-md);padding:20px 24px;font-size:14px;color:#7A5C15;margin-bottom:48px}
+  .swatch-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  .swatch{border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;background:var(--surface)}
+  .swatch .chip{height:72px}
+  .swatch .meta{padding:12px 14px;font-size:13px}
+  .swatch .meta strong{display:block;color:var(--text-1)}
+  .swatch .meta code{font-family:var(--font-m);font-size:12px;color:var(--text-3)}
+  .type-specimen{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:var(--r-md);padding:32px;background:var(--surface)}
+  .type-specimen .cap{font-size:12px;font-family:var(--font-m);color:var(--text-3);margin-bottom:6px}
+  .states-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:24px}
+  .fake-focus{box-shadow:var(--ring)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity var(--dur-slow) var(--ease-dec),transform var(--dur-slow) var(--ease-dec)}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal.d1{transition-delay:80ms}.reveal.d2{transition-delay:160ms}.reveal.d3{transition-delay:240ms}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+    .reveal{opacity:1;transform:none}
+    .section-head h2::after,.service-card::before{transform:none}
+    .section-head.center h2::after{transform:translateX(-50%)}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<!-- ===================== TOPBAR ===================== -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span class="crc mono">CRC-SP 2SP 000000/O-0 · ativo há 12 anos</span>
+    <a class="mono" href="#contato">(11) 0000-0000 · resposta em até 2h úteis</a>
+  </div>
+</div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#main" aria-label="Página inicial — Meridian Contabilidade">Meridian<span class="dot">.</span></a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#metodologia">Metodologia</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#clientes">Clientes</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="#contato" class="btn btn-gold btn-sm nav-cta">Diagnóstico gratuito</a>
+      <button class="hamburger" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="close-btn" id="closeBtn">Fechar ✕</button>
+  <ul>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#metodologia">Metodologia</a></li>
+    <li><a href="#planos">Planos</a></li>
+    <li><a href="#clientes">Clientes</a></li>
+  </ul>
+  <a href="#contato" class="btn btn-gold btn-lg">Diagnóstico gratuito</a>
+</div>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div>
+      <span class="overline">Contabilidade consultiva</span>
+      <h1 id="hero-title"><span class="num">R$ 4,2 milhões</span> economizados em impostos para nossos clientes nos últimos 3 anos.</h1>
+      <p class="sub">Fechamento contábil em até 5 dias úteis, com auditoria interna em cada entrega. Seu regime tributário errado pode custar 23% do seu lucro — nós calculamos o certo.</p>
+      <div class="hero-ctas">
+        <a href="#contato" class="btn btn-gold btn-lg">Agende um diagnóstico gratuito</a>
+        <a href="#metodologia" class="btn btn-secondary btn-lg">Ver metodologia</a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="data-panel" role="img" aria-label="Painel de resultados: R$ 4,2 milhões economizados, 98,6% de renovação, e tabela de economia por regime tributário">
+        <div class="head">Economia por cliente <span class="tag">2023–2025</span></div>
+        <div class="body">
+          <div class="panel-counters">
+            <div class="c"><div class="n" data-count="4.2" data-prefix="R$ " data-suffix=" mi">R$ 4,2 mi</div><div class="l">economizados em impostos</div></div>
+            <div class="c"><div class="n" data-count="98.6" data-suffix="%">98,6%</div><div class="l">renovação de contrato</div></div>
+          </div>
+          <table class="mini-table" aria-label="Economia por regime tributário">
+            <thead><tr><th scope="col">Regime</th><th scope="col" style="text-align:right">Economia</th></tr></thead>
+            <tbody>
+              <tr><td>Simples → Presumido</td><td class="val">R$ 38.400</td></tr>
+              <tr><td>Presumido → Real</td><td class="val">R$ 112.900</td></tr>
+              <tr><td>Revisão de créditos</td><td class="val">R$ 47.200</td></tr>
+              <tr class="total"><td>Média anual/cliente</td><td class="val">R$ 66.166</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST BAR ===================== -->
+<section class="section-alt" style="padding:0" aria-label="Credenciais">
+  <div class="container">
+    <div class="trust-bar">
+      <div class="trust-item"><span class="n">12</span><span class="l">anos de CRC ativo</span></div>
+      <div class="trust-item"><span class="n">347</span><span class="l">empresas atendidas</span></div>
+      <div class="trust-item"><span class="n">98,6%</span><span class="l">renovação de contrato</span></div>
+      <div class="trust-item"><span class="l" style="margin-top:4px"><span class="credential"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7l3.5 3.5L12 4"/></svg> CRC ativo · ISO 9001</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVIÇOS ===================== -->
+<section id="servicos" aria-labelledby="serv-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="overline">Serviços</span>
+      <h2 id="serv-title">Cada frente com resultado mensurável</h2>
+      <p>Contabilidade, tributário e BPO financeiro operados com auditoria interna e prazo definido em contrato.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <span class="ico" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="4" width="22" height="24" rx="2"/><path d="M10 11h12M10 16h12M10 21h7"/></svg></span>
+        <h3>Contabilidade consultiva</h3>
+        <p>Escrituração, balanços e obrigações acessórias com fechamento em até 5 dias úteis e revisão dupla.</p>
+        <div class="result"><span class="metric-badge">fechamento em ≤5 dias</span></div>
+        <a class="link-ghost" href="#metodologia">Ver metodologia completa <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="service-card reveal d1">
+        <span class="ico" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 26V14M12 26V6M20 26v-8M28 26V10"/><circle cx="28" cy="10" r="2.5" fill="currentColor"/></svg></span>
+        <h3>Planejamento tributário</h3>
+        <p>Análise do regime ideal (Simples, Presumido ou Real) com simulação de cenários e projeção de economia.</p>
+        <div class="result"><span class="metric-badge">+23% economia média</span></div>
+        <a class="link-ghost" href="#planos">Comparar regimes <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="service-card reveal d2">
+        <span class="ico" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><circle cx="16" cy="16" r="12"/><path d="M16 9v7l5 3"/></svg></span>
+        <h3>BPO financeiro</h3>
+        <p>Contas a pagar e receber, conciliação bancária e relatórios gerenciais mensais para a diretoria decidir por dados.</p>
+        <div class="result"><span class="metric-badge">relatório até dia 5</span></div>
+        <a class="link-ghost" href="#contato">Falar com um contador <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS DARK (assinatura) ===================== -->
+<section class="section-dark" aria-labelledby="stats-title">
+  <div class="container">
+    <h2 id="stats-title" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Números da Meridian</h2>
+    <div class="stats-grid">
+      <div class="stat reveal"><p class="n" data-count="347" data-suffix="">347</p><p class="l">empresas atendidas</p></div>
+      <div class="stat reveal d1"><p class="n" data-count="98.6" data-suffix="%">98,6%</p><p class="l">renovação de contrato</p></div>
+      <div class="stat reveal d2"><p class="n" data-count="12" data-suffix="">12</p><p class="l">anos de CRC ativo</p></div>
+      <div class="stat reveal d3"><p class="n" data-count="4.2" data-prefix="R$ " data-suffix="mi">R$ 4,2mi</p><p class="l">economizados em impostos</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== METODOLOGIA ===================== -->
+<section id="metodologia" aria-labelledby="met-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="overline">Metodologia</span>
+      <h2 id="met-title">Quatro passos, zero improviso</h2>
+    </div>
+    <div class="method-list">
+      <div class="method-step reveal"><span class="n">01</span><div><h3>Diagnóstico</h3><p>Levantamento fiscal e contábil dos últimos 12 meses para mapear riscos e oportunidades de economia.</p></div></div>
+      <div class="method-step reveal d1"><span class="n">02</span><div><h3>Simulação de regime</h3><p>Cálculo comparativo entre Simples, Presumido e Real com projeção de carga tributária de 24 meses.</p></div></div>
+      <div class="method-step reveal d2"><span class="n">03</span><div><h3>Implantação auditada</h3><p>Migração de regime e rotinas com auditoria interna em cada entrega — nada sai sem segunda revisão.</p></div></div>
+      <div class="method-step reveal d3"><span class="n">04</span><div><h3>Acompanhamento mensal</h3><p>Relatório gerencial até o dia 5 e reunião trimestral de resultado com o contador responsável.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TABELA COMPARATIVA ===================== -->
+<section id="planos" class="section-alt" aria-labelledby="planos-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="overline">Planos</span>
+      <h2 id="planos-title">Comparativo de regime tributário</h2>
+      <p>Simulação real para uma empresa de serviços com faturamento anual de R$ 1,2 milhão.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="plans">
+        <caption>Valores anuais estimados — simulação ilustrativa. SPED: Sistema Público de Escrituração Digital.</caption>
+        <thead>
+          <tr><th scope="col">Item</th><th scope="col" class="num">Simples</th><th scope="col" class="num">Presumido</th><th scope="col" class="num">Real</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Carga tributária</td><td class="num">R$ 96.000</td><td class="num">R$ 84.500</td><td class="num">R$ 71.200</td></tr>
+          <tr><td>Obrigações acessórias</td><td class="num">R$ 6.000</td><td class="num">R$ 9.600</td><td class="num">R$ 14.400</td></tr>
+          <tr><td>Créditos recuperáveis</td><td class="num">—</td><td class="num">R$ 4.200</td><td class="num">R$ 18.900</td></tr>
+          <tr class="total"><td>Custo tributário líquido</td><td class="num">R$ 102.000</td><td class="num">R$ 89.900</td><td class="num">R$ 66.700</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DEPOIMENTOS ===================== -->
+<section id="clientes" aria-labelledby="dep-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="overline">Clientes</span>
+      <h2 id="dep-title">Resultados, não elogios</h2>
+    </div>
+    <div class="test-grid">
+      <article class="test-card full reveal">
+        <p class="result">R$ 214.000 recuperados</p>
+        <blockquote>“Estávamos no regime errado havia três anos. A Meridian fez o diagnóstico, migrou para o Lucro Real e recuperou créditos que nem sabíamos que existiam. O relatório mensal virou base das nossas decisões de caixa.”</blockquote>
+        <p class="who"><strong>Carla Menezes</strong> Diretora Financeira · Núcleo Indústria (metalurgia, 180 funcionários)</p>
+        <div class="case-nums">
+          <div class="cn"><div class="n">−23%</div><div class="l">carga tributária</div></div>
+          <div class="cn"><div class="n">18 meses</div><div class="l">de acompanhamento</div></div>
+          <div class="cn"><div class="n">5 dias</div><div class="l">de fechamento</div></div>
+        </div>
+      </article>
+      <article class="test-card reveal">
+        <p class="result">R$ 47.200/ano</p>
+        <blockquote>“Economia real no primeiro ano, com a segurança de uma auditoria dupla em cada entrega.”</blockquote>
+        <p class="who"><strong>Roberto Yamada</strong> Sócio · Yamada Serviços</p>
+      </article>
+      <article class="test-card reveal d1">
+        <p class="result">2h de resposta</p>
+        <blockquote>“Contador acessível de verdade. Toda dúvida fiscal respondida no mesmo dia, com o número na mão.”</blockquote>
+        <p class="who"><strong>Fernanda Lopes</strong> CEO · Lopes Comércio</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STYLE GUIDE ===================== -->
+<section class="section-alt" aria-labelledby="guide-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="overline">Style guide 04.3</span>
+      <h2 id="guide-title">Tokens ao vivo</h2>
+      <p>Paleta, tipografia, estados e componentes de dados deste design system.</p>
+    </div>
+
+    <p class="guide-note"><strong>Regra de contraste:</strong> #D4AF37 (2.10:1 sobre branco) só como accent decorativo. Texto dourado sobre claro usa #8A6A1B (5.05:1); números sobre seções escuras usam #E8C766 (9.24:1). Botão dourado usa texto charcoal (5.22:1), nunca branco.</p>
+
+    <h3 style="margin-bottom:24px">Paleta</h3>
+    <div class="swatch-grid" style="margin-bottom:64px">
+      <div class="swatch"><div class="chip" style="background:#2C3E50"></div><div class="meta"><strong>Primary · Charcoal</strong><code>#2C3E50</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#1B2733"></div><div class="meta"><strong>Surface dark</strong><code>#1B2733</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#D4AF37"></div><div class="meta"><strong>Gold (accent)</strong><code>#D4AF37</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#8A6A1B"></div><div class="meta"><strong>Gold text</strong><code>#8A6A1B</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#E8C766"></div><div class="meta"><strong>Gold on dark</strong><code>#E8C766</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#F7F8FA;border-bottom:1px solid #D8DEE4"></div><div class="meta"><strong>Surface alt</strong><code>#F7F8FA</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#4A5C6E"></div><div class="meta"><strong>Text secondary</strong><code>#4A5C6E</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#5F6E7D"></div><div class="meta"><strong>Text muted</strong><code>#5F6E7D</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#1E8449"></div><div class="meta"><strong>Success</strong><code>#1E8449</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#C0392B"></div><div class="meta"><strong>Error</strong><code>#C0392B</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#9C6500"></div><div class="meta"><strong>Warning</strong><code>#9C6500</code></div></div>
+    </div>
+
+    <h3 style="margin-bottom:24px">Tipografia ao vivo</h3>
+    <div class="type-specimen" style="margin-bottom:64px">
+      <div><p class="cap">H1 · Archivo 700 · 52/34px (substitui GT America)</p><h1>Dados específicos, não promessas</h1></div>
+      <div><p class="cap">H2 · Archivo 700 · 38/26px</p><h2>Credibilidade que se mede</h2></div>
+      <div><p class="cap">H3 · Archivo 600 · 26/20px</p><h3>Cada afirmação vem com um número</h3></div>
+      <div><p class="cap">Body · IBM Plex Sans 400 · 17/16px</p><p>Trata o leitor como gestor inteligente que decide por dados. Formal na medida — próximo de CFO, acessível a MEI.</p></div>
+      <div><p class="cap">Stat number · IBM Plex Mono 600 · tabular-nums</p><p class="mono" style="font-size:40px;color:var(--primary);letter-spacing:-.02em">R$ 4.234.567,89 · 98,6% · 347</p></div>
+    </div>
+
+    <h3 style="margin-bottom:24px">Botões — todos os estados</h3>
+    <div class="states-row">
+      <button class="btn btn-gold">Dourado (CTA principal)</button>
+      <button class="btn btn-gold" style="background:var(--gold-hover)">Hover</button>
+      <button class="btn btn-gold fake-focus" style="box-shadow:0 0 0 3px rgba(44,62,80,.4)">Focus</button>
+      <button class="btn btn-gold" disabled>Disabled</button>
+    </div>
+    <div class="states-row">
+      <button class="btn btn-primary">Primário</button>
+      <button class="btn btn-primary" style="background:var(--primary-hover)">Hover</button>
+      <button class="btn btn-primary fake-focus">Focus</button>
+      <button class="btn btn-primary" disabled>Disabled</button>
+    </div>
+    <div class="states-row" style="margin-bottom:64px">
+      <button class="btn btn-secondary">Secundário</button>
+      <a class="link-ghost" href="#planos">Ver metodologia completa <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+
+    <h3 style="margin-bottom:24px">Badges</h3>
+    <div class="states-row" style="margin-bottom:64px">
+      <span class="credential"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7l3.5 3.5L12 4"/></svg> CRC ativo</span>
+      <span class="credential"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7l3.5 3.5L12 4"/></svg> ISO 9001</span>
+      <span class="metric-badge">+23% economia média</span>
+      <span class="dark-badge" style="background:#1B2733;padding:6px 14px">12 anos de mercado</span>
+    </div>
+
+    <h3 style="margin-bottom:24px">Inputs — default, foco e erro</h3>
+    <div class="cta-panel" style="max-width:520px">
+      <form class="form" novalidate>
+        <div class="field">
+          <label for="g-nome">Nome (default)</label>
+          <input id="g-nome" type="text" placeholder="Ana Souza">
+        </div>
+        <div class="field">
+          <label for="g-foco">Campo em foco</label>
+          <input id="g-foco" type="text" value="foco visível" style="border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.30)">
+        </div>
+        <div class="field has-error">
+          <label for="g-email">E-mail (erro)</label>
+          <input id="g-email" type="email" value="ana@empresa" aria-invalid="true" aria-describedby="g-err">
+          <p class="err" id="g-err">✕ Informe um e-mail válido (ex.: ana@empresa.com.br)</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA DIAGNÓSTICO ===================== -->
+<section id="contato" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-panel">
+      <div class="cta-grid">
+        <div>
+          <span class="overline" style="color:var(--gold-on-dark)">Diagnóstico</span>
+          <h2 id="cta-title" style="margin-top:12px">Receba a análise do seu regime em 48h.</h2>
+          <p>Gratuito e sem compromisso. Um contador responsável envia o comparativo de economia direto para o seu e-mail — resposta em até 2h úteis.</p>
+        </div>
+        <form class="form" novalidate>
+          <div class="field">
+            <label for="c-nome">Nome completo</label>
+            <input id="c-nome" type="text" placeholder="Ana Souza" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="c-empresa">Empresa</label>
+            <input id="c-empresa" type="text" placeholder="Razão social" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="c-fat">Faturamento anual</label>
+            <select id="c-fat">
+              <option>Até R$ 360 mil</option>
+              <option>R$ 360 mil – R$ 4,8 mi</option>
+              <option>Acima de R$ 4,8 mi</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-gold btn-lg" style="width:100%;justify-content:center">Agende um diagnóstico gratuito</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Meridian Contabilidade</h4>
+        <p style="font-size:15px">Contabilidade consultiva orientada a resultado mensurável. Dados no lugar de promessas.</p>
+        <div class="footer-badges">
+          <span class="dark-badge">CRC ativo</span>
+          <span class="dark-badge">ISO 9001</span>
+        </div>
+      </div>
+      <div>
+        <h4>Serviços</h4>
+        <ul><li><a href="#servicos">Contabilidade</a></li><li><a href="#servicos">Planejamento tributário</a></li><li><a href="#servicos">BPO financeiro</a></li><li><a href="#planos">Planos</a></li></ul>
+      </div>
+      <div>
+        <h4>Escritório</h4>
+        <ul><li><a href="#contato">Av. Exemplo, 1000 — sala 42</a></li><li><a href="#contato">São Paulo — SP</a></li><li><a href="#contato">Seg a sex, 9h–18h</a></li></ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p class="phone">(11) 0000-0000</p>
+        <ul style="margin-top:10px"><li><a href="#contato">contato@meridian.com.br</a></li><li><a href="#contato">Resposta em até 2h úteis</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Meridian Contabilidade Ltda · CNPJ 00.000.000/0001-00</span>
+      <span>CRC-SP 2SP 000000/O-0 · © 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var nav = document.getElementById('nav');
+  addEventListener('scroll', function(){ nav.classList.toggle('scrolled', scrollY > 8); }, {passive:true});
+
+  var menu = document.getElementById('mobileMenu'),
+      btn = document.getElementById('menuBtn'),
+      closeBtn = document.getElementById('closeBtn');
+  function openMenu(){ menu.classList.add('open'); btn.setAttribute('aria-expanded','true'); closeBtn.focus(); }
+  function closeMenu(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.focus(); }
+  btn.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  menu.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeMenu();
+    if(e.key === 'Tab'){
+      var f = menu.querySelectorAll('a,button');
+      var first = f[0], last = f[f.length-1];
+      if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
+  });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduced || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('visible'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); } });
+    }, {threshold:.15});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  // count-up (respeita prefers-reduced-motion) — 1400ms, ease-count
+  function fmt(v,d){ return v.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d}); }
+  var counters = document.querySelectorAll('[data-count]');
+  function animateCount(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var suffix = el.getAttribute('data-suffix') || '';
+    var prefix = el.getAttribute('data-prefix') || '';
+    var decimals = (String(target).split('.')[1]||'').length;
+    if(reduced){ el.textContent = prefix + fmt(target,decimals) + suffix; return; }
+    var start = null, dur = 1400;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts-start)/dur,1);
+      var eased = 1 - Math.pow(1-p,3);
+      el.textContent = prefix + fmt(target*eased,decimals) + suffix;
+      if(p<1) requestAnimationFrame(step); else el.textContent = prefix + fmt(target,decimals) + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ animateCount(en.target); cio.unobserve(en.target); } });
+    }, {threshold:.3});
+    counters.forEach(function(el){ cio.observe(el); });
+  }
+</script>
+</body>
+</html>

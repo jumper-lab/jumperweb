@@ -1,0 +1,810 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "02.3",
+  "design_system_name": "Hotel Boutique Luxuoso",
+  "category": "02 — Premium e Sofisticado",
+  "subcategory": "Hospitalidade de luxo — dark warm imersivo, grid magazine",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Aman Resorts / Soho House (referência estilística)",
+    "url": "https://www.aman.com/",
+    "location": "Global (Aman: sede em Baar, Suíça; Soho House: Londres, Reino Unido)",
+    "awards": [
+      "Referência estilística — prêmios específicos de web design não confirmados em pesquisa; não inventamos premiações",
+      "Aman é citada recorrentemente em curadorias de melhores sites de hotelaria de luxo (Mediaboom, Wix, Colorlib)"
+    ],
+    "why_chosen": "O site da Aman vende silêncio e espaço: fotografia imersiva de ambientes (sem pessoas), copy escassa, transições lentas e um ritmo deliberadamente desacelerado que espelha a experiência do hóspede. Soho House adiciona o calor de materiais escuros e a diagramação editorial de clube privado. Capturamos essa essência — exclusividade através de espaço, não de decoração — em um mood marrom queimado profundo com ouro sutil e grid assimétrico estilo magazine.",
+    "typography_note": "A referência usa GT Sectra (comercial) para display e Fraunces para body. Neste DS, Fraunces (Google Fonts) assume os headings — substituição documentada de GT Sectra→Fraunces — e Lora (Google Fonts) assume o body, mantendo a temperatura serifada sem duplicar a mesma família em papéis distintos."
+  },
+  "colors": {
+    "primary": "#2A1F14",
+    "primary_usage": "Marrom queimado profundo. É a superfície dominante do DS: fundos de hero, navegação, seções imersivas e cor de texto sobre botões dourados. A marca É o ambiente escuro — não um acento.",
+    "secondary": "#D4A574",
+    "secondary_usage": "Ouro sutil. Usado com extrema parcimônia: CTAs, filetes de 1px, numerais editoriais, links e micro-detalhes. Nunca em blocos grandes — o luxo aqui é a escassez do ouro.",
+    "surface": "#2A1F14",
+    "surface_alt": "#382B1C",
+    "text_primary": "#F5EDE1",
+    "text_secondary": "#CBB89F",
+    "text_muted": "#9A8568",
+    "border": "#4A3A28",
+    "error": "#E08D7C",
+    "success": "#A3C29B",
+    "warning": "#E2B564",
+    "neutral_scale": {
+      "50": "#FBF7F1",
+      "100": "#F5EDE1",
+      "200": "#E6D8C3",
+      "300": "#CBB89F",
+      "400": "#AE9878",
+      "500": "#9A8568",
+      "600": "#6E5B41",
+      "700": "#4A3A28",
+      "800": "#382B1C",
+      "900": "#241A10"
+    },
+    "contrast_verification": {
+      "primary_on_surface": "n/a — primary é a própria surface (DS dark); ver text_primary_on_surface",
+      "text_primary_on_surface": "13.87:1 (#F5EDE1 sobre #2A1F14) — AAA para qualquer tamanho",
+      "text_secondary_on_surface": "8.36:1 (#CBB89F sobre #2A1F14) — AAA texto normal",
+      "text_muted_on_surface": "4.55:1 (#9A8568 sobre #2A1F14) — AA texto normal; NÃO usar sobre surface_alt (#382B1C), onde cai para 3.88:1",
+      "secondary_on_surface": "7.23:1 (#D4A574 sobre #2A1F14) — AAA texto normal; ouro é seguro como cor de link/texto",
+      "primary_on_secondary": "7.23:1 (#2A1F14 sobre #D4A574) — texto escuro em botão dourado passa AAA",
+      "text_primary_on_surface_alt": "11.82:1 (#F5EDE1 sobre #382B1C) — AAA",
+      "secondary_on_surface_alt": "6.17:1 (#D4A574 sobre #382B1C) — AA/AAA texto normal",
+      "error_on_surface": "6.34:1 (#E08D7C sobre #2A1F14) — AA texto normal",
+      "success_on_surface": "8.24:1 (#A3C29B sobre #2A1F14) — AAA",
+      "warning_on_surface": "8.46:1 (#E2B564 sobre #2A1F14) — AAA",
+      "notes": "Razões calculadas pela fórmula WCAG 2.1 de luminância relativa. Regra prática do DS: text_muted só sobre surface base; sobre surface_alt usar text_secondary ou superior. Ouro (#D4A574) nunca como texto sobre neutros claros (50–200) — em contexto claro (variações), escurecer para #8A6A3F."
+    }
+  },
+  "typography": {
+    "heading_font": "Fraunces",
+    "heading_font_source": "Google Fonts",
+    "heading_font_note": "Substitui GT Sectra (comercial) da referência. Usar optical size alto (opsz 72+) e peso 300–400 para o desenho calligráfico-editorial; itálico soft em destaques.",
+    "body_font": "Lora",
+    "body_font_source": "Google Fonts",
+    "body_font_note": "Serif warm de alta legibilidade. A referência usa Fraunces também no body; distribuímos Fraunces→headings e Lora→body para hierarquia mais clara em telas pequenas.",
+    "mono_font": "não aplicável — nenhum contexto de código/tabular neste DS",
+    "base_size": "16px",
+    "scales": {
+      "mobile": {
+        "h1": {
+          "size": "40px",
+          "line_height": "1.1",
+          "weight": "300",
+          "letter_spacing": "-0.01em",
+          "font": "Fraunces",
+          "opsz": "72"
+        },
+        "h2": {
+          "size": "30px",
+          "line_height": "1.15",
+          "weight": "300",
+          "letter_spacing": "-0.005em",
+          "font": "Fraunces",
+          "opsz": "48"
+        },
+        "h3": {
+          "size": "22px",
+          "line_height": "1.25",
+          "weight": "400",
+          "letter_spacing": "0",
+          "font": "Fraunces",
+          "opsz": "24"
+        },
+        "quote": {
+          "size": "22px",
+          "line_height": "1.5",
+          "weight": "300",
+          "style": "italic",
+          "font": "Fraunces",
+          "usage": "citações e manifesto"
+        },
+        "body": {
+          "size": "16px",
+          "line_height": "1.75",
+          "weight": "400",
+          "letter_spacing": "0.01em",
+          "font": "Lora"
+        },
+        "small": {
+          "size": "13px",
+          "line_height": "1.6",
+          "weight": "400",
+          "letter_spacing": "0.14em",
+          "transform": "uppercase",
+          "font": "Lora",
+          "usage": "eyebrows, labels, numerais editoriais"
+        },
+        "caption": {
+          "size": "12px",
+          "line_height": "1.5",
+          "weight": "400",
+          "color": "#9A8568",
+          "font": "Lora",
+          "usage": "créditos de foto e notas legais — apenas sobre surface base"
+        }
+      },
+      "desktop": {
+        "h1": {
+          "size": "76px",
+          "line_height": "1.05",
+          "weight": "300",
+          "letter_spacing": "-0.015em",
+          "font": "Fraunces",
+          "opsz": "144"
+        },
+        "h2": {
+          "size": "48px",
+          "line_height": "1.1",
+          "weight": "300",
+          "letter_spacing": "-0.01em",
+          "font": "Fraunces",
+          "opsz": "72"
+        },
+        "h3": {
+          "size": "28px",
+          "line_height": "1.25",
+          "weight": "400",
+          "letter_spacing": "0",
+          "font": "Fraunces",
+          "opsz": "32"
+        },
+        "quote": {
+          "size": "28px",
+          "line_height": "1.5",
+          "weight": "300",
+          "style": "italic",
+          "font": "Fraunces"
+        },
+        "body": {
+          "size": "18px",
+          "line_height": "1.8",
+          "weight": "400",
+          "letter_spacing": "0.01em",
+          "font": "Lora"
+        },
+        "small": {
+          "size": "13px",
+          "line_height": "1.6",
+          "weight": "400",
+          "letter_spacing": "0.18em",
+          "transform": "uppercase",
+          "font": "Lora"
+        },
+        "caption": {
+          "size": "12px",
+          "line_height": "1.5",
+          "weight": "400",
+          "color": "#9A8568",
+          "font": "Lora"
+        }
+      },
+      "fluid_recipe": {
+        "h1": "clamp(2.5rem, 1.2rem + 5.2vw, 4.75rem)",
+        "h2": "clamp(1.875rem, 1rem + 3vw, 3rem)",
+        "h3": "clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem)",
+        "quote": "clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem)",
+        "body": "clamp(1rem, 0.95rem + 0.25vw, 1.125rem)"
+      },
+      "loading": {
+        "google_fonts_href": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Lora:ital,wght@0,400;0,500;1,400&display=swap",
+        "fallback_stack_heading": "'Fraunces', 'Iowan Old Style', Georgia, serif",
+        "fallback_stack_body": "'Lora', Georgia, 'Times New Roman', serif",
+        "font_display": "swap"
+      }
+    }
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — batem exatamente com colors, typography, spacing, borders, shadows e motion deste DS",
+    "tokens": {
+      "--color-primary": "#2A1F14",
+      "--color-secondary": "#D4A574",
+      "--color-secondary-hover": "#E0BA8E",
+      "--color-secondary-active": "#C29257",
+      "--color-secondary-dark": "#8A6A3F",
+      "--color-surface": "#2A1F14",
+      "--color-surface-alt": "#382B1C",
+      "--color-text": "#F5EDE1",
+      "--color-text-secondary": "#CBB89F",
+      "--color-text-muted": "#9A8568",
+      "--color-border": "#4A3A28",
+      "--color-error": "#E08D7C",
+      "--color-success": "#A3C29B",
+      "--color-warning": "#E2B564",
+      "--color-neutral-50": "#FBF7F1",
+      "--color-neutral-100": "#F5EDE1",
+      "--color-neutral-200": "#E6D8C3",
+      "--color-neutral-300": "#CBB89F",
+      "--color-neutral-400": "#AE9878",
+      "--color-neutral-500": "#9A8568",
+      "--color-neutral-600": "#6E5B41",
+      "--color-neutral-700": "#4A3A28",
+      "--color-neutral-800": "#382B1C",
+      "--color-neutral-900": "#241A10",
+      "--font-heading": "'Fraunces', 'Iowan Old Style', Georgia, serif",
+      "--font-body": "'Lora', Georgia, 'Times New Roman', serif",
+      "--text-h1": "clamp(2.5rem, 1.2rem + 5.2vw, 4.75rem)",
+      "--text-h2": "clamp(1.875rem, 1rem + 3vw, 3rem)",
+      "--text-h3": "clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem)",
+      "--text-quote": "clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem)",
+      "--text-body": "clamp(1rem, 0.95rem + 0.25vw, 1.125rem)",
+      "--text-small": "0.8125rem",
+      "--space-xs": "8px",
+      "--space-sm": "16px",
+      "--space-md": "24px",
+      "--space-lg": "40px",
+      "--space-xl": "64px",
+      "--space-xxl": "96px",
+      "--space-xxxl": "144px",
+      "--space-xxxxl": "200px",
+      "--section-gap": "clamp(96px, 8vw + 40px, 200px)",
+      "--container-padding": "clamp(24px, 6vw, 80px)",
+      "--gutter": "clamp(20px, 2vw + 12px, 32px)",
+      "--radius-none": "0px",
+      "--radius-sm": "2px",
+      "--radius-md": "4px",
+      "--radius-lg": "8px",
+      "--radius-full": "9999px",
+      "--stroke-thin": "1px",
+      "--stroke-medium": "2px",
+      "--shadow-sm": "0 1px 2px rgba(12, 8, 4, 0.4)",
+      "--shadow-md": "0 8px 24px rgba(12, 8, 4, 0.45)",
+      "--shadow-lg": "0 24px 64px rgba(12, 8, 4, 0.55)",
+      "--shadow-glow-gold": "0 0 0 1px rgba(212, 165, 116, 0.35)",
+      "--duration-instant": "120ms",
+      "--duration-fast": "300ms",
+      "--duration-base": "600ms",
+      "--duration-slow": "900ms",
+      "--duration-reveal": "1200ms",
+      "--ease-standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--ease-luxe-out": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "--ease-linear": "linear",
+      "--container-max": "1440px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "8px",
+      "sm": "16px",
+      "md": "24px",
+      "lg": "40px",
+      "xl": "64px",
+      "xxl": "96px",
+      "xxxl": "144px",
+      "xxxxl": "200px"
+    },
+    "section_spacing": {
+      "mobile": "96px",
+      "tablet": "144px",
+      "desktop": "200px"
+    },
+    "section_spacing_note": "Deliberadamente maior que a média do sistema — o espaço em branco (aqui, 'espaço em escuro') é o principal significante de luxo deste DS.",
+    "padding": {
+      "container_mobile": "24px",
+      "container_tablet": "48px",
+      "container_desktop": "80px"
+    },
+    "container_max_width": "1440px",
+    "gutters": "32px (desktop) / 20px (mobile) — grid magazine de 12 colunas"
+  },
+  "borders": {
+    "radius": {
+      "none": "0px",
+      "sm": "2px",
+      "md": "4px",
+      "lg": "8px",
+      "full": "9999px"
+    },
+    "radius_usage": {
+      "buttons": "0px — botões retos, arquiteturais; o luxo aqui é anguloso e sóbrio",
+      "cards": "0px — cards sem raio, separados por espaço e filetes, não por caixas arredondadas",
+      "inputs": "0px com border-bottom única — estética de formulário editorial",
+      "images": "0px — imagens sangradas ou em molduras retas de 1px",
+      "containers": "0px"
+    },
+    "stroke": {
+      "thin": "1px — filetes dourados (#D4A574 a 40% de opacidade) e bordas de moldura",
+      "medium": "2px — foco de teclado e underline de link ativo"
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "sm": "0 1px 2px rgba(12, 8, 4, 0.4)",
+    "md": "0 8px 24px rgba(12, 8, 4, 0.45)",
+    "lg": "0 24px 64px rgba(12, 8, 4, 0.55)",
+    "glow_gold": "0 0 0 1px rgba(212, 165, 116, 0.35)",
+    "shadow_usage": "Sombras quase imperceptíveis — em fundo escuro, a elevação é comunicada por surface_alt e filetes dourados (glow_gold), não por sombra. md apenas em overlays (menu mobile, modal de reserva); lg reservado a lightbox de galeria."
+  },
+  "motion": {
+    "durations": {
+      "instant": "120ms",
+      "fast": "300ms",
+      "base": "600ms",
+      "slow": "900ms",
+      "reveal": "1200ms"
+    },
+    "easings": {
+      "standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "luxe_out": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "linear": "linear"
+    },
+    "animations": [
+      { "name": "reveal-up", "duration": "1200ms", "easing": "luxe_out", "trigger": "IntersectionObserver ao entrar 20% no viewport", "description": "Fade + translateY(32px)→0. O reveal assinatura do DS: lento, inevitável, silencioso." },
+      { "name": "reveal-line", "duration": "900ms", "easing": "luxe_out", "trigger": "scroll into view", "description": "Filete dourado cresce de 0 a 64px de largura (scaleX), precedendo títulos de seção." },
+      { "name": "parallax-soft", "duration": "contínuo", "easing": "linear", "trigger": "scroll", "description": "Imagens de fundo deslocam no máximo 6% da altura (translateY via scroll progress). Muito sutil — nunca vertiginoso." },
+      { "name": "image-scale-settle", "duration": "1200ms", "easing": "luxe_out", "trigger": "entrada no viewport", "description": "Imagem inicia em scale(1.06) e assenta em scale(1). Simula a respiração de um vídeo de hero." },
+      { "name": "btn-fill-gold", "duration": "300ms", "easing": "standard", "trigger": "hover/focus", "description": "Botão outline preenche com ouro da esquerda para a direita (background-size)." },
+      { "name": "link-underline-grow", "duration": "300ms", "easing": "standard", "trigger": "hover/focus", "description": "Underline dourado 1px cresce do centro para as bordas." },
+      { "name": "stagger-cascade", "duration": "1200ms + 150ms/item", "easing": "luxe_out", "trigger": "scroll into view do grid", "description": "Cards do grid magazine revelam em cascata assimétrica (delays 0/150/300ms)." }
+    ],
+    "prefers_reduced_motion": true,
+    "prefers_reduced_motion_note": "Com reduced-motion: todos os reveals viram opacity 0→1 em 200ms sem translate/scale; parallax desativado por completo."
+  },
+  "components": {
+    "buttons": {
+      "variants": {
+        "primary": {
+          "usage": "Uma única ação dourada por tela: 'Reserve sua estadia'",
+          "font": "Lora 13px, uppercase, letter-spacing 0.18em, weight 500",
+          "radius": "0",
+          "states": {
+            "default": {
+              "background": "#D4A574",
+              "color": "#2A1F14",
+              "border": "1px solid #D4A574",
+              "shadow": "none"
+            },
+            "hover": {
+              "background": "#E0BA8E",
+              "color": "#2A1F14",
+              "transform": "translateY(-1px)",
+              "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1)"
+            },
+            "focus": {
+              "outline": "2px solid #D4A574",
+              "outline_offset": "3px",
+              "note": "foco visível a 7.23:1 sobre a surface"
+            },
+            "active": {
+              "background": "#C29257",
+              "transform": "translateY(0)"
+            },
+            "disabled": {
+              "background": "#4A3A28",
+              "color": "#9A8568",
+              "border": "1px solid #4A3A28",
+              "cursor": "not-allowed",
+              "aria": "aria-disabled='true' quando o botão precisa permanecer descobrível"
+            }
+          }
+        },
+        "secondary": {
+          "usage": "Ações de segundo nível: 'Conheça as suítes', 'Ver menu'",
+          "font": "Lora 13px, uppercase, letter-spacing 0.18em, weight 500",
+          "radius": "0",
+          "states": {
+            "default": {
+              "background": "transparent",
+              "color": "#F5EDE1",
+              "border": "1px solid rgba(212, 165, 116, 0.5)"
+            },
+            "hover": {
+              "background": "preenchimento dourado esquerda→direita (btn-fill-gold, 300ms)",
+              "color": "#2A1F14",
+              "border": "1px solid #D4A574"
+            },
+            "focus": {
+              "outline": "2px solid #D4A574",
+              "outline_offset": "3px"
+            },
+            "active": {
+              "background": "#C29257",
+              "border": "1px solid #C29257",
+              "color": "#2A1F14"
+            },
+            "disabled": {
+              "background": "transparent",
+              "border": "1px solid #4A3A28",
+              "color": "#9A8568",
+              "cursor": "not-allowed"
+            }
+          }
+        },
+        "ghost": {
+          "usage": "Links editoriais dentro de texto e cards: 'Descobrir'",
+          "font": "Lora 14px, uppercase, letter-spacing 0.14em",
+          "detail": "underline 1px dourado que cresce no hover (link-underline-grow) + seta → deslocando 4px",
+          "states": {
+            "default": {
+              "background": "transparent",
+              "color": "#D4A574",
+              "border": "none"
+            },
+            "hover": {
+              "color": "#E0BA8E",
+              "underline": "cresce do centro para as bordas em 300ms"
+            },
+            "focus": {
+              "outline": "2px solid #D4A574",
+              "outline_offset": "3px"
+            },
+            "active": {
+              "color": "#C29257"
+            },
+            "disabled": {
+              "color": "#9A8568",
+              "cursor": "not-allowed"
+            }
+          }
+        }
+      },
+      "sizes": {
+        "md": { "padding": "16px 40px", "min_height": "48px", "font_size": "13px" },
+        "lg": { "padding": "20px 56px", "min_height": "56px", "font_size": "14px" }
+      },
+      "touch_target": "mínimo 48px de altura em todos os tamanhos",
+      "composition_rule": "Nunca dois botões primary na mesma viewport; par permitido é primary + ghost"
+    },
+    "cards": {
+      "style": "Sem caixa: imagem sangrada (ratio 4:5 ou 3:4) + numeral editorial dourado ('Nº 01') + título Fraunces + linha de apoio Lora + link ghost. Elevação por espaço, não por borda.",
+      "anatomy": {
+        "media": "figure com aspect-ratio 4/5, overflow hidden, gradiente/foto",
+        "eyebrow": "numeral editorial 'Nº 01' — Lora 12px uppercase letter-spacing 0.2em #D4A574",
+        "title": "Fraunces 24–28px weight 400 #F5EDE1",
+        "support": "Lora 15px line-height 1.7 #CBB89F, máximo 2 linhas",
+        "action": "link ghost 'Descobrir →'"
+      },
+      "background": "transparent (sobre surface); surface_alt apenas quando o card precisa se destacar de imagem de fundo",
+      "states": {
+        "default": "sem borda, sem sombra — separação por 64px+ de espaço",
+        "hover": "imagem escala 1.03 em 900ms luxe_out; título transiciona para #D4A574; nada de sombra",
+        "focus_within": "moldura 1px #D4A574 via box-shadow glow_gold",
+        "reduced_motion": "hover sem scale; apenas mudança de cor do título"
+      },
+      "grid_behavior": "No grid magazine, cards alternam larguras (7/12 + 5/12) e offsets verticais de 64–96px — nunca uma fileira uniforme",
+      "clickable_area": "card inteiro clicável via pseudo-elemento no link principal, preservando semântica de <a> único"
+    },
+    "inputs": {
+      "style": "Campo editorial: sem caixa, apenas border-bottom 1px #4A3A28, background transparent, texto #F5EDE1",
+      "label": "uppercase 12px letter-spacing 0.14em em #CBB89F, sempre visível acima do campo (nunca só placeholder)",
+      "states": {
+        "default": {
+          "border_bottom": "1px solid #4A3A28",
+          "color": "#F5EDE1",
+          "padding": "12px 0"
+        },
+        "focus": {
+          "border_bottom": "2px solid #D4A574",
+          "label_color": "#D4A574",
+          "box_shadow": "none",
+          "outline": "nenhum outline extra — o border-bottom 2px dourado é o indicador; para AA, acompanhado de mudança de cor do label"
+        },
+        "error": {
+          "border_bottom": "2px solid #E08D7C",
+          "message": "13px #E08D7C com ícone de alerta em traço fino",
+          "aria": "aria-invalid='true' + aria-describedby apontando para a mensagem"
+        },
+        "disabled": {
+          "border_bottom": "1px dashed #4A3A28",
+          "color": "#9A8568"
+        }
+      },
+      "placeholder": "#9A8568 — apenas exemplo de formato, nunca substituto de label",
+      "select_date": "Mesmo tratamento; ícones de calendário em traço fino dourado (SVG stroke 1.25px); no mobile usar inputs nativos date para teclado correto",
+      "autocomplete": "autocomplete e inputmode corretos (email, tel) — público executivo preenche no celular entre reuniões"
+    },
+    "hero": {
+      "layout": "Full-bleed 100svh: imagem imersiva (na produção, fotografia de arquitetura; no preview, gradiente rico + SVG) com véu rgba(26,18,10,0.45)→transparent. Conteúdo ancorado no terço inferior-esquerdo, quebrando a centralização clássica de hotelaria.",
+      "content": "eyebrow uppercase dourado ('Serra da Mantiqueira — desde 1987') + H1 Fraunces de 2 linhas no máximo + um único CTA primary",
+      "booking_bar": {
+        "position": "fixa no rodapé do hero",
+        "background": "rgba(56, 43, 28, 0.85) com backdrop-filter blur(12px)",
+        "fields": ["check-in (date)", "check-out (date)", "hóspedes (select 1–6)"],
+        "action": "botão primary 'Ver disponibilidade'",
+        "mobile": "colapsa para botão único 'Reservar' fixo na base da tela",
+        "aria": "role de region com aria-label='Reserva'",
+        "inspiration": "padrão de booking persistente observado na referência (Aman)"
+      },
+      "motion": "image-scale-settle na carga + parallax-soft de 6% no scroll; texto com reveal-up em cascata (eyebrow → H1 → CTA, delays 0/150/300ms)",
+      "fallback": "sem JS: conteúdo visível de imediato (animações são progressive enhancement)"
+    },
+    "navigation": {
+      "style": "Header transparente sobre o hero, tornando-se surface (#2A1F14) com filete inferior 1px rgba(212,165,116,0.25) após 80px de scroll",
+      "height": "88px desktop / 64px mobile",
+      "logo": "wordmark Fraunces 300, centralizado no desktop (padrão editorial), à esquerda no mobile",
+      "links": {
+        "font": "uppercase 13px letter-spacing 0.18em",
+        "color": "#F5EDE1",
+        "hover": "underline-grow dourado 1px",
+        "active": "underline dourado 2px persistente + color #D4A574"
+      },
+      "cta": "botão secondary compacto 'Reservar' sempre visível à direita",
+      "mobile": {
+        "trigger": "hambúrguer em traço fino 1.5px, área de toque 48px",
+        "overlay": "fullscreen #241A10, links Fraunces 32px em reveal cascata (stagger 80ms)",
+        "close": "botão ✕ focável + tecla Esc + focus-trap dentro do overlay",
+        "scroll_lock": "body sem scroll enquanto aberto"
+      },
+      "skip_link": "'Ir para o conteúdo' visível ao focar, fundo dourado texto marrom"
+    },
+    "footer": {
+      "style": "Surface #241A10 (neutral-900), padding-top 144px. Assinatura editorial: wordmark grande Fraunces, depois 3 colunas (contato, navegação, redes) em Lora 15px #CBB89F",
+      "detail": "Filete dourado 1px de largura total separando wordmark das colunas; numerais de coordenadas geográficas como ornamento tipográfico ('22°44′S 45°35′W')",
+      "columns": {
+        "contato": "endereço, telefone com link tel:, e-mail do concierge",
+        "navegacao": "suítes, gastronomia, experiências, jornal da casa",
+        "social": "Instagram e Pinterest apenas — canais visuais coerentes com o posicionamento"
+      },
+      "newsletter": "input editorial (border-bottom) + botão ghost 'Receber convites' — copy de exclusividade, não de marketing",
+      "legal": "linha final 12px #9A8568 com CNPJ, política de privacidade e crédito"
+    },
+    "testimonials": {
+      "style": "Uma citação por vez, nunca carrossel automático. Aspas ornamentais Fraunces 96px em #D4A574 a 30% de opacidade, citação Fraunces itálico 28px #F5EDE1, atribuição uppercase 12px #CBB89F",
+      "layout": "Ocupa 8/12 colunas com offset à direita — respiro assimétrico à esquerda",
+      "navigation": {
+        "controls": "setas ← → em traço fino 1.5px, área de toque 48px",
+        "counter": "numeral '01 / 04' em Lora 13px #9A8568",
+        "keyboard": "setas focáveis com aria-label 'Depoimento anterior/próximo'; região com aria-live='polite'",
+        "autoplay": "nunca — troca somente por ação do usuário"
+      }
+    },
+    "badges": {
+      "style": "Selo de distinção: texto uppercase 11px letter-spacing 0.2em dentro de moldura 1px dourada, sem preenchimento, padding 8px 16px",
+      "usage": "'Membro de associação de luxo', 'Adults only', 'Reserva antecipada' — máximo 2 por página",
+      "colors": {
+        "border": "rgba(212, 165, 116, 0.5)",
+        "text": "#D4A574",
+        "background": "transparent"
+      },
+      "note": "Nunca usar badges como elemento promocional (desconto, oferta) — apenas como credencial"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Minimalista evocativo. Frases curtas que sugerem em vez de descrever. Silêncio como recurso: menos palavras, mais peso por palavra. Nunca exclamações, nunca urgência artificial, nunca superlativos vazios.",
+    "headline_examples": [
+      "Um refúgio para poucos.",
+      "O tempo passa diferente aqui.",
+      "Onde a serra encontra o silêncio.",
+      "Doze suítes. Nenhuma pressa."
+    ],
+    "cta_examples": [
+      "Reserve sua estadia",
+      "Conheça as suítes",
+      "Solicite um convite",
+      "Ver disponibilidade"
+    ],
+    "avoid": [
+      "Urgência promocional ('Últimas vagas!', 'Aproveite já!')",
+      "Superlativos genéricos ('o melhor hotel', 'experiência incrível')",
+      "Exclamações e emojis",
+      "Jargão de OTA ('book now', '50% off', selos de desconto)",
+      "Descrever demais — o luxo se mostra, não se explica"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas, max-width 1440px, gutter 32px. Uso assimétrico estilo magazine: blocos de 7/12 + 5/12, offsets verticais de 64–96px entre colunas vizinhas, texto ocupando no máximo 6/12 em seções editoriais.",
+    "page_flow": [
+      {
+        "section": "hero",
+        "layout": "full-bleed 100svh, conteúdo no terço inferior-esquerdo, booking bar fixa na base do hero",
+        "background": "imagem imersiva com véu marrom",
+        "motion": "image-scale-settle + reveal-up em cascata"
+      },
+      {
+        "section": "manifesto",
+        "layout": "texto centrado ocupando 6/12, Fraunces quote 28–32px, cercado por 200px de respiro vertical — a seção mais 'vazia' da página, de propósito",
+        "background": "surface",
+        "motion": "reveal-line antecedendo o texto + reveal-up"
+      },
+      {
+        "section": "suites-magazine-grid",
+        "layout": "grid assimétrico 7/12 + 5/12 com offsets verticais alternados de 64–96px; numerais editoriais Nº 01–04; imagens 4:5",
+        "background": "surface",
+        "motion": "stagger-cascade nos cards"
+      },
+      {
+        "section": "experiencia-imersiva",
+        "layout": "full-bleed 70vh com parallax-soft; uma frase Fraunces itálico sobre véu escuro; sem CTA — puro mood",
+        "background": "imagem full-bleed com véu rgba(26,18,10,0.5)",
+        "motion": "parallax-soft 6%"
+      },
+      {
+        "section": "gastronomia",
+        "layout": "split invertido 5/12 texto + 7/12 imagem sangrando até a borda direita da tela",
+        "background": "surface_alt na coluna de texto",
+        "motion": "reveal-up dessincronizado entre texto e imagem (delay 200ms)"
+      },
+      {
+        "section": "depoimento",
+        "layout": "citação única 8/12 com offset à direita, navegação manual 01/04",
+        "background": "surface",
+        "motion": "reveal-up simples"
+      },
+      {
+        "section": "cta-reserva",
+        "layout": "seção surface_alt centrada: eyebrow + H2 + botão primary único + nota de contato direto ('ou fale com o concierge')",
+        "background": "surface_alt com filetes dourados superior e inferior",
+        "motion": "reveal-line + reveal-up"
+      },
+      {
+        "section": "footer",
+        "layout": "wordmark grande + 3 colunas + linha legal",
+        "background": "neutral-900 (#241A10)",
+        "motion": "nenhuma — o encerramento é estático e sóbrio"
+      }
+    ],
+    "image_treatment": "Fotografia de arquitetura e ambientes, tons quentes escuros, nunca pessoas em close (privacidade como valor). Véu marrom rgba(26,18,10,0.35–0.5) para garantir contraste de texto. No preview e em rascunhos: gradientes ricos multi-stop + SVG de linhas arquiteturais simulando a fotografia.",
+    "density": "Muito baixa. Uma ideia por viewport. Máximo de 2 CTAs visíveis por tela.",
+    "whitespace": "Absoluto e intencional: section_spacing de até 200px no desktop. O espaço vazio É o elemento de design — exclusividade através de espaço, não de decoração."
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "text_primary_on_surface": "13.87:1 — AAA",
+      "text_secondary_on_surface": "8.36:1 — AAA",
+      "text_muted_on_surface": "4.55:1 — AA (restrito à surface base)",
+      "secondary_on_surface": "7.23:1 — AAA",
+      "primary_on_secondary_button": "7.23:1 — AAA",
+      "rule": "Texto sobre imagem sempre com véu escuro garantindo ≥4.5:1 medido no ponto mais claro da área de texto"
+    },
+    "keyboard_navigation": "Toda a navegação operável por teclado: skip-link para o conteúdo, ordem de tabulação seguindo o fluxo visual, overlay mobile com focus-trap e fechamento por Esc, setas de depoimento focáveis com aria-label",
+    "focus_states": "outline 2px solid #D4A574 com outline-offset 3px em todos os interativos — o dourado a 7.23:1 sobre o fundo garante foco visível; nunca outline:none sem substituto",
+    "alt_text": "Imagens de ambiente com alt descritivo do espaço e da luz ('Suíte com vista para o vale ao entardecer'); imagens puramente decorativas (gradientes, filetes) com alt vazio e aria-hidden",
+    "semantic_html": "header/nav/main/section/article/footer; h1 único no hero; landmarks nomeados (aria-label='Reserva' na booking bar); botões são <button>, links são <a>",
+    "touch_targets": "44px minimum — botões do DS têm 48–56px; links de navegação mobile com padding vertical de 16px",
+    "motion_safety": "prefers-reduced-motion colapsa reveals para fade 200ms e desliga parallax; nenhuma animação essencial para compreender conteúdo"
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Full-bleed 100svh; conteúdo ancorado no terço inferior-esquerdo com padding 24px; eyebrow → H1 40px (máx 2 linhas) → único CTA primary; booking bar colapsa para botão único 'Reservar' fixo na base da tela",
+      "tablet": "100svh com padding 48px; H1 escala pelo clamp; booking bar horizontal reduzida (check-in/check-out/hóspedes empilháveis)",
+      "desktop": "100svh, padding 80px, H1 76px; booking bar completa fixa no rodapé do hero com backdrop-filter blur(12px)"
+    },
+    "suites_magazine_grid": {
+      "mobile": "1 coluna, cards empilhados full-width sem offset vertical, gutter 20px; numerais editoriais Nº 01–04 acima de cada imagem 4:5",
+      "tablet": "2 colunas com offset vertical suave (32–48px), gutter 20–28px",
+      "desktop": "grid assimétrico 12 colunas: cards alternam 7/12 + 5/12 com offsets verticais de 64–96px, gutter 32px; cascata stagger 0/150/300ms"
+    },
+    "navigation": {
+      "mobile_tablet": "Header 64px, logo à esquerda + hambúrguer traço 1.5px (toque 48px); overlay fullscreen #241A10 com links Fraunces 32px em cascata, focus-trap e Esc",
+      "desktop": "Header 88px, wordmark Fraunces 300 centralizado + links uppercase 13px letter-spacing 0.18em + botão secondary 'Reservar' à direita; vira surface com filete 1px após 80px de scroll"
+    },
+    "footer": {
+      "mobile": "Colunas empilhadas (contato → navegação → social), wordmark grande no topo, padding-top 96px, filete dourado de largura total",
+      "tablet": "2 colunas, padding-top 144px",
+      "desktop": "wordmark grande + 3 colunas (contato / navegação / social) em Lora 15px #CBB89F, padding-top 144px; ornamento de coordenadas geográficas"
+    },
+    "touch_adjustments": "Alvos de toque mínimos de 48px (botões 48–56px, setas de depoimento 48px, hambúrguer 48px); parallax-soft e image-scale-settle desativados no touch em favor de estado final imediato; booking bar vira botão único no mobile; hover de card (scale 1.03) não dispara em touch — apenas navegação"
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente, coerentes com components deste DS",
+    "button_primary": ["default (bg #D4A574, texto #2A1F14)", "hover (bg #E0BA8E, translateY(-1px), 300ms standard)", "focus-visible (outline 2px #D4A574, offset 3px)", "active (bg #C29257, translateY(0))", "disabled (bg #4A3A28, texto #9A8568, aria-disabled)", "loading (spinner traço fino 1.25px #2A1F14 + texto 'Verificando...')"],
+    "button_secondary": ["default (transparent, texto #F5EDE1, borda 1px rgba(212,165,116,0.5))", "hover (preenchimento dourado esquerda→direita btn-fill-gold 300ms, texto #2A1F14)", "focus-visible (outline 2px #D4A574, offset 3px)", "active (bg #C29257, borda #C29257)", "disabled (borda #4A3A28, texto #9A8568)"],
+    "link_nav": ["default (uppercase #F5EDE1)", "hover (underline-grow dourado 1px do centro)", "focus-visible (outline 2px #D4A574, offset 3px)", "current (underline dourado 2px persistente + color #D4A574)"],
+    "card_suite": ["default (sem borda, sem sombra, separação por 64px+ de espaço)", "hover (imagem scale 1.03 em 900ms luxe_out, título → #D4A574, sem sombra)", "focus-within (moldura 1px #D4A574 via glow_gold)", "reduced-motion (sem scale, apenas cor do título)"],
+    "input": ["default (border-bottom 1px #4A3A28, texto #F5EDE1, label uppercase #CBB89F)", "focus (border-bottom 2px #D4A574 + label #D4A574)", "filled", "error (border-bottom 2px #E08D7C + mensagem #E08D7C + aria-invalid/aria-describedby)", "disabled (border-bottom 1px dashed #4A3A28, texto #9A8568)"],
+    "nav_header": ["topo (header transparente sobre o hero)", "rolado (surface #2A1F14 + filete inferior 1px rgba(212,165,116,0.25) após 80px)", "menu mobile aberto (overlay #241A10 com focus-trap + scroll-lock)"]
+  },
+  "photography_direction": {
+    "style": "Imersivo e evocativo — arquitetura e ambientes de luxo em tons quentes escuros, sem pessoas em close (privacidade e exclusividade como valor). Silêncio visual: um assunto por quadro, muito respiro.",
+    "subjects": [
+      "Interiores de suíte com luz de fim de tarde entrando lateralmente",
+      "Detalhes de materiais nobres (madeira escura, pedra, tecido) em close com profundidade rasa",
+      "Vista do vale/serra ao entardecer, névoa e temperatura quente",
+      "Mesa posta de gastronomia sem figuras humanas, luz baixa",
+      "Fachada e arquitetura ao anoitecer, luz âmbar interna"
+    ],
+    "light": "Baixa e quente (âmbar), direção lateral suave; golden hour e blue hour para externas. Sombras profundas preservadas — a escuridão é atmosfera, não erro de exposição.",
+    "color_grading": "Temperatura quente, sombras marrom queimado alinhadas à surface #2A1F14, realces dourados discretos. Proibido: filtros frios, alto contraste HDR, saturação promocional, pessoas sorrindo para a câmera.",
+    "framing": "Composição editorial assimétrica; sangramento até a borda; espaço negativo generoso; imagens em ratio 4:5 nos cards e full-bleed no hero e na seção imersiva.",
+    "avoid": [
+      "Pessoas em close ou contato visual direto (quebra a fantasia de privacidade)",
+      "Stock genérico de hotelaria (casal na piscina, taças brindando)",
+      "Iluminação clara/clínica ou fundos brancos (pertence a outra personalidade)",
+      "Selos de oferta, watermark ou texto promocional sobre a imagem"
+    ],
+    "fallback_sem_foto": "Gradientes ricos multi-stop no eixo marrom queimado (ex: linear-gradient(160deg, #241A10, #382B1C 60%, #2A1F14)) com véu rgba(26,18,10,0.35–0.5) para contraste de texto, sobrepostos por SVG de linhas arquiteturais finas (stroke 1px dourado #D4A574 a 30–40% de opacidade). Nunca usar o ouro sólido como grande área — apenas filetes."
+  },
+  "iconography": {
+    "style": "Linha fina e sóbria (stroke 1.25–1.5px), traço reto/arquitetural com stroke-linecap butt, grid 24x24. Coerente com botões retos e a estética editorial de filete.",
+    "color": "#D4A574 (ouro) sobre surface escura; #F5EDE1 quando o dourado precisar recuar; nunca ouro sobre neutros claros (50–200)",
+    "recommended_set": "Lucide ou Feather (open source, MIT), ajustando stroke para 1.25–1.5px para a leveza editorial; ícones de calendário/seta em traço fino como já usado em inputs e depoimentos",
+    "usage": "Ícones sempre acompanhados de texto — nunca ícone sozinho como única affordance; setas de depoimento e calendário de reserva em traço fino dourado com área de toque de 48px",
+    "decorative_shapes": "Filetes dourados 1px (reveal-line crescendo de 0 a 64px), aspas ornamentais Fraunces 96px a 30% de opacidade, numerais editoriais 'Nº 01' e coordenadas geográficas como ornamento tipográfico — todos aria-hidden"
+  },
+  "do_dont": {
+    "do": [
+      "Usar o ouro #D4A574 com extrema parcimônia: CTAs, filetes 1px, numerais e links — o luxo é a escassez do ouro",
+      "Deixar até 200px de respiro entre seções no desktop — o 'espaço em escuro' É o elemento de design",
+      "Manter um único CTA primary dourado por viewport (par permitido: primary + ghost)",
+      "Usar Fraunces itálico soft para citações e manifesto; distribuir Fraunces→headings e Lora→body",
+      "Botões e cards retos (radius 0), separados por espaço e filetes, nunca por caixas arredondadas",
+      "Reveals lentos (600–1200ms, luxe_out) — nada pisca, nada salta; parallax no máximo 6%",
+      "Trocar depoimentos apenas por ação do usuário — nunca autoplay/carrossel"
+    ],
+    "dont": [
+      "Usar text_muted #9A8568 sobre surface_alt #382B1C (cai para 3.88:1 — falha AA); usar text_secondary #CBB89F ou superior",
+      "Usar o ouro #D4A574 como texto sobre neutros claros (50–200) — em contexto claro escurecer para #8A6A3F",
+      "Preencher grandes áreas com ouro sólido — apenas filetes, micro-detalhes e CTAs",
+      "Urgência promocional, superlativos, exclamações, emojis ou jargão de OTA ('book now', '50% off')",
+      "Usar badges como elemento promocional (desconto) — apenas como credencial, máximo 2 por página",
+      "Dois botões primary na mesma viewport ou mais de 2 CTAs por tela",
+      "Comprimir o whitespace ou criar fileiras uniformes no grid magazine (ele é deliberadamente assimétrico)"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300 e Lora:ital,wght@0,400;0,500;1,400 com display=swap; subset latin, fallback métrico Georgia/serif",
+    "js_budget": "Poucos comportamentos, zero bibliotecas de animação: IntersectionObserver único para reveals (reveal-up/reveal-line/stagger-cascade), parallax-soft via transform em scroll (will-change apenas durante scroll visível), overlay mobile (toggle + focus-trap + scroll-lock), booking bar e navegação manual de depoimentos. Animações são progressive enhancement — conteúdo visível sem JS.",
+    "seo_local": "Schema.org LodgingBusiness/Hotel (ou Resort) com endereço, geo (coordenadas da serra), telefone com link tel:, faixa de preço e amenidades; título com localidade ('Hotel Boutique X — Refúgio de luxo na Serra da Mantiqueira')",
+    "whatsapp_cta": "Rota alternativa de conversão via concierge: link wa.me com mensagem sóbria pré-preenchida ('Gostaria de solicitar disponibilidade para uma estadia.') — atende o decisor que não reserva por formulário, sem quebrar a atmosfera",
+    "adaptation_guide": "Ao adaptar para outro segmento premium (pousada de luxo, fine dining, vinícola, arquitetura de alto padrão): manter a paleta marrom queimado + ouro escasso, Fraunces+Lora, radius 0, motion lento e whitespace extremo; trocar fotografia e vocabulário do voice_and_tone. A essência é exclusividade através de espaço, não decoração."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "visual_uniqueness_note": "Radicalmente distinto dos irmãos 02.1 (preto #1A1A1A + Playfair, split-screen corporativo) e 02.2 (sage claro + Cormorant, leveza tonal): aqui o mood é marrom queimado imersivo, Fraunces+Lora, grid magazine assimétrico",
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true,
+    "flexibility_note": "Paleta e composição adaptáveis a pousada de luxo, fine dining, vinícola e arquitetura de alto padrão trocando fotografia e vocabulário — ver benchmarking.ideal_for"
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "premium",
+      "sofisticado",
+      "hotelaria-de-luxo",
+      "dark-warm",
+      "marrom-queimado",
+      "ouro-sutil",
+      "fraunces-lora",
+      "grid-magazine",
+      "whitespace-extremo",
+      "editorial-assimetrico"
+    ],
+    "related_docs": [
+      "previews/markdown/02-3-hotel-boutique-luxuoso.md",
+      "previews/html/02-3-hotel-boutique-luxuoso.html",
+      "docs/02-3-hotel-boutique-luxuoso/components.md",
+      "docs/02-3-hotel-boutique-luxuoso/animations.css",
+      "docs/02-3-hotel-boutique-luxuoso/accessibility-report.md",
+      "docs/02-3-hotel-boutique-luxuoso/benchmarking.md",
+      "docs/02-3-hotel-boutique-luxuoso/color-variations.md",
+      "docs/02-3-hotel-boutique-luxuoso/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Hotel boutique",
+      "Pousada de luxo",
+      "Restaurante fine dining",
+      "Vinícola premium",
+      "Arquitetura de alto padrão"
+    ],
+    "conversion_factors": [
+      "Booking bar persistente no hero reduz fricção da ação principal sem quebrar a atmosfera",
+      "Um único CTA dourado por tela concentra atenção — escassez visual aumenta o CTR do botão de reserva",
+      "Ritmo lento e whitespace extremo comunicam preço alto antes de qualquer número — pré-qualifica o lead",
+      "Depoimento único e curado (não carrossel) transmite curadoria e aumenta confiança do público C-level",
+      "Rota alternativa de conversão via concierge/WhatsApp atende o decisor que não reserva por formulário",
+      "Fotografia de ambiente sem pessoas preserva a fantasia de exclusividade e privacidade do viajante de alto padrão"
+    ],
+    "core_web_vitals": {
+      "lcp_target": "< 2.5s — hero com gradiente/SVG instantâneo e imagem em loading eager + fetchpriority=high; demais imagens lazy",
+      "fid_inp_target": "< 100ms / INP < 200ms — animações via transform/opacity, IntersectionObserver único, zero bibliotecas de animação",
+      "cls_target": "< 0.1 — aspect-ratio reservado em todas as imagens; fontes com font-display: swap e fallbacks métricos (Georgia/serif)",
+      "notes": "Parallax implementado com transform: translateY em compositor (will-change apenas durante o scroll visível); Fraunces e Lora subsettadas em latin com preconnect"
+    }
+  }
+}

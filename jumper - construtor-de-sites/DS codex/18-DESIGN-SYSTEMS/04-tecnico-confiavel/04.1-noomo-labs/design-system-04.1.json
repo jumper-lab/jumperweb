@@ -1,0 +1,1056 @@
+{
+  "schema_version": "3.0.0-codex-distinct",
+  "design_system_id": "04.1",
+  "design_system_name": "Noomo Lab Console System",
+  "category": "04 — Técnico e Confiável",
+  "subcategory": "Agência técnica / laboratório digital",
+  "import_policy": "Pacote separado para validação manual em DS codex. Não mover para o sistema oficial sem revisão humana de originalidade, cobertura e compatibilidade.",
+  "inspiration_site": {
+    "name": "Noomo Labs",
+    "url": "https://noomoagency.com/",
+    "awards": [
+      "Referencia visual em validacao autoral; premios/reconhecimentos nao devem ser tratados como verificados ate auditoria humana com fontes."
+    ],
+    "design_studio_or_author": "Digital product studio",
+    "why_chosen": "Noomo Labs foi usado como repertório para lab console, technical proof cards, build capability matrix. O DS traduz a lógica de experiência do site em decisões reutilizáveis sem copiar layout, texto, imagens ou componentes."
+  },
+  "source_site_translation": {
+    "observed_visual_pattern": "lab console, technical proof cards, build capability matrix",
+    "site_anatomy_to_cover": {
+      "navigation": "command-line nav with capability filters",
+      "hero": "console hero with live metrics, system cards and capability command prompt",
+      "primary_sections": [
+        "Capability console",
+        "Prototype lab cards",
+        "Technical proof matrix",
+        "Stack diagram",
+        "Process sprints",
+        "Case-study terminal",
+        "Contact command",
+        "Footer as system status"
+      ],
+      "conversion_paths": [
+        "View lab work",
+        "Talk to experts",
+        "contact/support route"
+      ],
+      "footer_role": "Footer as system status"
+    },
+    "what_to_reinterpret": [
+      "Ritmo principal: operational console",
+      "Padrão de navegação: command-line nav with capability filters",
+      "Componentes próprios: console-command-bar, metric-proof-card, stack-diagram-node, sprint-stepper, case-terminal-panel, system-status-footer",
+      "Motion signature: terminal caret, metric pulse, panel snap"
+    ],
+    "what_not_to_copy": [
+      "layout exato do site fonte",
+      "copy real do site fonte",
+      "imagens reais do site fonte",
+      "classes CSS do site fonte",
+      "componentes proprietários do site fonte"
+    ],
+    "jumper_usage_boundary": "Usar como repertório visual e estrutural. O cliente final ainda precisa nascer do briefing, do DS final do cliente e do plano autoral."
+  },
+  "uniqueness_fingerprint": {
+    "layout_architecture": "operational console",
+    "navigation_pattern": "command-line nav with capability filters",
+    "hero_architecture": "console hero with live metrics, system cards and capability command prompt",
+    "section_flow": [
+      "Capability console",
+      "Prototype lab cards",
+      "Technical proof matrix",
+      "Stack diagram",
+      "Process sprints",
+      "Case-study terminal",
+      "Contact command",
+      "Footer as system status"
+    ],
+    "component_set": [
+      "console-command-bar",
+      "metric-proof-card",
+      "stack-diagram-node",
+      "sprint-stepper",
+      "case-terminal-panel",
+      "system-status-footer"
+    ],
+    "motion_signature": "terminal caret, metric pulse, panel snap",
+    "responsive_strategy": "console cards collapse into ordered status feed",
+    "density": "technical",
+    "whitespace": "balanced",
+    "prohibited_similarity_checks": [
+      "não reutilizar hero split automático",
+      "não usar grid genérico de três cards sem função",
+      "não repetir ordem de seções de outro DS",
+      "não usar botão e card com mesmo comportamento dos demais DSs"
+    ]
+  },
+  "colors": {
+    "primary": "#060B12",
+    "primary_usage": "ação principal, ponto de marca e destaque de navegação",
+    "secondary": "#4F7CFF",
+    "secondary_usage": "ênfase secundária, estado ativo e composição visual",
+    "surface": "#EAF1FF",
+    "surface_alt": "#D9E7FF",
+    "text_primary": "#1A2433",
+    "text_secondary": "#526070",
+    "text_muted": "#526070",
+    "border": "#9AB8FF",
+    "error": "#B42318",
+    "success": "#027A48",
+    "warning": "#B54708",
+    "neutral_scale": {
+      "50": "#EBF2FF",
+      "100": "#EAF1FF",
+      "200": "#D9E7FF",
+      "300": "#9AB8FF",
+      "400": "#526070",
+      "500": "#4F7CFF",
+      "600": "#060B12",
+      "700": "#05090F",
+      "800": "#04070C",
+      "900": "#1A2433"
+    },
+    "contrast_verification": {
+      "text_on_surface": "13.78:1 (AAA)",
+      "cta_on_primary": "19.73:1 (AAA)",
+      "text_on_surface_alt": "12.52:1 (AAA)",
+      "notes": "Pares críticos recalculados. Em implementação real, imagens e overlays precisam passar nova checagem."
+    }
+  },
+  "typography": {
+    "heading_font": "Space Grotesk",
+    "body_font": "Inter",
+    "mono_font": "JetBrains Mono",
+    "base_size": "16px",
+    "tone_reason": "Space Grotesk sustenta lab console, technical proof cards, build capability matrix; Inter mantém leitura funcional.",
+    "scales": {
+      "mobile": {
+        "h1": {
+          "size": "2.35rem",
+          "weight": "800",
+          "line_height": "0.98"
+        },
+        "h2": {
+          "size": "1.65rem",
+          "weight": "700",
+          "line_height": "1.12"
+        },
+        "h3": {
+          "size": "1.2rem",
+          "weight": "700",
+          "line_height": "1.25"
+        },
+        "body": {
+          "size": "1rem",
+          "weight": "400",
+          "line_height": "1.62"
+        },
+        "small": {
+          "size": "0.875rem",
+          "weight": "500",
+          "line_height": "1.45"
+        }
+      },
+      "desktop": {
+        "h1": {
+          "size": "4.6rem",
+          "weight": "800",
+          "line_height": "0.92"
+        },
+        "h2": {
+          "size": "3.2rem",
+          "weight": "760",
+          "line_height": "1.02"
+        },
+        "h3": {
+          "size": "1.65rem",
+          "weight": "720",
+          "line_height": "1.18"
+        },
+        "body": {
+          "size": "1.08rem",
+          "weight": "400",
+          "line_height": "1.68"
+        },
+        "small": {
+          "size": "0.86rem",
+          "weight": "600",
+          "line_height": "1.42"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "xxl": "48px",
+      "xxxl": "72px",
+      "xxxxl": "96px"
+    },
+    "section_spacing": {
+      "mobile": "48px",
+      "tablet": "68px",
+      "desktop": "92px"
+    },
+    "container_max_width": "1320px"
+  },
+  "borders": {
+    "radius": {
+      "none": "0px",
+      "xs": "2px",
+      "sm": "4px",
+      "md": "8px",
+      "lg": "8px",
+      "xl": "8px",
+      "full": "999px"
+    },
+    "usage": {
+      "buttons": "8px",
+      "cards": "8px",
+      "inputs": "8px",
+      "reason": "Raio definido para combinar com lab console, technical proof cards, build capability matrix."
+    }
+  },
+  "shadows": {
+    "xs": "0 1px 2px rgba(0,0,0,.06)",
+    "sm": "0 4px 14px rgba(0,0,0,.08)",
+    "md": "0 14px 42px rgba(0,0,0,.12)",
+    "lg": "0 28px 80px rgba(0,0,0,.18)",
+    "usage": "sombras discretas conforme hierarquia"
+  },
+  "motion": {
+    "durations": {
+      "fast": "220ms",
+      "base": "340ms",
+      "slow": "620ms"
+    },
+    "easings": {
+      "standard": "cubic-bezier(.2,0,.2,1)",
+      "entrance": "cubic-bezier(.16,1,.3,1)",
+      "exit": "cubic-bezier(.7,0,.84,0)"
+    },
+    "animations": [
+      {
+        "name": "terminal-caret-metric-pulse-panel-snap",
+        "duration": "520ms",
+        "easing": "entrance",
+        "trigger": "section enters viewport",
+        "notes": "terminal caret, metric pulse, panel snap"
+      },
+      {
+        "name": "operational-console-hover",
+        "duration": "180ms",
+        "easing": "standard",
+        "trigger": "interactive hover/focus",
+        "notes": "o hover deve reforçar o componente específico, não apenas subir card"
+      }
+    ],
+    "reduced_motion": "Manter hierarquia com cor, borda e estado ativo; remover parallax, drift e deslocamentos."
+  },
+  "components": {
+    "navigation": {
+      "pattern": "command-line nav with capability filters",
+      "behavior": "context-aware sticky header",
+      "mobile": "console cards collapse into ordered status feed",
+      "states": [
+        "default",
+        "active section",
+        "menu open",
+        "focus visible"
+      ]
+    },
+    "hero": {
+      "height": "68-84vh",
+      "composition": "console hero with live metrics, system cards and capability command prompt",
+      "text_color": "colors.text_primary",
+      "media_rule": "imagem, produto, diagrama ou textura real precisa ter função comercial/narrativa",
+      "forbidden": "hero split automático com texto sempre à esquerda e imagem decorativa sem função"
+    },
+    "buttons": {
+      "primary": {
+        "bg": "colors.primary",
+        "text": "#FFFFFF",
+        "padding": "14px 24px",
+        "border_radius": "borders.radius.md",
+        "hover": "contextual state tied to DS motion",
+        "focus": "2px outline colors.secondary offset 3px"
+      },
+      "secondary": {
+        "bg": "transparent",
+        "text": "colors.text_primary",
+        "border": "1px colors.border",
+        "padding": "12px 20px",
+        "hover": "surface_alt + active border"
+      },
+      "ghost": {
+        "bg": "transparent",
+        "text": "colors.text_primary",
+        "border": "none",
+        "hover": "underline or active rail marker"
+      }
+    },
+    "unique_components": [
+      {
+        "name": "console-command-bar",
+        "role": "Capability console",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar console-command-bar para Noomo Lab Console System; não substituir por card genérico."
+      },
+      {
+        "name": "metric-proof-card",
+        "role": "Prototype lab cards",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar metric-proof-card para Noomo Lab Console System; não substituir por card genérico."
+      },
+      {
+        "name": "stack-diagram-node",
+        "role": "Technical proof matrix",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar stack-diagram-node para Noomo Lab Console System; não substituir por card genérico."
+      },
+      {
+        "name": "sprint-stepper",
+        "role": "Stack diagram",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar sprint-stepper para Noomo Lab Console System; não substituir por card genérico."
+      },
+      {
+        "name": "case-terminal-panel",
+        "role": "Process sprints",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar case-terminal-panel para Noomo Lab Console System; não substituir por card genérico."
+      },
+      {
+        "name": "system-status-footer",
+        "role": "Case-study terminal",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar system-status-footer para Noomo Lab Console System; não substituir por card genérico."
+      }
+    ],
+    "forms": {
+      "style": "contextual short form",
+      "fields": [
+        "name/email or intent",
+        "business-specific selector",
+        "message/notes"
+      ],
+      "error_state": "inline, explicit and high contrast",
+      "success_state": "keeps user in same context"
+    },
+    "footer": {
+      "role": "Footer as system status",
+      "layout": "functional grouped footer",
+      "must_include": [
+        "primary action",
+        "contact path",
+        "navigation recap",
+        "legal/accessibility links"
+      ]
+    }
+  },
+  "composition": {
+    "grid_system": "operational console",
+    "max_width": "1320px",
+    "density": "technical",
+    "whitespace": "balanced",
+    "image_treatment": "Imagens devem sustentar lab console, technical proof cards, build capability matrix.",
+    "page_flow": [
+      {
+        "order": 1,
+        "section": "Capability console",
+        "layout": "console hero with live metrics, system cards and capability command prompt",
+        "component": "console-command-bar"
+      },
+      {
+        "order": 2,
+        "section": "Prototype lab cards",
+        "layout": "asymmetric editorial block",
+        "component": "metric-proof-card"
+      },
+      {
+        "order": 3,
+        "section": "Technical proof matrix",
+        "layout": "functional conversion module",
+        "component": "stack-diagram-node"
+      },
+      {
+        "order": 4,
+        "section": "Stack diagram",
+        "layout": "wide proof band",
+        "component": "sprint-stepper"
+      },
+      {
+        "order": 5,
+        "section": "Process sprints",
+        "layout": "asymmetric editorial block",
+        "component": "case-terminal-panel"
+      },
+      {
+        "order": 6,
+        "section": "Case-study terminal",
+        "layout": "functional conversion module",
+        "component": "system-status-footer"
+      },
+      {
+        "order": 7,
+        "section": "Contact command",
+        "layout": "wide proof band",
+        "component": "console-command-bar"
+      },
+      {
+        "order": 8,
+        "section": "Footer as system status",
+        "layout": "asymmetric editorial block",
+        "component": "metric-proof-card"
+      }
+    ],
+    "structural_variations": [
+      {
+        "name": "baseline source-informed",
+        "description": "operational console"
+      },
+      {
+        "name": "conversion-heavy variant",
+        "description": "Antecipar View lab work sem trocar a anatomia operational console."
+      },
+      {
+        "name": "editorial-deep variant",
+        "description": "Aumentar storytelling de Prototype lab cards mantendo componentes console-command-bar e metric-proof-card."
+      }
+    ],
+    "selected_variation": "baseline source-informed with business-specific conversion accents"
+  },
+  "voice_and_tone": {
+    "tone": "precise, experimental and evidence-led",
+    "examples_headlines": [
+      "console hero with live metrics, system cards and capability command prompt",
+      "Capability console",
+      "lab console, technical proof cards, build capability matrix"
+    ],
+    "examples_cta": [
+      "View lab work",
+      "Talk to experts"
+    ],
+    "avoid": [
+      "avoid abstract agency buzzwords without proof",
+      "claims without visible proof",
+      "generic template language"
+    ]
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "text_on_surface": "13.78:1 (AAA)",
+      "cta_on_primary": "19.73:1 (AAA)"
+    },
+    "keyboard_navigation": "ordem lógica; estados ativos e foco visível em navegação, cards e formulários",
+    "focus_states": "2px outline com offset 3px usando secondary ou primary conforme contraste",
+    "alt_text": "Descrever função da imagem no padrão lab console, technical proof cards, build capability matrix, não apenas aparência.",
+    "touch_targets": "44px mínimo; ações principais não dependem de hover"
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Agência técnica / laboratório digital",
+      "B2B buyers and founders evaluating capability"
+    ],
+    "conversion_factors": [
+      "View lab work",
+      "Talk to experts",
+      "Technical proof matrix",
+      "console-command-bar"
+    ],
+    "core_web_vitals": {
+      "lcp_target": "< 2.5s",
+      "inp_target": "< 200ms",
+      "cls_target": "< 0.1"
+    },
+    "seo_schema": [
+      "Organization",
+      "LocalBusiness/Product/Service conforme cliente",
+      "BreadcrumbList",
+      "FAQPage quando houver FAQ"
+    ]
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "accessibility_wcag_aa": true,
+    "source_site_covered": true,
+    "clean_room_ready": true,
+    "not_a_template_skin": true
+  },
+  "implementation_depth_checks": [
+    {
+      "check": 1,
+      "area": "nav",
+      "rule": "Validar Noomo Lab Console System: nav deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra console-command-bar conectado à seção Capability console.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 2,
+      "area": "hero",
+      "rule": "Validar Noomo Lab Console System: hero deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra metric-proof-card conectado à seção Prototype lab cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 3,
+      "area": "sections",
+      "rule": "Validar Noomo Lab Console System: sections deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra stack-diagram-node conectado à seção Technical proof matrix.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 4,
+      "area": "components",
+      "rule": "Validar Noomo Lab Console System: components deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra sprint-stepper conectado à seção Stack diagram.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 5,
+      "area": "forms",
+      "rule": "Validar Noomo Lab Console System: forms deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra case-terminal-panel conectado à seção Process sprints.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 6,
+      "area": "motion",
+      "rule": "Validar Noomo Lab Console System: motion deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra system-status-footer conectado à seção Case-study terminal.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 7,
+      "area": "responsive",
+      "rule": "Validar Noomo Lab Console System: responsive deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra console-command-bar conectado à seção Contact command.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 8,
+      "area": "accessibility",
+      "rule": "Validar Noomo Lab Console System: accessibility deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra metric-proof-card conectado à seção Footer as system status.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 9,
+      "area": "conversion",
+      "rule": "Validar Noomo Lab Console System: conversion deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra stack-diagram-node conectado à seção Capability console.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 10,
+      "area": "nav",
+      "rule": "Validar Noomo Lab Console System: nav deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra sprint-stepper conectado à seção Prototype lab cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 11,
+      "area": "hero",
+      "rule": "Validar Noomo Lab Console System: hero deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra case-terminal-panel conectado à seção Technical proof matrix.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 12,
+      "area": "sections",
+      "rule": "Validar Noomo Lab Console System: sections deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra system-status-footer conectado à seção Stack diagram.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 13,
+      "area": "components",
+      "rule": "Validar Noomo Lab Console System: components deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra console-command-bar conectado à seção Process sprints.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 14,
+      "area": "forms",
+      "rule": "Validar Noomo Lab Console System: forms deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra metric-proof-card conectado à seção Case-study terminal.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 15,
+      "area": "motion",
+      "rule": "Validar Noomo Lab Console System: motion deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra stack-diagram-node conectado à seção Contact command.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 16,
+      "area": "responsive",
+      "rule": "Validar Noomo Lab Console System: responsive deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra sprint-stepper conectado à seção Footer as system status.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 17,
+      "area": "accessibility",
+      "rule": "Validar Noomo Lab Console System: accessibility deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra case-terminal-panel conectado à seção Capability console.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 18,
+      "area": "conversion",
+      "rule": "Validar Noomo Lab Console System: conversion deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra system-status-footer conectado à seção Prototype lab cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 19,
+      "area": "nav",
+      "rule": "Validar Noomo Lab Console System: nav deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra console-command-bar conectado à seção Technical proof matrix.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 20,
+      "area": "hero",
+      "rule": "Validar Noomo Lab Console System: hero deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra metric-proof-card conectado à seção Stack diagram.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 21,
+      "area": "sections",
+      "rule": "Validar Noomo Lab Console System: sections deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra stack-diagram-node conectado à seção Process sprints.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 22,
+      "area": "components",
+      "rule": "Validar Noomo Lab Console System: components deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra sprint-stepper conectado à seção Case-study terminal.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 23,
+      "area": "forms",
+      "rule": "Validar Noomo Lab Console System: forms deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra case-terminal-panel conectado à seção Contact command.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 24,
+      "area": "motion",
+      "rule": "Validar Noomo Lab Console System: motion deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra system-status-footer conectado à seção Footer as system status.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 25,
+      "area": "responsive",
+      "rule": "Validar Noomo Lab Console System: responsive deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra console-command-bar conectado à seção Capability console.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 26,
+      "area": "accessibility",
+      "rule": "Validar Noomo Lab Console System: accessibility deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra metric-proof-card conectado à seção Prototype lab cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 27,
+      "area": "conversion",
+      "rule": "Validar Noomo Lab Console System: conversion deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra stack-diagram-node conectado à seção Technical proof matrix.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 28,
+      "area": "nav",
+      "rule": "Validar Noomo Lab Console System: nav deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra sprint-stepper conectado à seção Stack diagram.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 29,
+      "area": "hero",
+      "rule": "Validar Noomo Lab Console System: hero deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra case-terminal-panel conectado à seção Process sprints.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 30,
+      "area": "sections",
+      "rule": "Validar Noomo Lab Console System: sections deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra system-status-footer conectado à seção Case-study terminal.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 31,
+      "area": "components",
+      "rule": "Validar Noomo Lab Console System: components deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra console-command-bar conectado à seção Contact command.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 32,
+      "area": "forms",
+      "rule": "Validar Noomo Lab Console System: forms deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra metric-proof-card conectado à seção Footer as system status.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 33,
+      "area": "motion",
+      "rule": "Validar Noomo Lab Console System: motion deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra stack-diagram-node conectado à seção Capability console.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 34,
+      "area": "responsive",
+      "rule": "Validar Noomo Lab Console System: responsive deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra sprint-stepper conectado à seção Prototype lab cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 35,
+      "area": "accessibility",
+      "rule": "Validar Noomo Lab Console System: accessibility deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra case-terminal-panel conectado à seção Technical proof matrix.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 36,
+      "area": "conversion",
+      "rule": "Validar Noomo Lab Console System: conversion deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra system-status-footer conectado à seção Stack diagram.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 37,
+      "area": "nav",
+      "rule": "Validar Noomo Lab Console System: nav deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra console-command-bar conectado à seção Process sprints.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 38,
+      "area": "hero",
+      "rule": "Validar Noomo Lab Console System: hero deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra metric-proof-card conectado à seção Case-study terminal.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 39,
+      "area": "sections",
+      "rule": "Validar Noomo Lab Console System: sections deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra stack-diagram-node conectado à seção Contact command.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 40,
+      "area": "components",
+      "rule": "Validar Noomo Lab Console System: components deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra sprint-stepper conectado à seção Footer as system status.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 41,
+      "area": "forms",
+      "rule": "Validar Noomo Lab Console System: forms deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra case-terminal-panel conectado à seção Capability console.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 42,
+      "area": "motion",
+      "rule": "Validar Noomo Lab Console System: motion deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra system-status-footer conectado à seção Prototype lab cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 43,
+      "area": "responsive",
+      "rule": "Validar Noomo Lab Console System: responsive deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra console-command-bar conectado à seção Technical proof matrix.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 44,
+      "area": "accessibility",
+      "rule": "Validar Noomo Lab Console System: accessibility deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra metric-proof-card conectado à seção Stack diagram.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 45,
+      "area": "conversion",
+      "rule": "Validar Noomo Lab Console System: conversion deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra stack-diagram-node conectado à seção Process sprints.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 46,
+      "area": "nav",
+      "rule": "Validar Noomo Lab Console System: nav deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra sprint-stepper conectado à seção Case-study terminal.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 47,
+      "area": "hero",
+      "rule": "Validar Noomo Lab Console System: hero deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra case-terminal-panel conectado à seção Contact command.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 48,
+      "area": "sections",
+      "rule": "Validar Noomo Lab Console System: sections deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra system-status-footer conectado à seção Footer as system status.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 49,
+      "area": "components",
+      "rule": "Validar Noomo Lab Console System: components deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra console-command-bar conectado à seção Capability console.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 50,
+      "area": "forms",
+      "rule": "Validar Noomo Lab Console System: forms deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra metric-proof-card conectado à seção Prototype lab cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 51,
+      "area": "motion",
+      "rule": "Validar Noomo Lab Console System: motion deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra stack-diagram-node conectado à seção Technical proof matrix.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 52,
+      "area": "responsive",
+      "rule": "Validar Noomo Lab Console System: responsive deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra sprint-stepper conectado à seção Stack diagram.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 53,
+      "area": "accessibility",
+      "rule": "Validar Noomo Lab Console System: accessibility deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra case-terminal-panel conectado à seção Process sprints.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 54,
+      "area": "conversion",
+      "rule": "Validar Noomo Lab Console System: conversion deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra system-status-footer conectado à seção Case-study terminal.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 55,
+      "area": "nav",
+      "rule": "Validar Noomo Lab Console System: nav deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra console-command-bar conectado à seção Contact command.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 56,
+      "area": "hero",
+      "rule": "Validar Noomo Lab Console System: hero deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra metric-proof-card conectado à seção Footer as system status.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 57,
+      "area": "sections",
+      "rule": "Validar Noomo Lab Console System: sections deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra stack-diagram-node conectado à seção Capability console.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 58,
+      "area": "components",
+      "rule": "Validar Noomo Lab Console System: components deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra sprint-stepper conectado à seção Prototype lab cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 59,
+      "area": "forms",
+      "rule": "Validar Noomo Lab Console System: forms deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra case-terminal-panel conectado à seção Technical proof matrix.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 60,
+      "area": "motion",
+      "rule": "Validar Noomo Lab Console System: motion deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra system-status-footer conectado à seção Stack diagram.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 61,
+      "area": "responsive",
+      "rule": "Validar Noomo Lab Console System: responsive deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra console-command-bar conectado à seção Process sprints.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 62,
+      "area": "accessibility",
+      "rule": "Validar Noomo Lab Console System: accessibility deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra metric-proof-card conectado à seção Case-study terminal.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 63,
+      "area": "conversion",
+      "rule": "Validar Noomo Lab Console System: conversion deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra stack-diagram-node conectado à seção Contact command.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 64,
+      "area": "nav",
+      "rule": "Validar Noomo Lab Console System: nav deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra sprint-stepper conectado à seção Footer as system status.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 65,
+      "area": "hero",
+      "rule": "Validar Noomo Lab Console System: hero deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra case-terminal-panel conectado à seção Capability console.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 66,
+      "area": "sections",
+      "rule": "Validar Noomo Lab Console System: sections deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra system-status-footer conectado à seção Prototype lab cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 67,
+      "area": "components",
+      "rule": "Validar Noomo Lab Console System: components deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra console-command-bar conectado à seção Technical proof matrix.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 68,
+      "area": "forms",
+      "rule": "Validar Noomo Lab Console System: forms deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra metric-proof-card conectado à seção Stack diagram.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 69,
+      "area": "motion",
+      "rule": "Validar Noomo Lab Console System: motion deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra stack-diagram-node conectado à seção Process sprints.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 70,
+      "area": "responsive",
+      "rule": "Validar Noomo Lab Console System: responsive deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra sprint-stepper conectado à seção Case-study terminal.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 71,
+      "area": "accessibility",
+      "rule": "Validar Noomo Lab Console System: accessibility deve expressar operational console.",
+      "evidence": "Preview ou implementação mostra case-terminal-panel conectado à seção Contact command.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 72,
+      "area": "conversion",
+      "rule": "Validar Noomo Lab Console System: conversion deve expressar lab console, technical proof cards, build capability matrix.",
+      "evidence": "Preview ou implementação mostra system-status-footer conectado à seção Footer as system status.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    }
+  ],
+  "source_verification": {
+    "status": "needs-human-source-verification-before-official-import",
+    "correction_reason": "Removidas formulacoes que pareciam premios/benchmarks comprovados sem evidencia anexada ao pacote.",
+    "source_url": "https://noomoagency.com/"
+  },
+  "functional_requirements": {
+    "preview_must_include": [
+      "navigation",
+      "hero",
+      "interactive mode selector",
+      "active component state",
+      "real form controls",
+      "aria-live result area",
+      "clickable color tokens",
+      "section coverage",
+      "responsive behavior",
+      "focus-visible states"
+    ],
+    "business_specific_interaction": "Comando",
+    "expected_result": "Console output atualizado",
+    "failure_fixed": "agencia tecnica sem terminal, stack ou prova operacional"
+  },
+  "visual_quality_review": {
+    "previous_failure": "Preview visual era superficial e/ou estatico; nao provava funcionalidade do DS.",
+    "current_standard": "Preview deve funcionar como console tecnico, com controle Comando, formulario e estado ativo.",
+    "reject_if": [
+      "parecer poster estatico",
+      "nao tiver formulario ou estado ativo",
+      "nao mostrar componentes do segmento",
+      "usar grid generico de cards sem funcao"
+    ]
+  }
+}

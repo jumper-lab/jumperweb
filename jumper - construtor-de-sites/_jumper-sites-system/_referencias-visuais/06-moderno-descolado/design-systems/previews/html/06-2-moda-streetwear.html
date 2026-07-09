@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DS 06.2 — Moda Streetwear · Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#000000; --secondary:#00FF41; --accent-ink:#007A29;
+  --surface:#000000; --surface-alt:#0D0D0D; --surface-inverted:#F2F2F2;
+  --text-primary:#FFFFFF; --text-secondary:#B8B8B8; --text-muted:#8A8A8A; --text-on-lime:#000;
+  --border:#2A2A2A; --error:#FF3B3B; --warning:#FFD60A;
+  --n600:#3D3D3D; --n500:#5C5C5C;
+  --font-display:'Archivo Black','Arial Black',sans-serif;
+  --font-exp:'Archivo','Arial Black',sans-serif;
+  --font-mono:'JetBrains Mono','Courier New',monospace;
+  --radius-full:999px;
+  --d-instant:100ms; --d-fast:180ms; --d-base:300ms; --d-slow:600ms;
+  --e-snap:cubic-bezier(0.85,0,0.15,1); --e-expo:cubic-bezier(0.16,1,0.3,1);
+  --hard:8px 8px 0 var(--secondary); --hard-h:12px 12px 0 var(--secondary);
+  --glow:0 0 24px rgba(0,255,65,.35);
+  --container:1680px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--surface);color:var(--text-primary);font-family:var(--font-mono);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 16px}
+@media(min-width:768px){.container{padding:0 32px}}
+@media(min-width:1024px){.container{padding:0 48px}}
+section{padding:64px 0}
+@media(min-width:768px){section{padding:104px 0}}
+@media(min-width:1024px){section{padding:160px 0}}
+h1,h2{font-family:var(--font-display);text-transform:uppercase;font-weight:400;letter-spacing:-0.02em;line-height:.9}
+h1{font-size:clamp(44px,13vw,176px);line-height:.88}
+@media(min-width:768px){h1{font-size:clamp(80px,11vw,176px)}}
+h2{font-size:clamp(34px,6vw,88px);line-height:.92}
+h3{font-family:var(--font-exp);font-weight:800;text-transform:uppercase;font-size:clamp(20px,3vw,28px);letter-spacing:0.03em;font-stretch:125%}
+.small{font-size:13px;text-transform:uppercase;letter-spacing:0.14em;font-weight:500}
+.meta{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-secondary)}
+.muted{color:var(--text-muted)}
+.sec{color:var(--text-secondary)}
+.outline-type{color:transparent;-webkit-text-stroke:1.5px var(--secondary)}
+
+.skip{position:absolute;left:-999px;top:8px;background:var(--secondary);color:#000;padding:10px 16px;font-weight:700;z-index:100;font-family:var(--font-exp);text-transform:uppercase}
+.skip:focus{left:8px}
+
+/* NAV */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--font-display);text-transform:uppercase;font-size:22px}
+.nav-links{display:none;gap:28px;align-items:center}
+@media(min-width:900px){.nav-links{display:flex}}
+.nav-link{font-family:var(--font-mono);font-size:13px;text-transform:uppercase;letter-spacing:0.14em;transition:color var(--d-fast)}
+.nav-link::before{content:"/ ";color:transparent;transition:color var(--d-fast)}
+.nav-link:hover,.nav-link:focus-visible{color:var(--secondary)}
+.nav-link:hover::before{color:var(--secondary)}
+.cart{background:var(--secondary);color:#000;border-radius:var(--radius-full);padding:4px 12px;font-family:var(--font-mono);font-size:12px;font-weight:700}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-exp);font-weight:800;text-transform:uppercase;letter-spacing:0.08em;font-size:14px;border-radius:0;cursor:pointer;transition:all var(--d-fast) var(--e-snap);min-height:44px}
+.btn-primary{background:var(--secondary);color:#000;border:2px solid var(--secondary);padding:18px 36px}
+.btn-primary:hover{transform:translate(-4px,-4px);box-shadow:var(--hard);border-color:#fff}
+.btn-primary:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.btn-primary:active{transform:translate(0,0);box-shadow:none}
+.btn-primary:disabled{background:var(--border);color:var(--text-muted);border-color:var(--border);cursor:not-allowed;transform:none;box-shadow:none}
+.btn-secondary{background:transparent;color:var(--secondary);border:2px solid var(--secondary);padding:16px 34px}
+.btn-secondary:hover{background:var(--secondary);color:#000;box-shadow:var(--glow)}
+.btn-secondary:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.btn-secondary:disabled{border-color:var(--border);color:var(--n500);cursor:not-allowed}
+.btn-ghost{background:transparent;color:#fff;border:none;text-decoration:underline;text-decoration-color:var(--secondary);text-decoration-thickness:2px;text-underline-offset:6px}
+.btn-ghost:hover{color:var(--secondary)}
+
+/* MARQUEE */
+.marquee{overflow:hidden;white-space:nowrap;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0}
+.marquee-track{display:inline-block;animation:marquee 18s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{font-family:var(--font-display);text-transform:uppercase;font-size:clamp(28px,5vw,64px);margin:0 24px;color:transparent;-webkit-text-stroke:1.5px var(--secondary)}
+
+/* HERO */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;padding-top:48px}
+.hero .tag{margin-bottom:24px}
+.hero h1{position:relative;z-index:2}
+.hero h1 .l2{display:block;margin-left:12vw}
+.hero h1 .l3{display:block;color:var(--secondary)}
+.hero-editorial{position:absolute;right:0;top:20%;width:min(40%,440px);aspect-ratio:3/4;z-index:1;
+  background:linear-gradient(135deg,#141414 0%,#3D3D3D 60%,#0d0d0d 100%);mix-blend-mode:screen;opacity:.85}
+.hero-editorial::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 40% at 60% 30%,rgba(0,255,65,.25),transparent)}
+.hero-cta{margin-top:40px;z-index:2;position:relative}
+.hero-marquee{margin-top:56px}
+
+/* TAG / BADGE */
+.tag{display:inline-flex;align-items:center;border-radius:var(--radius-full);font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;padding:5px 14px;font-weight:700}
+.tag-drop{background:var(--secondary);color:#000}
+.tag-status{background:transparent;color:var(--secondary);border:1px solid var(--secondary)}
+.tag-sold{background:transparent;color:var(--text-muted);border:1px solid var(--border)}
+
+/* DROP CARD */
+.drop-card{background:#000;border:2px solid var(--secondary);box-shadow:var(--hard);padding:40px;max-width:640px;margin-left:auto}
+.drop-card .count{font-family:var(--font-display);font-size:clamp(40px,8vw,80px);color:var(--secondary);line-height:1}
+.drop-card h3{margin:8px 0 16px}
+
+/* HORIZONTAL GALLERY */
+.hscroll{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;-webkit-overflow-scrolling:touch}
+.hscroll::-webkit-scrollbar{height:8px}
+.hscroll::-webkit-scrollbar-thumb{background:var(--border)}
+.hcard{scroll-snap-align:start;flex:0 0 auto;width:280px}
+@media(min-width:768px){.hcard{width:340px}}
+
+/* PRODUCT CARD */
+.prod{background:var(--surface-alt);border:1px solid var(--border);transition:transform var(--d-base) var(--e-expo),border-color var(--d-base);transform-style:preserve-3d}
+.prod:hover{border-color:var(--secondary);transform:perspective(800px) rotateX(4deg) rotateY(-6deg)}
+.prod .img{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#141414,#3D3D3D 70%,#0d0d0d)}
+.prod .img>div{width:100%;height:100%;transition:transform var(--d-base) var(--e-expo);background:radial-gradient(70% 60% at 50% 40%,rgba(0,255,65,.12),transparent 60%)}
+.prod:hover .img>div{transform:scale(1.06)}
+.prod .body{padding:16px}
+.prod .name{font-family:var(--font-exp);font-weight:800;text-transform:uppercase;font-size:16px;margin:8px 0}
+.prod .price{font-family:var(--font-mono);font-size:14px;display:flex;justify-content:space-between;align-items:center}
+
+/* BROKEN GRID */
+.broken{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.broken .prod{grid-column:span 12}
+@media(min-width:768px){
+  .broken .b1{grid-column:span 5}
+  .broken .b2{grid-column:span 4;margin-top:64px}
+  .broken .b3{grid-column:span 3;margin-top:24px}
+  .broken .b4{grid-column:4/span 5;margin-top:40px}
+  .broken .b5{grid-column:span 3}
+}
+
+/* MANIFESTO (LIME INVERTED) */
+.manifesto{background:var(--secondary);color:#000}
+.manifesto h2{color:#000}
+.manifesto p{font-family:var(--font-mono);font-weight:500;max-width:60ch;margin-top:16px}
+
+/* INPUTS */
+.form{max-width:560px}
+.field{margin-bottom:28px}
+.field label{display:block;font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-secondary);margin-bottom:8px}
+.field input{width:100%;background:#000;border:1px solid var(--n600);border-bottom:2px solid var(--n500);color:#fff;font-family:var(--font-mono);font-size:15px;padding:16px;border-radius:0;caret-color:var(--secondary)}
+.field input::placeholder{color:var(--text-muted);text-transform:uppercase;font-size:12px;letter-spacing:0.1em}
+.field input:focus{outline:2px solid var(--secondary);outline-offset:2px;border-bottom:2px solid var(--secondary)}
+.field.error input{border-bottom:2px solid var(--error)}
+.field.error .msg{color:var(--error);font-size:12px;margin-top:8px;font-family:var(--font-mono)}
+.field.success input{border-bottom:2px solid var(--secondary)}
+.field.success .msg{color:var(--secondary);font-size:12px;margin-top:8px;font-family:var(--font-mono)}
+
+/* TESTIMONIALS */
+.testi-scroll{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 0 24px}
+.testi-card{scroll-snap-align:center;flex:0 0 auto;width:min(340px,80vw);background:var(--surface-alt);border:1px solid var(--border);padding:24px}
+.testi-card:nth-child(odd){transform:rotate(-1.5deg)}
+.testi-card:nth-child(even){transform:rotate(1deg)}
+.testi-card .q{font-family:var(--font-display);color:var(--secondary);font-size:64px;line-height:.4}
+.testi-card p{margin:8px 0 16px}
+.testi-card .handle{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted)}
+
+/* SWATCHES */
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+.sw{border:1px solid var(--border)}
+.sw .chip{height:88px}
+.sw .m2{padding:12px;font-family:var(--font-mono);font-size:12px}
+.sw .m2 .name{font-weight:700;text-transform:uppercase;letter-spacing:0.06em}
+.sw .m2 .hex{color:var(--text-muted)}
+
+/* TYPE SPEC */
+.spec-row{border-top:1px solid var(--border);padding:24px 0}
+.spec-row .lbl{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);margin-bottom:8px}
+
+/* MOTION DEMO */
+.demo-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:768px){.demo-grid{grid-template-columns:repeat(3,1fr)}}
+.demo{background:var(--surface-alt);border:1px solid var(--border);padding:24px}
+.demo .lbl{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;color:var(--text-muted);margin-top:8px}
+.flicker{font-family:var(--font-display);text-transform:uppercase;font-size:32px;color:var(--secondary)}
+.demo:hover .flicker{animation:flicker-in 450ms steps(4) both}
+.tilt-box{aspect-ratio:16/10;background:linear-gradient(135deg,#141414,#3D3D3D);transition:transform var(--d-base) var(--e-expo)}
+.demo:hover .tilt-box{transform:perspective(800px) rotateX(4deg) rotateY(-6deg)}
+.glitch-box{font-family:var(--font-display);text-transform:uppercase;font-size:40px;position:relative}
+.demo:hover .glitch-box{animation:glitch-burst 320ms steps(2) both}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding-top:0}
+.footer-marquee{padding:24px 0}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:32px;padding:48px 0}
+@media(min-width:768px){.footer-grid{grid-template-columns:repeat(4,1fr)}}
+.footer-grid h4{font-family:var(--font-exp);font-weight:800;text-transform:uppercase;font-size:14px;margin-bottom:12px}
+.footer-grid a,.footer-grid p{color:var(--text-secondary);font-size:14px;display:block;margin-bottom:6px}
+.footer-grid a:hover{color:var(--secondary)}
+.newsletter{display:flex;gap:8px;flex-wrap:wrap}
+.newsletter input{flex:1;min-width:160px;background:#000;border:1px solid var(--n600);color:#fff;font-family:var(--font-mono);padding:14px;font-size:13px}
+.footer-legal{border-top:1px solid var(--border);padding:24px 0;font-family:var(--font-mono);font-size:12px;color:var(--text-muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+.section-label{margin-bottom:40px}
+.section-label .small{display:block;margin-bottom:12px;color:var(--secondary)}
+.vlabel{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--font-exp);font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);font-size:14px}
+
+/* KEYFRAMES */
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes flicker-in{0%{opacity:0}25%{opacity:1}30%{opacity:.2}45%{opacity:1}55%{opacity:.4}100%{opacity:1}}
+@keyframes glitch-burst{0%{text-shadow:none;transform:translate(0)}50%{text-shadow:-2px 0 var(--error),2px 0 var(--secondary);transform:translate(-2px,1px);clip-path:inset(20% 0 30% 0)}100%{text-shadow:none;transform:translate(0);clip-path:none}}
+@keyframes slide-up{0%{opacity:0;transform:translateY(60px)}100%{opacity:1;transform:translateY(0)}}
+.reveal{animation:slide-up var(--d-slow) var(--e-expo) both}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.2s!important}
+  .marquee-track{animation-play-state:paused!important}
+  .prod:hover,.demo:hover .tilt-box{transform:none!important}
+  .testi-card{transform:none!important}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Pular para o conteúdo</a>
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="logo">NUVEM°</div>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#drops" class="nav-link">Drops</a>
+      <a href="#loja" class="nav-link">Loja</a>
+      <a href="#sobre" class="nav-link">Sobre</a>
+    </nav>
+    <span class="cart">CART · 2</span>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero container" aria-label="Destaque">
+    <span class="tag tag-drop">Drop 004 · disponível agora</span>
+    <div class="hero-editorial" aria-hidden="true"></div>
+    <h1>Feito<span class="l2">pra rua.</span><span class="l3">Numerado.</span></h1>
+    <div class="hero-cta"><a href="#drops" class="btn btn-primary">Garanta o seu</a></div>
+  </section>
+  <div class="marquee hero-marquee" aria-hidden="true"><div class="marquee-track"><span>Junte-se ao drop —</span><span>Junte-se ao drop —</span><span>Junte-se ao drop —</span><span>Junte-se ao drop —</span></div></div>
+
+  <!-- DROP ATUAL -->
+  <section class="container" id="drops">
+    <div class="drop-card reveal">
+      <span class="tag tag-status">Últimas unidades</span>
+      <div class="count" style="margin-top:16px">17</div>
+      <h3>peças restantes · Drop 004</h3>
+      <p class="sec">Algodão 240g. Tiragem de 80. Sem reposição.</p>
+      <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#loja" class="btn btn-primary">Comprar agora</a>
+        <a href="#loja" class="btn btn-secondary">Ver o drop completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA HORIZONTAL -->
+  <section class="container">
+    <div style="display:flex;gap:24px;align-items:flex-start">
+      <div class="vlabel" aria-hidden="true">Galeria · Drop 004</div>
+      <div style="flex:1;min-width:0">
+        <div class="section-label"><span class="small">Scroll horizontal →</span><h2>O drop</h2></div>
+        <div class="hscroll" role="list">
+          <div class="hcard" role="listitem"><article class="prod"><div class="img"><div></div></div><div class="body"><span class="meta">REF 004 / ALGODÃO 240G / UNISSEX</span><div class="name">Tee Cinza Concreto</div><div class="price"><span>R$ 189</span><span class="tag tag-drop">Novo</span></div></div></article></div>
+          <div class="hcard" role="listitem"><article class="prod"><div class="img"><div></div></div><div class="body"><span class="meta">REF 005 / MOLETOM 320G</span><div class="name">Hoodie Neon Line</div><div class="price"><span>R$ 349</span><span class="tag tag-status">Poucas</span></div></div></article></div>
+          <div class="hcard" role="listitem"><article class="prod"><div class="img"><div></div></div><div class="body"><span class="meta">REF 006 / RIP-STOP</span><div class="name">Calça Cargo 04</div><div class="price"><span>R$ 419</span><span class="tag tag-sold">Esgotado</span></div></div></article></div>
+          <div class="hcard" role="listitem"><article class="prod"><div class="img"><div></div></div><div class="body"><span class="meta">REF 007 / BONÉ 6 GOMOS</span><div class="name">Cap Outline</div><div class="price"><span>R$ 149</span><span class="tag tag-drop">Novo</span></div></div></article></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO LIME -->
+  <section class="manifesto"><div class="container">
+    <h2>Você não precisa. Você quer.</h2>
+    <p>Não fazemos coleção. Fazemos drop. Numerado, datado e sem segunda chance. O que sai da rua, volta pra rua — na sua estampa.</p>
+  </div></section>
+
+  <!-- GRID QUEBRADO -->
+  <section class="container" id="loja">
+    <div class="section-label"><span class="small">Grid quebrado</span><h2>Loja</h2></div>
+    <div class="broken">
+      <article class="prod b1"><div class="img"><div></div></div><div class="body"><span class="meta">REF 008 / OVERSIZED</span><div class="name">Tee Preto Total</div><div class="price"><span>R$ 199</span><span class="tag tag-drop">Novo</span></div></div></article>
+      <article class="prod b2"><div class="img"><div></div></div><div class="body"><span class="meta">REF 009 / CANVAS</span><div class="name">Jaqueta Corta-Vento</div><div class="price"><span>R$ 529</span></div></div></article>
+      <article class="prod b3"><div class="img"><div></div></div><div class="body"><span class="meta">REF 010 / MEIA</span><div class="name">Sock Lime</div><div class="price"><span>R$ 59</span></div></div></article>
+      <article class="prod b4"><div class="img"><div></div></div><div class="body"><span class="meta">REF 011 / ALGODÃO 240G</span><div class="name">Tee Grafismo</div><div class="price"><span>R$ 189</span><span class="tag tag-status">Poucas</span></div></div></article>
+      <article class="prod b5"><div class="img"><div></div></div><div class="body"><span class="meta">REF 012 / SHORT</span><div class="name">Short Utilitário</div><div class="price"><span>R$ 259</span></div></div></article>
+    </div>
+  </section>
+
+  <!-- PALETA -->
+  <section class="container">
+    <div class="section-label"><span class="small">Sistema</span><h2>Paleta</h2></div>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#000;border-bottom:1px solid var(--border)"></div><div class="m2"><div class="name">primary</div><div class="hex">#000000</div></div></div>
+      <div class="sw"><div class="chip" style="background:#00FF41"></div><div class="m2"><div class="name">secondary</div><div class="hex">#00FF41</div></div></div>
+      <div class="sw"><div class="chip" style="background:#007A29"></div><div class="m2"><div class="name">accent_ink</div><div class="hex">#007A29</div></div></div>
+      <div class="sw"><div class="chip" style="background:#0D0D0D"></div><div class="m2"><div class="name">surface_alt</div><div class="hex">#0D0D0D</div></div></div>
+      <div class="sw"><div class="chip" style="background:#F2F2F2"></div><div class="m2"><div class="name">inverted</div><div class="hex">#F2F2F2</div></div></div>
+      <div class="sw"><div class="chip" style="background:#B8B8B8"></div><div class="m2"><div class="name">text_secondary</div><div class="hex">#B8B8B8</div></div></div>
+      <div class="sw"><div class="chip" style="background:#2A2A2A"></div><div class="m2"><div class="name">border</div><div class="hex">#2A2A2A</div></div></div>
+      <div class="sw"><div class="chip" style="background:#FF3B3B"></div><div class="m2"><div class="name">error</div><div class="hex">#FF3B3B</div></div></div>
+    </div>
+    <p class="sec" style="margin-top:24px;font-size:14px">Lime <strong style="color:var(--secondary)">#00FF41</strong> vive no escuro (15.38:1 sobre preto). Sobre claro é decorativo — 1.37:1, reprovado; texto vira <strong style="color:var(--accent-ink)">#007A29</strong>.</p>
+  </section>
+
+  <!-- TIPOGRAFIA -->
+  <section class="container" style="background:var(--surface-alt)">
+    <div class="section-label"><span class="small">Tipografia</span><h2>Archivo + Mono</h2></div>
+    <div class="spec-row"><div class="lbl">H1 · Archivo Black uppercase</div><h1 style="font-size:clamp(40px,9vw,120px)">Sem reposição</h1></div>
+    <div class="spec-row"><div class="lbl">H2 · Archivo Black</div><h2>O próximo não espera</h2></div>
+    <div class="spec-row"><div class="lbl">H3 · Archivo 800 expanded</div><h3>Tiragem de 80</h3></div>
+    <div class="spec-row"><div class="lbl">Body · JetBrains Mono</div><p>Algodão 240g pré-encolhido. Modelagem oversized. Costura reforçada nos ombros. Numerado a laser na etiqueta interna.</p></div>
+    <div class="spec-row"><div class="lbl">Meta / label · Mono caps</div><span class="meta">REF 004 / ALGODÃO 240G / UNISSEX</span></div>
+    <div class="spec-row"><div class="lbl">Outline display</div><span class="outline-type" style="font-family:var(--font-display);text-transform:uppercase;font-size:clamp(40px,9vw,96px)">005</span></div>
+  </section>
+
+  <!-- BOTÕES -->
+  <section class="container">
+    <div class="section-label"><span class="small">Componentes</span><h2>Botões</h2></div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center">
+      <button class="btn btn-primary">Comprar agora</button>
+      <button class="btn btn-secondary">Ver drop</button>
+      <a href="#" class="btn btn-ghost">Ver tudo →</a>
+      <button class="btn btn-primary" disabled>Esgotado</button>
+    </div>
+  </section>
+
+  <!-- INPUTS -->
+  <section class="container" style="background:var(--surface-alt)">
+    <div class="section-label"><span class="small">Terminal</span><h2>Inputs</h2></div>
+    <form class="form" onsubmit="return false">
+      <div class="field"><label for="nm">Nome</label><input id="nm" placeholder="Seu nome"></div>
+      <div class="field success"><label for="em">E-mail</label><input id="em" value="rua@drop.com"><div class="msg">OK // na lista do drop</div></div>
+      <div class="field error"><label for="cep">CEP</label><input id="cep" placeholder="00000-000" aria-describedby="cerr"><div class="msg" id="cerr">ERR // CEP inválido</div></div>
+      <button class="btn btn-primary" type="submit">Entrar na lista do drop</button>
+    </form>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="container">
+    <div class="section-label"><span class="small">Prints</span><h2>Quem veste</h2></div>
+    <div class="testi-scroll" role="list">
+      <div class="testi-card" role="listitem"><div class="q" aria-hidden="true">"</div><p>peguei o drop 003 e chegou numerado à mão. isso muda tudo.</p><span class="handle">@ruazera</span></div>
+      <div class="testi-card" role="listitem"><div class="q" aria-hidden="true">"</div><p>caimento perfeito. o lime na etiqueta é surreal.</p><span class="handle">@vitao.fits</span></div>
+      <div class="testi-card" role="listitem"><div class="q" aria-hidden="true">"</div><p>esgotou em 4 min. entrei na lista do 005 na hora.</p><span class="handle">@dropwatch</span></div>
+    </div>
+  </section>
+
+  <!-- MOTION DEMO -->
+  <section class="container" style="background:var(--surface-alt)">
+    <div class="section-label"><span class="small">Motion</span><h2>Animações</h2></div>
+    <div class="demo-grid">
+      <div class="demo"><div class="flicker">NEON</div><div class="lbl">flicker-in · 450ms steps(4) · liga como neon</div></div>
+      <div class="demo"><div class="glitch-box">DROP</div><div class="lbl">glitch-burst · 320ms steps(2) · RGB split</div></div>
+      <div class="demo"><div class="tilt-box"></div><div class="lbl">card-tilt-3d · 300ms · perspective 800px</div></div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer id="sobre">
+  <div class="marquee footer-marquee" aria-hidden="true"><div class="marquee-track"><span>Junte-se ao drop —</span><span>Junte-se ao drop —</span><span>Junte-se ao drop —</span><span>Junte-se ao drop —</span></div></div>
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Navegação</h4><a href="#drops">Drops</a><a href="#loja">Loja</a><a href="#sobre">Sobre</a></div>
+      <div><h4>Contato</h4><a href="#">contato@nuvem.wear</a><a href="#">@nuvem.wear</a></div>
+      <div><h4>Social</h4><a href="#">Instagram</a><a href="#">TikTok</a></div>
+      <div><h4>Lista do drop</h4><form class="newsletter" onsubmit="return false"><input placeholder="SEU E-MAIL" aria-label="E-mail"><button class="btn btn-primary" style="padding:14px 20px">OK</button></form></div>
+    </div>
+    <div class="footer-legal"><span>© 2026 NUVEM° · 23.5505° S, 46.6333° W</span><span>Design System 06.2 — Jumper Site Factory</span></div>
+  </div>
+</footer>
+</body>
+</html>

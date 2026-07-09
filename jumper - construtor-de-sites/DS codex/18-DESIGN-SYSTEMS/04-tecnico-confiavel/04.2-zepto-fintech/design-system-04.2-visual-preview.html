@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zepto Payment Flow System</title>
+<style>
+:root{--primary:#071B2C;--secondary:#00A86B;--surface:#F4FBF8;--alt:#E0F5EC;--text:#102A43;--muted:#5B6D72;--border:#9EDBC4;--ctaText:#FFFFFF;--heading:"Sora",serif;--body:"Inter",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}a{color:inherit}.pay{min-height:100vh;display:grid;grid-template-columns:1fr;background:var(--surface);color:var(--text)}
+.pay__rail{padding:22px;border-right:1px solid var(--border);background:color-mix(in srgb,var(--surface) 86%,white);color:inherit;position:relative;top:0;height:auto}
+.pay__page{padding:clamp(22px,5vw,78px);display:grid;gap:clamp(26px,5vw,64px)}
+.pay__nav{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px;font-family:var(--mono);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.pay__hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,52px);align-items:center;min-height:62vh}
+.pay__hero h1{font-family:var(--heading);font-size:clamp(3rem,7vw,7rem);line-height:.92;margin:0;max-width:14ch;color:inherit}
+.pay__media{min-height:300px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(90deg,var(--secondary),var(--primary));box-shadow:0 24px 70px rgba(0,0,0,.16)}
+.pay__cta,.pay__submit{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--primary);color:var(--ctaText);border:0;border-radius:12px;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer}.pay__hidden{display:none}
+.pay__controls{display:flex;gap:8px;flex-wrap:wrap}.pay__option{border:1px solid var(--border);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;cursor:pointer}.pay__option[aria-pressed="true"]{background:var(--secondary);color:#111111;border-color:var(--secondary)}
+.pay__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.pay__item{text-align:left;min-height:150px;border:1px solid var(--border);background:#fff;color:inherit;border-radius:16px;padding:18px;cursor:pointer}.pay__item[aria-pressed="true"]{outline:3px solid var(--secondary);transform:translateY(-3px)}
+.pay__split{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:22px}.pay__panel{border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 78%,white);padding:22px;border-radius:16px}
+.pay__form{display:grid;gap:12px}.pay__form label{display:grid;gap:6px;font-weight:800}.pay__form input,.pay__form select{min-height:44px;border:1px solid var(--border);background:#fff;color:var(--text);border-radius:8px;padding:10px}.pay__form input:focus,.pay__form select:focus,.pay__option:focus-visible,.pay__item:focus-visible,.pay__chip:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.pay__status{font-family:var(--mono);border-left:5px solid var(--secondary);padding:16px;background:var(--alt)}
+.pay__sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.pay__section-card{border-top:3px solid var(--primary);padding:16px;background:#fff}
+.pay__palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.pay__chip{background:var(--chip);color:var(--ink);min-height:88px;border:1px solid var(--border);padding:10px;text-align:left;display:grid;align-content:space-between;cursor:pointer;border-radius:10px}
+.pay__audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.pay__audit div{padding:16px;border:1px solid var(--border);background:var(--alt)}
+@media(max-width:860px){.pay{display:block}.pay__rail{position:relative;height:auto}.pay__hero,.pay__split{grid-template-columns:1fr}.pay__audit{grid-template-columns:1fr}.pay__page{padding:20px}.pay__hero h1{font-size:clamp(3rem,18vw,6rem)}}
+@media(prefers-reduced-motion:no-preference){.pay__item,.pay__cta,.pay__submit,.pay__chip{transition:transform .2s ease,filter .2s ease}.pay__item:hover,.pay__chip:hover{transform:translateY(-3px)}.pay__cta:hover,.pay__submit:hover{filter:contrast(1.1)}}
+</style>
+</head>
+<body>
+<main class="pay" data-mode="instantaneo">
+
+<div class="pay__page">
+<nav class="pay__nav"><strong>04.2 · Zepto Payment Flow System</strong><span>payment-flow</span></nav>
+<section class="pay__hero" id="top">
+<div><p>fluxo de pagamento</p><h1>transaction stream hero showing money movement, risk checks and API proof</h1><p>trustworthy, operational and plain-spoken</p><a class="pay__cta" href="#form">Simular fluxo</a></div>
+<div class="pay__media" aria-hidden="true"></div>
+</section>
+<section class="pay__panel"><h2>Fluxo</h2><div class="pay__controls"><button class="pay__option" type="button" data-mode="instantaneo" aria-pressed="true">instantaneo</button>
+<button class="pay__option" type="button" data-mode="recorrente" aria-pressed="false">recorrente</button>
+<button class="pay__option" type="button" data-mode="split" aria-pressed="false">split</button></div><p class="pay__status" aria-live="polite">Modo ativo: instantaneo · Fluxo de transacao atualizado</p></section>
+<section><h2>Componentes funcionais</h2><div class="pay__items"><button class="pay__item" type="button" data-item="Origem" aria-pressed="true"><span>01</span><strong>Origem</strong><small>transaction-flow-line</small></button>
+<button class="pay__item" type="button" data-item="Risco" aria-pressed="false"><span>02</span><strong>Risco</strong><small>risk-control-card</small></button>
+<button class="pay__item" type="button" data-item="API" aria-pressed="false"><span>03</span><strong>API</strong><small>api-snippet-panel</small></button>
+<button class="pay__item" type="button" data-item="Liquidacao" aria-pressed="false"><span>04</span><strong>Liquidacao</strong><small>compliance-badge-row</small></button></div></section>
+<section class="pay__split" id="form"><div class="pay__panel"><h2>Formulario real do DS</h2><form class="pay__form"><label>Empresa<input name="field0" value="Exemplo teste" placeholder="Empresa" /></label>
+<label>Volume<select name="field1"><option>instantaneo</option><option>recorrente</option><option>split</option></select></label>
+<label>Fluxo<input name="field2" value="" placeholder="Fluxo" /></label><button class="pay__submit" type="submit">Simular fluxo</button></form></div><div class="pay__panel"><h2>Resultado / estado</h2><p class="pay__status pay__output" aria-live="polite">Nenhum envio ainda.</p><p>O preview precisa testar foco, estado ativo, formulario, responsividade e copy do componente.</p></div></section>
+<section><h2>Fluxo de secoes coberto</h2><div class="pay__sections"><article class="pay__section-card"><span>01</span><h3>Payment flow explainer</h3><p>transaction-flow-line</p></article>
+<article class="pay__section-card"><span>02</span><h3>Trust and compliance panel</h3><p>risk-control-card</p></article>
+<article class="pay__section-card"><span>03</span><h3>Developer integration</h3><p>api-snippet-panel</p></article>
+<article class="pay__section-card"><span>04</span><h3>Use-case routes</h3><p>compliance-badge-row</p></article>
+<article class="pay__section-card"><span>05</span><h3>Risk controls</h3><p>use-case-route-card</p></article>
+<article class="pay__section-card"><span>06</span><h3>Customer proof</h3><p>demo-request-form</p></article>
+<article class="pay__section-card"><span>07</span><h3>Demo request</h3><p>transaction-flow-line</p></article>
+<article class="pay__section-card"><span>08</span><h3>Footer as compliance ledger</h3><p>risk-control-card</p></article></div></section>
+<section><h2>Paleta clicavel</h2><div class="pay__palette"><button class="pay__chip" type="button" data-copy="#071B2C" style="--chip:#071B2C;--ink:#ffffff"><span>Primary</span><strong>#071B2C</strong></button>
+<button class="pay__chip" type="button" data-copy="#00A86B" style="--chip:#00A86B;--ink:#111111"><span>Secondary</span><strong>#00A86B</strong></button>
+<button class="pay__chip" type="button" data-copy="#F4FBF8" style="--chip:#F4FBF8;--ink:#111111"><span>Surface</span><strong>#F4FBF8</strong></button>
+<button class="pay__chip" type="button" data-copy="#E0F5EC" style="--chip:#E0F5EC;--ink:#111111"><span>Alt</span><strong>#E0F5EC</strong></button>
+<button class="pay__chip" type="button" data-copy="#102A43" style="--chip:#102A43;--ink:#ffffff"><span>Text</span><strong>#102A43</strong></button>
+<button class="pay__chip" type="button" data-copy="#5B6D72" style="--chip:#5B6D72;--ink:#ffffff"><span>Muted</span><strong>#5B6D72</strong></button>
+<button class="pay__chip" type="button" data-copy="#9EDBC4" style="--chip:#9EDBC4;--ink:#111111"><span>Border</span><strong>#9EDBC4</strong></button></div></section>
+<section class="pay__audit"><div><strong>Acessibilidade</strong><p>Focus ring, aria-live e touch target 44px.</p></div><div><strong>Responsivo</strong><p>Mobile preserva flow map becomes numbered transfer sequence.</p></div><div><strong>Erro corrigido</strong><p>fintech sem simulacao de fluxo, risco ou compliance.</p></div></section>
+</div>
+</main>
+<script>
+(() => {
+ const root = document.querySelector('.pay');
+ const status = document.querySelector('.pay__status');
+ const output = document.querySelector('.pay__output');
+ document.querySelectorAll('.pay__option').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.pay__option').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  root.dataset.mode = btn.dataset.mode;
+  status.textContent = 'Modo ativo: ' + btn.dataset.mode + ' · Fluxo de transacao atualizado';
+ }));
+ document.querySelectorAll('.pay__item').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.pay__item').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  output.textContent = 'Selecionado: ' + btn.dataset.item + ' · componente pronto para estado ativo.';
+ }));
+ document.querySelector('.pay__form').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  output.textContent = 'Fluxo de transacao atualizado: ' + [...data.values()].filter(Boolean).join(' / ');
+ });
+ document.querySelectorAll('.pay__chip').forEach(chip => chip.addEventListener('click', async () => {
+  const value = chip.dataset.copy;
+  try { await navigator.clipboard.writeText(value); output.textContent = 'Cor copiada: ' + value; }
+  catch { output.textContent = 'Token selecionado: ' + value; }
+ }));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+:root{--primary:#0B0B0D;--secondary:#FF7A00;--surface:#F4F4F0;--surface-alt:#E9E8E1;--text:#24242A;--muted:#626267;--border:#C9C8C0;--heading:"Barlow Condensed";--body:"Inter";--mono:"Roboto Mono";--radius:4px;}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-telemetry-commerce-grid { animation: reveal-telemetry-commerce-grid 620ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes reveal-telemetry-commerce-grid { from { opacity: 0; transform: translateY(42px) scale(.98); } to { opacity: 1; transform: none; } }
+  .motion-signature { transition: transform 220ms ease, filter 220ms ease, background 220ms ease; }
+  .motion-signature:hover { transform: translateY(-3px); }
+  .nav-active-marker { transition: width 180ms ease; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+:focus-visible { outline: 2px solid var(--secondary); outline-offset: 3px; }
+
+
+/* Component motion map for Lando Velocity Fan System */
+.race-status-strip-motion {
+  --component-index: 1;
+  transform-origin: center right;
+  transition: transform 180ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.race-status-strip-motion:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+.race-status-strip-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.merch-drop-card-motion {
+  --component-index: 2;
+  transform-origin: center left;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.merch-drop-card-motion:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+.merch-drop-card-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.telemetry-stat-tile-motion {
+  --component-index: 3;
+  transform-origin: center right;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.telemetry-stat-tile-motion:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+.telemetry-stat-tile-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.fan-club-panel-motion {
+  --component-index: 4;
+  transform-origin: center left;
+  transition: transform 180ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.fan-club-panel-motion:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+.fan-club-panel-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.calendar-race-row-motion {
+  --component-index: 5;
+  transform-origin: center right;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.calendar-race-row-motion:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+.calendar-race-row-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.paddock-pass-footer-motion {
+  --component-index: 6;
+  transform-origin: center left;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.paddock-pass-footer-motion:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+.paddock-pass-footer-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .section-race-week-status-enter { animation: section-race-week-status-enter 360ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-race-week-status-enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+  .section-merch-drop-wall-enter { animation: section-merch-drop-wall-enter 380ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-merch-drop-wall-enter { from { opacity: 0; transform: translateY(19px); } to { opacity: 1; transform: none; } }
+
+  .section-content-feed-enter { animation: section-content-feed-enter 400ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-content-feed-enter { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+  .section-fan-club-prompt-enter { animation: section-fan-club-prompt-enter 420ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-fan-club-prompt-enter { from { opacity: 0; transform: translateY(21px); } to { opacity: 1; transform: none; } }
+
+  .section-calendar-strip-enter { animation: section-calendar-strip-enter 440ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-calendar-strip-enter { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+
+  .section-partner-proof-enter { animation: section-partner-proof-enter 460ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-partner-proof-enter { from { opacity: 0; transform: translateY(23px); } to { opacity: 1; transform: none; } }
+
+  .section-shop-conversion-enter { animation: section-shop-conversion-enter 480ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-shop-conversion-enter { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+  .section-footer-as-paddock-pass-enter { animation: section-footer-as-paddock-pass-enter 500ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-footer-as-paddock-pass-enter { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: none; } }
+
+}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Phive Kinetic Membership System</title>
+<style>
+:root{--primary:#D7FF00;--secondary:#111111;--surface:#050505;--alt:#191919;--text:#F6F6F0;--muted:#B3B3A8;--border:#343434;--ctaText:#111111;--heading:"Bebas Neue",serif;--body:"Inter Tight",system-ui,sans-serif;--mono:"Space Mono",monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}a{color:inherit}.gym{min-height:100vh;display:grid;grid-template-columns:1fr;background:#050505;color:#fff}
+.gym__rail{padding:22px;border-right:1px solid var(--border);background:color-mix(in srgb,var(--surface) 86%,white);color:inherit;position:relative;top:0;height:auto}
+.gym__page{padding:clamp(22px,5vw,78px);display:grid;gap:clamp(26px,5vw,64px)}
+.gym__nav{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px;font-family:var(--mono);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.gym__hero{display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,52px);align-items:center;min-height:62vh}
+.gym__hero h1{font-family:var(--heading);font-size:clamp(4.4rem,12vw,12rem);line-height:.78;margin:0;max-width:14ch;color:var(--primary)}
+.gym__media{min-height:300px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(135deg,var(--alt),var(--secondary));box-shadow:0 24px 70px rgba(0,0,0,.16)}
+.gym__cta,.gym__submit{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--primary);color:var(--ctaText);border:0;border-radius:12px;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer}.gym__hidden{display:none}
+.gym__controls{display:flex;gap:8px;flex-wrap:wrap}.gym__option{border:1px solid var(--border);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;cursor:pointer}.gym__option[aria-pressed="true"]{background:var(--secondary);color:#ffffff;border-color:var(--secondary)}
+.gym__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.gym__item{text-align:left;min-height:150px;border:1px solid var(--border);background:rgba(255,255,255,.08);color:inherit;border-radius:16px;padding:18px;cursor:pointer}.gym__item[aria-pressed="true"]{outline:3px solid var(--secondary);transform:translateX(5px)}
+.gym__split{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:22px}.gym__panel{border:1px solid var(--border);background:rgba(255,255,255,.08);padding:22px;border-radius:16px}
+.gym__form{display:grid;gap:12px}.gym__form label{display:grid;gap:6px;font-weight:800}.gym__form input,.gym__form select{min-height:44px;border:1px solid var(--border);background:#111;color:#fff;border-radius:8px;padding:10px}.gym__form input:focus,.gym__form select:focus,.gym__option:focus-visible,.gym__item:focus-visible,.gym__chip:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.gym__status{font-family:var(--mono);border-left:5px solid var(--secondary);padding:16px;background:rgba(255,255,255,.1)}
+.gym__sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.gym__section-card{border-top:3px solid var(--primary);padding:16px;background:rgba(255,255,255,.08)}
+.gym__palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.gym__chip{background:var(--chip);color:var(--ink);min-height:88px;border:1px solid var(--border);padding:10px;text-align:left;display:grid;align-content:space-between;cursor:pointer;border-radius:10px}
+.gym__audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.gym__audit div{padding:16px;border:1px solid var(--border);background:rgba(255,255,255,.08)}
+@media(max-width:860px){.gym{display:block}.gym__rail{position:relative;height:auto}.gym__hero,.gym__split{grid-template-columns:1fr}.gym__audit{grid-template-columns:1fr}.gym__page{padding:20px}.gym__hero h1{font-size:clamp(3rem,18vw,6rem)}}
+@media(prefers-reduced-motion:no-preference){.gym__item,.gym__cta,.gym__submit,.gym__chip{transition:transform .2s ease,filter .2s ease}.gym__item:hover,.gym__chip:hover{transform:translateX(4px)}.gym__cta:hover,.gym__submit:hover{filter:contrast(1.1)}}
+</style>
+</head>
+<body>
+<main class="gym" data-mode="hiit">
+
+<div class="gym__page">
+<nav class="gym__nav"><strong>03.1 · Phive Kinetic Membership System</strong><span>class-scoreboard</span></nav>
+<section class="gym__hero" id="top">
+<div><p>scoreboard fitness</p><h1>oversized condensed type over training motion, class chips and membership timer</h1><p>urgent, athletic and bold</p><a class="gym__cta" href="#form">Entrar no clube</a></div>
+<div class="gym__media" aria-hidden="true"></div>
+</section>
+<section class="gym__panel"><h2>Modalidade</h2><div class="gym__controls"><button class="gym__option" type="button" data-mode="hiit" aria-pressed="true">hiit</button>
+<button class="gym__option" type="button" data-mode="forca" aria-pressed="false">forca</button>
+<button class="gym__option" type="button" data-mode="cycle" aria-pressed="false">cycle</button></div><p class="gym__status" aria-live="polite">Modo ativo: hiit · Plano selecionado atualizado</p></section>
+<section><h2>Componentes funcionais</h2><div class="gym__items"><button class="gym__item" type="button" data-item="06:00 HIIT" aria-pressed="true"><span>01</span><strong>06:00 HIIT</strong><small>class-timetable-grid</small></button>
+<button class="gym__item" type="button" data-item="12:00 Strength" aria-pressed="false"><span>02</span><strong>12:00 Strength</strong><small>membership-scorecard</small></button>
+<button class="gym__item" type="button" data-item="18:00 Cycle" aria-pressed="false"><span>03</span><strong>18:00 Cycle</strong><small>trainer-action-card</small></button>
+<button class="gym__item" type="button" data-item="Recovery" aria-pressed="false"><span>04</span><strong>Recovery</strong><small>challenge-marquee</small></button></div></section>
+<section class="gym__split" id="form"><div class="gym__panel"><h2>Formulario real do DS</h2><form class="gym__form"><label>Nome<input name="field0" value="Exemplo teste" placeholder="Nome" /></label>
+<label>Plano<select name="field1"><option>hiit</option><option>forca</option><option>cycle</option></select></label>
+<label>Horario<input name="field2" value="" placeholder="Horario" /></label><button class="gym__submit" type="submit">Entrar no clube</button></form></div><div class="gym__panel"><h2>Resultado / estado</h2><p class="gym__status gym__output" aria-live="polite">Nenhum envio ainda.</p><p>O preview precisa testar foco, estado ativo, formulario, responsividade e copy do componente.</p></div></section>
+<section><h2>Fluxo de secoes coberto</h2><div class="gym__sections"><article class="gym__section-card"><span>01</span><h3>Membership scoreboard</h3><p>class-timetable-grid</p></article>
+<article class="gym__section-card"><span>02</span><h3>Class timetable</h3><p>membership-scorecard</p></article>
+<article class="gym__section-card"><span>03</span><h3>Trainer cards</h3><p>trainer-action-card</p></article>
+<article class="gym__section-card"><span>04</span><h3>Facility zones</h3><p>challenge-marquee</p></article>
+<article class="gym__section-card"><span>05</span><h3>Challenge strip</h3><p>zone-map</p></article>
+<article class="gym__section-card"><span>06</span><h3>Plan comparison</h3><p>join-timer-button</p></article>
+<article class="gym__section-card"><span>07</span><h3>Join form</h3><p>class-timetable-grid</p></article>
+<article class="gym__section-card"><span>08</span><h3>Footer as club board</h3><p>membership-scorecard</p></article></div></section>
+<section><h2>Paleta clicavel</h2><div class="gym__palette"><button class="gym__chip" type="button" data-copy="#D7FF00" style="--chip:#D7FF00;--ink:#111111"><span>Primary</span><strong>#D7FF00</strong></button>
+<button class="gym__chip" type="button" data-copy="#111111" style="--chip:#111111;--ink:#ffffff"><span>Secondary</span><strong>#111111</strong></button>
+<button class="gym__chip" type="button" data-copy="#050505" style="--chip:#050505;--ink:#ffffff"><span>Surface</span><strong>#050505</strong></button>
+<button class="gym__chip" type="button" data-copy="#191919" style="--chip:#191919;--ink:#ffffff"><span>Alt</span><strong>#191919</strong></button>
+<button class="gym__chip" type="button" data-copy="#F6F6F0" style="--chip:#F6F6F0;--ink:#111111"><span>Text</span><strong>#F6F6F0</strong></button>
+<button class="gym__chip" type="button" data-copy="#B3B3A8" style="--chip:#B3B3A8;--ink:#111111"><span>Muted</span><strong>#B3B3A8</strong></button>
+<button class="gym__chip" type="button" data-copy="#343434" style="--chip:#343434;--ink:#ffffff"><span>Border</span><strong>#343434</strong></button></div></section>
+<section class="gym__audit"><div><strong>Acessibilidade</strong><p>Focus ring, aria-live e touch target 44px.</p></div><div><strong>Responsivo</strong><p>Mobile preserva horizontal class scroller and sticky join button.</p></div><div><strong>Erro corrigido</strong><p>fitness sem agenda, plano ou adesao funcional.</p></div></section>
+</div>
+</main>
+<script>
+(() => {
+ const root = document.querySelector('.gym');
+ const status = document.querySelector('.gym__status');
+ const output = document.querySelector('.gym__output');
+ document.querySelectorAll('.gym__option').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.gym__option').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  root.dataset.mode = btn.dataset.mode;
+  status.textContent = 'Modo ativo: ' + btn.dataset.mode + ' · Plano selecionado atualizado';
+ }));
+ document.querySelectorAll('.gym__item').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.gym__item').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  output.textContent = 'Selecionado: ' + btn.dataset.item + ' · componente pronto para estado ativo.';
+ }));
+ document.querySelector('.gym__form').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  output.textContent = 'Plano selecionado atualizado: ' + [...data.values()].filter(Boolean).join(' / ');
+ });
+ document.querySelectorAll('.gym__chip').forEach(chip => chip.addEventListener('click', async () => {
+  const value = chip.dataset.copy;
+  try { await navigator.clipboard.writeText(value); output.textContent = 'Cor copiada: ' + value; }
+  catch { output.textContent = 'Token selecionado: ' + value; }
+ }));
+})();
+</script>
+</body>
+</html>

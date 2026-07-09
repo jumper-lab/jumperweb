@@ -1,0 +1,52 @@
+{
+  "schema_version": "2.0.0",
+  "stage": "initial_design_system",
+  "client_name": "Aurora Pilates & Movimento",
+  "client_slug": "aurora-pilates",
+  "model": "M1",
+  "model_description": "One Page",
+  "personality": "B",
+  "personality_name": "Premium sofisticado",
+  "source_briefing": "briefing/briefing-normalizado.md",
+  "visual_preferences": {
+    "primary_color": "#5C6B4F",
+    "primary_color_name": "Verde oliva profundo",
+    "accent_color": "#D4763A",
+    "accent_color_name": "Laranja (apenas detalhes de ação)",
+    "secondary_colors": ["#F5F0E8", "#E8E0D4", "#9A9488", "#2C2824"],
+    "secondary_colors_names": ["Off-white quente", "Areia claro", "Cinza mineral", "Preto suave"],
+    "forbidden_colors": ["Verde neon", "Roxo forte", "Rosa fitness"],
+    "typography_feeling": "Serif sofisticado para display, sans-serif limpa para corpo — calma editorial, não clínica",
+    "visual_sensation": "Calma, técnica e premium — como um spa de movimento, não uma academia"
+  },
+  "reference_sites": [
+    {
+      "url": "https://www.nohrd.com",
+      "what_liked": "Sensação premium, limpa e física dos materiais",
+      "principle_extracted": "Materialidade honesta mostrada com sofisticação; fotografia de produto como arte; espaço em branco como linguagem"
+    },
+    {
+      "url": "https://www.aman.com",
+      "what_liked": "Calma, respiro e sofisticação",
+      "principle_extracted": "Ritmo desacelerado; uma ideia por viewport; fotografia imersiva sem pessoas; luxo através de espaço"
+    },
+    {
+      "url": "https://www.aesop.com",
+      "what_liked": "Organização editorial e minimalismo sensorial",
+      "principle_extracted": "Grid editorial assimétrico; tipografia como protagonista; paleta restrita com acentos precisos"
+    }
+  ],
+  "sites_to_avoid_resembling": "Academia genérica, fotos de banco sorridentes, cores neon, excesso de promessas sobre dor ou emagrecimento",
+  "voice": {
+    "tone": "Casual e amistoso",
+    "key_message": "Não é uma academia comum: é um acompanhamento cuidadoso, técnico e personalizado.",
+    "client_quote": "A gente acredita que movimento bem orientado muda a forma como a pessoa vive o próprio corpo todos os dias.",
+    "forbidden_words": ["cura", "resultado garantido", "milagre", "corpo perfeito", "performance agressiva"]
+  },
+  "inferred": {
+    "hero_type": "Split com fotografia de movimento consciente — texto à esquerda, imagem à direita",
+    "section_rhythm": "Alternando claro/escuro com densidade variável",
+    "signature_possibility": "Detalhe orgânico inspirado na araucária (elemento natural de Curitiba) como forma recorrente",
+    "media_needs": "Fotografia de movimento humano em espaço calmo, luz natural, tons quentes — nada de academia genérica"
+  }
+}

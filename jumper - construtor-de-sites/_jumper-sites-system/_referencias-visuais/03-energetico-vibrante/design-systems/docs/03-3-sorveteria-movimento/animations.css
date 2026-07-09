@@ -1,0 +1,273 @@
+/* ============================================================
+   DS 03.3 — Sorveteria Movimento · animations.css
+   Princípio: energia playful de doceria — RÁPIDO (150–400ms)
+   com POP (overshoot elástico) e bounce. Marquee + confetti
+   contínuos. Assinatura: hard shadow deslocada (sticker),
+   cards/stickers rotacionados e inversão de cor no hover.
+   Só transform/opacity (compositor) — zero layout thrash.
+   Rosa-chiclete #FF1493 (display) / #C4006B (textual)
+   + amarelo-festa #FFD700 + carvão-uva #2A1220.
+   ============================================================ */
+
+:root {
+  --dur-instant: 150ms;
+  --dur-fast: 200ms;
+  --dur-base: 300ms;
+  --dur-slow: 400ms;
+  --dur-marquee: 18s;
+  --dur-confetti: 3.5s;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-bounce-in: cubic-bezier(0.68, -0.4, 0.32, 1.4);
+  --color-pink: #FF1493;
+  --color-pink-deep: #C4006B;
+  --color-yellow: #FFD700;
+  --color-ink: #2A1220;
+  --color-surface: #FFF7FB;
+  --shadow-sticker: 4px 4px 0 #2A1220;
+  --shadow-sticker-hover: 6px 6px 0 #2A1220;
+  --shadow-pop: 8px 8px 0 #FFD700;
+}
+
+/* ------------------------------------------------------------
+   1. STICKER-POP — entrada de badges e stickers no viewport
+   Escalam de 0 com leve rotação, em stagger de 80ms. 300ms pop.
+   Uso: .sticker no elemento; JS adiciona .is-in ao intersectar.
+   ------------------------------------------------------------ */
+.sticker {
+  opacity: 0;
+  transform: scale(0) rotate(-8deg);
+  transition:
+    opacity var(--dur-base) var(--ease-pop),
+    transform var(--dur-base) var(--ease-pop);
+}
+.sticker.is-in { opacity: 1; transform: scale(1) rotate(-6deg); }
+.sticker.is-in:nth-of-type(1) { transition-delay: 0ms; }
+.sticker.is-in:nth-of-type(2) { transition-delay: 80ms; }
+.sticker.is-in:nth-of-type(3) { transition-delay: 160ms; }
+.sticker.is-in:nth-of-type(4) { transition-delay: 240ms; }
+
+/* ------------------------------------------------------------
+   2. BTN-POP-HOVER — hover/focus em botões
+   translate(-2px,-2px) + hard shadow cresce. 200ms pop.
+   active: translate(2px,2px) + shadow encolhe (afunda).
+   ------------------------------------------------------------ */
+.btn {
+  border: 3px solid var(--color-ink);
+  border-radius: 9999px;
+  box-shadow: var(--shadow-sticker);
+  transition:
+    transform var(--dur-fast) var(--ease-pop),
+    box-shadow var(--dur-fast) var(--ease-pop),
+    background-color 250ms var(--ease-standard),
+    color 250ms var(--ease-standard);
+}
+.btn:hover,
+.btn:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-sticker-hover);
+}
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--color-ink);
+}
+.btn-primary   { background: var(--color-pink-deep); color: #FFFFFF; }
+.btn-primary:hover { background: var(--color-pink); }
+.btn-secondary { background: var(--color-yellow); color: var(--color-ink); }
+.btn-secondary:hover { background: var(--color-ink); color: var(--color-yellow); }  /* color-invert */
+.btn:disabled {
+  background: #E3A8C6; color: #FFF7FB; border-color: #E3A8C6;
+  box-shadow: none; transform: none; cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------
+   3. COLOR-INVERT — hover em cards e links de menu
+   Fundo e texto invertem (claro→rosa, texto→branco). 250ms.
+   ------------------------------------------------------------ */
+.menu-link {
+  color: var(--color-pink-deep);
+  transition: background-color 250ms var(--ease-standard),
+              color 250ms var(--ease-standard);
+}
+.menu-link:hover,
+.menu-link:focus-visible {
+  background: var(--color-pink);
+  color: #FFFFFF;
+}
+
+/* ------------------------------------------------------------
+   4. CARD — hover: card "se endireita" e sobe
+   translate(-3px,-3px) + shadow cresce + rotação zera. 250ms pop.
+   ------------------------------------------------------------ */
+.card {
+  background: #FFFFFF;
+  border: 3px solid var(--color-ink);
+  border-radius: 24px;
+  box-shadow: var(--shadow-sticker);
+  transition:
+    transform var(--dur-base) var(--ease-pop),
+    box-shadow var(--dur-base) var(--ease-pop);
+}
+/* rotações de repouso (adesivos espalhados) */
+.card:nth-child(3n+1) { transform: rotate(-2deg); }
+.card:nth-child(3n+2) { transform: rotate(0deg); }
+.card:nth-child(3n)   { transform: rotate(1.5deg); }
+.card:hover,
+.card:focus-within {
+  transform: translate(-3px, -3px) rotate(0deg);   /* se endireita */
+  box-shadow: 7px 7px 0 var(--color-ink);
+}
+.card--featured { box-shadow: var(--shadow-pop); }  /* sombra amarela */
+
+/* ------------------------------------------------------------
+   5. MARQUEE-SCROLL — faixa de texto repetido rolando
+   Conteúdo DUPLICADO em .marquee__track (dois <span aria-hidden>)
+   para loop perfeito. 18s linear. Pausa no hover.
+   ------------------------------------------------------------ */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  background: var(--color-yellow);
+  color: var(--color-ink);   /* texto carvão sobre amarelo */
+}
+.marquee__track {
+  display: inline-flex;
+  gap: 40px;
+  padding-right: 40px;
+  flex-shrink: 0;
+  animation: marquee-scroll var(--dur-marquee) linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ------------------------------------------------------------
+   6. CONFETTI-FALL — 12–16 partículas caindo no hero
+   Quadrados/círculos rosa, amarelo, branco com rotação. 3.5s.
+   Puramente decorativo (aria-hidden). Removido em reduced motion.
+   ------------------------------------------------------------ */
+.confetti {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.confetti span {
+  position: absolute;
+  top: -12px;
+  width: 12px; height: 12px;
+  opacity: 0.9;
+  animation: confetti-fall var(--dur-confetti) linear infinite;
+  will-change: transform;
+}
+.confetti span:nth-child(odd)  { border-radius: 50%; }          /* círculos */
+.confetti span:nth-child(3n)   { background: var(--color-pink); }
+.confetti span:nth-child(3n+1) { background: var(--color-yellow); }
+.confetti span:nth-child(3n+2) { background: #FFFFFF; }
+/* posições/atrasos variados (exemplo p/ 8; repetir p/ 12–16) */
+.confetti span:nth-child(1) { left: 6%;  animation-delay: 0s;    }
+.confetti span:nth-child(2) { left: 18%; animation-delay: 0.6s;  }
+.confetti span:nth-child(3) { left: 30%; animation-delay: 1.2s;  }
+.confetti span:nth-child(4) { left: 44%; animation-delay: 0.3s;  }
+.confetti span:nth-child(5) { left: 58%; animation-delay: 1.5s;  }
+.confetti span:nth-child(6) { left: 70%; animation-delay: 0.9s;  }
+.confetti span:nth-child(7) { left: 82%; animation-delay: 2.1s;  }
+.confetti span:nth-child(8) { left: 92%; animation-delay: 1.8s;  }
+@keyframes confetti-fall {
+  from { transform: translateY(0) rotate(0deg); }
+  to   { transform: translateY(110vh) rotate(540deg); }
+}
+
+/* ------------------------------------------------------------
+   7. WIGGLE — hover em stickers
+   Rotação oscilante -3°/3°. 400ms standard.
+   ------------------------------------------------------------ */
+.sticker--wiggle:hover,
+.ghost-btn:hover { animation: wiggle var(--dur-slow) var(--ease-standard); }
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  25%      { transform: rotate(3deg); }
+  50%      { transform: rotate(-2deg); }
+  75%      { transform: rotate(2deg); }
+}
+
+/* ------------------------------------------------------------
+   8. SCOOP-BOUNCE — entrada do H1 do hero
+   Sobe 24px com overshoot. 400ms bounce_in.
+   Uso: .scoop no h1; JS adiciona .is-in (ou anima no load).
+   ------------------------------------------------------------ */
+.scoop {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--dur-slow) var(--ease-bounce-in),
+    transform var(--dur-slow) var(--ease-bounce-in);
+}
+.scoop.is-in { opacity: 1; transform: none; }
+
+/* ------------------------------------------------------------
+   9. INPUT FOCUS — borda rosa + sombra amarela pop
+   ------------------------------------------------------------ */
+.field {
+  border: 3px solid var(--color-ink);
+  border-radius: 16px;
+  transition: border-color var(--dur-fast) var(--ease-standard),
+              box-shadow var(--dur-fast) var(--ease-standard);
+}
+.field:focus {
+  outline: 2px solid var(--color-pink-deep);
+  outline-offset: 2px;
+  border-color: var(--color-pink-deep);
+  box-shadow: 4px 4px 0 var(--color-yellow);
+}
+
+/* ------------------------------------------------------------
+   JS mínimo de referência (IntersectionObserver):
+
+   const io = new IntersectionObserver((entries) => {
+     entries.forEach((e) => {
+       if (!e.isIntersecting) return;
+       e.target.classList.add('is-in');
+       io.unobserve(e.target);
+     });
+   }, { threshold: 0.2 });
+   document.querySelectorAll('.sticker, .scoop').forEach((el) => io.observe(el));
+   ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------
+   PREFERS-REDUCED-MOTION — obrigatório.
+   Estratégia do DS: confetti é REMOVIDO (display:none), marquee
+   vira faixa estática centralizada, transições caem para 0.01ms.
+   Cards mantêm rotação de repouso (layout, não animação).
+   color-invert de botões/cards mantém (feedback de estado).
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .confetti { display: none !important; }
+  .marquee__track {
+    animation: none !important;
+    transform: none !important;
+    justify-content: center;
+    width: 100%;
+  }
+  .marquee { justify-content: center; }
+  .sticker, .scoop { opacity: 1 !important; }
+  .sticker.is-in { transform: rotate(-6deg) !important; }
+  .scoop.is-in { transform: none !important; }
+  .btn:hover, .card:hover { transform: none; }
+  .card:hover:nth-child(3n+1) { transform: rotate(-2deg); }
+  .card:hover:nth-child(3n+2) { transform: rotate(0deg); }
+  .card:hover:nth-child(3n)   { transform: rotate(1.5deg); }
+  .sticker--wiggle:hover, .ghost-btn:hover { animation: none !important; }
+}

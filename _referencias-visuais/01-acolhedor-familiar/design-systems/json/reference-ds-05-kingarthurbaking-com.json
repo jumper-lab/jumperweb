@@ -1,0 +1,597 @@
+{
+  "id": "reference-ds-05-kingarthurbaking-com",
+  "clientSlug": "kingarthurbaking-com",
+  "clientName": "King Arthur Baking",
+  "personalitySlug": "01-acolhedor-familiar",
+  "regeneratedAt": "2026-06-05",
+  "referenceQualityBaseline": "reference-ds-01-pinchmans-ca-visual-preview.html",
+  "source": {
+    "type": "single-reference-design-system",
+    "folder": "_jumper-sites-system/_referencias-visuais/01-acolhedor-familiar/design-systems/preview-assets/kingarthurbaking.com",
+    "assetsUsed": [
+      "96e3ddec4273495a_beautiful-burger-buns-marquee.jpg",
+      "03d6c9bf2d3ba379_Oatmeal-Sandwich-Bread-Shop-He.jpg",
+      "d942a1653b1c034d_shop_best-sellers_0.jpg",
+      "b8a1d68a50a0cc0e_mega-menu_on-demand_sq.jpg",
+      "39a7848e71df7a27_roty-mm.jpg"
+    ],
+    "inferredDecisions": [
+      "A referencia mistura educacao e comercio; o DS precisa mostrar ambos.",
+      "Vermelho e institucional, mas nao pode dominar todas as sessoes.",
+      "Mega-menu e busca sao componentes principais por profundidade de conteudo.",
+      "Motion deve ser didatico: passos, linhas, toast e cards."
+    ],
+    "sourceReferenceId": "kingarthurbaking.com",
+    "sourceReferenceNote": "Referencia visual ja convertida em DS-base; arquivo pesado original nao e necessario no fluxo oficial.",
+    "extractedSitePath": "_jumper-sites-system/_referencias-visuais/01-acolhedor-familiar/design-systems/preview-assets/kingarthurbaking.com",
+    "extractedSignals": {
+      "siteDir": "kingarthurbaking.com",
+      "extractedAt": "2026-06-05",
+      "fileCount": 469,
+      "imageCount": 114,
+      "fontCount": 8,
+      "scriptCount": 40,
+      "cssCount": 13,
+      "colors": [
+        "#039",
+        "#333333",
+        "#ffffff",
+        "#4496f6",
+        "#000000",
+        "#cccccc",
+        "#757575",
+        "#e5e5e5",
+        "#f5f5f5",
+        "#dddddd",
+        "#999999",
+        "#666666",
+        "#444444",
+        "#d14343",
+        "#474747",
+        "#476bef",
+        "#002fe1",
+        "#007dc6",
+        "#ffdddd",
+        "#fffdea",
+        "#f1a500",
+        "#8f8f8f",
+        "#707070",
+        "#dfdfdf"
+      ],
+      "fontFamilies": [
+        "kab-icons",
+        "YouTube Noto,Roboto,Arial,Helvetica,sans-serif",
+        "inherit",
+        "Roboto,Arial,sans-serif",
+        "YouTube Noto,Roboto,arial,sans-serif"
+      ],
+      "fontFiles": [
+        "8139a402ce239285_KFO7CnqEu92Fr1ME7kSn66aGLdTylU.woff2",
+        "8c61c26a6f52f64c_ParaSupreme-RegularNormal.woff2",
+        "b77a22f2f95723fa_l.woff2",
+        "bf9757437015013f_ParaSupreme-LightNormal.woff2",
+        "c763917e443b5583_l.woff2",
+        "ca8e02ec3fabadb4_ParaSupreme-MediumNormal.woff2",
+        "e32541626a82c1bd_l.woff2",
+        "fc19e2d873270cfa_l.woff2"
+      ],
+      "imageSamples": [
+        "assets/03b4c57d800057d3_shop_best-sellers_0.jpg",
+        "assets/03b60babc7185933_shop_best-sellers_0.jpg",
+        "assets/03d6c9bf2d3ba379_Oatmeal-Sandwich-Bread-Shop-He.jpg",
+        "assets/0466237e3549d53b_mega-menu_on-demand_sq.jpg",
+        "assets/04be5b3a0b871791_tools.jpg",
+        "assets/0523cd7388b3c399_sale_sale.jpg",
+        "assets/06a42355d2d93bc4_Oatmeal-Sandwich-Bread-Shop-He.jpg",
+        "assets/0c9cf152a0ad00d4_6b8b93db2d.gif",
+        "assets/112da75c67a77ff8_shop_best-sellers_0.jpg",
+        "assets/12bdc8e9e1f6b948_bakers-hotline.jpg",
+        "assets/1527510323343f62_quality_6.svg",
+        "assets/1b106aafdadba6b8_mm_employee-ownership.jpg",
+        "assets/253e72169c0c3d0e_beautiful-burger-buns-marquee.jpg",
+        "assets/2e8f6b31fa1ec359_new-baking-school-on-demand.jpg",
+        "assets/2e91cb5ee5fa1b37_Sale_Graphic.png",
+        "assets/2f121bcde07489ac_app-store_0.png"
+      ],
+      "textSnippets": [
+        "Collections - Your Best Bread - King Arthur Baking Company",
+        "Stock your pantry with our collection of Extracts &amp; Flavorings, just the ingredients you need to perfect your recipes. Shop Now!",
+        "King Arthur&#039;s guide to baking bread",
+        "Want to make crusty, chewy bread at home? Start here.",
+        "Classes",
+        "Baking a great cake is one part technique, one part joy. Our trusted recipes and guidance will help you nail the texture, flavor, and decoration of your cake, whether you’re baking",
+        "Shop King Arthur Baking for premium flours, tools, and mixes. Trusted by bakers since 1790. Quality ingredients for perfect results every time",
+        "This guide covers the basics of sourdough baking. Make your own starter, bake, and keep your starter healthy with King Arthur Baking Company today!"
+      ]
+    }
+  },
+  "designIntent": {
+    "voice": "Sistema visual para conteudo profundo: receitas, produtos, aulas, mega-menu, hotline, ratings, steps e motion didatico.",
+    "heroPolicy": "first hero session is full viewport and demonstrates DS capabilities visually",
+    "noFlowUsage": true,
+    "sitePersonality": "Cozinha de teste confiavel: receita, loja, suporte, passos numerados, busca objetiva e tom didatico.",
+    "componentLens": "Cada componente deve ajudar a cozinhar/comprar: clareza operacional, estados previsiveis e motion de orientacao."
+  },
+  "colors": {
+    "palette": [
+      {
+        "name": "King Red",
+        "hex": "#B12029",
+        "rgb": "rgb(177,32,41)",
+        "hsl": "hsl(356 69% 41%)",
+        "usage": "primary / nav / CTA"
+      },
+      {
+        "name": "Parchment",
+        "hex": "#FFF4DC",
+        "rgb": "rgb(255,244,220)",
+        "hsl": "hsl(41 100% 93%)",
+        "usage": "background"
+      },
+      {
+        "name": "Rye Ink",
+        "hex": "#22313A",
+        "rgb": "rgb(34,49,58)",
+        "hsl": "hsl(203 26% 18%)",
+        "usage": "text / dark panels"
+      },
+      {
+        "name": "Flour White",
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255,255,255)",
+        "hsl": "hsl(0 0% 100%)",
+        "usage": "surface"
+      },
+      {
+        "name": "Wheat Gold",
+        "hex": "#D9A441",
+        "rgb": "rgb(217,164,65)",
+        "hsl": "hsl(39 67% 55%)",
+        "usage": "rating / focus"
+      },
+      {
+        "name": "Oven Brown",
+        "hex": "#7A4A2A",
+        "rgb": "rgb(122,74,42)",
+        "hsl": "hsl(24 49% 32%)",
+        "usage": "secondary"
+      },
+      {
+        "name": "Sage Proof",
+        "hex": "#687A52",
+        "rgb": "rgb(104,122,82)",
+        "hsl": "hsl(87 20% 40%)",
+        "usage": "success / guidance"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Oven Heat",
+        "value": "linear-gradient(135deg, rgba(177,32,41,.95), rgba(122,74,42,.82))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Flour Dust",
+        "value": "radial-gradient(circle at 20% 15%, rgba(217,164,65,.24), transparent 32%), linear-gradient(180deg,#fff4dc,#fff)",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Recipe Veil",
+        "value": "linear-gradient(180deg, rgba(34,49,58,0), rgba(34,49,58,.55))",
+        "participation": "background / overlay / hover / active states"
+      }
+    ],
+    "semantic": {
+      "primary": "King Red",
+      "text": "Rye Ink",
+      "surface": "Parchment",
+      "accent": "Flour White",
+      "focus": "Sage Proof",
+      "contrastIntent": "AA minimum for body text; overlay required on image text."
+    },
+    "opacityPolicy": "A escala de opacidade e global para evitar repeticao. Cada cor herda globalTokens.opacityScale e so deve variar quando houver necessidade real de contraste/contexto.",
+    "contextualUsageRules": {
+      "text": "Escolher token semantico de texto; sobre imagem usar overlay antes de reduzir contraste.",
+      "background": "Usar surface/background conforme personalidade do site; evitar aplicar cor decorativa como fundo dominante sem motivo.",
+      "border": "Usar neutral/accent em opacidade baixa pela escala global.",
+      "hover": "Usar accent/focus ou overlay curto conforme componente.",
+      "active": "Aumentar contraste ou reduzir elevacao por 120-180ms.",
+      "disabled": "Aplicar globalTokens.opacityScale.disabled sem apagar legibilidade."
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "Georgia, Charter, Times New Roman, serif",
+      "ui": "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif",
+      "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+      "load": "system/local-first, serif for recipe authority"
+    },
+    "scale": {
+      "h1": {
+        "family": "Display",
+        "weight": "760",
+        "size": "clamp(3.4rem, 7.2vw, 8rem)",
+        "lineHeight": ".9",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "h2": {
+        "family": "Display",
+        "weight": "720",
+        "size": "clamp(2.6rem, 5.4vw, 6rem)",
+        "lineHeight": ".95",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "h3": {
+        "family": "Display",
+        "weight": "680",
+        "size": "clamp(1.9rem, 3vw, 3.2rem)",
+        "lineHeight": "1.05",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "h4": {
+        "family": "UI",
+        "weight": "760",
+        "size": "1.55rem",
+        "lineHeight": "1.16",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "h5": {
+        "family": "UI",
+        "weight": "820",
+        "size": "1.08rem",
+        "lineHeight": "1.2",
+        "letterSpacing": ".08em",
+        "textTransform": "uppercase"
+      },
+      "h6": {
+        "family": "UI",
+        "weight": "860",
+        "size": ".86rem",
+        "lineHeight": "1.2",
+        "letterSpacing": ".14em",
+        "textTransform": "uppercase"
+      },
+      "body-lg": {
+        "family": "UI",
+        "weight": "420",
+        "size": "1.22rem",
+        "lineHeight": "1.6",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "body": {
+        "family": "UI",
+        "weight": "420",
+        "size": "1rem",
+        "lineHeight": "1.58",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "body-sm": {
+        "family": "UI",
+        "weight": "420",
+        "size": ".9rem",
+        "lineHeight": "1.45",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "caption": {
+        "family": "Mono/UI",
+        "weight": "820",
+        "size": ".76rem",
+        "lineHeight": "1.35",
+        "letterSpacing": ".12em",
+        "textTransform": "uppercase"
+      },
+      "label": {
+        "family": "Mono/UI",
+        "weight": "850",
+        "size": ".8rem",
+        "lineHeight": "1.2",
+        "letterSpacing": ".12em",
+        "textTransform": "uppercase"
+      },
+      "helper": {
+        "family": "UI",
+        "weight": "420",
+        "size": ".78rem",
+        "lineHeight": "1.35",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      }
+    },
+    "siteSpecificRoles": [
+      "recipe-title: serif didatica grande",
+      "step-number: numeral alto de preparo",
+      "utility-nav: mono para recipe/shop/help",
+      "body-method: UI confortavel para instrucao"
+    ]
+  },
+  "icons": {
+    "description": "Baking line icons: crown, wheat, cart, timer, star, phone, book, chevron. Stroke 1.8, active King Red.",
+    "stroke": "1.6-1.9",
+    "behavior": "currentColor, hover accent, focus visible"
+  },
+  "components": {
+    "ka-mega-menu": {
+      "role": "mega-menu receitas/shop/aulas",
+      "motion": "slide/fade, 4 colunas, Esc close",
+      "motionType": "flyout",
+      "uniqueBehavior": "slide/fade, 4 colunas, Esc close"
+    },
+    "ka-recipe-card": {
+      "role": "card de receita",
+      "motion": "tempo, dificuldade, rating, image zoom",
+      "motionType": "hover-depth",
+      "uniqueBehavior": "tempo, dificuldade, rating, image zoom"
+    },
+    "ka-step-card": {
+      "role": "passo de preparo",
+      "motion": "numero grande, linha draw, active state",
+      "motionType": "microinteraction",
+      "uniqueBehavior": "numero grande, linha draw, active state"
+    },
+    "ka-shop-card": {
+      "role": "card de produto",
+      "motion": "badge de estoque, preco, add-to-cart",
+      "motionType": "microinteraction",
+      "uniqueBehavior": "badge de estoque, preco, add-to-cart"
+    },
+    "ka-hotline-panel": {
+      "role": "painel de ajuda",
+      "motion": "fundo escuro, CTA humano, fade-up",
+      "motionType": "microinteraction",
+      "uniqueBehavior": "fundo escuro, CTA humano, fade-up"
+    },
+    "ka-tab-rail": {
+      "role": "abas de conteudo",
+      "motion": "underline King Red, scroll mobile",
+      "motionType": "microinteraction",
+      "uniqueBehavior": "underline King Red, scroll mobile"
+    },
+    "ka-search-input": {
+      "role": "busca de receita",
+      "motion": "focus Wheat Gold, sugestoes",
+      "motionType": "focus-form",
+      "uniqueBehavior": "focus Wheat Gold, sugestoes"
+    },
+    "ka-toast-cart": {
+      "role": "toast carrinho",
+      "motion": "slide curto, nao bloqueante",
+      "motionType": "flyout",
+      "uniqueBehavior": "slide curto, nao bloqueante"
+    }
+  },
+  "motion": {
+    "entry": [
+      "fade-up",
+      "fade-left",
+      "draw-line",
+      "stagger"
+    ],
+    "exit": [
+      "flyout-x",
+      "modal-fade-down",
+      "caption-exit"
+    ],
+    "background": [
+      "hero-zoom",
+      "ambient-drift"
+    ],
+    "parallax": [
+      "data-speed controlled; reduced-motion fallback"
+    ],
+    "replay": true
+  },
+  "accessibility": {
+    "focus": "visible outline using focus token",
+    "reducedMotion": "animations disabled or static",
+    "keyboard": "menu/modal close by Esc",
+    "contrast": "4.5:1 target"
+  },
+  "risks": [
+    "Vermelho em excesso pesa no acolhimento.",
+    "Mega-menu precisa overlay e Esc.",
+    "Cards devem ter aspect ratio fixo."
+  ],
+  "outputs": {
+    "json": "design-systems/json/reference-ds-05-kingarthurbaking-com.json",
+    "markdown": "design-systems/previews/markdown/reference-ds-05-kingarthurbaking-com-preview.md",
+    "html": "design-systems/previews/html/reference-ds-05-kingarthurbaking-com-visual-preview.html",
+    "screenshots": "design-systems/previews/screenshots/reference-ds-05-kingarthurbaking-com/"
+  },
+  "schemaVersion": "reference-ds.compact.v2",
+  "globalTokens": {
+    "opacityScale": {
+      "solid": "100%",
+      "raisedSurface": "86%",
+      "overlayText": "64%",
+      "pressedSurface": "40%",
+      "disabled": "18%",
+      "hairline": "8%"
+    },
+    "componentStateContract": [
+      "default",
+      "hover",
+      "focus-visible",
+      "active",
+      "loading",
+      "disabled"
+    ],
+    "interactionContract": {
+      "focus": "2px outline usando token focus/accent, outline-offset 4px, nunca depender apenas de cor.",
+      "hover": "Transform/overlay curto, sem deslocar layout nem esconder CTA principal.",
+      "active": "Reduzir elevacao ou aumentar contraste por 120-180ms.",
+      "disabled": "Opacidade global disabled + cursor sem acao + contraste ainda legivel quando houver texto."
+    },
+    "motionContract": {
+      "entry": "fade/slide curto com easing do site; conteudo importante nao depende de animacao para existir.",
+      "exit": "fade/scale/slide reversivel para menu, modal, caption e toast.",
+      "parallax": "Camadas com limite de deslocamento, fallback estatico em prefers-reduced-motion.",
+      "replay": "Preview HTML deve permitir auditoria visual do motion principal."
+    }
+  },
+  "componentsDefaults": {
+    "stateContract": [
+      "default",
+      "hover",
+      "focus-visible",
+      "active",
+      "loading",
+      "disabled"
+    ],
+    "focus": "2px outline usando token focus/accent, outline-offset 4px, nunca depender apenas de cor.",
+    "reducedMotion": "Desativar transforms continuos e manter conteudo estatico equivalente.",
+    "opacityScaleRef": "globalTokens.opacityScale",
+    "implementationRule": "Nao repetir contrato global em cada componente; documentar apenas papel, motionType, uniqueBehavior e risco quando existir."
+  },
+  "heroSystem": {
+    "anatomy": [
+      "Foto larga mostra resultado da receita",
+      "Recipe board concentra busca e orientacao",
+      "Passos numerados entram como sistema",
+      "CTA/foco ajudam quem esta cozinhando"
+    ],
+    "fullViewport": true,
+    "detailPolicy": "Hero deve documentar layout, camadas, media, CTA, motion e menu relacionado no proprio preview visual."
+  },
+  "menuSystem": {
+    "characteristics": [
+      "Mega-menu em colunas receita/shop/aulas/ajuda",
+      "Foco teclado obvio e Esc ativo",
+      "Labels de utilidade mais fortes que decoracao"
+    ],
+    "interaction": "Abrir por hamburger, fechar por link, botao fechar e tecla Esc; overlay deve preservar a personalidade do site."
+  },
+  "effects": {
+    "signature": [
+      "step ativo com numero alto",
+      "linha desenhada para leitura",
+      "toast de carrinho nao bloqueante",
+      "painel de ajuda com fade-up"
+    ]
+  },
+  "referenceUsage": {
+    "type": "visual-reference-input",
+    "folder": "01-acolhedor-familiar",
+    "crossesWith": "clientes/[slug]/data/design-system.json",
+    "purpose": "Referencia de baking didatico. Fornece receita, passos numerados, busca util, mega-menu educativo, hotline/help e shop card para cruzar com o DS do cliente; nao e formulario final.",
+    "nonGoals": [
+      "nao criar DS final do cliente",
+      "nao representar fluxo de formulario do cliente",
+      "nao misturar personalidade de outros sites"
+    ],
+    "differentiationRules": [
+      "Diferenciar por autoridade acolhedora, cards de etapa, busca de receita e mega-menu.",
+      "Usar motion funcional: step reveal, tab underline, toast cart/help e overlay de menu.",
+      "Evitar ecommerce editorial puro: o centro e ensinar, guiar e vender com confianca."
+    ],
+    "siteSpecific": true,
+    "notPersonalityWide": true,
+    "qualityRule": "Usar como referencia individual do site; nao padronizar componentes, hero, motion ou menus entre DSs."
+  },
+  "referenceSite": "kingarthurbaking.com",
+  "previewNavigation": [
+    {
+      "id": "menu-top",
+      "label": "Menu / top",
+      "menuLabel": "Mega menu topo"
+    },
+    {
+      "id": "top",
+      "label": "Top",
+      "menuLabel": "Topo receita"
+    },
+    {
+      "id": "hero",
+      "label": "Sessao Hero",
+      "menuLabel": "Hero receita guiada"
+    },
+    {
+      "id": "color-tokens",
+      "label": "Tokens de cor",
+      "menuLabel": "Tokens baking"
+    },
+    {
+      "id": "gradients",
+      "label": "Gradientes / opacidade",
+      "menuLabel": "Massa / berry opacity"
+    },
+    {
+      "id": "type-system",
+      "label": "Type system",
+      "menuLabel": "Type de receita"
+    },
+    {
+      "id": "type-detail",
+      "label": "Tipografia detalhada",
+      "menuLabel": "Steps / helper"
+    },
+    {
+      "id": "effects",
+      "label": "Efeitos e mouse overs",
+      "menuLabel": "Hover de etapa"
+    },
+    {
+      "id": "components",
+      "label": "Componentes",
+      "menuLabel": "Componentes cozinha"
+    },
+    {
+      "id": "contract",
+      "label": "Contrato sem repeticao",
+      "menuLabel": "Contrato receita"
+    },
+    {
+      "id": "menu-board",
+      "label": "Menu board component",
+      "menuLabel": "Menu board de receita"
+    },
+    {
+      "id": "reference-slip",
+      "label": "Reference slip",
+      "menuLabel": "Slip do padeiro"
+    },
+    {
+      "id": "cards-sections",
+      "label": "Cards e secoes",
+      "menuLabel": "Cards de aula"
+    },
+    {
+      "id": "story",
+      "label": "Story split parallax",
+      "menuLabel": "Story receita parallax"
+    },
+    {
+      "id": "icons",
+      "label": "Icones",
+      "menuLabel": "Icones baking"
+    },
+    {
+      "id": "handoff",
+      "label": "Handoff de referencia",
+      "menuLabel": "Handoff receita"
+    },
+    {
+      "id": "motion",
+      "label": "Motion contract",
+      "menuLabel": "Motion guiado"
+    },
+    {
+      "id": "replay-motion",
+      "label": "Replay motion",
+      "menuLabel": "Replay guiado"
+    }
+  ],
+  "requiredPreviewContract": {
+    "allMenuLinksMustResolve": true,
+    "heroMustOccupyFullViewport": true,
+    "noRepeatedGenericSections": true,
+    "noClippedTextOrOverlaps": true,
+    "showGradientsOpacityHoverEntryExitParallaxIcons": true
+  }
+}

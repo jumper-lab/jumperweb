@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OceanX Expedition Interface System</title>
+<style>
+:root{--primary:#03121F;--secondary:#00D1FF;--surface:#E6FBFF;--alt:#083C5B;--text:#0A2840;--muted:#4C6B7B;--border:#7ACFE2;--ctaText:#FFFFFF;--heading:"Rajdhani",serif;--body:"Inter",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}a{color:inherit}.depth{min-height:100vh;display:grid;grid-template-columns:1fr;background:linear-gradient(#083c5b,#03121f);color:#fff}
+.depth__rail{padding:22px;border-right:1px solid var(--border);background:color-mix(in srgb,var(--surface) 86%,white);color:inherit;position:relative;top:0;height:auto}
+.depth__page{padding:clamp(22px,5vw,78px);display:grid;gap:clamp(26px,5vw,64px)}
+.depth__nav{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px;font-family:var(--mono);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.depth__hero{display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,52px);align-items:center;min-height:78vh}
+.depth__hero h1{font-family:var(--heading);font-size:clamp(4rem,10vw,10rem);line-height:.92;margin:0;max-width:14ch;color:inherit}
+.depth__media{min-height:300px;border:1px solid var(--border);border-radius:18px;background:radial-gradient(circle,var(--secondary),transparent 62%);box-shadow:0 24px 70px rgba(0,0,0,.16)}
+.depth__cta,.depth__submit{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--primary);color:var(--ctaText);border:0;border-radius:12px;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer}.depth__hidden{display:none}
+.depth__controls{display:flex;gap:8px;flex-wrap:wrap}.depth__option{border:1px solid var(--border);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;cursor:pointer}.depth__option[aria-pressed="true"]{background:var(--secondary);color:#111111;border-color:var(--secondary)}
+.depth__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.depth__item{text-align:left;min-height:150px;border:1px solid var(--border);background:rgba(255,255,255,.08);color:inherit;border-radius:16px;padding:18px;cursor:pointer}.depth__item[aria-pressed="true"]{outline:3px solid var(--secondary);transform:translateY(-3px)}
+.depth__split{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:22px}.depth__panel{border:1px solid var(--border);background:rgba(255,255,255,.08);padding:22px;border-radius:16px}
+.depth__form{display:grid;gap:12px}.depth__form label{display:grid;gap:6px;font-weight:800}.depth__form input,.depth__form select{min-height:44px;border:1px solid var(--border);background:#111;color:#fff;border-radius:8px;padding:10px}.depth__form input:focus,.depth__form select:focus,.depth__option:focus-visible,.depth__item:focus-visible,.depth__chip:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.depth__status{font-family:var(--mono);border-left:5px solid var(--secondary);padding:16px;background:rgba(255,255,255,.1)}
+.depth__sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.depth__section-card{border-top:3px solid var(--primary);padding:16px;background:rgba(255,255,255,.08)}
+.depth__palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.depth__chip{background:var(--chip);color:var(--ink);min-height:88px;border:1px solid var(--border);padding:10px;text-align:left;display:grid;align-content:space-between;cursor:pointer;border-radius:10px}
+.depth__audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.depth__audit div{padding:16px;border:1px solid var(--border);background:rgba(255,255,255,.08)}
+@media(max-width:860px){.depth{display:block}.depth__rail{position:relative;height:auto}.depth__hero,.depth__split{grid-template-columns:1fr}.depth__audit{grid-template-columns:1fr}.depth__page{padding:20px}.depth__hero h1{font-size:clamp(3rem,18vw,6rem)}}
+@media(prefers-reduced-motion:no-preference){.depth__item,.depth__cta,.depth__submit,.depth__chip{transition:transform .2s ease,filter .2s ease}.depth__item:hover,.depth__chip:hover{transform:translateY(-3px)}.depth__cta:hover,.depth__submit:hover{filter:contrast(1.1)}}
+</style>
+</head>
+<body>
+<main class="depth" data-mode="superficie">
+
+<div class="depth__page">
+<nav class="depth__nav"><strong>06.2 · OceanX Expedition Interface System</strong><span>depth-interface</span></nav>
+<section class="depth__hero" id="top">
+<div><p>expedicao por profundidade</p><h1>full-bleed ocean scene with depth scale, mission chapter and interactive timeline</h1><p>wonder-driven, scientific and cinematic</p><a class="depth__cta" href="#form">Explorar capitulo</a></div>
+<div class="depth__media" aria-hidden="true"></div>
+</section>
+<section class="depth__panel"><h2>Profundidade</h2><div class="depth__controls"><button class="depth__option" type="button" data-mode="superficie" aria-pressed="true">superficie</button>
+<button class="depth__option" type="button" data-mode="500m" aria-pressed="false">500m</button>
+<button class="depth__option" type="button" data-mode="1000m" aria-pressed="false">1000m</button></div><p class="depth__status" aria-live="polite">Modo ativo: superficie · Log de expedicao atualizado</p></section>
+<section><h2>Componentes funcionais</h2><div class="depth__items"><button class="depth__item" type="button" data-item="Missao" aria-pressed="true"><span>01</span><strong>Missao</strong><small>depth-marker-nav</small></button>
+<button class="depth__item" type="button" data-item="Vessel map" aria-pressed="false"><span>02</span><strong>Vessel map</strong><small>mission-chapter-card</small></button>
+<button class="depth__item" type="button" data-item="Discovery log" aria-pressed="false"><span>03</span><strong>Discovery log</strong><small>vessel-map-panel</small></button>
+<button class="depth__item" type="button" data-item="Crew" aria-pressed="false"><span>04</span><strong>Crew</strong><small>discovery-log-entry</small></button></div></section>
+<section class="depth__split" id="form"><div class="depth__panel"><h2>Formulario real do DS</h2><form class="depth__form"><label>Nome<input name="field0" value="Exemplo teste" placeholder="Nome" /></label>
+<label>Interesse<select name="field1"><option>superficie</option><option>500m</option><option>1000m</option></select></label>
+<label>Capitulo<input name="field2" value="" placeholder="Capitulo" /></label><button class="depth__submit" type="submit">Explorar capitulo</button></form></div><div class="depth__panel"><h2>Resultado / estado</h2><p class="depth__status depth__output" aria-live="polite">Nenhum envio ainda.</p><p>O preview precisa testar foco, estado ativo, formulario, responsividade e copy do componente.</p></div></section>
+<section><h2>Fluxo de secoes coberto</h2><div class="depth__sections"><article class="depth__section-card"><span>01</span><h3>Mission chapter</h3><p>depth-marker-nav</p></article>
+<article class="depth__section-card"><span>02</span><h3>Depth timeline</h3><p>mission-chapter-card</p></article>
+<article class="depth__section-card"><span>03</span><h3>Research vessel map</h3><p>vessel-map-panel</p></article>
+<article class="depth__section-card"><span>04</span><h3>Crew cards</h3><p>discovery-log-entry</p></article>
+<article class="depth__section-card"><span>05</span><h3>Discoveries log</h3><p>crew-signal-card</p></article>
+<article class="depth__section-card"><span>06</span><h3>Media theatre</h3><p>coordinate-footer</p></article>
+<article class="depth__section-card"><span>07</span><h3>Join/support prompt</h3><p>depth-marker-nav</p></article>
+<article class="depth__section-card"><span>08</span><h3>Footer as expedition coordinates</h3><p>mission-chapter-card</p></article></div></section>
+<section><h2>Paleta clicavel</h2><div class="depth__palette"><button class="depth__chip" type="button" data-copy="#03121F" style="--chip:#03121F;--ink:#ffffff"><span>Primary</span><strong>#03121F</strong></button>
+<button class="depth__chip" type="button" data-copy="#00D1FF" style="--chip:#00D1FF;--ink:#111111"><span>Secondary</span><strong>#00D1FF</strong></button>
+<button class="depth__chip" type="button" data-copy="#E6FBFF" style="--chip:#E6FBFF;--ink:#111111"><span>Surface</span><strong>#E6FBFF</strong></button>
+<button class="depth__chip" type="button" data-copy="#083C5B" style="--chip:#083C5B;--ink:#ffffff"><span>Alt</span><strong>#083C5B</strong></button>
+<button class="depth__chip" type="button" data-copy="#0A2840" style="--chip:#0A2840;--ink:#ffffff"><span>Text</span><strong>#0A2840</strong></button>
+<button class="depth__chip" type="button" data-copy="#4C6B7B" style="--chip:#4C6B7B;--ink:#ffffff"><span>Muted</span><strong>#4C6B7B</strong></button>
+<button class="depth__chip" type="button" data-copy="#7ACFE2" style="--chip:#7ACFE2;--ink:#111111"><span>Border</span><strong>#7ACFE2</strong></button></div></section>
+<section class="depth__audit"><div><strong>Acessibilidade</strong><p>Focus ring, aria-live e touch target 44px.</p></div><div><strong>Responsivo</strong><p>Mobile preserva depth timeline becomes chapter stack with sticky coordinates.</p></div><div><strong>Erro corrigido</strong><p>experiencia imersiva sem timeline, profundidade ou log.</p></div></section>
+</div>
+</main>
+<script>
+(() => {
+ const root = document.querySelector('.depth');
+ const status = document.querySelector('.depth__status');
+ const output = document.querySelector('.depth__output');
+ document.querySelectorAll('.depth__option').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.depth__option').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  root.dataset.mode = btn.dataset.mode;
+  status.textContent = 'Modo ativo: ' + btn.dataset.mode + ' · Log de expedicao atualizado';
+ }));
+ document.querySelectorAll('.depth__item').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.depth__item').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  output.textContent = 'Selecionado: ' + btn.dataset.item + ' · componente pronto para estado ativo.';
+ }));
+ document.querySelector('.depth__form').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  output.textContent = 'Log de expedicao atualizado: ' + [...data.values()].filter(Boolean).join(' / ');
+ });
+ document.querySelectorAll('.depth__chip').forEach(chip => chip.addEventListener('click', async () => {
+  const value = chip.dataset.copy;
+  try { await navigator.clipboard.writeText(value); output.textContent = 'Cor copiada: ' + value; }
+  catch { output.textContent = 'Token selecionado: ' + value; }
+ }));
+})();
+</script>
+</body>
+</html>
