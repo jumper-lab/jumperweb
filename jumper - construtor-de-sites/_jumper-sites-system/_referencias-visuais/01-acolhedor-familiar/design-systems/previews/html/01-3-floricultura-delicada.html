@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DS 01.3 — Floricultura Delicada · Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --primary:#D4A5A5;        /* rosa antigo — decorativo */
+    --primary-deep:#9C5C5C;   /* rosa profundo — funcional */
+    --primary-deeper:#7E4949;
+    --secondary:#8FBC8F;      /* jade — decorativo */
+    --secondary-deep:#4E7A5A; /* jade profundo — funcional */
+    --surface:#FBF7F4;
+    --surface-alt:#F4E9E6;
+    --surface-jade:#EEF3EC;
+    --text:#33302E;
+    --text-2:#544A46;
+    --text-muted:#7A6B65;
+    --border:#E4D5D0;
+    --error:#B4534E;
+    --success:#4E7A5A;
+    --warning:#8A5F28;
+    --n900:#2B2523;--n200:#E8DED9;--n300:#D6C9C3;--n100:#F4EDE9;--n500:#8E7F79;
+    --r-md:12px;--r-lg:20px;--r-xl:32px;--r-arch:999px 999px 0 0;--r-full:9999px;
+    --sh-sm:0 2px 8px rgba(51,48,46,.05);
+    --sh-md:0 6px 24px rgba(156,92,92,.08);
+    --sh-lg:0 14px 40px rgba(156,92,92,.10);
+    --ease-petal:cubic-bezier(.22,1,.36,1);
+    --ease-breeze:cubic-bezier(.33,0,.15,1);
+    --font-h:'Fraunces',Georgia,'Times New Roman',serif;
+    --font-b:'Inter',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-b);background:var(--surface);color:var(--text);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img,svg{max-width:100%;display:block}
+  .container{max-width:1240px;margin:0 auto;padding:0 20px}
+  section{padding:72px 0}
+  h1,h2,h3{font-family:var(--font-h);color:var(--text)}
+  h1{font-size:clamp(2.125rem,1.4rem + 2.6vw,3.5rem);font-weight:350;line-height:1.1;letter-spacing:-.015em}
+  h2{font-size:clamp(1.625rem,1.2rem + 1.5vw,2.375rem);font-weight:400;line-height:1.18;letter-spacing:-.01em}
+  h3{font-size:clamp(1.25rem,1.15rem + .4vw,1.5rem);font-weight:450;line-height:1.3}
+  p{color:var(--text-2)}
+  .eyebrow{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--primary-deep);display:block;margin-bottom:16px}
+  .muted{color:var(--text-muted);font-size:14px}
+  .skip-link{position:absolute;left:-9999px;top:8px;background:var(--primary-deep);color:#fff;padding:12px 24px;border-radius:var(--r-full);z-index:99}
+  .skip-link:focus{left:8px}
+
+  /* ============ NAV ============ */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(251,247,244,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:24px}
+  .logo{font-family:var(--font-h);font-weight:450;font-size:22px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+  .nav-links{display:none;gap:32px;list-style:none}
+  .nav-links a{font-size:15px;color:var(--text-2);text-decoration:none;position:relative;padding:12px 0}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:6px;width:100%;height:1.5px;background:var(--secondary-deep);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease-breeze)}
+  .nav-links a:hover::after,.nav-links a:focus-visible::after{transform:scaleX(1)}
+  @media(min-width:768px){.nav-links{display:flex}.nav-inner{min-height:76px}}
+
+  /* ============ BOTÕES ============ */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-b);font-weight:500;font-size:16px;padding:14px 32px;min-height:48px;border-radius:var(--r-full);border:none;cursor:pointer;text-decoration:none;transition:background .3s var(--ease-breeze),transform .3s var(--ease-breeze),box-shadow .3s var(--ease-breeze),color .3s var(--ease-breeze),border-color .3s var(--ease-breeze)}
+  .btn:focus-visible{outline:2px solid var(--primary-deep);outline-offset:3px}
+  .btn-primary{background:var(--primary-deep);color:#fff}
+  .btn-primary:hover{background:var(--primary-deeper);transform:translateY(-2px);box-shadow:var(--sh-sm)}
+  .btn-primary:active{background:#6E3F3F;transform:translateY(0)}
+  .btn-primary:disabled{background:var(--n200);color:var(--n500);cursor:not-allowed;transform:none;box-shadow:none}
+  .btn-secondary{background:transparent;color:var(--primary-deep);border:1.5px solid var(--primary-deep)}
+  .btn-secondary:hover{background:var(--surface-alt);color:var(--primary-deeper);border-color:var(--primary-deeper)}
+  .btn-secondary:disabled{border-color:var(--n200);color:var(--n300);cursor:not-allowed}
+  .btn-ghost{background:transparent;color:var(--secondary-deep);padding:14px 8px;position:relative}
+  .btn-ghost::after{content:"";position:absolute;left:8px;right:8px;bottom:10px;height:1.5px;background:var(--secondary-deep);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease-breeze)}
+  .btn-ghost:hover::after,.btn-ghost:focus-visible::after{transform:scaleX(1)}
+  .btn-ghost:focus-visible{outline-color:var(--secondary-deep)}
+  .btn-sm{padding:10px 22px;min-height:40px;font-size:14px}
+  .btn-lg{padding:18px 44px;min-height:56px;font-size:17px}
+
+  /* ============ HERO ============ */
+  .hero{padding:56px 0 72px;background:radial-gradient(60% 50% at 85% 10%,var(--surface-alt) 0%,transparent 70%),var(--surface);min-height:auto}
+  .hero-grid{display:grid;gap:48px;align-items:center}
+  .hero-copy p{max-width:46ch;margin:20px 0 32px;font-size:17px}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .hero-art{position:relative;order:-1}
+  .arch{border-radius:var(--r-arch);overflow:hidden;aspect-ratio:4/5;max-width:440px;margin:0 auto;background:
+    linear-gradient(160deg,#F4E9E6 0%,#EAD3CE 34%,#DDBDB9 62%,#C9DBC9 100%);
+    box-shadow:var(--sh-lg);position:relative}
+  .parallax-layer{position:absolute;inset:0;will-change:transform}
+  @media(min-width:1024px){
+    .hero{padding:96px 0 120px}
+    .hero-grid{grid-template-columns:7fr 5fr}
+    .hero-art{order:2}
+    .hero-copy{order:1}
+  }
+
+  /* ============ SEÇÕES ============ */
+  @media(min-width:768px){section{padding:104px 0}}
+  @media(min-width:1024px){section{padding:160px 0}.container{padding:0 64px}}
+  @media(min-width:480px) and (max-width:1023px){.container{padding:0 40px}}
+  .section-alt{background:var(--surface-alt)}
+  .section-jade{background:var(--surface-jade)}
+  .manifesto{text-align:center}
+  .manifesto blockquote{font-family:var(--font-h);font-style:italic;font-weight:350;font-size:clamp(1.375rem,1.1rem + 1.2vw,1.75rem);line-height:1.5;color:var(--text);max-width:640px;margin:0 auto}
+  .manifesto .muted{margin-top:24px}
+
+  /* ============ GALERIA ASSIMÉTRICA ============ */
+  .gallery{display:grid;gap:24px;list-style:none}
+  .card{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:transform .7s var(--ease-petal),box-shadow .7s var(--ease-petal)}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
+  .card-media{aspect-ratio:4/5;overflow:hidden;position:relative}
+  .card-media>.sim{width:100%;height:100%;transition:transform .7s var(--ease-petal)}
+  .card:hover .card-media>.sim{transform:scale(1.03)}
+  .card.is-arch .card-media{border-radius:var(--r-arch);margin:16px 16px 0}
+  .card-body{padding:20px}
+  .card-body .eyebrow{margin-bottom:6px;font-size:11px}
+  .price{font-weight:500;color:var(--text);margin:6px 0 10px}
+  .badge{display:inline-block;font-size:12px;font-weight:500;padding:5px 14px;border-radius:var(--r-full);background:var(--primary);color:var(--text)}
+  .badge-jade{background:var(--surface-jade);color:var(--secondary-deep)}
+  .sim-1{background:linear-gradient(150deg,#EAD3CE 0%,#D4A5A5 55%,#B98787 100%)}
+  .sim-2{background:linear-gradient(165deg,#EEF3EC 0%,#C9DBC9 50%,#8FBC8F 100%)}
+  .sim-3{background:linear-gradient(140deg,#F4E9E6 0%,#E0C3BE 45%,#C9DBC9 100%)}
+  .sim-4{background:linear-gradient(155deg,#F4EDE9 0%,#DDBDB9 60%,#A8C8A8 100%)}
+  .sim-5{background:linear-gradient(170deg,#EAD3CE 0%,#D9B3B0 40%,#B5CDB5 100%)}
+  .sim-6{background:linear-gradient(145deg,#EEF3EC 0%,#D9E6D9 45%,#D4A5A5 100%)}
+  .sim{position:relative}
+  .sim svg{position:absolute;inset:auto 8% 6% 8%;opacity:.85}
+  @media(min-width:480px){.gallery{grid-template-columns:1fr 1fr}}
+  @media(min-width:1024px){
+    .gallery{grid-template-columns:repeat(3,1fr);gap:32px}
+    .gallery>li:nth-child(2),.gallery>li:nth-child(5){margin-top:56px} /* assimetria assinada */
+  }
+
+  /* ============ COMO FUNCIONA ============ */
+  .steps{display:grid;gap:40px;counter-reset:step}
+  .step .num{font-family:var(--font-h);font-weight:300;font-size:clamp(4rem,3rem + 4vw,6rem);line-height:1;color:var(--primary)}
+  .step h3{margin:8px 0 8px}
+  .step p{max-width:36ch}
+  @media(min-width:768px){.steps{grid-template-columns:repeat(3,1fr)}}
+
+  /* ============ SERVIÇOS ============ */
+  .services{display:grid;gap:24px}
+  .service-card{background:#fff;border-radius:var(--r-lg);padding:32px;border:1px solid var(--border)}
+  .service-card .icon{width:40px;height:40px;color:var(--secondary-deep);margin-bottom:16px}
+  @media(min-width:768px){.services{grid-template-columns:1fr 1fr;gap:32px}}
+
+  /* ============ DEPOIMENTO ============ */
+  .testimonial{text-align:center;max-width:680px;margin:0 auto}
+  .testimonial .quote-mark{font-family:var(--font-h);font-style:italic;font-size:96px;line-height:.6;color:var(--primary);display:block;margin-bottom:20px}
+  .testimonial blockquote{font-family:var(--font-h);font-size:clamp(1.25rem,1.05rem + .9vw,1.5rem);font-weight:350;line-height:1.55;color:var(--text)}
+  .testimonial figcaption{margin-top:24px;font-size:14px;color:var(--text-muted)}
+
+  /* ============ FORM / INPUTS ============ */
+  .form-demo{display:grid;gap:24px;max-width:560px}
+  .field label{display:block;font-weight:500;font-size:14px;color:var(--text-2);margin-bottom:8px}
+  .field input,.field textarea{width:100%;font:inherit;font-size:16px;color:var(--text);background:#fff;border:1.5px solid var(--n300);border-radius:var(--r-md);padding:14px 18px;transition:border-color .3s var(--ease-breeze),box-shadow .3s var(--ease-breeze)}
+  .field input::placeholder{color:var(--text-muted)}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--primary-deep);box-shadow:0 0 0 3px rgba(212,165,165,.35)}
+  .field.has-error input{border-color:var(--error)}
+  .field .error-msg{display:flex;gap:6px;align-items:center;font-size:14px;color:var(--error);margin-top:8px}
+  .field input:disabled{background:var(--n100);color:var(--n500)}
+
+  /* ============ SWATCHES / TIPO / DEMO ============ */
+  .demo-block{margin-top:48px}
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;list-style:none}
+  .swatch{border-radius:var(--r-md);overflow:hidden;border:1px solid var(--border);background:#fff}
+  .swatch .chip{height:72px}
+  .swatch .info{padding:10px 12px;font-size:12px}
+  .swatch .info b{display:block;font-size:13px;color:var(--text)}
+  .type-specimen>*{margin-bottom:16px}
+  .states-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .anim-demo{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end}
+  .anim-chip{width:120px;height:120px;border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;font-weight:500;color:var(--text);padding:8px}
+  .fake-focus{outline:2px solid var(--primary-deep);outline-offset:3px}
+
+  /* ============ CTA FINAL ============ */
+  .cta-final{text-align:center}
+  .cta-final h2{max-width:20ch;margin:0 auto 16px}
+  .cta-final p{max-width:52ch;margin:0 auto 32px}
+  .leaf-divider{width:120px;margin:0 auto 32px;color:var(--secondary-deep)}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--n900);color:var(--n200);border-top:3px solid transparent;border-image:linear-gradient(90deg,var(--primary),var(--secondary)) 1;padding:64px 0 40px}
+  .footer-grid{display:grid;gap:40px}
+  footer h4{font-family:var(--font-h);font-style:italic;font-weight:400;font-size:18px;color:var(--primary);margin-bottom:16px}
+  footer a{color:var(--n200);text-decoration:none;font-size:15px}
+  footer a:hover,footer a:focus-visible{text-decoration:underline}
+  footer li{list-style:none;margin-bottom:10px}
+  .footer-bottom{margin-top:48px;padding-top:24px;border-top:1px solid rgba(232,222,217,.15);font-size:13px;color:var(--n300)}
+  @media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+
+  /* ============ ANIMAÇÕES (bloom-reveal) ============ */
+  .reveal{opacity:0;transform:translateY(24px) scale(.985)}
+  .reveal.in{animation:bloomReveal .9s var(--ease-petal) forwards}
+  @keyframes bloomReveal{to{opacity:1;transform:translateY(0) scale(1)}}
+  .stagger>*{opacity:0;transform:translateY(24px) scale(.985)}
+  .stagger.in>*{animation:bloomReveal .9s var(--ease-petal) forwards}
+  .stagger.in>*:nth-child(2){animation-delay:.12s}
+  .stagger.in>*:nth-child(3){animation-delay:.24s}
+  .stagger.in>*:nth-child(4){animation-delay:.36s}
+  .stagger.in>*:nth-child(5){animation-delay:.48s}
+  .stagger.in>*:nth-child(6){animation-delay:.6s}
+  @keyframes sway{0%,100%{transform:rotate(-1.4deg)}50%{transform:rotate(1.4deg)}}
+  .sway{animation:sway 6s ease-in-out infinite;transform-origin:bottom center}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.15s !important;transition-duration:.15s !important;animation-iteration-count:1 !important}
+    .reveal,.stagger>*{opacity:1;transform:none}
+    .parallax-layer{transform:none !important}
+    .sway{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Ir para o conteúdo</a>
+
+<!-- ============ NAVEGAÇÃO ============ -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#main" aria-label="Flor & Prosa — início">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 21c0-6 0-9 0-11" stroke="#4E7A5A" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M12 10c-3 0-5-2.2-5-5 3 0 5 2.2 5 5Z" fill="#8FBC8F"/>
+        <circle cx="12" cy="7" r="3.4" fill="#D4A5A5"/>
+        <circle cx="12" cy="7" r="1.3" fill="#9C5C5C"/>
+      </svg>
+      Flor &amp; Prosa
+    </a>
+    <nav aria-label="Navegação principal">
+      <ul class="nav-links">
+        <li><a href="#galeria">Flores da semana</a></li>
+        <li><a href="#servicos">Eventos</a></li>
+        <li><a href="#manifesto">O ateliê</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <a href="#contato" class="btn btn-primary btn-sm">Monte seu buquê</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Ateliê floral · entrega no mesmo dia</span>
+      <h1 id="hero-title">Flores que contam a sua história.</h1>
+      <p>Buquês montados à mão com flores colhidas de manhã. Para presentear, celebrar ou simplesmente deixar a semana mais bonita.</p>
+      <div class="hero-ctas">
+        <a href="#galeria" class="btn btn-primary">Monte seu buquê</a>
+        <a href="#manifesto" class="btn btn-ghost">Conheça o ateliê</a>
+      </div>
+    </div>
+    <div class="hero-art reveal" aria-hidden="true">
+      <div class="arch">
+        <!-- camada parallax 1: folhagem ao fundo -->
+        <div class="parallax-layer" data-parallax="0.12">
+          <svg viewBox="0 0 440 550" width="100%" height="100%" preserveAspectRatio="xMidYMax slice">
+            <g opacity="0.5">
+              <path d="M60 550 C 60 430, 40 380, 90 300" stroke="#4E7A5A" stroke-width="3" fill="none"/>
+              <path d="M90 300 c -40 -8 -60 -40 -58 -78 38 4 60 36 58 78Z" fill="#8FBC8F"/>
+              <path d="M90 300 c 40 -8 60 -40 58 -78 -38 4 -60 36 -58 78Z" fill="#A8C8A8"/>
+              <path d="M380 550 C 380 460, 400 400, 360 330" stroke="#4E7A5A" stroke-width="3" fill="none"/>
+              <path d="M360 330 c -38 -6 -56 -36 -54 -70 34 4 56 34 54 70Z" fill="#8FBC8F"/>
+            </g>
+          </svg>
+        </div>
+        <!-- camada parallax 2: flores em primeiro plano -->
+        <div class="parallax-layer" data-parallax="0.2">
+          <svg viewBox="0 0 440 550" width="100%" height="100%" preserveAspectRatio="xMidYMax slice">
+            <g class="sway">
+              <path d="M220 550 C 220 440, 210 400, 220 340" stroke="#4E7A5A" stroke-width="4" fill="none"/>
+              <g transform="translate(220 320)">
+                <ellipse rx="34" ry="44" transform="rotate(0)" fill="#D4A5A5"/>
+                <ellipse rx="34" ry="44" transform="rotate(72)" fill="#DDB4B4"/>
+                <ellipse rx="34" ry="44" transform="rotate(144)" fill="#D4A5A5"/>
+                <ellipse rx="34" ry="44" transform="rotate(216)" fill="#E0BCBC"/>
+                <ellipse rx="34" ry="44" transform="rotate(288)" fill="#D4A5A5"/>
+                <circle r="16" fill="#9C5C5C"/>
+              </g>
+              <path d="M150 550 C 150 470, 145 450, 152 410" stroke="#4E7A5A" stroke-width="3" fill="none"/>
+              <g transform="translate(152 395)">
+                <ellipse rx="20" ry="27" fill="#E0BCBC"/>
+                <ellipse rx="20" ry="27" transform="rotate(60)" fill="#D4A5A5"/>
+                <ellipse rx="20" ry="27" transform="rotate(120)" fill="#DDB4B4"/>
+                <circle r="9" fill="#9C5C5C"/>
+              </g>
+              <path d="M300 550 C 300 480, 305 455, 298 425" stroke="#4E7A5A" stroke-width="3" fill="none"/>
+              <g transform="translate(298 410)">
+                <ellipse rx="17" ry="23" fill="#D4A5A5"/>
+                <ellipse rx="17" ry="23" transform="rotate(60)" fill="#E0BCBC"/>
+                <ellipse rx="17" ry="23" transform="rotate(120)" fill="#D4A5A5"/>
+                <circle r="8" fill="#7E4949"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MANIFESTO ============ -->
+<section id="manifesto" class="manifesto" aria-labelledby="manifesto-title">
+  <div class="container reveal">
+    <h2 id="manifesto-title" class="eyebrow" style="font-family:var(--font-b)">Nosso jeito</h2>
+    <blockquote>“A natureza já fez o mais bonito.<br>Nós arrumamos o laço.”</blockquote>
+    <p class="muted">— Ateliê Flor &amp; Prosa, desde 2019</p>
+  </div>
+</section>
+
+<!-- ============ GALERIA ASSIMÉTRICA ============ -->
+<section id="galeria" class="section-alt" aria-labelledby="galeria-title">
+  <div class="container">
+    <div class="reveal" style="max-width:560px;margin-bottom:48px">
+      <span class="eyebrow">Colheita da semana</span>
+      <h2 id="galeria-title">Cada buquê é um pedaço de jardim</h2>
+    </div>
+    <ul class="gallery stagger">
+      <li class="card is-arch">
+        <div class="card-media"><div class="sim sim-1">
+          <svg viewBox="0 0 200 90" aria-hidden="true"><g><circle cx="100" cy="40" r="26" fill="#F4E9E6" opacity=".9"/><circle cx="100" cy="40" r="10" fill="#9C5C5C"/><circle cx="62" cy="58" r="16" fill="#F4E9E6" opacity=".75"/><circle cx="140" cy="56" r="14" fill="#F4E9E6" opacity=".7"/></g></svg>
+        </div></div>
+        <div class="card-body">
+          <span class="badge">Colheita da semana</span>
+          <h3 style="margin-top:10px">Buquê Aurora</h3>
+          <p class="price">R$ 189</p>
+          <a href="#contato" class="btn btn-ghost btn-sm">Ver detalhes</a>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card-media"><div class="sim sim-2">
+          <svg viewBox="0 0 200 90" aria-hidden="true"><path d="M100 88 C100 60 96 50 100 30" stroke="#4E7A5A" stroke-width="3" fill="none"/><path d="M100 52c-22-4-32-20-30-40 20 2 32 20 30 40Z" fill="#EEF3EC"/><path d="M100 52c22-4 32-20 30-40-20 2-32 20-30 40Z" fill="#DDEBDD"/></svg>
+        </div></div>
+        <div class="card-body">
+          <span class="badge badge-jade">Folhagens</span>
+          <h3 style="margin-top:10px">Jardim de Eucalipto</h3>
+          <p class="price">R$ 129</p>
+          <a href="#contato" class="btn btn-ghost btn-sm">Ver detalhes</a>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card-media"><div class="sim sim-3">
+          <svg viewBox="0 0 200 90" aria-hidden="true"><g><ellipse cx="80" cy="45" rx="14" ry="20" fill="#FBF7F4" opacity=".9"/><ellipse cx="106" cy="40" rx="14" ry="20" fill="#F4E9E6" opacity=".9"/><ellipse cx="128" cy="50" rx="12" ry="17" fill="#FBF7F4" opacity=".8"/><circle cx="104" cy="46" r="7" fill="#9C5C5C"/></g></svg>
+        </div></div>
+        <div class="card-body">
+          <span class="eyebrow">Presentes</span>
+          <h3>Cesta Manhã Clara</h3>
+          <p class="price">R$ 249</p>
+          <a href="#contato" class="btn btn-ghost btn-sm">Ver detalhes</a>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card-media"><div class="sim sim-4">
+          <svg viewBox="0 0 200 90" aria-hidden="true"><g><circle cx="70" cy="50" r="18" fill="#F4E9E6" opacity=".85"/><circle cx="70" cy="50" r="7" fill="#7E4949"/><circle cx="120" cy="42" r="22" fill="#FBF7F4" opacity=".8"/><circle cx="120" cy="42" r="8" fill="#9C5C5C"/></g></svg>
+        </div></div>
+        <div class="card-body">
+          <span class="eyebrow">Assinatura</span>
+          <h3>Flor da Semana</h3>
+          <p class="price">R$ 89/mês</p>
+          <a href="#contato" class="btn btn-ghost btn-sm">Ver detalhes</a>
+        </div>
+      </li>
+      <li class="card is-arch">
+        <div class="card-media"><div class="sim sim-5">
+          <svg viewBox="0 0 200 90" aria-hidden="true"><g><ellipse cx="100" cy="42" rx="30" ry="24" fill="#FBF7F4" opacity=".85"/><circle cx="100" cy="42" r="9" fill="#9C5C5C"/><path d="M60 70 q 40 18 80 0" stroke="#4E7A5A" stroke-width="3" fill="none"/></g></svg>
+        </div></div>
+        <div class="card-body">
+          <span class="badge">Edição limitada</span>
+          <h3 style="margin-top:10px">Peônias de Outono</h3>
+          <p class="price">R$ 269</p>
+          <a href="#contato" class="btn btn-ghost btn-sm">Ver detalhes</a>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card-media"><div class="sim sim-6">
+          <svg viewBox="0 0 200 90" aria-hidden="true"><g><rect x="70" y="40" width="60" height="40" rx="8" fill="#FBF7F4" opacity=".85"/><circle cx="88" cy="38" r="12" fill="#D4A5A5"/><circle cx="112" cy="34" r="14" fill="#E0BCBC"/><circle cx="112" cy="34" r="5" fill="#9C5C5C"/></g></svg>
+        </div></div>
+        <div class="card-body">
+          <span class="eyebrow">Para a casa</span>
+          <h3>Vaso Varanda Viva</h3>
+          <p class="price">R$ 159</p>
+          <a href="#contato" class="btn btn-ghost btn-sm">Ver detalhes</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section aria-labelledby="passos-title">
+  <div class="container">
+    <div class="reveal" style="max-width:560px;margin-bottom:48px">
+      <span class="eyebrow">Simples assim</span>
+      <h2 id="passos-title">Do jardim à sua porta em três passos</h2>
+    </div>
+    <div class="steps stagger">
+      <div class="step">
+        <span class="num" aria-hidden="true">1</span>
+        <h3>Escolha ou descreva</h3>
+        <p>Escolha um buquê pronto ou conte a ocasião — a gente monta com o que está mais bonito hoje.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">2</span>
+        <h3>Escreva o cartão</h3>
+        <p>Suas palavras, nossa caligrafia. O cartão vai à mão, sempre.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">3</span>
+        <h3>Receba no mesmo dia</h3>
+        <p>Pedidos até 15h chegam hoje, frescos, em toda a cidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVIÇOS ============ -->
+<section id="servicos" class="section-jade" aria-labelledby="servicos-title">
+  <div class="container">
+    <div class="reveal" style="max-width:560px;margin-bottom:48px">
+      <span class="eyebrow" style="color:var(--secondary-deep)">Além do balcão</span>
+      <h2 id="servicos-title">Para os dias que merecem mais flores</h2>
+    </div>
+    <div class="services stagger">
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 34c0-9 0-13 0-16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M20 18c-6 0-10-4.5-10-10 6 0 10 4.5 10 10Z" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M20 18c6 0 10-4.5 10-10-6 0-10 4.5-10 10Z" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M8 34h24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <h3>Decoração de eventos</h3>
+        <p style="margin:10px 0 20px">Casamentos, batizados e festas com flores da estação. Projeto floral do arco à mesa de doces.</p>
+        <a href="#contato" class="btn btn-secondary btn-sm">Pedir orçamento</a>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect x="7" y="12" width="26" height="20" rx="4" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M7 18h26" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M15 12V8m10 4V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="20" cy="25" r="3" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+        <h3>Assinatura semanal</h3>
+        <p style="margin:10px 0 20px">Flores frescas na sua casa ou empresa toda semana, sem precisar lembrar de pedir.</p>
+        <a href="#contato" class="btn btn-secondary btn-sm">Quero assinar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEPOIMENTO ============ -->
+<section class="section-alt" aria-labelledby="depo-title">
+  <div class="container reveal">
+    <h2 id="depo-title" class="eyebrow" style="text-align:center;font-family:var(--font-b)">Quem recebeu, conta</h2>
+    <figure class="testimonial">
+      <span class="quote-mark" aria-hidden="true">“</span>
+      <blockquote>Encomendei para o aniversário da minha mãe e ela chorou antes de ler o cartão. As flores chegaram parecendo recém-colhidas — porque eram.</blockquote>
+      <figcaption>Mariana C. · buquê Aurora, entrega no mesmo dia</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ DEMO DO DS: PALETA / TIPO / ESTADOS / FORM / ANIMAÇÕES ============ -->
+<section aria-labelledby="demo-title">
+  <div class="container">
+    <span class="eyebrow">Demonstração do design system</span>
+    <h2 id="demo-title">Tokens ao vivo</h2>
+
+    <div class="demo-block">
+      <h3>Paleta</h3>
+      <ul class="swatches" style="margin-top:20px">
+        <li class="swatch"><div class="chip" style="background:#D4A5A5"></div><div class="info"><b>#D4A5A5</b>primary · rosa antigo (decorativo)</div></li>
+        <li class="swatch"><div class="chip" style="background:#9C5C5C"></div><div class="info"><b>#9C5C5C</b>primary deep · CTAs e links</div></li>
+        <li class="swatch"><div class="chip" style="background:#8FBC8F"></div><div class="info"><b>#8FBC8F</b>secondary · jade (decorativo)</div></li>
+        <li class="swatch"><div class="chip" style="background:#4E7A5A"></div><div class="info"><b>#4E7A5A</b>secondary deep · texto verde</div></li>
+        <li class="swatch"><div class="chip" style="background:#FBF7F4;border-bottom:1px solid #E4D5D0"></div><div class="info"><b>#FBF7F4</b>surface</div></li>
+        <li class="swatch"><div class="chip" style="background:#F4E9E6"></div><div class="info"><b>#F4E9E6</b>surface alt · rosa pó</div></li>
+        <li class="swatch"><div class="chip" style="background:#EEF3EC"></div><div class="info"><b>#EEF3EC</b>surface jade</div></li>
+        <li class="swatch"><div class="chip" style="background:#33302E"></div><div class="info"><b>#33302E</b>text primary · 12.30:1</div></li>
+        <li class="swatch"><div class="chip" style="background:#7A6B65"></div><div class="info"><b>#7A6B65</b>text muted · 4.78:1</div></li>
+        <li class="swatch"><div class="chip" style="background:#B4534E"></div><div class="info"><b>#B4534E</b>error · 4.60:1</div></li>
+      </ul>
+    </div>
+
+    <div class="demo-block type-specimen">
+      <h3 style="margin-bottom:20px">Tipografia</h3>
+      <h1>H1 · Fraunces 350 — Flores que contam histórias</h1>
+      <h2>H2 · Fraunces 400 — Um pedaço de jardim</h2>
+      <h3>H3 · Fraunces 450 — Buquê Aurora</h3>
+      <p>Body · Inter 400 — Buquês montados à mão com flores colhidas de manhã, entregues no mesmo dia em toda a cidade. A leitura longa fica confortável com line-height 1.7.</p>
+      <p class="muted">Small · Inter 400 14px — informações de apoio, legendas e notas.</p>
+      <span class="eyebrow">Eyebrow · Inter 500 uppercase</span>
+    </div>
+
+    <div class="demo-block">
+      <h3 style="margin-bottom:20px">Botões — todos os estados</h3>
+      <div class="states-row" style="margin-bottom:16px">
+        <button class="btn btn-primary">Default</button>
+        <button class="btn btn-primary" style="background:#7E4949;transform:translateY(-2px);box-shadow:var(--sh-sm)">Hover</button>
+        <button class="btn btn-primary fake-focus">Focus</button>
+        <button class="btn btn-primary" disabled>Disabled</button>
+      </div>
+      <div class="states-row" style="margin-bottom:16px">
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-secondary" style="background:var(--surface-alt);color:#7E4949;border-color:#7E4949">Hover</button>
+        <button class="btn btn-secondary fake-focus">Focus</button>
+        <button class="btn btn-secondary" disabled>Disabled</button>
+      </div>
+      <div class="states-row">
+        <button class="btn btn-ghost">Ghost / link</button>
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary">Medium</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+      </div>
+    </div>
+
+    <div class="demo-block">
+      <h3 style="margin-bottom:20px">Inputs</h3>
+      <form class="form-demo" onsubmit="return false">
+        <div class="field">
+          <label for="nome">Seu nome</label>
+          <input id="nome" type="text" placeholder="Como podemos te chamar?">
+        </div>
+        <div class="field">
+          <label for="foco">Campo em foco (clique para ver o anel rosa)</label>
+          <input id="foco" type="text" placeholder="Toque aqui">
+        </div>
+        <div class="field has-error">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" value="mariana@" aria-invalid="true" aria-describedby="email-err">
+          <p class="error-msg" id="email-err">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#B4534E" stroke-width="1.4"/><path d="M7 4v3.4M7 9.6v.4" stroke="#B4534E" stroke-width="1.4" stroke-linecap="round"/></svg>
+            Ops — parece que o e-mail ficou incompleto.
+          </p>
+        </div>
+        <button class="btn btn-primary" type="submit">Enviar mensagem</button>
+      </form>
+    </div>
+
+    <div class="demo-block">
+      <h3 style="margin-bottom:8px">Animações do DS</h3>
+      <p class="muted" style="margin-bottom:20px">Recarregue ou role a página para rever os reveals. Com prefers-reduced-motion tudo vira fade curto.</p>
+      <div class="anim-demo">
+        <div class="anim-chip reveal in" style="background:var(--surface-alt)">bloom-reveal<br>900ms petal</div>
+        <div class="anim-chip" style="background:var(--surface-jade)"><span class="sway" style="display:inline-block">parallax +<br>sway suave</span></div>
+        <div class="anim-chip card" style="border:1px solid var(--border)">petal-hover<br>(passe o mouse)</div>
+        <div class="anim-chip" style="background:#fff;border:1px solid var(--border)"><a href="#demo-title" class="btn btn-ghost btn-sm">stem-underline</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final section-alt" id="contato" aria-labelledby="cta-title">
+  <div class="container reveal">
+    <svg class="leaf-divider" viewBox="0 0 120 24" fill="none" aria-hidden="true">
+      <path d="M4 12h44m24 0h44" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M60 20c-5-1-8-4.5-8-9 5 1 8 4.5 8 9Z" fill="currentColor" opacity=".7"/>
+      <path d="M60 20c5-1 8-4.5 8-9-5 1-8 4.5-8 9Z" fill="currentColor" opacity=".45"/>
+      <circle cx="60" cy="8" r="3" fill="#D4A5A5"/>
+    </svg>
+    <h2 id="cta-title">Hoje é um bom dia para mandar flores</h2>
+    <p>Pedidos até 15h chegam ainda hoje. Conte a ocasião e a gente cuida do resto — inclusive do cartão escrito à mão.</p>
+    <a href="#main" class="btn btn-primary btn-lg">Monte seu buquê</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="logo" style="color:var(--n200);margin-bottom:16px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 21c0-6 0-9 0-11" stroke="#8FBC8F" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="12" cy="7" r="3.4" fill="#D4A5A5"/>
+            <circle cx="12" cy="7" r="1.3" fill="#2B2523"/>
+          </svg>
+          Flor &amp; Prosa
+        </p>
+        <p style="color:var(--n300);font-size:15px;max-width:34ch">Ateliê floral de bairro. Flores da estação, montadas à mão, entregues com carinho desde 2019.</p>
+      </div>
+      <nav aria-label="Navegação do rodapé">
+        <h4>Navegue</h4>
+        <ul>
+          <li><a href="#galeria">Flores da semana</a></li>
+          <li><a href="#servicos">Eventos</a></li>
+          <li><a href="#manifesto">O ateliê</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Atendimento</h4>
+        <ul>
+          <li><a href="#contato">WhatsApp</a></li>
+          <li><a href="#contato">ola@florquefala.com.br</a></li>
+          <li><a href="#contato">@florquefala</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Horário</h4>
+        <ul>
+          <li>Seg–Sáb · 8h às 19h</li>
+          <li>Dom · 8h às 13h</li>
+          <li>Rua das Hortênsias, 42</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Flor &amp; Prosa · Feito à mão, inclusive este site. — Preview do DS 01.3 Floricultura Delicada (Jumper Site Factory).</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* bloom-reveal + gallery-stagger via IntersectionObserver único */
+  if('IntersectionObserver' in window && !reduced){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    },{threshold:0.2});
+    document.querySelectorAll('.reveal,.stagger').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal,.stagger').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* parallax-delicado: fator 0.12/0.2, deslocamento máximo 40px, via rAF */
+  if(!reduced){
+    var layers = document.querySelectorAll('[data-parallax]');
+    var ticking = false;
+    function onScroll(){
+      if(ticking) return;
+      ticking = true;
+      requestAnimationFrame(function(){
+        var y = window.scrollY;
+        layers.forEach(function(l){
+          var f = parseFloat(l.getAttribute('data-parallax')) || 0.12;
+          var d = Math.max(-40, Math.min(40, y * f * -0.25));
+          l.style.transform = 'translate3d(0,' + d + 'px,0)';
+        });
+        ticking = false;
+      });
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  }
+})();
+</script>
+</body>
+</html>

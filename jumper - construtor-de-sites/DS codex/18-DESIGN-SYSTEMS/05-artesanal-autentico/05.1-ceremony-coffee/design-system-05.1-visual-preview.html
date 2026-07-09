@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ceremony Cupping Journal System</title>
+<style>
+:root{--primary:#5A3825;--secondary:#B7793E;--surface:#F8F1E7;--alt:#EAD8C3;--text:#2A1A12;--muted:#745C4C;--border:#D6BFA5;--ctaText:#FFFFFF;--heading:"Recoleta",serif;--body:"Source Serif 4",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}a{color:inherit}.cup{min-height:100vh;display:grid;grid-template-columns:1fr;background:var(--surface);color:var(--text)}
+.cup__rail{padding:22px;border-right:1px solid var(--border);background:color-mix(in srgb,var(--surface) 86%,white);color:inherit;position:relative;top:0;height:auto}
+.cup__page{padding:clamp(22px,5vw,78px);display:grid;gap:clamp(26px,5vw,64px)}
+.cup__nav{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px;font-family:var(--mono);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.cup__hero{display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,52px);align-items:center;min-height:62vh}
+.cup__hero h1{font-family:var(--heading);font-size:clamp(3rem,7vw,7rem);line-height:.92;margin:0;max-width:14ch;color:inherit}
+.cup__media{min-height:300px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(135deg,var(--alt),var(--secondary));box-shadow:0 24px 70px rgba(0,0,0,.16)}
+.cup__cta,.cup__submit{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--primary);color:var(--ctaText);border:0;border-radius:12px;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer}.cup__hidden{display:none}
+.cup__controls{display:flex;gap:8px;flex-wrap:wrap}.cup__option{border:1px solid var(--border);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;cursor:pointer}.cup__option[aria-pressed="true"]{background:var(--secondary);color:#111111;border-color:var(--secondary)}
+.cup__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.cup__item{text-align:left;min-height:150px;border:1px solid var(--border);background:#fff;color:inherit;border-radius:16px;padding:18px;cursor:pointer}.cup__item[aria-pressed="true"]{outline:3px solid var(--secondary);transform:translateY(-3px)}
+.cup__split{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:22px}.cup__panel{border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 78%,white);padding:22px;border-radius:16px}
+.cup__form{display:grid;gap:12px}.cup__form label{display:grid;gap:6px;font-weight:800}.cup__form input,.cup__form select{min-height:44px;border:1px solid var(--border);background:#fff;color:var(--text);border-radius:8px;padding:10px}.cup__form input:focus,.cup__form select:focus,.cup__option:focus-visible,.cup__item:focus-visible,.cup__chip:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.cup__status{font-family:var(--mono);border-left:5px solid var(--secondary);padding:16px;background:var(--alt)}
+.cup__sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.cup__section-card{border-top:3px solid var(--primary);padding:16px;background:#fff}
+.cup__palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.cup__chip{background:var(--chip);color:var(--ink);min-height:88px;border:1px solid var(--border);padding:10px;text-align:left;display:grid;align-content:space-between;cursor:pointer;border-radius:10px}
+.cup__audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.cup__audit div{padding:16px;border:1px solid var(--border);background:var(--alt)}
+@media(max-width:860px){.cup{display:block}.cup__rail{position:relative;height:auto}.cup__hero,.cup__split{grid-template-columns:1fr}.cup__audit{grid-template-columns:1fr}.cup__page{padding:20px}.cup__hero h1{font-size:clamp(3rem,18vw,6rem)}}
+@media(prefers-reduced-motion:no-preference){.cup__item,.cup__cta,.cup__submit,.cup__chip{transition:transform .2s ease,filter .2s ease}.cup__item:hover,.cup__chip:hover{transform:translateY(-3px)}.cup__cta:hover,.cup__submit:hover{filter:contrast(1.1)}}
+</style>
+</head>
+<body>
+<main class="cup" data-mode="frutado">
+
+<div class="cup__page">
+<nav class="cup__nav"><strong>05.1 · Ceremony Cupping Journal System</strong><span>cupping-journal</span></nav>
+<section class="cup__hero" id="top">
+<div><p>diario de cupping</p><h1>journal hero with tasting cards, bag detail and roast finder action</h1><p>sensory, educated and grounded</p><a class="cup__cta" href="#form">Encontrar torra</a></div>
+<div class="cup__media" aria-hidden="true"></div>
+</section>
+<section class="cup__panel"><h2>Perfil de sabor</h2><div class="cup__controls"><button class="cup__option" type="button" data-mode="frutado" aria-pressed="true">frutado</button>
+<button class="cup__option" type="button" data-mode="chocolate" aria-pressed="false">chocolate</button>
+<button class="cup__option" type="button" data-mode="floral" aria-pressed="false">floral</button></div><p class="cup__status" aria-live="polite">Modo ativo: frutado · Recomendacao de torra atualizada</p></section>
+<section><h2>Componentes funcionais</h2><div class="cup__items"><button class="cup__item" type="button" data-item="Origem" aria-pressed="true"><span>01</span><strong>Origem</strong><small>flavor-note-card</small></button>
+<button class="cup__item" type="button" data-item="Nota" aria-pressed="false"><span>02</span><strong>Nota</strong><small>roast-finder-filter</small></button>
+<button class="cup__item" type="button" data-item="Metodo" aria-pressed="false"><span>03</span><strong>Metodo</strong><small>origin-story-slab</small></button>
+<button class="cup__item" type="button" data-item="Assinatura" aria-pressed="false"><span>04</span><strong>Assinatura</strong><small>subscription-builder</small></button></div></section>
+<section class="cup__split" id="form"><div class="cup__panel"><h2>Formulario real do DS</h2><form class="cup__form"><label>Nome<input name="field0" value="Exemplo teste" placeholder="Nome" /></label>
+<label>Metodo<select name="field1"><option>frutado</option><option>chocolate</option><option>floral</option></select></label>
+<label>Perfil<input name="field2" value="" placeholder="Perfil" /></label><button class="cup__submit" type="submit">Encontrar torra</button></form></div><div class="cup__panel"><h2>Resultado / estado</h2><p class="cup__status cup__output" aria-live="polite">Nenhum envio ainda.</p><p>O preview precisa testar foco, estado ativo, formulario, responsividade e copy do componente.</p></div></section>
+<section><h2>Fluxo de secoes coberto</h2><div class="cup__sections"><article class="cup__section-card"><span>01</span><h3>Roast finder</h3><p>flavor-note-card</p></article>
+<article class="cup__section-card"><span>02</span><h3>Flavor note cards</h3><p>roast-finder-filter</p></article>
+<article class="cup__section-card"><span>03</span><h3>Origin story</h3><p>origin-story-slab</p></article>
+<article class="cup__section-card"><span>04</span><h3>Subscription builder</h3><p>subscription-builder</p></article>
+<article class="cup__section-card"><span>05</span><h3>Brew guide</h3><p>brew-method-step</p></article>
+<article class="cup__section-card"><span>06</span><h3>Seasonal release</h3><p>tasting-ledger-footer</p></article>
+<article class="cup__section-card"><span>07</span><h3>Wholesale path</h3><p>flavor-note-card</p></article>
+<article class="cup__section-card"><span>08</span><h3>Footer as tasting ledger</h3><p>roast-finder-filter</p></article></div></section>
+<section><h2>Paleta clicavel</h2><div class="cup__palette"><button class="cup__chip" type="button" data-copy="#5A3825" style="--chip:#5A3825;--ink:#ffffff"><span>Primary</span><strong>#5A3825</strong></button>
+<button class="cup__chip" type="button" data-copy="#B7793E" style="--chip:#B7793E;--ink:#111111"><span>Secondary</span><strong>#B7793E</strong></button>
+<button class="cup__chip" type="button" data-copy="#F8F1E7" style="--chip:#F8F1E7;--ink:#111111"><span>Surface</span><strong>#F8F1E7</strong></button>
+<button class="cup__chip" type="button" data-copy="#EAD8C3" style="--chip:#EAD8C3;--ink:#111111"><span>Alt</span><strong>#EAD8C3</strong></button>
+<button class="cup__chip" type="button" data-copy="#2A1A12" style="--chip:#2A1A12;--ink:#ffffff"><span>Text</span><strong>#2A1A12</strong></button>
+<button class="cup__chip" type="button" data-copy="#745C4C" style="--chip:#745C4C;--ink:#ffffff"><span>Muted</span><strong>#745C4C</strong></button>
+<button class="cup__chip" type="button" data-copy="#D6BFA5" style="--chip:#D6BFA5;--ink:#111111"><span>Border</span><strong>#D6BFA5</strong></button></div></section>
+<section class="cup__audit"><div><strong>Acessibilidade</strong><p>Focus ring, aria-live e touch target 44px.</p></div><div><strong>Responsivo</strong><p>Mobile preserva roast finder first, tasting cards become carousel.</p></div><div><strong>Erro corrigido</strong><p>cafe sem finder de torra, assinatura ou notas sensoriais.</p></div></section>
+</div>
+</main>
+<script>
+(() => {
+ const root = document.querySelector('.cup');
+ const status = document.querySelector('.cup__status');
+ const output = document.querySelector('.cup__output');
+ document.querySelectorAll('.cup__option').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.cup__option').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  root.dataset.mode = btn.dataset.mode;
+  status.textContent = 'Modo ativo: ' + btn.dataset.mode + ' · Recomendacao de torra atualizada';
+ }));
+ document.querySelectorAll('.cup__item').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.cup__item').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  output.textContent = 'Selecionado: ' + btn.dataset.item + ' · componente pronto para estado ativo.';
+ }));
+ document.querySelector('.cup__form').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  output.textContent = 'Recomendacao de torra atualizada: ' + [...data.values()].filter(Boolean).join(' / ');
+ });
+ document.querySelectorAll('.cup__chip').forEach(chip => chip.addEventListener('click', async () => {
+  const value = chip.dataset.copy;
+  try { await navigator.clipboard.writeText(value); output.textContent = 'Cor copiada: ' + value; }
+  catch { output.textContent = 'Token selecionado: ' + value; }
+ }));
+})();
+</script>
+</body>
+</html>

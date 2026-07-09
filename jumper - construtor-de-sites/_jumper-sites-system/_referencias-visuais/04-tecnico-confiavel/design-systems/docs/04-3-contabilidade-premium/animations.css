@@ -1,0 +1,134 @@
+/* ==========================================================================
+   DS 04.3 — Contabilidade Premium · animations.css
+   Derivado fielmente de motion{} do JSON.
+   Assinatura: count-up longo (1400ms) — o número "assenta" no valor final.
+   O conteúdo numérico NUNCA depende da animação para ser legível.
+   ========================================================================== */
+
+:root{
+  /* durations (motion.durations) */
+  --dur-instant:         120ms;
+  --dur-fast:            180ms;
+  --dur-base:            260ms;
+  --dur-slow:            420ms;
+  --dur-counter:         1400ms;
+  --dur-counter-stagger: 150ms;
+
+  /* easings (motion.easings) */
+  --ease-standard:   cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --ease-counter:    cubic-bezier(0.16, 1, 0.3, 1); /* desaceleração longa */
+
+  /* tokens de cor */
+  --primary:       #2C3E50;
+  --primary-hover: #1B2733;
+  --gold:          #D4AF37;
+  --gold-text:     #8A6A1B;
+  --gold-on-dark:  #E8C766;
+  --surface:       #FFFFFF;
+  --surface-alt:   #F7F8FA;
+  --border:        #D8DEE4;
+  --sh-xs: 0 1px 2px rgba(27,39,51,.05);
+  --sh-md: 0 4px 12px rgba(27,39,51,.10);
+}
+
+/* --------------------------------------------------------------------------
+   count-up — 1400ms · ease-counter · IntersectionObserver (entra 30%, uma vez)
+   Números sobem de 0 ao valor final em requestAnimationFrame com tabular-nums.
+   O keyframe controla só a opacidade de entrada; o valor é animado por JS.
+   -------------------------------------------------------------------------- */
+@keyframes count-up{
+  from{ opacity:0; }
+  to  { opacity:1; }
+}
+.count-up{
+  font-family:'IBM Plex Mono', monospace;
+  font-variant-numeric:tabular-nums;
+  opacity:0;
+}
+.count-up.is-visible{ animation:count-up var(--dur-counter) var(--ease-counter) forwards; }
+/* stagger de 150ms entre counters consecutivos */
+.count-up.is-visible:nth-of-type(1){ animation-delay:0ms; }
+.count-up.is-visible:nth-of-type(2){ animation-delay:150ms; }
+.count-up.is-visible:nth-of-type(3){ animation-delay:300ms; }
+.count-up.is-visible:nth-of-type(4){ animation-delay:450ms; }
+
+/* --------------------------------------------------------------------------
+   fade-in-up — 420ms · decelerate · scroll (IntersectionObserver)
+   translateY(16px)→0 + opacity. Stagger de 80ms entre cards irmãos.
+   -------------------------------------------------------------------------- */
+@keyframes fade-in-up{
+  from{ opacity:0; transform:translateY(16px); }
+  to  { opacity:1; transform:translateY(0); }
+}
+.fade-in-up{ opacity:0; transform:translateY(16px); }
+.fade-in-up.is-visible{ animation:fade-in-up var(--dur-slow) var(--ease-decelerate) forwards; }
+.fade-in-up.is-visible:nth-child(1){ animation-delay:0ms; }
+.fade-in-up.is-visible:nth-child(2){ animation-delay:80ms; }
+.fade-in-up.is-visible:nth-child(3){ animation-delay:160ms; }
+.fade-in-up.is-visible:nth-child(4){ animation-delay:240ms; }
+
+/* --------------------------------------------------------------------------
+   gold-underline-reveal — 420ms · standard · scroll
+   O filete dourado sob o H2 cresce de scaleX(0) a scaleX(1), origin left.
+   -------------------------------------------------------------------------- */
+.gold-underline-reveal{ position:relative; padding-bottom:14px; }
+.gold-underline-reveal::after{
+  content:''; position:absolute; left:0; bottom:0;
+  width:56px; height:3px; background:var(--gold);
+  transform:scaleX(0); transform-origin:left;
+  transition:transform var(--dur-slow) var(--ease-standard);
+}
+.gold-underline-reveal.is-visible::after{ transform:scaleX(1); }
+
+/* --------------------------------------------------------------------------
+   button-hover — 180ms · standard · hover/focus
+   Background escurece um passo e translateY(-1px). Sem mudança de tamanho.
+   -------------------------------------------------------------------------- */
+.button-hover{
+  background:var(--primary); color:#fff;
+  transition:background var(--dur-fast) var(--ease-standard),
+             transform var(--dur-fast) var(--ease-standard);
+}
+.button-hover:hover,
+.button-hover:focus-visible{ background:var(--primary-hover); transform:translateY(-1px); }
+.button-hover:active{ transform:translateY(0); }
+
+/* --------------------------------------------------------------------------
+   card-lift — 260ms · standard · hover
+   translateY(-2px) + shadow xs→md + borda esquerda dourada surge.
+   -------------------------------------------------------------------------- */
+.card-lift{
+  position:relative;
+  box-shadow:var(--sh-xs);
+  transition:transform var(--dur-base) var(--ease-standard),
+             box-shadow var(--dur-base) var(--ease-standard);
+}
+.card-lift::before{
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+  background:var(--gold); transform:scaleY(0); transform-origin:top;
+  transition:transform var(--dur-base) var(--ease-standard);
+}
+.card-lift:hover{ transform:translateY(-2px); box-shadow:var(--sh-md); }
+.card-lift:hover::before{ transform:scaleY(1); }
+
+/* --------------------------------------------------------------------------
+   table-row-highlight — 120ms · linear · hover em linha de tabela
+   Background → #F7F8FA.
+   -------------------------------------------------------------------------- */
+.table-row-highlight{ transition:background var(--dur-instant) linear; }
+.table-row-highlight:hover{ background:var(--surface-alt); }
+
+/* --------------------------------------------------------------------------
+   prefers-reduced-motion — counters mostram valor final imediato,
+   fade-ins viram opacity estática, transições caem para 0.01ms.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  .count-up,.fade-in-up{ opacity:1 !important; transform:none !important; animation:none !important; }
+  .gold-underline-reveal::after,.card-lift::before{ transform:none !important; }
+}

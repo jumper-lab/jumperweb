@@ -1,0 +1,595 @@
+{
+  "id": "reference-ds-05-latatuajeria-com",
+  "clientSlug": "latatuajeria-com",
+  "clientName": "La Tatuajeria",
+  "personalitySlug": "06-moderno-descolado",
+  "regeneratedAt": "2026-06-05",
+  "referenceQualityBaseline": "formula site-specific aprovada da pasta 01",
+  "source": {
+    "site": "latatuajeria.com",
+    "localPath": "_jumper-sites-system/_referencias-visuais/06-moderno-descolado/design-systems/preview-assets/latatuajeria.com",
+    "sourceReferenceId": "latatuajeria.com",
+    "sourceReferenceNote": "Referencia visual ja convertida em DS-base; arquivo pesado original nao e necessario no fluxo oficial.",
+    "imagesUsed": [
+      "../../preview-assets/latatuajeria.com/assets/6e56201cc5b6dbc8_dream-team-ricardo.jpg",
+      "../../preview-assets/latatuajeria.com/assets/f8204474f246596b_338946346_166824019625873_3234.jpg",
+      "../../preview-assets/latatuajeria.com/assets/e1243f9ea19bc328_355410656_1387691321775972_602.jpg",
+      "../../preview-assets/latatuajeria.com/assets/3a0b0a0bb312ca61_home-ciervo.jpg",
+      "../../preview-assets/latatuajeria.com/assets/9cdc329274d74748_buho-2.jpg",
+      "../../preview-assets/latatuajeria.com/assets/c440a6b28de07ffa_301213330_5584158111650412_763.jpg",
+      "../../preview-assets/latatuajeria.com/assets/b3068e9a3232387c_calavera-mano.jpg",
+      "../../preview-assets/latatuajeria.com/assets/67728b915a79922e_371867462_18299463229184337_65.jpg",
+      "../../preview-assets/latatuajeria.com/assets/49693286e2706b36_calavera2.jpg",
+      "../../preview-assets/latatuajeria.com/assets/eaa9e6c6e98e5578_tattoo-coruna-cami.jpeg"
+    ],
+    "extractedSignals": {
+      "sourceColors": [
+        {
+          "hex": "#E6E6E6",
+          "count": 25,
+          "hsl": "hsl(0 0% 90%)"
+        },
+        {
+          "hex": "#F70806",
+          "count": 25,
+          "hsl": "hsl(0 95% 50%)"
+        },
+        {
+          "hex": "#D8D8D8",
+          "count": 17,
+          "hsl": "hsl(0 0% 85%)"
+        },
+        {
+          "hex": "#5C5B5B",
+          "count": 13,
+          "hsl": "hsl(0 1% 36%)"
+        },
+        {
+          "hex": "#569FF7",
+          "count": 8,
+          "hsl": "hsl(213 91% 65%)"
+        },
+        {
+          "hex": "#1A73E8",
+          "count": 8,
+          "hsl": "hsl(214 82% 51%)"
+        },
+        {
+          "hex": "#2A2A2A",
+          "count": 8,
+          "hsl": "hsl(0 0% 16%)"
+        },
+        {
+          "hex": "#D93025",
+          "count": 7,
+          "hsl": "hsl(4 71% 50%)"
+        },
+        {
+          "hex": "#707070",
+          "count": 7,
+          "hsl": "hsl(0 0% 44%)"
+        },
+        {
+          "hex": "#185ABC",
+          "count": 6,
+          "hsl": "hsl(216 77% 42%)"
+        }
+      ],
+      "fonts": [
+        "27659ef1a771a311_greatwarrior-webfont.woff2",
+        "4a117313aeb3cfd4_BDOGrotesk-DemiBold.woff2",
+        "8139a402ce239285_KFO7CnqEu92Fr1ME7kSn66aGLdTylU.woff2",
+        "9b51e031ff0d2b24__Xmq-H86tzKDdAPa-KPQZ-AC1i-0tt.woff2",
+        "a490158e3d54668e_BDOGrotesk-Medium.woff2",
+        "c5ebaf1980cf7674_BDOGrotesk-Regular.woff2",
+        "ff1c18cde5515247_BDOGrotesk-Bold.woff2"
+      ],
+      "title": "La Tatuajería | Estudio de Tatuajes en A Coruña",
+      "sourceText": [
+        [
+          "No recoge ni almacena ninguna información personal sobre los visitantes del sitio.",
+          "Aceptar Guardar mis preferencias Rechazar Powered by Saltar al contenido AV.",
+          "BUENOS AIRES, 5, BAJO 15004 A CORUÑA, ESPAÑA Menú de navegación AV.",
+          "➜ A g e n d e m o s c i t a A g e n d e m o s c i t a Si tú, siervo de ese punzante clímax, para vosotros, tattoos nivel f*cking dios.",
+          "Que corra la jodida tinta!",
+          "SPOILER: SÍ SPOILER, SÍ EL DOLOR ES ALGO MUY SUBJETIVO.",
+          "LA TOLERANCIA DE CADA PERSONA, Y LA ZONA A TATUAR HACEN QUE LA SENSACIÓN SEA DE MAYOR O MENOR DOLOR.",
+          "02 ¿QUÉ DEBO SABER ANTES DE HACERME UN TATUAJE?",
+          "03 ¿QUÉ MATERIALES SE UTILIZARÁN PARA LA REALIZACIÓN DE MI TATUAJE?",
+          "04 ¿DE QUÉ FORMA SE REALIZA LA PIGMENTACIÓN EN MI PIEL?",
+          "CUANDO TENEMOS LA AGUJA, ÉSTA ENTRA A LA EPIDERMIS, DE AHÍ SIGUE A LA DERMIS.",
+          "05 ¿SE PUEDE O DEBE REUSAR EL EQUIPO?",
+          "TODO LO DEMÁS ES DE UN SOLO USO Y DEBE ESTAR NUEVO Y ESTERILIZADO, POR EJEMPLO: AGUJAS, GUANTES, MASCARILLAS, CAPS DE TINTA, ETC.",
+          "06 ¿QUÉ CUIDADOS DEBO TENER DESPUÉS CON MI TATUAJE?",
+          "BÁSICAMENTE LAVAR EL TATUAJE CON AGUA TIBIA, JABÓN NEUTRO Y APLICAR LA POMADA QUE EL TATUADOR RECOMIENDE.",
+          "TODO ESO POR UNOS 15 DÍAS.",
+          "RECUERDA QUE CADA PERSONA ES DISTINTA Y CICATRIZA DE DIFERENTE MANERA.",
+          "TAMBIÉN HAY QUE EVITAR PISCINAS, AGUA DEL MAR, BAÑOS DE SAL, SOLÁRIUM Y SOL.",
+          "PROCURA LO MÁS SANO, LO MEJOR PARA UNA BUENA Y PRONTA CICATRIZACIÓN.",
+          "07 ¿EN CUÁNTO TIEMPO TENGO QUE RETOCAR MI TATUAJE?",
+          "08 ¿USARÁN ANESTESIA?",
+          "NO, EXCEPTO EN LOS TATTOOS EN PÁNCREAS NO, ESO ES ALGO QUE SÓLO UN ESPECIALISTA PUEDE HACER Y NOSOTROS NO SOMOS ANESTESIÓLOGOS.",
+          "LO MEJOR ES QUE MANTENGAS UNA RESPIRACIÓN LARGA Y PROFUNDA Y ASIMILES LA SENSACIÓN DE DOLOR Y ASÍ SOBRELLEVARLO.",
+          "09 ¿PUEDO HACER EJERCICIO DESPUÉS DE HACERME EL TATUAJE?",
+          "SI EL TATUADOR TE RECOMIENDA QUE MEJOR DESCANSES DEL EJERCICIO, HAZLO.",
+          "10 ¿SALDRÁ SANGRE EN EL ÁREA DONDE REALIZARAN MI TATUAJE?",
+          "SI TIENES, PUEDE QUE UN POCO....",
+          "COMÚNMENTE SÍ, PERO ES MÍNIMO, CASI NI SE NOTA, AL MENOS QUE SEA TINTA DE COLOR CLARO.",
+          "11 ¿DESPUÉS DE REALIZAR MI TATUAJE PODRÉ DONAR SANGRE?",
+          "SÍ CLARO, SIEMPRE Y CUANDO SEA DESPUÉS DE 3, 6 O HASTA 12 MESES.",
+          "LA SANGRE NO SE CONTAMINA CON LAS TINTAS A MENOS QUE EL PROCESO NO SE LLEVE A CABO CON LA HIGIENE ADECUADA.",
+          "POR ESO ES IMPORTANTE QUE TE LO HAGAS EN UN ESTUDIO PROFESIONAL, QUE TE INFORMES BIEN Y QUE VERIFIQUES QUE SU ÁREA DE TRABAJO SEA LA ADECUADA.",
+          "12 ¿DÓNDE ESTÁ VUESTRO ESTUDIO ?",
+          "NUESTRA TIENDA TATUAJES CORUÑA ESTÁ SITUADO EN AVDA DE BUENOS AIRES NÚMERO 5, EN FRENTE DE LA PLAYA DE RIAZOR.",
+          "¿TIENES MONO DE TINTA?",
+          "Acepto los términos y condiciones legales Enviar Alternative: WPA ¿Quieres una cita?",
+          "➜ A G E N D E M O S C I T A A G E N D E M O S C I T A ➜ 8 8 1 8 9 5 6 0 3 8 8 1 8 9 5 6 0 3 Contacto AV.",
+          "➜ A g e n d e m o s c i t a A g e n d e m o s c i t a ➜ 8 8 1 8 9 5 6 0 3 8 8 1 8 9 5 6 0 3 Contacto AV.",
+          "La Tatuajería Online Whatsapp"
+        ]
+      ],
+      "assetCounts": {
+        "images": 25,
+        "css": 25,
+        "fonts": 7
+      }
+    }
+  },
+  "designIntent": {
+    "tone": "moderno descolado / tattoo raw / urbano",
+    "summary": "DS site-specific para La Tatuajeria.",
+    "hero": "Tattoo studio cru, lettering forte e comunidade.",
+    "nonGoal": "Nao e DS final do cliente."
+  },
+  "colors": {
+    "palette": [
+      {
+        "name": "Black Ink",
+        "hex": "#0A0707",
+        "rgb": "rgb(10,7,7)",
+        "hsl": "hsl(0 18% 3%)",
+        "usage": "background"
+      },
+      {
+        "name": "Paper",
+        "hex": "#F4E8D6",
+        "rgb": "rgb(244,232,214)",
+        "hsl": "hsl(36 58% 90%)",
+        "usage": "text/surface"
+      },
+      {
+        "name": "Blood",
+        "hex": "#A32020",
+        "rgb": "rgb(163,32,32)",
+        "hsl": "hsl(0 67% 38%)",
+        "usage": "accent"
+      },
+      {
+        "name": "Old Gold",
+        "hex": "#C39A3C",
+        "rgb": "rgb(195,154,60)",
+        "hsl": "hsl(42 53% 50%)",
+        "usage": "focus"
+      },
+      {
+        "name": "Smoke",
+        "hex": "#4A4540",
+        "rgb": "rgb(74,69,64)",
+        "hsl": "hsl(30 7% 27%)",
+        "usage": "muted"
+      },
+      {
+        "name": "Skin",
+        "hex": "#C79678",
+        "rgb": "rgb(199,150,120)",
+        "hsl": "hsl(23 41% 63%)",
+        "usage": "secondary"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255,255,255)",
+        "hsl": "hsl(0 0% 100%)",
+        "usage": "surface"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Site Field",
+        "value": "linear-gradient(135deg, #0A0707, #A3202055, #C39A3C33)",
+        "participation": "hero/background"
+      },
+      {
+        "name": "Dark Overlay",
+        "value": "linear-gradient(180deg, #0A0707ee, #0A070755)",
+        "participation": "image overlay"
+      },
+      {
+        "name": "Accent Pulse",
+        "value": "radial-gradient(circle at 20% 20%, #A3202044, transparent 34%), radial-gradient(circle at 80% 72%, #C39A3C33, transparent 40%)",
+        "participation": "motion/hover"
+      }
+    ],
+    "semantic": {
+      "primary": "Black Ink",
+      "text": "Paper",
+      "surface": "#F4E8D6",
+      "accent": "Blood",
+      "focus": "Smoke",
+      "contrastIntent": "AA minimum; overlay on image text"
+    },
+    "opacityPolicy": "100,86,64,40,18,8"
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "27659ef1a771a311_greatwarrior-webfont.woff2",
+      "ui": "Inter/system-ui",
+      "mono": "ui-monospace"
+    },
+    "scale": {
+      "h1": {
+        "size": "clamp(3rem,7vw,8rem)",
+        "weight": 800,
+        "lineHeight": 0.88
+      }
+    },
+    "siteSpecificRoles": [
+      {
+        "role": "site-display",
+        "family": "display",
+        "weight": "700-900",
+        "size": "clamp(4rem,8vw,9rem)",
+        "lineHeight": ".86-.94",
+        "letterSpacing": "0",
+        "usage": "Tattoo studio cru, lettering forte e comunidade."
+      },
+      {
+        "role": "site-label",
+        "family": "mono/ui",
+        "weight": "780-900",
+        "size": ".72rem",
+        "lineHeight": "1.2",
+        "letterSpacing": ".14em",
+        "usage": "menu/status/tags"
+      },
+      {
+        "role": "site-body",
+        "family": "ui",
+        "weight": "400-560",
+        "size": "1rem",
+        "lineHeight": "1.55-1.7",
+        "letterSpacing": "0",
+        "usage": "moderno descolado / tattoo raw / urbano"
+      }
+    ]
+  },
+  "icons": {
+    "set": [
+      "star",
+      "hand",
+      "needle",
+      "map",
+      "calendar",
+      "arrow"
+    ],
+    "stroke": 1.8,
+    "color": "currentColor"
+  },
+  "components": {
+    "flash-sheet-grid": {
+      "role": "flash sheet grid",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "stencil reveal",
+      "visual": "Referencia La Tatuajeria: moderno descolado / tattoo raw / urbano",
+      "referenceOnly": true
+    },
+    "artist-roster": {
+      "role": "artist roster",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "poster flyout",
+      "visual": "Referencia La Tatuajeria: moderno descolado / tattoo raw / urbano",
+      "referenceOnly": true
+    },
+    "tattoo-booking-slip": {
+      "role": "tattoo booking slip",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "flash hover",
+      "visual": "Referencia La Tatuajeria: moderno descolado / tattoo raw / urbano",
+      "referenceOnly": true
+    },
+    "studio-poster-menu": {
+      "role": "studio poster menu",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "ink badge pulse",
+      "visual": "Referencia La Tatuajeria: moderno descolado / tattoo raw / urbano",
+      "referenceOnly": true
+    },
+    "aftercare-modal": {
+      "role": "aftercare modal",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "stencil reveal",
+      "visual": "Referencia La Tatuajeria: moderno descolado / tattoo raw / urbano",
+      "referenceOnly": true
+    },
+    "merch-card": {
+      "role": "merch card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "poster flyout",
+      "visual": "Referencia La Tatuajeria: moderno descolado / tattoo raw / urbano",
+      "referenceOnly": true
+    },
+    "ink-badge": {
+      "role": "ink badge",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "flash hover",
+      "visual": "Referencia La Tatuajeria: moderno descolado / tattoo raw / urbano",
+      "referenceOnly": true
+    },
+    "portfolio-filter": {
+      "role": "portfolio filter",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "ink badge pulse",
+      "visual": "Referencia La Tatuajeria: moderno descolado / tattoo raw / urbano",
+      "referenceOnly": true
+    }
+  },
+  "motion": {
+    "entry": [
+      "fade-up",
+      "stagger"
+    ],
+    "exit": [
+      "flyout-x",
+      "caption-exit"
+    ],
+    "background": [
+      "ambient drift"
+    ],
+    "parallax": "story split with fallback",
+    "siteSpecific": [
+      "stencil reveal",
+      "poster flyout",
+      "flash hover",
+      "ink badge pulse"
+    ]
+  },
+  "accessibility": {
+    "contrast": "AA",
+    "focus": "2px outline",
+    "reducedMotion": true
+  },
+  "risks": [
+    "Textura escura exige paper forte.",
+    "Lettering decorativo nao pode destruir leitura.",
+    "Nao criar formulario final de booking."
+  ],
+  "heroSystem": {
+    "layout": "tattoo-raw",
+    "rules": [
+      "Hero full viewport com imagem de equipe/estudio e lettering cru.",
+      "Menu pode ser poster de rua com categorias grandes.",
+      "Cards precisam parecer flash sheets e portfolio.",
+      "Motion usa stencil reveal, draw-line e hover pesado controlado."
+    ],
+    "fullViewport": true
+  },
+  "menuSystem": {
+    "items": [
+      "Artists",
+      "Tattoos",
+      "Piercing",
+      "Shop",
+      "Contact"
+    ],
+    "note": "Menu site-specific de La Tatuajeria",
+    "behavior": "overlay flyout; Esc closes"
+  },
+  "effects": {
+    "signature": [
+      "stencil reveal",
+      "poster flyout",
+      "flash hover",
+      "ink badge pulse"
+    ]
+  },
+  "referenceUsage": {
+    "type": "visual-reference-input",
+    "folder": "06-moderno-descolado",
+    "crossesWith": "clientes/[slug]/data/design-system.json",
+    "purpose": "La Tatuajeria como referencia individual",
+    "nonGoals": [
+      "nao criar DS final do cliente",
+      "nao representar personalidade da pasta",
+      "nao usar padrao generico para todos os sites"
+    ],
+    "differentiationRules": [
+      "Hero full viewport com imagem de equipe/estudio e lettering cru.",
+      "Menu pode ser poster de rua com categorias grandes.",
+      "Cards precisam parecer flash sheets e portfolio.",
+      "Motion usa stencil reveal, draw-line e hover pesado controlado."
+    ],
+    "siteSpecific": true,
+    "qualityRule": "Preview precisa demonstrar personalidade do site extraido, com menu completo, hero, tokens, gradientes, tipo, efeitos, componentes, cards/secoes, story parallax, icones, handoff e motion linkados.",
+    "notPersonalityWide": true
+  },
+  "outputs": {
+    "json": "design-systems/json/reference-ds-05-latatuajeria-com.json",
+    "markdown": "design-systems/previews/markdown/reference-ds-05-latatuajeria-com-preview.md",
+    "html": "design-systems/previews/html/reference-ds-05-latatuajeria-com-visual-preview.html"
+  },
+  "schemaVersion": "reference-ds-site-v3",
+  "previewNavigation": [
+    {
+      "order": 1,
+      "id": "menu-top",
+      "label": "Menu / top",
+      "href": "#menu-top"
+    },
+    {
+      "order": 2,
+      "id": "top",
+      "label": "Top",
+      "href": "#top"
+    },
+    {
+      "order": 3,
+      "id": "hero",
+      "label": "Sessao Hero",
+      "href": "#hero"
+    },
+    {
+      "order": 4,
+      "id": "color-tokens",
+      "label": "tokens de cor",
+      "href": "#color-tokens"
+    },
+    {
+      "order": 5,
+      "id": "gradients",
+      "label": "gradientes / opacidade",
+      "href": "#gradients"
+    },
+    {
+      "order": 6,
+      "id": "type-system",
+      "label": "type system",
+      "href": "#type-system"
+    },
+    {
+      "order": 7,
+      "id": "type-detail",
+      "label": "tipografia detalhada",
+      "href": "#type-detail"
+    },
+    {
+      "order": 8,
+      "id": "effects",
+      "label": "efeitos e mouse overs",
+      "href": "#effects"
+    },
+    {
+      "order": 9,
+      "id": "components",
+      "label": "componentes",
+      "href": "#components"
+    },
+    {
+      "order": 10,
+      "id": "contract",
+      "label": "contrato sem repeticao",
+      "href": "#contract"
+    },
+    {
+      "order": 11,
+      "id": "menu-board",
+      "label": "menu board component",
+      "href": "#menu-board"
+    },
+    {
+      "order": 12,
+      "id": "reference-slip",
+      "label": "reference slip",
+      "href": "#reference-slip"
+    },
+    {
+      "order": 13,
+      "id": "cards-sections",
+      "label": "cards e secoes",
+      "href": "#cards-sections"
+    },
+    {
+      "order": 14,
+      "id": "story",
+      "label": "story split parallax",
+      "href": "#story"
+    },
+    {
+      "order": 15,
+      "id": "icons",
+      "label": "icones",
+      "href": "#icons"
+    },
+    {
+      "order": 16,
+      "id": "handoff",
+      "label": "handoff de referencia",
+      "href": "#handoff"
+    },
+    {
+      "order": 17,
+      "id": "motion",
+      "label": "motion contract",
+      "href": "#motion"
+    },
+    {
+      "order": 18,
+      "id": "replay-motion",
+      "label": "Replay motion",
+      "href": "#replay-motion"
+    }
+  ],
+  "requiredPreviewContract": {
+    "allMenuLinksMustResolve": true,
+    "menuHasTopAndHeroAsSeparateAnchors": true,
+    "heroMustOccupyFullViewport": true,
+    "noRepeatedGenericSections": true,
+    "noClippedTextOrOverlaps": true,
+    "showGradientsOpacityHoverEntryExitParallaxIcons": true
+  }
+}

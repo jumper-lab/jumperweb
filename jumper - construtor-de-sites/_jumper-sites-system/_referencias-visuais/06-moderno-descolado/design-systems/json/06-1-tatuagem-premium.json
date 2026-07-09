@@ -1,0 +1,547 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "06.1",
+  "design_system_name": "Estúdio de Tatuagem Premium",
+  "category": "06 — Moderno e Descolado",
+  "subcategory": "Galeria de arte B&W editorial com acento dourado vintage",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Skullfactory Tattoo",
+    "url": "https://skullfactory.de",
+    "location": "Schriesheim, Alemanha",
+    "awards": ["Awwwards Nominee (site por ELBKOPF)"],
+    "secondary_reference": {
+      "name": "La Tatuajería",
+      "url": "https://latatuajeria.com",
+      "note": "Referência estilística (tratamento editorial do portfolio e ritmo contemplativo). Nenhum prêmio confirmado — citada apenas como inspiração de mood."
+    },
+    "why_chosen": "A Skullfactory trata tatuagem como fine art: fundo preto absoluto, fotografia B&W de altíssimo contraste com flash duro, e o portfolio apresentado como galeria — não como grid de serviço. A La Tatuajería soma o ritmo contemplativo editorial, com muito respiro entre peças e tipografia serif dramática. A essência capturada é 'tatuagem é arte': o site se comporta como uma galeria noturna, onde cada trabalho recebe moldura, silêncio e um único brilho dourado de destaque.",
+    "font_substitution_note": "A referência usa PP Editorial New (fonte comercial da Pangram Pangram). Substituída oficialmente por Playfair Display (Google Fonts), a alternativa aberta mais próxima em drama serif, contraste de hastes e itálico expressivo."
+  },
+  "colors": {
+    "primary": "#0A0A0A",
+    "primary_usage": "Preto absoluto — cor dominante do sistema. É o fundo de TODAS as seções (dark mode é o modo primário, não uma variação). Também é a cor de texto sobre o dourado (botões de acento).",
+    "secondary": "#FFE600",
+    "secondary_usage": "Dourado vintage — o ÚNICO acento do sistema. Uso cirúrgico: sublinhados de headline, número de índice da galeria, borda de foco, CTA primário e micro-detalhes. Nunca em blocos grandes, nunca como fundo de seção, e NUNCA como texto sobre branco (contraste 1.27:1 — reprovado).",
+    "surface": "#0A0A0A",
+    "surface_alt": "#141414",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#B3B3B3",
+    "text_muted": "#8C8C8C",
+    "border": "#2B2B2B",
+    "error": "#FF6B6B",
+    "success": "#3EE07F",
+    "warning": "#FFC94D",
+    "neutral_scale": {
+      "50": "#FAFAFA",
+      "100": "#F0F0F0",
+      "200": "#D9D9D9",
+      "300": "#B3B3B3",
+      "400": "#8C8C8C",
+      "500": "#666666",
+      "600": "#404040",
+      "700": "#2B2B2B",
+      "800": "#141414",
+      "900": "#0A0A0A"
+    },
+    "contrast_verification": {
+      "text_primary_on_surface": "#FFFFFF sobre #0A0A0A = 19.80:1 (AAA)",
+      "secondary_on_surface": "#FFE600 sobre #0A0A0A = 15.62:1 (AAA)",
+      "primary_on_secondary": "#0A0A0A sobre #FFE600 = 15.62:1 (AAA) — texto do CTA dourado",
+      "text_secondary_on_surface": "#B3B3B3 sobre #0A0A0A = 9.44:1 (AAA)",
+      "text_muted_on_surface": "#8C8C8C sobre #0A0A0A = 5.89:1 (AA texto normal)",
+      "text_primary_on_surface_alt": "#FFFFFF sobre #141414 = 18.43:1 (AAA)",
+      "secondary_on_surface_alt": "#FFE600 sobre #141414 = 14.54:1 (AAA)",
+      "error_on_surface": "#FF6B6B sobre #0A0A0A = 7.13:1 (AA/AAA texto grande)",
+      "success_on_surface": "#3EE07F sobre #0A0A0A = 11.48:1 (AAA)",
+      "secondary_on_white_FORBIDDEN": "#FFE600 sobre #FFFFFF = 1.27:1 — REPROVADO. Regra dura: dourado jamais como texto ou ícone informativo sobre fundos claros.",
+      "notes": "Sistema dark-first: todas as combinações de texto passam AA com folga porque o fundo é quase preto. A única armadilha é o dourado sobre claro — por isso a regra 'dourado só vive no escuro'. Em raros blocos brancos invertidos (ex: cartão editorial), o acento vira #0A0A0A ou #8A7A00 (dourado escurecido, 5.02:1 sobre branco) para elementos informativos."
+    }
+  },
+  "typography": {
+    "heading_font": "Playfair Display",
+    "heading_font_source": "Google Fonts",
+    "heading_font_note": "Substitui PP Editorial New (comercial). Usar pesos 800/900 para display e o ITÁLICO como recurso expressivo — uma palavra em itálico dentro do headline é assinatura do DS.",
+    "heading_fallback": "'Playfair Display', Georgia, 'Times New Roman', serif",
+    "body_font": "Space Grotesk",
+    "body_font_source": "Google Fonts",
+    "body_fallback": "'Space Grotesk', 'Helvetica Neue', Arial, sans-serif",
+    "mono_font": "não aplicável (mono é território do irmão 06.2 Streetwear)",
+    "base_size": "16px",
+    "weights": {
+      "heading": [700, 800, 900, "900 italic"],
+      "body": [300, 400, 500, 700]
+    },
+    "letter_spacing": {
+      "display": "-0.02em",
+      "overline_labels": "0.24em (uppercase, Space Grotesk 500, 12px — etiquetas de galeria)"
+    },
+    "scales": {
+      "mobile": {
+        "h1": { "size": "44px", "line_height": "1.02", "weight": 900, "font": "Playfair Display", "note": "clamp(44px, 11vw, 96px)" },
+        "h2": { "size": "32px", "line_height": "1.08", "weight": 800, "font": "Playfair Display" },
+        "h3": { "size": "22px", "line_height": "1.2", "weight": 700, "font": "Playfair Display" },
+        "body": { "size": "16px", "line_height": "1.7", "weight": 400, "font": "Space Grotesk" },
+        "small": { "size": "13px", "line_height": "1.5", "weight": 400, "font": "Space Grotesk" }
+      },
+      "desktop": {
+        "h1": { "size": "96px", "line_height": "0.98", "weight": 900, "font": "Playfair Display", "note": "herói pode chegar a 120px em telas 1600px+" },
+        "h2": { "size": "56px", "line_height": "1.05", "weight": 800, "font": "Playfair Display" },
+        "h3": { "size": "30px", "line_height": "1.15", "weight": 700, "font": "Playfair Display" },
+        "body": { "size": "17px", "line_height": "1.75", "weight": 400, "font": "Space Grotesk" },
+        "small": { "size": "13px", "line_height": "1.5", "weight": 400, "font": "Space Grotesk" }
+      }
+    }
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — dark-first, dourado cirúrgico",
+    "tokens": {
+      "--color-primary": "#0A0A0A",
+      "--color-secondary": "#FFE600",
+      "--color-secondary-dark": "#8A7A00",
+      "--color-surface": "#0A0A0A",
+      "--color-surface-alt": "#141414",
+      "--color-text": "#FFFFFF",
+      "--color-text-secondary": "#B3B3B3",
+      "--color-text-muted": "#8C8C8C",
+      "--color-border": "#2B2B2B",
+      "--color-error": "#FF6B6B",
+      "--color-success": "#3EE07F",
+      "--color-warning": "#FFC94D",
+      "--color-neutral-50": "#FAFAFA",
+      "--color-neutral-100": "#F0F0F0",
+      "--color-neutral-200": "#D9D9D9",
+      "--color-neutral-300": "#B3B3B3",
+      "--color-neutral-400": "#8C8C8C",
+      "--color-neutral-500": "#666666",
+      "--color-neutral-600": "#404040",
+      "--color-neutral-700": "#2B2B2B",
+      "--color-neutral-800": "#141414",
+      "--color-neutral-900": "#0A0A0A",
+      "--font-heading": "'Playfair Display', Georgia, 'Times New Roman', serif",
+      "--font-body": "'Space Grotesk', 'Helvetica Neue', Arial, sans-serif",
+      "--text-h1": "clamp(44px, 11vw, 96px)",
+      "--text-h2": "clamp(32px, 6vw, 56px)",
+      "--text-h3": "clamp(22px, 3vw, 30px)",
+      "--text-body": "clamp(16px, 1vw + 15px, 17px)",
+      "--text-small": "13px",
+      "--tracking-display": "-0.02em",
+      "--tracking-overline": "0.24em",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "40px",
+      "--space-xxl": "64px",
+      "--space-xxxl": "104px",
+      "--space-xxxxl": "160px",
+      "--section-gap": "clamp(88px, 8vw + 40px, 160px)",
+      "--radius-none": "0px",
+      "--radius-sm": "2px",
+      "--radius-md": "4px",
+      "--radius-lg": "8px",
+      "--radius-full": "999px",
+      "--stroke-thin": "1px",
+      "--stroke-medium": "2px",
+      "--shadow-none": "none",
+      "--shadow-sm": "0 2px 8px rgba(0, 0, 0, 0.6)",
+      "--shadow-md": "0 8px 24px rgba(0, 0, 0, 0.7)",
+      "--shadow-lg": "0 20px 48px rgba(0, 0, 0, 0.8)",
+      "--shadow-glow-gold": "0 0 0 1px rgba(255, 230, 0, 0.4), 0 0 32px rgba(255, 230, 0, 0.12)",
+      "--duration-instant": "120ms",
+      "--duration-fast": "200ms",
+      "--duration-base": "350ms",
+      "--duration-slow": "650ms",
+      "--duration-cinematic": "950ms",
+      "--duration-page-transition": "1200ms",
+      "--ease-out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "--ease-in-out-cine": "cubic-bezier(0.83, 0, 0.17, 1)",
+      "--ease-sharp": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--container-max": "1440px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "40px",
+      "xxl": "64px",
+      "xxxl": "104px",
+      "xxxxl": "160px"
+    },
+    "section_spacing": {
+      "mobile": "88px",
+      "tablet": "120px",
+      "desktop": "160px",
+      "note": "Espaçamento GENEROSO é parte da personalidade — ritmo contemplativo de galeria. Nunca comprimir seções abaixo de 88px."
+    },
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "40px",
+      "container_desktop": "64px"
+    },
+    "container_max_width": "1440px",
+    "gutters": "24px mobile / 32px tablet / 40px desktop"
+  },
+  "borders": {
+    "radius": {
+      "none": "0px",
+      "sm": "2px",
+      "md": "4px",
+      "lg": "8px",
+      "full": "999px"
+    },
+    "radius_usage": {
+      "buttons": "0px — botões retos, arquitetônicos; a suavidade vem do motion, não do raio",
+      "cards": "0px — obras de galeria têm moldura reta",
+      "inputs": "0px com borda inferior única (underline input, estilo formulário editorial)",
+      "images": "0px — fotografia B&W nunca arredondada",
+      "containers": "0px; exceção: badge/tag pode usar 999px (pill) como contraste pontual"
+    },
+    "stroke": {
+      "thin": "1px",
+      "medium": "2px"
+    },
+    "signature_detail": "Moldura hairline de 1px #2B2B2B ao redor das peças da galeria, com offset interno de 12px (borda dupla de moldura de quadro). No hover, a moldura interna vira #FFE600."
+  },
+  "shadows": {
+    "none": "none",
+    "sm": "0 2px 8px rgba(0, 0, 0, 0.6)",
+    "md": "0 8px 24px rgba(0, 0, 0, 0.7)",
+    "lg": "0 20px 48px rgba(0, 0, 0, 0.8)",
+    "glow_gold": "0 0 0 1px rgba(255, 230, 0, 0.4), 0 0 32px rgba(255, 230, 0, 0.12)",
+    "shadow_usage": "Em fundo quase preto, sombra tradicional quase não lê — profundidade vem de surface_alt (#141414) e das molduras 1px. Sombras sm/md/lg só em elementos flutuantes (modal, menu mobile). glow_gold é reservado para foco de teclado e para o CTA primário em hover."
+  },
+  "motion": {
+    "durations": {
+      "instant": "120ms",
+      "fast": "200ms",
+      "base": "350ms",
+      "slow": "650ms",
+      "cinematic": "950ms",
+      "page_transition": "1200ms"
+    },
+    "easings": {
+      "out_expo": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "in_out_cine": "cubic-bezier(0.83, 0, 0.17, 1)",
+      "sharp": "cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "animations": [
+      { "name": "curtain-reveal", "duration": "1200ms", "easing": "in_out_cine", "trigger": "troca de página/rota", "description": "Cortina preta sobe revelando a nova página com o título já em cena — transição cinematográfica assinatura do DS." },
+      { "name": "gallery-reveal", "duration": "950ms", "easing": "out_expo", "trigger": "scroll (IntersectionObserver)", "description": "Peça da galeria entra com clip-path inset de baixo para cima + leve scale de 1.06 para 1 na imagem interna — efeito de cortina de exposição." },
+      { "name": "hero-line-stagger", "duration": "950ms", "easing": "out_expo", "trigger": "load", "description": "Linhas do H1 sobem uma a uma (stagger 120ms) a partir de máscara overflow:hidden." },
+      { "name": "scale-hover", "duration": "650ms", "easing": "out_expo", "trigger": "hover em peça da galeria", "description": "Imagem escala para 1.05 dentro da moldura fixa; etiqueta dourada de índice desliza para cima." },
+      { "name": "glitch-subtle", "duration": "350ms", "easing": "steps(2, end)", "trigger": "hover em links de navegação", "description": "Micro-deslocamento de 1-2px com duplicação clip-path — glitch SUTIL, 1 disparo por hover, nunca em loop infinito." },
+      { "name": "gold-underline", "duration": "350ms", "easing": "sharp", "trigger": "hover/focus em links inline", "description": "Sublinhado dourado cresce da esquerda para a direita (transform scaleX)." },
+      { "name": "flash-blink", "duration": "120ms", "easing": "linear", "trigger": "clique em CTA primário", "description": "Flash branco rápido no botão — referência ao flash duro da fotografia de estúdio." }
+    ],
+    "prefers_reduced_motion": true,
+    "reduced_motion_strategy": "Com prefers-reduced-motion: reduce, todas as animações caem para opacity 0→1 em 200ms; curtain-reveal vira crossfade; glitch e scale são desativados por completo; scroll-behavior volta a auto."
+  },
+  "components": {
+    "buttons": {
+      "primary": {
+        "background": "#FFE600",
+        "text_color": "#0A0A0A",
+        "border": "none",
+        "radius": "0px",
+        "font": "Space Grotesk 700, 14px, uppercase, letter-spacing 0.14em",
+        "hover": "background #FFFFFF (texto continua #0A0A0A) + glow_gold; translateY(-2px)",
+        "focus": "outline 2px solid #FFE600, outline-offset 3px",
+        "active": "flash-blink (fundo branco 120ms) + translateY(0)",
+        "disabled": "background #2B2B2B, texto #666666, cursor not-allowed"
+      },
+      "secondary": {
+        "background": "transparent",
+        "text_color": "#FFFFFF",
+        "border": "1px solid #FFFFFF",
+        "radius": "0px",
+        "hover": "border-color #FFE600, texto #FFE600",
+        "focus": "outline 2px solid #FFE600, outline-offset 3px",
+        "disabled": "border #2B2B2B, texto #666666"
+      },
+      "ghost": {
+        "background": "transparent",
+        "text_color": "#FFFFFF",
+        "border": "none",
+        "detail": "seta → e gold-underline no hover; usado em 'ver obra' dos cards de galeria"
+      },
+      "sizes": {
+        "sm": "height 40px, padding 0 20px",
+        "md": "height 52px, padding 0 32px",
+        "lg": "height 60px, padding 0 44px"
+      }
+    },
+    "cards": {
+      "gallery_piece": {
+        "structure": "moldura externa 1px #2B2B2B → padding 12px → imagem B&W (aspect 4:5) → legenda embaixo",
+        "caption": "linha 1: título da peça em Playfair Display 700 20px; linha 2: técnica + artista em Space Grotesk 400 13px #8C8C8C",
+        "index_label": "número de série tipo '№ 04' em #FFE600, Space Grotesk 500 12px, letter-spacing 0.24em, canto superior esquerdo",
+        "hover": "scale-hover na imagem + moldura interna vira #FFE600",
+        "image_treatment": "sempre grayscale(1) contrast(1.15) — cor só entra no dourado da interface"
+      },
+      "artist_card": {
+        "structure": "retrato B&W meio-corpo + nome em Playfair Display italic + especialidade + link de portfolio",
+        "background": "#141414",
+        "hover": "retrato levemente colorido? NÃO — mantém B&W; apenas o nome ganha gold-underline"
+      },
+      "info_card": {
+        "background": "#141414",
+        "border": "1px solid #2B2B2B",
+        "padding": "40px",
+        "usage": "cuidados pós-tatuagem, políticas do estúdio, FAQ"
+      }
+    },
+    "inputs": {
+      "style": "underline editorial: fundo transparente, apenas border-bottom 1px #404040",
+      "text_color": "#FFFFFF",
+      "placeholder": "#666666",
+      "label": "Space Grotesk 500 12px uppercase letter-spacing 0.18em #B3B3B3, acima do campo",
+      "focus": "border-bottom 2px #FFE600 (transição 350ms) — sem outline extra pois a borda dobra de peso e muda de cor; manter outline visível em navegação por teclado via :focus-visible",
+      "error": "border-bottom 2px #FF6B6B + mensagem 13px #FF6B6B com ícone",
+      "success": "border-bottom 2px #3EE07F",
+      "height": "56px (área de toque confortável)"
+    },
+    "hero": {
+      "layout": "full-viewport (100svh), título dominando 70% da largura, alinhado à esquerda na base do viewport (composição de pôster de exposição)",
+      "background": "#0A0A0A com uma única peça B&W recortada ocupando o terço direito, parcialmente sangrada para fora da tela",
+      "headline_treatment": "Playfair Display 900; uma palavra-chave em itálico; sublinhado dourado desenhado à mão (SVG stroke) sob a palavra em itálico",
+      "overline": "etiqueta de galeria: 'ESTÚDIO — SÃO PAULO' em 12px uppercase tracking 0.24em #FFE600",
+      "cta": "primário dourado + ghost 'ver portfolio' lado a lado",
+      "entrance": "hero-line-stagger + peça B&W entra com gallery-reveal",
+      "scroll_cue": "linha vertical 1px branca de 48px com animação de descida lenta"
+    },
+    "navigation": {
+      "desktop": "topbar transparente sobre o hero, height 88px: logotipo serif à esquerda, 4 links centro-direita com glitch-subtle no hover, CTA compacto dourado à direita; ao rolar, ganha fundo rgba(10,10,10,0.9) + backdrop-blur e borda inferior 1px #2B2B2B",
+      "mobile": "logotipo + botão hambúrguer (2 linhas); menu fullscreen preto com links em Playfair Display 40px empilhados, cada um com número dourado '01—04', entrada com stagger",
+      "active_state": "link ativo recebe sublinhado dourado permanente"
+    },
+    "footer": {
+      "structure": "3 zonas: (1) headline convite em Playfair Display 56px com palavra em itálico ('Sua pele, nossa tela'), (2) colunas de contato/endereço/horários/social em Space Grotesk, (3) barra legal com CNPJ e créditos",
+      "background": "#0A0A0A com borda superior 1px #2B2B2B",
+      "detail": "assinatura dourada: um asterisco/estrela SVG de 24px #FFE600 antes do headline"
+    },
+    "testimonials": {
+      "layout": "citação única em destaque por vez (não carrossel apertado): aspas gigantes em Playfair Display italic 32-40px, autor em Space Grotesk 13px uppercase, navegação por setas finas",
+      "background": "#141414 full-bleed",
+      "detail": "as aspas de abertura são um glyph Playfair de 120px em #FFE600 com opacidade 0.9"
+    },
+    "badges": {
+      "style": "pill 999px, borda 1px #FFE600, texto #FFE600 12px uppercase tracking 0.18em, fundo transparente",
+      "usage": "'agenda aberta', 'flash day', 'guest artist' — no máximo 1 badge visível por seção"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Confiante, artístico, direto. Fala como curador de galeria, não como vendedor: frases curtas, vocabulário de arte (peça, traço, composição, sessão), zero gíria forçada e zero clichê de 'promoção'. Respeita a inteligência do leitor.",
+    "headline_examples": [
+      "Sua pele, nossa tela.",
+      "Cada traço é uma decisão. Cada peça, um original.",
+      "Arte que você não pendura. Você veste.",
+      "O estúdio onde a tinta vira acervo."
+    ],
+    "cta_examples": [
+      "Agende sua sessão",
+      "Ver portfolio completo",
+      "Conhecer os artistas",
+      "Reservar horário de consulta"
+    ],
+    "microcopy_examples": [
+      "Orçamento sem compromisso — resposta em até 48h.",
+      "Biossegurança certificada. Materiais descartáveis, sempre.",
+      "Traga sua ideia. A composição a gente constrói junto."
+    ],
+    "avoid": [
+      "Clichês de urgência ('últimas vagas!', 'promoção imperdível')",
+      "Tom agressivo/caveira-e-fogo genérico de tattoo shop dos anos 2000",
+      "Diminutivos e tom infantilizado ('tattoozinha')",
+      "Excesso de exclamações e emojis",
+      "Jargão técnico sem tradução (explicar 'blackwork' quando usar)"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas desktop (gutter 40px) usada de forma ASSIMÉTRICA controlada: galeria alterna peças em 5, 6 e 7 colunas com offsets verticais de 80-120px — desalinhamento curatorial, não caótico (o caos extremo é território do 06.2).",
+    "page_flow": [
+      { "section": "hero", "layout": "full-viewport, título à esquerda na base, peça B&W sangrada à direita" },
+      { "section": "manifesto", "layout": "1 parágrafo grande centralizado (max-width 720px), Playfair 28-34px, com 2-3 palavras em itálico branco destacadas por sublinhado dourado (dourado nunca em texto corrido)" },
+      { "section": "galeria", "layout": "peças alternando colunas e offsets verticais, numeração '№' dourada, muito respiro (160px entre grupos)" },
+      { "section": "artistas", "layout": "grid 3 colunas de retratos B&W sobre #141414" },
+      { "section": "processo", "layout": "4 passos em linha do tempo horizontal com números Playfair italic gigantes" },
+      { "section": "depoimento", "layout": "citação única full-bleed em #141414" },
+      { "section": "estudio", "layout": "faixa de blocos B&W (fotos do espaço) + endereço/mapa estilizado escuro" },
+      { "section": "cta-final", "layout": "headline convite gigante + botão dourado, muito espaço negativo" },
+      { "section": "footer", "layout": "3 zonas descritas em components.footer" }
+    ],
+    "image_treatment": "Fotografia B&W de alto contraste simulando flash duro: grayscale(1) contrast(1.15) brightness(1.05), pretos esmagados, fundo da foto se fundindo com o fundo do site. Nunca fotos coloridas, nunca filtros quentes. Nos previews sem fotografia real: gradientes radiais duros branco→cinza→preto e formas SVG.",
+    "density": "Baixa — poucas peças por viewport, cada uma com moldura e silêncio ao redor",
+    "whitespace": "Extremo e intencional: o vazio preto É a parede da galeria. Seções de 160px de respiro no desktop; nunca preencher vazio com ornamento."
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "body_text": "#FFFFFF sobre #0A0A0A = 19.80:1 (AAA)",
+      "secondary_text": "#B3B3B3 sobre #0A0A0A = 9.44:1 (AAA)",
+      "muted_text": "#8C8C8C sobre #0A0A0A = 5.89:1 (AA)",
+      "accent_on_dark": "#FFE600 sobre #0A0A0A = 15.62:1 (AAA)",
+      "cta_text": "#0A0A0A sobre #FFE600 = 15.62:1 (AAA)",
+      "hard_rule": "Dourado #FFE600 proibido como texto sobre fundos claros (1.27:1 sobre branco)"
+    },
+    "keyboard_navigation": "Ordem de tab lógica; skip-link 'Pular para o conteúdo' visível ao focar; menu mobile com focus-trap e fechamento por Esc; galeria navegável por Tab com legendas lidas em ordem.",
+    "focus_states": "outline 2px solid #FFE600 com offset 3px em todos os interativos (via :focus-visible); em inputs, borda inferior dourada dobrada; nunca remover outline sem substituto visível.",
+    "alt_text": "Toda peça da galeria tem alt descritivo ('Tatuagem blackwork de serpente no antebraço, traço fino') — nunca alt vazio em portfolio, pois as peças SÃO o conteúdo.",
+    "semantic_html": "header/nav/main/section/article/figure+figcaption para as peças, footer; headings em hierarquia estrita; depoimentos em blockquote com cite.",
+    "touch_targets": "44px minimum — botões com 52-60px de altura, links de menu mobile com 56px",
+    "motion_safety": "prefers-reduced-motion implementado em TODAS as animações (glitch e curtain são os primeiros a cair); nenhuma animação pisca mais de 3x/segundo (flash-blink é disparo único de 120ms)."
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Coluna única full-viewport (100svh): overline dourado → h1 44px (clamp até 96px) na base à esquerda → CTA dourado full-width + ghost abaixo; peça B&W sangra no topo/terço superior; container padding 20px",
+      "tablet": "H1 cresce; peça B&W ocupa terço direito parcialmente sangrada; CTA e ghost lado a lado; container padding 40px",
+      "desktop": "Título dominando 70% da largura alinhado à base-esquerda do viewport, peça B&W recortada no terço direito sangrada para fora; container padding 64px"
+    },
+    "galeria_grid": {
+      "mobile": "1 coluna, peças empilhadas full-width (aspect 4:5), respiro de 88px entre grupos, moldura 1px #2B2B2B com offset interno 12px",
+      "tablet": "2 colunas com offsets verticais suaves (40–60px), gutter 32px, numeração № dourada mantida",
+      "desktop": "Grid 12 colunas assimétrico: peças em 5/6/7 colunas com offsets verticais de 80–120px, gutter 40px, 160px de respiro entre grupos"
+    },
+    "navigation": {
+      "mobile_tablet": "Logotipo serif + hambúrguer 2 linhas (toque 44px); menu fullscreen preto com links Playfair 40px empilhados, número dourado '01—04', entrada com stagger",
+      "desktop": "Topbar transparente 88px sobre o hero (logo à esquerda, 4 links centro-direita com glitch-subtle, CTA dourado compacto à direita); ao rolar ganha fundo rgba(10,10,10,0.9) + backdrop-blur + borda inferior 1px #2B2B2B"
+    },
+    "footer": {
+      "mobile": "3 zonas empilhadas: headline convite Playfair (palavra em itálico) → colunas de contato/endereço/horários/social empilhadas → barra legal CNPJ+créditos; borda superior 1px #2B2B2B",
+      "desktop": "Headline convite Playfair 56px com asterisco dourado; colunas de contato/endereço/horários/social lado a lado; barra legal no rodapé"
+    },
+    "touch_adjustments": "Hover de scale/glitch/gold-underline não dispara em touch — substituído por estado :active discreto (translateY 0 + moldura dourada ao tocar a peça); alvos mínimos 44px, botões 52–60px, links de menu mobile 56px; scroll-behavior nativo com scroll-snap opcional entre grupos da galeria"
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente",
+    "button_primary": ["default (fundo #FFE600, texto #0A0A0A)", "hover (fundo #FFFFFF + glow_gold + translateY(-2px))", "focus-visible (outline 2px #FFE600, offset 3px)", "active (flash-blink branco 120ms + translateY(0))", "disabled (fundo #2B2B2B, texto #666666, not-allowed)", "loading (spinner 16px #0A0A0A + texto 'Enviando...')"],
+    "button_secondary": ["default (transparente, borda 1px #FFFFFF)", "hover (borda + texto #FFE600)", "focus-visible (outline 2px #FFE600, offset 3px)", "active (translateY(0))", "disabled (borda #2B2B2B, texto #666666)"],
+    "link_nav": ["default (#FFFFFF)", "hover (glitch-subtle 1 disparo)", "focus-visible (outline 2px #FFE600, offset 3px)", "current (sublinhado dourado permanente)"],
+    "card_gallery_piece": ["default (moldura 1px #2B2B2B, offset interno 12px)", "hover (scale-hover na imagem + moldura interna vira #FFE600 + etiqueta № desliza)", "focus-within (moldura dourada + legenda visível)"],
+    "input": ["default (border-bottom 1px #404040, fundo transparente)", "focus (border-bottom 2px #FFE600, transição 350ms; :focus-visible mantém outline em teclado)", "filled", "error (border-bottom 2px #FF6B6B + mensagem 13px + ícone + aria-describedby)", "disabled", "success (border-bottom 2px #3EE07F)"],
+    "nav_header": ["topo (transparente sobre o hero)", "rolado (rgba(10,10,10,0.9) + backdrop-blur + borda inferior 1px #2B2B2B)", "menu mobile aberto (fullscreen preto + focus trap + Esc fecha)"]
+  },
+  "photography_direction": {
+    "style": "Fine art editorial noturno — tatuagem tratada como obra de galeria, fotografia B&W de altíssimo contraste simulando flash duro de estúdio",
+    "subjects": [
+      "Peça de tatuagem em close (antebraço, costas, mão) com pele e traço nítidos",
+      "Detalhe macro de linhas/sombreado (blackwork, fine line, realismo)",
+      "Retrato B&W meio-corpo do artista, olhar sério, sem sorriso de stock",
+      "Espaço do estúdio: maca, luz dura, instrumentos — atmosfera de atelier",
+      "Mão do tatuador em ação, foco raso, grão controlado"
+    ],
+    "light": "Flash duro frontal/lateral, contraste alto, pretos esmagados que se fundem com o fundo preto do site; sem luz suave difusa",
+    "color_grading": "Preto e branco absoluto — grayscale(1) contrast(1.15) brightness(1.05). Proibido: cor, filtros quentes, sépia, HDR. A única cor do sistema é o dourado da interface, jamais na foto.",
+    "framing": "Enquadramentos de pôster de exposição, aspect 4:5 nas peças da galeria; muito espaço negativo preto ao redor; recortes sangrados para fora da tela no hero",
+    "avoid": [
+      "Fotos coloridas ou com filtro quente",
+      "Estética 'caveira-e-fogo' genérica de tattoo shop dos anos 2000",
+      "Stock com sorrisos falsos ou iluminação de estúdio corporativa",
+      "Fundos claros que quebram o dark mode e colocam risco de dourado sobre branco"
+    ],
+    "fallback_sem_foto": "Gradientes radiais duros branco→cinza→preto (simulando flash) sobre #0A0A0A e formas SVG em #FFFFFF/#8C8C8C dentro das molduras 1px; molduras hairline #2B2B2B com offset 12px; o dourado #FFE600 entra APENAS na interface (numeração №, moldura de hover), nunca preenchendo o fallback claro para não incorrer em dourado sobre fundo claro."
+  },
+  "iconography": {
+    "style": "Linha fina (stroke 1.5px), pontas retas ou levemente arredondadas, grid 24x24 — geometria sóbria e arquitetônica coerente com as molduras retas",
+    "color": "#FFFFFF ou #B3B3B3 sobre o fundo escuro; #FFE600 apenas para 1 ícone de acento por seção (nunca ícone dourado sobre fundo claro)",
+    "recommended_set": "Lucide (open source, MIT), stroke ajustado para 1.5; alternativa Feather",
+    "usage": "Ícones sempre acompanhados de texto — nunca ícone sozinho como única affordance; densidade baixa, coerente com o ritmo de galeria",
+    "decorative_shapes": "Asterisco/estrela SVG dourado (assinatura do footer), sublinhado dourado desenhado à mão sob palavra em itálico, aspas gigantes Playfair no depoimento, linha vertical 1px do scroll cue — sempre aria-hidden"
+  },
+  "do_dont": {
+    "do": [
+      "Manter dark mode como modo primário — fundo #0A0A0A em todas as seções",
+      "Usar Playfair Display 900 e uma palavra em itálico por headline como assinatura",
+      "Reservar o dourado #FFE600 para uso cirúrgico: sublinhado, numeração №, foco, CTA primário",
+      "Aplicar a moldura hairline 1px #2B2B2B com offset interno 12px nas peças da galeria",
+      "Tratar toda fotografia como B&W de alto contraste — grayscale(1) contrast(1.15)",
+      "Deixar 160px de respiro entre grupos no desktop — o vazio preto é a parede da galeria",
+      "Limitar glitch-subtle e flash-blink a disparo único (nunca loop infinito)"
+    ],
+    "dont": [
+      "Usar #FFE600 como texto ou ícone informativo sobre fundos claros (1.27:1 sobre branco — REPROVADO)",
+      "Usar dourado em blocos grandes ou como fundo de seção",
+      "Introduzir fotografia colorida ou filtros quentes",
+      "Arredondar botões, cards ou imagens (raio 0px; pill 999px só em badge pontual)",
+      "Comprimir seções abaixo de 88px — quebra o ritmo contemplativo",
+      "Animação piscando mais de 3x/segundo ou glitch em loop",
+      "Misturar mais de 2 famílias tipográficas (Playfair + Space Grotesk; mono é do irmão 06.2)"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Playfair Display:ital,wght@0,700;0,800;0,900;1,900 e Space Grotesk:wght@300;400;500;700 com display=swap",
+    "js_budget": "Comportamentos enxutos: menu mobile (toggle + focus trap + Esc), IntersectionObserver único para gallery-reveal/hero-line-stagger, curtain-reveal na troca de rota, depoimento por setas. Animações 100% CSS transform/opacity/clip-path; zero bibliotecas de animação.",
+    "seo_local": "Schema.org LocalBusiness/TattooParlor (ou HealthAndBeautyBusiness) com horários, geo, telefone e sameAs de redes; título com bairro/cidade ('Estúdio de Tatuagem X — Blackwork e fine line em São Paulo')",
+    "whatsapp_cta": "Link wa.me com mensagem pré-preenchida sóbria ('Olá! Vi o portfolio de vocês e queria conversar sobre uma ideia de tatuagem...') — coerente com o tom curatorial, sem urgência forçada",
+    "adaptation_guide": "Ao adaptar para outro segmento premium dark (barbearia, piercing studio, galeria/atelier): manter paleta preto+dourado, tipografia Playfair+Space Grotesk, motion cinematográfico e molduras 1px; trocar vocabulário do voice_and_tone e a metáfora do portfolio. A essência é 'obra de galeria em modo noturno', não a tatuagem em si."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true,
+    "uniqueness_vs_siblings": "Diferenciação dos irmãos dark da personalidade 06: 06.1 é GALERIA — serif dramática (Playfair 900/italic), dourado cirúrgico, ritmo contemplativo, molduras 1px, B&W. 06.2 Streetwear é RUÍDO — lime neon #00FF41, Archivo Black gigante, mono, grid quebrado extremo e scroll horizontal. 06.3 Agência é NARRATIVA — roxo elétrico #9D4EDD, DM Serif Display experimental, storytelling full-screen. Nenhum hex, fonte ou composição compartilhados."
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "moderno",
+      "descolado",
+      "dark-mode",
+      "preto-dourado",
+      "serif-dramatica",
+      "galeria-editorial",
+      "tatuagem-premium",
+      "fotografia-bw",
+      "molduras-hairline",
+      "whitespace-extremo"
+    ],
+    "related_docs": [
+      "previews/markdown/06-1-tatuagem-premium.md",
+      "previews/html/06-1-tatuagem-premium.html",
+      "docs/06-1-tatuagem-premium/components.md",
+      "docs/06-1-tatuagem-premium/animations.css",
+      "docs/06-1-tatuagem-premium/accessibility-report.md",
+      "docs/06-1-tatuagem-premium/benchmarking.md",
+      "docs/06-1-tatuagem-premium/color-variations.md",
+      "docs/06-1-tatuagem-premium/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Estúdio de tatuagem autoral/premium",
+      "Barbearia premium",
+      "Piercing studio",
+      "Galeria de arte / atelier",
+      "Artista tatuador independente com agenda fechada"
+    ],
+    "conversion_factors": [
+      "Portfolio como prova: a galeria B&W numerada transmite curadoria e justifica ticket alto antes de qualquer texto",
+      "CTA dourado único por viewport — hierarquia de ação inequívoca ('Agende sua sessão')",
+      "Depoimento em destaque único (não carrossel) aumenta leitura e confiança",
+      "Página de artistas com especialidades reduz fricção na escolha e qualifica o lead",
+      "Microcopy de biossegurança e prazo de resposta ataca as duas maiores objeções do segmento",
+      "Formulário editorial curto (nome, contato, ideia, região do corpo) — menos campos, mais envios"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "Hero sem imagem raster pesada (título tipográfico + SVG/gradiente); fontes com preconnect + display=swap; peça B&W do hero em AVIF/WebP ≤ 120KB",
+      "cls_strategy": "aspect-ratio fixo (4:5) em todas as molduras da galeria; espaço da nav reservado; fallback metric-compatible para Playfair via size-adjust",
+      "fid_inp_strategy": "Animações 100% CSS transform/opacity/clip-path (compositor); IntersectionObserver único para reveals; zero bibliotecas de animação",
+      "targets": { "LCP": "< 2.5s", "INP": "< 200ms", "CLS": "< 0.1" }
+    }
+  }
+}

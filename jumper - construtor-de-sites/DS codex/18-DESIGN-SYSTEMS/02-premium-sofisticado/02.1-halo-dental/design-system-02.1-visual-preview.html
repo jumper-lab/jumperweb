@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Halo Precision Theatre System</title>
+<style>
+:root{--primary:#F26A21;--secondary:#161616;--surface:#070707;--alt:#121212;--text:#F7F1E8;--muted:#A89F93;--border:#3A3028;--ctaText:#111111;--heading:"Canela",serif;--body:"Neue Haas Grotesk Text",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}a{color:inherit}.halo{min-height:100vh;display:grid;grid-template-columns:1fr;background:radial-gradient(circle at 50% 30%,color-mix(in srgb,var(--primary) 36%,transparent),transparent 26%),#050505;color:#fff}
+.halo__rail{padding:22px;border-right:1px solid var(--border);background:color-mix(in srgb,var(--surface) 86%,white);color:inherit;position:relative;top:0;height:auto}
+.halo__page{padding:clamp(22px,5vw,78px);display:grid;gap:clamp(26px,5vw,64px)}
+.halo__nav{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px;font-family:var(--mono);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.halo__hero{display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,52px);align-items:center;min-height:78vh}
+.halo__hero h1{font-family:var(--heading);font-size:clamp(4rem,10vw,10rem);line-height:.78;margin:0;max-width:11ch;color:inherit}
+.halo__media{min-height:300px;border:1px solid var(--border);border-radius:0;background:linear-gradient(135deg,var(--alt),var(--secondary));box-shadow:0 24px 70px rgba(0,0,0,.16)}
+.halo__cta,.halo__submit{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--primary);color:var(--ctaText);border:0;border-radius:0;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer}.halo__hidden{display:none}
+.halo__controls{display:flex;gap:8px;flex-wrap:wrap}.halo__option{border:1px solid var(--border);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;cursor:pointer}.halo__option[aria-pressed="true"]{background:var(--secondary);color:#ffffff;border-color:var(--secondary)}
+.halo__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.halo__item{text-align:left;min-height:150px;border:1px solid var(--border);background:rgba(255,255,255,.08);color:inherit;border-radius:0;padding:18px;cursor:pointer}.halo__item[aria-pressed="true"]{outline:3px solid var(--secondary);transform:translateY(-3px)}
+.halo__split{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:22px}.halo__panel{border:1px solid var(--border);background:rgba(255,255,255,.08);padding:22px;border-radius:0}
+.halo__form{display:grid;gap:12px}.halo__form label{display:grid;gap:6px;font-weight:800}.halo__form input,.halo__form select{min-height:44px;border:1px solid var(--border);background:#111;color:#fff;border-radius:8px;padding:10px}.halo__form input:focus,.halo__form select:focus,.halo__option:focus-visible,.halo__item:focus-visible,.halo__chip:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.halo__status{font-family:var(--mono);border-left:5px solid var(--secondary);padding:16px;background:rgba(255,255,255,.1)}
+.halo__sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.halo__section-card{border-top:3px solid var(--primary);padding:16px;background:rgba(255,255,255,.08)}
+.halo__palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.halo__chip{background:var(--chip);color:var(--ink);min-height:88px;border:1px solid var(--border);padding:10px;text-align:left;display:grid;align-content:space-between;cursor:pointer;border-radius:0}
+.halo__audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.halo__audit div{padding:16px;border:1px solid var(--border);background:rgba(255,255,255,.08)}
+@media(max-width:860px){.halo{display:block}.halo__rail{position:relative;height:auto}.halo__hero,.halo__split{grid-template-columns:1fr}.halo__audit{grid-template-columns:1fr}.halo__page{padding:20px}.halo__hero h1{font-size:clamp(3rem,18vw,6rem)}}
+@media(prefers-reduced-motion:no-preference){.halo__item,.halo__cta,.halo__submit,.halo__chip{transition:transform .2s ease,filter .2s ease}.halo__item:hover,.halo__chip:hover{transform:translateY(-3px)}.halo__cta:hover,.halo__submit:hover{filter:contrast(1.1)}}
+</style>
+</head>
+<body>
+<main class="halo" data-mode="clareamento">
+
+<div class="halo__page">
+<nav class="halo__nav"><strong>02.1 · Halo Precision Theatre System</strong><span>precision-theatre</span></nav>
+<section class="halo__hero" id="top">
+<div><p>teatro de consulta premium</p><h1>black stage with centered treatment object, orange halo cue and consultation drawer</h1><p>elite, clinical and exact</p><a class="halo__cta" href="#form">Solicitar consulta</a></div>
+<div class="halo__media" aria-hidden="true"></div>
+</section>
+<section class="halo__panel"><h2>Tratamento</h2><div class="halo__controls"><button class="halo__option" type="button" data-mode="clareamento" aria-pressed="true">clareamento</button>
+<button class="halo__option" type="button" data-mode="implante" aria-pressed="false">implante</button>
+<button class="halo__option" type="button" data-mode="alinhador" aria-pressed="false">alinhador</button></div><p class="halo__status" aria-live="polite">Modo ativo: clareamento · Drawer de consulta atualizado</p></section>
+<section><h2>Componentes funcionais</h2><div class="halo__items"><button class="halo__item" type="button" data-item="Diagnostico" aria-pressed="true"><span>01</span><strong>Diagnostico</strong><small>halo-focus-button</small></button>
+<button class="halo__item" type="button" data-item="Antes/depois" aria-pressed="false"><span>02</span><strong>Antes/depois</strong><small>treatment-timeline</small></button>
+<button class="halo__item" type="button" data-item="Plano" aria-pressed="false"><span>03</span><strong>Plano</strong><small>before-after-slider</small></button>
+<button class="halo__item" type="button" data-item="Concierge" aria-pressed="false"><span>04</span><strong>Concierge</strong><small>doctor-authority-card</small></button></div></section>
+<section class="halo__split" id="form"><div class="halo__panel"><h2>Formulario real do DS</h2><form class="halo__form"><label>Nome<input name="field0" value="Exemplo teste" placeholder="Nome" /></label>
+<label>Tratamento<select name="field1"><option>clareamento</option><option>implante</option><option>alinhador</option></select></label>
+<label>Preferencia<input name="field2" value="" placeholder="Preferencia" /></label><button class="halo__submit" type="submit">Solicitar consulta</button></form></div><div class="halo__panel"><h2>Resultado / estado</h2><p class="halo__status halo__output" aria-live="polite">Nenhum envio ainda.</p><p>O preview precisa testar foco, estado ativo, formulario, responsividade e copy do componente.</p></div></section>
+<section><h2>Fluxo de secoes coberto</h2><div class="halo__sections"><article class="halo__section-card"><span>01</span><h3>Signature treatment theatre</h3><p>halo-focus-button</p></article>
+<article class="halo__section-card"><span>02</span><h3>Before-after evidence</h3><p>treatment-timeline</p></article>
+<article class="halo__section-card"><span>03</span><h3>Doctor authority</h3><p>before-after-slider</p></article>
+<article class="halo__section-card"><span>04</span><h3>Treatment timeline</h3><p>doctor-authority-card</p></article>
+<article class="halo__section-card"><span>05</span><h3>Financing confidence</h3><p>concierge-drawer</p></article>
+<article class="halo__section-card"><span>06</span><h3>Consultation drawer</h3><p>pricing-confidence-row</p></article>
+<article class="halo__section-card"><span>07</span><h3>Press/proof strip</h3><p>halo-focus-button</p></article>
+<article class="halo__section-card"><span>08</span><h3>Footer as concierge</h3><p>treatment-timeline</p></article></div></section>
+<section><h2>Paleta clicavel</h2><div class="halo__palette"><button class="halo__chip" type="button" data-copy="#F26A21" style="--chip:#F26A21;--ink:#111111"><span>Primary</span><strong>#F26A21</strong></button>
+<button class="halo__chip" type="button" data-copy="#161616" style="--chip:#161616;--ink:#ffffff"><span>Secondary</span><strong>#161616</strong></button>
+<button class="halo__chip" type="button" data-copy="#070707" style="--chip:#070707;--ink:#ffffff"><span>Surface</span><strong>#070707</strong></button>
+<button class="halo__chip" type="button" data-copy="#121212" style="--chip:#121212;--ink:#ffffff"><span>Alt</span><strong>#121212</strong></button>
+<button class="halo__chip" type="button" data-copy="#F7F1E8" style="--chip:#F7F1E8;--ink:#111111"><span>Text</span><strong>#F7F1E8</strong></button>
+<button class="halo__chip" type="button" data-copy="#A89F93" style="--chip:#A89F93;--ink:#111111"><span>Muted</span><strong>#A89F93</strong></button>
+<button class="halo__chip" type="button" data-copy="#3A3028" style="--chip:#3A3028;--ink:#ffffff"><span>Border</span><strong>#3A3028</strong></button></div></section>
+<section class="halo__audit"><div><strong>Acessibilidade</strong><p>Focus ring, aria-live e touch target 44px.</p></div><div><strong>Responsivo</strong><p>Mobile preserva dark single stage with drawer CTA below fold.</p></div><div><strong>Erro corrigido</strong><p>luxo aparecia como visual estatico sem funil de consulta.</p></div></section>
+</div>
+</main>
+<script>
+(() => {
+ const root = document.querySelector('.halo');
+ const status = document.querySelector('.halo__status');
+ const output = document.querySelector('.halo__output');
+ document.querySelectorAll('.halo__option').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.halo__option').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  root.dataset.mode = btn.dataset.mode;
+  status.textContent = 'Modo ativo: ' + btn.dataset.mode + ' · Drawer de consulta atualizado';
+ }));
+ document.querySelectorAll('.halo__item').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.halo__item').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  output.textContent = 'Selecionado: ' + btn.dataset.item + ' · componente pronto para estado ativo.';
+ }));
+ document.querySelector('.halo__form').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  output.textContent = 'Drawer de consulta atualizado: ' + [...data.values()].filter(Boolean).join(' / ');
+ });
+ document.querySelectorAll('.halo__chip').forEach(chip => chip.addEventListener('click', async () => {
+  const value = chip.dataset.copy;
+  try { await navigator.clipboard.writeText(value); output.textContent = 'Cor copiada: ' + value; }
+  catch { output.textContent = 'Token selecionado: ' + value; }
+ }));
+})();
+</script>
+</body>
+</html>

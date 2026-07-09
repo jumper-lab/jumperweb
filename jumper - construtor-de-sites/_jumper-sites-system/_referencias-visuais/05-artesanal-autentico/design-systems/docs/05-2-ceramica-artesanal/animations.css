@@ -1,0 +1,283 @@
+/* =========================================================================
+   Cerâmica Artesanal (DS 05.2) — animations.css
+   Personalidade: 05 — Artesanal e Autêntico
+   Mood: matérico, escultural, moody, editorial. Reveals lentos + parallax sutil.
+   Derivado FIELMENTE de motion{} do JSON 05-2-ceramica-artesanal.json.
+
+   Filosofia de movimento: nada salta. Tudo respira devagar, como peça saindo
+   do forno. Durações longas (480–1200ms), easings suaves de entrada.
+   ========================================================================= */
+
+:root {
+  /* --- Durações (motion.durations) --- */
+  --dur-instant: 120ms;
+  --dur-fast: 240ms;
+  --dur-base: 480ms;
+  --dur-slow: 900ms;
+  --dur-reveal: 1200ms;
+
+  /* --- Easings (motion.easings) --- */
+  --ease-standard: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-exit:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-drift:    cubic-bezier(0.45, 0.05, 0.55, 0.95);
+
+  /* --- Stagger padrão dos reveals (reveal-up: 120ms por elemento) --- */
+  --stagger-step: 120ms;
+
+  /* --- Cor da tinta/engobe para underline-ink e cursor-dot --- */
+  --ink-terracota: #9B6B47;
+}
+
+/* =========================================================================
+   1. reveal-up
+   Blocos sobem 32px com fade — lento e contemplativo, um por vez.
+   Trigger: IntersectionObserver ao entrar 15% no viewport.
+   ========================================================================= */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.anim-reveal-up {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.anim-reveal-up.is-visible {
+  animation: reveal-up var(--dur-reveal) var(--ease-entrance) both;
+}
+/* Stagger: aplique --i (0,1,2...) no elemento para escalonar 120ms */
+.anim-reveal-up.is-visible {
+  animation-delay: calc(var(--i, 0) * var(--stagger-step));
+}
+
+/* =========================================================================
+   2. reveal-clip
+   Imagens revelam com clip-path inset de baixo para cima —
+   como peça saindo do forno.
+   Trigger: scroll into view.
+   ========================================================================= */
+@keyframes reveal-clip {
+  from { clip-path: inset(100% 0 0 0); opacity: 0; }
+  to   { clip-path: inset(0 0 0 0);    opacity: 1; }
+}
+.anim-reveal-clip {
+  clip-path: inset(100% 0 0 0);
+  opacity: 0;
+  will-change: clip-path, opacity;
+}
+.anim-reveal-clip.is-visible {
+  animation: reveal-clip var(--dur-reveal) var(--ease-entrance) both;
+}
+
+/* =========================================================================
+   3. parallax-drift
+   Parallax sutil (scroll-driven): imagens deslocam no máximo 6–8% da altura;
+   formas SVG orgânicas derivam a 0.3x da velocidade de scroll.
+   Nota: o deslocamento real é controlado por JS (scroll) via --parallax-y.
+   Fornecemos aqui a suavização do transform e um "breathe" de reforço.
+   ========================================================================= */
+@keyframes parallax-breathe {
+  0%   { transform: translate3d(0, 0, 0) scale(1.02); }
+  50%  { transform: translate3d(0, -1.5%, 0) scale(1.04); }
+  100% { transform: translate3d(0, 0, 0) scale(1.02); }
+}
+.anim-parallax-drift {
+  /* JS escreve --parallax-y (ex.: -6%); a transição suaviza cada frame */
+  transform: translate3d(0, var(--parallax-y, 0), 0);
+  transition: transform var(--dur-fast) linear;
+  will-change: transform;
+}
+/* Camada de fundo (formas SVG orgânicas) — deriva mais devagar */
+.anim-parallax-drift--bg {
+  transform: translate3d(0, var(--parallax-y, 0), 0);
+  transition: transform var(--dur-base) linear;
+  will-change: transform;
+}
+
+/* =========================================================================
+   4. cursor-dot
+   Cursor customizado discreto: ponto de 8px terracota que segue o mouse
+   com leve atraso; expande para anel de 40px com rótulo "ver" sobre imagens.
+   Trigger: mousemove (somente pointer: fine). É overlay decorativo.
+   ========================================================================= */
+@keyframes cursor-dot-expand {
+  from { width: 8px;  height: 8px;  border-width: 0; }
+  to   { width: 40px; height: 40px; border-width: 1px; }
+}
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 8px; height: 8px;
+  border-radius: 9999px;
+  background: var(--ink-terracota);
+  border: 0 solid var(--ink-terracota);
+  pointer-events: none; /* nunca substitui o cursor nativo funcionalmente */
+  z-index: 9999;
+  /* JS escreve --cx/--cy; a transição cria o "leve atraso" */
+  transform: translate3d(calc(var(--cx, 0) * 1px - 50%),
+                         calc(var(--cy, 0) * 1px - 50%), 0);
+  transition: transform var(--dur-fast) var(--ease-standard),
+              width var(--dur-fast) var(--ease-standard),
+              height var(--dur-fast) var(--ease-standard),
+              background var(--dur-fast) var(--ease-standard);
+  will-change: transform;
+}
+.cursor-dot.is-over-image {
+  width: 40px; height: 40px;
+  background: transparent;
+  border: 1px solid var(--ink-terracota);
+}
+.cursor-dot .cursor-dot__label {
+  opacity: 0;
+  font: 600 11px/1 Inter, system-ui, sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-terracota);
+  transition: opacity var(--dur-fast) var(--ease-standard);
+}
+.cursor-dot.is-over-image .cursor-dot__label { opacity: 1; }
+/* Só aparece em ponteiros finos */
+@media (pointer: coarse) { .cursor-dot { display: none; } }
+
+/* =========================================================================
+   5. underline-ink
+   Sublinhado cresce da esquerda como pincelada de engobe.
+   Trigger: hover/focus em links e botões ghost.
+   ========================================================================= */
+@keyframes underline-ink {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.anim-underline-ink {
+  position: relative;
+  text-decoration: none;
+}
+.anim-underline-ink::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%; height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-base) var(--ease-standard);
+}
+.anim-underline-ink:hover::after,
+.anim-underline-ink:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* =========================================================================
+   6. image-breathe
+   Imagem escala 1.03 dentro de container overflow:hidden; legenda desliza 4px.
+   Trigger: hover em card de peça. Nada salta.
+   ========================================================================= */
+@keyframes image-breathe {
+  from { transform: scale(1);    }
+  to   { transform: scale(1.03); }
+}
+.anim-image-breathe {
+  overflow: hidden;
+}
+.anim-image-breathe img,
+.anim-image-breathe .piece-media {
+  display: block;
+  transition: transform var(--dur-slow) var(--ease-standard);
+  will-change: transform;
+}
+.anim-image-breathe:hover img,
+.anim-image-breathe:hover .piece-media {
+  transform: scale(1.03);
+}
+.anim-image-breathe .piece-caption {
+  transition: transform var(--dur-slow) var(--ease-standard);
+}
+.anim-image-breathe:hover .piece-caption {
+  transform: translateY(4px);
+}
+
+/* =========================================================================
+   7. numeral-fade
+   Numerais editoriais gigantes surgem com fade + tracking fechando
+   de 0.1em para -0.02em.
+   Trigger: scroll into view.
+   ========================================================================= */
+@keyframes numeral-fade {
+  from { opacity: 0; letter-spacing: 0.1em;   transform: translateY(12px); }
+  to   { opacity: 0.9; letter-spacing: -0.02em; transform: translateY(0); }
+}
+.anim-numeral-fade {
+  opacity: 0;
+  letter-spacing: 0.1em;
+  will-change: opacity, letter-spacing, transform;
+}
+.anim-numeral-fade.is-visible {
+  animation: numeral-fade var(--dur-reveal) var(--ease-entrance) both;
+}
+
+/* =========================================================================
+   prefers-reduced-motion
+   Todos os reveals viram opacity simples de 200ms; parallax e cursor
+   customizado totalmente desativados; cursor volta ao nativo.
+   (motion.reduced_motion_fallback)
+   ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-instant: 200ms;
+    --dur-fast: 200ms;
+    --dur-base: 200ms;
+    --dur-slow: 200ms;
+    --dur-reveal: 200ms;
+    --stagger-step: 0ms;
+  }
+
+  /* Reveals: fade simples, sem deslocamento nem clip */
+  @keyframes reveal-up   { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes reveal-clip { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes numeral-fade{ from { opacity: 0; } to { opacity: 0.9; } }
+
+  .anim-reveal-up,
+  .anim-reveal-clip,
+  .anim-numeral-fade {
+    transform: none !important;
+    clip-path: none !important;
+    letter-spacing: normal;
+    animation-delay: 0ms !important;
+  }
+  .anim-reveal-up.is-visible,
+  .anim-reveal-clip.is-visible {
+    animation-duration: 200ms;
+  }
+  .anim-numeral-fade.is-visible {
+    animation-duration: 200ms;
+    letter-spacing: -0.02em;
+  }
+
+  /* Parallax desativado */
+  .anim-parallax-drift,
+  .anim-parallax-drift--bg {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Cursor customizado desativado — cursor nativo volta */
+  .cursor-dot { display: none !important; }
+
+  /* image-breathe: sem escala */
+  .anim-image-breathe:hover img,
+  .anim-image-breathe:hover .piece-media,
+  .anim-image-breathe:hover .piece-caption {
+    transform: none;
+  }
+
+  /* underline-ink: aparece instantâneo, sem crescer */
+  .anim-underline-ink::after {
+    transition-duration: 0ms;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 200ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

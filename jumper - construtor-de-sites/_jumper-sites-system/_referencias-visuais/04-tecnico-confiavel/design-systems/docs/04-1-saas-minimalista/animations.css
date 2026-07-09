@@ -1,0 +1,173 @@
+/* ==========================================================================
+   DS 04.1 — SaaS Minimalista · animations.css
+   Derivado fielmente de motion{} do JSON.
+   Mood: dark mode dev-first. Animação COMUNICA ESTADO, nunca decora.
+   ease-out expressivo (expo-out) em tudo que entra; nada de bounce/elastic.
+   ========================================================================== */
+
+:root{
+  /* durations (motion.durations) */
+  --dur-instant: 120ms;
+  --dur-fast:    200ms;
+  --dur-base:    300ms;
+  --dur-slow:    400ms;
+  --dur-reveal:  600ms;
+  --dur-counter: 1200ms;
+  --dur-breathe: 8s;
+
+  /* easings (motion.easings) */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);   /* expo-out — entradas */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);  /* nav-blur-in */
+  --ease-linear: linear;
+
+  /* tokens de cor usados nas animações */
+  --primary:        #5E3DD2;
+  --primary-hover:  #6D4BE0;
+  --primary-light:  #9D8CFF;
+  --surface:        #0A0A0F;
+  --surface-alt:    #16161D;
+  --surface-raised: #1C1C25;
+  --border:         #26262F;
+  --glow-primary:   0 0 0 1px rgba(94,61,210,.45), 0 0 24px rgba(94,61,210,.25);
+}
+
+/* --------------------------------------------------------------------------
+   fade-rise — 600ms · expo-out · scroll into view (IntersectionObserver)
+   Elemento sobe 16px com fade. Stagger de 80ms entre irmãos.
+   Entrada padrão de todas as seções.
+   -------------------------------------------------------------------------- */
+@keyframes fade-rise{
+  from{ opacity:0; transform:translateY(16px); }
+  to  { opacity:1; transform:translateY(0); }
+}
+.fade-rise{
+  opacity:0;
+  transform:translateY(16px);
+}
+.fade-rise.is-visible{
+  animation:fade-rise var(--dur-reveal) var(--ease-out) forwards;
+}
+.fade-rise.is-visible:nth-child(1){ animation-delay:0ms; }
+.fade-rise.is-visible:nth-child(2){ animation-delay:80ms; }
+.fade-rise.is-visible:nth-child(3){ animation-delay:160ms; }
+.fade-rise.is-visible:nth-child(4){ animation-delay:240ms; }
+.fade-rise.is-visible:nth-child(5){ animation-delay:320ms; }
+
+/* --------------------------------------------------------------------------
+   btn-glow — 300ms · expo-out · hover/focus em botão primário
+   Box-shadow none → glow_primary + clareamento do fundo. SEM translateY.
+   -------------------------------------------------------------------------- */
+.btn-glow{
+  background:var(--primary);
+  box-shadow:none;
+  transition:background var(--dur-base) var(--ease-out),
+             box-shadow var(--dur-base) var(--ease-out);
+}
+.btn-glow:hover,
+.btn-glow:focus-visible{
+  background:var(--primary-hover);
+  box-shadow:var(--glow-primary);
+}
+
+/* --------------------------------------------------------------------------
+   card-lift — 300ms · expo-out · hover em card
+   Elevação POR COR: borda → roxa translúcida, fundo alt → raised. Sem movimento.
+   -------------------------------------------------------------------------- */
+.card-lift{
+  background:var(--surface-alt);
+  border:1px solid var(--border);
+  transition:background var(--dur-base) var(--ease-out),
+             border-color var(--dur-base) var(--ease-out);
+}
+.card-lift:hover{
+  background:var(--surface-raised);
+  border-color:rgba(157,140,255,.4);
+}
+
+/* --------------------------------------------------------------------------
+   link-underline — 200ms · expo-out · hover em link
+   Sublinhado cresce da esquerda (scaleX 0→1, origin left) em #9D8CFF.
+   -------------------------------------------------------------------------- */
+.link-underline{
+  position:relative;
+  color:var(--primary-light);
+  text-decoration:none;
+}
+.link-underline::after{
+  content:'';
+  position:absolute; left:0; bottom:-2px;
+  width:100%; height:1.5px;
+  background:var(--primary-light);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform var(--dur-fast) var(--ease-out);
+}
+.link-underline:hover::after,
+.link-underline:focus-visible::after{ transform:scaleX(1); }
+
+/* --------------------------------------------------------------------------
+   hero-glow-breathe — 8s · ease-in-out · loop contínuo no fundo do hero
+   Radial glow roxo oscila opacidade 0.2→0.3. Desligado em reduced-motion.
+   -------------------------------------------------------------------------- */
+@keyframes hero-glow-breathe{
+  0%,100%{ opacity:.7; }   /* ~0.2 do radial */
+  50%    { opacity:1;  }   /* ~0.3 do radial */
+}
+.hero-glow-breathe{
+  background:radial-gradient(ellipse 60% 45% at 50% 0%, rgba(94,61,210,.28), transparent 70%);
+  animation:hero-glow-breathe var(--dur-breathe) ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   counter-up — 1200ms · expo-out · scroll into view em métricas
+   Números contam de 0 ao valor final em JetBrains Mono (tabular — sem shift).
+   Contagem via JS + requestAnimationFrame; classe aplica o easing de opacidade.
+   -------------------------------------------------------------------------- */
+@keyframes counter-up{
+  from{ opacity:0; }
+  to  { opacity:1; }
+}
+.counter-up{
+  font-family:'JetBrains Mono', monospace;
+  font-variant-numeric:tabular-nums;
+  opacity:0;
+}
+.counter-up.is-visible{
+  animation:counter-up var(--dur-counter) var(--ease-out) forwards;
+}
+
+/* --------------------------------------------------------------------------
+   nav-blur-in — 300ms · ease-in-out · scroll > 24px
+   Header ganha backdrop-filter blur(12px), fundo translúcido e borda inferior.
+   Classe .scrolled aplicada por JS.
+   -------------------------------------------------------------------------- */
+.nav-blur-in{
+  background:transparent;
+  border-bottom:1px solid transparent;
+  transition:background var(--dur-base) var(--ease-in-out),
+             border-color var(--dur-base) var(--ease-in-out),
+             backdrop-filter var(--dur-base) var(--ease-in-out);
+}
+.nav-blur-in.scrolled{
+  background:rgba(10,10,15,.8);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom-color:var(--border);
+}
+
+/* --------------------------------------------------------------------------
+   prefers-reduced-motion — motion.reduced_motion_strategy
+   Transições caem para 0.01ms; loops desligados; counter mostra valor final;
+   hover mantém mudança de cor (sem movimento).
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  .fade-rise,
+  .counter-up{ opacity:1 !important; transform:none !important; animation:none !important; }
+  .hero-glow-breathe{ animation:none !important; opacity:1; }
+  /* card-lift e btn-glow mantêm mudança de COR no hover, sem transição temporal */
+}

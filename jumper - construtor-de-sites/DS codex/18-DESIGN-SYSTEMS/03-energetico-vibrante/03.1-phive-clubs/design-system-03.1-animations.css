@@ -1,0 +1,119 @@
+:root{--primary:#D7FF00;--secondary:#111111;--surface:#050505;--surface-alt:#191919;--text:#F6F6F0;--muted:#B3B3A8;--border:#343434;--heading:"Bebas Neue";--body:"Inter Tight";--mono:"Space Mono";--radius:0px;}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-scoreboard-plus-class-grid { animation: reveal-scoreboard-plus-class-grid 240ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes reveal-scoreboard-plus-class-grid { from { opacity: 0; transform: translateX(-28px); } to { opacity: 1; transform: none; } }
+  .motion-signature { transition: transform 220ms ease, filter 220ms ease, background 220ms ease; }
+  .motion-signature:hover { transform: translateX(4px) rotate(-1deg); }
+  .nav-active-marker { transition: width 180ms ease; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+:focus-visible { outline: 2px solid var(--secondary); outline-offset: 3px; }
+
+
+/* Component motion map for Phive Kinetic Membership System */
+.class-timetable-grid-motion {
+  --component-index: 1;
+  transform-origin: center right;
+  transition: transform 180ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.class-timetable-grid-motion:hover {
+  transform: translateX(4px);
+}
+.class-timetable-grid-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.membership-scorecard-motion {
+  --component-index: 2;
+  transform-origin: center left;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.membership-scorecard-motion:hover {
+  transform: translateX(4px);
+}
+.membership-scorecard-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.trainer-action-card-motion {
+  --component-index: 3;
+  transform-origin: center right;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.trainer-action-card-motion:hover {
+  transform: translateX(4px);
+}
+.trainer-action-card-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.challenge-marquee-motion {
+  --component-index: 4;
+  transform-origin: center left;
+  transition: transform 180ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.challenge-marquee-motion:hover {
+  transform: translateX(4px);
+}
+.challenge-marquee-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.zone-map-motion {
+  --component-index: 5;
+  transform-origin: center right;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.zone-map-motion:hover {
+  transform: translateX(4px);
+}
+.zone-map-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.join-timer-button-motion {
+  --component-index: 6;
+  transform-origin: center left;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.join-timer-button-motion:hover {
+  transform: translateX(4px);
+}
+.join-timer-button-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .section-membership-scoreboard-enter { animation: section-membership-scoreboard-enter 360ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-membership-scoreboard-enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+  .section-class-timetable-enter { animation: section-class-timetable-enter 380ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-class-timetable-enter { from { opacity: 0; transform: translateY(19px); } to { opacity: 1; transform: none; } }
+
+  .section-trainer-cards-enter { animation: section-trainer-cards-enter 400ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-trainer-cards-enter { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+  .section-facility-zones-enter { animation: section-facility-zones-enter 420ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-facility-zones-enter { from { opacity: 0; transform: translateY(21px); } to { opacity: 1; transform: none; } }
+
+  .section-challenge-strip-enter { animation: section-challenge-strip-enter 440ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-challenge-strip-enter { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+
+  .section-plan-comparison-enter { animation: section-plan-comparison-enter 460ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-plan-comparison-enter { from { opacity: 0; transform: translateY(23px); } to { opacity: 1; transform: none; } }
+
+  .section-join-form-enter { animation: section-join-form-enter 480ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-join-form-enter { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+  .section-footer-as-club-board-enter { animation: section-footer-as-club-board-enter 500ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-footer-as-club-board-enter { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: none; } }
+
+}

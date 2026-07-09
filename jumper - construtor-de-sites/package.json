@@ -1,0 +1,16 @@
+{
+  "name": "jumper-site-factory",
+  "version": "0.1.0",
+  "description": "Sistema Jumper Studio para produzir sites autorais de negócios locais a partir de briefing, prompts e referências visuais.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check": "node --check _jumper-sites-system/scripts/briefing-to-prompt-pack.mjs && node --check _jumper-sites-system/scripts/hydrate-client-assets.mjs && node --check _jumper-sites-system/scripts/check-system-readiness.mjs && npm --prefix _jumper-sites-system/Quiz/Briefings run check",
+    "doctor": "node _jumper-sites-system/scripts/check-system-readiness.mjs",
+    "build": "npm run check && npm run doctor"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=10.0.0"
+  }
+}

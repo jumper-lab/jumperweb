@@ -1,0 +1,677 @@
+{
+  "id": "reference-ds-03-aman-com",
+  "clientSlug": "aman-com",
+  "clientName": "Aman",
+  "personalitySlug": "02-premium-sofisticado",
+  "regeneratedAt": "2026-06-05",
+  "referenceQualityBaseline": "reference-ds-01-pinchmans-ca-visual-preview.html + pasta 01 aprovada",
+  "source": {
+    "site": "aman.com",
+    "localPath": "_jumper-sites-system/_referencias-visuais/02-premium-sofisticado/design-systems/preview-assets/aman.com",
+    "sourceReferenceId": "aman.com",
+    "sourceReferenceNote": "Referencia visual ja convertida em DS-base; arquivo pesado original nao e necessario no fluxo oficial.",
+    "imagesUsed": [
+      "../../preview-assets/aman.com/assets/e344b7154bca53fe_Aman_20New_20York_2C_20Exterio.jpg",
+      "../../preview-assets/aman.com/assets/4fe520ed88f7ace9_amanjiwo.jpg",
+      "../../preview-assets/aman.com/assets/216b458e929f3c38_Aman_20New_20York_2C_20Exterio.jpg",
+      "../../preview-assets/aman.com/assets/96954b46498d191c_Aman_20New_20York_2C_20Exterio.jpg",
+      "../../preview-assets/aman.com/assets/eefd1428d4e7e5ae_Aman_20New_20York_2C_20Exterio.jpg",
+      "../../preview-assets/aman.com/assets/291a990a7172153b_aman-i-khas_india_-_spa_exteri.jpg",
+      "../../preview-assets/aman.com/assets/a7b73d2755a51f5e_amanzoe-accommodation-villa-21.jpg",
+      "../../preview-assets/aman.com/assets/ce9b14622ad58ac1_aman-i-khas_india_-_spa_exteri.jpg",
+      "../../preview-assets/aman.com/assets/065e88572f54f07b_amanzoe-accommodation-villa-21.jpg",
+      "../../preview-assets/aman.com/assets/98fd1f393397d5b9_DoNotUse--Amandari--Indonesia-.jpg"
+    ],
+    "extractedSignals": {
+      "sourceColors": [
+        {
+          "hex": "#313131",
+          "count": 49,
+          "hsl": "hsl(0 0% 19%)"
+        },
+        {
+          "hex": "#F3EEE7",
+          "count": 44,
+          "hsl": "hsl(35 33% 93%)"
+        },
+        {
+          "hex": "#DAD9D7",
+          "count": 30,
+          "hsl": "hsl(40 4% 85%)"
+        },
+        {
+          "hex": "#404040",
+          "count": 27,
+          "hsl": "hsl(0 0% 25%)"
+        },
+        {
+          "hex": "#585858",
+          "count": 20,
+          "hsl": "hsl(0 0% 35%)"
+        },
+        {
+          "hex": "#82847F",
+          "count": 18,
+          "hsl": "hsl(84 2% 51%)"
+        },
+        {
+          "hex": "#141516",
+          "count": 12,
+          "hsl": "hsl(210 5% 8%)"
+        },
+        {
+          "hex": "#E6E2DB",
+          "count": 11,
+          "hsl": "hsl(38 18% 88%)"
+        },
+        {
+          "hex": "#00ADEF",
+          "count": 10,
+          "hsl": "hsl(197 100% 47%)"
+        },
+        {
+          "hex": "#0E1216",
+          "count": 9,
+          "hsl": "hsl(210 22% 7%)"
+        }
+      ],
+      "fonts": [
+        "23cdab3ab567f9c8_WhitneySSm_normal_normal_400.woff2",
+        "25cd9d3a22e97ac0_LyonDisplay-Light-Web.woff",
+        "587f42286fe875da_LyonText-Regular-Web.woff2",
+        "5e0ec6c33c35d3fd_LyonDisplay-Light-Web.woff2",
+        "b516bade7f038315_LyonText-Regular-Web.woff",
+        "f5115b6dd6d4cd5b_WhitneySSm_normal_normal_300.woff2"
+      ],
+      "title": "Aman Resorts, Hotels &amp; Residences - Explore Luxury Destinations",
+      "sourceText": [
+        [
+          "Discover more CITY ESCAPES In the City The gilded city skyline presents opportunities for cultural discovery at every turn.",
+          "Discover more Nature To the Wilds Venture out of the ordinary with a stay immersed in Aman’s most remote camp and safari settings.",
+          "Shop now Get inspired To receive updates about exclusive experiences, events, new destinations and more, please register your interest.",
+          "This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to.",
+          "The information does not usually directly identify you, but it can give you a more personalized web experience.",
+          "Click on the different category headings to find out more and change our default settings.",
+          "They help us to know which pages are the most and least popular and see how visitors move around the site.",
+          "They may be set by us or by third party providers whose services we have added to our pages.",
+          "They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites.",
+          "They do not store directly personal information, but are based on uniquely identifying your browser and internet device."
+        ]
+      ],
+      "assetCounts": {
+        "images": 117,
+        "css": 5,
+        "fonts": 6
+      }
+    }
+  },
+  "designIntent": {
+    "tone": "resort ultra-premium / contemplativo / espacial",
+    "summary": "Referencia de viagem sofisticada com imagem imersiva, narrativa de destino, disponibilidade discreta e menu calmo.",
+    "hero": "Destino como atmosfera, nao como banner turistico.",
+    "nonGoal": "Nao e DS final do cliente; nao contem fluxo real de formulario."
+  },
+  "colors": {
+    "palette": [
+      {
+        "name": "Travertine",
+        "hex": "#E9DFCF",
+        "rgb": "rgb(233,223,207)",
+        "hsl": "hsl(37 37% 86%)",
+        "usage": "background / resort stone"
+      },
+      {
+        "name": "Cave Ink",
+        "hex": "#1C1A17",
+        "rgb": "rgb(28,26,23)",
+        "hsl": "hsl(36 10% 10%)",
+        "usage": "primary text / night panel"
+      },
+      {
+        "name": "Olive Shadow",
+        "hex": "#5A614C",
+        "rgb": "rgb(90,97,76)",
+        "hsl": "hsl(80 12% 34%)",
+        "usage": "secondary / landscape"
+      },
+      {
+        "name": "Sunset Gold",
+        "hex": "#C49B5E",
+        "rgb": "rgb(196,155,94)",
+        "hsl": "hsl(36 46% 57%)",
+        "usage": "accent / focus"
+      },
+      {
+        "name": "Mist Blue",
+        "hex": "#A8B7B9",
+        "rgb": "rgb(168,183,185)",
+        "hsl": "hsl(187 11% 69%)",
+        "usage": "water / hover"
+      },
+      {
+        "name": "Bone White",
+        "hex": "#FBF8F1",
+        "rgb": "rgb(251,248,241)",
+        "hsl": "hsl(42 56% 96%)",
+        "usage": "surface"
+      },
+      {
+        "name": "Deep Umber",
+        "hex": "#4A3327",
+        "rgb": "rgb(74,51,39)",
+        "hsl": "hsl(21 31% 22%)",
+        "usage": "contrast accent"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Destination Light",
+        "value": "linear-gradient(135deg, rgba(233,223,207,.95), rgba(196,155,94,.24), rgba(90,97,76,.18))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Evening Overlay",
+        "value": "linear-gradient(180deg, rgba(28,26,23,.78), rgba(28,26,23,.22))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Spa Drift",
+        "value": "radial-gradient(circle at 24% 18%, rgba(168,183,185,.26), transparent 36%), radial-gradient(circle at 76% 72%, rgba(196,155,94,.2), transparent 40%)",
+        "participation": "background / overlay / hover / active states"
+      }
+    ],
+    "semantic": {
+      "primary": "Travertine",
+      "text": "#1C1A17",
+      "surface": "#FBF8F1",
+      "accent": "Sunset Gold",
+      "focus": "Deep Umber",
+      "contrastIntent": "AA minimum for body text; generated preview overrides --c2 as light surface and --c3 as dark text to avoid low-contrast sections."
+    },
+    "opacityPolicy": "Escala global para evitar repeticao: 100,86,64,40,18,8.",
+    "contextualUsageRules": {
+      "text": "Usar token semantico com contraste AA.",
+      "background": "Usar surface/background conforme personalidade do site.",
+      "border": "Usar neutral/accent em baixa opacidade.",
+      "hover": "Accent/focus ou overlay curto.",
+      "active": "Aumentar contraste ou reduzir elevacao 120-180ms.",
+      "disabled": "Opacidade global sem apagar legibilidade."
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "Lyon Display, Georgia, serif",
+      "ui": "Whitney, Inter, system-ui, sans-serif",
+      "mono": "ui-monospace, Menlo, monospace",
+      "loading": "local when available; fallback stack otherwise"
+    },
+    "scale": {
+      "h1": {
+        "size": "clamp(3rem,7vw,7.8rem)",
+        "weight": 760,
+        "lineHeight": 0.88,
+        "letterSpacing": 0
+      },
+      "h2": {
+        "size": "clamp(2.15rem,4.9vw,5.35rem)",
+        "weight": 720,
+        "lineHeight": 0.94,
+        "letterSpacing": 0
+      },
+      "h3": {
+        "size": "clamp(1.6rem,3vw,3rem)",
+        "weight": 680,
+        "lineHeight": 1.05,
+        "letterSpacing": 0
+      },
+      "bodyLg": {
+        "size": "1.22rem",
+        "weight": 420,
+        "lineHeight": 1.6,
+        "letterSpacing": 0
+      },
+      "body": {
+        "size": "1rem",
+        "weight": 420,
+        "lineHeight": 1.58,
+        "letterSpacing": 0
+      },
+      "bodySm": {
+        "size": ".9rem",
+        "weight": 420,
+        "lineHeight": 1.45,
+        "letterSpacing": 0
+      },
+      "caption": {
+        "size": ".76rem",
+        "weight": 820,
+        "lineHeight": 1.35,
+        "letterSpacing": ".12em",
+        "textTransform": "uppercase"
+      }
+    },
+    "siteSpecificRoles": [
+      {
+        "role": "destination-title",
+        "family": "Display serif",
+        "weight": "300",
+        "size": "clamp(4rem,8vw,9rem)",
+        "lineHeight": ".9",
+        "letterSpacing": "0",
+        "usage": "Nome de destino em escala cinematica."
+      },
+      {
+        "role": "concierge-label",
+        "family": "Mono/UI",
+        "weight": "780",
+        "size": ".72rem",
+        "lineHeight": "1.3",
+        "letterSpacing": ".14em",
+        "usage": "Reserva, datas, local."
+      },
+      {
+        "role": "body-destination",
+        "family": "UI",
+        "weight": "380",
+        "size": "1.05rem",
+        "lineHeight": "1.75",
+        "letterSpacing": "0",
+        "usage": "Narrativa calma de experiencia."
+      }
+    ]
+  },
+  "icons": {
+    "set": [
+      "sun",
+      "map",
+      "bed",
+      "spa",
+      "calendar",
+      "arrow"
+    ],
+    "stroke": 1.8,
+    "color": "currentColor",
+    "hover": "focus/accent token",
+    "rule": "icone nao desloca layout no hover"
+  },
+  "components": {
+    "resort-destination-hero": {
+      "role": "resort destination hero",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "image breathe",
+      "visual": "Referencia Aman: resort ultra-premium / contemplativo / espacial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "suite-card": {
+      "role": "suite card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "destination parallax",
+      "visual": "Referencia Aman: resort ultra-premium / contemplativo / espacial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "availability-drawer": {
+      "role": "availability drawer",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "quiet drawer",
+      "visual": "Referencia Aman: resort ultra-premium / contemplativo / espacial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "experience-rail": {
+      "role": "experience rail",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "pin fade",
+      "visual": "Referencia Aman: resort ultra-premium / contemplativo / espacial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "map-pin": {
+      "role": "map pin",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "image breathe",
+      "visual": "Referencia Aman: resort ultra-premium / contemplativo / espacial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "editorial-story-card": {
+      "role": "editorial story card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "destination parallax",
+      "visual": "Referencia Aman: resort ultra-premium / contemplativo / espacial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "concierge-modal": {
+      "role": "concierge modal",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "quiet drawer",
+      "visual": "Referencia Aman: resort ultra-premium / contemplativo / espacial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "calm-tabs": {
+      "role": "calm tabs",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "pin fade",
+      "visual": "Referencia Aman: resort ultra-premium / contemplativo / espacial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    }
+  },
+  "motion": {
+    "entry": [
+      "fade-up",
+      "draw-line",
+      "stagger"
+    ],
+    "exit": [
+      "flyout-x",
+      "modal-fade-down",
+      "caption-exit"
+    ],
+    "background": [
+      "ambient drift",
+      "hero zoom"
+    ],
+    "parallax": "limited scroll response with reduced-motion fallback",
+    "siteSpecific": [
+      "image breathe",
+      "destination parallax",
+      "quiet drawer",
+      "pin fade"
+    ]
+  },
+  "accessibility": {
+    "contrast": "AA minimo; overlay obrigatorio sobre imagem",
+    "focus": "2px solid focus token",
+    "reducedMotion": true,
+    "skipLinks": true,
+    "modal": "Esc/overlay/botao fecham"
+  },
+  "risks": [
+    "Imagem escura precisa overlay consistente.",
+    "Texto baixo no hero pode sumir em mobile.",
+    "Nao transformar em buscador de hotel generico."
+  ],
+  "heroSystem": {
+    "layout": "cinema",
+    "rules": [
+      "Hero full viewport com imagem de destino em bleed e texto baixo.",
+      "Menu abre como concierge: destinos, experiencias, residencias e reservas.",
+      "Cards usam muita area vazia e imagem dominante.",
+      "CTA de disponibilidade e pequeno, mas sempre visivel."
+    ],
+    "fullViewport": true
+  },
+  "menuSystem": {
+    "items": [
+      "Destinations",
+      "Stays",
+      "Experiences",
+      "Wellness",
+      "Reserve"
+    ],
+    "note": "Menu concierge: poucas palavras, muito espaco e fechamento por Esc.",
+    "behavior": "overlay flyout, Esc closes, link closes"
+  },
+  "effects": {
+    "signature": [
+      "image breathe",
+      "destination parallax",
+      "quiet drawer",
+      "pin fade"
+    ]
+  },
+  "referenceUsage": {
+    "type": "visual-reference-input",
+    "folder": "02-premium-sofisticado",
+    "crossesWith": "clientes/[slug]/data/design-system.json",
+    "purpose": "Insumo de hospitalidade ultra-premium. Cruza com o DS do cliente para criar calma, espaco e desejo sem copiar Aman.",
+    "nonGoals": [
+      "nao criar DS final do cliente",
+      "nao representar personalidade da pasta",
+      "nao usar padrao generico para todos os sites"
+    ],
+    "differentiationRules": [
+      "Hero full viewport com imagem de destino em bleed e texto baixo.",
+      "Menu abre como concierge: destinos, experiencias, residencias e reservas.",
+      "Cards usam muita area vazia e imagem dominante.",
+      "CTA de disponibilidade e pequeno, mas sempre visivel."
+    ],
+    "siteSpecific": true,
+    "qualityRule": "Preview precisa demonstrar personalidade do site extraido, com menu completo, hero, tokens, gradientes, tipo, efeitos, componentes, cards/secoes, story parallax, icones, handoff e motion linkados.",
+    "notPersonalityWide": true
+  },
+  "outputs": {
+    "json": "design-systems/json/reference-ds-03-aman-com.json",
+    "markdown": "design-systems/previews/markdown/reference-ds-03-aman-com-preview.md",
+    "html": "design-systems/previews/html/reference-ds-03-aman-com-visual-preview.html"
+  },
+  "schemaVersion": "reference-ds-v2",
+  "globalTokens": {
+    "opacityScale": {
+      "solid": 1,
+      "strong": 0.86,
+      "medium": 0.64,
+      "soft": 0.4,
+      "wash": 0.18,
+      "hairline": 0.08
+    },
+    "radius": "0-10px conforme referencia; cards ate 8px salvo marcas arredondadas",
+    "spacing": "clamp responsive"
+  },
+  "componentsDefaults": {
+    "states": [
+      "default",
+      "hover",
+      "focus-visible",
+      "active",
+      "loading",
+      "disabled"
+    ],
+    "referenceOnly": true
+  },
+  "previewNavigation": [
+    {
+      "order": 1,
+      "id": "menu-top",
+      "label": "Menu / top",
+      "href": "#menu-top"
+    },
+    {
+      "order": 2,
+      "id": "top",
+      "label": "Top",
+      "href": "#top"
+    },
+    {
+      "order": 3,
+      "id": "hero",
+      "label": "Sessao Hero",
+      "href": "#hero"
+    },
+    {
+      "order": 4,
+      "id": "color-tokens",
+      "label": "tokens de cor",
+      "href": "#color-tokens"
+    },
+    {
+      "order": 5,
+      "id": "gradients",
+      "label": "gradientes / opacidade",
+      "href": "#gradients"
+    },
+    {
+      "order": 6,
+      "id": "type-system",
+      "label": "type system",
+      "href": "#type-system"
+    },
+    {
+      "order": 7,
+      "id": "type-detail",
+      "label": "tipografia detalhada",
+      "href": "#type-detail"
+    },
+    {
+      "order": 8,
+      "id": "effects",
+      "label": "efeitos e mouse overs",
+      "href": "#effects"
+    },
+    {
+      "order": 9,
+      "id": "components",
+      "label": "componentes",
+      "href": "#components"
+    },
+    {
+      "order": 10,
+      "id": "contract",
+      "label": "contrato sem repeticao",
+      "href": "#contract"
+    },
+    {
+      "order": 11,
+      "id": "menu-board",
+      "label": "menu board component",
+      "href": "#menu-board"
+    },
+    {
+      "order": 12,
+      "id": "reference-slip",
+      "label": "reference slip",
+      "href": "#reference-slip"
+    },
+    {
+      "order": 13,
+      "id": "cards-sections",
+      "label": "cards e secoes",
+      "href": "#cards-sections"
+    },
+    {
+      "order": 14,
+      "id": "story",
+      "label": "story split parallax",
+      "href": "#story"
+    },
+    {
+      "order": 15,
+      "id": "icons",
+      "label": "icones",
+      "href": "#icons"
+    },
+    {
+      "order": 16,
+      "id": "handoff",
+      "label": "handoff de referencia",
+      "href": "#handoff"
+    },
+    {
+      "order": 17,
+      "id": "motion",
+      "label": "motion contract",
+      "href": "#motion"
+    },
+    {
+      "order": 18,
+      "id": "replay-motion",
+      "label": "Replay motion",
+      "href": "#replay-motion"
+    }
+  ],
+  "requiredPreviewSections": [
+    "Menu / top",
+    "Sessao Hero",
+    "tokens de cor",
+    "gradientes / opacidade",
+    "type system",
+    "tipografia detalhada",
+    "efeitos e mouse overs",
+    "componentes",
+    "contrato sem repeticao",
+    "menu board component",
+    "reference slip",
+    "cards e secoes",
+    "story split parallax",
+    "icones",
+    "handoff de referencia",
+    "motion contract",
+    "Replay motion"
+  ],
+  "requiredPreviewContract": {
+    "allMenuLinksMustResolve": true,
+    "menuHasTopAndHeroAsSeparateAnchors": true,
+    "heroMustOccupyFullViewport": true,
+    "noRepeatedGenericSections": true,
+    "noClippedTextOrOverlaps": true,
+    "showGradientsOpacityHoverEntryExitParallaxIcons": true
+  }
+}

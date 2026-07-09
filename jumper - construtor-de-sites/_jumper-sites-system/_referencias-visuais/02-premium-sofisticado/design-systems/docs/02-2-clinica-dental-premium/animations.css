@@ -1,0 +1,282 @@
+/* ============================================================
+   DS 02.2 — Clínica Dental Premium · animations.css
+   Princípio: "a calma É a marca". Toda animação comunica estado
+   ou hierarquia — nada decorativo em loop, nada de parallax
+   pesado. Só transform/opacity/box-shadow (compositor).
+   Durações e easings extraídos fielmente do JSON.
+   ============================================================ */
+
+:root {
+  --dur-instant: 120ms;
+  --dur-fast: 200ms;
+  --dur-base: 320ms;
+  --dur-slow: 600ms;
+  --dur-reveal: 800ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-calm: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --shadow-sm: 0 2px 8px rgba(44, 51, 46, 0.06);
+  --shadow-lg: 0 14px 40px rgba(44, 51, 46, 0.12);
+  --shadow-xs: 0 1px 2px rgba(44, 51, 46, 0.05);
+}
+
+/* ------------------------------------------------------------
+   1. FADE-IN-UP — entrada padrão de seções e cards
+   Opacidade 0→1 + translateY(24px)→0, 800ms out_soft.
+   Uma vez só; stagger de 90ms entre irmãos.
+   JS adiciona .is-visible via IntersectionObserver (threshold 0.15).
+   ------------------------------------------------------------ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-out-soft),
+    transform var(--dur-reveal) var(--ease-out-soft);
+}
+.fade-up.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger de 90ms entre cards irmãos de uma grade revelada */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-out-soft),
+    transform var(--dur-reveal) var(--ease-out-soft);
+}
+.stagger.is-visible > * { opacity: 1; transform: none; }
+.stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.stagger.is-visible > *:nth-child(2) { transition-delay: 90ms; }
+.stagger.is-visible > *:nth-child(3) { transition-delay: 180ms; }
+.stagger.is-visible > *:nth-child(4) { transition-delay: 270ms; }
+
+/* ------------------------------------------------------------
+   2. HERO-REVEAL — única animação de load
+   Headline, sub e CTA em cascata de 120ms, 1000ms out_soft.
+   Discreta, sem parallax.
+   ------------------------------------------------------------ */
+.hero-reveal > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-in 1000ms var(--ease-out-soft) forwards;
+}
+.hero-reveal > *:nth-child(1) { animation-delay: 0ms; }
+.hero-reveal > *:nth-child(2) { animation-delay: 120ms; }
+.hero-reveal > *:nth-child(3) { animation-delay: 240ms; }
+.hero-reveal > *:nth-child(4) { animation-delay: 360ms; }
+@keyframes hero-in {
+  to { opacity: 1; transform: none; }
+}
+
+/* ------------------------------------------------------------
+   3. SHADOW-LIFT — assinatura do DS
+   Hover em cards: sombra sm→lg + translateY(-4px). 320ms standard.
+   O hover "levanta" via sombra, sem escala nem cor berrante.
+   ------------------------------------------------------------ */
+.card {
+  box-shadow: var(--shadow-sm);
+  transition:
+    box-shadow var(--dur-base) var(--ease-standard),
+    transform var(--dur-base) var(--ease-standard);
+}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover,
+  .card:focus-within {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+}
+/* Touch: feedback sóbrio no toque, sem levantar */
+@media (hover: none) {
+  .card:active { box-shadow: var(--shadow-lg); }
+}
+
+/* ------------------------------------------------------------
+   4. BUTTON-SOFTEN — hover de botões
+   Fundo escurece um passo (#4A6B4F → #3E5A42) + sombra sm.
+   200ms standard. Sem bounce, sem ripple.
+   ------------------------------------------------------------ */
+.btn {
+  transition:
+    background var(--dur-fast) var(--ease-standard),
+    border-color var(--dur-fast) var(--ease-standard),
+    box-shadow var(--dur-fast) var(--ease-standard);
+}
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: #3E5A42;
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:active { background: #35503A; }
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: #EEF2EC;
+  border-color: #4A6B4F;
+}
+
+/* ------------------------------------------------------------
+   5. UNDERLINE-GROW — links de navegação
+   Sublinhado champagne 1.5px cresce da esquerda. 320ms out_soft.
+   Champagne (#E8D5B7) só como ornamento — nunca como texto.
+   ------------------------------------------------------------ */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1.5px;
+  background: #E8D5B7;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out-soft);
+}
+.link-underline:hover::after,
+.link-underline:focus-visible::after,
+.link-underline[aria-current]::after {
+  transform: scaleX(1);
+}
+
+/* ------------------------------------------------------------
+   6. IMAGE-TONE-SHIFT — hover em imagens de card
+   Overlay sage 12% desvanece para 0. 600ms in_out_calm.
+   Reforça o tratamento tonal da fotografia.
+   ------------------------------------------------------------ */
+.card-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;   /* topo da imagem no card */
+}
+.card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(107, 142, 111, 0.12);   /* sage 12% */
+  transition: opacity var(--dur-slow) var(--ease-in-out-calm);
+}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .card-media::after,
+  .card:focus-within .card-media::after {
+    opacity: 0;
+  }
+}
+
+/* ------------------------------------------------------------
+   7. GHOST-LINK — seta com micro-deslocamento + sublinhado champagne
+   ------------------------------------------------------------ */
+.btn-ghost .arrow {
+  display: inline-block;
+  transition: transform var(--dur-fast) var(--ease-standard);
+}
+.btn-ghost:hover .arrow,
+.btn-ghost:focus-visible .arrow { transform: translateX(4px); }
+
+/* ------------------------------------------------------------
+   8. NAV STICKY — ganha sombra xs e encolhe ao rolar
+   ------------------------------------------------------------ */
+.nav {
+  transition:
+    box-shadow var(--dur-base) var(--ease-standard),
+    height var(--dur-base) var(--ease-standard);
+}
+.nav.is-scrolled {
+  box-shadow: var(--shadow-xs);
+}
+
+/* ------------------------------------------------------------
+   9. INPUTS — foco com box-shadow suave (sem deslocar layout)
+   ------------------------------------------------------------ */
+.input {
+  transition:
+    border-color var(--dur-fast) var(--ease-standard),
+    box-shadow var(--dur-fast) var(--ease-standard);
+}
+.input:focus {
+  border-color: #4A6B4F;
+  box-shadow: 0 0 0 3px rgba(107, 142, 111, 0.18);
+  outline: none;
+}
+
+/* ------------------------------------------------------------
+   10. MENU MOBILE — painel fullscreen surface
+   Links Cormorant 32px em fade-in-up cascata.
+   ------------------------------------------------------------ */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: #FAF9F6;
+  display: grid;
+  place-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--dur-base) var(--ease-standard),
+    visibility 0s linear var(--dur-base);
+}
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--dur-base) var(--ease-standard);
+}
+.mobile-menu a {
+  font-family: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  font-size: 32px;
+  color: #2C332E;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-out-soft),
+    transform var(--dur-reveal) var(--ease-out-soft);
+}
+.mobile-menu.is-open a { opacity: 1; transform: none; }
+.mobile-menu.is-open a:nth-child(1) { transition-delay: 90ms; }
+.mobile-menu.is-open a:nth-child(2) { transition-delay: 180ms; }
+.mobile-menu.is-open a:nth-child(3) { transition-delay: 270ms; }
+.mobile-menu.is-open a:nth-child(4) { transition-delay: 360ms; }
+.mobile-menu.is-open a:nth-child(5) { transition-delay: 450ms; }
+
+/* ------------------------------------------------------------
+   JS mínimo de referência (IntersectionObserver, ~1KB):
+
+   const io = new IntersectionObserver((entries) => {
+     entries.forEach((e) => {
+       if (e.isIntersecting) {
+         e.target.classList.add('is-visible');
+         io.unobserve(e.target);
+       }
+     });
+   }, { threshold: 0.15 });
+   document.querySelectorAll('.fade-up, .stagger').forEach((el) => io.observe(el));
+   ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------
+   PREFERS-REDUCED-MOTION — obrigatório.
+   Todo o conteúdo aparece imediatamente; nada fica escondido.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+  .fade-up,
+  .stagger > *,
+  .hero-reveal > *,
+  .mobile-menu a {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .card-media::after { opacity: 0 !important; }
+}

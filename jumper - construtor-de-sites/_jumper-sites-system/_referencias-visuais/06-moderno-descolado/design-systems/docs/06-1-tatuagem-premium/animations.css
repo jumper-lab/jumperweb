@@ -1,0 +1,161 @@
+/* ==========================================================================
+   DS 06.1 — Estúdio de Tatuagem Premium · animations.css
+   Motion derivado fielmente de json/06-1-tatuagem-premium.json → "motion".
+   Mood: galeria contemplativa — durações lentas/cinematográficas (350–1200ms),
+   cortina e glitch como assinatura. Compositor-only (transform/opacity/clip-path).
+   ========================================================================== */
+
+:root{
+  /* durações (motion.durations) */
+  --d-instant:120ms;
+  --d-fast:200ms;
+  --d-base:350ms;
+  --d-slow:650ms;
+  --d-cinematic:950ms;
+  --d-page-transition:1200ms;
+
+  /* easings (motion.easings) */
+  --e-out-expo:cubic-bezier(0.16,1,0.3,1);
+  --e-in-out-cine:cubic-bezier(0.83,0,0.17,1);
+  --e-sharp:cubic-bezier(0.4,0,0.2,1);
+
+  /* cores usadas pelo motion */
+  --secondary:#FFE600;
+  --primary:#0A0A0A;
+  --glow-gold:0 0 0 1px rgba(255,230,0,.4),0 0 32px rgba(255,230,0,.12);
+}
+
+/* --------------------------------------------------------------------------
+   1. curtain-reveal — 1200ms · in_out_cine · troca de página/rota
+   Cortina preta sobe revelando a nova página. Assinatura cinematográfica.
+   -------------------------------------------------------------------------- */
+@keyframes curtain-reveal{
+  0%{transform:scaleY(1)}
+  100%{transform:scaleY(0)}
+}
+.curtain{
+  position:fixed;inset:0;z-index:9999;background:var(--primary);
+  transform-origin:top;
+  animation:curtain-reveal var(--d-page-transition) var(--e-in-out-cine) forwards;
+}
+
+/* --------------------------------------------------------------------------
+   2. gallery-reveal — 950ms · out_expo · scroll (IntersectionObserver)
+   Peça entra com clip-path inset de baixo pra cima + scale 1.06→1.
+   Adicione a classe .is-visible via IntersectionObserver.
+   -------------------------------------------------------------------------- */
+@keyframes gallery-reveal{
+  0%{clip-path:inset(100% 0 0 0);transform:scale(1.06)}
+  100%{clip-path:inset(0 0 0 0);transform:scale(1)}
+}
+.gallery-reveal{clip-path:inset(100% 0 0 0)}
+.gallery-reveal.is-visible{animation:gallery-reveal var(--d-cinematic) var(--e-out-expo) forwards}
+
+/* --------------------------------------------------------------------------
+   3. hero-line-stagger — 950ms · out_expo · load
+   Linhas do H1 sobem uma a uma de máscara overflow:hidden. Stagger 120ms.
+   -------------------------------------------------------------------------- */
+@keyframes hero-line-stagger{
+  0%{transform:translateY(105%)}
+  100%{transform:translateY(0)}
+}
+.hero-line{display:block;overflow:hidden}
+.hero-line > span{display:block;animation:hero-line-stagger var(--d-cinematic) var(--e-out-expo) both}
+.hero-line:nth-child(1) > span{animation-delay:0ms}
+.hero-line:nth-child(2) > span{animation-delay:120ms}
+.hero-line:nth-child(3) > span{animation-delay:240ms}
+.hero-line:nth-child(4) > span{animation-delay:360ms}
+
+/* --------------------------------------------------------------------------
+   4. scale-hover — 650ms · out_expo · hover em peça da galeria
+   Imagem escala 1.05 dentro da moldura fixa; etiqueta dourada desliza p/ cima.
+   -------------------------------------------------------------------------- */
+.scale-hover{overflow:hidden}
+.scale-hover img,.scale-hover .img-inner{
+  transition:transform var(--d-slow) var(--e-out-expo);
+}
+.scale-hover:hover img,.scale-hover:hover .img-inner{transform:scale(1.05)}
+.scale-hover .index-label{transition:transform var(--d-base) var(--e-out-expo)}
+.scale-hover:hover .index-label{transform:translateY(-4px)}
+
+/* --------------------------------------------------------------------------
+   5. glitch-subtle — 350ms · steps(2,end) · hover em links de navegação
+   Micro-deslocamento 1–2px, 1 disparo por hover, NUNCA loop infinito.
+   -------------------------------------------------------------------------- */
+@keyframes glitch-subtle{
+  0%{transform:translate(0)}
+  50%{transform:translate(-2px,1px)}
+  100%{transform:translate(0)}
+}
+.glitch-subtle:hover{animation:glitch-subtle var(--d-base) steps(2,end) 1}
+
+/* --------------------------------------------------------------------------
+   6. gold-underline — 350ms · sharp · hover/focus em links inline
+   Sublinhado dourado cresce da esquerda p/ direita (transform scaleX).
+   -------------------------------------------------------------------------- */
+.gold-underline{position:relative;text-decoration:none}
+.gold-underline::after{
+  content:"";position:absolute;left:0;bottom:-2px;height:2px;width:100%;
+  background:var(--secondary);transform:scaleX(0);transform-origin:left;
+  transition:transform var(--d-base) var(--e-sharp);
+}
+.gold-underline:hover::after,.gold-underline:focus-visible::after{transform:scaleX(1)}
+
+/* --------------------------------------------------------------------------
+   7. flash-blink — 120ms · linear · clique em CTA primário
+   Flash branco rápido — referência ao flash duro da fotografia de estúdio.
+   -------------------------------------------------------------------------- */
+@keyframes flash-blink{
+  0%{background:#FFFFFF}
+  100%{background:var(--secondary)}
+}
+.flash-blink:active{animation:flash-blink var(--d-instant) linear 1}
+
+/* --------------------------------------------------------------------------
+   Utilitários de foco (motion do foco dourado)
+   -------------------------------------------------------------------------- */
+.focus-gold:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.glow-gold-hover:hover{box-shadow:var(--glow-gold)}
+
+/* ==========================================================================
+   prefers-reduced-motion — RIGOROSO
+   Estratégia (motion.reduced_motion_strategy):
+   - todas as animações caem para opacity 0→1 em 200ms
+   - curtain-reveal vira crossfade
+   - glitch e scale são DESATIVADOS por completo
+   - scroll-behavior volta a auto
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:200ms !important;
+  }
+
+  /* reveals aparecem em fade simples, estado final garantido */
+  .gallery-reveal,.gallery-reveal.is-visible{
+    clip-path:none !important;transform:none !important;
+    animation:reduced-fade 200ms ease both !important;
+  }
+  .hero-line > span{
+    transform:none !important;
+    animation:reduced-fade 200ms ease both !important;
+  }
+
+  /* curtain vira crossfade */
+  .curtain{
+    transform:none !important;
+    animation:reduced-fade-out 200ms ease forwards !important;
+  }
+
+  /* glitch e scale desativados por completo */
+  .glitch-subtle:hover{animation:none !important;transform:none !important}
+  .scale-hover:hover img,.scale-hover:hover .img-inner{transform:none !important}
+  .scale-hover:hover .index-label{transform:none !important}
+  .flash-blink:active{animation:none !important}
+
+  @keyframes reduced-fade{from{opacity:0}to{opacity:1}}
+  @keyframes reduced-fade-out{from{opacity:1}to{opacity:0}}
+}

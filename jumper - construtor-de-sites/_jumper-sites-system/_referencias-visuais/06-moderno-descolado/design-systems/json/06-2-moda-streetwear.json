@@ -1,0 +1,554 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "06.2",
+  "design_system_name": "Moda Streetwear",
+  "category": "06 — Moderno e Descolado",
+  "subcategory": "Streetwear / hype commerce / drop culture",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Nueno — digital fashion brand",
+    "url": "https://nueno.shop",
+    "location": "Polônia (primeira digital fashion house polonesa)",
+    "awards": [
+      "Awwwards Site of the Day (SOTD), nota 7.46/10",
+      "Referência estilística complementar: FRDV® Streetwear Shop — Awwwards Nominee"
+    ],
+    "why_chosen": "A Nueno trata o site como peça de moda: tipografia display gigante, preto absoluto, acento neon único e grid que se recusa a alinhar. A essência capturada é 'design é o produto' — a interface tem a mesma atitude da roupa. Somamos a energia de drop do streetwear premium: marquees, contadores, escassez e caps estratégico. A referência original usa tipografia display comercial estilo Druk; substituímos por Archivo Black + Archivo Expanded (Google Fonts), documentado em typography.",
+    "font_substitution_note": "Druk (comercial, Berton Hasebe/Commercial Type) → Archivo Black para display e Archivo (width axis expanded, 700-900) para subtítulos. Ambas Google Fonts."
+  },
+  "colors": {
+    "primary": "#000000",
+    "primary_usage": "Fundo dominante de TODO o site (dark-first). O preto não é 'dark mode' — é a identidade. Superfícies, hero, nav, footer, cards.",
+    "secondary": "#00FF41",
+    "secondary_usage": "Lime neon — acento único e agressivo. Display type sobre preto, CTAs, marquees, tags de drop, hover states, detalhes gráficos. NUNCA como texto pequeno sobre branco (contraste 1.37:1 — reprovado); nesse caso usar o derivado escuro lime_ink #007A29.",
+    "accent_ink": "#007A29",
+    "accent_ink_usage": "Derivado escuro do lime para texto pequeno/links sobre superfícies claras (seções invertidas, e-mails, docs). Contraste 5.50:1 sobre #FFFFFF — AA para texto normal.",
+    "surface": "#000000",
+    "surface_alt": "#0D0D0D",
+    "surface_inverted": "#F2F2F2",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#B8B8B8",
+    "text_muted": "#8A8A8A",
+    "text_on_lime": "#000000",
+    "border": "#2A2A2A",
+    "error": "#FF3B3B",
+    "success": "#00FF41",
+    "warning": "#FFD60A",
+    "neutral_scale": {
+      "50": "#F5F5F5",
+      "100": "#E6E6E6",
+      "200": "#CCCCCC",
+      "300": "#B8B8B8",
+      "400": "#8A8A8A",
+      "500": "#5C5C5C",
+      "600": "#3D3D3D",
+      "700": "#2A2A2A",
+      "800": "#141414",
+      "900": "#0D0D0D"
+    },
+    "contrast_verification": {
+      "secondary_on_surface": "#00FF41 sobre #000000 = 15.38:1 (AAA — ok até para texto pequeno)",
+      "text_primary_on_surface": "#FFFFFF sobre #000000 = 21.00:1 (AAA)",
+      "text_secondary_on_surface": "#B8B8B8 sobre #000000 = 10.58:1 (AAA)",
+      "text_muted_on_surface": "#8A8A8A sobre #000000 = 6.08:1 (AA texto normal, AAA texto grande)",
+      "text_on_lime": "#000000 sobre #00FF41 = 15.38:1 (AAA) — botões lime sempre com texto preto",
+      "accent_ink_on_white": "#007A29 sobre #FFFFFF = 5.50:1 (AA texto normal)",
+      "lime_on_white": "#00FF41 sobre #FFFFFF = 1.37:1 — REPROVADO; proibido texto lime em fundo claro",
+      "error_on_surface": "#FF3B3B sobre #000000 = 5.94:1 (AA)",
+      "warning_on_surface": "#FFD60A sobre #000000 = 14.87:1 (AAA)",
+      "notes": "Razões calculadas via luminância relativa WCAG 2.1. Regra de ouro do DS: lime vive no escuro. Em superfícies claras o lime só aparece como bloco gráfico/decoração (não-textual) ou vira #007A29 quando carrega texto."
+    }
+  },
+  "typography": {
+    "heading_font": "Archivo Black",
+    "heading_font_source": "Google Fonts",
+    "heading_support_font": "Archivo (width axis expanded, pesos 700–900) para subtítulos, labels expandidos e nav",
+    "body_font": "JetBrains Mono",
+    "body_font_source": "Google Fonts",
+    "mono_font": "JetBrains Mono (o corpo JÁ é mono — assinatura do DS: estética de spec técnica/etiqueta de produto)",
+    "commercial_reference": "Referência original usa Druk (comercial). Substituição oficial: Archivo Black / Archivo Expanded.",
+    "base_size": "16px",
+    "case_rules": "Display e labels em UPPERCASE com tracking apertado no display (-0.02em) e aberto nos labels (+0.12em). Body em sentence case — o caps é estratégico, não gratuito.",
+    "scales": {
+      "mobile": {
+        "h1": { "size": "clamp(44px, 13vw, 64px)", "weight": 400, "font": "Archivo Black", "line_height": 0.92, "letter_spacing": "-0.02em", "transform": "uppercase" },
+        "h2": { "size": "34px", "weight": 400, "font": "Archivo Black", "line_height": 0.95, "letter_spacing": "-0.01em", "transform": "uppercase" },
+        "h3": { "size": "20px", "weight": 800, "font": "Archivo", "line_height": 1.1, "letter_spacing": "0.02em", "transform": "uppercase", "font_stretch": "125%" },
+        "body": { "size": "15px", "weight": 400, "font": "JetBrains Mono", "line_height": 1.65, "letter_spacing": "0" },
+        "small": { "size": "12px", "weight": 500, "font": "JetBrains Mono", "line_height": 1.5, "letter_spacing": "0.12em", "transform": "uppercase" }
+      },
+      "desktop": {
+        "h1": { "size": "clamp(80px, 11vw, 176px)", "weight": 400, "font": "Archivo Black", "line_height": 0.88, "letter_spacing": "-0.02em", "transform": "uppercase" },
+        "h2": { "size": "clamp(48px, 6vw, 88px)", "weight": 400, "font": "Archivo Black", "line_height": 0.92, "letter_spacing": "-0.015em", "transform": "uppercase" },
+        "h3": { "size": "28px", "weight": 800, "font": "Archivo", "line_height": 1.1, "letter_spacing": "0.03em", "transform": "uppercase", "font_stretch": "125%" },
+        "body": { "size": "16px", "weight": 400, "font": "JetBrains Mono", "line_height": 1.7, "letter_spacing": "0" },
+        "small": { "size": "13px", "weight": 500, "font": "JetBrains Mono", "line_height": 1.5, "letter_spacing": "0.14em", "transform": "uppercase" }
+      }
+    },
+    "special_treatments": {
+      "display_outline": "Variante vazada: -webkit-text-stroke 1.5px lime, fill transparente — usada em marquees e números de drop",
+      "glitch": "H1 do hero pode receber efeito glitch (clip-path + text-shadow RGB split) em hover/entrada — desligado em prefers-reduced-motion",
+      "mono_labels": "Metadados de produto em JetBrains Mono 12px uppercase com tracking 0.12em, estilo etiqueta técnica: 'REF 004 / ALGODÃO 240G / UNISSEX'"
+    }
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root — dark-first: preto absoluto + lime neon como único acento. Derivados 1:1 de colors, typography, spacing, borders, shadows e motion.",
+    "tokens": {
+      "--color-primary": "#000000",
+      "--color-secondary": "#00FF41",
+      "--color-accent-ink": "#007A29",
+      "--color-surface": "#000000",
+      "--color-surface-alt": "#0D0D0D",
+      "--color-surface-inverted": "#F2F2F2",
+      "--color-text": "#FFFFFF",
+      "--color-text-secondary": "#B8B8B8",
+      "--color-text-muted": "#8A8A8A",
+      "--color-text-on-lime": "#000000",
+      "--color-border": "#2A2A2A",
+      "--color-error": "#FF3B3B",
+      "--color-success": "#00FF41",
+      "--color-warning": "#FFD60A",
+      "--color-neutral-50": "#F5F5F5",
+      "--color-neutral-100": "#E6E6E6",
+      "--color-neutral-200": "#CCCCCC",
+      "--color-neutral-300": "#B8B8B8",
+      "--color-neutral-400": "#8A8A8A",
+      "--color-neutral-500": "#5C5C5C",
+      "--color-neutral-600": "#3D3D3D",
+      "--color-neutral-700": "#2A2A2A",
+      "--color-neutral-800": "#141414",
+      "--color-neutral-900": "#0D0D0D",
+      "--font-heading": "'Archivo Black', 'Arial Black', Impact, sans-serif",
+      "--font-heading-support": "'Archivo', 'Arial Narrow', Arial, sans-serif",
+      "--font-body": "'JetBrains Mono', 'SF Mono', ui-monospace, Menlo, Consolas, monospace",
+      "--text-h1": "clamp(80px, 11vw, 176px)",
+      "--text-h2": "clamp(48px, 6vw, 88px)",
+      "--text-h3": "28px",
+      "--text-body": "16px",
+      "--text-small": "13px",
+      "--tracking-display": "-0.02em",
+      "--tracking-label": "0.12em",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "40px",
+      "--space-xxl": "64px",
+      "--space-xxxl": "104px",
+      "--space-xxxxl": "160px",
+      "--section-gap": "clamp(64px, 8vw + 24px, 160px)",
+      "--radius-none": "0px",
+      "--radius-sm": "0px",
+      "--radius-md": "0px",
+      "--radius-lg": "0px",
+      "--radius-full": "999px",
+      "--stroke-thin": "1px solid #2A2A2A",
+      "--stroke-medium": "2px solid #00FF41",
+      "--shadow-hard-offset": "8px 8px 0 #00FF41",
+      "--shadow-hard-offset-hover": "12px 12px 0 #00FF41",
+      "--shadow-glow": "0 0 24px rgba(0, 255, 65, 0.35)",
+      "--duration-instant": "100ms",
+      "--duration-fast": "180ms",
+      "--duration-base": "300ms",
+      "--duration-slow": "600ms",
+      "--duration-marquee": "18s",
+      "--duration-glitch": "320ms",
+      "--ease-snap": "cubic-bezier(0.85, 0, 0.15, 1)",
+      "--ease-out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "--ease-linear": "linear",
+      "--container-max": "1680px",
+      "--content-max": "68ch"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "40px",
+      "xxl": "64px",
+      "xxxl": "104px",
+      "xxxxl": "160px"
+    },
+    "section_spacing": {
+      "mobile": "64px",
+      "tablet": "104px",
+      "desktop": "160px"
+    },
+    "padding": {
+      "container_mobile": "16px",
+      "container_tablet": "32px",
+      "container_desktop": "48px"
+    },
+    "container_max_width": "1680px (o DS é wide — display gigante precisa de tela; conteúdo de leitura limita a 68ch)",
+    "gutters": "16px mobile / 24px desktop — mas o grid quebrado frequentemente ignora gutters com margens negativas e elementos sangrando (bleed) na viewport",
+    "rhythm_note": "O espaçamento é intencionalmente irregular entre blocos do grid quebrado: offsets verticais de 40–120px entre cards vizinhos criam o caos controlado."
+  },
+  "borders": {
+    "radius": {
+      "none": "0px",
+      "sm": "0px",
+      "md": "0px",
+      "lg": "0px",
+      "full": "999px (apenas pills de tag/badge)"
+    },
+    "radius_usage": {
+      "buttons": "0px — cantos duros, atitude bruta",
+      "cards": "0px",
+      "inputs": "0px",
+      "images": "0px",
+      "containers": "0px",
+      "badges": "999px — único elemento arredondado do sistema, contraste proposital"
+    },
+    "stroke": {
+      "thin": "1px solid #2A2A2A (divisores, cards)",
+      "medium": "2px solid #00FF41 (foco, destaque, botão outline)"
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "sm": "none",
+    "md": "none",
+    "lg": "none",
+    "hard_offset": "8px 8px 0 #00FF41",
+    "hard_offset_hover": "12px 12px 0 #00FF41",
+    "glow": "0 0 24px rgba(0, 255, 65, 0.35)",
+    "shadow_usage": "Sem sombras difusas — flat total. A única 'sombra' é o hard offset lime (estilo print/xerox) em cards destacados e o glow neon discreto em CTAs no hover. Profundidade vem de sobreposição de camadas do grid quebrado, não de blur."
+  },
+  "motion": {
+    "durations": {
+      "instant": "100ms",
+      "fast": "180ms",
+      "base": "300ms",
+      "slow": "600ms",
+      "marquee": "18s (loop linear infinito)",
+      "glitch": "320ms (burst único)"
+    },
+    "easings": {
+      "snap": "cubic-bezier(0.85, 0, 0.15, 1)",
+      "out_expo": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "linear": "linear (marquees)",
+      "steps": "steps(2, jump-none) (glitch)"
+    },
+    "animations": [
+      { "name": "marquee-loop", "duration": "18s", "easing": "linear", "trigger": "autoplay em loop — faixas de texto correndo (pausa em hover e em reduced-motion)" },
+      { "name": "glitch-burst", "duration": "320ms", "easing": "steps(2)", "trigger": "hover em display/hero e entrada de seção — RGB split + clip-path jitter" },
+      { "name": "card-tilt-3d", "duration": "300ms", "easing": "out_expo", "trigger": "hover em card de produto — perspective(800px) rotateX/rotateY até 6deg + translateZ" },
+      { "name": "horizontal-drag-scroll", "duration": "contínuo", "easing": "scroll nativo + scroll-snap", "trigger": "galerias de drop em scroll horizontal com snap por item" },
+      { "name": "slide-up-reveal", "duration": "600ms", "easing": "out_expo", "trigger": "entrada de blocos no viewport — translateY(60px)→0 com stagger 80ms" },
+      { "name": "btn-shift", "duration": "180ms", "easing": "snap", "trigger": "hover de botão — translate(-4px,-4px) revelando hard offset lime" },
+      { "name": "flicker-in", "duration": "450ms", "easing": "steps(4)", "trigger": "títulos lime piscam como neon ligando ao entrar no viewport" }
+    ],
+    "prefers_reduced_motion": true,
+    "reduced_motion_strategy": "Marquees congelam (animation-play-state: paused) mantendo texto legível; glitch e flicker viram opacity fade simples; tilt 3D desliga; scroll horizontal permanece (é navegação, não animação) mas sem smooth-behavior."
+  },
+  "components": {
+    "buttons": {
+      "primary": {
+        "bg": "#00FF41",
+        "color": "#000000",
+        "font": "Archivo 800 expanded, uppercase, 14px, tracking 0.08em",
+        "padding": "18px 36px",
+        "radius": "0px",
+        "border": "2px solid #00FF41",
+        "hover": "translate(-4px,-4px) + box-shadow 8px 8px 0 #00FF41 sobre borda branca; bg mantém lime",
+        "focus": "outline 2px solid #FFFFFF, outline-offset 3px",
+        "active": "translate(0,0), shadow some",
+        "disabled": "bg #2A2A2A, color #8A8A8A, border #2A2A2A, cursor not-allowed"
+      },
+      "secondary": {
+        "bg": "transparent",
+        "color": "#00FF41",
+        "border": "2px solid #00FF41",
+        "padding": "16px 34px",
+        "hover": "bg #00FF41, color #000000, glow 0 0 24px rgba(0,255,65,0.35)",
+        "focus": "outline 2px solid #FFFFFF, outline-offset 3px",
+        "disabled": "border #2A2A2A, color #5C5C5C"
+      },
+      "ghost": {
+        "bg": "transparent",
+        "color": "#FFFFFF",
+        "border": "none",
+        "decoration": "underline 2px #00FF41 com underline-offset 6px",
+        "hover": "color #00FF41",
+        "usage": "links de navegação secundária, 'ver tudo →'"
+      },
+      "sizes": { "sm": "12px 24px / 12px font", "md": "18px 36px / 14px font", "lg": "24px 48px / 16px font" },
+      "touch_target": "mínimo 44px de altura em todos os tamanhos"
+    },
+    "cards": {
+      "product_card": {
+        "bg": "#0D0D0D",
+        "border": "1px solid #2A2A2A",
+        "radius": "0px",
+        "structure": "imagem full-bleed no topo (aspect 4:5) → meta mono 12px (REF / material) → nome Archivo 800 uppercase → preço JetBrains Mono + tag de status",
+        "hover": "tilt 3D (rotateX 4deg rotateY -6deg), borda vira #00FF41, imagem scale(1.06)",
+        "broken_grid_offsets": "cards vizinhos com margin-top alternado (0 / 64px / 24px) e larguras irregulares (span 5 / span 4 / span 3 de 12 colunas)"
+      },
+      "drop_card": {
+        "bg": "#000000",
+        "border": "2px solid #00FF41",
+        "shadow": "8px 8px 0 #00FF41",
+        "usage": "destaque de drop atual com contador e CTA — único card com hard offset"
+      },
+      "editorial_card": {
+        "bg": "gradiente/bloco de alto contraste simulando fotografia editorial",
+        "overlay": "texto display sobreposto sangrando a borda do card (position absolute, extrapola o container)"
+      }
+    },
+    "inputs": {
+      "default": {
+        "bg": "#000000",
+        "border": "1px solid #3D3D3D",
+        "border_bottom": "2px solid #5C5C5C (peso na base, estilo terminal)",
+        "color": "#FFFFFF",
+        "font": "JetBrains Mono 15px",
+        "padding": "16px",
+        "radius": "0px",
+        "placeholder": "#8A8A8A uppercase 12px tracking 0.1em",
+        "label": "JetBrains Mono 12px uppercase #B8B8B8, tracking 0.12em, acima do campo"
+      },
+      "focus": "border-bottom 2px solid #00FF41, outline 2px solid #00FF41 offset 2px, caret-color #00FF41",
+      "error": "border-bottom 2px solid #FF3B3B + mensagem mono 12px #FF3B3B com prefixo 'ERR //'",
+      "success": "border-bottom 2px solid #00FF41 + mensagem 'OK //'"
+    },
+    "hero": {
+      "structure": "Full viewport preto. H1 display gigante (até 176px) quebrando em 2-3 linhas com palavras desalinhadas (indent negativo alternado). Bloco 'foto editorial' (gradiente de alto contraste) posicionado assimetricamente atrás/entre as linhas do título. Tag de drop mono no topo. Marquee lime na base do hero.",
+      "media": "simulação de fotografia: blocos com gradientes duros (#141414→#3D3D3D), formas SVG lime e duotone via mix-blend-mode",
+      "cta_position": "canto inferior esquerdo, fora do eixo do título — nada centralizado"
+    },
+    "navigation": {
+      "type": "barra fixa top, fundo #000000 com blur, borda inferior 1px #2A2A2A",
+      "logo": "wordmark Archivo Black uppercase",
+      "links": "JetBrains Mono 13px uppercase tracking 0.14em, hover lime com prefixo '/' animado",
+      "cart": "contador em badge pill lime com texto preto",
+      "mobile": "menu full-screen preto com links em Archivo Black 44px uppercase, entrada stagger slide-up"
+    },
+    "footer": {
+      "bg": "#000000",
+      "top": "marquee gigante outline-lime 'JUNTE-SE AO DROP —' em loop",
+      "grid": "4 colunas desktop / empilhado mobile: navegação, contato, social, newsletter",
+      "newsletter": "input mono + botão primary lime",
+      "legal": "linha final mono 12px #8A8A8A com divisor 1px #2A2A2A",
+      "signature": "coordenadas da cidade em mono como detalhe (ex: 23.5505° S, 46.6333° W)"
+    },
+    "testimonials": {
+      "format": "citações curtas estilo tweet/print — card #0D0D0D com borda #2A2A2A, aspas em lime display 64px, autor em mono 12px uppercase com @handle",
+      "layout": "scroll horizontal com snap, cards de larguras irregulares (280–400px), rotação sutil alternada (-1.5deg / 1deg) — congela em reduced-motion"
+    },
+    "badges": {
+      "drop_tag": "pill lime bg + texto preto mono 11px uppercase: 'DROP 004', 'NOVO'",
+      "status_tag": "pill outline lime texto lime sobre preto: 'ÚLTIMAS UNIDADES', 'ESGOTADO' (esgotado usa #8A8A8A)",
+      "usage": "sempre uppercase, sempre mono, máximo 2 badges por card"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Curto. Direto. Atitude de rua com precisão técnica. Caps estratégico para momentos de drop; frases-soco sem enrolação; zero corporativês. Fala com quem entende de hype — respeita a inteligência do público.",
+    "headline_examples": [
+      "DROP 004 — DISPONÍVEL AGORA",
+      "FEITO PRA RUA. NUMERADO PRA POUCOS.",
+      "VOCÊ NÃO PRECISA. VOCÊ QUER.",
+      "ALGODÃO 240G. TIRAGEM DE 80. SEM REPOSIÇÃO.",
+      "O PRÓXIMO DROP NÃO ESPERA."
+    ],
+    "cta_examples": [
+      "Garanta o seu",
+      "COMPRAR AGORA",
+      "Entrar na lista do drop",
+      "Ver o drop completo",
+      "Avise-me — DROP 005"
+    ],
+    "avoid": [
+      "Frases longas e explicativas ('nossa missão é oferecer...')",
+      "Tom institucional ou de liquidação de varejão ('IMPERDÍVEL!!', 'SUPER PROMOÇÃO')",
+      "Diminutivos e fofura ('peçinha', 'lookinho')",
+      "Caps lock em TUDO — o caps só funciona porque é estratégico",
+      "Emojis em headlines (permitidos com parcimônia em microcopy de confirmação)"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas de base — mas o grid existe para ser quebrado: elementos saltam colunas, sangram a viewport, sobrepõem-se com z-index e ignoram alinhamento vertical. Offsets verticais irregulares (40–120px) entre vizinhos. O caos é sistemático: sempre múltiplos de 8px.",
+    "page_flow": [
+      { "section": "nav", "layout": "fixa, mínima, borda 1px" },
+      { "section": "hero", "layout": "full viewport, display gigante desalinhado + bloco editorial assimétrico + marquee na base" },
+      { "section": "drop-atual", "layout": "card destacado com hard offset lime, contador, CTA — ocupa 8/12 colunas deslocado à direita" },
+      { "section": "galeria-horizontal", "layout": "scroll horizontal com snap — produtos em larguras irregulares, título da seção vertical (writing-mode) fixo à esquerda" },
+      { "section": "manifesto", "layout": "texto display médio em fundo lime invertido (texto preto) — única seção clara/ácida da página, quebra de ritmo proposital" },
+      { "section": "grid-quebrado-produtos", "layout": "12 col com spans 5/4/3 e offsets verticais alternados, badges e meta mono" },
+      { "section": "depoimentos", "layout": "scroll horizontal, cards rotacionados estilo prints colados" },
+      { "section": "newsletter-drop", "layout": "número '005' gigante outline + form mono inline" },
+      { "section": "footer", "layout": "marquee + 4 colunas + coordenadas" }
+    ],
+    "image_treatment": "Fotografia editorial de alta resolução, duotone preto/cinza com acentos lime via overlay. Nos previews e mockups sem foto real: gradientes duros, ruído sutil (SVG feTurbulence) e formas gráficas de alto contraste. Imagens nunca com radius, sempre sangrando ou desalinhadas.",
+    "density": "Alta contrastada com vazios brutais — blocos densos de informação mono ao lado de áreas de preto puro. Nunca densidade uniforme.",
+    "whitespace": "O preto É o whitespace. Respiros generosos entre seções (160px desktop) para o display gigante ter palco."
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "verified_pairs": "todas as combinações textuais listadas em colors.contrast_verification ≥ 4.5:1 (texto normal) ou ≥ 3:1 (display grande)",
+      "rule": "lime textual só sobre preto; sobre claro usar #007A29 (5.50:1); texto sobre lime sempre preto (15.38:1)"
+    },
+    "keyboard_navigation": "Ordem de tab lógica mesmo com grid quebrado visualmente (DOM linear, caos só no CSS). Galerias horizontais navegáveis por teclado (tabindex nos itens + setas). Skip-link para conteúdo principal. Menu mobile com focus trap e fechamento por Esc.",
+    "focus_states": "outline 2px sólido — branco sobre elementos lime, lime sobre elementos escuros — offset 3px, nunca removido",
+    "alt_text": "Fotografia editorial exige alt descritivo real (peça, cor, contexto); blocos decorativos com aria-hidden; marquees com aria-hidden e conteúdo duplicado acessível fora do loop",
+    "semantic_html": "header/nav/main/section/article/footer; h1 único; galerias horizontais como <ul role='list'>; contadores de drop com aria-live='polite'",
+    "touch_targets": "44px minimum",
+    "motion_safety": "prefers-reduced-motion obrigatório: mata glitch, flicker, marquee e tilt 3D; flashes do glitch limitados a 3 por segundo (bem abaixo do limiar de fotosensibilidade WCAG 2.3.1)"
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Full viewport preto; tag de drop mono no topo; H1 clamp(44px,13vw,64px) em 2–3 linhas com indent negativo alternado; bloco 'foto editorial' (gradiente duro) atrás do título; CTA no canto inferior esquerdo; marquee lime na base",
+      "tablet": "H1 escala até ~88px; bloco editorial ganha área; título mantém desalinhamento; CTA fora do eixo",
+      "desktop": "Display gigante até clamp(80px,11vw,176px); bloco editorial assimétrico entre as linhas; marquee full-width na base; nada centralizado"
+    },
+    "grid_principal": {
+      "mobile": "Coluna única — o grid quebrado colapsa em pilha vertical; offsets viram gaps de 24–40px; badges e meta mono acima do nome",
+      "tablet": "2 colunas com spans irregulares (7/5); offsets verticais reduzidos (0 / 32px)",
+      "desktop": "12 colunas com spans 5/4/3 e offsets verticais alternados (0 / 64px / 24px); elementos sangram a viewport com margens negativas"
+    },
+    "galeria_horizontal": {
+      "mobile": "Scroll horizontal com scroll-snap por item; título da seção acima em vez de vertical; drag nativo",
+      "tablet": "Scroll horizontal com snap; larguras de card 280–360px",
+      "desktop": "Scroll horizontal com snap; título da seção vertical (writing-mode) fixo à esquerda; cards 280–400px"
+    },
+    "navigation": {
+      "mobile_tablet": "Barra fixa mínima + botão de menu 44px; menu full-screen preto com links Archivo Black 44px uppercase, entrada stagger slide-up; badge de carrinho lime",
+      "desktop": "Barra fixa top com blur, borda inferior 1px #2A2A2A; wordmark Archivo Black + links mono 13px uppercase inline + badge carrinho lime"
+    },
+    "footer": {
+      "mobile": "Marquee outline-lime no topo; colunas empilhadas (navegação → contato → social → newsletter); coordenadas em mono no fim",
+      "desktop": "Marquee gigante + 4 colunas inline + linha legal mono 12px com divisor 1px #2A2A2A + coordenadas da cidade"
+    },
+    "touch_adjustments": "Tilt 3D e glitch de hover desligam no touch (viram estado active sem transform 3D); alvos de toque mínimos de 44px; galerias e drag-scroll usam scroll-snap nativo; marquee pausável com toque"
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios por componente — coerentes com components.* e focus lime/branco de accessibility",
+    "button_primary": ["default (bg #00FF41, texto #000000)", "hover (translate(-4px,-4px) + shadow 8px 8px 0 #00FF41)", "focus-visible (outline 2px #FFFFFF, offset 3px)", "active (translate(0,0), shadow some)", "disabled (bg #2A2A2A, color #8A8A8A, cursor not-allowed)", "loading (texto 'PROCESSANDO //' + spinner preto 16px)"],
+    "button_secondary": ["default (transparente, texto #00FF41, borda 2px #00FF41)", "hover (bg #00FF41, texto #000000, glow 0 0 24px rgba(0,255,65,0.35))", "focus-visible (outline 2px #FFFFFF, offset 3px)", "active (glow reduz)", "disabled (borda #2A2A2A, color #5C5C5C)"],
+    "link_nav": ["default (mono uppercase #FFFFFF)", "hover (color #00FF41 com prefixo '/' animado)", "focus-visible (outline 2px #00FF41, offset 3px)", "current (prefixo '/' fixo lime)"],
+    "card_product": ["default (bg #0D0D0D, borda 1px #2A2A2A)", "hover (tilt 3D rotateX 4deg rotateY -6deg, borda #00FF41, imagem scale(1.06))", "focus-within (borda #00FF41, tilt desligado)"],
+    "input": ["default (bg #000000, borda 1px #3D3D3D, border-bottom 2px #5C5C5C)", "focus (border-bottom 2px #00FF41, outline 2px #00FF41 offset 2px, caret lime)", "filled", "error (border-bottom 2px #FF3B3B + mensagem mono 'ERR //' #FF3B3B + aria-describedby)", "success (border-bottom 2px #00FF41 + 'OK //')", "disabled (color #5C5C5C)"],
+    "nav_header": ["topo (fundo #000000 sólido com blur)", "rolado (borda inferior 1px #2A2A2A reforçada)", "menu mobile aberto (full-screen preto, focus trap, Esc fecha)"]
+  },
+  "photography_direction": {
+    "style": "Editorial de moda de alta atitude — duotone preto/cinza com acentos lime via overlay; a imagem tem a mesma frieza gráfica da interface",
+    "subjects": [
+      "Peça de roupa em close com textura de tecido e etiqueta técnica visível",
+      "Modelo em pose estática/frontal, luz dura, atitude neutra (não sorriso comercial)",
+      "Detalhe de costura, gramatura, numeração de tiragem",
+      "Cena urbana crua (concreto, sombra dura, grade) como fundo de drop",
+      "Still de produto sobre superfície preta com um único ponto de luz lime"
+    ],
+    "light": "Dura e direcional — flash frontal ou sombra recortada. Sem luz suave difusa; o contraste alto é a assinatura.",
+    "color_grading": "Duotone preto/cinza (dessaturado) com um único acento lime #00FF41 introduzido por overlay/mix-blend-mode. Proibido: temperatura quente, tons pastel, HDR.",
+    "framing": "Enquadramento apertado ou sangrando a borda; imagens nunca com radius; desalinhadas de propósito, extrapolando o container do grid quebrado.",
+    "avoid": [
+      "Stock genérico com sorrisos e luz quente",
+      "Fotografia gastronômica/afetiva de outra personalidade",
+      "Radius em imagens — tudo com cantos duros",
+      "Composição centralizada e simétrica"
+    ],
+    "fallback_sem_foto": "Blocos com gradientes duros (#141414 → #3D3D3D), ruído sutil via SVG feTurbulence e formas gráficas de alto contraste; acento lime SEMPRE como bloco/forma decorativa (não-textual) sobre esses fundos — nunca texto lime sobre superfície clara (#00FF41 sobre branco = 1.37:1, reprovado). Se precisar de texto sobre bloco claro invertido, usar #007A29 ou preto."
+  },
+  "iconography": {
+    "style": "Linha técnica precisa — stroke 2px, cantos duros (stroke-linecap butt/square), grid 24x24, estética de spec/terminal coerente com o corpo monospace",
+    "color": "#00FF41 sobre superfícies escuras (fundo dominante); #FFFFFF quando o lime competiria com outro acento; #000000 quando dentro de bloco/badge lime. Nunca lime sobre superfície clara.",
+    "recommended_set": "Lucide ou Feather (open source, MIT) com stroke ajustado para 2px e linecap square para perder o arredondamento padrão",
+    "usage": "Ícones sempre acompanhados de label mono uppercase — nunca ícone sozinho como única affordance; setas '→' e prefixos '/' como linguagem recorrente",
+    "decorative_shapes": "Formas SVG geométricas duras (barras, chevrons, asteriscos, molduras vazadas), números de drop em outline-lime (-webkit-text-stroke) e ruído feTurbulence — sempre aria-hidden"
+  },
+  "do_dont": {
+    "do": [
+      "Manter o preto (#000000) como fundo dominante — é a identidade, não um dark mode",
+      "Usar lime #00FF41 textual SOMENTE sobre preto (15.38:1, AAA)",
+      "Em superfícies claras/invertidas, usar #007A29 para texto/links (5.50:1 AA); lime vira só bloco gráfico não-textual",
+      "Texto sobre botão/bloco lime sempre em preto (#000000, 15.38:1)",
+      "Corpo 100% JetBrains Mono com meta técnica estilo etiqueta (REF / gramatura / tiragem)",
+      "Cantos duros (radius 0) em tudo — arredondar apenas pills de badge (999px)",
+      "Caps estratégico: display e labels em uppercase, body em sentence case"
+    ],
+    "dont": [
+      "Usar lime #00FF41 como texto sobre fundo branco/claro (1.37:1 — REPROVADO)",
+      "Introduzir um segundo acento colorido — lime é o único",
+      "Deixar glitch/flicker piscar acima de 3 flashes/s ou ignorar prefers-reduced-motion",
+      "Adicionar sombras difusas/blur — só hard-offset lime e glow discreto",
+      "Arredondar botões, cards, inputs ou imagens",
+      "Caps lock em TUDO — o caps só funciona porque é estratégico",
+      "Tom institucional ou de varejão ('SUPER PROMOÇÃO', 'IMPERDÍVEL') e diminutivos fofos"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Archivo+Black + Archivo:wght@700..900 (com width/stretch expanded) + JetBrains+Mono:wght@400;500;700 com display=swap; preload do woff2 do Archivo Black (LCP é o H1 display)",
+    "js_budget": "Enxuto: menu mobile (toggle + focus trap + Esc), IntersectionObserver para slide-up/flicker de entrada, tilt 3D em transform (compositor). Marquee e scroll-snap horizontal são CSS puro, sem bibliotecas. Zero frameworks obrigatórios.",
+    "seo_local": "Schema.org OnlineStore/Store + Product (com offers, availability, sku/ref e priceCurrency BRL) e ItemList para o drop; título com marca + categoria ('MARCA — Streetwear / Drop 004'); breadcrumb da coleção",
+    "whatsapp_cta": "Link wa.me com mensagem pré-preenchida no tom do DS ('Fala — quero entrar na lista do DROP 005') para atendimento/lista de espera; útil em drops com estoque limitado, sem virar suporte genérico",
+    "adaptation_guide": "Ao adaptar para outro segmento (sneaker store, skate/surf, cosmético gen-Z, selo de música): manter preto dominante + lime único + corpo monospace + grid quebrado + energia de drop; trocar o vocabulário do voice_and_tone e a metáfora do produto. A essência é atitude de rua com precisão técnica, não a categoria de roupa."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true,
+    "uniqueness_vs_siblings": "06.1 Tatuagem = preto + dourado #FFE600, serif dramática Playfair, galeria B&W contemplativa. 06.3 Agência = preto + roxo #9D4EDD, DM Serif Display, narrativa full-screen. 06.2 se diferencia por: lime neon #00FF41, corpo 100% monospace (JetBrains Mono), grid quebrado extremo com scroll horizontal, marquees e energia comercial de drop — hype, não contemplação."
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "moderno",
+      "descolado",
+      "streetwear",
+      "dark-first",
+      "lime-neon",
+      "monospace",
+      "grid-quebrado",
+      "drop-culture",
+      "marquee",
+      "cantos-duros"
+    ],
+    "related_docs": [
+      "previews/markdown/06-2-moda-streetwear.md",
+      "previews/html/06-2-moda-streetwear.html",
+      "docs/06-2-moda-streetwear/components.md",
+      "docs/06-2-moda-streetwear/animations.css",
+      "docs/06-2-moda-streetwear/accessibility-report.md",
+      "docs/06-2-moda-streetwear/benchmarking.md",
+      "docs/06-2-moda-streetwear/color-variations.md",
+      "docs/06-2-moda-streetwear/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Marca de streetwear e drops de vestuário",
+      "Sneaker store / revenda de tênis limitados",
+      "Marca de skate / surfwear urbano",
+      "Cosmético jovem com identidade forte (gen-Z)",
+      "Club / festa / selo de música eletrônica"
+    ],
+    "conversion_factors": [
+      "Escassez explícita e honesta (tiragem numerada, contador de drop) gera urgência real",
+      "Marquee e badge de drop no primeiro viewport comunicam novidade em <1s",
+      "CTA lime sobre preto tem saliência visual máxima (15.38:1) — impossível não ver",
+      "Meta técnica mono (material, gramatura, ref) constrói percepção de qualidade premium",
+      "Newsletter posicionada como 'lista do drop' converte melhor que 'assine nossa newsletter'",
+      "Scroll horizontal de galeria aumenta tempo de exploração de catálogo em mobile"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "H1 é texto (display font preload woff2) — LCP textual em <1s; blocos editoriais são CSS puro, sem hero image pesada",
+      "cls_strategy": "offsets do grid quebrado definidos em CSS estático (nunca via JS pós-load); marquees com dimensões fixas; fontes com font-display swap + fallback métrico (Arial Black / monospace)",
+      "inp_strategy": "tilt 3D e glitch só com transform/opacity (compositor); marquee em CSS puro sem JS; scroll horizontal nativo com scroll-snap, sem bibliotecas"
+    }
+  }
+}

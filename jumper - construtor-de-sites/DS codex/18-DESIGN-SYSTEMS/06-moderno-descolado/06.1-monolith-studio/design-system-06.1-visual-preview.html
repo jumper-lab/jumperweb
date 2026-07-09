@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Monolith Ink Portfolio System</title>
+<style>
+:root{--primary:#050505;--secondary:#E8E3D8;--surface:#2E2E2E;--alt:#171717;--text:#FFFFFF;--muted:#C8C2B8;--border:#6C665F;--ctaText:#FFFFFF;--heading:"Archivo Black",serif;--body:"Inter",system-ui,sans-serif;--mono:"Space Mono",monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}a{color:inherit}.ink{min-height:100vh;display:grid;grid-template-columns:260px 1fr;background:#050505;color:#fff}
+.ink__rail{padding:22px;border-right:1px solid var(--border);background:color-mix(in srgb,var(--surface) 86%,white);color:inherit;position:sticky;top:0;height:100vh}
+.ink__page{padding:clamp(22px,5vw,78px);display:grid;gap:clamp(26px,5vw,64px)}
+.ink__nav{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px;font-family:var(--mono);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.ink__hero{display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,52px);align-items:center;min-height:62vh}
+.ink__hero h1{font-family:var(--heading);font-size:clamp(4rem,10vw,10rem);line-height:.78;margin:0;max-width:14ch;color:inherit}
+.ink__media{min-height:300px;border:1px solid var(--border);border-radius:0;background:linear-gradient(135deg,var(--alt),var(--secondary));box-shadow:0 24px 70px rgba(0,0,0,.16)}
+.ink__cta,.ink__submit{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--primary);color:var(--ctaText);border:0;border-radius:0;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer}.ink__hidden{display:none}
+.ink__controls{display:flex;gap:8px;flex-wrap:wrap}.ink__option{border:1px solid var(--border);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;cursor:pointer}.ink__option[aria-pressed="true"]{background:var(--secondary);color:#111111;border-color:var(--secondary)}
+.ink__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.ink__item{text-align:left;min-height:150px;border:1px solid var(--border);background:rgba(255,255,255,.08);color:inherit;border-radius:0;padding:18px;cursor:pointer}.ink__item[aria-pressed="true"]{outline:3px solid var(--secondary);transform:translateY(-3px)}
+.ink__split{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:22px}.ink__panel{border:1px solid var(--border);background:rgba(255,255,255,.08);padding:22px;border-radius:0}
+.ink__form{display:grid;gap:12px}.ink__form label{display:grid;gap:6px;font-weight:800}.ink__form input,.ink__form select{min-height:44px;border:1px solid var(--border);background:#111;color:#fff;border-radius:8px;padding:10px}.ink__form input:focus,.ink__form select:focus,.ink__option:focus-visible,.ink__item:focus-visible,.ink__chip:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.ink__status{font-family:var(--mono);border-left:5px solid var(--secondary);padding:16px;background:rgba(255,255,255,.1)}
+.ink__sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.ink__section-card{border-top:3px solid var(--primary);padding:16px;background:rgba(255,255,255,.08)}
+.ink__palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.ink__chip{background:var(--chip);color:var(--ink);min-height:88px;border:1px solid var(--border);padding:10px;text-align:left;display:grid;align-content:space-between;cursor:pointer;border-radius:0}
+.ink__audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.ink__audit div{padding:16px;border:1px solid var(--border);background:rgba(255,255,255,.08)}
+@media(max-width:860px){.ink{display:block}.ink__rail{position:relative;height:auto}.ink__hero,.ink__split{grid-template-columns:1fr}.ink__audit{grid-template-columns:1fr}.ink__page{padding:20px}.ink__hero h1{font-size:clamp(3rem,18vw,6rem)}}
+@media(prefers-reduced-motion:no-preference){.ink__item,.ink__cta,.ink__submit,.ink__chip{transition:transform .2s ease,filter .2s ease}.ink__item:hover,.ink__chip:hover{transform:translateY(-3px)}.ink__cta:hover,.ink__submit:hover{filter:contrast(1.1)}}
+</style>
+</head>
+<body>
+<main class="ink" data-mode="blackwork">
+<aside class="ink__rail"><strong>mural de artistas</strong><p>tattoo sem filtro de artista, flash ou regras de reserva</p><a class="ink__cta" href="#form">Pedir consulta</a></aside>
+<div class="ink__page">
+<nav class="ink__nav"><strong>06.1 · Monolith Ink Portfolio System</strong><span>portfolio-wall</span></nav>
+<section class="ink__hero" id="top">
+<div><p>mural de artistas</p><h1>near-black immersive mark, massive type and rotating artist index</h1><p>serious, art-forward and uncompromising</p><a class="ink__cta" href="#form">Pedir consulta</a></div>
+<div class="ink__media" aria-hidden="true"></div>
+</section>
+<section class="ink__panel"><h2>Estilo</h2><div class="ink__controls"><button class="ink__option" type="button" data-mode="blackwork" aria-pressed="true">blackwork</button>
+<button class="ink__option" type="button" data-mode="fine-line" aria-pressed="false">fine-line</button>
+<button class="ink__option" type="button" data-mode="flash" aria-pressed="false">flash</button></div><p class="ink__status" aria-live="polite">Modo ativo: blackwork · Consulta de tattoo atualizada</p></section>
+<section><h2>Componentes funcionais</h2><div class="ink__items"><button class="ink__item" type="button" data-item="Artista A" aria-pressed="true"><span>01</span><strong>Artista A</strong><small>artist-index-rail</small></button>
+<button class="ink__item" type="button" data-item="Flash sheet" aria-pressed="false"><span>02</span><strong>Flash sheet</strong><small>portfolio-wall-tile</small></button>
+<button class="ink__item" type="button" data-item="Aftercare" aria-pressed="false"><span>03</span><strong>Aftercare</strong><small>flash-sheet-card</small></button>
+<button class="ink__item" type="button" data-item="Booking rules" aria-pressed="false"><span>04</span><strong>Booking rules</strong><small>booking-rule-panel</small></button></div></section>
+<section class="ink__split" id="form"><div class="ink__panel"><h2>Formulario real do DS</h2><form class="ink__form"><label>Nome<input name="field0" value="Exemplo teste" placeholder="Nome" /></label>
+<label>Estilo<select name="field1"><option>blackwork</option><option>fine-line</option><option>flash</option></select></label>
+<label>Ideia<input name="field2" value="" placeholder="Ideia" /></label><button class="ink__submit" type="submit">Pedir consulta</button></form></div><div class="ink__panel"><h2>Resultado / estado</h2><p class="ink__status ink__output" aria-live="polite">Nenhum envio ainda.</p><p>O preview precisa testar foco, estado ativo, formulario, responsividade e copy do componente.</p></div></section>
+<section><h2>Fluxo de secoes coberto</h2><div class="ink__sections"><article class="ink__section-card"><span>01</span><h3>Artist index</h3><p>artist-index-rail</p></article>
+<article class="ink__section-card"><span>02</span><h3>Portfolio wall</h3><p>portfolio-wall-tile</p></article>
+<article class="ink__section-card"><span>03</span><h3>Flash availability</h3><p>flash-sheet-card</p></article>
+<article class="ink__section-card"><span>04</span><h3>Booking rules</h3><p>booking-rule-panel</p></article>
+<article class="ink__section-card"><span>05</span><h3>Studio ethos</h3><p>aftercare-accordion</p></article>
+<article class="ink__section-card"><span>06</span><h3>Aftercare guide</h3><p>archive-stamp-footer</p></article>
+<article class="ink__section-card"><span>07</span><h3>Consultation form</h3><p>artist-index-rail</p></article>
+<article class="ink__section-card"><span>08</span><h3>Footer as archive stamp</h3><p>portfolio-wall-tile</p></article></div></section>
+<section><h2>Paleta clicavel</h2><div class="ink__palette"><button class="ink__chip" type="button" data-copy="#050505" style="--chip:#050505;--ink:#ffffff"><span>Primary</span><strong>#050505</strong></button>
+<button class="ink__chip" type="button" data-copy="#E8E3D8" style="--chip:#E8E3D8;--ink:#111111"><span>Secondary</span><strong>#E8E3D8</strong></button>
+<button class="ink__chip" type="button" data-copy="#2E2E2E" style="--chip:#2E2E2E;--ink:#ffffff"><span>Surface</span><strong>#2E2E2E</strong></button>
+<button class="ink__chip" type="button" data-copy="#171717" style="--chip:#171717;--ink:#ffffff"><span>Alt</span><strong>#171717</strong></button>
+<button class="ink__chip" type="button" data-copy="#FFFFFF" style="--chip:#FFFFFF;--ink:#111111"><span>Text</span><strong>#FFFFFF</strong></button>
+<button class="ink__chip" type="button" data-copy="#C8C2B8" style="--chip:#C8C2B8;--ink:#111111"><span>Muted</span><strong>#C8C2B8</strong></button>
+<button class="ink__chip" type="button" data-copy="#6C665F" style="--chip:#6C665F;--ink:#ffffff"><span>Border</span><strong>#6C665F</strong></button></div></section>
+<section class="ink__audit"><div><strong>Acessibilidade</strong><p>Focus ring, aria-live e touch target 44px.</p></div><div><strong>Responsivo</strong><p>Mobile preserva portfolio wall becomes vertical artist archive.</p></div><div><strong>Erro corrigido</strong><p>tattoo sem filtro de artista, flash ou regras de reserva.</p></div></section>
+</div>
+</main>
+<script>
+(() => {
+ const root = document.querySelector('.ink');
+ const status = document.querySelector('.ink__status');
+ const output = document.querySelector('.ink__output');
+ document.querySelectorAll('.ink__option').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.ink__option').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  root.dataset.mode = btn.dataset.mode;
+  status.textContent = 'Modo ativo: ' + btn.dataset.mode + ' · Consulta de tattoo atualizada';
+ }));
+ document.querySelectorAll('.ink__item').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.ink__item').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  output.textContent = 'Selecionado: ' + btn.dataset.item + ' · componente pronto para estado ativo.';
+ }));
+ document.querySelector('.ink__form').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  output.textContent = 'Consulta de tattoo atualizada: ' + [...data.values()].filter(Boolean).join(' / ');
+ });
+ document.querySelectorAll('.ink__chip').forEach(chip => chip.addEventListener('click', async () => {
+  const value = chip.dataset.copy;
+  try { await navigator.clipboard.writeText(value); output.textContent = 'Cor copiada: ' + value; }
+  catch { output.textContent = 'Token selecionado: ' + value; }
+ }));
+})();
+</script>
+</body>
+</html>

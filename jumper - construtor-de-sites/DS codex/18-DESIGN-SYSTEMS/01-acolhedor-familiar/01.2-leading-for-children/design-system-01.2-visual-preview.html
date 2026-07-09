@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Leading Learning Pathways System</title>
+<style>
+:root{--primary:#2F6F5E;--secondary:#F4C95D;--surface:#F8F3E8;--alt:#DDEBD8;--text:#17352D;--muted:#5D7168;--border:#B9D1C3;--ctaText:#FFFFFF;--heading:"Literata",serif;--body:"Source Sans 3",system-ui,sans-serif;--mono:"Roboto Mono",monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}a{color:inherit}.learn{min-height:100vh;display:grid;grid-template-columns:1fr;background:var(--surface);color:var(--text)}
+.learn__rail{padding:22px;border-right:1px solid var(--border);background:color-mix(in srgb,var(--surface) 86%,white);color:inherit;position:relative;top:0;height:auto}
+.learn__page{padding:clamp(22px,5vw,78px);display:grid;gap:clamp(26px,5vw,64px)}
+.learn__nav{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px;font-family:var(--mono);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.learn__hero{display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,52px);align-items:center;min-height:62vh}
+.learn__hero h1{font-family:var(--heading);font-size:clamp(3rem,7vw,7rem);line-height:.92;margin:0;max-width:14ch;color:inherit}
+.learn__media{min-height:300px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(135deg,var(--alt),var(--secondary));box-shadow:0 24px 70px rgba(0,0,0,.16)}
+.learn__cta,.learn__submit{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--primary);color:var(--ctaText);border:0;border-radius:12px;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer}.learn__hidden{display:none}
+.learn__controls{display:flex;gap:8px;flex-wrap:wrap}.learn__option{border:1px solid var(--border);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;cursor:pointer}.learn__option[aria-pressed="true"]{background:var(--secondary);color:#111111;border-color:var(--secondary)}
+.learn__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.learn__item{text-align:left;min-height:150px;border:1px solid var(--border);background:#fff;color:inherit;border-radius:16px;padding:18px;cursor:pointer}.learn__item[aria-pressed="true"]{outline:3px solid var(--secondary);transform:translateY(-3px)}
+.learn__split{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:22px}.learn__panel{border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 78%,white);padding:22px;border-radius:16px}
+.learn__form{display:grid;gap:12px}.learn__form label{display:grid;gap:6px;font-weight:800}.learn__form input,.learn__form select{min-height:44px;border:1px solid var(--border);background:#fff;color:var(--text);border-radius:8px;padding:10px}.learn__form input:focus,.learn__form select:focus,.learn__option:focus-visible,.learn__item:focus-visible,.learn__chip:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.learn__status{font-family:var(--mono);border-left:5px solid var(--secondary);padding:16px;background:var(--alt)}
+.learn__sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.learn__section-card{border-top:3px solid var(--primary);padding:16px;background:#fff}
+.learn__palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.learn__chip{background:var(--chip);color:var(--ink);min-height:88px;border:1px solid var(--border);padding:10px;text-align:left;display:grid;align-content:space-between;cursor:pointer;border-radius:10px}
+.learn__audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.learn__audit div{padding:16px;border:1px solid var(--border);background:var(--alt)}
+@media(max-width:860px){.learn{display:block}.learn__rail{position:relative;height:auto}.learn__hero,.learn__split{grid-template-columns:1fr}.learn__audit{grid-template-columns:1fr}.learn__page{padding:20px}.learn__hero h1{font-size:clamp(3rem,18vw,6rem)}}
+@media(prefers-reduced-motion:no-preference){.learn__item,.learn__cta,.learn__submit,.learn__chip{transition:transform .2s ease,filter .2s ease}.learn__item:hover,.learn__chip:hover{transform:translateY(-3px)}.learn__cta:hover,.learn__submit:hover{filter:contrast(1.1)}}
+</style>
+</head>
+<body>
+<main class="learn" data-mode="familia">
+
+<div class="learn__page">
+<nav class="learn__nav"><strong>01.2 · Leading Learning Pathways System</strong><span>pathway-map</span></nav>
+<section class="learn__hero" id="top">
+<div><p>mapa de recursos familiares</p><h1>paper-collage mission hero with pathway cards and caregiver proof</h1><p>supportive, clear and non-institutional</p><a class="learn__cta" href="#form">Montar trilha</a></div>
+<div class="learn__media" aria-hidden="true"></div>
+</section>
+<section class="learn__panel"><h2>Selecionar perfil</h2><div class="learn__controls"><button class="learn__option" type="button" data-mode="familia" aria-pressed="true">familia</button>
+<button class="learn__option" type="button" data-mode="educador" aria-pressed="false">educador</button>
+<button class="learn__option" type="button" data-mode="parceiro" aria-pressed="false">parceiro</button></div><p class="learn__status" aria-live="polite">Modo ativo: familia · Trilha recomendada atualizada</p></section>
+<section><h2>Componentes funcionais</h2><div class="learn__items"><button class="learn__item" type="button" data-item="Primeira infancia" aria-pressed="true"><span>01</span><strong>Primeira infancia</strong><small>pathway-step-card</small></button>
+<button class="learn__item" type="button" data-item="Guia familiar" aria-pressed="false"><span>02</span><strong>Guia familiar</strong><small>caregiver-note</small></button>
+<button class="learn__item" type="button" data-item="Treinamento" aria-pressed="false"><span>03</span><strong>Treinamento</strong><small>resource-filter-chip</small></button>
+<button class="learn__item" type="button" data-item="Impacto local" aria-pressed="false"><span>04</span><strong>Impacto local</strong><small>impact-meter</small></button></div></section>
+<section class="learn__split" id="form"><div class="learn__panel"><h2>Formulario real do DS</h2><form class="learn__form"><label>Nome<input name="field0" value="Exemplo teste" placeholder="Nome" /></label>
+<label>Perfil<select name="field1"><option>familia</option><option>educador</option><option>parceiro</option></select></label>
+<label>Necessidade<input name="field2" value="" placeholder="Necessidade" /></label><button class="learn__submit" type="submit">Montar trilha</button></form></div><div class="learn__panel"><h2>Resultado / estado</h2><p class="learn__status learn__output" aria-live="polite">Nenhum envio ainda.</p><p>O preview precisa testar foco, estado ativo, formulario, responsividade e copy do componente.</p></div></section>
+<section><h2>Fluxo de secoes coberto</h2><div class="learn__sections"><article class="learn__section-card"><span>01</span><h3>Mission path</h3><p>pathway-step-card</p></article>
+<article class="learn__section-card"><span>02</span><h3>Age-group pathways</h3><p>caregiver-note</p></article>
+<article class="learn__section-card"><span>03</span><h3>Family resource finder</h3><p>resource-filter-chip</p></article>
+<article class="learn__section-card"><span>04</span><h3>Educator training modules</h3><p>impact-meter</p></article>
+<article class="learn__section-card"><span>05</span><h3>Impact story cards</h3><p>download-card</p></article>
+<article class="learn__section-card"><span>06</span><h3>Download library</h3><p>training-module-row</p></article>
+<article class="learn__section-card"><span>07</span><h3>Donation/support prompt</h3><p>pathway-step-card</p></article>
+<article class="learn__section-card"><span>08</span><h3>Footer as resource map</h3><p>caregiver-note</p></article></div></section>
+<section><h2>Paleta clicavel</h2><div class="learn__palette"><button class="learn__chip" type="button" data-copy="#2F6F5E" style="--chip:#2F6F5E;--ink:#ffffff"><span>Primary</span><strong>#2F6F5E</strong></button>
+<button class="learn__chip" type="button" data-copy="#F4C95D" style="--chip:#F4C95D;--ink:#111111"><span>Secondary</span><strong>#F4C95D</strong></button>
+<button class="learn__chip" type="button" data-copy="#F8F3E8" style="--chip:#F8F3E8;--ink:#111111"><span>Surface</span><strong>#F8F3E8</strong></button>
+<button class="learn__chip" type="button" data-copy="#DDEBD8" style="--chip:#DDEBD8;--ink:#111111"><span>Alt</span><strong>#DDEBD8</strong></button>
+<button class="learn__chip" type="button" data-copy="#17352D" style="--chip:#17352D;--ink:#ffffff"><span>Text</span><strong>#17352D</strong></button>
+<button class="learn__chip" type="button" data-copy="#5D7168" style="--chip:#5D7168;--ink:#ffffff"><span>Muted</span><strong>#5D7168</strong></button>
+<button class="learn__chip" type="button" data-copy="#B9D1C3" style="--chip:#B9D1C3;--ink:#111111"><span>Border</span><strong>#B9D1C3</strong></button></div></section>
+<section class="learn__audit"><div><strong>Acessibilidade</strong><p>Focus ring, aria-live e touch target 44px.</p></div><div><strong>Responsivo</strong><p>Mobile preserva accordion pathway map and bottom resource shortcut.</p></div><div><strong>Erro corrigido</strong><p>faltavam caminhos por publico, recursos e acao educativa.</p></div></section>
+</div>
+</main>
+<script>
+(() => {
+ const root = document.querySelector('.learn');
+ const status = document.querySelector('.learn__status');
+ const output = document.querySelector('.learn__output');
+ document.querySelectorAll('.learn__option').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.learn__option').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  root.dataset.mode = btn.dataset.mode;
+  status.textContent = 'Modo ativo: ' + btn.dataset.mode + ' · Trilha recomendada atualizada';
+ }));
+ document.querySelectorAll('.learn__item').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.learn__item').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  output.textContent = 'Selecionado: ' + btn.dataset.item + ' · componente pronto para estado ativo.';
+ }));
+ document.querySelector('.learn__form').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  output.textContent = 'Trilha recomendada atualizada: ' + [...data.values()].filter(Boolean).join(' / ');
+ });
+ document.querySelectorAll('.learn__chip').forEach(chip => chip.addEventListener('click', async () => {
+  const value = chip.dataset.copy;
+  try { await navigator.clipboard.writeText(value); output.textContent = 'Cor copiada: ' + value; }
+  catch { output.textContent = 'Token selecionado: ' + value; }
+ }));
+})();
+</script>
+</body>
+</html>

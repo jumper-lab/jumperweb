@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pretty Patty Sticker Pop System</title>
+<style>
+:root{--primary:#FF4FA3;--secondary:#2DD4BF;--surface:#FFF8CC;--alt:#BEE7FF;--text:#261225;--muted:#75466D;--border:#F4A8D1;--ctaText:#111111;--heading:"Cooper Black",serif;--body:"DM Sans",system-ui,sans-serif;--mono:"Space Mono",monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}a{color:inherit}.pop{min-height:100vh;display:grid;grid-template-columns:1fr;background:radial-gradient(circle at 20% 12%,var(--secondary),transparent 16%),radial-gradient(circle at 80% 18%,var(--primary),transparent 18%),var(--surface);color:var(--text)}
+.pop__rail{padding:22px;border-right:1px solid var(--border);background:color-mix(in srgb,var(--surface) 86%,white);color:inherit;position:relative;top:0;height:auto}
+.pop__page{padding:clamp(22px,5vw,78px);display:grid;gap:clamp(26px,5vw,64px)}
+.pop__nav{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px;font-family:var(--mono);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.pop__hero{display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,52px);align-items:center;min-height:62vh}
+.pop__hero h1{font-family:var(--heading);font-size:clamp(4.4rem,12vw,12rem);line-height:.78;margin:0;max-width:14ch;color:var(--primary)}
+.pop__media{min-height:300px;border:1px solid var(--border);border-radius:28px;background:linear-gradient(135deg,var(--alt),var(--secondary));box-shadow:10px 10px 0 var(--secondary)}
+.pop__cta,.pop__submit{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--primary);color:var(--ctaText);border:0;border-radius:999px;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer}.pop__hidden{display:none}
+.pop__controls{display:flex;gap:8px;flex-wrap:wrap}.pop__option{border:1px solid var(--border);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;cursor:pointer}.pop__option[aria-pressed="true"]{background:var(--secondary);color:#111111;border-color:var(--secondary)}
+.pop__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.pop__item{text-align:left;min-height:150px;border:1px solid var(--border);background:#fff;color:inherit;border-radius:28px;padding:18px;cursor:pointer}.pop__item[aria-pressed="true"]{outline:3px solid var(--secondary);transform:translateY(-3px)}
+.pop__split{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:22px}.pop__panel{border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 78%,white);padding:22px;border-radius:16px}
+.pop__form{display:grid;gap:12px}.pop__form label{display:grid;gap:6px;font-weight:800}.pop__form input,.pop__form select{min-height:44px;border:1px solid var(--border);background:#fff;color:var(--text);border-radius:8px;padding:10px}.pop__form input:focus,.pop__form select:focus,.pop__option:focus-visible,.pop__item:focus-visible,.pop__chip:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.pop__status{font-family:var(--mono);border-left:5px solid var(--secondary);padding:16px;background:var(--alt)}
+.pop__sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.pop__section-card{border-top:3px solid var(--primary);padding:16px;background:#fff}
+.pop__palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.pop__chip{background:var(--chip);color:var(--ink);min-height:88px;border:1px solid var(--border);padding:10px;text-align:left;display:grid;align-content:space-between;cursor:pointer;border-radius:16px}
+.pop__audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.pop__audit div{padding:16px;border:1px solid var(--border);background:var(--alt)}
+@media(max-width:860px){.pop{display:block}.pop__rail{position:relative;height:auto}.pop__hero,.pop__split{grid-template-columns:1fr}.pop__audit{grid-template-columns:1fr}.pop__page{padding:20px}.pop__hero h1{font-size:clamp(3rem,18vw,6rem)}}
+@media(prefers-reduced-motion:no-preference){.pop__item,.pop__cta,.pop__submit,.pop__chip{transition:transform .2s ease,filter .2s ease}.pop__item:hover,.pop__chip:hover{transform:rotate(-1deg) scale(1.02)}.pop__cta:hover,.pop__submit:hover{filter:contrast(1.1)}}
+</style>
+</head>
+<body>
+<main class="pop" data-mode="menu">
+
+<div class="pop__page">
+<nav class="pop__nav"><strong>03.3 · Pretty Patty Sticker Pop System</strong><span>sticker-poster</span></nav>
+<section class="pop__hero" id="top">
+<div><p>sticker diner interativo</p><h1>poster-like hero with badge headline, mascot/sticker field and menu CTA</h1><p>cheeky, bright and social</p><a class="pop__cta" href="#form">Criar pedido pop</a></div>
+<div class="pop__media" aria-hidden="true"></div>
+</section>
+<section class="pop__panel"><h2>Modo</h2><div class="pop__controls"><button class="pop__option" type="button" data-mode="menu" aria-pressed="true">menu</button>
+<button class="pop__option" type="button" data-mode="clube" aria-pressed="false">clube</button>
+<button class="pop__option" type="button" data-mode="festa" aria-pressed="false">festa</button></div><p class="pop__status" aria-live="polite">Modo ativo: menu · Cartao pop atualizado</p></section>
+<section><h2>Componentes funcionais</h2><div class="pop__items"><button class="pop__item" type="button" data-item="Patty rosa" aria-pressed="true"><span>01</span><strong>Patty rosa</strong><small>sticker-menu-card</small></button>
+<button class="pop__item" type="button" data-item="Combo amigos" aria-pressed="false"><span>02</span><strong>Combo amigos</strong><small>badge-cta</small></button>
+<button class="pop__item" type="button" data-item="Carimbo fidelidade" aria-pressed="false"><span>03</span><strong>Carimbo fidelidade</strong><small>loyalty-stamp-row</small></button>
+<button class="pop__item" type="button" data-item="Foto booth" aria-pressed="false"><span>04</span><strong>Foto booth</strong><small>photo-booth-tile</small></button></div></section>
+<section class="pop__split" id="form"><div class="pop__panel"><h2>Formulario real do DS</h2><form class="pop__form"><label>Apelido<input name="field0" value="Exemplo teste" placeholder="Apelido" /></label>
+<label>Modo<select name="field1"><option>menu</option><option>clube</option><option>festa</option></select></label>
+<label>Mensagem<input name="field2" value="" placeholder="Mensagem" /></label><button class="pop__submit" type="submit">Criar pedido pop</button></form></div><div class="pop__panel"><h2>Resultado / estado</h2><p class="pop__status pop__output" aria-live="polite">Nenhum envio ainda.</p><p>O preview precisa testar foco, estado ativo, formulario, responsividade e copy do componente.</p></div></section>
+<section><h2>Fluxo de secoes coberto</h2><div class="pop__sections"><article class="pop__section-card"><span>01</span><h3>Patty legend</h3><p>sticker-menu-card</p></article>
+<article class="pop__section-card"><span>02</span><h3>Menu stickers</h3><p>badge-cta</p></article>
+<article class="pop__section-card"><span>03</span><h3>Combo stories</h3><p>loyalty-stamp-row</p></article>
+<article class="pop__section-card"><span>04</span><h3>Loyalty club</h3><p>photo-booth-tile</p></article>
+<article class="pop__section-card"><span>05</span><h3>Photo booth grid</h3><p>mascot-callout</p></article>
+<article class="pop__section-card"><span>06</span><h3>Event/catering prompt</h3><p>party-order-form</p></article>
+<article class="pop__section-card"><span>07</span><h3>Order panel</h3><p>sticker-menu-card</p></article>
+<article class="pop__section-card"><span>08</span><h3>Footer as sticker sheet</h3><p>badge-cta</p></article></div></section>
+<section><h2>Paleta clicavel</h2><div class="pop__palette"><button class="pop__chip" type="button" data-copy="#FF4FA3" style="--chip:#FF4FA3;--ink:#111111"><span>Primary</span><strong>#FF4FA3</strong></button>
+<button class="pop__chip" type="button" data-copy="#2DD4BF" style="--chip:#2DD4BF;--ink:#111111"><span>Secondary</span><strong>#2DD4BF</strong></button>
+<button class="pop__chip" type="button" data-copy="#FFF8CC" style="--chip:#FFF8CC;--ink:#111111"><span>Surface</span><strong>#FFF8CC</strong></button>
+<button class="pop__chip" type="button" data-copy="#BEE7FF" style="--chip:#BEE7FF;--ink:#111111"><span>Alt</span><strong>#BEE7FF</strong></button>
+<button class="pop__chip" type="button" data-copy="#261225" style="--chip:#261225;--ink:#ffffff"><span>Text</span><strong>#261225</strong></button>
+<button class="pop__chip" type="button" data-copy="#75466D" style="--chip:#75466D;--ink:#ffffff"><span>Muted</span><strong>#75466D</strong></button>
+<button class="pop__chip" type="button" data-copy="#F4A8D1" style="--chip:#F4A8D1;--ink:#111111"><span>Border</span><strong>#F4A8D1</strong></button></div></section>
+<section class="pop__audit"><div><strong>Acessibilidade</strong><p>Focus ring, aria-live e touch target 44px.</p></div><div><strong>Responsivo</strong><p>Mobile preserva stacked stickers with bottom order badge.</p></div><div><strong>Erro corrigido</strong><p>visual divertido sem clube, pedido ou estado ativo.</p></div></section>
+</div>
+</main>
+<script>
+(() => {
+ const root = document.querySelector('.pop');
+ const status = document.querySelector('.pop__status');
+ const output = document.querySelector('.pop__output');
+ document.querySelectorAll('.pop__option').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.pop__option').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  root.dataset.mode = btn.dataset.mode;
+  status.textContent = 'Modo ativo: ' + btn.dataset.mode + ' · Cartao pop atualizado';
+ }));
+ document.querySelectorAll('.pop__item').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.pop__item').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  output.textContent = 'Selecionado: ' + btn.dataset.item + ' · componente pronto para estado ativo.';
+ }));
+ document.querySelector('.pop__form').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  output.textContent = 'Cartao pop atualizado: ' + [...data.values()].filter(Boolean).join(' / ');
+ });
+ document.querySelectorAll('.pop__chip').forEach(chip => chip.addEventListener('click', async () => {
+  const value = chip.dataset.copy;
+  try { await navigator.clipboard.writeText(value); output.textContent = 'Cor copiada: ' + value; }
+  catch { output.textContent = 'Token selecionado: ' + value; }
+ }));
+})();
+</script>
+</body>
+</html>

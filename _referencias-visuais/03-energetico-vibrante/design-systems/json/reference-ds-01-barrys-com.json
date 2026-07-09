@@ -1,0 +1,739 @@
+{
+  "id": "reference-ds-01-barrys-com",
+  "clientSlug": "barrys-com",
+  "clientName": "Barry's",
+  "personalitySlug": "03-energetico-vibrante",
+  "regeneratedAt": "2026-06-05",
+  "referenceQualityBaseline": "reference-ds-01-pinchmans-ca-visual-preview.html + pasta 01 aprovada",
+  "source": {
+    "site": "barrys.com",
+    "localPath": "_jumper-sites-system/_referencias-visuais/03-energetico-vibrante/design-systems/preview-assets/barrys.com",
+    "sourceReferenceId": "barrys.com",
+    "sourceReferenceNote": "Referencia visual ja convertida em DS-base; arquivo pesado original nao e necessario no fluxo oficial.",
+    "imagesUsed": [
+      "../../preview-assets/barrys.com/assets/d93640bed8f892e7_69ea2fdf66b439b2b4d27b04_BARRY.webp",
+      "../../preview-assets/barrys.com/assets/4741c43192b84219_69ea31f7426a95b0bc495d9b_BARRY.webp",
+      "../../preview-assets/barrys.com/assets/40cd2cf0a7abf69f_69ea320e0b5d178ed919c0ab_BARRY.webp",
+      "../../preview-assets/barrys.com/assets/2c42178b3fb6c563_69ea2fdf66b439b2b4d27b04_BARRY.webp",
+      "../../preview-assets/barrys.com/assets/ed096a6310d2a7b4_69ea31f7426a95b0bc495d9b_BARRY.webp",
+      "../../preview-assets/barrys.com/assets/35e88030447224a1_69ea2fdf66b439b2b4d27b04_BARRY.webp",
+      "../../preview-assets/barrys.com/assets/faff9e3a7be1b09e_69ea320e0b5d178ed919c0ab_BARRY.webp",
+      "../../preview-assets/barrys.com/assets/48a51578bd313ee1_69ea31f7426a95b0bc495d9b_BARRY.webp",
+      "../../preview-assets/barrys.com/assets/a7416196cc437ef5_69ea2fdf66b439b2b4d27b04_BARRY.webp",
+      "../../preview-assets/barrys.com/assets/53a626d85e49cb85_69ea31f7426a95b0bc495d9b_BARRY.webp"
+    ],
+    "extractedSignals": {
+      "sourceColors": [
+        {
+          "hex": "#111",
+          "count": 48,
+          "hsl": "hsl(0 0% 7%)"
+        },
+        {
+          "hex": "#D6D6D6",
+          "count": 30,
+          "hsl": "hsl(0 0% 84%)"
+        },
+        {
+          "hex": "#FF0000",
+          "count": 24,
+          "hsl": "hsl(0 100% 50%)"
+        },
+        {
+          "hex": "#141414",
+          "count": 21,
+          "hsl": "hsl(0 0% 8%)"
+        },
+        {
+          "hex": "#D6001A",
+          "count": 19,
+          "hsl": "hsl(353 100% 42%)"
+        },
+        {
+          "hex": "#FAFAFA",
+          "count": 13,
+          "hsl": "hsl(0 0% 98%)"
+        },
+        {
+          "hex": "#DBD9D6",
+          "count": 12,
+          "hsl": "hsl(36 6% 85%)"
+        },
+        {
+          "hex": "#555659",
+          "count": 11,
+          "hsl": "hsl(225 2% 34%)"
+        },
+        {
+          "hex": "#CCC",
+          "count": 8,
+          "hsl": "hsl(0 0% 80%)"
+        },
+        {
+          "hex": "#222",
+          "count": 8,
+          "hsl": "hsl(0 0% 13%)"
+        }
+      ],
+      "fonts": [
+        "0be2399ea925f1f8_Inter-s.p.cf290510.ttf",
+        "2b658117b432141d_695cfa252a39ec6346b92bd1_Bento.otf",
+        "2eceefd38e9e9155_695cfa253b35229fce311414_Bento.otf",
+        "86501fff9bdb7cc1_695cfa25a53dbb45130cdff7_Bento.otf",
+        "9991da94bf770031_695cfa256232b083616b132d_Anten.otf",
+        "c940764593d0fe5d_UcC73FwrK3iLTeHuS_nVMrMxCp50Sj.woff2",
+        "e1408c831c4c83c2_695cfa251fb975c10253afcb_Unite.otf"
+      ],
+      "title": "Barry’s: The Best HIIT Workouts &amp; Full Body Fitness Classes",
+      "sourceText": [
+        [
+          "This is beneficial for the website, in order to make valid reports on the use of their website.",
+          "The service is provided by Stripe.com which allows online transactions without storing any credit card information.",
+          "The service is provided by Stripe.com which allows online transactions without storing any credit card information.",
+          "This allows the website to be formatted accordingly.",
+          "The service is provided by Stripe.com which allows online transactions without storing any credit card information.",
+          "The service is provided by Stripe.com which allows online transactions without storing any credit card information.",
+          "This is beneficial for the website, in order to make valid reports on the use of their website.",
+          "This is used in context with load balancing, in order to optimize user experience.",
+          "Allows the website to set the preferred language upon the visitor's re-entry.",
+          "1 Learn more about this provider p.gif Keeps track of special fonts used on the website for internal analysis.",
+          "This is used to compile statistical reports and heatmaps for the website owner.",
+          "This is used to compile statistical reports and heatmaps for the website owner.",
+          "This is a tool used to combine or change content on the website.",
+          "This allows the website to find the best variation/edition of the site.",
+          "This data can also be used to create leads for marketing purposes.",
+          "This is used to compile statistical reports and heatmaps for the website owner.",
+          "This allows the website to obtain data on visitor behaviour for statistical purposes.",
+          "This is used to compile statistical reports and heatmaps for the website owner.",
+          "Used for internal analytics by the website operator.",
+          "This is used to compile statistical reports and heatmaps for the website owner.",
+          "This is used for internal analysis and website optimization.",
+          "This is used to compile statistical reports and heatmaps for the website owner.",
+          "Tracks the visitor across devices and marketing channels.",
+          "Tracks the visitor across devices and marketing channels.",
+          "Maximum Storage Duration : Persistent Type : HTML Local Storage log/error Used to detect and log potential tracking errors.",
+          "This information is used to promote related products and optimize ad-efficiency.",
+          "This information is used to promote related products and optimize ad-efficiency.",
+          "This information is used to promote related products and optimize ad-efficiency.",
+          "This information is used to promote related products and optimize ad-efficiency.",
+          "This information is used to promote related products and optimize ad-efficiency.",
+          "Maximum Storage Duration : Persistent Type : HTML Local Storage MUID Used widely by Microsoft as a unique user ID.",
+          "This information is used in order to optimize the relevance of advertisement on the website.",
+          "Tracks the visitor across devices and marketing channels.",
+          "This information is used in order to optimize the relevance of advertisement on the website.",
+          "Please state your consent ID and date when you contact us regarding your consent.",
+          "Do not sell or share my personal information Allow all Customize Allow selection Deny The Best (Digital) Workout in the World— Now in Your Pocket.",
+          "download the app United States No items found.",
+          "RUN x LIFT Instructor led, driven by you.",
+          "Run cardio Interval Cardio Go at your pace on top-of-the-line Woodway treadmills with instructors leading you at step.",
+          "Walk, jog, run, or sprint - the class is yours.If running isn’t for you, opt for a double floor spot.",
+          "You’ll spend the whole class strength training on the floor.",
+          "Our weekly schedule takes you through a daily muscle focus that targets different parts of your body for a balanced training regimen.",
+          "PRO TIP: If you prefer not to run, skip the treadmill and book a double floor spot.",
+          "High energy, inclusive community A Simple Format You’ll rotate between treadmill and floor (or choose Double Floor).",
+          "The coach guides every interval.",
+          "Go at your pace Walk, jog, or run.",
+          "Lift lighter or heavier.",
+          "Options and modifications are always available.",
+          "The instructor guides every interval.",
+          "Go at your pace Walk, jog, or run.",
+          "Lift lighter or heavier.",
+          "Options and modifications are always available.",
+          "High energy, Inclusive community Once you make it to the Red Room, you have the support of an entire community to keep you motivated.",
+          "book your first class Learn more about the workout BEST-IN-CLASS FITNESS INSTRUCTORS JOIN THE HUSTLE New to Barry’s?",
+          "You’re in good hands.",
+          "Our instructors cue every interval, offer options for every level, and help you feel confident fast.",
+          "BOOK YOUR FIRST CLASS MORE THAN JUST A WORKOUT YOU'RE EXACTLY WHERE YOU NEED TO BE Fuel Bar Real nutrition, unreal convenience.",
+          "The Barry’s Fuel Bar offers high-performance shakes and supplements that power your body without slowing down your life.",
+          "PRO TIP: Pre-order your shake before class so it's waiting for you once you're done.",
+          "Locker Rooms Private showers, plush towels, and Dyson hair dryers.",
+          "THE BARRY'S SHOP From iconic Barry's apparel to exclusive collaborations, the Barry's Shop brings Red Room power into your daily life.",
+          "Explore The Barry's Shop Explore All Amenities 8+ Million Strong Join a global community that shows up, works hard, and starts exactly where you are.",
+          "The best workout around!",
+          "It can be intimidating to go to a new gym, but because Barry’s fosters such a wonderful sense of community I’ve always felt welcomed.",
+          "Andrew Great clubs, great vibes and community.",
+          "When you think you can't go to a class or make it through before you know it the music and instructors have you hitting above your best.",
+          "James S Barry’s is honestly the perfect place for anyone who wants to train effectively in a short time and really feel the results!",
+          "The energy, the music, and the professionalism of the coaches make all the difference.",
+          "Your submission has been received!",
+          "Something went wrong while submitting the form.",
+          "Language English English Spanish Italian French Swedish Danish Arabic ©Barry's 2026 ©Barry's 2026"
+        ]
+      ],
+      "assetCounts": {
+        "images": 43,
+        "css": 4,
+        "fonts": 7
+      }
+    }
+  },
+  "designIntent": {
+    "tone": "fitness intenso / noturno / premium",
+    "summary": "Referencia de energia fisica com sala escura, vermelho dominante, cards de aula e CTA de reserva rapido.",
+    "hero": "Energia de estudio, reservas e comunidade em alta tensao.",
+    "nonGoal": "Nao e DS final do cliente; nao contem fluxo real de formulario."
+  },
+  "colors": {
+    "palette": [
+      {
+        "name": "Red Room",
+        "hex": "#C41230",
+        "rgb": "rgb(196,18,48)",
+        "hsl": "hsl(350 83% 42%)",
+        "usage": "primary accent / energy"
+      },
+      {
+        "name": "Blackout",
+        "hex": "#050505",
+        "rgb": "rgb(5,5,5)",
+        "hsl": "hsl(0 0% 2%)",
+        "usage": "background / contrast"
+      },
+      {
+        "name": "Sweat White",
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255,255,255)",
+        "hsl": "hsl(0 0% 100%)",
+        "usage": "text / surface"
+      },
+      {
+        "name": "Concrete",
+        "hex": "#292929",
+        "rgb": "rgb(41,41,41)",
+        "hsl": "hsl(0 0% 16%)",
+        "usage": "neutral panel"
+      },
+      {
+        "name": "Pulse Pink",
+        "hex": "#FF4B6E",
+        "rgb": "rgb(255,75,110)",
+        "hsl": "hsl(348 100% 65%)",
+        "usage": "hover / glow"
+      },
+      {
+        "name": "Ash Grey",
+        "hex": "#8C8C8C",
+        "rgb": "rgb(140,140,140)",
+        "hsl": "hsl(0 0% 55%)",
+        "usage": "muted text"
+      },
+      {
+        "name": "Warm Amber",
+        "hex": "#F2A900",
+        "rgb": "rgb(242,169,0)",
+        "hsl": "hsl(42 100% 47%)",
+        "usage": "focus / warning"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Red Burn",
+        "value": "linear-gradient(135deg, rgba(5,5,5,.98), rgba(196,18,48,.72), rgba(255,75,110,.24))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Studio Smoke",
+        "value": "linear-gradient(180deg, rgba(5,5,5,.9), rgba(41,41,41,.62))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Pulse Halo",
+        "value": "radial-gradient(circle at 20% 22%, rgba(196,18,48,.38), transparent 34%), radial-gradient(circle at 78% 68%, rgba(242,169,0,.18), transparent 38%)",
+        "participation": "background / overlay / hover / active states"
+      }
+    ],
+    "semantic": {
+      "primary": "Red Room",
+      "text": "#050505",
+      "surface": "#FFFFFF",
+      "accent": "Concrete",
+      "focus": "Warm Amber",
+      "contrastIntent": "AA minimum for body text; generated preview overrides --c2 as light surface and --c3 as dark text to avoid low-contrast sections."
+    },
+    "opacityPolicy": "Escala global para evitar repeticao: 100,86,64,40,18,8.",
+    "contextualUsageRules": {
+      "text": "Usar token semantico com contraste AA.",
+      "background": "Usar surface/background conforme personalidade do site.",
+      "border": "Usar neutral/accent em baixa opacidade.",
+      "hover": "Accent/focus ou overlay curto.",
+      "active": "Aumentar contraste ou reduzir elevacao 120-180ms.",
+      "disabled": "Opacidade global sem apagar legibilidade."
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "Bento, Impact, Arial Black, sans-serif",
+      "ui": "Inter, system-ui, sans-serif",
+      "mono": "ui-monospace, Menlo, monospace",
+      "loading": "local when available; fallback stack otherwise"
+    },
+    "scale": {
+      "h1": {
+        "size": "clamp(3rem,7vw,7.8rem)",
+        "weight": 760,
+        "lineHeight": 0.88,
+        "letterSpacing": 0
+      },
+      "h2": {
+        "size": "clamp(2.15rem,4.9vw,5.35rem)",
+        "weight": 720,
+        "lineHeight": 0.94,
+        "letterSpacing": 0
+      },
+      "h3": {
+        "size": "clamp(1.6rem,3vw,3rem)",
+        "weight": 680,
+        "lineHeight": 1.05,
+        "letterSpacing": 0
+      },
+      "bodyLg": {
+        "size": "1.22rem",
+        "weight": 420,
+        "lineHeight": 1.6,
+        "letterSpacing": 0
+      },
+      "body": {
+        "size": "1rem",
+        "weight": 420,
+        "lineHeight": 1.58,
+        "letterSpacing": 0
+      },
+      "bodySm": {
+        "size": ".9rem",
+        "weight": 420,
+        "lineHeight": 1.45,
+        "letterSpacing": 0
+      },
+      "caption": {
+        "size": ".76rem",
+        "weight": 820,
+        "lineHeight": 1.35,
+        "letterSpacing": ".12em",
+        "textTransform": "uppercase"
+      }
+    },
+    "siteSpecificRoles": [
+      {
+        "role": "redroom-title",
+        "family": "Display condensed",
+        "weight": "900",
+        "size": "clamp(4rem,9vw,9rem)",
+        "lineHeight": ".84",
+        "letterSpacing": "0",
+        "usage": "Chamada de aula."
+      },
+      {
+        "role": "class-label",
+        "family": "Mono/UI",
+        "weight": "900",
+        "size": ".72rem",
+        "lineHeight": "1.1",
+        "letterSpacing": ".14em",
+        "usage": "Horario, trainer, sala."
+      },
+      {
+        "role": "body-pulse",
+        "family": "UI",
+        "weight": "500",
+        "size": "1rem",
+        "lineHeight": "1.48",
+        "letterSpacing": "0",
+        "usage": "Texto curto de energia."
+      }
+    ]
+  },
+  "icons": {
+    "set": [
+      "flame",
+      "timer",
+      "dumbbell",
+      "heart",
+      "map",
+      "bolt"
+    ],
+    "stroke": 1.8,
+    "color": "currentColor",
+    "hover": "focus/accent token",
+    "rule": "icone nao desloca layout no hover"
+  },
+  "components": {
+    "class-booking-panel": {
+      "role": "class booking panel",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "red glow hover",
+      "visual": "Referencia Barry's: fitness intenso / noturno / premium",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "red-room-card": {
+      "role": "red room card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "beat reveal",
+      "visual": "Referencia Barry's: fitness intenso / noturno / premium",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "trainer-card": {
+      "role": "trainer card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "trainer card lift",
+      "visual": "Referencia Barry's: fitness intenso / noturno / premium",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "sweat-meter": {
+      "role": "sweat meter",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "modal slam",
+      "visual": "Referencia Barry's: fitness intenso / noturno / premium",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "schedule-tabs": {
+      "role": "schedule tabs",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "red glow hover",
+      "visual": "Referencia Barry's: fitness intenso / noturno / premium",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "membership-modal": {
+      "role": "membership modal",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "beat reveal",
+      "visual": "Referencia Barry's: fitness intenso / noturno / premium",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "pulse-cta": {
+      "role": "pulse cta",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "trainer card lift",
+      "visual": "Referencia Barry's: fitness intenso / noturno / premium",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "testimony-carousel": {
+      "role": "testimony carousel",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "modal slam",
+      "visual": "Referencia Barry's: fitness intenso / noturno / premium",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    }
+  },
+  "motion": {
+    "entry": [
+      "fade-up",
+      "draw-line",
+      "stagger"
+    ],
+    "exit": [
+      "flyout-x",
+      "modal-fade-down",
+      "caption-exit"
+    ],
+    "background": [
+      "ambient drift",
+      "hero zoom"
+    ],
+    "parallax": "limited scroll response with reduced-motion fallback",
+    "siteSpecific": [
+      "red glow hover",
+      "beat reveal",
+      "trainer card lift",
+      "modal slam"
+    ]
+  },
+  "accessibility": {
+    "contrast": "AA minimo; overlay obrigatorio sobre imagem",
+    "focus": "2px solid focus token",
+    "reducedMotion": true,
+    "skipLinks": true,
+    "modal": "Esc/overlay/botao fecham"
+  },
+  "risks": [
+    "Vermelho sobre preto precisa tamanho e peso.",
+    "Motion rapido deve respeitar reduced-motion.",
+    "Nao copiar formulario de reserva final."
+  ],
+  "heroSystem": {
+    "layout": "redroom",
+    "rules": [
+      "Hero full viewport com foto de treino em contraste alto.",
+      "Menu deve abrir como timetable de estudio.",
+      "CTA de booking usa vermelho cheio e glow curto.",
+      "Motion parece batida: rapido, mas controlado."
+    ],
+    "fullViewport": true
+  },
+  "menuSystem": {
+    "items": [
+      "Classes",
+      "Instructors",
+      "Studios",
+      "Membership",
+      "Book"
+    ],
+    "note": "Menu timetable: forte, rapido e com foco em agendamento.",
+    "behavior": "overlay flyout, Esc closes, link closes"
+  },
+  "effects": {
+    "signature": [
+      "red glow hover",
+      "beat reveal",
+      "trainer card lift",
+      "modal slam"
+    ]
+  },
+  "referenceUsage": {
+    "type": "visual-reference-input",
+    "folder": "03-energetico-vibrante",
+    "crossesWith": "clientes/[slug]/data/design-system.json",
+    "purpose": "Insumo de energia fitness premium. Cruza com DS do cliente para criar intensidade sem sacrificar legibilidade.",
+    "nonGoals": [
+      "nao criar DS final do cliente",
+      "nao representar personalidade da pasta",
+      "nao usar padrao generico para todos os sites"
+    ],
+    "differentiationRules": [
+      "Hero full viewport com foto de treino em contraste alto.",
+      "Menu deve abrir como timetable de estudio.",
+      "CTA de booking usa vermelho cheio e glow curto.",
+      "Motion parece batida: rapido, mas controlado."
+    ],
+    "siteSpecific": true,
+    "qualityRule": "Preview precisa demonstrar personalidade do site extraido, com menu completo, hero, tokens, gradientes, tipo, efeitos, componentes, cards/secoes, story parallax, icones, handoff e motion linkados.",
+    "notPersonalityWide": true
+  },
+  "outputs": {
+    "json": "design-systems/json/reference-ds-01-barrys-com.json",
+    "markdown": "design-systems/previews/markdown/reference-ds-01-barrys-com-preview.md",
+    "html": "design-systems/previews/html/reference-ds-01-barrys-com-visual-preview.html"
+  },
+  "schemaVersion": "reference-ds-v2",
+  "globalTokens": {
+    "opacityScale": {
+      "solid": 1,
+      "strong": 0.86,
+      "medium": 0.64,
+      "soft": 0.4,
+      "wash": 0.18,
+      "hairline": 0.08
+    },
+    "radius": "0-10px conforme referencia; cards ate 8px salvo marcas arredondadas",
+    "spacing": "clamp responsive"
+  },
+  "componentsDefaults": {
+    "states": [
+      "default",
+      "hover",
+      "focus-visible",
+      "active",
+      "loading",
+      "disabled"
+    ],
+    "referenceOnly": true
+  },
+  "previewNavigation": [
+    {
+      "order": 1,
+      "id": "menu-top",
+      "label": "Menu / top",
+      "href": "#menu-top"
+    },
+    {
+      "order": 2,
+      "id": "top",
+      "label": "Top",
+      "href": "#top"
+    },
+    {
+      "order": 3,
+      "id": "hero",
+      "label": "Sessao Hero",
+      "href": "#hero"
+    },
+    {
+      "order": 4,
+      "id": "color-tokens",
+      "label": "tokens de cor",
+      "href": "#color-tokens"
+    },
+    {
+      "order": 5,
+      "id": "gradients",
+      "label": "gradientes / opacidade",
+      "href": "#gradients"
+    },
+    {
+      "order": 6,
+      "id": "type-system",
+      "label": "type system",
+      "href": "#type-system"
+    },
+    {
+      "order": 7,
+      "id": "type-detail",
+      "label": "tipografia detalhada",
+      "href": "#type-detail"
+    },
+    {
+      "order": 8,
+      "id": "effects",
+      "label": "efeitos e mouse overs",
+      "href": "#effects"
+    },
+    {
+      "order": 9,
+      "id": "components",
+      "label": "componentes",
+      "href": "#components"
+    },
+    {
+      "order": 10,
+      "id": "contract",
+      "label": "contrato sem repeticao",
+      "href": "#contract"
+    },
+    {
+      "order": 11,
+      "id": "menu-board",
+      "label": "menu board component",
+      "href": "#menu-board"
+    },
+    {
+      "order": 12,
+      "id": "reference-slip",
+      "label": "reference slip",
+      "href": "#reference-slip"
+    },
+    {
+      "order": 13,
+      "id": "cards-sections",
+      "label": "cards e secoes",
+      "href": "#cards-sections"
+    },
+    {
+      "order": 14,
+      "id": "story",
+      "label": "story split parallax",
+      "href": "#story"
+    },
+    {
+      "order": 15,
+      "id": "icons",
+      "label": "icones",
+      "href": "#icons"
+    },
+    {
+      "order": 16,
+      "id": "handoff",
+      "label": "handoff de referencia",
+      "href": "#handoff"
+    },
+    {
+      "order": 17,
+      "id": "motion",
+      "label": "motion contract",
+      "href": "#motion"
+    },
+    {
+      "order": 18,
+      "id": "replay-motion",
+      "label": "Replay motion",
+      "href": "#replay-motion"
+    }
+  ],
+  "requiredPreviewSections": [
+    "Menu / top",
+    "Sessao Hero",
+    "tokens de cor",
+    "gradientes / opacidade",
+    "type system",
+    "tipografia detalhada",
+    "efeitos e mouse overs",
+    "componentes",
+    "contrato sem repeticao",
+    "menu board component",
+    "reference slip",
+    "cards e secoes",
+    "story split parallax",
+    "icones",
+    "handoff de referencia",
+    "motion contract",
+    "Replay motion"
+  ],
+  "requiredPreviewContract": {
+    "allMenuLinksMustResolve": true,
+    "menuHasTopAndHeroAsSeparateAnchors": true,
+    "heroMustOccupyFullViewport": true,
+    "noRepeatedGenericSections": true,
+    "noClippedTextOrOverlaps": true,
+    "showGradientsOpacityHoverEntryExitParallaxIcons": true
+  }
+}

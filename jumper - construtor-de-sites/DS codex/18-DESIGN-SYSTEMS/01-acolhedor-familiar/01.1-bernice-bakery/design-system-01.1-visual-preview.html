@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bernice Counter Ritual System</title>
+<style>
+:root{--primary:#8A3F2B;--secondary:#E7B86A;--surface:#FFF7EC;--alt:#F4DFC8;--text:#2B1710;--muted:#765B4E;--border:#D9BFA4;--ctaText:#FFFFFF;--heading:"Fraunces",serif;--body:"Nunito Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}a{color:inherit}.bake{min-height:100vh;display:grid;grid-template-columns:1fr;background:var(--surface);color:var(--text)}
+.bake__rail{padding:22px;border-right:1px solid var(--border);background:color-mix(in srgb,var(--surface) 86%,white);color:inherit;position:relative;top:0;height:auto}
+.bake__page{padding:clamp(22px,5vw,78px);display:grid;gap:clamp(26px,5vw,64px)}
+.bake__nav{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px;font-family:var(--mono);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.bake__hero{display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,52px);align-items:center;min-height:62vh}
+.bake__hero h1{font-family:var(--heading);font-size:clamp(3rem,7vw,7rem);line-height:.92;margin:0;max-width:14ch;color:inherit}
+.bake__media{min-height:300px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(135deg,var(--alt),var(--secondary));box-shadow:0 24px 70px rgba(0,0,0,.16)}
+.bake__cta,.bake__submit{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--primary);color:var(--ctaText);border:0;border-radius:12px;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer}.bake__hidden{display:none}
+.bake__controls{display:flex;gap:8px;flex-wrap:wrap}.bake__option{border:1px solid var(--border);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;cursor:pointer}.bake__option[aria-pressed="true"]{background:var(--secondary);color:#111111;border-color:var(--secondary)}
+.bake__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.bake__item{text-align:left;min-height:150px;border:1px solid var(--border);background:#fff;color:inherit;border-radius:16px;padding:18px;cursor:pointer}.bake__item[aria-pressed="true"]{outline:3px solid var(--secondary);transform:translateY(-3px)}
+.bake__split{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:22px}.bake__panel{border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 78%,white);padding:22px;border-radius:16px}
+.bake__form{display:grid;gap:12px}.bake__form label{display:grid;gap:6px;font-weight:800}.bake__form input,.bake__form select{min-height:44px;border:1px solid var(--border);background:#fff;color:var(--text);border-radius:8px;padding:10px}.bake__form input:focus,.bake__form select:focus,.bake__option:focus-visible,.bake__item:focus-visible,.bake__chip:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.bake__status{font-family:var(--mono);border-left:5px solid var(--secondary);padding:16px;background:var(--alt)}
+.bake__sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.bake__section-card{border-top:3px solid var(--primary);padding:16px;background:#fff}
+.bake__palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.bake__chip{background:var(--chip);color:var(--ink);min-height:88px;border:1px solid var(--border);padding:10px;text-align:left;display:grid;align-content:space-between;cursor:pointer;border-radius:10px}
+.bake__audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.bake__audit div{padding:16px;border:1px solid var(--border);background:var(--alt)}
+@media(max-width:860px){.bake{display:block}.bake__rail{position:relative;height:auto}.bake__hero,.bake__split{grid-template-columns:1fr}.bake__audit{grid-template-columns:1fr}.bake__page{padding:20px}.bake__hero h1{font-size:clamp(3rem,18vw,6rem)}}
+@media(prefers-reduced-motion:no-preference){.bake__item,.bake__cta,.bake__submit,.bake__chip{transition:transform .2s ease,filter .2s ease}.bake__item:hover,.bake__chip:hover{transform:translateY(-3px)}.bake__cta:hover,.bake__submit:hover{filter:contrast(1.1)}}
+</style>
+</head>
+<body>
+<main class="bake" data-mode="manha">
+
+<div class="bake__page">
+<nav class="bake__nav"><strong>01.1 · Bernice Counter Ritual System</strong><span>warm-counter</span></nav>
+<section class="bake__hero" id="top">
+<div><p>balcao de padaria</p><h1>low counter hero with pastry close-up, human hands, and opening-hours ribbon</h1><p>neighborly, sensorial and concrete</p><a class="bake__cta" href="#form">Reservar fornada</a></div>
+<div class="bake__media" aria-hidden="true"></div>
+</section>
+<section class="bake__panel"><h2>Filtro de fornada</h2><div class="bake__controls"><button class="bake__option" type="button" data-mode="manha" aria-pressed="true">manha</button>
+<button class="bake__option" type="button" data-mode="almoco" aria-pressed="false">almoco</button>
+<button class="bake__option" type="button" data-mode="fim-de-semana" aria-pressed="false">fim-de-semana</button></div><p class="bake__status" aria-live="polite">Modo ativo: manha · Pedido simulado atualizado no recibo</p></section>
+<section><h2>Componentes funcionais</h2><div class="bake__items"><button class="bake__item" type="button" data-item="Sourdough 7h" aria-pressed="true"><span>01</span><strong>Sourdough 7h</strong><small>bake-shelf-card</small></button>
+<button class="bake__item" type="button" data-item="Cookie quente" aria-pressed="false"><span>02</span><strong>Cookie quente</strong><small>daily-batch-ticker</small></button>
+<button class="bake__item" type="button" data-item="Focaccia sexta" aria-pressed="false"><span>03</span><strong>Focaccia sexta</strong><small>crumb-trail-link</small></button>
+<button class="bake__item" type="button" data-item="Torta sazonal" aria-pressed="false"><span>04</span><strong>Torta sazonal</strong><small>pickup-window-form</small></button></div></section>
+<section class="bake__split" id="form"><div class="bake__panel"><h2>Formulario real do DS</h2><form class="bake__form"><label>Nome<input name="field0" value="Exemplo teste" placeholder="Nome" /></label>
+<label>Retirada<select name="field1"><option>manha</option><option>almoco</option><option>fim-de-semana</option></select></label>
+<label>Pedido<input name="field2" value="" placeholder="Pedido" /></label><button class="bake__submit" type="submit">Reservar fornada</button></form></div><div class="bake__panel"><h2>Resultado / estado</h2><p class="bake__status bake__output" aria-live="polite">Nenhum envio ainda.</p><p>O preview precisa testar foco, estado ativo, formulario, responsividade e copy do componente.</p></div></section>
+<section><h2>Fluxo de secoes coberto</h2><div class="bake__sections"><article class="bake__section-card"><span>01</span><h3>Daily bake counter</h3><p>bake-shelf-card</p></article>
+<article class="bake__section-card"><span>02</span><h3>Neighbourhood welcome</h3><p>daily-batch-ticker</p></article>
+<article class="bake__section-card"><span>03</span><h3>Signature pastries shelf</h3><p>crumb-trail-link</p></article>
+<article class="bake__section-card"><span>04</span><h3>Pre-order and pickup flow</h3><p>pickup-window-form</p></article>
+<article class="bake__section-card"><span>05</span><h3>Baker notes</h3><p>neighbor-quote-strip</p></article>
+<article class="bake__section-card"><span>06</span><h3>Community praise</h3><p>receipt-footer</p></article>
+<article class="bake__section-card"><span>07</span><h3>Visit card</h3><p>bake-shelf-card</p></article>
+<article class="bake__section-card"><span>08</span><h3>Footer as receipt</h3><p>daily-batch-ticker</p></article></div></section>
+<section><h2>Paleta clicavel</h2><div class="bake__palette"><button class="bake__chip" type="button" data-copy="#8A3F2B" style="--chip:#8A3F2B;--ink:#ffffff"><span>Primary</span><strong>#8A3F2B</strong></button>
+<button class="bake__chip" type="button" data-copy="#E7B86A" style="--chip:#E7B86A;--ink:#111111"><span>Secondary</span><strong>#E7B86A</strong></button>
+<button class="bake__chip" type="button" data-copy="#FFF7EC" style="--chip:#FFF7EC;--ink:#111111"><span>Surface</span><strong>#FFF7EC</strong></button>
+<button class="bake__chip" type="button" data-copy="#F4DFC8" style="--chip:#F4DFC8;--ink:#111111"><span>Alt</span><strong>#F4DFC8</strong></button>
+<button class="bake__chip" type="button" data-copy="#2B1710" style="--chip:#2B1710;--ink:#ffffff"><span>Text</span><strong>#2B1710</strong></button>
+<button class="bake__chip" type="button" data-copy="#765B4E" style="--chip:#765B4E;--ink:#ffffff"><span>Muted</span><strong>#765B4E</strong></button>
+<button class="bake__chip" type="button" data-copy="#D9BFA4" style="--chip:#D9BFA4;--ink:#111111"><span>Border</span><strong>#D9BFA4</strong></button></div></section>
+<section class="bake__audit"><div><strong>Acessibilidade</strong><p>Focus ring, aria-live e touch target 44px.</p></div><div><strong>Responsivo</strong><p>Mobile preserva single-column bakery board with sticky pickup button.</p></div><div><strong>Erro corrigido</strong><p>preview antigo era cartaz estatico sem pedido, horario ou produto acionavel.</p></div></section>
+</div>
+</main>
+<script>
+(() => {
+ const root = document.querySelector('.bake');
+ const status = document.querySelector('.bake__status');
+ const output = document.querySelector('.bake__output');
+ document.querySelectorAll('.bake__option').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.bake__option').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  root.dataset.mode = btn.dataset.mode;
+  status.textContent = 'Modo ativo: ' + btn.dataset.mode + ' · Pedido simulado atualizado no recibo';
+ }));
+ document.querySelectorAll('.bake__item').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.bake__item').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  output.textContent = 'Selecionado: ' + btn.dataset.item + ' · componente pronto para estado ativo.';
+ }));
+ document.querySelector('.bake__form').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  output.textContent = 'Pedido simulado atualizado no recibo: ' + [...data.values()].filter(Boolean).join(' / ');
+ });
+ document.querySelectorAll('.bake__chip').forEach(chip => chip.addEventListener('click', async () => {
+  const value = chip.dataset.copy;
+  try { await navigator.clipboard.writeText(value); output.textContent = 'Cor copiada: ' + value; }
+  catch { output.textContent = 'Token selecionado: ' + value; }
+ }));
+})();
+</script>
+</body>
+</html>

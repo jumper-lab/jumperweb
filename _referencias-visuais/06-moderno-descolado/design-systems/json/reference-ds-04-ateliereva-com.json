@@ -1,0 +1,572 @@
+{
+  "id": "reference-ds-04-ateliereva-com",
+  "clientSlug": "ateliereva-com",
+  "clientName": "Atelier Eva",
+  "personalitySlug": "06-moderno-descolado",
+  "regeneratedAt": "2026-06-05",
+  "referenceQualityBaseline": "formula site-specific aprovada da pasta 01",
+  "source": {
+    "site": "ateliereva.com",
+    "localPath": "_jumper-sites-system/_referencias-visuais/06-moderno-descolado/design-systems/preview-assets/ateliereva.com",
+    "sourceReferenceId": "ateliereva.com",
+    "sourceReferenceNote": "Referencia visual ja convertida em DS-base; arquivo pesado original nao e necessario no fluxo oficial.",
+    "imagesUsed": [
+      "../../preview-assets/ateliereva.com/assets/d8c106ac6b93d0ed_image-asset.jpeg",
+      "../../preview-assets/ateliereva.com/assets/fb506e5fb1a8aa22_000040770009.jpeg",
+      "../../preview-assets/ateliereva.com/assets/2dc839d335f6a3d7_172.jpg",
+      "../../preview-assets/ateliereva.com/assets/cdbc4c75e779d6c5_Sherri__3__281_29.jpg",
+      "../../preview-assets/ateliereva.com/assets/67ffb8c7471c35f2_000040770009.jpeg",
+      "../../preview-assets/ateliereva.com/assets/40bcd143ade4fec8_Shani__2.jpg",
+      "../../preview-assets/ateliereva.com/assets/4cdfa612f6ad3a0a_Art__32.jpg",
+      "../../preview-assets/ateliereva.com/assets/1a315026d577ab84_DSC00490_copy.jpg",
+      "../../preview-assets/ateliereva.com/assets/6834b18423df91d8_Meyk_-_Portrait.jpg",
+      "../../preview-assets/ateliereva.com/assets/918c2914a60b9b9f_Profile_pic.jpg"
+    ],
+    "extractedSignals": {
+      "sourceColors": [
+        {
+          "hex": "#A9A9A9",
+          "count": 13,
+          "hsl": "hsl(0 0% 66%)"
+        },
+        {
+          "hex": "#FAFAFA",
+          "count": 9,
+          "hsl": "hsl(0 0% 98%)"
+        },
+        {
+          "hex": "#737373",
+          "count": 3,
+          "hsl": "hsl(0 0% 45%)"
+        },
+        {
+          "hex": "#AAA",
+          "count": 2,
+          "hsl": "hsl(0 0% 67%)"
+        },
+        {
+          "hex": "#E7E7E7",
+          "count": 2,
+          "hsl": "hsl(0 0% 91%)"
+        },
+        {
+          "hex": "#EEE",
+          "count": 2,
+          "hsl": "hsl(0 0% 93%)"
+        },
+        {
+          "hex": "#BBB",
+          "count": 2,
+          "hsl": "hsl(0 0% 73%)"
+        },
+        {
+          "hex": "#DDD",
+          "count": 2,
+          "hsl": "hsl(0 0% 87%)"
+        },
+        {
+          "hex": "#B7B7B7",
+          "count": 2,
+          "hsl": "hsl(0 0% 72%)"
+        },
+        {
+          "hex": "#CC3B3B",
+          "count": 1,
+          "hsl": "hsl(0 59% 52%)"
+        }
+      ],
+      "fonts": [
+        "1d58419be905f3a3_Metropolis-SemiBold.otf",
+        "2809e47b15473d86_l.woff2",
+        "62b7666d1dd89088_l.woff2",
+        "9110dda4baca06a6_Metropolis-Medium.otf",
+        "f2dd3a54402a0ab9_P5sMzZCDf9_T_10ZxCFuj5-v.woff2"
+      ],
+      "title": "Williamsburg Brooklyn Tattoo Studios | Atelier Eva",
+      "sourceText": [
+        [
+          "The entire process of getting a tattoo here was as easy and seamless as possible.",
+          "They were very prompt, responsive and helpful after receiving my inquiry.",
+          "The studio itself is beautiful; the reviews saying it feels like a spa are completely accurate.",
+          "You feel at ease from the moment you step in.",
+          "My tattoo artist was Justin and he was incredibly patient in creating my design, made multiple drafts/edits, and made me feel totally comfortable.",
+          "They are moderately pricey but it is worth it, you are paying for excellent quality and customer service.",
+          "I would 100% come back here!",
+          "— Maria (5 Star Review Google My Business ) I went to Atelier Eva for my first tattoo ever, and I had an incredible experience.",
+          "The staff were very kind and took all of the proper precautions for COVID-19.",
+          "The studio space was beautiful and calming; they are very dedicated to giving the customer the best experience possible.",
+          "My tattoo came out more beautifully than I had ever imagined; I will definitely be coming back in the future.",
+          "Highly recommend Atelier Eva for your next tattoo!",
+          "— Jacqueline (5 Star Review Yelp ) I have been wanting to go to Eva for a long time… even before she opened her own studio.",
+          "I love her work, and having met her she’s quite professional and has a tender touch.",
+          "I hope I can get something else done by her one day but I’ve gotta save my pennies lol.",
+          "But excellent art ain’t cheap.",
+          "I go for quality over quantity.",
+          "Experienced tattoo artists."
+        ]
+      ],
+      "assetCounts": {
+        "images": 233,
+        "css": 14,
+        "fonts": 5
+      }
+    }
+  },
+  "designIntent": {
+    "tone": "moderno descolado / tattoo editorial / autoral",
+    "summary": "DS site-specific para Atelier Eva.",
+    "hero": "Tatuagem fina, portfolio e ritual de consulta.",
+    "nonGoal": "Nao e DS final do cliente."
+  },
+  "colors": {
+    "palette": [
+      {
+        "name": "Bone",
+        "hex": "#F6F0E8",
+        "rgb": "rgb(246,240,232)",
+        "hsl": "hsl(34 44% 94%)",
+        "usage": "background"
+      },
+      {
+        "name": "Ink",
+        "hex": "#17110F",
+        "rgb": "rgb(23,17,15)",
+        "hsl": "hsl(15 21% 7%)",
+        "usage": "text / tattoo ink"
+      },
+      {
+        "name": "Skin",
+        "hex": "#CFA78D",
+        "rgb": "rgb(207,167,141)",
+        "hsl": "hsl(24 41% 68%)",
+        "usage": "accent"
+      },
+      {
+        "name": "Charcoal",
+        "hex": "#2E2622",
+        "rgb": "rgb(46,38,34)",
+        "hsl": "hsl(20 15% 16%)",
+        "usage": "panel"
+      },
+      {
+        "name": "Blood Orange",
+        "hex": "#A8462E",
+        "rgb": "rgb(168,70,46)",
+        "hsl": "hsl(12 57% 42%)",
+        "usage": "focus"
+      },
+      {
+        "name": "Mist",
+        "hex": "#D7D1CA",
+        "rgb": "rgb(215,209,202)",
+        "hsl": "hsl(32 14% 82%)",
+        "usage": "border"
+      },
+      {
+        "name": "Gallery White",
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255,255,255)",
+        "hsl": "hsl(0 0% 100%)",
+        "usage": "surface"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Site Field",
+        "value": "linear-gradient(135deg, #F6F0E8, #CFA78D55, #2E262233)",
+        "participation": "hero/background"
+      },
+      {
+        "name": "Dark Overlay",
+        "value": "linear-gradient(180deg, #F6F0E8ee, #F6F0E855)",
+        "participation": "image overlay"
+      },
+      {
+        "name": "Accent Pulse",
+        "value": "radial-gradient(circle at 20% 20%, #CFA78D44, transparent 34%), radial-gradient(circle at 80% 72%, #2E262233, transparent 40%)",
+        "participation": "motion/hover"
+      }
+    ],
+    "semantic": {
+      "primary": "Bone",
+      "text": "Ink",
+      "surface": "#17110F",
+      "accent": "Skin",
+      "focus": "Blood Orange",
+      "contrastIntent": "AA minimum; overlay on image text"
+    },
+    "opacityPolicy": "100,86,64,40,18,8"
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "1d58419be905f3a3_Metropolis-SemiBold.otf",
+      "ui": "Inter/system-ui",
+      "mono": "ui-monospace"
+    },
+    "scale": {
+      "h1": {
+        "size": "clamp(3rem,7vw,8rem)",
+        "weight": 800,
+        "lineHeight": 0.88
+      }
+    },
+    "siteSpecificRoles": [
+      {
+        "role": "site-display",
+        "family": "display",
+        "weight": "700-900",
+        "size": "clamp(4rem,8vw,9rem)",
+        "lineHeight": ".86-.94",
+        "letterSpacing": "0",
+        "usage": "Tatuagem fina, portfolio e ritual de consulta."
+      },
+      {
+        "role": "site-label",
+        "family": "mono/ui",
+        "weight": "780-900",
+        "size": ".72rem",
+        "lineHeight": "1.2",
+        "letterSpacing": ".14em",
+        "usage": "menu/status/tags"
+      },
+      {
+        "role": "site-body",
+        "family": "ui",
+        "weight": "400-560",
+        "size": "1rem",
+        "lineHeight": "1.55-1.7",
+        "letterSpacing": "0",
+        "usage": "moderno descolado / tattoo editorial / autoral"
+      }
+    ]
+  },
+  "icons": {
+    "set": [
+      "spark",
+      "hand",
+      "map",
+      "calendar",
+      "shield",
+      "arrow"
+    ],
+    "stroke": 1.8,
+    "color": "currentColor"
+  },
+  "components": {
+    "artist-profile-card": {
+      "role": "artist profile card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "ink line draw",
+      "visual": "Referencia Atelier Eva: moderno descolado / tattoo editorial / autoral",
+      "referenceOnly": true
+    },
+    "flash-gallery": {
+      "role": "flash gallery",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "flash reveal",
+      "visual": "Referencia Atelier Eva: moderno descolado / tattoo editorial / autoral",
+      "referenceOnly": true
+    },
+    "booking-intent-slip": {
+      "role": "booking intent slip",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "portrait parallax",
+      "visual": "Referencia Atelier Eva: moderno descolado / tattoo editorial / autoral",
+      "referenceOnly": true
+    },
+    "aftercare-tooltip": {
+      "role": "aftercare tooltip",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "booking modal fade",
+      "visual": "Referencia Atelier Eva: moderno descolado / tattoo editorial / autoral",
+      "referenceOnly": true
+    },
+    "portfolio-modal": {
+      "role": "portfolio modal",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "ink line draw",
+      "visual": "Referencia Atelier Eva: moderno descolado / tattoo editorial / autoral",
+      "referenceOnly": true
+    },
+    "studio-map": {
+      "role": "studio map",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "flash reveal",
+      "visual": "Referencia Atelier Eva: moderno descolado / tattoo editorial / autoral",
+      "referenceOnly": true
+    },
+    "ink-line-divider": {
+      "role": "ink line divider",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "portrait parallax",
+      "visual": "Referencia Atelier Eva: moderno descolado / tattoo editorial / autoral",
+      "referenceOnly": true
+    },
+    "consultation-chip": {
+      "role": "consultation chip",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "booking modal fade",
+      "visual": "Referencia Atelier Eva: moderno descolado / tattoo editorial / autoral",
+      "referenceOnly": true
+    }
+  },
+  "motion": {
+    "entry": [
+      "fade-up",
+      "stagger"
+    ],
+    "exit": [
+      "flyout-x",
+      "caption-exit"
+    ],
+    "background": [
+      "ambient drift"
+    ],
+    "parallax": "story split with fallback",
+    "siteSpecific": [
+      "ink line draw",
+      "flash reveal",
+      "portrait parallax",
+      "booking modal fade"
+    ]
+  },
+  "accessibility": {
+    "contrast": "AA",
+    "focus": "2px outline",
+    "reducedMotion": true
+  },
+  "risks": [
+    "Fotos de pele precisam contraste para captions.",
+    "Booking real vem do DS do cliente.",
+    "Nao exagerar textura dark."
+  ],
+  "heroSystem": {
+    "layout": "tattoo-editorial",
+    "rules": [
+      "Hero full viewport com portfolio forte e texto de studio.",
+      "Menu deve priorizar artista, obra, booking e aftercare.",
+      "Cards mostram portfolio sem virar galeria generica.",
+      "Motion: linha desenhada, reveal de flash e parallax de retrato."
+    ],
+    "fullViewport": true
+  },
+  "menuSystem": {
+    "items": [
+      "Artists",
+      "Work",
+      "Booking",
+      "Studio",
+      "Aftercare"
+    ],
+    "note": "Menu site-specific de Atelier Eva",
+    "behavior": "overlay flyout; Esc closes"
+  },
+  "effects": {
+    "signature": [
+      "ink line draw",
+      "flash reveal",
+      "portrait parallax",
+      "booking modal fade"
+    ]
+  },
+  "referenceUsage": {
+    "type": "visual-reference-input",
+    "folder": "06-moderno-descolado",
+    "crossesWith": "clientes/[slug]/data/design-system.json",
+    "purpose": "Atelier Eva como referencia individual",
+    "nonGoals": [
+      "nao criar DS final do cliente",
+      "nao representar personalidade da pasta",
+      "nao usar padrao generico para todos os sites"
+    ],
+    "differentiationRules": [
+      "Hero full viewport com portfolio forte e texto de studio.",
+      "Menu deve priorizar artista, obra, booking e aftercare.",
+      "Cards mostram portfolio sem virar galeria generica.",
+      "Motion: linha desenhada, reveal de flash e parallax de retrato."
+    ],
+    "siteSpecific": true,
+    "qualityRule": "Preview precisa demonstrar personalidade do site extraido, com menu completo, hero, tokens, gradientes, tipo, efeitos, componentes, cards/secoes, story parallax, icones, handoff e motion linkados.",
+    "notPersonalityWide": true
+  },
+  "outputs": {
+    "json": "design-systems/json/reference-ds-04-ateliereva-com.json",
+    "markdown": "design-systems/previews/markdown/reference-ds-04-ateliereva-com-preview.md",
+    "html": "design-systems/previews/html/reference-ds-04-ateliereva-com-visual-preview.html"
+  },
+  "schemaVersion": "reference-ds-site-v3",
+  "previewNavigation": [
+    {
+      "order": 1,
+      "id": "menu-top",
+      "label": "Menu / top",
+      "href": "#menu-top"
+    },
+    {
+      "order": 2,
+      "id": "top",
+      "label": "Top",
+      "href": "#top"
+    },
+    {
+      "order": 3,
+      "id": "hero",
+      "label": "Sessao Hero",
+      "href": "#hero"
+    },
+    {
+      "order": 4,
+      "id": "color-tokens",
+      "label": "tokens de cor",
+      "href": "#color-tokens"
+    },
+    {
+      "order": 5,
+      "id": "gradients",
+      "label": "gradientes / opacidade",
+      "href": "#gradients"
+    },
+    {
+      "order": 6,
+      "id": "type-system",
+      "label": "type system",
+      "href": "#type-system"
+    },
+    {
+      "order": 7,
+      "id": "type-detail",
+      "label": "tipografia detalhada",
+      "href": "#type-detail"
+    },
+    {
+      "order": 8,
+      "id": "effects",
+      "label": "efeitos e mouse overs",
+      "href": "#effects"
+    },
+    {
+      "order": 9,
+      "id": "components",
+      "label": "componentes",
+      "href": "#components"
+    },
+    {
+      "order": 10,
+      "id": "contract",
+      "label": "contrato sem repeticao",
+      "href": "#contract"
+    },
+    {
+      "order": 11,
+      "id": "menu-board",
+      "label": "menu board component",
+      "href": "#menu-board"
+    },
+    {
+      "order": 12,
+      "id": "reference-slip",
+      "label": "reference slip",
+      "href": "#reference-slip"
+    },
+    {
+      "order": 13,
+      "id": "cards-sections",
+      "label": "cards e secoes",
+      "href": "#cards-sections"
+    },
+    {
+      "order": 14,
+      "id": "story",
+      "label": "story split parallax",
+      "href": "#story"
+    },
+    {
+      "order": 15,
+      "id": "icons",
+      "label": "icones",
+      "href": "#icons"
+    },
+    {
+      "order": 16,
+      "id": "handoff",
+      "label": "handoff de referencia",
+      "href": "#handoff"
+    },
+    {
+      "order": 17,
+      "id": "motion",
+      "label": "motion contract",
+      "href": "#motion"
+    },
+    {
+      "order": 18,
+      "id": "replay-motion",
+      "label": "Replay motion",
+      "href": "#replay-motion"
+    }
+  ],
+  "requiredPreviewContract": {
+    "allMenuLinksMustResolve": true,
+    "menuHasTopAndHeroAsSeparateAnchors": true,
+    "heroMustOccupyFullViewport": true,
+    "noRepeatedGenericSections": true,
+    "noClippedTextOrOverlaps": true,
+    "showGradientsOpacityHoverEntryExitParallaxIcons": true
+  }
+}

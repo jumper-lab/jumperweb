@@ -1,0 +1,328 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import heroImage from "../assets/aurora-hero-studio.png";
+import detailImage from "../assets/aurora-method-detail.png";
+import spaceImage from "../assets/aurora-space-corner.png";
+
+const whatsappUrl = "https://wa.me/5541999991201?text=Quero%20agendar%20uma%20aula%20experimental";
+
+const navItems = [
+  { label: "Método", href: "#metodo" },
+  { label: "Cuidado", href: "#cuidado" },
+  { label: "Aulas", href: "#aulas" },
+  { label: "Depoimentos", href: "#depoimentos" },
+  { label: "Localização", href: "#localizacao" }
+];
+
+const careItems = [
+  {
+    title: "Turmas pequenas",
+    value: "até 3",
+    text: "Escala reduzida para corrigir, adaptar e acompanhar sem pressa."
+  },
+  {
+    title: "Avaliação individual",
+    value: "01",
+    text: "Conversa inicial, observação de mobilidade e indicação do melhor caminho."
+  },
+  {
+    title: "Equipe técnica",
+    value: "180+",
+    text: "Alunos acompanhados desde a abertura, com formação em pilates e fisioterapia preventiva."
+  }
+];
+
+const services = [
+  ["Aula experimental avaliativa", "Para entender objetivos, limitações e indicar o plano mais coerente."],
+  ["Pilates em aparelhos", "Acompanhamento próximo, progressão cuidadosa e ajustes individuais."],
+  ["Pilates terapêutico", "Movimento gradual para dor, mobilidade e retomada de confiança."],
+  ["Treino de mobilidade", "Postura, amplitude, controle e constância possível."],
+  ["Programa 60+ ativo", "Autonomia, longevidade e segurança para o dia a dia."]
+];
+
+const testimonials = [
+  ["Voltei a me movimentar sem medo depois de anos com dor lombar.", "Renata M."],
+  ["As aulas são técnicas, mas o clima é leve. Eu me sinto acompanhada de verdade.", "Paulo R."],
+  ["O espaço transmite calma e profissionalismo desde a chegada.", "Camila S."]
+];
+---
+
+<Layout
+  title="Aurora Pilates & Movimento — Studio boutique de pilates no Batel"
+  description="Pilates, fisioterapia preventiva e movimento consciente em Curitiba. Turmas pequenas, avaliação individual e acompanhamento próximo."
+>
+  <header class="site-header" data-header>
+    <a class="brand" href="#inicio" aria-label="Aurora Pilates & Movimento">
+      <span>Aurora</span>
+      <span>Pilates</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+
+    <a class="header-cta" href={whatsappUrl}>Agendar</a>
+
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" data-mobile-menu>
+    <nav aria-label="Navegação mobile">
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a class="mobile-menu__cta" href={whatsappUrl}>Agendar aula experimental</a>
+    </nav>
+    <p>WhatsApp: +55 41 99999-1201<br />Rua das Araucárias, 184 — Batel</p>
+  </div>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <Image
+        src={heroImage}
+        alt="Studio boutique de pilates com aparelhos de madeira, luz natural e atmosfera calma."
+        class="hero__image"
+        loading="eager"
+        decoding="async"
+        widths={[720, 1080, 1440, 1800, 2200]}
+        sizes="100vw"
+      />
+      <div class="hero__veil"></div>
+
+      <div class="hero__content">
+        <p class="kicker">Studio boutique no Batel</p>
+        <h1 id="hero-title">Movimento consciente para viver melhor o próprio corpo.</h1>
+        <p>
+          Pilates, fisioterapia preventiva e educação corporal em turmas pequenas, com avaliação individual antes de começar.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href={whatsappUrl}>Agendar aula experimental</a>
+          <a class="text-action" href="#metodo">Conhecer o método</a>
+        </div>
+      </div>
+
+      <aside class="hero-note" aria-label="Aula experimental">
+        <span>Avaliação inicial</span>
+        <strong>conversa, mobilidade e indicação do melhor plano</strong>
+      </aside>
+    </section>
+
+    <section class="manifesto" id="metodo" aria-labelledby="manifesto-title" data-reveal>
+      <div class="section-mark">Cuidado técnico</div>
+      <h2 id="manifesto-title">Não é uma academia comum. É um começo mais inteligente.</h2>
+      <p>
+        A Aurora parte da escuta e da observação antes do exercício. O primeiro encontro organiza objetivos, limitações e ritmo para que o movimento entre na rotina com segurança.
+      </p>
+    </section>
+
+    <section class="method-showcase" aria-labelledby="showcase-title" data-reveal>
+      <figure data-reveal-child>
+        <Image
+          src={detailImage}
+          alt="Profissional ajustando cuidadosamente um aparelho de pilates em madeira."
+          loading="eager"
+          decoding="async"
+          widths={[540, 760, 980, 1200]}
+          sizes="(max-width: 860px) 100vw, 52vw"
+        />
+      </figure>
+
+      <div class="showcase-copy" data-reveal-child>
+        <div class="section-mark section-mark--light">Método Aurora</div>
+        <h2 id="showcase-title">Cuidado que aparece no detalhe.</h2>
+        <p>
+          Cada ajuste tem uma razão: amplitude, respiração, força progressiva e confiança. A técnica não endurece a experiência; ela torna o movimento mais seguro e mais humano.
+        </p>
+        <a class="text-action text-action--light" href={whatsappUrl}>Conversar sobre a avaliação</a>
+      </div>
+    </section>
+
+    <section class="care-board" id="cuidado" aria-labelledby="care-title" data-reveal>
+      <div class="care-board__intro" data-reveal-child>
+        <div class="section-mark">Como funciona</div>
+        <h2 id="care-title">Próximo o bastante para perceber o que muda.</h2>
+      </div>
+
+      <div class="care-board__items">
+        {careItems.map((item) => (
+          <article data-reveal-child>
+            <span>{item.value}</span>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="services" id="aulas" aria-labelledby="services-title" data-reveal>
+      <div class="services__copy" data-reveal-child>
+        <div class="section-mark section-mark--light">Caminhos de movimento</div>
+        <h2 id="services-title">Aulas como indicação, não catálogo.</h2>
+        <p>
+          A aula experimental é o ponto de partida. Depois dela, o caminho pode ser força, mobilidade, cuidado terapêutico ou longevidade ativa.
+        </p>
+      </div>
+
+      <div class="service-stack">
+        {services.map(([name, text], index) => (
+          <details open={index === 0} data-reveal-child>
+            <summary>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              {name}
+            </summary>
+            <p>{text}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <section class="space-feature" aria-labelledby="space-title" data-reveal>
+      <Image
+        src={spaceImage}
+        alt="Ambiente calmo de studio boutique de pilates com luz natural, madeira e plantas."
+        loading="eager"
+        decoding="async"
+        widths={[720, 1080, 1440, 1800]}
+        sizes="100vw"
+      />
+      <div data-reveal-child>
+        <div class="section-mark section-mark--light">O espaço</div>
+        <h2 id="space-title">Silêncio visual para o corpo prestar atenção.</h2>
+        <p>Um ambiente físico aberto, com luz natural, escala pequena e atmosfera de pausa dentro da rotina urbana.</p>
+      </div>
+    </section>
+
+    <section class="testimonials" id="depoimentos" aria-labelledby="depoimentos-title" data-reveal>
+      <div class="testimonials__intro" data-reveal-child>
+        <div class="section-mark">Confiança em voz baixa</div>
+        <h2 id="depoimentos-title">As pessoas não falam de treino. Falam de voltar a confiar.</h2>
+      </div>
+      <div class="quote-grid">
+        {testimonials.map(([quote, author]) => (
+          <blockquote data-reveal-child>
+            <p>“{quote}”</p>
+            <cite>{author}</cite>
+          </blockquote>
+        ))}
+      </div>
+    </section>
+
+    <section class="location" id="localizacao" aria-labelledby="location-title" data-reveal>
+      <div class="location__copy" data-reveal-child>
+        <div class="section-mark">Batel, Curitiba</div>
+        <h2 id="location-title">Um endereço para desacelerar sem sair da cidade.</h2>
+        <p>
+          Rua das Araucárias, 184. Atendimento de segunda a sexta das 7h às 20h e sábados das 8h às 12h, somente com agendamento.
+        </p>
+        <a class="button button--primary" href={whatsappUrl}>Agendar pelo WhatsApp</a>
+      </div>
+
+      <div class="location-card" data-reveal-child>
+        <span>Região atendida</span>
+        <strong>Batel, Água Verde, Bigorrilho, Mercês e centro.</strong>
+        <a href="https://maps.google.com/?q=Aurora+Pilates+Movimento+Curitiba">Abrir no Google Maps</a>
+      </div>
+    </section>
+
+    <section class="final-cta" id="agendar" aria-labelledby="cta-title" data-reveal>
+      <div class="final-cta__intro" data-reveal-child>
+        <div class="section-mark section-mark--light">Aula experimental</div>
+        <h2 id="cta-title">Comece por uma avaliação honesta.</h2>
+      </div>
+
+      <div class="final-cta__content" data-reveal-child>
+        <p>
+          Um primeiro encontro para entender seu corpo, sua rotina e qual movimento faz sentido agora.
+        </p>
+        <a class="button button--light" href={whatsappUrl}>Agendar aula experimental</a>
+
+        <div class="final-cta__steps" aria-label="Etapas da avaliação">
+          <span>01</span>
+          <strong>Conversa inicial</strong>
+          <span>02</span>
+          <strong>Observação de mobilidade</strong>
+          <span>03</span>
+          <strong>Indicação do melhor caminho</strong>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Aurora Pilates & Movimento</strong>
+      <span>Studio boutique de pilates e movimento consciente.</span>
+    </div>
+    <nav aria-label="Links de rodapé">
+      <a href="mailto:contato@aurorapilatesmovimento.com.br">contato@aurorapilatesmovimento.com.br</a>
+      <a href="https://facebook.com/aurorapilatesmovimento">Facebook</a>
+      <a href={whatsappUrl}>WhatsApp</a>
+    </nav>
+  </footer>
+
+  <script>
+    const header = document.querySelector("[data-header]");
+    const toggle = document.querySelector("[data-menu-toggle]");
+    const menu = document.querySelector("[data-mobile-menu]");
+
+    const syncHeader = () => {
+      header?.classList.toggle("is-scrolled", window.scrollY > 24);
+    };
+
+    syncHeader();
+    window.addEventListener("scroll", syncHeader, { passive: true });
+
+    toggle?.addEventListener("click", () => {
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+      menu?.classList.toggle("is-open", !isOpen);
+      document.documentElement.classList.toggle("menu-open", !isOpen);
+    });
+
+    menu?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        toggle?.setAttribute("aria-expanded", "false");
+        menu.classList.remove("is-open");
+        document.documentElement.classList.remove("menu-open");
+      });
+    });
+
+    document.documentElement.classList.add("motion-ready");
+
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const revealItems = document.querySelectorAll("[data-reveal], [data-reveal-child]");
+
+    if (motionQuery.matches) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    } else {
+      const revealPassedItems = () => {
+        revealItems.forEach((item) => {
+          const rect = item.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.88) {
+            item.classList.add("is-visible");
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { rootMargin: "0px 0px -12% 0px", threshold: 0.12 }
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
+      revealPassedItems();
+      window.addEventListener("scroll", revealPassedItems, { passive: true });
+    }
+  </script>
+</Layout>

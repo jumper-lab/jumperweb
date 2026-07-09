@@ -1,0 +1,1056 @@
+{
+  "schema_version": "3.0.0-codex-distinct",
+  "design_system_id": "05.1",
+  "design_system_name": "Ceremony Cupping Journal System",
+  "category": "05 — Artesanal e Autêntico",
+  "subcategory": "Torrefação / café especial",
+  "import_policy": "Pacote separado para validação manual em DS codex. Não mover para o sistema oficial sem revisão humana de originalidade, cobertura e compatibilidade.",
+  "inspiration_site": {
+    "name": "Ceremony Coffee Roasters",
+    "url": "https://ceremonycoffee.com/",
+    "awards": [
+      "Referencia visual em validacao autoral; premios/reconhecimentos nao devem ser tratados como verificados ate auditoria humana com fontes."
+    ],
+    "design_studio_or_author": "Coffee brand commerce team",
+    "why_chosen": "Ceremony Coffee Roasters foi usado como repertório para cupping notes, flavor cards, craft commerce with sensory detail. O DS traduz a lógica de experiência do site em decisões reutilizáveis sem copiar layout, texto, imagens ou componentes."
+  },
+  "source_site_translation": {
+    "observed_visual_pattern": "cupping notes, flavor cards, craft commerce with sensory detail",
+    "site_anatomy_to_cover": {
+      "navigation": "roast finder nav with subscription shortcut",
+      "hero": "journal hero with tasting cards, bag detail and roast finder action",
+      "primary_sections": [
+        "Roast finder",
+        "Flavor note cards",
+        "Origin story",
+        "Subscription builder",
+        "Brew guide",
+        "Seasonal release",
+        "Wholesale path",
+        "Footer as tasting ledger"
+      ],
+      "conversion_paths": [
+        "Find your roast",
+        "Build subscription",
+        "contact/support route"
+      ],
+      "footer_role": "Footer as tasting ledger"
+    },
+    "what_to_reinterpret": [
+      "Ritmo principal: cupping journal commerce",
+      "Padrão de navegação: roast finder nav with subscription shortcut",
+      "Componentes próprios: flavor-note-card, roast-finder-filter, origin-story-slab, subscription-builder, brew-method-step, tasting-ledger-footer",
+      "Motion signature: paper card reveal, flavor note underline, slow product hover"
+    ],
+    "what_not_to_copy": [
+      "layout exato do site fonte",
+      "copy real do site fonte",
+      "imagens reais do site fonte",
+      "classes CSS do site fonte",
+      "componentes proprietários do site fonte"
+    ],
+    "jumper_usage_boundary": "Usar como repertório visual e estrutural. O cliente final ainda precisa nascer do briefing, do DS final do cliente e do plano autoral."
+  },
+  "uniqueness_fingerprint": {
+    "layout_architecture": "cupping journal commerce",
+    "navigation_pattern": "roast finder nav with subscription shortcut",
+    "hero_architecture": "journal hero with tasting cards, bag detail and roast finder action",
+    "section_flow": [
+      "Roast finder",
+      "Flavor note cards",
+      "Origin story",
+      "Subscription builder",
+      "Brew guide",
+      "Seasonal release",
+      "Wholesale path",
+      "Footer as tasting ledger"
+    ],
+    "component_set": [
+      "flavor-note-card",
+      "roast-finder-filter",
+      "origin-story-slab",
+      "subscription-builder",
+      "brew-method-step",
+      "tasting-ledger-footer"
+    ],
+    "motion_signature": "paper card reveal, flavor note underline, slow product hover",
+    "responsive_strategy": "roast finder first, tasting cards become carousel",
+    "density": "crafted",
+    "whitespace": "moderate",
+    "prohibited_similarity_checks": [
+      "não reutilizar hero split automático",
+      "não usar grid genérico de três cards sem função",
+      "não repetir ordem de seções de outro DS",
+      "não usar botão e card com mesmo comportamento dos demais DSs"
+    ]
+  },
+  "colors": {
+    "primary": "#5A3825",
+    "primary_usage": "ação principal, ponto de marca e destaque de navegação",
+    "secondary": "#B7793E",
+    "secondary_usage": "ênfase secundária, estado ativo e composição visual",
+    "surface": "#F8F1E7",
+    "surface_alt": "#EAD8C3",
+    "text_primary": "#2A1A12",
+    "text_secondary": "#745C4C",
+    "text_muted": "#745C4C",
+    "border": "#D6BFA5",
+    "error": "#B42318",
+    "success": "#027A48",
+    "warning": "#B54708",
+    "neutral_scale": {
+      "50": "#F8F2E8",
+      "100": "#F8F1E7",
+      "200": "#EAD8C3",
+      "300": "#D6BFA5",
+      "400": "#745C4C",
+      "500": "#B7793E",
+      "600": "#5A3825",
+      "700": "#4A2E1E",
+      "800": "#3B2518",
+      "900": "#2A1A12"
+    },
+    "contrast_verification": {
+      "text_on_surface": "14.92:1 (AAA)",
+      "cta_on_primary": "10.36:1 (AAA)",
+      "text_on_surface_alt": "12.04:1 (AAA)",
+      "notes": "Pares críticos recalculados. Em implementação real, imagens e overlays precisam passar nova checagem."
+    }
+  },
+  "typography": {
+    "heading_font": "Recoleta",
+    "body_font": "Source Serif 4",
+    "mono_font": "IBM Plex Mono",
+    "base_size": "16px",
+    "tone_reason": "Recoleta sustenta cupping notes, flavor cards, craft commerce with sensory detail; Source Serif 4 mantém leitura funcional.",
+    "scales": {
+      "mobile": {
+        "h1": {
+          "size": "2.35rem",
+          "weight": "800",
+          "line_height": "0.98"
+        },
+        "h2": {
+          "size": "1.65rem",
+          "weight": "700",
+          "line_height": "1.12"
+        },
+        "h3": {
+          "size": "1.2rem",
+          "weight": "700",
+          "line_height": "1.25"
+        },
+        "body": {
+          "size": "1rem",
+          "weight": "400",
+          "line_height": "1.62"
+        },
+        "small": {
+          "size": "0.875rem",
+          "weight": "500",
+          "line_height": "1.45"
+        }
+      },
+      "desktop": {
+        "h1": {
+          "size": "4.6rem",
+          "weight": "800",
+          "line_height": "0.92"
+        },
+        "h2": {
+          "size": "3.2rem",
+          "weight": "760",
+          "line_height": "1.02"
+        },
+        "h3": {
+          "size": "1.65rem",
+          "weight": "720",
+          "line_height": "1.18"
+        },
+        "body": {
+          "size": "1.08rem",
+          "weight": "400",
+          "line_height": "1.68"
+        },
+        "small": {
+          "size": "0.86rem",
+          "weight": "600",
+          "line_height": "1.42"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "xxl": "48px",
+      "xxxl": "72px",
+      "xxxxl": "96px"
+    },
+    "section_spacing": {
+      "mobile": "48px",
+      "tablet": "68px",
+      "desktop": "92px"
+    },
+    "container_max_width": "1320px"
+  },
+  "borders": {
+    "radius": {
+      "none": "0px",
+      "xs": "2px",
+      "sm": "4px",
+      "md": "7px",
+      "lg": "7px",
+      "xl": "7px",
+      "full": "999px"
+    },
+    "usage": {
+      "buttons": "7px",
+      "cards": "7px",
+      "inputs": "7px",
+      "reason": "Raio definido para combinar com cupping notes, flavor cards, craft commerce with sensory detail."
+    }
+  },
+  "shadows": {
+    "xs": "0 1px 2px rgba(0,0,0,.06)",
+    "sm": "0 4px 14px rgba(0,0,0,.08)",
+    "md": "0 14px 42px rgba(0,0,0,.12)",
+    "lg": "0 28px 80px rgba(0,0,0,.18)",
+    "usage": "sombras discretas conforme hierarquia"
+  },
+  "motion": {
+    "durations": {
+      "fast": "220ms",
+      "base": "340ms",
+      "slow": "620ms"
+    },
+    "easings": {
+      "standard": "cubic-bezier(.2,0,.2,1)",
+      "entrance": "cubic-bezier(.16,1,.3,1)",
+      "exit": "cubic-bezier(.7,0,.84,0)"
+    },
+    "animations": [
+      {
+        "name": "paper-card-reveal-flavor-note-underline-slow-product-hover",
+        "duration": "520ms",
+        "easing": "entrance",
+        "trigger": "section enters viewport",
+        "notes": "paper card reveal, flavor note underline, slow product hover"
+      },
+      {
+        "name": "cupping-journal-commerce-hover",
+        "duration": "180ms",
+        "easing": "standard",
+        "trigger": "interactive hover/focus",
+        "notes": "o hover deve reforçar o componente específico, não apenas subir card"
+      }
+    ],
+    "reduced_motion": "Manter hierarquia com cor, borda e estado ativo; remover parallax, drift e deslocamentos."
+  },
+  "components": {
+    "navigation": {
+      "pattern": "roast finder nav with subscription shortcut",
+      "behavior": "context-aware sticky header",
+      "mobile": "roast finder first, tasting cards become carousel",
+      "states": [
+        "default",
+        "active section",
+        "menu open",
+        "focus visible"
+      ]
+    },
+    "hero": {
+      "height": "68-84vh",
+      "composition": "journal hero with tasting cards, bag detail and roast finder action",
+      "text_color": "colors.text_primary",
+      "media_rule": "imagem, produto, diagrama ou textura real precisa ter função comercial/narrativa",
+      "forbidden": "hero split automático com texto sempre à esquerda e imagem decorativa sem função"
+    },
+    "buttons": {
+      "primary": {
+        "bg": "colors.primary",
+        "text": "#FFFFFF",
+        "padding": "14px 24px",
+        "border_radius": "borders.radius.md",
+        "hover": "contextual state tied to DS motion",
+        "focus": "2px outline colors.secondary offset 3px"
+      },
+      "secondary": {
+        "bg": "transparent",
+        "text": "colors.text_primary",
+        "border": "1px colors.border",
+        "padding": "12px 20px",
+        "hover": "surface_alt + active border"
+      },
+      "ghost": {
+        "bg": "transparent",
+        "text": "colors.text_primary",
+        "border": "none",
+        "hover": "underline or active rail marker"
+      }
+    },
+    "unique_components": [
+      {
+        "name": "flavor-note-card",
+        "role": "Roast finder",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar flavor-note-card para Ceremony Cupping Journal System; não substituir por card genérico."
+      },
+      {
+        "name": "roast-finder-filter",
+        "role": "Flavor note cards",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar roast-finder-filter para Ceremony Cupping Journal System; não substituir por card genérico."
+      },
+      {
+        "name": "origin-story-slab",
+        "role": "Origin story",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar origin-story-slab para Ceremony Cupping Journal System; não substituir por card genérico."
+      },
+      {
+        "name": "subscription-builder",
+        "role": "Subscription builder",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar subscription-builder para Ceremony Cupping Journal System; não substituir por card genérico."
+      },
+      {
+        "name": "brew-method-step",
+        "role": "Brew guide",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar brew-method-step para Ceremony Cupping Journal System; não substituir por card genérico."
+      },
+      {
+        "name": "tasting-ledger-footer",
+        "role": "Seasonal release",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar tasting-ledger-footer para Ceremony Cupping Journal System; não substituir por card genérico."
+      }
+    ],
+    "forms": {
+      "style": "contextual short form",
+      "fields": [
+        "name/email or intent",
+        "business-specific selector",
+        "message/notes"
+      ],
+      "error_state": "inline, explicit and high contrast",
+      "success_state": "keeps user in same context"
+    },
+    "footer": {
+      "role": "Footer as tasting ledger",
+      "layout": "functional grouped footer",
+      "must_include": [
+        "primary action",
+        "contact path",
+        "navigation recap",
+        "legal/accessibility links"
+      ]
+    }
+  },
+  "composition": {
+    "grid_system": "cupping journal commerce",
+    "max_width": "1320px",
+    "density": "crafted",
+    "whitespace": "moderate",
+    "image_treatment": "Imagens devem sustentar cupping notes, flavor cards, craft commerce with sensory detail.",
+    "page_flow": [
+      {
+        "order": 1,
+        "section": "Roast finder",
+        "layout": "journal hero with tasting cards, bag detail and roast finder action",
+        "component": "flavor-note-card"
+      },
+      {
+        "order": 2,
+        "section": "Flavor note cards",
+        "layout": "asymmetric editorial block",
+        "component": "roast-finder-filter"
+      },
+      {
+        "order": 3,
+        "section": "Origin story",
+        "layout": "functional conversion module",
+        "component": "origin-story-slab"
+      },
+      {
+        "order": 4,
+        "section": "Subscription builder",
+        "layout": "wide proof band",
+        "component": "subscription-builder"
+      },
+      {
+        "order": 5,
+        "section": "Brew guide",
+        "layout": "asymmetric editorial block",
+        "component": "brew-method-step"
+      },
+      {
+        "order": 6,
+        "section": "Seasonal release",
+        "layout": "functional conversion module",
+        "component": "tasting-ledger-footer"
+      },
+      {
+        "order": 7,
+        "section": "Wholesale path",
+        "layout": "wide proof band",
+        "component": "flavor-note-card"
+      },
+      {
+        "order": 8,
+        "section": "Footer as tasting ledger",
+        "layout": "asymmetric editorial block",
+        "component": "roast-finder-filter"
+      }
+    ],
+    "structural_variations": [
+      {
+        "name": "baseline source-informed",
+        "description": "cupping journal commerce"
+      },
+      {
+        "name": "conversion-heavy variant",
+        "description": "Antecipar Find your roast sem trocar a anatomia cupping journal commerce."
+      },
+      {
+        "name": "editorial-deep variant",
+        "description": "Aumentar storytelling de Flavor note cards mantendo componentes flavor-note-card e roast-finder-filter."
+      }
+    ],
+    "selected_variation": "baseline source-informed with business-specific conversion accents"
+  },
+  "voice_and_tone": {
+    "tone": "sensory, educated and grounded",
+    "examples_headlines": [
+      "journal hero with tasting cards, bag detail and roast finder action",
+      "Roast finder",
+      "cupping notes, flavor cards, craft commerce with sensory detail"
+    ],
+    "examples_cta": [
+      "Find your roast",
+      "Build subscription"
+    ],
+    "avoid": [
+      "avoid mass-market cafe sweetness",
+      "claims without visible proof",
+      "generic template language"
+    ]
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "text_on_surface": "14.92:1 (AAA)",
+      "cta_on_primary": "10.36:1 (AAA)"
+    },
+    "keyboard_navigation": "ordem lógica; estados ativos e foco visível em navegação, cards e formulários",
+    "focus_states": "2px outline com offset 3px usando secondary ou primary conforme contraste",
+    "alt_text": "Descrever função da imagem no padrão cupping notes, flavor cards, craft commerce with sensory detail, não apenas aparência.",
+    "touch_targets": "44px mínimo; ações principais não dependem de hover"
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Torrefação / café especial",
+      "specialty coffee buyers and subscribers"
+    ],
+    "conversion_factors": [
+      "Find your roast",
+      "Build subscription",
+      "Origin story",
+      "flavor-note-card"
+    ],
+    "core_web_vitals": {
+      "lcp_target": "< 2.5s",
+      "inp_target": "< 200ms",
+      "cls_target": "< 0.1"
+    },
+    "seo_schema": [
+      "Organization",
+      "LocalBusiness/Product/Service conforme cliente",
+      "BreadcrumbList",
+      "FAQPage quando houver FAQ"
+    ]
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "accessibility_wcag_aa": true,
+    "source_site_covered": true,
+    "clean_room_ready": true,
+    "not_a_template_skin": true
+  },
+  "implementation_depth_checks": [
+    {
+      "check": 1,
+      "area": "nav",
+      "rule": "Validar Ceremony Cupping Journal System: nav deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra flavor-note-card conectado à seção Roast finder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 2,
+      "area": "hero",
+      "rule": "Validar Ceremony Cupping Journal System: hero deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra roast-finder-filter conectado à seção Flavor note cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 3,
+      "area": "sections",
+      "rule": "Validar Ceremony Cupping Journal System: sections deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra origin-story-slab conectado à seção Origin story.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 4,
+      "area": "components",
+      "rule": "Validar Ceremony Cupping Journal System: components deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra subscription-builder conectado à seção Subscription builder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 5,
+      "area": "forms",
+      "rule": "Validar Ceremony Cupping Journal System: forms deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra brew-method-step conectado à seção Brew guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 6,
+      "area": "motion",
+      "rule": "Validar Ceremony Cupping Journal System: motion deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra tasting-ledger-footer conectado à seção Seasonal release.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 7,
+      "area": "responsive",
+      "rule": "Validar Ceremony Cupping Journal System: responsive deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra flavor-note-card conectado à seção Wholesale path.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 8,
+      "area": "accessibility",
+      "rule": "Validar Ceremony Cupping Journal System: accessibility deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra roast-finder-filter conectado à seção Footer as tasting ledger.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 9,
+      "area": "conversion",
+      "rule": "Validar Ceremony Cupping Journal System: conversion deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra origin-story-slab conectado à seção Roast finder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 10,
+      "area": "nav",
+      "rule": "Validar Ceremony Cupping Journal System: nav deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra subscription-builder conectado à seção Flavor note cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 11,
+      "area": "hero",
+      "rule": "Validar Ceremony Cupping Journal System: hero deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra brew-method-step conectado à seção Origin story.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 12,
+      "area": "sections",
+      "rule": "Validar Ceremony Cupping Journal System: sections deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra tasting-ledger-footer conectado à seção Subscription builder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 13,
+      "area": "components",
+      "rule": "Validar Ceremony Cupping Journal System: components deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra flavor-note-card conectado à seção Brew guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 14,
+      "area": "forms",
+      "rule": "Validar Ceremony Cupping Journal System: forms deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra roast-finder-filter conectado à seção Seasonal release.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 15,
+      "area": "motion",
+      "rule": "Validar Ceremony Cupping Journal System: motion deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra origin-story-slab conectado à seção Wholesale path.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 16,
+      "area": "responsive",
+      "rule": "Validar Ceremony Cupping Journal System: responsive deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra subscription-builder conectado à seção Footer as tasting ledger.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 17,
+      "area": "accessibility",
+      "rule": "Validar Ceremony Cupping Journal System: accessibility deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra brew-method-step conectado à seção Roast finder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 18,
+      "area": "conversion",
+      "rule": "Validar Ceremony Cupping Journal System: conversion deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra tasting-ledger-footer conectado à seção Flavor note cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 19,
+      "area": "nav",
+      "rule": "Validar Ceremony Cupping Journal System: nav deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra flavor-note-card conectado à seção Origin story.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 20,
+      "area": "hero",
+      "rule": "Validar Ceremony Cupping Journal System: hero deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra roast-finder-filter conectado à seção Subscription builder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 21,
+      "area": "sections",
+      "rule": "Validar Ceremony Cupping Journal System: sections deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra origin-story-slab conectado à seção Brew guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 22,
+      "area": "components",
+      "rule": "Validar Ceremony Cupping Journal System: components deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra subscription-builder conectado à seção Seasonal release.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 23,
+      "area": "forms",
+      "rule": "Validar Ceremony Cupping Journal System: forms deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra brew-method-step conectado à seção Wholesale path.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 24,
+      "area": "motion",
+      "rule": "Validar Ceremony Cupping Journal System: motion deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra tasting-ledger-footer conectado à seção Footer as tasting ledger.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 25,
+      "area": "responsive",
+      "rule": "Validar Ceremony Cupping Journal System: responsive deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra flavor-note-card conectado à seção Roast finder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 26,
+      "area": "accessibility",
+      "rule": "Validar Ceremony Cupping Journal System: accessibility deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra roast-finder-filter conectado à seção Flavor note cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 27,
+      "area": "conversion",
+      "rule": "Validar Ceremony Cupping Journal System: conversion deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra origin-story-slab conectado à seção Origin story.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 28,
+      "area": "nav",
+      "rule": "Validar Ceremony Cupping Journal System: nav deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra subscription-builder conectado à seção Subscription builder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 29,
+      "area": "hero",
+      "rule": "Validar Ceremony Cupping Journal System: hero deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra brew-method-step conectado à seção Brew guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 30,
+      "area": "sections",
+      "rule": "Validar Ceremony Cupping Journal System: sections deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra tasting-ledger-footer conectado à seção Seasonal release.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 31,
+      "area": "components",
+      "rule": "Validar Ceremony Cupping Journal System: components deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra flavor-note-card conectado à seção Wholesale path.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 32,
+      "area": "forms",
+      "rule": "Validar Ceremony Cupping Journal System: forms deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra roast-finder-filter conectado à seção Footer as tasting ledger.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 33,
+      "area": "motion",
+      "rule": "Validar Ceremony Cupping Journal System: motion deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra origin-story-slab conectado à seção Roast finder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 34,
+      "area": "responsive",
+      "rule": "Validar Ceremony Cupping Journal System: responsive deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra subscription-builder conectado à seção Flavor note cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 35,
+      "area": "accessibility",
+      "rule": "Validar Ceremony Cupping Journal System: accessibility deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra brew-method-step conectado à seção Origin story.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 36,
+      "area": "conversion",
+      "rule": "Validar Ceremony Cupping Journal System: conversion deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra tasting-ledger-footer conectado à seção Subscription builder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 37,
+      "area": "nav",
+      "rule": "Validar Ceremony Cupping Journal System: nav deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra flavor-note-card conectado à seção Brew guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 38,
+      "area": "hero",
+      "rule": "Validar Ceremony Cupping Journal System: hero deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra roast-finder-filter conectado à seção Seasonal release.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 39,
+      "area": "sections",
+      "rule": "Validar Ceremony Cupping Journal System: sections deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra origin-story-slab conectado à seção Wholesale path.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 40,
+      "area": "components",
+      "rule": "Validar Ceremony Cupping Journal System: components deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra subscription-builder conectado à seção Footer as tasting ledger.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 41,
+      "area": "forms",
+      "rule": "Validar Ceremony Cupping Journal System: forms deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra brew-method-step conectado à seção Roast finder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 42,
+      "area": "motion",
+      "rule": "Validar Ceremony Cupping Journal System: motion deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra tasting-ledger-footer conectado à seção Flavor note cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 43,
+      "area": "responsive",
+      "rule": "Validar Ceremony Cupping Journal System: responsive deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra flavor-note-card conectado à seção Origin story.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 44,
+      "area": "accessibility",
+      "rule": "Validar Ceremony Cupping Journal System: accessibility deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra roast-finder-filter conectado à seção Subscription builder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 45,
+      "area": "conversion",
+      "rule": "Validar Ceremony Cupping Journal System: conversion deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra origin-story-slab conectado à seção Brew guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 46,
+      "area": "nav",
+      "rule": "Validar Ceremony Cupping Journal System: nav deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra subscription-builder conectado à seção Seasonal release.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 47,
+      "area": "hero",
+      "rule": "Validar Ceremony Cupping Journal System: hero deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra brew-method-step conectado à seção Wholesale path.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 48,
+      "area": "sections",
+      "rule": "Validar Ceremony Cupping Journal System: sections deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra tasting-ledger-footer conectado à seção Footer as tasting ledger.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 49,
+      "area": "components",
+      "rule": "Validar Ceremony Cupping Journal System: components deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra flavor-note-card conectado à seção Roast finder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 50,
+      "area": "forms",
+      "rule": "Validar Ceremony Cupping Journal System: forms deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra roast-finder-filter conectado à seção Flavor note cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 51,
+      "area": "motion",
+      "rule": "Validar Ceremony Cupping Journal System: motion deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra origin-story-slab conectado à seção Origin story.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 52,
+      "area": "responsive",
+      "rule": "Validar Ceremony Cupping Journal System: responsive deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra subscription-builder conectado à seção Subscription builder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 53,
+      "area": "accessibility",
+      "rule": "Validar Ceremony Cupping Journal System: accessibility deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra brew-method-step conectado à seção Brew guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 54,
+      "area": "conversion",
+      "rule": "Validar Ceremony Cupping Journal System: conversion deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra tasting-ledger-footer conectado à seção Seasonal release.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 55,
+      "area": "nav",
+      "rule": "Validar Ceremony Cupping Journal System: nav deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra flavor-note-card conectado à seção Wholesale path.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 56,
+      "area": "hero",
+      "rule": "Validar Ceremony Cupping Journal System: hero deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra roast-finder-filter conectado à seção Footer as tasting ledger.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 57,
+      "area": "sections",
+      "rule": "Validar Ceremony Cupping Journal System: sections deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra origin-story-slab conectado à seção Roast finder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 58,
+      "area": "components",
+      "rule": "Validar Ceremony Cupping Journal System: components deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra subscription-builder conectado à seção Flavor note cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 59,
+      "area": "forms",
+      "rule": "Validar Ceremony Cupping Journal System: forms deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra brew-method-step conectado à seção Origin story.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 60,
+      "area": "motion",
+      "rule": "Validar Ceremony Cupping Journal System: motion deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra tasting-ledger-footer conectado à seção Subscription builder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 61,
+      "area": "responsive",
+      "rule": "Validar Ceremony Cupping Journal System: responsive deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra flavor-note-card conectado à seção Brew guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 62,
+      "area": "accessibility",
+      "rule": "Validar Ceremony Cupping Journal System: accessibility deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra roast-finder-filter conectado à seção Seasonal release.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 63,
+      "area": "conversion",
+      "rule": "Validar Ceremony Cupping Journal System: conversion deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra origin-story-slab conectado à seção Wholesale path.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 64,
+      "area": "nav",
+      "rule": "Validar Ceremony Cupping Journal System: nav deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra subscription-builder conectado à seção Footer as tasting ledger.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 65,
+      "area": "hero",
+      "rule": "Validar Ceremony Cupping Journal System: hero deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra brew-method-step conectado à seção Roast finder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 66,
+      "area": "sections",
+      "rule": "Validar Ceremony Cupping Journal System: sections deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra tasting-ledger-footer conectado à seção Flavor note cards.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 67,
+      "area": "components",
+      "rule": "Validar Ceremony Cupping Journal System: components deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra flavor-note-card conectado à seção Origin story.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 68,
+      "area": "forms",
+      "rule": "Validar Ceremony Cupping Journal System: forms deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra roast-finder-filter conectado à seção Subscription builder.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 69,
+      "area": "motion",
+      "rule": "Validar Ceremony Cupping Journal System: motion deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra origin-story-slab conectado à seção Brew guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 70,
+      "area": "responsive",
+      "rule": "Validar Ceremony Cupping Journal System: responsive deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra subscription-builder conectado à seção Seasonal release.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 71,
+      "area": "accessibility",
+      "rule": "Validar Ceremony Cupping Journal System: accessibility deve expressar cupping journal commerce.",
+      "evidence": "Preview ou implementação mostra brew-method-step conectado à seção Wholesale path.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 72,
+      "area": "conversion",
+      "rule": "Validar Ceremony Cupping Journal System: conversion deve expressar cupping notes, flavor cards, craft commerce with sensory detail.",
+      "evidence": "Preview ou implementação mostra tasting-ledger-footer conectado à seção Footer as tasting ledger.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    }
+  ],
+  "source_verification": {
+    "status": "needs-human-source-verification-before-official-import",
+    "correction_reason": "Removidas formulacoes que pareciam premios/benchmarks comprovados sem evidencia anexada ao pacote.",
+    "source_url": "https://ceremonycoffee.com/"
+  },
+  "functional_requirements": {
+    "preview_must_include": [
+      "navigation",
+      "hero",
+      "interactive mode selector",
+      "active component state",
+      "real form controls",
+      "aria-live result area",
+      "clickable color tokens",
+      "section coverage",
+      "responsive behavior",
+      "focus-visible states"
+    ],
+    "business_specific_interaction": "Perfil de sabor",
+    "expected_result": "Recomendacao de torra atualizada",
+    "failure_fixed": "cafe sem finder de torra, assinatura ou notas sensoriais"
+  },
+  "visual_quality_review": {
+    "previous_failure": "Preview visual era superficial e/ou estatico; nao provava funcionalidade do DS.",
+    "current_standard": "Preview deve funcionar como diario de cupping, com controle Perfil de sabor, formulario e estado ativo.",
+    "reject_if": [
+      "parecer poster estatico",
+      "nao tiver formulario ou estado ativo",
+      "nao mostrar componentes do segmento",
+      "usar grid generico de cards sem funcao"
+    ]
+  }
+}

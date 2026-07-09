@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DS 01.2 — Clínica Pediátrica Friendly · Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#87CEEB;
+    --primary-deep:#1E6E96;
+    --primary-deep-hover:#17587A;
+    --secondary:#FFE4B5;
+    --secondary-soft:#FFF4DE;
+    --secondary-deep:#8F6400;
+    --surface:#F7FCFF;
+    --surface-alt:#EAF6FC;
+    --text:#1F3B4D;
+    --text-2:#35536A;
+    --muted:#5B7181;
+    --border:#D2E4EE;
+    --error:#B3372E;
+    --success:#1F7A45;
+    --n300:#B4CFDD;
+    --shadow-sm:0 2px 6px rgba(31,59,77,.06);
+    --shadow-md:0 6px 18px rgba(31,59,77,.08);
+    --shadow-lg:0 14px 34px rgba(31,59,77,.11);
+    --ring:0 0 0 4px rgba(30,110,150,.28);
+    --bounce:cubic-bezier(.34,1.56,.64,1);
+    --soft:cubic-bezier(.25,.46,.45,.94);
+    --heading:'Nunito','Trebuchet MS','Segoe UI',system-ui,sans-serif;
+    --body:'Karla','Helvetica Neue',Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);font-size:16px;line-height:1.65;color:var(--text);background:var(--surface);overflow-x:hidden}
+  h1,h2,h3,h4{font-family:var(--heading);color:var(--text)}
+  h1{font-size:clamp(34px,5vw,56px);line-height:1.1;font-weight:800;letter-spacing:-.015em}
+  h2{font-size:clamp(26px,3.4vw,40px);line-height:1.15;font-weight:800;letter-spacing:-.01em}
+  h3{font-size:clamp(20px,2vw,26px);line-height:1.25;font-weight:700}
+  p{color:var(--text-2)}
+  .container{max-width:1160px;margin:0 auto;padding:0 20px}
+  @media(min-width:480px){.container{padding:0 32px}}
+  @media(min-width:1024px){.container{padding:0 48px}}
+  section{padding:56px 0}
+  @media(min-width:480px){section{padding:80px 0}}
+  @media(min-width:1024px){section{padding:104px 0}}
+  .eyebrow{font-family:var(--body);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--primary-deep)}
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--primary-deep);color:#fff;padding:12px 20px;border-radius:0 0 16px 0;z-index:99}
+  .skip-link:focus{left:0}
+
+  /* ---------- NAV ---------- */
+  nav{position:sticky;top:0;background:rgba(247,252,255,.92);backdrop-filter:blur(8px);border-bottom:1.5px solid var(--border);z-index:50}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  @media(min-width:1024px){.nav-inner{height:72px}}
+  .logo{display:flex;align-items:center;gap:8px;font-family:var(--heading);font-weight:800;font-size:20px;color:var(--text);text-decoration:none}
+  .nav-links{display:none;gap:28px;list-style:none}
+  @media(min-width:1024px){.nav-links{display:flex}}
+  .nav-links a{color:var(--text-2);text-decoration:none;font-weight:500;transition:color .3s var(--soft)}
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--primary-deep);text-decoration:underline wavy var(--primary) 2px;text-underline-offset:6px}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--heading);font-weight:700;font-size:16px;border-radius:999px;padding:14px 28px;cursor:pointer;text-decoration:none;border:none;min-height:44px;transition:transform .3s var(--bounce),box-shadow .3s var(--soft),background .3s var(--soft),border-color .3s var(--soft)}
+  .btn:focus-visible{outline:none;box-shadow:var(--ring)}
+  .btn-primary{background:var(--primary-deep);color:#fff;box-shadow:0 6px 18px rgba(30,110,150,.25)}
+  .btn-primary:hover{background:var(--primary-deep-hover);transform:translateY(-2px) scale(1.03);box-shadow:var(--shadow-lg)}
+  .btn-primary:active{transform:scale(.98);box-shadow:var(--shadow-sm)}
+  .btn-primary:disabled{background:var(--n300);color:var(--surface);box-shadow:none;cursor:not-allowed;transform:none}
+  .btn-secondary{background:transparent;color:var(--primary-deep);border:2.5px solid var(--primary);padding:12px 26px}
+  .btn-secondary:hover{background:var(--surface-alt);border-color:var(--primary-deep);transform:translateY(-2px)}
+  .btn-secondary:disabled{border-color:var(--border);color:var(--n300);cursor:not-allowed;transform:none;background:transparent}
+  .btn-ghost{background:transparent;color:var(--primary-deep);padding:8px 4px;text-decoration:underline wavy var(--primary) 2px;text-underline-offset:5px}
+  .btn-ghost:hover{color:var(--primary-deep-hover)}
+  .btn-lg{padding:18px 36px;font-size:18px}
+  .btn-sm{padding:10px 20px;font-size:14px;min-height:40px}
+  .btn-focus-demo{box-shadow:var(--ring)}
+
+  /* ---------- HERO ---------- */
+  .hero{background:linear-gradient(180deg,var(--surface) 0%,var(--surface-alt) 100%);position:relative;overflow:hidden;padding:64px 0 0}
+  @media(min-width:1024px){.hero{padding:88px 0 0}}
+  .hero-grid{display:grid;gap:40px;align-items:center;grid-template-columns:1fr}
+  @media(min-width:1024px){.hero-grid{grid-template-columns:55fr 45fr;gap:48px}}
+  .hero-illus{order:-1;max-width:420px;margin:0 auto}
+  @media(min-width:1024px){.hero-illus{order:2;max-width:none}}
+  .hero-illus svg{width:100%;height:auto;display:block}
+  .hl{background:linear-gradient(transparent 55%,var(--secondary) 55%,var(--secondary) 92%,transparent 92%);border-radius:4px;padding:0 4px}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin:28px 0}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:48px}
+  .cloud{position:absolute;opacity:.8;pointer-events:none}
+  .float{animation:balloon-float 6s ease-in-out infinite}
+  .float-delay{animation:balloon-float 6s ease-in-out 1.6s infinite}
+  @keyframes balloon-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .wave{display:block;width:100%;height:56px;margin-bottom:-1px}
+
+  /* ---------- BADGES ---------- */
+  .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--border);border-radius:999px;padding:8px 16px;font-weight:700;font-size:14px;color:var(--text-2)}
+  .badge svg{flex:none}
+  .badge-warm{background:var(--secondary);border-color:var(--secondary);color:var(--secondary-deep)}
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust{background:var(--surface-alt);padding:32px 0}
+  .trust-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+  /* ---------- CARDS ---------- */
+  .grid-3{display:grid;gap:24px;grid-template-columns:1fr}
+  @media(min-width:480px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.grid-3{grid-template-columns:repeat(3,1fr);gap:32px}}
+  .card{background:#fff;border:1.5px solid var(--border);border-radius:24px;padding:28px;box-shadow:var(--shadow-md);transition:transform .4s var(--bounce),box-shadow .4s var(--soft)}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .card-icon{width:64px;height:64px;border-radius:999px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;background:var(--surface-alt);transition:transform .4s var(--bounce)}
+  .card-icon.warm{background:var(--secondary-soft)}
+  .card:hover .card-icon{animation:wiggle .4s var(--bounce)}
+  @keyframes wiggle{0%{transform:rotate(0)}35%{transform:rotate(-3deg)}70%{transform:rotate(2deg)}100%{transform:rotate(0)}}
+  .card h3{margin-bottom:8px}
+  .card p{font-size:15px}
+
+  /* ---------- TEAM ---------- */
+  .team-card{background:var(--surface);border:1.5px solid var(--border);border-radius:24px;padding:28px;text-align:center;transition:box-shadow .4s var(--soft)}
+  .team-card:hover{box-shadow:var(--shadow-md)}
+  .avatar{width:96px;height:96px;border-radius:999px;border:3px solid var(--primary);margin:0 auto 16px;display:block;transition:transform .4s var(--bounce),border-color .4s var(--soft);background:var(--surface-alt)}
+  .team-card:hover .avatar{transform:translateY(-4px);border-color:var(--primary-deep)}
+  .team-card .role{color:var(--muted);font-size:14px}
+  .team-card .crm{color:var(--primary-deep);font-size:13px;font-weight:700;margin-top:4px}
+  .grid-4{display:grid;gap:24px;grid-template-columns:1fr}
+  @media(min-width:480px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.grid-4{grid-template-columns:repeat(4,1fr)}}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .t-card{background:var(--secondary-soft);border-radius:24px 24px 24px 8px;padding:28px;position:relative;transition:transform .4s var(--bounce)}
+  .t-card.featured{background:var(--secondary);transform:scale(1.02)}
+  .t-card .q{font-family:var(--heading);font-weight:800;font-size:48px;line-height:1;color:var(--primary-deep)}
+  .t-card blockquote{font-size:16px;color:var(--text);margin:4px 0 18px}
+  .t-author{display:flex;align-items:center;gap:12px}
+  .t-author .mini{width:44px;height:44px;border-radius:999px;background:var(--primary);flex:none}
+  .t-author strong{font-family:var(--heading);font-size:15px}
+  .t-author span{display:block;font-size:13px;color:var(--muted)}
+  .stars{color:var(--secondary-deep);letter-spacing:2px;font-size:14px;margin-bottom:8px}
+
+  /* ---------- SWATCHES ---------- */
+  .swatches{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+  .swatch{border-radius:16px;overflow:hidden;border:1.5px solid var(--border);background:#fff}
+  .swatch .chip{height:72px}
+  .swatch .meta{padding:10px 14px;font-size:13px}
+  .swatch .meta b{display:block;font-family:var(--heading)}
+  .swatch .meta code{color:var(--muted);font-family:monospace}
+
+  /* ---------- INPUTS ---------- */
+  .form-grid{display:grid;gap:24px;grid-template-columns:1fr;max-width:760px}
+  @media(min-width:768px){.form-grid{grid-template-columns:1fr 1fr}}
+  .field label{display:block;font-weight:700;font-size:14px;color:var(--text-2);margin-bottom:6px}
+  .field input,.field select{width:100%;background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:14px 18px;font-family:var(--body);font-size:16px;color:var(--text);transition:border-color .3s var(--soft),box-shadow .3s var(--soft)}
+  .field input::placeholder{color:var(--muted)}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--primary-deep);box-shadow:var(--ring)}
+  .field.focused input{border-color:var(--primary-deep);box-shadow:var(--ring)}
+  .field.error input{border-color:var(--error);border-width:2px}
+  .field .msg{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--error);margin-top:6px}
+  .field input:disabled{background:#F4F9FC;color:var(--n300);cursor:not-allowed}
+
+  /* ---------- STEPS ---------- */
+  .steps{display:grid;gap:32px;grid-template-columns:1fr;counter-reset:step}
+  @media(min-width:768px){.steps{grid-template-columns:repeat(3,1fr)}}
+  .step{text-align:center;position:relative}
+  .step .num{width:56px;height:56px;border-radius:999px;background:var(--primary);color:var(--text);font-family:var(--heading);font-weight:800;font-size:22px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;border:2.5px dashed var(--primary-deep)}
+
+  /* ---------- CTA FINAL ---------- */
+  .cta-final{background:var(--primary);border-radius:32px;padding:48px 28px;text-align:center;position:relative;overflow:hidden}
+  @media(min-width:768px){.cta-final{padding:64px 48px}}
+  .cta-final h2,.cta-final p{color:var(--text)}
+  .btn-white{background:#fff;color:var(--primary-deep);box-shadow:var(--shadow-md)}
+  .btn-white:hover{transform:translateY(-2px) scale(1.03);box-shadow:var(--shadow-lg)}
+
+  /* ---------- ANIMATION DEMO ---------- */
+  .anim-demo{display:flex;flex-wrap:wrap;gap:20px}
+  .anim-chip{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:18px 22px;font-size:14px;font-weight:700;color:var(--text-2)}
+  .demo-bounce{animation:bounce-in .5s var(--bounce) both}
+  @keyframes bounce-in{0%{transform:scale(.92);opacity:0}100%{transform:scale(1);opacity:1}}
+  .demo-rise{animation:fade-rise .5s var(--soft) both}
+  @keyframes fade-rise{0%{transform:translateY(24px);opacity:0}100%{transform:translateY(0);opacity:1}}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .5s var(--soft),transform .5s var(--soft)}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--text);color:#E6F1F7;position:relative}
+  .footer-wave{display:block;width:100%;height:48px;margin-bottom:-1px}
+  .footer-grid{display:grid;gap:32px;grid-template-columns:1fr;padding:56px 0 32px}
+  @media(min-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.footer-grid{grid-template-columns:repeat(4,1fr)}}
+  footer h4{color:#fff;font-size:16px;margin-bottom:14px}
+  footer a{color:#E6F1F7;text-decoration:none;transition:color .3s var(--soft)}
+  footer a:hover{color:var(--primary)}
+  footer ul{list-style:none}
+  footer li{margin-bottom:10px;font-size:15px}
+  .footer-legal{border-top:1px solid rgba(230,241,247,.2);padding:20px 0;font-size:13px;color:#B4CFDD;text-align:center}
+
+  .section-label{display:inline-block;background:var(--surface-alt);border:1.5px solid var(--border);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--primary-deep);margin-bottom:16px}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:150ms !important}
+    .float,.float-delay{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<!-- NAV -->
+<nav aria-label="Navegação principal">
+  <div class="container nav-inner">
+    <a class="logo" href="#main">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#87CEEB"/><path d="M10 19c2 3 5 4.5 7 4.5s5-1.5 7-4.5" stroke="#1F3B4D" stroke-width="2.5" stroke-linecap="round" fill="none"/><circle cx="12" cy="13" r="1.8" fill="#1F3B4D"/><circle cx="22" cy="13" r="1.8" fill="#1F3B4D"/></svg>
+      Cirandinha
+    </a>
+    <ul class="nav-links">
+      <li><a href="#servicos">Especialidades</a></li>
+      <li><a href="#equipe">Equipe</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="btn btn-primary btn-sm" href="#contato">Agendar consulta</a>
+  </div>
+</nav>
+
+<main id="main">
+<!-- HERO -->
+<header class="hero">
+  <svg class="cloud float" style="top:40px;left:4%" width="90" height="40" viewBox="0 0 90 40" aria-hidden="true"><path d="M15 32c-8 0-12-6-9-12 2-5 8-6 11-4 1-8 12-11 17-5 3-4 12-3 13 3 7-1 11 5 8 11-2 4-6 7-12 7H15z" fill="#fff"/></svg>
+  <svg class="cloud float-delay" style="top:110px;right:6%" width="70" height="32" viewBox="0 0 90 40" aria-hidden="true"><path d="M15 32c-8 0-12-6-9-12 2-5 8-6 11-4 1-8 12-11 17-5 3-4 12-3 13 3 7-1 11 5 8 11-2 4-6 7-12 7H15z" fill="#EAF6FC"/></svg>
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Pediatria acolhedora em São Paulo</span>
+      <h1 style="margin:14px 0 18px">Cuidamos do seu pequeno como se fosse <span class="hl">nosso</span></h1>
+      <p style="font-size:18px;max-width:48ch">Consultas tranquilas, sala de espera lúdica e uma equipe que explica tudo com calma. Aqui, criança sai sorrindo — e você, mais leve.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary btn-lg" href="#contato">Agende uma consulta sem estresse</a>
+        <a class="btn btn-ghost" href="#equipe">Conheça nossa equipe</a>
+      </div>
+      <div class="hero-badges">
+        <span class="badge"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 1.5l2.2 4.6 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L1.8 6.8l5-.7z" fill="#1E6E96"/></svg>+10 anos cuidando de famílias</span>
+        <span class="badge"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 16s-6.5-4-6.5-8.5C2.5 4.5 4.5 3 6.5 3 8 3 9 4 9 4s1-1 2.5-1c2 0 4 1.5 4 4.5C15.5 12 9 16 9 16z" fill="#1E6E96"/></svg>Atendimento humanizado</span>
+        <span class="badge badge-warm"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9l4 4 8-8" stroke="#8F6400" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Convênios aceitos</span>
+      </div>
+    </div>
+    <div class="hero-illus" aria-hidden="false">
+      <!-- Ilustração hand-drawn simulada: pediatra + criança + balão -->
+      <svg viewBox="0 0 440 380" role="img" aria-label="Ilustração de uma pediatra atendendo uma criança sorridente, com balão e sol ao fundo">
+        <circle cx="360" cy="70" r="42" fill="#FFE4B5"/>
+        <g stroke="#FFE4B5" stroke-width="5" stroke-linecap="round">
+          <line x1="360" y1="10" x2="360" y2="22"/><line x1="360" y1="118" x2="360" y2="130"/>
+          <line x1="302" y1="70" x2="314" y2="70"/><line x1="406" y1="70" x2="418" y2="70"/>
+          <line x1="320" y1="30" x2="329" y2="39"/><line x1="391" y1="101" x2="400" y2="110"/>
+          <line x1="400" y1="30" x2="391" y2="39"/><line x1="329" y1="101" x2="320" y2="110"/>
+        </g>
+        <ellipse cx="220" cy="352" rx="170" ry="18" fill="#EAF6FC"/>
+        <g class="float">
+          <path d="M96 96c0-26 20-44 44-44s44 18 44 44-20 52-44 52-44-26-44-52z" fill="#87CEEB" stroke="#1E6E96" stroke-width="3"/>
+          <path d="M138 150l-6 14h14l-6-14" fill="#1E6E96"/>
+          <path d="M140 164c0 30-8 44-26 58" stroke="#1E6E96" stroke-width="2.5" fill="none" stroke-dasharray="6 7" stroke-linecap="round"/>
+        </g>
+        <!-- pediatra -->
+        <g>
+          <circle cx="270" cy="170" r="34" fill="#F7FCFF" stroke="#1F3B4D" stroke-width="3"/>
+          <path d="M244 156c4-14 16-22 26-22s22 8 26 22" fill="#1F3B4D"/>
+          <circle cx="259" cy="172" r="3" fill="#1F3B4D"/><circle cx="281" cy="172" r="3" fill="#1F3B4D"/>
+          <path d="M260 184c3 4 8 5 10 5s7-1 10-5" stroke="#1F3B4D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M232 268c0-36 16-58 38-58s38 22 38 58v44h-76z" fill="#FFFFFF" stroke="#1F3B4D" stroke-width="3"/>
+          <path d="M252 214l18 20 18-20" stroke="#D2E4EE" stroke-width="2.5" fill="none"/>
+          <path d="M258 232c-8 2-12 10-12 18" stroke="#1E6E96" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="246" cy="256" r="7" fill="#87CEEB" stroke="#1E6E96" stroke-width="2.5"/>
+        </g>
+        <!-- criança -->
+        <g>
+          <circle cx="150" cy="238" r="26" fill="#F7FCFF" stroke="#1F3B4D" stroke-width="3"/>
+          <path d="M130 226c4-10 12-16 20-16s16 6 20 16" fill="#8F6400"/>
+          <circle cx="142" cy="240" r="2.6" fill="#1F3B4D"/><circle cx="158" cy="240" r="2.6" fill="#1F3B4D"/>
+          <path d="M142 249c2.5 3.5 6.5 4.5 8 4.5s5.5-1 8-4.5" stroke="#1F3B4D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M126 306c0-26 10-42 24-42s24 16 24 42v6h-48z" fill="#FFE4B5" stroke="#1F3B4D" stroke-width="3"/>
+          <path d="M174 282l24-10" stroke="#1F3B4D" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="204" cy="269" r="6" fill="#F7FCFF" stroke="#1F3B4D" stroke-width="3"/>
+        </g>
+        <path d="M64 344h312" stroke="#B4CFDD" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 12"/>
+      </svg>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 28C180 0 360 56 540 42S900 0 1080 14s270 34 360 20V56H0z" fill="#EAF6FC"/></svg>
+</header>
+
+<!-- TRUST STRIP -->
+<div class="trust" aria-label="Selos de confiança">
+  <div class="container trust-row">
+    <span class="badge"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" stroke="#1E6E96" stroke-width="2.5" fill="none"/><path d="M6 9l2 2 4-4" stroke="#1E6E96" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>Pediatras com RQE</span>
+    <span class="badge"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><rect x="3" y="5" width="12" height="10" rx="3" stroke="#1E6E96" stroke-width="2.5" fill="none"/><circle cx="9" cy="10" r="2" fill="#1E6E96"/></svg>Sala de espera lúdica</span>
+    <span class="badge"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2v14M2 9h14" stroke="#1E6E96" stroke-width="2.5" stroke-linecap="round"/></svg>Pronto atendimento</span>
+    <span class="badge"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><rect x="4" y="2" width="10" height="14" rx="3" stroke="#1E6E96" stroke-width="2.5" fill="none"/><circle cx="9" cy="13" r="1.2" fill="#1E6E96"/></svg>Telemedicina disponível</span>
+  </div>
+</div>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="container">
+    <span class="section-label">Especialidades</span>
+    <h2 style="max-width:20ch">Do check-up de rotina ao cuidado especializado</h2>
+    <p style="margin:12px 0 40px;max-width:60ch">Uma equipe completa para acompanhar cada fase do crescimento — sem correria e sem susto.</p>
+    <div class="grid-3">
+      <div class="card reveal">
+        <div class="card-icon"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path d="M8 4v8a7 7 0 0014 0V4" stroke="#1E6E96" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="15" cy="25" r="3" stroke="#1E6E96" stroke-width="2.5" fill="none"/></svg></div>
+        <h3>Pediatria geral</h3>
+        <p>Consultas de rotina, puericultura e acompanhamento do crescimento com tempo de sobra para suas perguntas.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon warm"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path d="M15 4c-5 0-8 3-8 8 0 6 4 8 4 12h8c0-4 4-6 4-12 0-5-3-8-8-8z" stroke="#8F6400" stroke-width="2.5" fill="none" stroke-linejoin="round"/><path d="M12 26h6" stroke="#8F6400" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+        <h3>Odontopediatria</h3>
+        <p>Primeira consulta ao dentista sem medo, com abordagem lúdica e adaptação no ritmo da criança.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path d="M6 24c2-8 6-12 9-12s7 4 9 12" stroke="#1E6E96" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="15" cy="8" r="4" stroke="#1E6E96" stroke-width="2.5" fill="none"/></svg></div>
+        <h3>Fonoaudiologia</h3>
+        <p>Avaliação de fala e linguagem com sessões que parecem brincadeira — porque são.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon warm"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="5" y="7" width="20" height="16" rx="4" stroke="#8F6400" stroke-width="2.5" fill="none"/><path d="M11 4v5M19 4v5M5 13h20" stroke="#8F6400" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+        <h3>Vacinação</h3>
+        <p>Calendário vacinal completo, ambiente acolhedor e técnicas de distração para picadas sem drama.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path d="M15 26s-10-6-10-13c0-4 3-7 6-7 2.5 0 4 2 4 2s1.5-2 4-2c3 0 6 3 6 7 0 7-10 13-10 13z" stroke="#1E6E96" stroke-width="2.5" fill="none" stroke-linejoin="round"/></svg></div>
+        <h3>Psicologia infantil</h3>
+        <p>Apoio emocional para crianças e orientação para pais, em salas pensadas para o lúdico.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon warm"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="10" stroke="#8F6400" stroke-width="2.5" fill="none"/><path d="M15 9v6l4 3" stroke="#8F6400" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+        <h3>Pronto atendimento</h3>
+        <p>Encaixes no mesmo dia para febre, quedas e sustos — com triagem gentil por telefone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+<section id="equipe" style="background:var(--surface-alt)">
+  <div class="container">
+    <span class="section-label">Nossa equipe</span>
+    <h2>Gente de verdade cuidando de quem você mais ama</h2>
+    <p style="margin:12px 0 40px;max-width:60ch">Você vai conhecer cada profissional pelo nome — e seu filho também.</p>
+    <div class="grid-4">
+      <div class="team-card reveal">
+        <svg class="avatar" viewBox="0 0 96 96" role="img" aria-label="Dra. Marina Costa, pediatra"><circle cx="48" cy="48" r="48" fill="#EAF6FC"/><circle cx="48" cy="40" r="16" fill="#F7FCFF" stroke="#1F3B4D" stroke-width="2.5"/><path d="M34 34c2-8 8-12 14-12s12 4 14 12" fill="#1F3B4D"/><path d="M24 88c4-18 14-26 24-26s20 8 24 26" fill="#87CEEB"/></svg>
+        <h3 style="font-size:18px">Dra. Marina Costa</h3>
+        <p class="role">Pediatra · Puericultura</p>
+        <p class="crm">CRM-SP 123456 · RQE 7890</p>
+      </div>
+      <div class="team-card reveal">
+        <svg class="avatar" viewBox="0 0 96 96" role="img" aria-label="Dr. Felipe Ramos, pediatra"><circle cx="48" cy="48" r="48" fill="#FFF4DE"/><circle cx="48" cy="40" r="16" fill="#F7FCFF" stroke="#1F3B4D" stroke-width="2.5"/><path d="M34 32c3-6 8-9 14-9s11 3 14 9" fill="#8F6400"/><path d="M24 88c4-18 14-26 24-26s20 8 24 26" fill="#FFE4B5"/></svg>
+        <h3 style="font-size:18px">Dr. Felipe Ramos</h3>
+        <p class="role">Pediatra · Alergia infantil</p>
+        <p class="crm">CRM-SP 234567 · RQE 8901</p>
+      </div>
+      <div class="team-card reveal">
+        <svg class="avatar" viewBox="0 0 96 96" role="img" aria-label="Dra. Aline Souza, odontopediatra"><circle cx="48" cy="48" r="48" fill="#EAF6FC"/><circle cx="48" cy="40" r="16" fill="#F7FCFF" stroke="#1F3B4D" stroke-width="2.5"/><path d="M32 40c0-12 7-18 16-18s16 6 16 18" fill="#1F3B4D"/><path d="M24 88c4-18 14-26 24-26s20 8 24 26" fill="#1E6E96"/></svg>
+        <h3 style="font-size:18px">Dra. Aline Souza</h3>
+        <p class="role">Odontopediatra</p>
+        <p class="crm">CRO-SP 34567</p>
+      </div>
+      <div class="team-card reveal">
+        <svg class="avatar" viewBox="0 0 96 96" role="img" aria-label="Beatriz Lima, fonoaudióloga"><circle cx="48" cy="48" r="48" fill="#FFF4DE"/><circle cx="48" cy="40" r="16" fill="#F7FCFF" stroke="#1F3B4D" stroke-width="2.5"/><path d="M33 36c1-9 7-14 15-14s14 5 15 14c-2-2-6-4-15-4s-13 2-15 4z" fill="#8F6400"/><path d="M24 88c4-18 14-26 24-26s20 8 24 26" fill="#87CEEB"/></svg>
+        <h3 style="font-size:18px">Beatriz Lima</h3>
+        <p class="role">Fonoaudióloga infantil</p>
+        <p class="crm">CRFa 2-45678</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="container">
+    <span class="section-label">Depoimentos</span>
+    <h2>O que os pais contam por aí</h2>
+    <p style="margin:12px 0 40px">Depoimentos reais de famílias atendidas · nota média 4,9 de 5</p>
+    <div class="grid-3">
+      <figure class="t-card reveal">
+        <div class="q" aria-hidden="true">“</div>
+        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <blockquote>Minha filha pedia para NÃO ir ao médico. Hoje ela pergunta quando volta na Dra. Marina. Isso diz tudo.</blockquote>
+        <figcaption class="t-author">
+          <span class="mini" aria-hidden="true"></span>
+          <div><strong>Camila R.</strong><span>mãe da Alice, 5 anos</span></div>
+        </figcaption>
+      </figure>
+      <figure class="t-card featured reveal">
+        <div class="q" aria-hidden="true">“</div>
+        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <blockquote>Primeira consulta do meu bebê sem choro — nem dele, nem meu. A equipe explicou cada passo com uma paciência que eu nunca tinha visto.</blockquote>
+        <figcaption class="t-author">
+          <span class="mini" style="background:#1E6E96" aria-hidden="true"></span>
+          <div><strong>Juliana M.</strong><span>mãe do Theo, 8 meses</span></div>
+        </figcaption>
+      </figure>
+      <figure class="t-card reveal">
+        <div class="q" aria-hidden="true">“</div>
+        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <blockquote>Encaixaram meu filho no mesmo dia quando ele teve febre alta. Atendimento rápido, humano e sem alarmismo.</blockquote>
+        <figcaption class="t-author">
+          <span class="mini" style="background:#FFE4B5" aria-hidden="true"></span>
+          <div><strong>Rodrigo A.</strong><span>pai do Miguel, 3 anos</span></div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section style="background:var(--surface-alt);padding-top:72px;padding-bottom:72px">
+  <div class="container">
+    <span class="section-label">Como funciona</span>
+    <h2 style="margin-bottom:40px">Agendar é simples assim</h2>
+    <div class="steps">
+      <div class="step reveal"><div class="num">1</div><h3 style="font-size:18px">Agende online ou por WhatsApp</h3><p style="font-size:15px">Escolha o melhor horário sem fila e sem telefone ocupado.</p></div>
+      <div class="step reveal"><div class="num">2</div><h3 style="font-size:18px">Chegue e deixe brincar</h3><p style="font-size:15px">Sala de espera lúdica: a consulta começa bem antes do consultório.</p></div>
+      <div class="step reveal"><div class="num">3</div><h3 style="font-size:18px">Consulta com calma</h3><p style="font-size:15px">Tempo de sobra para examinar, explicar e responder tudo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PALETA -->
+<section>
+  <div class="container">
+    <span class="section-label">DS · Paleta</span>
+    <h2 style="margin-bottom:32px">Cores do sistema</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#87CEEB"></div><div class="meta"><b>Primary (superfície)</b><code>#87CEEB</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#1E6E96"></div><div class="meta"><b>Primary deep (CTA)</b><code>#1E6E96</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#17587A"></div><div class="meta"><b>Deep hover</b><code>#17587A</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#FFE4B5"></div><div class="meta"><b>Secondary</b><code>#FFE4B5</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#8F6400"></div><div class="meta"><b>Secondary deep</b><code>#8F6400</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#F7FCFF;border-bottom:1.5px solid #D2E4EE"></div><div class="meta"><b>Surface</b><code>#F7FCFF</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#EAF6FC"></div><div class="meta"><b>Surface alt</b><code>#EAF6FC</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#1F3B4D"></div><div class="meta"><b>Text primary</b><code>#1F3B4D</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#5B7181"></div><div class="meta"><b>Text muted</b><code>#5B7181</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#B3372E"></div><div class="meta"><b>Error</b><code>#B3372E</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#1F7A45"></div><div class="meta"><b>Success</b><code>#1F7A45</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#D2E4EE"></div><div class="meta"><b>Border</b><code>#D2E4EE</code></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPOGRAFIA -->
+<section style="background:var(--surface-alt)">
+  <div class="container">
+    <span class="section-label">DS · Tipografia</span>
+    <h2 style="margin-bottom:32px">Nunito + Karla ao vivo</h2>
+    <h1>H1 · Cuidado que abraça</h1>
+    <h2 style="margin-top:16px">H2 · Nunito 800, arredondada</h2>
+    <h3 style="margin-top:16px">H3 · Subtítulos gentis</h3>
+    <p style="margin-top:16px;max-width:64ch">Body · Karla 400. Um corpo de texto caloroso e altamente legível, pensado para pais lendo no celular — às vezes com uma criança no colo. Line-height generoso de 1.65 a 1.7.</p>
+    <p style="font-size:14px;color:var(--muted);margin-top:12px">Small · Karla 400, 14px — legendas, metadados e notas.</p>
+    <p class="eyebrow" style="margin-top:12px">Eyebrow · Karla 700 caps</p>
+  </div>
+</section>
+
+<!-- BOTÕES -->
+<section>
+  <div class="container">
+    <span class="section-label">DS · Botões</span>
+    <h2 style="margin-bottom:32px">Estados dos botões</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:24px">
+      <button class="btn btn-primary">Primário default</button>
+      <button class="btn btn-primary" style="background:#17587A;transform:translateY(-2px) scale(1.03);box-shadow:var(--shadow-lg)">Primário hover</button>
+      <button class="btn btn-primary btn-focus-demo">Primário focus</button>
+      <button class="btn btn-primary" disabled>Primário disabled</button>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:24px">
+      <button class="btn btn-secondary">Secundário default</button>
+      <button class="btn btn-secondary" style="background:var(--surface-alt);border-color:var(--primary-deep)">Secundário hover</button>
+      <button class="btn btn-secondary btn-focus-demo">Secundário focus</button>
+      <button class="btn btn-secondary" disabled>Secundário disabled</button>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+      <a class="btn btn-ghost" href="#depoimentos">Link ghost com underline wavy</a>
+      <button class="btn btn-primary btn-lg">CTA grande do hero</button>
+      <button class="btn btn-primary btn-sm">Botão pequeno</button>
+    </div>
+  </div>
+</section>
+
+<!-- INPUTS -->
+<section style="background:var(--surface-alt)" id="contato">
+  <div class="container">
+    <span class="section-label">DS · Formulário</span>
+    <h2 style="margin-bottom:8px">Agende uma consulta sem estresse</h2>
+    <p style="margin-bottom:32px">Estados de input: default, focus, erro e desabilitado.</p>
+    <form class="form-grid" onsubmit="return false">
+      <div class="field">
+        <label for="nome">Nome do responsável</label>
+        <input id="nome" type="text" placeholder="Como podemos te chamar?">
+      </div>
+      <div class="field focused">
+        <label for="crianca">Nome da criança (focus)</label>
+        <input id="crianca" type="text" placeholder="E o nome do pequeno?">
+      </div>
+      <div class="field error">
+        <label for="tel">WhatsApp (erro)</label>
+        <input id="tel" type="tel" value="11 9" aria-describedby="tel-err" aria-invalid="true">
+        <p class="msg" id="tel-err"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#B3372E"/><path d="M8 4.5v4M8 11.2v.3" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>Ops, faltaram alguns números — confere pra gente?</p>
+      </div>
+      <div class="field">
+        <label for="conv">Convênio (desabilitado)</label>
+        <input id="conv" type="text" value="Selecione o plano" disabled>
+      </div>
+      <div style="grid-column:1/-1">
+        <button class="btn btn-primary btn-lg" type="submit">Enviar pedido de agendamento</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ANIMAÇÕES -->
+<section>
+  <div class="container">
+    <span class="section-label">DS · Motion</span>
+    <h2 style="margin-bottom:8px">Animações do sistema</h2>
+    <p style="margin-bottom:32px">300–500ms, bounce gentil <code style="font-size:14px">cubic-bezier(.34,1.56,.64,1)</code>. Clique para repetir.</p>
+    <div class="anim-demo">
+      <button class="anim-chip demo-bounce" onclick="this.classList.remove('demo-bounce');void this.offsetWidth;this.classList.add('demo-bounce')">gentle-bounce-in · 500ms</button>
+      <button class="anim-chip demo-rise" onclick="this.classList.remove('demo-rise');void this.offsetWidth;this.classList.add('demo-rise')">fade-rise · 500ms</button>
+      <div class="anim-chip float">balloon-float · loop 6s</div>
+      <div class="anim-chip" onmouseenter="this.style.animation='wiggle .4s cubic-bezier(.34,1.56,.64,1)'" onanimationend="this.style.animation=''">wiggle-hover · passe o mouse</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="cta-final">
+      <svg class="cloud float" style="top:20px;left:6%" width="70" height="32" viewBox="0 0 90 40" aria-hidden="true"><path d="M15 32c-8 0-12-6-9-12 2-5 8-6 11-4 1-8 12-11 17-5 3-4 12-3 13 3 7-1 11 5 8 11-2 4-6 7-12 7H15z" fill="#F7FCFF" opacity=".7"/></svg>
+      <h2>Pronto para uma consulta sem estresse?</h2>
+      <p style="margin:12px auto 28px;max-width:48ch">Agende em menos de dois minutos. Se preferir, nossa recepção responde no WhatsApp em horário comercial.</p>
+      <a class="btn btn-white btn-lg" href="#contato">Agendar agora</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <svg class="footer-wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 24C200 0 400 48 640 36S1080 0 1280 12s160 24 160 24V48H0z" fill="#1F3B4D"/></svg>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Clínica Cirandinha</h4>
+        <p style="color:#B4CFDD;font-size:15px">Pediatria acolhedora para todas as fases da infância.</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#contato">WhatsApp da recepção</a></li>
+          <li>Rua das Acácias, 123 — São Paulo/SP</li>
+          <li>contato&#64;clinicacirandinha.com.br</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Horários</h4>
+        <ul>
+          <li>Seg–Sex · 8h às 19h</li>
+          <li>Sábado · 8h às 13h</li>
+          <li>Pronto atendimento com encaixe</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#equipe">Nossa equipe</a></li>
+          <li><a href="#servicos">Especialidades</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      Clínica Cirandinha Ltda · CNPJ 00.000.000/0001-00 · Responsável técnica: Dra. Marina Costa — CRM-SP 123456 · Site fictício de preview do DS 01.2
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Entrada suave das seções (fade-rise) — opcional e respeita reduced motion
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+</script>
+</body>
+</html>

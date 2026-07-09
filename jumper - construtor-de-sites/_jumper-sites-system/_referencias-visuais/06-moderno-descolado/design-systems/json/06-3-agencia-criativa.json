@@ -1,0 +1,549 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "06.3",
+  "design_system_name": "Agência Criativa / Gravadora — Narrativa Cinematográfica",
+  "category": "06 — Moderno e Descolado",
+  "subcategory": "Agência criativa, gravadora, produtora audiovisual, estúdio de design",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Estética de agências criativas experimentais (cena Awwwards — ex.: Obys Agency e estúdios de tipografia experimental)",
+    "url": "https://obys.agency (referência estilística)",
+    "location": "Cena internacional (Europa/EUA)",
+    "awards": [
+      "Referência estilística — estúdios desse circuito são recorrentemente destacados na Awwwards (Site of the Day / coleções de tipografia experimental), mas nenhum prêmio específico foi confirmado nesta pesquisa; nenhum prêmio com data/nota é reivindicado."
+    ],
+    "why_chosen": "A cena de agências criativas premium comunica criatividade quebrando padrões: tipografia serifada gigante usada como imagem, seções full-screen em que o scroll conta uma história, e glitch/distorção como pontuação — nunca como ruído constante. A referência original usa a fonte comercial Migra nos títulos; este DS a substitui por DM Serif Display (Google Fonts), documentando a troca. Capturamos a essência narrativa e o preto profundo com um único acento cromático — aqui, roxo elétrico — sem copiar layout, textos ou estrutura de nenhum site."
+  },
+  "colors": {
+    "primary": "#0A0A0A",
+    "primary_usage": "Fundo dominante do site inteiro (dark-first). O preto é o palco: quase toda seção nasce sobre #0A0A0A e a narrativa acontece por luz (roxo) e tipografia clara.",
+    "secondary": "#9D4EDD",
+    "secondary_usage": "Roxo elétrico — o único acento. Usar em CTAs, palavras destacadas dentro de headlines, linhas de progresso de scroll, hover de links e no flash de glitch. Em texto corrido sobre preto, usar a variação clara #C77DFF (ver contrast_verification).",
+    "accent_text": "#C77DFF",
+    "accent_text_usage": "Tint do roxo para texto normal e links sobre fundo preto (7.36:1). O #9D4EDD puro fica reservado a superfícies, texto grande (≥24px / ≥18.66px bold) e componentes de UI.",
+    "surface": "#0A0A0A",
+    "surface_alt": "#141419",
+    "surface_raised": "#1B1B22",
+    "text_primary": "#F5F3F7",
+    "text_secondary": "#A9A9B8",
+    "text_muted": "#78788A",
+    "border": "#2A2A33",
+    "error": "#FF6B6B",
+    "success": "#34D399",
+    "warning": "#FBBF24",
+    "neutral_scale": {
+      "50": "#F5F3F7",
+      "100": "#E4E2EA",
+      "200": "#C6C4D0",
+      "300": "#A9A9B8",
+      "400": "#8D8D9E",
+      "500": "#78788A",
+      "600": "#55555F",
+      "700": "#2A2A33",
+      "800": "#141419",
+      "900": "#0A0A0A"
+    },
+    "purple_scale": {
+      "100": "#EBD9FB",
+      "200": "#DDBDF8",
+      "300": "#C77DFF",
+      "400": "#B15EF0",
+      "500": "#9D4EDD",
+      "600": "#7B2CBF",
+      "700": "#5A189A",
+      "800": "#3C0E68",
+      "900": "#240046"
+    },
+    "contrast_verification": {
+      "text_primary_on_surface": "#F5F3F7 sobre #0A0A0A = 18.1:1 — AAA para qualquer tamanho",
+      "text_secondary_on_surface": "#A9A9B8 sobre #0A0A0A = 8.5:1 — AAA texto normal",
+      "text_muted_on_surface": "#78788A sobre #0A0A0A = 4.6:1 — AA texto normal (usar só em legendas/metadados)",
+      "secondary_on_surface": "#9D4EDD sobre #0A0A0A = 4.31:1 — passa AA APENAS para texto grande (≥24px ou ≥18.66px bold) e componentes de UI (≥3:1); NÃO usar em texto corrido",
+      "accent_text_on_surface": "#C77DFF sobre #0A0A0A = 7.36:1 — AA/AAA texto normal; é o roxo oficial para links e corpo destacado",
+      "white_on_secondary": "#FFFFFF sobre #9D4EDD = 4.60:1 — AA texto normal; texto de botão primário sempre branco",
+      "primary_on_secondary": "#0A0A0A sobre #9D4EDD = 4.31:1 — apenas texto grande; evitar em labels pequenos",
+      "notes": "Razões calculadas pela fórmula de luminância relativa WCAG 2.1. Ajuste documentado: o brief pedia #9D4EDD como acento; ele foi mantido como cor de marca/UI, mas derivamos #C77DFF (purple_scale.300) para todo texto normal sobre preto, porque o tom original falha o critério 4.5:1 em corpo de texto. Botões roxos usam texto branco (4.60:1), nunca preto em tamanhos pequenos."
+    }
+  },
+  "typography": {
+    "heading_font": "DM Serif Display",
+    "heading_font_source": "Google Fonts",
+    "heading_font_note": "Substituição documentada: a referência estilística usa Migra (comercial). DM Serif Display é a alternativa Google Fonts mais próxima — serifada display de alto contraste, dramática em corpos gigantes.",
+    "heading_fallback": "'DM Serif Display', 'Didot', Georgia, serif",
+    "body_font": "Space Grotesk",
+    "body_font_source": "Google Fonts",
+    "body_fallback": "'Space Grotesk', 'Helvetica Neue', Arial, sans-serif",
+    "body_font_note": "Repete o body do DS 06.1 por decisão de brief; a diferenciação vem do heading serifado gigante, da paleta roxa e da composição full-screen narrativa.",
+    "mono_font": "não aplicável — metadados usam Space Grotesk em caps com letter-spacing",
+    "base_size": "16px",
+    "scales": {
+      "mobile": {
+        "h1": { "size": "clamp(3rem, 14vw, 4.5rem)", "line_height": "0.95", "weight": "400", "letter_spacing": "-0.02em", "font": "DM Serif Display", "note": "Hero ocupa a tela; quebras de linha intencionais" },
+        "h2": { "size": "2.25rem", "line_height": "1.05", "weight": "400", "letter_spacing": "-0.01em", "font": "DM Serif Display" },
+        "h3": { "size": "1.5rem", "line_height": "1.15", "weight": "400", "letter_spacing": "0", "font": "DM Serif Display" },
+        "body": { "size": "1rem", "line_height": "1.6", "weight": "400", "font": "Space Grotesk" },
+        "small": { "size": "0.8125rem", "line_height": "1.5", "weight": "500", "letter_spacing": "0.08em", "transform": "uppercase", "font": "Space Grotesk", "note": "metadados/eyebrows" }
+      },
+      "desktop": {
+        "h1": { "size": "clamp(4.5rem, 10vw, 10rem)", "line_height": "0.9", "weight": "400", "letter_spacing": "-0.03em", "font": "DM Serif Display", "note": "tipografia como imagem — pode sangrar levemente na borda" },
+        "h2": { "size": "clamp(2.5rem, 5vw, 4.5rem)", "line_height": "1.0", "weight": "400", "letter_spacing": "-0.02em", "font": "DM Serif Display" },
+        "h3": { "size": "1.875rem", "line_height": "1.1", "weight": "400", "letter_spacing": "-0.01em", "font": "DM Serif Display" },
+        "body": { "size": "1.125rem", "line_height": "1.65", "weight": "400", "font": "Space Grotesk" },
+        "small": { "size": "0.875rem", "line_height": "1.5", "weight": "500", "letter_spacing": "0.1em", "transform": "uppercase", "font": "Space Grotesk" }
+      },
+      "special": {
+        "manifesto": { "size": "clamp(1.75rem, 4vw, 3.25rem)", "line_height": "1.25", "weight": "400", "font": "Space Grotesk", "note": "Texto-manifesto em tela cheia; palavras acendem em roxo conforme o scroll" },
+        "chapter_number": { "size": "clamp(5rem, 12vw, 12rem)", "line_height": "1", "weight": "400", "font": "DM Serif Display", "color": "transparente com -webkit-text-stroke 1px #2A2A33", "note": "numerais de capítulo (01, 02, 03) como elemento gráfico de fundo" }
+      }
+    }
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — dark-first, preto profundo + roxo elétrico como único acento",
+    "tokens": {
+      "--color-primary": "#0A0A0A",
+      "--color-secondary": "#9D4EDD",
+      "--color-accent-text": "#C77DFF",
+      "--color-surface": "#0A0A0A",
+      "--color-surface-alt": "#141419",
+      "--color-surface-raised": "#1B1B22",
+      "--color-text": "#F5F3F7",
+      "--color-text-secondary": "#A9A9B8",
+      "--color-text-muted": "#78788A",
+      "--color-border": "#2A2A33",
+      "--color-error": "#FF6B6B",
+      "--color-success": "#34D399",
+      "--color-warning": "#FBBF24",
+      "--color-purple-100": "#EBD9FB",
+      "--color-purple-200": "#DDBDF8",
+      "--color-purple-300": "#C77DFF",
+      "--color-purple-400": "#B15EF0",
+      "--color-purple-500": "#9D4EDD",
+      "--color-purple-600": "#7B2CBF",
+      "--color-purple-700": "#5A189A",
+      "--color-purple-800": "#3C0E68",
+      "--color-purple-900": "#240046",
+      "--font-heading": "'DM Serif Display', 'Didot', Georgia, serif",
+      "--font-body": "'Space Grotesk', 'Helvetica Neue', Arial, sans-serif",
+      "--text-h1": "clamp(4.5rem, 10vw, 10rem)",
+      "--text-h2": "clamp(2.5rem, 5vw, 4.5rem)",
+      "--text-h3": "1.875rem",
+      "--text-manifesto": "clamp(1.75rem, 4vw, 3.25rem)",
+      "--text-chapter-number": "clamp(5rem, 12vw, 12rem)",
+      "--text-body": "1.125rem",
+      "--text-small": "0.875rem",
+      "--space-xs": "8px",
+      "--space-sm": "16px",
+      "--space-md": "24px",
+      "--space-lg": "40px",
+      "--space-xl": "64px",
+      "--space-xxl": "96px",
+      "--space-xxxl": "144px",
+      "--space-xxxxl": "192px",
+      "--radius-none": "0",
+      "--radius-sm": "2px",
+      "--radius-md": "4px",
+      "--radius-lg": "8px",
+      "--radius-full": "9999px",
+      "--shadow-sm": "0 2px 8px rgba(0, 0, 0, 0.5)",
+      "--shadow-md": "0 8px 24px rgba(0, 0, 0, 0.55)",
+      "--shadow-lg": "0 24px 64px rgba(0, 0, 0, 0.6)",
+      "--glow-sm": "0 0 16px rgba(157, 78, 221, 0.35)",
+      "--glow-md": "0 0 40px rgba(157, 78, 221, 0.45)",
+      "--glow-lg": "0 0 80px rgba(157, 78, 221, 0.35)",
+      "--duration-instant": "120ms",
+      "--duration-fast": "240ms",
+      "--duration-base": "480ms",
+      "--duration-slow": "800ms",
+      "--duration-cinematic": "1200ms",
+      "--duration-epic": "1600ms",
+      "--ease-standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--ease-dramatic": "cubic-bezier(0.76, 0, 0.24, 1)",
+      "--ease-reveal": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "--ease-snap": "cubic-bezier(0.87, 0, 0.13, 1)",
+      "--container-max": "1440px",
+      "--stroke-thin": "1px solid #2A2A33",
+      "--stroke-medium": "2px solid #9D4EDD"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "8px",
+      "sm": "16px",
+      "md": "24px",
+      "lg": "40px",
+      "xl": "64px",
+      "xxl": "96px",
+      "xxxl": "144px",
+      "xxxxl": "192px"
+    },
+    "section_spacing": {
+      "mobile": "96px (seções narrativas usam min-height: 100svh)",
+      "tablet": "128px",
+      "desktop": "160px — mas as seções-capítulo são full-screen (min-height: 100vh) e o espaçamento vive DENTRO delas"
+    },
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "48px",
+      "container_desktop": "80px"
+    },
+    "container_max_width": "1440px (headlines gigantes podem escapar para 100vw)",
+    "gutters": "24px mobile / 32px desktop"
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "2px",
+      "md": "4px",
+      "lg": "8px",
+      "full": "9999px"
+    },
+    "radius_usage": {
+      "buttons": "full (9999px) — pílulas cinematográficas que contrastam com a dureza do grid",
+      "cards": "none (0) — painéis de trabalho são retos, como frames de filme",
+      "inputs": "none (0) — apenas border-bottom, estilo formulário editorial",
+      "images": "none (0) — blocos de imagem sangrados, sem moldura",
+      "containers": "none"
+    },
+    "stroke": {
+      "thin": "1px solid #2A2A33",
+      "medium": "2px solid #9D4EDD"
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "sm": "0 2px 8px rgba(0, 0, 0, 0.5)",
+    "md": "0 8px 24px rgba(0, 0, 0, 0.55)",
+    "lg": "0 24px 64px rgba(0, 0, 0, 0.6)",
+    "glow_sm": "0 0 16px rgba(157, 78, 221, 0.35)",
+    "glow_md": "0 0 40px rgba(157, 78, 221, 0.45)",
+    "glow_lg": "0 0 80px rgba(157, 78, 221, 0.35)",
+    "shadow_usage": "Em site dark, sombra pura quase não lê — a hierarquia de elevação usa GLOW roxo: glow_sm em hover de botões, glow_md no CTA final, glow_lg como aura atmosférica atrás de headlines do hero. Sombras pretas (sm/md/lg) só para cards elevados sobre surface_alt."
+  },
+  "motion": {
+    "durations": {
+      "instant": "120ms",
+      "fast": "240ms",
+      "base": "480ms",
+      "slow": "800ms",
+      "cinematic": "1200ms",
+      "epic": "1600ms"
+    },
+    "easings": {
+      "standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "dramatic": "cubic-bezier(0.76, 0, 0.24, 1)",
+      "reveal": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "snap": "cubic-bezier(0.87, 0, 0.13, 1)"
+    },
+    "animations": [
+      { "name": "hero-line-reveal", "duration": "1200ms", "easing": "reveal", "trigger": "load", "description": "Cada linha da headline sobe de dentro de uma máscara (overflow hidden + translateY 110%), stagger de 120ms por linha" },
+      { "name": "scroll-progress", "duration": "contínua", "easing": "linear", "trigger": "scroll", "description": "Linha roxa de 2px no topo indica progresso da narrativa (animation-timeline: scroll() com fallback JS)" },
+      { "name": "manifesto-ink", "duration": "por palavra", "easing": "standard", "trigger": "scroll", "description": "Palavras do manifesto passam de text_muted para text_primary/roxo conforme entram no centro do viewport" },
+      { "name": "chapter-parallax", "duration": "contínua", "easing": "linear", "trigger": "scroll", "description": "Numerais gigantes de capítulo movem-se 20% mais lentos que o conteúdo (translateY parallax)" },
+      { "name": "panel-tilt-3d", "duration": "480ms", "easing": "standard", "trigger": "hover", "description": "Painéis de trabalho inclinam em perspective(900px) rotateX/rotateY até 4deg seguindo o cursor" },
+      { "name": "glitch-flash", "duration": "480ms", "easing": "steps(6)", "trigger": "hover em links de projeto e no CTA final", "description": "Distorção pontual: clip-path fatiado + deslocamento RGB roxo/branco por 2 frames. Recurso raro — no máximo 2 elementos por página" },
+      { "name": "page-transition", "duration": "800ms", "easing": "dramatic", "trigger": "navegação entre páginas", "description": "Cortina #9D4EDD sobe cobrindo a tela (scaleY 0→1 transform-origin bottom), troca de rota, e revela a nova página (origin top)" },
+      { "name": "marquee-contact", "duration": "18s", "easing": "linear infinite", "trigger": "sempre visível no pré-footer", "description": "Faixa 'Vamos criar juntos —' rolando horizontalmente; pausa em hover e em reduced-motion vira texto estático" },
+      { "name": "button-magnet", "duration": "240ms", "easing": "standard", "trigger": "hover", "description": "Botão-pílula desloca-se sutilmente (max 6px) em direção ao cursor e ganha glow_sm" }
+    ],
+    "prefers_reduced_motion": true,
+    "reduced_motion_strategy": "Bloco completo @media (prefers-reduced-motion: reduce): todas as animações e transições viram 0.01ms, parallax e tilt 3D desativados via transform none, marquee vira texto estático centrado, page transition vira crossfade de opacidade de 150ms, reveals aparecem já no estado final. O conteúdo NUNCA depende de animação para existir."
+  },
+  "components": {
+    "buttons": {
+      "primary": {
+        "background": "#9D4EDD",
+        "color": "#FFFFFF",
+        "border": "none",
+        "radius": "9999px",
+        "padding": "16px 40px",
+        "font": "Space Grotesk 500, 1rem, letter-spacing 0.02em",
+        "hover": "background #B15EF0, glow_sm, deslocamento magnético até 6px",
+        "focus": "outline 2px solid #C77DFF, outline-offset 3px",
+        "active": "background #7B2CBF, scale(0.98)",
+        "disabled": "background #2A2A33, color #78788A, cursor not-allowed, sem glow"
+      },
+      "secondary": {
+        "background": "transparent",
+        "color": "#F5F3F7",
+        "border": "1px solid #2A2A33",
+        "radius": "9999px",
+        "padding": "16px 40px",
+        "hover": "border-color #9D4EDD, color #C77DFF",
+        "focus": "outline 2px solid #C77DFF, outline-offset 3px",
+        "active": "background rgba(157,78,221,0.12)",
+        "disabled": "border-color #141419, color #55555F"
+      },
+      "ghost_arrow": {
+        "background": "none",
+        "color": "#C77DFF",
+        "style": "link com seta → que desliza 8px no hover; underline animado de 1px roxo (scaleX 0→1)",
+        "focus": "outline 2px solid #C77DFF, outline-offset 3px",
+        "usage": "links 'Ver projeto', navegação entre capítulos"
+      },
+      "sizes": {
+        "sm": "12px 28px / 0.875rem",
+        "md": "16px 40px / 1rem",
+        "lg": "20px 56px / 1.125rem — CTA final"
+      }
+    },
+    "cards": {
+      "work_panel": {
+        "background": "#141419",
+        "radius": "0",
+        "border": "1px solid #2A2A33",
+        "structure": "bloco de imagem (gradiente/duotone roxo) em aspect-ratio 16/10 + eyebrow small caps + título h3 serifado + linha de metadados em text_muted",
+        "hover": "tilt 3D até 4deg, imagem escala 1.04 dentro de overflow hidden, borda vira #9D4EDD, título ganha glitch-flash pontual",
+        "focus_within": "borda 2px #C77DFF",
+        "image_treatment": "duotone preto→roxo (mix-blend / gradiente sobreposto), nunca foto colorida crua"
+      },
+      "chapter_block": {
+        "background": "transparent",
+        "structure": "numeral gigante outline (chapter_number) ao fundo + h2 + parágrafo máx 60ch; ocupa min-height 100vh com conteúdo centrado verticalmente",
+        "usage": "seções de processo/serviços — o scroll avança capítulo a capítulo"
+      }
+    },
+    "inputs": {
+      "default": {
+        "background": "transparent",
+        "border": "none; border-bottom 1px solid #2A2A33",
+        "radius": "0",
+        "padding": "16px 0",
+        "color": "#F5F3F7",
+        "placeholder": "#78788A",
+        "label": "small caps #A9A9B8, sempre visível acima do campo (nunca placeholder-only)"
+      },
+      "focus": "border-bottom 2px solid #9D4EDD + label vira #C77DFF; sem box-shadow",
+      "error": "border-bottom 2px solid #FF6B6B + mensagem 0.875rem #FF6B6B com ícone; aria-describedby ligando campo e mensagem",
+      "success": "border-bottom 2px solid #34D399",
+      "usage": "Formulário de contato estilo editorial: campos enormes em coluna única, um por 'verso'"
+    },
+    "hero": {
+      "layout": "Full-screen (min-height 100svh), headline DM Serif Display em 3 linhas quebradas intencionalmente, uma palavra-chave em #9D4EDD itálico. Eyebrow small caps acima; abaixo, apenas indicador de scroll (linha vertical animada + 'role para começar'). SEM botão no hero — a história pede o scroll",
+      "background": "#0A0A0A com aura radial roxa (glow_lg) desfocada atrás da headline, levemente deslocada do centro",
+      "animation": "hero-line-reveal no load; aura pulsa lentamente (8s)"
+    },
+    "navigation": {
+      "type": "Barra fixa transparente que ganha fundo rgba(10,10,10,0.85) + backdrop-blur após 80px de scroll",
+      "logo": "wordmark em DM Serif Display",
+      "links": "Space Grotesk small caps, underline animado roxo no hover",
+      "mobile": "botão hambúrguer 48x48px abre overlay full-screen preto com links em DM Serif Display gigantes (2.5rem) revelados em stagger; foco preso no overlay (focus trap), fecha com Esc",
+      "accessibility": "skip-link 'Pular para o conteúdo' visível em foco; aria-expanded no hambúrguer"
+    },
+    "footer": {
+      "structure": "Pré-footer: marquee 'Vamos criar juntos —' clicável levando ao contato. Footer: grid 3 colunas (wordmark + manifesto curto | navegação | social e e-mail), sobre #0A0A0A com border-top 1px #2A2A33",
+      "detail": "e-mail em fonte grande (h3 serifado) como CTA secundário; créditos em text_muted 0.8125rem"
+    },
+    "testimonials": {
+      "layout": "UM depoimento por tela — citação cinematográfica em DM Serif Display clamp(1.75rem,3.5vw,3rem) centrada, aspas gigantes outline roxo como grafismo, autor em small caps text_secondary",
+      "behavior": "se houver múltiplos, navegação por setas ← → com fade lento (800ms); sem autoplay",
+      "note": "nada de grade de cards de depoimento — quebraria o ritmo narrativo"
+    },
+    "badges": {
+      "tag_chip": "small caps 0.75rem, border 1px #2A2A33, radius full, padding 6px 14px, color #A9A9B8; hover border roxa — usado para disciplinas (Branding, Filme, Digital)",
+      "award_badge": "não usar selos de prêmio genéricos; conquistas entram como linha de texto no rodapé do case"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Manifesto. Primeira pessoa do plural, frases curtas e afirmativas, vocabulário de cinema e música. Confiante sem arrogância explicativa — a agência não pede, afirma. Zero jargão corporativo.",
+    "headline_examples": [
+      "Fazemos marcas inesquecíveis.",
+      "Toda marca tem um filme dentro dela. A gente dirige.",
+      "Não seguimos tendência. A gente grava a próxima.",
+      "Ideias que não cabem no feed."
+    ],
+    "cta_examples": [
+      "Vamos criar juntos",
+      "Comece um projeto",
+      "Veja o que a gente fez",
+      "Conta sua história pra gente"
+    ],
+    "microcopy_examples": [
+      "role para começar",
+      "capítulo 02 — processo",
+      "prefere e-mail? ola@suaagencia.com.br"
+    ],
+    "avoid": [
+      "Jargão corporativo ('soluções integradas', 'sinergia', 'excelência')",
+      "Tom de vendedor insistente ou urgência artificial",
+      "Diminutivos e tom fofo (isso é território da personalidade 01)",
+      "Terceira pessoa distante ('a empresa oferece...')",
+      "Exclamações em série e emojis no corpo do site"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas fluidas até 1440px, mas as seções-capítulo ignoram o grid de propósito: headlines sangram, numerais vazam da margem. Assimetria controlada — cada capítulo alterna o lado do conteúdo (esquerda, direita, centro).",
+    "page_flow": [
+      { "section": "hero", "layout": "full-screen, headline gigante centrada-esquerda, aura roxa, indicador de scroll; sem CTA" },
+      { "section": "manifesto", "layout": "full-screen, texto-manifesto grande centrado com palavras que acendem no scroll — é a 'sinopse do filme'" },
+      { "section": "trabalhos", "layout": "capítulo 01 — painéis de trabalho em coluna com alturas alternadas (um sangrado à esquerda, o próximo à direita), cada painel ocupa ~80vh; tilt 3D no hover" },
+      { "section": "processo", "layout": "capítulo 02 — três chapter_blocks full-screen sequenciais (numerais 01/02/03 outline em parallax), texto máx 60ch" },
+      { "section": "depoimento", "layout": "capítulo 03 — uma citação por tela, cinematográfica, centrada" },
+      { "section": "cta-final", "layout": "full-screen: 'Vamos criar juntos' em DM Serif Display clamp gigante com glitch-flash no hover + botão primário lg; aura glow_md" },
+      { "section": "footer", "layout": "marquee de contato + grid 3 colunas" }
+    ],
+    "image_treatment": "Duotone preto→roxo em todas as imagens de projeto (overlay gradiente ou filter grayscale + blend screen roxo). Fotos nunca aparecem cruas — passam pelo 'grade de cor' da marca, como um filme com fotografia própria.",
+    "density": "Baixíssima. Uma ideia por tela. O usuário nunca vê duas mensagens competindo.",
+    "whitespace": "Extremo e vertical — o vazio preto É o recurso dramático; respiros de 100vh entre atos são aceitáveis"
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "body_text": "#F5F3F7 sobre #0A0A0A = 18.1:1 (AAA)",
+      "secondary_text": "#A9A9B8 sobre #0A0A0A = 8.5:1 (AAA)",
+      "links_accent": "#C77DFF sobre #0A0A0A = 7.36:1 (AAA normal) — nunca usar #9D4EDD puro em texto corrido (4.31:1)",
+      "button_primary": "#FFFFFF sobre #9D4EDD = 4.60:1 (AA)",
+      "large_headings_accent": "#9D4EDD sobre #0A0A0A = 4.31:1 — permitido apenas ≥24px (AA texto grande ≥3:1)"
+    },
+    "keyboard_navigation": "Toda a narrativa funciona por Tab/Enter: skip-link, focus trap no menu overlay, setas do carrossel de depoimento focáveis, marquee clicável por teclado. Scroll-jacking horizontal NÃO é usado — painéis rolam verticalmente nativo.",
+    "focus_states": "outline 2px solid #C77DFF com offset 3px em TODO elemento interativo — visível sobre preto e sobre roxo; nunca outline:none sem substituto",
+    "alt_text": "Imagens de projeto com alt descritivo ('Frame do filme de lançamento da marca X'); numerais decorativos e auras com aria-hidden='true'",
+    "semantic_html": "header/nav/main/section com aria-label por capítulo, h1 único no hero, hierarquia h2→h3 sem saltos, blockquote+cite no depoimento, footer com address para contato",
+    "touch_targets": "44px minimum (botões-pílula têm ≥48px de altura; links do menu mobile 56px)"
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Full-screen (min-height 100svh): eyebrow small caps → h1 clamp(3rem,14vw,4.5rem) em 3 linhas quebradas com uma palavra em roxo itálico → indicador de scroll; aura glow_lg reduzida atrás da headline; sem CTA",
+      "tablet": "Full-screen com headline maior alinhada à esquerda; aura roxa mais ampla; container padding 48px",
+      "desktop": "Full-screen, headline clamp(4.5rem,10vw,10rem) podendo sangrar na borda, aura glow_lg desfocada deslocada do centro; container padding 80px"
+    },
+    "work_grid": {
+      "mobile": "1 coluna, painéis full-width empilhados em aspect-ratio 16/10; sem tilt 3D (touch); gap 40px",
+      "tablet": "1 coluna com painéis de altura alternada começando a sangrar de propósito; gap 64px",
+      "desktop": "Coluna única com alturas alternadas (~80vh cada), um painel sangrado à esquerda e o próximo à direita; tilt 3D no hover; gap 96px"
+    },
+    "navigation": {
+      "mobile_tablet": "Logo wordmark DM Serif Display + hambúrguer 48x48px; overlay full-screen preto com links DM Serif Display 2.5rem revelados em stagger, focus trap, fecha com Esc",
+      "desktop": "Barra fixa transparente com logo + links Space Grotesk small caps inline; ganha fundo rgba(10,10,10,0.85) + backdrop-blur após 80px de scroll"
+    },
+    "footer": {
+      "mobile": "Pré-footer marquee de contato + colunas empilhadas (wordmark+manifesto → navegação → social/e-mail); e-mail em h3 serifado",
+      "desktop": "Pré-footer marquee + grid 3 colunas (wordmark+manifesto | navegação | social e e-mail) sobre #0A0A0A com border-top 1px #2A2A33"
+    },
+    "touch_adjustments": "Em touch, tilt 3D e magnetismo de botão são desativados (viram active-state scale 0.98); glitch-flash só em hover (nunca em touch/scroll); marquee mantém rolagem mas pausa some; parallax de numerais reduzido para evitar jank; alvos de toque ≥44px (menu 56px)"
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente — coerentes com o dark-first e o acento roxo",
+    "button_primary": ["default (#9D4EDD, texto #FFFFFF)", "hover (#B15EF0 + glow_sm + deslocamento magnético até 6px)", "focus-visible (outline 2px #C77DFF, offset 3px)", "active (#7B2CBF, scale 0.98)", "disabled (#2A2A33, texto #78788A, sem glow, cursor not-allowed)", "loading (spinner 16px branco + texto 'Enviando...')"],
+    "button_secondary": ["default (transparente, borda 1px #2A2A33, texto #F5F3F7)", "hover (borda #9D4EDD, texto #C77DFF)", "focus-visible (outline 2px #C77DFF, offset 3px)", "active (background rgba(157,78,221,0.12))", "disabled (borda #141419, texto #55555F)"],
+    "link_nav": ["default (Space Grotesk small caps #F5F3F7)", "hover (underline roxo animado scaleX 0→1, cor #C77DFF)", "focus-visible (outline 2px #C77DFF, offset 3px)", "current (sublinhado roxo fixo)"],
+    "card_work_panel": ["default (#141419, borda 1px #2A2A33)", "hover (tilt 3D até 4deg, imagem scale 1.04 em overflow hidden, borda #9D4EDD, título com glitch-flash pontual)", "focus-within (borda 2px #C77DFF)"],
+    "input": ["default (transparente, border-bottom 1px #2A2A33, label small caps visível)", "focus (border-bottom 2px #9D4EDD + label #C77DFF, sem box-shadow)", "filled", "error (border-bottom 2px #FF6B6B + mensagem 0.875rem #FF6B6B com ícone + aria-describedby)", "success (border-bottom 2px #34D399)", "disabled"],
+    "nav_header": ["topo (transparente sobre o hero)", "rolado (fundo rgba(10,10,10,0.85) + backdrop-blur após 80px)", "menu mobile aberto (overlay full-screen preto, focus trap, aria-expanded)"]
+  },
+  "photography_direction": {
+    "style": "Cinematográfico e autoral — cada imagem parece um frame de filme com fotografia própria da marca; nunca foto colorida crua",
+    "subjects": [
+      "Frames de projetos de branding e campanhas como stills de cinema",
+      "Bastidores de produção audiovisual (set, luzes, direção)",
+      "Retratos de artistas/clientes em alto contraste dramático",
+      "Detalhes gráficos, tipografia física e texturas abstratas",
+      "Cenas urbanas noturnas com fontes de luz pontual"
+    ],
+    "light": "Baixo-chave (low-key) e contrastado; uma fonte de luz dominante, sombras profundas que dialogam com o fundo #0A0A0A; brilhos pontuais roxos aceitáveis",
+    "color_grading": "Duotone preto→roxo aplicado a TODA imagem de projeto (grayscale + blend screen roxo, ou overlay gradiente #0A0A0A → #9D4EDD). A marca tem 'grade de cor' própria — nada de saturação natural crua nem filtros quentes.",
+    "framing": "Enquadramentos amplos e teatrais, cinematográficos (proporções 16/9 e 16/10); espaço negativo preto abundante; assimetria proposital deixando a imagem sangrar da borda",
+    "avoid": [
+      "Stock genérico e sorrisos corporativos",
+      "Fotografia clara/quente/otimista (pertence à personalidade 01)",
+      "Imagens coloridas cruas sem passar pelo duotone da marca",
+      "HDR artificial e composições simétricas centradas"
+    ],
+    "fallback_sem_foto": "Blocos de imagem simulados por gradiente duotone (135deg, #0A0A0A → #9D4EDD), auras radiais roxas (radial-gradient rgba(157,78,221,0.35) via glow_lg), numerais gigantes outline (-webkit-text-stroke 1px #2A2A33) e grafismos SVG de aspas/formas em roxo. Nunca usar #9D4EDD puro como texto sobre preto (4.31:1) — em rótulos sobre gradiente usar #C77DFF ou #F5F3F7."
+  },
+  "iconography": {
+    "style": "Linha fina e precisa (stroke 1.5px), cantos retos ou levemente arredondados (stroke-linecap round opcional), grid 24x24 — coerente com a dureza editorial do grid e dos cards sem raio",
+    "color": "#C77DFF ou #F5F3F7 sobre preto; #9D4EDD puro apenas em ícones grandes/decorativos (≥24px, ≥3:1 como componente de UI)",
+    "recommended_set": "Lucide ou Feather (open source, MIT), stroke ajustado para 1.5px; setas (→) para links 'Ver projeto' e navegação entre capítulos",
+    "usage": "Uso mínimo e cirúrgico — a personalidade fala por tipografia e movimento, não por ícones. Ícone sempre acompanhado de texto, nunca como única affordance",
+    "decorative_shapes": "Numerais de capítulo outline (chapter_number), aspas gigantes outline roxo nos depoimentos, auras radiais roxas e a linha de progresso de scroll — todos aria-hidden='true'"
+  },
+  "do_dont": {
+    "do": [
+      "Usar DM Serif Display em corpos gigantes como imagem — tipografia É o visual",
+      "Reservar o roxo #9D4EDD como ÚNICO acento (CTAs, palavra destacada na headline, hover, glow)",
+      "Manter uma ideia por tela e respiros de 100vh entre atos — o vazio preto é o recurso dramático",
+      "Usar GLOW roxo para hierarquia de elevação (sombra preta quase não lê no dark)",
+      "Limitar glitch-flash a no máximo 2 elementos por página, só em hover",
+      "Usar #C77DFF para links e corpo destacado (7.36:1) e texto branco em botões roxos (4.60:1)"
+    ],
+    "dont": [
+      "Usar #9D4EDD puro como texto corrido sobre preto (4.31:1 — falha AA; usar #C77DFF)",
+      "Usar #0A0A0A como texto pequeno sobre #9D4EDD (4.31:1 — apenas texto grande)",
+      "Abusar de glitch/distorção como ruído constante — é pontuação rara, não decoração",
+      "Colocar CTA no hero (a narrativa pede scroll; a conversão vive no clímax)",
+      "Montar grade de cards de depoimento — um por tela, senão quebra o ritmo narrativo",
+      "Depender de animação para o conteúdo existir; sempre respeitar prefers-reduced-motion",
+      "Misturar mais de 2 famílias tipográficas ou introduzir uma segunda cor de acento"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + DM+Serif+Display:ital@0;1 (400) e Space+Grotesk:wght@400;500;700 com display=swap; preload da DM Serif Display para o LCP do hero",
+    "js_budget": "Comportamentos enxutos: menu overlay (toggle + focus trap + Esc), IntersectionObserver para line-reveal e manifesto-ink, scroll-progress (animation-timeline: scroll() com fallback JS), tilt 3D com requestAnimationFrame (desativado em touch) e marquee. Zero frameworks obrigatórios; listeners de scroll passivos",
+    "seo_local": "Schema.org Organization/CreativeWork (ou MusicGroup para gravadora); og:image usando um frame duotone da marca; título com o nome do estúdio e disciplina ('Estúdio X — Direção criativa e filme')",
+    "whatsapp_cta": "Opcional e discreto — a conversão principal é o formulário editorial e o e-mail em h3. Se usado, link wa.me com mensagem pré-preenchida sóbria ('Olá, quero conversar sobre um projeto'), nunca no hero",
+    "adaptation_guide": "Ao adaptar para outro segmento da mesma personalidade (produtora, coletivo de arte, marca criativa): manter o dark-first, o roxo #9D4EDD como acento único, o par DM Serif Display + Space Grotesk, o duotone e a estrutura narrativa capítulo-a-capítulo. Trocar o vocabulário de manifesto do voice_and_tone e a metáfora dos cases. A essência é a narrativa cinematográfica, não o segmento."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1 — headline do hero é texto puro (LCP instantâneo com font-display swap); animações só com transform/opacity/clip-path (compositor); auras via CSS radial-gradient, não imagens",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "moderno",
+      "descolado",
+      "dark-mode",
+      "roxo-eletrico",
+      "cinematografico",
+      "narrativo",
+      "serif-display-gigante",
+      "agencia-criativa",
+      "glitch-pontual",
+      "full-screen-storytelling"
+    ],
+    "related_docs": [
+      "previews/markdown/06-3-agencia-criativa.md",
+      "previews/html/06-3-agencia-criativa.html",
+      "docs/06-3-agencia-criativa/components.md",
+      "docs/06-3-agencia-criativa/animations.css",
+      "docs/06-3-agencia-criativa/accessibility-report.md",
+      "docs/06-3-agencia-criativa/benchmarking.md",
+      "docs/06-3-agencia-criativa/color-variations.md",
+      "docs/06-3-agencia-criativa/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Agência criativa e estúdio de design",
+      "Gravadora e selo musical independente",
+      "Produtora audiovisual",
+      "Coletivo de arte",
+      "Marcas criativas e direção de arte freelance"
+    ],
+    "conversion_factors": [
+      "Hero sem CTA cria curiosidade e empurra para o scroll — a conversão acontece no clímax (CTA final), quando o visitante já viu prova de trabalho",
+      "Um depoimento cinematográfico em tela cheia vale mais que uma grade de dez — autoridade por seleção",
+      "Painéis de trabalho com hover 3D aumentam exploração de cases (proxy de intenção)",
+      "Marquee de contato mantém a ação seguinte sempre visível sem poluir a narrativa",
+      "Voice de manifesto filtra leads: atrai decisores que compram visão, não preço"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "H1 texto com fontes preload + font-display: swap; nenhuma imagem acima da dobra",
+      "cls_strategy": "aspect-ratio fixo em todo painel de imagem; fontes com fallback métrico (size-adjust)",
+      "inp_strategy": "listeners de scroll passivos; tilt 3D com requestAnimationFrame e desativado em touch; glitch só em hover (não em scroll)"
+    }
+  }
+}

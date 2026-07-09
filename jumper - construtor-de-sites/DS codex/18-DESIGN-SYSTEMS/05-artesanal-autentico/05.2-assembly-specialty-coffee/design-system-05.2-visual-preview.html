@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Assembly Traceable Roast System</title>
+<style>
+:root{--primary:#2F3A24;--secondary:#B7A078;--surface:#F6F3EA;--alt:#E2DED1;--text:#20251B;--muted:#6D6B5F;--border:#C9C1AE;--ctaText:#FFFFFF;--heading:"Cormorant Garamond",serif;--body:"Work Sans",system-ui,sans-serif;--mono:"Space Mono",monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}a{color:inherit}.trace{min-height:100vh;display:grid;grid-template-columns:1fr;background:var(--surface);color:var(--text)}
+.trace__rail{padding:22px;border-right:1px solid var(--border);background:color-mix(in srgb,var(--surface) 86%,white);color:inherit;position:relative;top:0;height:auto}
+.trace__page{padding:clamp(22px,5vw,78px);display:grid;gap:clamp(26px,5vw,64px)}
+.trace__nav{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px;font-family:var(--mono);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.trace__hero{display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,52px);align-items:center;min-height:62vh}
+.trace__hero h1{font-family:var(--heading);font-size:clamp(3rem,7vw,7rem);line-height:.92;margin:0;max-width:14ch;color:inherit}
+.trace__media{min-height:300px;border:1px solid var(--border);border-radius:0;background:linear-gradient(135deg,var(--alt),var(--secondary));box-shadow:0 24px 70px rgba(0,0,0,.16)}
+.trace__cta,.trace__submit{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--primary);color:var(--ctaText);border:0;border-radius:0;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer}.trace__hidden{display:none}
+.trace__controls{display:flex;gap:8px;flex-wrap:wrap}.trace__option{border:1px solid var(--border);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;cursor:pointer}.trace__option[aria-pressed="true"]{background:var(--secondary);color:#111111;border-color:var(--secondary)}
+.trace__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.trace__item{text-align:left;min-height:150px;border:1px solid var(--border);background:#fff;color:inherit;border-radius:0;padding:18px;cursor:pointer}.trace__item[aria-pressed="true"]{outline:3px solid var(--secondary);transform:translateY(-3px)}
+.trace__split{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:22px}.trace__panel{border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 78%,white);padding:22px;border-radius:0}
+.trace__form{display:grid;gap:12px}.trace__form label{display:grid;gap:6px;font-weight:800}.trace__form input,.trace__form select{min-height:44px;border:1px solid var(--border);background:#fff;color:var(--text);border-radius:8px;padding:10px}.trace__form input:focus,.trace__form select:focus,.trace__option:focus-visible,.trace__item:focus-visible,.trace__chip:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+.trace__status{font-family:var(--mono);border-left:5px solid var(--secondary);padding:16px;background:var(--alt)}
+.trace__sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.trace__section-card{border-top:3px solid var(--primary);padding:16px;background:#fff}
+.trace__palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.trace__chip{background:var(--chip);color:var(--ink);min-height:88px;border:1px solid var(--border);padding:10px;text-align:left;display:grid;align-content:space-between;cursor:pointer;border-radius:0}
+.trace__audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.trace__audit div{padding:16px;border:1px solid var(--border);background:var(--alt)}
+@media(max-width:860px){.trace{display:block}.trace__rail{position:relative;height:auto}.trace__hero,.trace__split{grid-template-columns:1fr}.trace__audit{grid-template-columns:1fr}.trace__page{padding:20px}.trace__hero h1{font-size:clamp(3rem,18vw,6rem)}}
+@media(prefers-reduced-motion:no-preference){.trace__item,.trace__cta,.trace__submit,.trace__chip{transition:transform .2s ease,filter .2s ease}.trace__item:hover,.trace__chip:hover{transform:translateY(-3px)}.trace__cta:hover,.trace__submit:hover{filter:contrast(1.1)}}
+</style>
+</head>
+<body>
+<main class="trace" data-mode="colombia">
+
+<div class="trace__page">
+<nav class="trace__nav"><strong>05.2 · Assembly Traceable Roast System</strong><span>trace-ledger</span></nav>
+<section class="trace__hero" id="top">
+<div><p>ledger de procedencia</p><h1>quiet product hero with origin ledger and sustainability proof table</h1><p>quiet, transparent and exacting</p><a class="trace__cta" href="#form">Ver procedencia</a></div>
+<div class="trace__media" aria-hidden="true"></div>
+</section>
+<section class="trace__panel"><h2>Origem</h2><div class="trace__controls"><button class="trace__option" type="button" data-mode="colombia" aria-pressed="true">colombia</button>
+<button class="trace__option" type="button" data-mode="etiopia" aria-pressed="false">etiopia</button>
+<button class="trace__option" type="button" data-mode="brasil" aria-pressed="false">brasil</button></div><p class="trace__status" aria-live="polite">Modo ativo: colombia · Registro de procedencia atualizado</p></section>
+<section><h2>Componentes funcionais</h2><div class="trace__items"><button class="trace__item" type="button" data-item="Fazenda" aria-pressed="true"><span>01</span><strong>Fazenda</strong><small>origin-ledger-row</small></button>
+<button class="trace__item" type="button" data-item="Processo" aria-pressed="false"><span>02</span><strong>Processo</strong><small>minimal-product-card</small></button>
+<button class="trace__item" type="button" data-item="Preco" aria-pressed="false"><span>03</span><strong>Preco</strong><small>sourcing-principle-note</small></button>
+<button class="trace__item" type="button" data-item="Impacto" aria-pressed="false"><span>04</span><strong>Impacto</strong><small>roast-archive-table</small></button></div></section>
+<section class="trace__split" id="form"><div class="trace__panel"><h2>Formulario real do DS</h2><form class="trace__form"><label>Email<input name="field0" value="Exemplo teste" placeholder="Email" /></label>
+<label>Origem<select name="field1"><option>colombia</option><option>etiopia</option><option>brasil</option></select></label>
+<label>Uso<input name="field2" value="" placeholder="Uso" /></label><button class="trace__submit" type="submit">Ver procedencia</button></form></div><div class="trace__panel"><h2>Resultado / estado</h2><p class="trace__status trace__output" aria-live="polite">Nenhum envio ainda.</p><p>O preview precisa testar foco, estado ativo, formulario, responsividade e copy do componente.</p></div></section>
+<section><h2>Fluxo de secoes coberto</h2><div class="trace__sections"><article class="trace__section-card"><span>01</span><h3>Origin ledger</h3><p>origin-ledger-row</p></article>
+<article class="trace__section-card"><span>02</span><h3>Roast archive</h3><p>minimal-product-card</p></article>
+<article class="trace__section-card"><span>03</span><h3>Sourcing principles</h3><p>sourcing-principle-note</p></article>
+<article class="trace__section-card"><span>04</span><h3>Product education</h3><p>roast-archive-table</p></article>
+<article class="trace__section-card"><span>05</span><h3>Subscription logic</h3><p>wholesale-enquiry-panel</p></article>
+<article class="trace__section-card"><span>06</span><h3>Wholesale enquiry</h3><p>provenance-footer</p></article>
+<article class="trace__section-card"><span>07</span><h3>Journal index</h3><p>origin-ledger-row</p></article>
+<article class="trace__section-card"><span>08</span><h3>Footer as provenance record</h3><p>minimal-product-card</p></article></div></section>
+<section><h2>Paleta clicavel</h2><div class="trace__palette"><button class="trace__chip" type="button" data-copy="#2F3A24" style="--chip:#2F3A24;--ink:#ffffff"><span>Primary</span><strong>#2F3A24</strong></button>
+<button class="trace__chip" type="button" data-copy="#B7A078" style="--chip:#B7A078;--ink:#111111"><span>Secondary</span><strong>#B7A078</strong></button>
+<button class="trace__chip" type="button" data-copy="#F6F3EA" style="--chip:#F6F3EA;--ink:#111111"><span>Surface</span><strong>#F6F3EA</strong></button>
+<button class="trace__chip" type="button" data-copy="#E2DED1" style="--chip:#E2DED1;--ink:#111111"><span>Alt</span><strong>#E2DED1</strong></button>
+<button class="trace__chip" type="button" data-copy="#20251B" style="--chip:#20251B;--ink:#ffffff"><span>Text</span><strong>#20251B</strong></button>
+<button class="trace__chip" type="button" data-copy="#6D6B5F" style="--chip:#6D6B5F;--ink:#ffffff"><span>Muted</span><strong>#6D6B5F</strong></button>
+<button class="trace__chip" type="button" data-copy="#C9C1AE" style="--chip:#C9C1AE;--ink:#111111"><span>Border</span><strong>#C9C1AE</strong></button></div></section>
+<section class="trace__audit"><div><strong>Acessibilidade</strong><p>Focus ring, aria-live e touch target 44px.</p></div><div><strong>Responsivo</strong><p>Mobile preserva ledger rows become stacked provenance cards.</p></div><div><strong>Erro corrigido</strong><p>minimalismo sem rastreabilidade acionavel.</p></div></section>
+</div>
+</main>
+<script>
+(() => {
+ const root = document.querySelector('.trace');
+ const status = document.querySelector('.trace__status');
+ const output = document.querySelector('.trace__output');
+ document.querySelectorAll('.trace__option').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.trace__option').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  root.dataset.mode = btn.dataset.mode;
+  status.textContent = 'Modo ativo: ' + btn.dataset.mode + ' · Registro de procedencia atualizado';
+ }));
+ document.querySelectorAll('.trace__item').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.trace__item').forEach(b => b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  output.textContent = 'Selecionado: ' + btn.dataset.item + ' · componente pronto para estado ativo.';
+ }));
+ document.querySelector('.trace__form').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  output.textContent = 'Registro de procedencia atualizado: ' + [...data.values()].filter(Boolean).join(' / ');
+ });
+ document.querySelectorAll('.trace__chip').forEach(chip => chip.addEventListener('click', async () => {
+  const value = chip.dataset.copy;
+  try { await navigator.clipboard.writeText(value); output.textContent = 'Cor copiada: ' + value; }
+  catch { output.textContent = 'Token selecionado: ' + value; }
+ }));
+})();
+</script>
+</body>
+</html>

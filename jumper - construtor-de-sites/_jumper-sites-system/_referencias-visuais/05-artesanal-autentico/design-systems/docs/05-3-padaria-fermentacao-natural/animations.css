@@ -1,0 +1,220 @@
+/* =====================================================================
+   Design System 05.3 — Padaria Fermentação Natural
+   animations.css — Movimento moody, artesanal e editorial
+   ---------------------------------------------------------------------
+   Derivado FIELMENTE de motion{} do JSON.
+   Mood: fermentação lenta — o ritmo lento É a mensagem.
+   Durações 400–700ms. Nada de escala nervosa; luz que revela.
+   ===================================================================== */
+
+:root {
+  /* Durações — motion.durations */
+  --dur-fast: 400ms;   /* hover de card e botão */
+  --dur-base: 550ms;   /* fade-in de conteúdo, stagger */
+  --dur-slow: 700ms;   /* reveal-lento, amanhecer */
+
+  /* Easings — motion.easings */
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);   /* interações diretas */
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);      /* entradas suaves com desaceleração longa */
+  --ease-atmosphere: cubic-bezier(0.4, 0, 0.2, 1);     /* movimentos de atmosfera/luz */
+
+  /* Passo do stagger da timeline de fermentação */
+  --stagger-step: 120ms;
+}
+
+/* =====================================================================
+   1. fade-in
+   opacidade 0→1 com translateY(16px)→0
+   Trigger: IntersectionObserver ao entrar 15% no viewport
+   Padrão para todo bloco de conteúdo.
+   ===================================================================== */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.anim-fade-in {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+.anim-fade-in.is-visible {
+  animation: fade-in var(--dur-base) var(--ease-entrance) both;
+}
+
+/* =====================================================================
+   2. reveal-lento
+   clip-path inset(0 0 100% 0)→inset(0)
+   Como luz revelando a cena de cima para baixo.
+   Trigger: scroll — imagens e blocos fotográficos.
+   ===================================================================== */
+@keyframes reveal-lento {
+  from { clip-path: inset(0 0 100% 0); opacity: 0.4; }
+  to   { clip-path: inset(0 0 0 0);    opacity: 1; }
+}
+
+.anim-reveal-lento {
+  clip-path: inset(0 0 100% 0);
+  will-change: clip-path, opacity;
+}
+.anim-reveal-lento.is-visible {
+  animation: reveal-lento var(--dur-slow) var(--ease-entrance) both;
+}
+
+/* =====================================================================
+   3. amanhecer
+   Anima background-position — luz lateral da manhã entrando na padaria.
+   Trigger: load do hero.
+   Requer background maior que o container (ex: background-size: 200% 200%).
+   ===================================================================== */
+@keyframes amanhecer {
+  from { background-position: 100% 0%; }   /* luz ainda fora, pela direita */
+  to   { background-position: 0% 100%; }   /* luz preenche a cena */
+}
+
+.anim-amanhecer {
+  background-size: 200% 200%;
+  background-position: 100% 0%;
+  animation: amanhecer var(--dur-slow) var(--ease-atmosphere) both;
+}
+
+/* =====================================================================
+   4. stagger-processo
+   Etapas da timeline de fermentação surgem em sequência.
+   550ms por item, delay 120ms entre itens.
+   Trigger: scroll na timeline.
+   Aplique .anim-stagger-processo no container e a classe filha
+   receberá o delay incremental via nth-child.
+   ===================================================================== */
+@keyframes stagger-item {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.anim-stagger-processo > * {
+  opacity: 0;
+}
+.anim-stagger-processo.is-visible > * {
+  animation: stagger-item var(--dur-base) var(--ease-entrance) both;
+}
+.anim-stagger-processo.is-visible > *:nth-child(1) { animation-delay: 0ms; }
+.anim-stagger-processo.is-visible > *:nth-child(2) { animation-delay: calc(var(--stagger-step) * 1); }
+.anim-stagger-processo.is-visible > *:nth-child(3) { animation-delay: calc(var(--stagger-step) * 2); }
+.anim-stagger-processo.is-visible > *:nth-child(4) { animation-delay: calc(var(--stagger-step) * 3); }
+.anim-stagger-processo.is-visible > *:nth-child(5) { animation-delay: calc(var(--stagger-step) * 4); }
+.anim-stagger-processo.is-visible > *:nth-child(6) { animation-delay: calc(var(--stagger-step) * 5); }
+
+/* =====================================================================
+   5. hover-card
+   translateY(-4px) + sombra sm→md + filete dourado expande 48px→100%
+   Trigger: hover / focus-visible
+   ===================================================================== */
+.anim-hover-card {
+  transition:
+    transform var(--dur-fast) var(--ease-standard),
+    box-shadow var(--dur-fast) var(--ease-standard);
+  box-shadow: 0 1px 2px rgba(42, 33, 23, 0.08); /* shadows.sm */
+}
+.anim-hover-card:hover,
+.anim-hover-card:focus-visible,
+.anim-hover-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(42, 33, 23, 0.10); /* shadows.md */
+}
+
+/* Filete dourado editorial que expande de 48px para 100% */
+.anim-hover-card .filete-dourado {
+  display: block;
+  height: 1px;
+  width: 48px;
+  background: #C19A6B; /* primary — decorativo */
+  transition: width var(--dur-fast) var(--ease-standard);
+}
+.anim-hover-card:hover .filete-dourado,
+.anim-hover-card:focus-visible .filete-dourado,
+.anim-hover-card:focus-within .filete-dourado {
+  width: 100%;
+}
+
+/* =====================================================================
+   6. hover-botao
+   fundo #7A5C2E → #5E4623 (escurece como crosta assando)
+   Sem mudança de escala.
+   Trigger: hover / focus-visible
+   ===================================================================== */
+.anim-hover-botao {
+  background-color: #7A5C2E; /* primary_deep */
+  transition: background-color var(--dur-fast) var(--ease-standard);
+}
+.anim-hover-botao:hover,
+.anim-hover-botao:focus-visible {
+  background-color: #5E4623; /* crosta assando */
+}
+.anim-hover-botao:active {
+  background-color: #4E3A1D;
+}
+
+/* =====================================================================
+   Selo giratório do hero — 'Fermentação natural · 48h'
+   (não listado como animation nomeada, mas descrito no componente hero;
+    incluído porque é desativado explicitamente em reduced-motion)
+   ===================================================================== */
+@keyframes girar-selo {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.anim-selo-girando {
+  animation: girar-selo 24s linear infinite; /* lento, quase imperceptível */
+}
+
+/* =====================================================================
+   prefers-reduced-motion
+   Tudo vira transição de opacidade de 150ms ou estado final direto.
+   amanhecer, stagger e selo giratório são DESATIVADOS.
+   (motion.prefers_reduced_motion_note)
+   ===================================================================== */
+@media (prefers-reduced-motion: reduce) {
+
+  .anim-fade-in,
+  .anim-fade-in.is-visible,
+  .anim-reveal-lento,
+  .anim-reveal-lento.is-visible,
+  .anim-stagger-processo.is-visible > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: opacity 150ms linear;
+  }
+
+  /* amanhecer desativado — hero em estado final estático */
+  .anim-amanhecer {
+    animation: none !important;
+    background-position: 0% 100% !important;
+  }
+
+  /* stagger sem delays escalonados */
+  .anim-stagger-processo.is-visible > * {
+    animation-delay: 0ms !important;
+  }
+
+  /* selo giratório desativado */
+  .anim-selo-girando {
+    animation: none !important;
+  }
+
+  /* hovers reduzidos a mudança de cor/sombra sem deslocamento */
+  .anim-hover-card {
+    transition: box-shadow 150ms linear;
+  }
+  .anim-hover-card:hover,
+  .anim-hover-card:focus-visible,
+  .anim-hover-card:focus-within {
+    transform: none !important;
+  }
+  .anim-hover-card .filete-dourado {
+    transition: none !important;
+  }
+  .anim-hover-botao {
+    transition: background-color 150ms linear;
+  }
+}

@@ -1,0 +1,597 @@
+{
+  "id": "reference-ds-02-mckinsey-com",
+  "clientSlug": "mckinsey-com",
+  "clientName": "McKinsey",
+  "personalitySlug": "04-tecnico-confiavel",
+  "regeneratedAt": "2026-06-05",
+  "referenceQualityBaseline": "reference-ds-01-pinchmans-ca-visual-preview.html + pasta 01 aprovada",
+  "source": {
+    "site": "mckinsey.com",
+    "localPath": "_jumper-sites-system/_referencias-visuais/04-tecnico-confiavel/design-systems/preview-assets/mckinsey.com",
+    "sourceReferenceId": "mckinsey.com",
+    "sourceReferenceNote": "Referencia visual ja convertida em DS-base; arquivo pesado original nao e necessario no fluxo oficial.",
+    "imagesUsed": [],
+    "extractedSignals": {
+      "sourceColors": [],
+      "fonts": [],
+      "title": "",
+      "sourceText": [
+        []
+      ],
+      "assetCounts": {
+        "images": 0,
+        "css": 0,
+        "fonts": 0
+      }
+    }
+  },
+  "designIntent": {
+    "tone": "consultoria / confiavel / editorial",
+    "summary": "Referencia de conteudo executivo com dados, artigos, industrias, filtros e prova de pensamento estruturado.",
+    "hero": "Autoridade editorial com dados em primeiro plano.",
+    "nonGoal": "Nao e DS final do cliente; nao contem fluxo real de formulario."
+  },
+  "colors": {
+    "palette": [
+      {
+        "name": "Consulting Blue",
+        "hex": "#003A70",
+        "rgb": "rgb(0,58,112)",
+        "hsl": "hsl(209 100% 22%)",
+        "usage": "primary / authority"
+      },
+      {
+        "name": "Ink",
+        "hex": "#0B1F33",
+        "rgb": "rgb(11,31,51)",
+        "hsl": "hsl(210 65% 12%)",
+        "usage": "text / dark panel"
+      },
+      {
+        "name": "Report White",
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255,255,255)",
+        "hsl": "hsl(0 0% 100%)",
+        "usage": "surface"
+      },
+      {
+        "name": "Data Sky",
+        "hex": "#6EA8D9",
+        "rgb": "rgb(110,168,217)",
+        "hsl": "hsl(207 58% 64%)",
+        "usage": "chart accent"
+      },
+      {
+        "name": "Slate",
+        "hex": "#637083",
+        "rgb": "rgb(99,112,131)",
+        "hsl": "hsl(216 14% 45%)",
+        "usage": "muted"
+      },
+      {
+        "name": "Warm Paper",
+        "hex": "#F3F0EA",
+        "rgb": "rgb(243,240,234)",
+        "hsl": "hsl(40 27% 94%)",
+        "usage": "background"
+      },
+      {
+        "name": "Insight Gold",
+        "hex": "#B28B45",
+        "rgb": "rgb(178,139,69)",
+        "hsl": "hsl(39 44% 48%)",
+        "usage": "focus / executive detail"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Insight Field",
+        "value": "linear-gradient(135deg, rgba(243,240,234,.96), rgba(110,168,217,.25), rgba(178,139,69,.18))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Boardroom Shadow",
+        "value": "linear-gradient(180deg, rgba(11,31,51,.9), rgba(0,58,112,.42))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Data Halo",
+        "value": "radial-gradient(circle at 18% 24%, rgba(110,168,217,.25), transparent 34%), radial-gradient(circle at 80% 70%, rgba(178,139,69,.18), transparent 38%)",
+        "participation": "background / overlay / hover / active states"
+      }
+    ],
+    "semantic": {
+      "primary": "Consulting Blue",
+      "text": "#0B1F33",
+      "surface": "#F3F0EA",
+      "accent": "Data Sky",
+      "focus": "Insight Gold",
+      "contrastIntent": "AA minimum for body text; generated preview overrides --c2 as light surface and --c3 as dark text to avoid low-contrast sections."
+    },
+    "opacityPolicy": "Escala global para evitar repeticao: 100,86,64,40,18,8.",
+    "contextualUsageRules": {
+      "text": "Usar token semantico com contraste AA.",
+      "background": "Usar surface/background conforme personalidade do site.",
+      "border": "Usar neutral/accent em baixa opacidade.",
+      "hover": "Accent/focus ou overlay curto.",
+      "active": "Aumentar contraste ou reduzir elevacao 120-180ms.",
+      "disabled": "Opacidade global sem apagar legibilidade."
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "Georgia, Cambria, serif",
+      "ui": "Inter, system-ui, sans-serif",
+      "mono": "ui-monospace, Menlo, monospace",
+      "loading": "local when available; fallback stack otherwise"
+    },
+    "scale": {
+      "h1": {
+        "size": "clamp(3rem,7vw,7.8rem)",
+        "weight": 760,
+        "lineHeight": 0.88,
+        "letterSpacing": 0
+      },
+      "h2": {
+        "size": "clamp(2.15rem,4.9vw,5.35rem)",
+        "weight": 720,
+        "lineHeight": 0.94,
+        "letterSpacing": 0
+      },
+      "h3": {
+        "size": "clamp(1.6rem,3vw,3rem)",
+        "weight": 680,
+        "lineHeight": 1.05,
+        "letterSpacing": 0
+      },
+      "bodyLg": {
+        "size": "1.22rem",
+        "weight": 420,
+        "lineHeight": 1.6,
+        "letterSpacing": 0
+      },
+      "body": {
+        "size": "1rem",
+        "weight": 420,
+        "lineHeight": 1.58,
+        "letterSpacing": 0
+      },
+      "bodySm": {
+        "size": ".9rem",
+        "weight": 420,
+        "lineHeight": 1.45,
+        "letterSpacing": 0
+      },
+      "caption": {
+        "size": ".76rem",
+        "weight": 820,
+        "lineHeight": 1.35,
+        "letterSpacing": ".12em",
+        "textTransform": "uppercase"
+      }
+    },
+    "siteSpecificRoles": [
+      {
+        "role": "insight-title",
+        "family": "Display serif",
+        "weight": "680",
+        "size": "clamp(4rem,7vw,8rem)",
+        "lineHeight": ".92",
+        "letterSpacing": "0",
+        "usage": "Headline de relatorio."
+      },
+      {
+        "role": "data-label",
+        "family": "Mono/UI",
+        "weight": "820",
+        "size": ".72rem",
+        "lineHeight": "1.2",
+        "letterSpacing": ".12em",
+        "usage": "Indice, porcentagem, fonte."
+      },
+      {
+        "role": "body-report",
+        "family": "UI",
+        "weight": "420",
+        "size": "1.05rem",
+        "lineHeight": "1.68",
+        "letterSpacing": "0",
+        "usage": "Leitura de artigo."
+      }
+    ]
+  },
+  "icons": {
+    "set": [
+      "chart",
+      "brief",
+      "globe",
+      "quote",
+      "file",
+      "arrow"
+    ],
+    "stroke": 1.8,
+    "color": "currentColor",
+    "hover": "focus/accent token",
+    "rule": "icone nao desloca layout no hover"
+  },
+  "components": {
+    "insight-hero": {
+      "role": "insight hero",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "chart draw",
+      "visual": "Referencia McKinsey: consultoria / confiavel / editorial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "data-chart": {
+      "role": "data chart",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "line reveal",
+      "visual": "Referencia McKinsey: consultoria / confiavel / editorial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "report-card": {
+      "role": "report card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "filter focus",
+      "visual": "Referencia McKinsey: consultoria / confiavel / editorial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "industry-filter": {
+      "role": "industry filter",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "report fade",
+      "visual": "Referencia McKinsey: consultoria / confiavel / editorial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "expert-panel": {
+      "role": "expert panel",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "chart draw",
+      "visual": "Referencia McKinsey: consultoria / confiavel / editorial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "quote-stat": {
+      "role": "quote stat",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "line reveal",
+      "visual": "Referencia McKinsey: consultoria / confiavel / editorial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "newsletter-modal": {
+      "role": "newsletter modal",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "filter focus",
+      "visual": "Referencia McKinsey: consultoria / confiavel / editorial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "briefing-table": {
+      "role": "briefing table",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "report fade",
+      "visual": "Referencia McKinsey: consultoria / confiavel / editorial",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    }
+  },
+  "motion": {
+    "entry": [
+      "fade-up",
+      "draw-line",
+      "stagger"
+    ],
+    "exit": [
+      "flyout-x",
+      "modal-fade-down",
+      "caption-exit"
+    ],
+    "background": [
+      "ambient drift",
+      "hero zoom"
+    ],
+    "parallax": "limited scroll response with reduced-motion fallback",
+    "siteSpecific": [
+      "chart draw",
+      "line reveal",
+      "filter focus",
+      "report fade"
+    ]
+  },
+  "accessibility": {
+    "contrast": "AA minimo; overlay obrigatorio sobre imagem",
+    "focus": "2px solid focus token",
+    "reducedMotion": true,
+    "skipLinks": true,
+    "modal": "Esc/overlay/botao fecham"
+  },
+  "risks": [
+    "Sem assets locais: usar graficos CSS e nao misturar imagem de outra referencia.",
+    "Azul escuro exige respiro em paper.",
+    "Nao virar dashboard operacional."
+  ],
+  "heroSystem": {
+    "layout": "consulting",
+    "rules": [
+      "Hero full viewport com headline editorial e grafico/prova visual.",
+      "Menu e por temas: insights, industries, capabilities, careers.",
+      "Cards priorizam leitura e data points.",
+      "Motion deve ser executivo: fade, draw-line e chart grow."
+    ],
+    "fullViewport": true
+  },
+  "menuSystem": {
+    "items": [
+      "Insights",
+      "Industries",
+      "Capabilities",
+      "People",
+      "Contact"
+    ],
+    "note": "Menu editorial executivo: hierarquia clara, sem ruido visual.",
+    "behavior": "overlay flyout, Esc closes, link closes"
+  },
+  "effects": {
+    "signature": [
+      "chart draw",
+      "line reveal",
+      "filter focus",
+      "report fade"
+    ]
+  },
+  "referenceUsage": {
+    "type": "visual-reference-input",
+    "folder": "04-tecnico-confiavel",
+    "crossesWith": "clientes/[slug]/data/design-system.json",
+    "purpose": "Insumo de autoridade, dados e pensamento executivo. O DS final cruza com briefing para definir conteudo real.",
+    "nonGoals": [
+      "nao criar DS final do cliente",
+      "nao representar personalidade da pasta",
+      "nao usar padrao generico para todos os sites"
+    ],
+    "differentiationRules": [
+      "Hero full viewport com headline editorial e grafico/prova visual.",
+      "Menu e por temas: insights, industries, capabilities, careers.",
+      "Cards priorizam leitura e data points.",
+      "Motion deve ser executivo: fade, draw-line e chart grow."
+    ],
+    "siteSpecific": true,
+    "qualityRule": "Preview precisa demonstrar personalidade do site extraido, com menu completo, hero, tokens, gradientes, tipo, efeitos, componentes, cards/secoes, story parallax, icones, handoff e motion linkados.",
+    "notPersonalityWide": true
+  },
+  "outputs": {
+    "json": "design-systems/json/reference-ds-02-mckinsey-com.json",
+    "markdown": "design-systems/previews/markdown/reference-ds-02-mckinsey-com-preview.md",
+    "html": "design-systems/previews/html/reference-ds-02-mckinsey-com-visual-preview.html"
+  },
+  "schemaVersion": "reference-ds-v2",
+  "globalTokens": {
+    "opacityScale": {
+      "solid": 1,
+      "strong": 0.86,
+      "medium": 0.64,
+      "soft": 0.4,
+      "wash": 0.18,
+      "hairline": 0.08
+    },
+    "radius": "0-10px conforme referencia; cards ate 8px salvo marcas arredondadas",
+    "spacing": "clamp responsive"
+  },
+  "componentsDefaults": {
+    "states": [
+      "default",
+      "hover",
+      "focus-visible",
+      "active",
+      "loading",
+      "disabled"
+    ],
+    "referenceOnly": true
+  },
+  "previewNavigation": [
+    {
+      "order": 1,
+      "id": "menu-top",
+      "label": "Menu / top",
+      "href": "#menu-top"
+    },
+    {
+      "order": 2,
+      "id": "top",
+      "label": "Top",
+      "href": "#top"
+    },
+    {
+      "order": 3,
+      "id": "hero",
+      "label": "Sessao Hero",
+      "href": "#hero"
+    },
+    {
+      "order": 4,
+      "id": "color-tokens",
+      "label": "tokens de cor",
+      "href": "#color-tokens"
+    },
+    {
+      "order": 5,
+      "id": "gradients",
+      "label": "gradientes / opacidade",
+      "href": "#gradients"
+    },
+    {
+      "order": 6,
+      "id": "type-system",
+      "label": "type system",
+      "href": "#type-system"
+    },
+    {
+      "order": 7,
+      "id": "type-detail",
+      "label": "tipografia detalhada",
+      "href": "#type-detail"
+    },
+    {
+      "order": 8,
+      "id": "effects",
+      "label": "efeitos e mouse overs",
+      "href": "#effects"
+    },
+    {
+      "order": 9,
+      "id": "components",
+      "label": "componentes",
+      "href": "#components"
+    },
+    {
+      "order": 10,
+      "id": "contract",
+      "label": "contrato sem repeticao",
+      "href": "#contract"
+    },
+    {
+      "order": 11,
+      "id": "menu-board",
+      "label": "menu board component",
+      "href": "#menu-board"
+    },
+    {
+      "order": 12,
+      "id": "reference-slip",
+      "label": "reference slip",
+      "href": "#reference-slip"
+    },
+    {
+      "order": 13,
+      "id": "cards-sections",
+      "label": "cards e secoes",
+      "href": "#cards-sections"
+    },
+    {
+      "order": 14,
+      "id": "story",
+      "label": "story split parallax",
+      "href": "#story"
+    },
+    {
+      "order": 15,
+      "id": "icons",
+      "label": "icones",
+      "href": "#icons"
+    },
+    {
+      "order": 16,
+      "id": "handoff",
+      "label": "handoff de referencia",
+      "href": "#handoff"
+    },
+    {
+      "order": 17,
+      "id": "motion",
+      "label": "motion contract",
+      "href": "#motion"
+    },
+    {
+      "order": 18,
+      "id": "replay-motion",
+      "label": "Replay motion",
+      "href": "#replay-motion"
+    }
+  ],
+  "requiredPreviewSections": [
+    "Menu / top",
+    "Sessao Hero",
+    "tokens de cor",
+    "gradientes / opacidade",
+    "type system",
+    "tipografia detalhada",
+    "efeitos e mouse overs",
+    "componentes",
+    "contrato sem repeticao",
+    "menu board component",
+    "reference slip",
+    "cards e secoes",
+    "story split parallax",
+    "icones",
+    "handoff de referencia",
+    "motion contract",
+    "Replay motion"
+  ],
+  "requiredPreviewContract": {
+    "allMenuLinksMustResolve": true,
+    "menuHasTopAndHeroAsSeparateAnchors": true,
+    "heroMustOccupyFullViewport": true,
+    "noRepeatedGenericSections": true,
+    "noClippedTextOrOverlaps": true,
+    "showGradientsOpacityHoverEntryExitParallaxIcons": true
+  }
+}

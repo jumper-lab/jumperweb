@@ -1,0 +1,531 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "03.2",
+  "design_system_name": "Hamburgueria Vibrante",
+  "category": "03 — Energético e Vibrante",
+  "subcategory": "Appetite-appeal quente — food brand ousada com grid desordenado",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Shake Shack (identidade Pentagram) + food brands premium ousadas",
+    "url": "https://shakeshack.com",
+    "location": "Nova York, EUA",
+    "awards": [
+      "Referência estilística — identidade de marca desenvolvida pela Pentagram (Paula Scher), amplamente reconhecida no setor; sem prêmio específico de website confirmado"
+    ],
+    "why_chosen": "O Shake Shack provou que fast food pode ter design premium sem perder o apetite visual: cores saturadas de condimento, tipografia condensada gritante e a comida sempre como protagonista absoluta. Este DS captura essa essência — vermelho-tomate e amarelo-mostarda em blocos maciços, headings condensados em caixa alta, imagens gigantes em close-up dramático e um grid propositalmente desordenado que transmite a energia de uma cozinha em pleno serviço. A comida em primeiro plano, o design desaparece, só a fome importa."
+  },
+  "colors": {
+    "primary": "#E63946",
+    "primary_usage": "Vermelho-tomate. Blocos de fundo maciços, CTAs gigantes, headlines sobre creme, hover-inversão. Como texto pequeno sobre claro, usar primary_dark.",
+    "primary_dark": "#C1121F",
+    "primary_dark_usage": "Versão escura do vermelho para texto normal (<24px) sobre superfícies claras e estados :active. Garante 5.91:1 sobre surface.",
+    "secondary": "#F1C232",
+    "secondary_usage": "Amarelo-mostarda. Fundos de destaque, badges de preço, sublinhados grossos, hover-inversão dos CTAs vermelhos. Sempre com texto escuro (#221510) por cima.",
+    "surface": "#FFF8F0",
+    "surface_alt": "#FFEDD8",
+    "surface_dark": "#221510",
+    "text_primary": "#221510",
+    "text_secondary": "#5C4A42",
+    "text_muted": "#7A6558",
+    "text_on_dark": "#FFF8F0",
+    "border": "#EFDCCB",
+    "error": "#7F1D1D",
+    "success": "#2E7D32",
+    "warning": "#B45309",
+    "neutral_scale": {
+      "50": "#FFF8F0",
+      "100": "#FAEDE2",
+      "200": "#EFDCCB",
+      "300": "#DDC3AE",
+      "400": "#B99B87",
+      "500": "#97796A",
+      "600": "#7A6558",
+      "700": "#5C4A42",
+      "800": "#3D2E26",
+      "900": "#221510"
+    },
+    "contrast_verification": {
+      "white_on_primary": "4.17:1 — AA apenas para texto grande (≥24px ou ≥18.66px bold) e componentes de UI. CTAs deste DS são gigantes (Bebas Neue ≥20px), então passam. NUNCA usar branco sobre #E63946 em texto corrido.",
+      "white_on_primary_dark": "6.22:1 — AA para qualquer tamanho de texto.",
+      "primary_on_surface": "3.96:1 — #E63946 sobre #FFF8F0 só em headlines grandes (≥24px). Para texto normal vermelho, usar #C1121F (5.91:1).",
+      "text_primary_on_surface": "16.85:1 — #221510 sobre #FFF8F0. AAA.",
+      "text_primary_on_secondary": "10.57:1 — #221510 sobre #F1C232. AAA. Regra de ouro: mostarda SEMPRE recebe texto escuro.",
+      "secondary_on_surface": "1.73:1 — #F1C232 sobre #FFF8F0 NUNCA como texto; apenas como bloco decorativo, sublinhado ou fundo.",
+      "text_secondary_on_surface": "7.93:1 — #5C4A42 sobre #FFF8F0. AAA.",
+      "text_muted_on_surface": "5.21:1 — #7A6558 sobre #FFF8F0. AA.",
+      "text_on_dark_on_surface_dark": "16.85:1 — #FFF8F0 sobre #221510. AAA.",
+      "secondary_on_surface_dark": "9.74:1 — mostarda sobre marrom-carvão funciona como texto de destaque em seções escuras.",
+      "notes": "Regras de combinação obrigatórias: (1) branco sobre vermelho SÓ em texto grande/bold — os CTAs gigantes do DS cumprem isso por definição; (2) preto-carvão sobre mostarda sempre; (3) mostarda nunca como texto sobre claro; (4) para vermelho em texto corrido, usar primary_dark #C1121F. Razões calculadas pela fórmula de luminância relativa WCAG 2.1."
+    }
+  },
+  "typography": {
+    "heading_font": "Bebas Neue",
+    "heading_font_source": "Google Fonts",
+    "heading_font_notes": "Bebas Neue só existe no peso 400, mas é condensada e naturalmente caixa-alta — o efeito 'BOLD UPPERCASE' vem do tamanho gigante + tracking apertado, não do font-weight. Aplicar text-transform: uppercase sempre (garante consistência mesmo com texto digitado em minúsculas).",
+    "body_font": "Manrope",
+    "body_font_source": "Google Fonts",
+    "body_font_notes": "Manrope variável 200–800. Corpo em 400/500, destaques e labels em 700/800.",
+    "mono_font": "não aplicável",
+    "base_size": "16px",
+    "scales": {
+      "mobile": {
+        "h1": { "size": "clamp(3rem, 14vw, 4.5rem)", "line_height": "0.92", "weight": "400", "letter_spacing": "0.01em", "transform": "uppercase", "font": "Bebas Neue" },
+        "h2": { "size": "clamp(2.25rem, 9vw, 3rem)", "line_height": "0.95", "weight": "400", "letter_spacing": "0.01em", "transform": "uppercase", "font": "Bebas Neue" },
+        "h3": { "size": "1.75rem", "line_height": "1.0", "weight": "400", "letter_spacing": "0.02em", "transform": "uppercase", "font": "Bebas Neue" },
+        "body": { "size": "1rem", "line_height": "1.6", "weight": "400", "font": "Manrope" },
+        "small": { "size": "0.875rem", "line_height": "1.5", "weight": "500", "font": "Manrope" },
+        "eyebrow": { "size": "0.8125rem", "line_height": "1.2", "weight": "800", "letter_spacing": "0.14em", "transform": "uppercase", "font": "Manrope" }
+      },
+      "desktop": {
+        "h1": { "size": "clamp(5rem, 9vw, 9rem)", "line_height": "0.88", "weight": "400", "letter_spacing": "0.005em", "transform": "uppercase", "font": "Bebas Neue" },
+        "h2": { "size": "clamp(3.5rem, 5.5vw, 5.5rem)", "line_height": "0.92", "weight": "400", "letter_spacing": "0.01em", "transform": "uppercase", "font": "Bebas Neue" },
+        "h3": { "size": "2.25rem", "line_height": "0.98", "weight": "400", "letter_spacing": "0.02em", "transform": "uppercase", "font": "Bebas Neue" },
+        "body": { "size": "1.125rem", "line_height": "1.65", "weight": "400", "font": "Manrope" },
+        "small": { "size": "0.9375rem", "line_height": "1.5", "weight": "500", "font": "Manrope" },
+        "eyebrow": { "size": "0.875rem", "line_height": "1.2", "weight": "800", "letter_spacing": "0.16em", "transform": "uppercase", "font": "Manrope" }
+      }
+    }
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — batem exatamente com colors, typography, spacing, borders, shadows e motion deste DS",
+    "tokens": {
+      "--color-primary": "#E63946",
+      "--color-primary-dark": "#C1121F",
+      "--color-secondary": "#F1C232",
+      "--color-surface": "#FFF8F0",
+      "--color-surface-alt": "#FFEDD8",
+      "--color-surface-dark": "#221510",
+      "--color-text": "#221510",
+      "--color-text-secondary": "#5C4A42",
+      "--color-text-muted": "#7A6558",
+      "--color-text-on-dark": "#FFF8F0",
+      "--color-border": "#EFDCCB",
+      "--color-error": "#7F1D1D",
+      "--color-success": "#2E7D32",
+      "--color-warning": "#B45309",
+      "--color-neutral-50": "#FFF8F0",
+      "--color-neutral-100": "#FAEDE2",
+      "--color-neutral-200": "#EFDCCB",
+      "--color-neutral-300": "#DDC3AE",
+      "--color-neutral-400": "#B99B87",
+      "--color-neutral-500": "#97796A",
+      "--color-neutral-600": "#7A6558",
+      "--color-neutral-700": "#5C4A42",
+      "--color-neutral-800": "#3D2E26",
+      "--color-neutral-900": "#221510",
+      "--font-heading": "'Bebas Neue', 'Oswald', 'Arial Narrow', sans-serif",
+      "--font-body": "'Manrope', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "--text-h1": "clamp(5rem, 9vw, 9rem)",
+      "--text-h2": "clamp(3.5rem, 5.5vw, 5.5rem)",
+      "--text-h3": "2.25rem",
+      "--text-body": "1.125rem",
+      "--text-small": "0.9375rem",
+      "--text-eyebrow": "0.875rem",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "40px",
+      "--space-xxl": "64px",
+      "--space-xxxl": "96px",
+      "--space-xxxxl": "144px",
+      "--section-gap": "clamp(64px, 6vw + 32px, 128px)",
+      "--radius-none": "0",
+      "--radius-sm": "6px",
+      "--radius-md": "12px",
+      "--radius-lg": "20px",
+      "--radius-xl": "32px",
+      "--radius-full": "9999px",
+      "--stroke-thin": "1.5px",
+      "--stroke-medium": "3px",
+      "--shadow-sm": "0 2px 8px rgba(34, 21, 16, 0.10)",
+      "--shadow-md": "0 8px 24px rgba(34, 21, 16, 0.14)",
+      "--shadow-lg": "0 16px 48px rgba(34, 21, 16, 0.18)",
+      "--shadow-hard": "6px 6px 0 #221510",
+      "--shadow-hard-hover": "10px 10px 0 #221510",
+      "--shadow-glow-red": "0 12px 40px rgba(230, 57, 70, 0.35)",
+      "--duration-instant": "100ms",
+      "--duration-fast": "200ms",
+      "--duration-base": "250ms",
+      "--duration-slow": "300ms",
+      "--duration-reveal": "500ms",
+      "--ease-punch": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "--ease-snap": "cubic-bezier(0.68, -0.35, 0.265, 1.35)",
+      "--ease-standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--container-max": "1360px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "40px",
+      "xxl": "64px",
+      "xxxl": "96px",
+      "xxxxl": "144px"
+    },
+    "section_spacing": {
+      "mobile": "64px",
+      "tablet": "96px",
+      "desktop": "128px"
+    },
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "40px",
+      "container_desktop": "64px"
+    },
+    "container_max_width": "1360px",
+    "gutters": "24px mobile / 32px desktop — mas o grid desordenado permite bleed proposital: imagens e blocos podem estourar o container até a borda do viewport"
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "6px",
+      "md": "12px",
+      "lg": "20px",
+      "xl": "32px",
+      "full": "9999px"
+    },
+    "radius_usage": {
+      "buttons": "full — pílulas gordas, CTAs parecem 'mordíveis'",
+      "cards": "lg (20px) — cantos generosos, mas cards rotacionados podem usar md",
+      "inputs": "md (12px)",
+      "images": "xl (32px) em closes de comida; none em full-bleed",
+      "containers": "none — seções em blocos de cor chapados, sem arredondamento"
+    },
+    "stroke": {
+      "thin": "1.5px",
+      "medium": "3px — bordas grossas pretas (#221510) em badges e botões outline, estética de rótulo de molho"
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "sm": "0 2px 8px rgba(34, 21, 16, 0.10)",
+    "md": "0 8px 24px rgba(34, 21, 16, 0.14)",
+    "lg": "0 16px 48px rgba(34, 21, 16, 0.18)",
+    "hard": "6px 6px 0 #221510",
+    "hard_hover": "10px 10px 0 #221510",
+    "glow_red": "0 12px 40px rgba(230, 57, 70, 0.35)",
+    "shadow_usage": "Sombra dura deslocada (hard) é a assinatura do DS — usada em cards de menu e badges, remete a sticker/rótulo. Sombras suaves só em closes de comida (md/lg) para dar profundidade fotográfica. glow_red reservado para o CTA principal do hero."
+  },
+  "motion": {
+    "durations": {
+      "instant": "100ms",
+      "fast": "200ms",
+      "base": "250ms",
+      "slow": "300ms",
+      "reveal": "500ms"
+    },
+    "easings": {
+      "punch": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "snap": "cubic-bezier(0.68, -0.35, 0.265, 1.35)",
+      "standard": "cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "animations": [
+      { "name": "flip-invert", "duration": "200ms", "easing": "standard", "trigger": "hover em botões e links — inversão total de cor: fundo vermelho vira mostarda, texto branco vira carvão (e vice-versa)" },
+      { "name": "scale-punch", "duration": "250ms", "easing": "snap", "trigger": "hover em cards de menu — scale(1.06) rotate(-1deg), agressivo e com overshoot" },
+      { "name": "chomp", "duration": "150ms", "easing": "punch", "trigger": "active/press em CTAs — scale(0.94), sensação de mordida" },
+      { "name": "sizzle-rise", "duration": "500ms", "easing": "punch", "trigger": "scroll-reveal — entra de baixo com translateY(32px) + rotação residual até o ângulo final do card" },
+      { "name": "drip-underline", "duration": "300ms", "easing": "punch", "trigger": "hover em links de navegação — sublinhado mostarda de 4px escorre da esquerda para a direita" },
+      { "name": "float-ingredient", "duration": "6s", "easing": "ease-in-out infinite alternate", "trigger": "formas orgânicas SVG decorativas (blobs de tomate/mostarda) flutuam sutilmente no hero" }
+    ],
+    "prefers_reduced_motion": true
+  },
+  "components": {
+    "buttons": {
+      "primary": {
+        "background": "#E63946",
+        "color": "#FFFFFF",
+        "font": "Bebas Neue, 1.375rem+, uppercase, letter-spacing 0.04em",
+        "padding": "18px 44px",
+        "radius": "full",
+        "shadow": "glow_red no hero; none no restante",
+        "hover": "flip-invert → background #F1C232, color #221510, scale(1.05)",
+        "focus": "outline 3px solid #221510, offset 3px",
+        "active": "chomp — scale(0.94), background #C1121F",
+        "disabled": "background #DDC3AE, color #7A6558, sem sombra, cursor not-allowed",
+        "notes": "Texto do botão é sempre grande (≥22px Bebas) — por isso branco sobre #E63946 (4.17:1) passa AA para texto grande. Botões pequenos são proibidos neste DS."
+      },
+      "secondary": {
+        "background": "#F1C232",
+        "color": "#221510",
+        "hover": "flip-invert → background #221510, color #F1C232, scale(1.05)",
+        "focus": "outline 3px solid #C1121F, offset 3px",
+        "active": "scale(0.94)",
+        "disabled": "background #FAEDE2, color #97796A"
+      },
+      "outline": {
+        "background": "transparent",
+        "border": "3px solid #221510",
+        "color": "#221510",
+        "hover": "background #221510, color #FFF8F0",
+        "focus": "outline 3px solid #E63946, offset 3px",
+        "usage": "em seções escuras, inverte: borda e texto #FFF8F0"
+      },
+      "sizes": {
+        "default": "18px 44px, font-size 1.375rem",
+        "hero": "22px 56px, font-size 1.75rem — o CTA GIGANTE assinatura do DS",
+        "mobile_full": "abaixo de 480px, CTAs principais ocupam 100% da largura"
+      }
+    },
+    "cards": {
+      "menu_card": {
+        "background": "#FFFFFF",
+        "radius": "20px",
+        "shadow": "hard (6px 6px 0 #221510)",
+        "rotation": "cards alternam rotate(-2deg) / rotate(1.5deg) / rotate(-1deg) — o desalinhamento é proposital e vem do grid desordenado",
+        "hover": "scale-punch — scale(1.06) rotate(0deg), shadow hard_hover",
+        "structure": "imagem de comida no topo (bleed até as bordas, radius herdado), nome em Bebas Neue 1.75rem, descrição Manrope 0.9375rem, preço em badge mostarda",
+        "padding": "0 (imagem) + 20px 24px 28px (conteúdo)"
+      },
+      "feature_card": {
+        "background": "#E63946 ou #F1C232 alternados",
+        "color": "branco sobre vermelho (só títulos grandes) / carvão sobre mostarda",
+        "radius": "20px",
+        "usage": "diferenciais: 'carne 100% angus', 'pão de fermentação própria', 'delivery em 30min'"
+      }
+    },
+    "inputs": {
+      "background": "#FFFFFF",
+      "border": "2px solid #DDC3AE",
+      "radius": "12px",
+      "padding": "14px 18px",
+      "font": "Manrope 1rem",
+      "placeholder": "#7A6558",
+      "focus": "border-color #E63946, box-shadow 0 0 0 4px rgba(230, 57, 70, 0.15)",
+      "error": "border-color #7F1D1D, mensagem em Manrope 700 0.875rem #7F1D1D com ícone",
+      "label": "Manrope 800, 0.8125rem, uppercase, letter-spacing 0.1em, #221510"
+    },
+    "hero": {
+      "layout": "full-bleed vermelho-tomate ou creme com blob mostarda; headline GIGANTE em Bebas Neue (até 9rem) sobrepondo parcialmente o close da comida; a imagem estoura o grid pela direita",
+      "content": "eyebrow em mostarda + H1 de 2-4 palavras + subtítulo curto Manrope + CTA hero gigante + prova social compacta (nota iFood/Google)",
+      "image_treatment": "close-up dramático da comida, recortado em forma orgânica (border-radius assimétrico tipo blob) ou círculo gigante, com queijo derretendo em primeiro plano",
+      "mobile": "empilha: headline primeiro, imagem depois (a fome vem da palavra + imagem em sequência rápida), CTA full-width fixável"
+    },
+    "navigation": {
+      "style": "barra creme sticky com logo à esquerda, links Manrope 700 uppercase 0.9375rem, CTA-pílula vermelho à direita sempre visível",
+      "hover": "drip-underline mostarda 4px",
+      "mobile": "hambúrguer (literalmente — ícone de 3 linhas grossas) abre overlay full-screen vermelho com links em Bebas Neue 3rem",
+      "scroll_behavior": "encolhe padding de 24px para 12px após 80px de scroll, ganha shadow sm"
+    },
+    "footer": {
+      "background": "#221510",
+      "color": "#FFF8F0",
+      "accent": "títulos de coluna em mostarda #F1C232, links com hover vermelho claro #FF6B75",
+      "structure": "4 colunas desktop (marca+frase de fome / cardápio / horários+endereço / delivery+social) → empilha no mobile",
+      "signature": "faixa final com headline Bebas 'BATEU A FOME?' + botão delivery + horário de funcionamento em destaque"
+    },
+    "testimonials": {
+      "style": "cards brancos rotacionados (±2deg) com shadow hard, aspas gigantes em Bebas Neue vermelho, texto Manrope itálico não — normal 1.0625rem, nome em 800 + estrelas mostarda",
+      "layout": "3 colunas desordenadas no desktop (offsets verticais diferentes), carrossel por scroll-snap no mobile"
+    },
+    "badges": {
+      "price": "pílula mostarda, Bebas Neue 1.25rem, texto carvão — 'R$ 32'",
+      "highlight": "sticker rotacionado -6deg, fundo vermelho, borda 3px carvão, texto branco grande — 'MAIS PEDIDO', 'NOVO'",
+      "delivery": "pílula outline 3px carvão com ícone de moto — '30-45 MIN'"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Apetite e atitude. Frases curtas, afirmativas, sem rodeio — como um pedido no balcão. Confiança de quem sabe que faz o melhor burger da cidade. Humor seco permitido, formalidade proibida.",
+    "headline_examples": [
+      "O melhor burger da cidade. Ponto.",
+      "Queijo escorrendo. Pão na chapa. Você aqui.",
+      "A fome bateu. A gente resolve.",
+      "Smash de verdade não tem frescura.",
+      "180g de motivo pra sair de casa."
+    ],
+    "cta_examples": [
+      "Peça agora no delivery",
+      "Ver o cardápio completo",
+      "Quero esse burger",
+      "Reservar mesa pra hoje",
+      "Chama no WhatsApp"
+    ],
+    "avoid": [
+      "Linguagem gourmet pomposa ('experiência gastronômica singular')",
+      "Diminutivos ('hamburguinho', 'promocioncita')",
+      "Frases longas e explicativas — se não cabe num grito de balcão, corta",
+      "Tom institucional/corporativo ('nossa missão é...')",
+      "Superlativo vazio sem prova ('o melhor do mundo') — atitude sim, mentira não"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas de base, mas propositalmente quebrado: imagens estouram o container (full-bleed parcial), cards rotacionados em ±1-2°, blocos de texto desalinham do eixo, offsets verticais alternados. A desordem é controlada — sempre há UMA âncora alinhada por seção (o CTA ou o headline) para o olho descansar.",
+    "page_flow": [
+      { "section": "hero", "layout": "full-bleed, headline gigante à esquerda sobrepondo imagem-blob à direita que estoura o viewport; CTA hero + prova social abaixo" },
+      { "section": "destaques do cardápio", "layout": "grid desordenado de 3 menu-cards rotacionados com offsets verticais (-24px / 0 / +32px); badge 'MAIS PEDIDO' no card central" },
+      { "section": "faixa de apetite", "layout": "bloco mostarda full-bleed com headline Bebas gigante atravessando + close de comida circular invadindo a seção seguinte" },
+      { "section": "diferenciais", "layout": "2 colunas assimétricas (7/5): texto à esquerda, pilha de feature-cards coloridos rotacionados à direita" },
+      { "section": "depoimentos", "layout": "3 cards desordenados sobre fundo creme com blobs SVG decorativos" },
+      { "section": "delivery/CTA final", "layout": "bloco vermelho full-bleed, headline branca gigante centralizada + CTA mostarda hero-size — a seção mais alta de contraste da página" },
+      { "section": "footer", "layout": "carvão escuro, 4 colunas, faixa de fome no final" }
+    ],
+    "image_treatment": "Fotografia de comida SEMPRE em close-up dramático: queijo derretendo, chapa fumegando, mãos segurando o burger. Recortes orgânicos (blobs, círculos), nunca retângulos secos no hero. Saturação alta, fundo desfocado quente. Em produção, simular no preview com gradientes saturados radiais + formas SVG.",
+    "density": "Alta nos blocos de impacto (hero, faixas), respirada nos textos. O contraste denso/vazio cria o ritmo de 'gritos' e 'pausas'.",
+    "whitespace": "Generoso ENTRE seções (96-128px), apertado DENTRO dos blocos de impacto — headline gruda na imagem, preço gruda no nome. O aperto proposital transmite urgência de fome."
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "normal_text": "≥ 4.5:1 verificado — texto corrido sempre em #221510, #5C4A42 ou #7A6558 sobre claros; #FFF8F0 sobre escuros; vermelho em texto pequeno só via #C1121F",
+      "large_text": "≥ 3:1 verificado — branco sobre #E63946 (4.17:1) permitido só em Bebas Neue ≥24px ou Manrope bold ≥18.66px",
+      "ui_components": "≥ 3:1 — bordas de inputs (#DDC3AE sobre branco reforçada por 2px de espessura + label forte), estados de foco com 3px de outline"
+    },
+    "keyboard_navigation": "Ordem de tabulação segue o fluxo visual mesmo com grid desordenado (a rotação é só transform, não altera ordem do DOM). Skip-link para o conteúdo. Overlay de menu mobile com focus-trap e fechamento por Esc.",
+    "focus_states": "Outline 3px sólido de alto contraste (carvão sobre claros, mostarda sobre vermelho/escuro), offset 3px — nunca remover outline sem substituto visível.",
+    "alt_text": "Fotos de comida com alt descritivo e apetitoso ('cheeseburger duplo com cheddar derretendo sobre pão brioche') — o alt também vende. Blobs e formas decorativas com aria-hidden='true'.",
+    "semantic_html": "header/nav/main/section/article/footer; um h1 por página; cards de menu como article com heading próprio; preços dentro do fluxo de texto (não só visual).",
+    "touch_targets": "44px minimum — CTAs deste DS são gigantes por design (≥56px de altura), links de navegação com padding que garante 44px."
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Coluna única empilhada: eyebrow mostarda → H1 Bebas clamp(3rem, 14vw, 4.5rem) → subtítulo Manrope → imagem-blob da comida → CTA hero full-width (fixável na thumb zone). A fome vem da palavra + imagem em sequência rápida.",
+      "tablet": "Headline gigante ainda dominante, imagem-blob maior à direita começando a estourar a margem; CTA hero + prova social lado a lado.",
+      "desktop": "Full-bleed: headline até 9rem à esquerda sobrepondo o close da comida à direita que estoura o viewport; CTA hero com glow_red + prova social (nota iFood/Google) abaixo."
+    },
+    "menu_grid": {
+      "mobile": "1 coluna, menu-cards full-width empilhados, rotação reduzida a ±1° para não estourar a margem, gap 24px",
+      "tablet": "2 colunas com offsets verticais suaves, gap 24px",
+      "desktop": "3 colunas desordenadas com offsets verticais alternados (-24px / 0 / +32px) e rotações ±1-2°, gap 32px; badge 'MAIS PEDIDO' no card central"
+    },
+    "navigation": {
+      "mobile_tablet": "Logo + ícone hambúrguer (3 linhas grossas, toque 44px) que abre overlay full-screen vermelho com links em Bebas Neue 3rem; CTA-pílula vermelho permanece visível",
+      "desktop": "Logo à esquerda + links Manrope 700 uppercase inline + CTA-pílula vermelho à direita sempre visível; encolhe padding 24px→12px após 80px de scroll com shadow sm"
+    },
+    "footer": {
+      "mobile": "4 colunas empilhadas (marca+frase de fome / cardápio / horários+endereço / delivery+social), faixa 'BATEU A FOME?' com botão delivery no fim",
+      "desktop": "4 colunas lado a lado sobre fundo carvão #221510, títulos de coluna em mostarda, faixa de fome final em Bebas gigante"
+    },
+    "touch_adjustments": "Hover scale-punch e flip-invert viram active-state no touch (chomp scale 0.94); menu-cards não dependem de hover para revelar informação; carrossel de depoimentos por scroll-snap nativo no mobile; CTAs principais full-width abaixo de 480px."
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente, coerentes com components deste DS",
+    "button_primary": ["default (vermelho #E63946, texto branco, Bebas ≥22px)", "hover (flip-invert → fundo mostarda #F1C232, texto carvão #221510, scale 1.05)", "focus-visible (outline 3px #221510, offset 3px)", "active (chomp scale 0.94, fundo #C1121F)", "disabled (fundo #DDC3AE, texto #7A6558, sem sombra, not-allowed)", "loading (spinner 18px branco + texto 'ENVIANDO...')"],
+    "button_secondary": ["default (mostarda #F1C232, texto carvão #221510)", "hover (flip-invert → fundo carvão #221510, texto mostarda #F1C232, scale 1.05)", "focus-visible (outline 3px #C1121F, offset 3px)", "active (scale 0.94)", "disabled (fundo #FAEDE2, texto #97796A)"],
+    "link_nav": ["default (Manrope 700 uppercase #221510)", "hover (drip-underline mostarda 4px escorrendo da esquerda)", "focus-visible (outline 3px #221510, offset 3px)", "current (sublinhado mostarda fixo)"],
+    "card_menu": ["default (branco, radius 20px, shadow hard, rotação ±1-2°)", "hover (scale-punch scale 1.06 rotate 0deg, shadow hard_hover)", "focus-within (outline 3px #E63946)"],
+    "input": ["default (branco, borda 2px #DDC3AE)", "focus (border #E63946 + box-shadow 0 0 0 4px rgba(230,57,70,0.15))", "filled", "error (border #7F1D1D + mensagem Manrope 700 #7F1D1D com ícone + aria-describedby)", "disabled"],
+    "nav_header": ["topo (barra creme, padding 24px)", "rolado (padding 12px + shadow sm após 80px)", "menu mobile aberto (overlay vermelho full-screen com focus trap e fechamento por Esc)"]
+  },
+  "photography_direction": {
+    "style": "Appetite-appeal quente e dramático — a comida é a protagonista absoluta, sempre em close-up que provoca fome imediata",
+    "subjects": [
+      "Close-up de burger com queijo cheddar derretendo escorrendo pela lateral",
+      "Chapa fumegando com o smash em serviço",
+      "Mãos segurando o burger montado, mordida iminente",
+      "Batatas rústicas e molhos em textura macro",
+      "Pão brioche na chapa dourando"
+    ],
+    "light": "Quente e direcional, realçando vapor e brilho do queijo/molho; fundo desfocado quente (bokeh de cozinha em serviço).",
+    "color_grading": "Saturação alta, temperatura quente, realce de vermelhos e dourados; sombras marrom-carvão (#221510). Proibido: dessaturação fria, HDR artificial, tons pastel.",
+    "framing": "Close-up dramático sempre; recortes orgânicos (blobs, círculos gigantes), nunca retângulos secos no hero; profundidade de campo rasa com o ponto de foco no queijo/carne.",
+    "avoid": [
+      "Stock genérico de fast food asséptico",
+      "Comida sem calor/vapor, luz fria de laboratório",
+      "Retângulos secos no hero — o recorte é sempre orgânico",
+      "Pratos montados 'gourmet fine dining' que matam o apetite popular"
+    ],
+    "fallback_sem_foto": "Gradiente radial saturado quente (círculo #E63946 → #F1C232) dentro de forma orgânica blob + formas SVG de tomate/mostarda flutuantes (float-ingredient). Como o vermelho #E63946 sobre #FFF8F0 rende só 3.96:1, qualquer texto sobre o fallback usa carvão #221510 (16.85:1); mostarda #F1C232 apenas como bloco decorativo, nunca como texto sobre claro (1.73:1)."
+  },
+  "iconography": {
+    "style": "Linha grossa (stroke 3px, cantos arredondados stroke-linecap round), grid 24x24 — coerente com as bordas grossas de rótulo de molho do DS",
+    "color": "#221510 (carvão) sobre claro; #FFF8F0 ou #F1C232 (mostarda) sobre vermelho/escuro",
+    "recommended_set": "Lucide ou Feather (open source, MIT), ajustando stroke para 3px para casar com a estética de rótulo",
+    "usage": "Ícones sempre acompanhados de texto — nunca ícone sozinho como única affordance; ícone de moto no badge de delivery, hambúrguer literal (3 linhas grossas) no menu mobile",
+    "decorative_shapes": "Blobs orgânicos SVG de tomate/mostarda (border-radius assimétrico), círculos gigantes de comida, stickers rotacionados — sempre aria-hidden='true'"
+  },
+  "do_dont": {
+    "do": [
+      "Usar Bebas Neue em caixa-alta gigante (text-transform: uppercase sempre) — o impacto vem do tamanho + tracking, não do weight",
+      "Repetir o CTA de delivery no header sticky, no hero e na faixa final (visível em 100% do scroll)",
+      "Colocar a comida em close-up antes do texto em toda dobra — imagem é o maior driver de pedido",
+      "Usar a sombra dura deslocada (hard 6px 6px 0 #221510) como assinatura em cards e badges",
+      "Mostrar preço em badge mostarda com texto carvão em todo menu-card",
+      "Manter uma âncora alinhada por seção (CTA ou headline) para o olho descansar no grid desordenado"
+    ],
+    "dont": [
+      "Usar branco sobre #E63946 em texto corrido (4.17:1 — só passa em texto grande/bold, e os CTAs gigantes cumprem isso por definição)",
+      "Usar #E63946 como texto normal sobre #FFF8F0 (3.96:1) — para vermelho em texto pequeno usar #C1121F (5.91:1)",
+      "Usar mostarda #F1C232 como texto sobre fundo claro (1.73:1) — só bloco, sublinhado ou fundo, sempre com texto carvão por cima",
+      "Colocar texto claro sobre mostarda — mostarda SEMPRE recebe carvão #221510 (10.57:1)",
+      "Usar botões pequenos — botões pequenos são proibidos neste DS (o branco sobre vermelho só passa em ≥22px)",
+      "Deixar a rotação dos cards alterar a ordem do DOM — rotação é só transform, tabulação segue o fluxo visual",
+      "Exagerar no motion agressivo sem respeitar prefers-reduced-motion (flip/chomp/scale-punch reduzidos)"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Bebas+Neue (peso 400 único) e Manrope:wght@400;500;700;800 com display=swap. Aplicar text-transform: uppercase nos headings Bebas.",
+    "js_budget": "Apenas 3 comportamentos: menu mobile (overlay vermelho + focus trap + Esc), IntersectionObserver para sizzle-rise (scroll-reveal com threshold único), carrossel scroll-snap de depoimentos opcional. Animações só com transform/opacity. Zero frameworks obrigatórios.",
+    "seo_local": "Schema.org Restaurant/FastFoodRestaurant com menu, horários, geo, telefone, aggregateRating (nota iFood/Google) e priceRange; título com bairro/cidade ('Hamburgueria X — Smash burger na Vila Y')",
+    "whatsapp_cta": "Link wa.me com mensagem pré-preenchida direta ('Opa! Quero fazer um pedido...'); botão fixo na thumb zone no mobile, complementar ao CTA de delivery",
+    "adaptation_guide": "Ao adaptar para outro segmento energético (food truck, pizzaria, sports bar, espetaria): manter paleta saturada, Bebas+Manrope, motion agressivo (flip/chomp/scale-punch), sombra dura e grid desordenado; trocar o vocabulário do voice_and_tone e o objeto fotográfico (a comida-herói do segmento). A essência é o apetite e a atitude, não o burger."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "energetico",
+      "vibrante",
+      "hamburgueria",
+      "food-brand",
+      "vermelho-tomate",
+      "mostarda",
+      "bebas-neue",
+      "grid-desordenado",
+      "appetite-appeal",
+      "sombra-dura",
+      "negocio-local",
+      "delivery"
+    ],
+    "related_docs": [
+      "previews/markdown/03-2-hamburgueria-vibrante.md",
+      "previews/html/03-2-hamburgueria-vibrante.html",
+      "docs/03-2-hamburgueria-vibrante/components.md",
+      "docs/03-2-hamburgueria-vibrante/animations.css",
+      "docs/03-2-hamburgueria-vibrante/accessibility-report.md",
+      "docs/03-2-hamburgueria-vibrante/benchmarking.md",
+      "docs/03-2-hamburgueria-vibrante/color-variations.md",
+      "docs/03-2-hamburgueria-vibrante/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "hamburgueria artesanal / smash burger",
+      "food truck",
+      "pizzaria artesanal",
+      "sports bar",
+      "churrascaria jovem / espetaria"
+    ],
+    "conversion_factors": [
+      "CTA de delivery visível em 100% do scroll (nav sticky + hero + faixa final)",
+      "Fotografia appetite-appeal em close-up é o maior driver de pedido — imagem antes de texto em toda dobra",
+      "Preço sempre visível no card (badge mostarda) — remove fricção de decisão",
+      "Prova social próxima ao CTA (nota iFood/Google + depoimentos com nome)",
+      "Botão WhatsApp/delivery fixo no mobile (thumb zone)",
+      "Cardápio enxuto em destaque (3 heróis) antes do cardápio completo — paradoxo da escolha"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "Imagem do hero em AVIF/WebP com preload + fetchpriority='high'; gradientes CSS como placeholder; fonts com font-display: swap e preconnect",
+      "cls_strategy": "aspect-ratio fixo em todas as imagens de comida; rotações via transform (não afetam layout); espaço reservado para badges",
+      "inp_strategy": "animações só com transform/opacity (compositor); marquees ausentes; scroll-reveal via IntersectionObserver com threshold único"
+    }
+  }
+}

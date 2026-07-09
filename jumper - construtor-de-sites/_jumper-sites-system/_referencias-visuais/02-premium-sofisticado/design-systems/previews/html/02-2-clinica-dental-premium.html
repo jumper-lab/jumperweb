@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DS 02.2 — Clínica Dental Premium · Sage &amp; Champagne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#6B8E6F;
+    --primary-dark:#4A6B4F;
+    --primary-darker:#3E5A42;
+    --secondary:#E8D5B7;
+    --surface:#FAF9F6;
+    --surface-alt:#EEF2EC;
+    --surface-champagne:#F5EEE0;
+    --text-primary:#2C332E;
+    --text-secondary:#5A625C;
+    --text-muted:#656C67;
+    --border:#DDE2DC;
+    --error:#B5482F;
+    --success:#3F6B4A;
+    --warning:#8A6D1F;
+    --n100:#F1F0EB; --n200:#E3E4DE; --n300:#CDD1CB; --n400:#AAB0AB;
+    --shadow-xs:0 1px 2px rgba(44,51,46,.05);
+    --shadow-sm:0 2px 8px rgba(44,51,46,.06);
+    --shadow-md:0 6px 20px rgba(44,51,46,.08);
+    --shadow-lg:0 14px 40px rgba(44,51,46,.12);
+    --shadow-xl:0 24px 64px rgba(44,51,46,.14);
+    --font-heading:'Cormorant Garamond','Times New Roman',Georgia,serif;
+    --font-body:'Inter',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+    --ease-out-soft:cubic-bezier(.16,1,.3,1);
+    --ease-standard:cubic-bezier(.4,0,.2,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--text-primary);background:var(--surface);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:var(--font-heading);letter-spacing:-.01em}
+  h1{font-size:clamp(38px,3vw + 28px,64px);line-height:1.06;font-weight:500}
+  h2{font-size:clamp(30px,2vw + 22px,44px);line-height:1.12;font-weight:500}
+  h3{font-size:clamp(23px,1vw + 19px,28px);line-height:1.25;font-weight:600}
+  p{color:var(--text-secondary)}
+  img{max-width:100%}
+  .container{max-width:1140px;margin:0 auto;padding:0 20px}
+  @media(min-width:480px){.container{padding:0 40px}}
+  @media(min-width:1024px){.container{padding:0 64px}}
+  section{padding:72px 0}
+  @media(min-width:480px){section{padding:104px 0}}
+  @media(min-width:1024px){section{padding:144px 0}}
+
+  .eyebrow{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--primary-dark);display:block;margin-bottom:16px}
+  .section-intro{max-width:680px;margin:0 auto 64px;text-align:center}
+  .section-intro p{margin-top:16px}
+  .em-italic{font-style:italic}
+
+  /* ===== Spec banner ===== */
+  .spec-banner{background:var(--text-primary);color:var(--n100);padding:14px 0;font-size:13px}
+  .spec-banner .container{display:flex;flex-wrap:wrap;gap:4px 24px;justify-content:space-between}
+  .spec-banner strong{color:var(--secondary);font-weight:500}
+
+  /* ===== Nav ===== */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(250,249,246,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);transition:box-shadow .32s var(--ease-standard)}
+  .nav.scrolled{box-shadow:var(--shadow-xs)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .nav-logo{font-family:var(--font-heading);font-weight:600;font-size:22px;color:var(--text-primary);text-decoration:none}
+  .nav-links{display:none;gap:36px;list-style:none}
+  @media(min-width:1024px){.nav-links{display:flex}}
+  .nav-links a{font-size:15px;font-weight:500;color:var(--text-primary);text-decoration:none;position:relative;padding:6px 0}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--secondary);transition:width .32s var(--ease-out-soft)}
+  .nav-links a:hover::after,.nav-links a:focus-visible::after{width:100%}
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--primary-dark);color:#fff;padding:12px 20px;border-radius:0 0 12px 0;z-index:100}
+  .skip-link:focus{left:0}
+
+  /* ===== Buttons ===== */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:13px 28px;border-radius:999px;font-family:var(--font-body);font-size:15px;font-weight:500;letter-spacing:.02em;text-decoration:none;border:none;cursor:pointer;transition:background .2s var(--ease-standard),box-shadow .2s var(--ease-standard),border-color .2s var(--ease-standard),color .2s var(--ease-standard)}
+  .btn:focus-visible{outline:2px solid var(--primary-dark);outline-offset:3px}
+  .btn-primary{background:var(--primary-dark);color:#fff}
+  .btn-primary:hover{background:var(--primary-darker);box-shadow:var(--shadow-sm)}
+  .btn-primary:active{background:#35503A}
+  .btn-secondary{background:transparent;color:var(--primary-dark);border:1.5px solid var(--primary)}
+  .btn-secondary:hover{background:var(--surface-alt);border-color:var(--primary-dark)}
+  .btn-lg{min-height:56px;padding:17px 36px;font-size:16px}
+  .btn[disabled],.btn.is-disabled{background:var(--n300);color:#6E7570;cursor:not-allowed;box-shadow:none;border:none}
+  .btn-ghost{background:transparent;color:var(--primary-dark);padding:13px 8px}
+  .btn-ghost .arrow{transition:transform .2s var(--ease-standard)}
+  .btn-ghost:hover .arrow{transform:translateX(4px)}
+  .btn-ghost:hover{text-decoration:underline;text-decoration-color:var(--secondary);text-decoration-thickness:2px;text-underline-offset:6px}
+
+  /* ===== Hero ===== */
+  .hero{padding:80px 0 96px}
+  .hero-grid{display:grid;gap:48px;align-items:center}
+  @media(min-width:1024px){.hero-grid{grid-template-columns:55fr 45fr;gap:72px}}
+  .hero-copy .trust-row{margin-top:36px;font-size:13px;color:var(--text-muted)}
+  .hero-copy p.lead{margin:24px 0 36px;font-size:clamp(16px,.3vw + 15px,18px);max-width:480px}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .hero-visual{position:relative}
+  .hero-frame{position:absolute;inset:12px -12px -12px 12px;border:1.5px solid var(--secondary);border-radius:20px 32px 20px 20px;pointer-events:none}
+  .hero-photo{position:relative;border-radius:20px 32px 20px 20px;overflow:hidden;box-shadow:var(--shadow-xl);aspect-ratio:4/5;max-height:560px;width:100%;
+    background:
+      radial-gradient(120% 90% at 78% 12%,rgba(232,213,183,.55) 0%,rgba(232,213,183,0) 55%),
+      radial-gradient(90% 70% at 20% 90%,rgba(74,107,79,.35) 0%,rgba(74,107,79,0) 60%),
+      linear-gradient(160deg,#DFE7DD 0%,#C9D6C6 38%,#9DB49C 72%,#7C987D 100%)}
+  @media(max-width:1023px){.hero-photo{aspect-ratio:16/10;max-height:none}}
+  .hero-photo svg{position:absolute;inset:0;width:100%;height:100%}
+  .photo-caption{margin-top:28px;font-size:13px;color:var(--text-muted)}
+
+  /* ===== Swatches ===== */
+  .swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:20px}
+  .swatch{border-radius:20px;border:1px solid var(--border);overflow:hidden;background:#fff;box-shadow:var(--shadow-sm)}
+  .swatch-color{height:92px}
+  .swatch-info{padding:14px 16px;font-size:13px}
+  .swatch-info strong{display:block;font-weight:500;color:var(--text-primary)}
+  .swatch-info code{font-size:12px;color:var(--text-muted);font-family:ui-monospace,Menlo,monospace}
+  .swatch-info em{display:block;font-style:normal;font-size:11px;color:var(--text-muted);margin-top:2px}
+  .contrast-note{margin-top:32px;padding:20px 24px;background:var(--surface-alt);border-radius:12px;font-size:14px;color:var(--text-secondary);max-width:820px}
+  .contrast-note strong{color:var(--primary-dark)}
+
+  /* ===== Type specimen ===== */
+  .type-specimen{display:grid;gap:40px;max-width:820px}
+  .type-row{border-bottom:1px solid var(--border);padding-bottom:32px}
+  .type-meta{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);margin-bottom:10px;display:block}
+
+  /* ===== Cards ===== */
+  .card-grid{display:grid;gap:28px}
+  @media(min-width:480px){.card-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.card-grid{grid-template-columns:repeat(3,1fr)}}
+  .card{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow .32s var(--ease-standard),transform .32s var(--ease-standard)}
+  .card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+  .card-media{position:relative;aspect-ratio:3/2;overflow:hidden}
+  .card-media::after{content:"";position:absolute;inset:0;background:rgba(107,142,111,.12);transition:opacity .6s cubic-bezier(.65,0,.35,1)}
+  .card:hover .card-media::after{opacity:0}
+  .card-body{padding:28px 32px 32px}
+  .card-body h3{margin-bottom:10px}
+  .card-body p{font-size:15px;margin-bottom:18px}
+  .badge{display:inline-block;background:var(--surface-alt);color:var(--primary-dark);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;padding:6px 14px;border-radius:999px;margin-bottom:14px}
+
+  /* ===== Buttons demo ===== */
+  .demo-block{background:#fff;border:1px solid var(--border);border-radius:20px;padding:36px;box-shadow:var(--shadow-sm)}
+  .demo-row{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:28px}
+  .demo-row:last-child{margin-bottom:0}
+  .demo-label{width:100%;font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted)}
+  .fake-focus{outline:2px solid var(--primary-dark);outline-offset:3px}
+
+  /* ===== Inputs ===== */
+  .form-demo{display:grid;gap:28px;max-width:520px}
+  .field label{display:block;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--text-secondary);margin-bottom:8px}
+  .field input,.field select,.field textarea{width:100%;min-height:48px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-family:var(--font-body);font-size:16px;color:var(--text-primary);transition:border-color .2s,box-shadow .2s}
+  .field input::placeholder{color:var(--text-muted)}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--primary-dark);box-shadow:0 0 0 3px rgba(107,142,111,.18)}
+  .field.has-error input{border-color:var(--error)}
+  .field .error-msg{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--error);margin-top:8px}
+
+  /* ===== Testimonial ===== */
+  .testimonial{background:var(--surface-champagne)}
+  .quote-wrap{max-width:680px;margin:0 auto;text-align:center;position:relative}
+  .quote-mark{font-family:var(--font-heading);font-size:120px;line-height:.6;color:var(--secondary);display:block;margin-bottom:8px}
+  blockquote p{font-family:var(--font-heading);font-style:italic;font-weight:500;font-size:clamp(21px,1.2vw + 17px,26px);line-height:1.4;color:var(--text-primary)}
+  .quote-author{margin-top:28px;font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-secondary)}
+  .quote-dots{display:flex;gap:6px;justify-content:center;margin-top:32px}
+  .quote-dots button{width:44px;height:44px;background:none;border:none;cursor:pointer;display:grid;place-items:center}
+  .quote-dots button span{width:8px;height:8px;border-radius:999px;background:var(--n300);transition:background .2s}
+  .quote-dots button[aria-current="true"] span{background:var(--primary-dark)}
+  .quote-dots button:focus-visible{outline:2px solid var(--primary-dark);outline-offset:-6px;border-radius:12px}
+
+  /* ===== Steps ===== */
+  .steps{display:grid;gap:40px}
+  @media(min-width:1024px){.steps{grid-template-columns:repeat(3,1fr);gap:56px}}
+  .step-num{font-family:var(--font-heading);font-size:44px;font-weight:500;color:var(--primary);line-height:1;display:block;margin-bottom:14px}
+  .step h3{margin-bottom:8px;font-size:22px}
+  .step p{font-size:15px}
+
+  /* ===== Animations demo ===== */
+  .anim-demo{display:grid;gap:24px}
+  @media(min-width:768px){.anim-demo{grid-template-columns:repeat(2,1fr)}}
+  .anim-tile{background:#fff;border:1px solid var(--border);border-radius:20px;padding:28px;box-shadow:var(--shadow-sm)}
+  .anim-tile h4{font-family:var(--font-body);font-size:14px;font-weight:500;margin-bottom:6px}
+  .anim-tile p{font-size:13px;color:var(--text-muted);margin-bottom:16px}
+  .replay-btn{font-size:13px;font-weight:500;color:var(--primary-dark);background:var(--surface-alt);border:none;border-radius:999px;padding:10px 18px;min-height:44px;cursor:pointer}
+  .replay-btn:hover{background:var(--n200)}
+  .replay-btn:focus-visible{outline:2px solid var(--primary-dark);outline-offset:3px}
+  .anim-stage{height:96px;display:flex;align-items:center;gap:14px;margin-bottom:12px}
+  .anim-chip{width:72px;height:56px;border-radius:12px;background:var(--surface-alt);border:1px solid var(--border)}
+  .anim-chip.champagne{background:var(--surface-champagne)}
+  .anim-chip.sage{background:var(--primary);opacity:.35}
+
+  /* ===== Footer ===== */
+  footer{background:var(--text-primary);color:var(--n100);padding:80px 0 32px}
+  .footer-signature{font-family:var(--font-heading);font-style:italic;font-size:20px;color:var(--secondary);margin-bottom:56px}
+  .footer-grid{display:grid;gap:40px;margin-bottom:64px}
+  @media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+  footer h4{font-family:var(--font-body);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--n400);margin-bottom:18px}
+  footer ul{list-style:none;display:grid;gap:10px}
+  footer a{color:var(--n100);text-decoration:none;font-size:15px;transition:color .2s}
+  footer a:hover,footer a:focus-visible{color:var(--secondary)}
+  footer a:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+  .footer-brand{font-family:var(--font-heading);font-weight:600;font-size:22px;margin-bottom:12px}
+  .footer-brand-desc{font-size:14px;color:var(--n400);max-width:280px}
+  .footer-legal{border-top:1px solid rgba(241,240,235,.15);padding-top:28px;font-size:13px;color:var(--n400);display:flex;flex-wrap:wrap;gap:8px 32px;justify-content:space-between}
+
+  /* ===== Scroll reveal ===== */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease-out-soft),transform .8s var(--ease-out-soft)}
+  .reveal.is-visible{opacity:1;transform:none}
+  .hero .reveal{transition-duration:1s}
+
+  @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  .play-fade{animation:fadeInUp .8s var(--ease-out-soft) both}
+
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Ir para o conteúdo</a>
+
+<div class="spec-banner">
+  <div class="container">
+    <span><strong>DS 02.2</strong> — Clínica Dental Premium · Sage &amp; Champagne</span>
+    <span>Categoria <strong>02 — Premium e Sofisticado</strong> · Cormorant Garamond + Inter · schema 2.0.0</span>
+  </div>
+</div>
+
+<nav class="nav" id="nav" aria-label="Navegação principal">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="#">Atelier<span class="em-italic">Oral</span></a>
+    <ul class="nav-links">
+      <li><a href="#tratamentos">Tratamentos</a></li>
+      <li><a href="#espaco">O espaço</a></li>
+      <li><a href="#equipe">Equipe</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="btn btn-primary" href="#contato">Agende sua avaliação</a>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow reveal">Odontologia estética</span>
+        <h1 id="hero-title" class="reveal" style="transition-delay:.12s">Seu sorriso, tratado <span class="em-italic">como arte</span>.</h1>
+        <p class="lead reveal" style="transition-delay:.24s">Planejamento digital, materiais de alto padrão e um espaço pensado para a sua calma. Estética dental com a precisão de um ateliê.</p>
+        <div class="hero-ctas reveal" style="transition-delay:.36s">
+          <a class="btn btn-primary btn-lg" href="#contato">Agende sua avaliação</a>
+          <a class="btn btn-ghost" href="#espaco">Conheça o espaço <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <p class="trust-row reveal" style="transition-delay:.48s">15 anos de experiência · Planejamento 100% digital · Atendimento particular</p>
+      </div>
+      <div class="hero-visual reveal" style="transition-delay:.2s">
+        <div class="hero-frame" aria-hidden="true"></div>
+        <div class="hero-photo" role="img" aria-label="Simulação de fotografia tonal: consultório com luz natural em tons de verde sage">
+          <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect x="40" y="330" width="320" height="10" rx="5" fill="rgba(250,249,246,.5)"/>
+            <rect x="70" y="150" width="120" height="180" rx="60" fill="rgba(250,249,246,.28)"/>
+            <circle cx="130" cy="110" r="42" fill="rgba(250,249,246,.34)"/>
+            <rect x="230" y="200" width="110" height="130" rx="16" fill="rgba(44,51,46,.12)"/>
+            <circle cx="320" cy="90" r="60" fill="rgba(232,213,183,.4)"/>
+          </svg>
+        </div>
+        <p class="photo-caption">Fotografia tonal simulada — luz natural, tons puxados ao sage, overlay 8–12%.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PALETA -->
+  <section style="background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-labelledby="paleta-title">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Fundamentos</span>
+        <h2 id="paleta-title">Paleta</h2>
+        <p>Sage green como atmosfera, champagne como gesto decorativo, off-white quente como respiro. Texto sempre nos tons verificados.</p>
+      </div>
+      <div class="swatch-grid reveal">
+        <div class="swatch"><div class="swatch-color" style="background:#6B8E6F"></div><div class="swatch-info"><strong>Primary · sage</strong><code>#6B8E6F</code><em>atmosfera / texto grande (3.48:1)</em></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#4A6B4F"></div><div class="swatch-info"><strong>Primary dark</strong><code>#4A6B4F</code><em>texto + CTAs (5.69:1)</em></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#E8D5B7"></div><div class="swatch-info"><strong>Secondary · champagne</strong><code>#E8D5B7</code><em>decorativo puro</em></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#FAF9F6;border-bottom:1px solid var(--border)"></div><div class="swatch-info"><strong>Surface</strong><code>#FAF9F6</code><em>base da página</em></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#EEF2EC"></div><div class="swatch-info"><strong>Surface alt</strong><code>#EEF2EC</code><em>seções alternadas</em></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#F5EEE0"></div><div class="swatch-info"><strong>Surface champagne</strong><code>#F5EEE0</code><em>depoimentos / CTA</em></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2C332E"></div><div class="swatch-info"><strong>Text primary</strong><code>#2C332E</code><em>12.31:1 — AAA</em></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#5A625C"></div><div class="swatch-info"><strong>Text secondary</strong><code>#5A625C</code><em>5.98:1</em></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#656C67"></div><div class="swatch-info"><strong>Text muted</strong><code>#656C67</code><em>5.12:1</em></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#B5482F"></div><div class="swatch-info"><strong>Error</strong><code>#B5482F</code><em>5.07:1</em></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#3F6B4A"></div><div class="swatch-info"><strong>Success</strong><code>#3F6B4A</code><em>5.84:1</em></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#8A6D1F"></div><div class="swatch-info"><strong>Warning</strong><code>#8A6D1F</code><em>4.65:1</em></div></div>
+      </div>
+      <p class="contrast-note reveal"><strong>Regra de contraste do DS:</strong> o sage <code>#6B8E6F</code> rende 3.48:1 sobre o off-white — aprovado apenas para texto grande. Todo texto normal e CTA usa o derivado <code>#4A6B4F</code> (5.69:1; branco sobre ele: 5.99:1). O champagne nunca carrega texto.</p>
+    </div>
+  </section>
+
+  <!-- TIPOGRAFIA -->
+  <section aria-labelledby="tipo-title">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Fundamentos</span>
+        <h2 id="tipo-title">Tipografia ao vivo</h2>
+        <p>Cormorant Garamond nos títulos (voz de ateliê) e Inter no corpo (precisão clínica). A referência usa Söhne — comercial — substituída por Inter.</p>
+      </div>
+      <div class="type-specimen">
+        <div class="type-row reveal"><span class="type-meta">H1 · Cormorant Garamond 500 · 38→64px</span><h1>A estética do seu sorriso, <span class="em-italic">no seu tempo</span>.</h1></div>
+        <div class="type-row reveal"><span class="type-meta">H2 · Cormorant Garamond 500 · 30→44px</span><h2>Odontologia com a precisão de um ateliê</h2></div>
+        <div class="type-row reveal"><span class="type-meta">H3 · Cormorant Garamond 600 · 23→28px</span><h3>Lentes e facetas em cerâmica</h3></div>
+        <div class="type-row reveal"><span class="type-meta">Body · Inter 400 · 16→17px / 1.65</span><p style="max-width:680px">Cada plano de tratamento começa com uma avaliação sem pressa: escaneamento digital, fotografias tonais e uma conversa honesta sobre o que faz sentido para o seu sorriso — e o que não faz.</p></div>
+        <div class="type-row reveal" style="border-bottom:none"><span class="type-meta">Small · Inter 400 · 13→14px</span><p style="font-size:14px;color:var(--text-muted)">Responsável técnica: Dra. Exemplo · CRO-SP 00000 · Este site não substitui consulta.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTÕES -->
+  <section style="background:var(--surface-alt)" aria-labelledby="btn-title">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Componentes</span>
+        <h2 id="btn-title">Botões — todos os estados</h2>
+      </div>
+      <div class="demo-block reveal">
+        <div class="demo-row"><span class="demo-label">Primary · default / hover (passe o mouse) / focus / disabled</span>
+          <button class="btn btn-primary">Agende sua avaliação</button>
+          <button class="btn btn-primary" style="background:var(--primary-darker);box-shadow:var(--shadow-sm)">Hover (simulado)</button>
+          <button class="btn btn-primary fake-focus">Focus visível</button>
+          <button class="btn btn-primary" disabled>Indisponível</button>
+        </div>
+        <div class="demo-row"><span class="demo-label">Secondary (outline)</span>
+          <button class="btn btn-secondary">Conheça os tratamentos</button>
+          <button class="btn btn-secondary" style="background:var(--surface-alt);border-color:var(--primary-dark)">Hover (simulado)</button>
+          <button class="btn btn-secondary fake-focus">Focus visível</button>
+        </div>
+        <div class="demo-row"><span class="demo-label">Ghost + CTA grande</span>
+          <a class="btn btn-ghost" href="#0">Converse com a nossa equipe <span class="arrow" aria-hidden="true">→</span></a>
+          <button class="btn btn-primary btn-lg">Agende sua avaliação</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section id="tratamentos" aria-labelledby="cards-title">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Tratamentos</span>
+        <h2 id="cards-title">Cards com shadow-lift</h2>
+        <p>Passe o mouse: a sombra sobe de <code>sm</code> para <code>lg</code> e o card levanta 4px. O overlay sage da imagem desvanece.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card reveal">
+          <div class="card-media" style="background:linear-gradient(150deg,#E3E9E1,#B9CCB8 60%,#8FA98F)" role="img" aria-label="Simulação de foto tonal de facetas cerâmicas"></div>
+          <div class="card-body">
+            <span class="badge">Estética</span>
+            <h3>Lentes &amp; facetas</h3>
+            <p>Cerâmica de alto padrão desenhada dente a dente, com prova estética antes da decisão final.</p>
+            <a class="btn btn-ghost" href="#0" style="padding-left:0">Saiba mais <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card reveal" style="transition-delay:.09s">
+          <div class="card-media" style="background:linear-gradient(150deg,#EFE7D8,#DCC9A8 55%,#C4AE8A)" role="img" aria-label="Simulação de foto tonal do consultório em tons champagne"></div>
+          <div class="card-body">
+            <span class="badge">Reabilitação</span>
+            <h3>Implantes guiados</h3>
+            <p>Cirurgia planejada digitalmente para menos tempo de cadeira e recuperação mais previsível.</p>
+            <a class="btn btn-ghost" href="#0" style="padding-left:0">Saiba mais <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card reveal" style="transition-delay:.18s">
+          <div class="card-media" style="background:linear-gradient(150deg,#DFE7DD,#AFC2AE 55%,#7C987D)" role="img" aria-label="Simulação de retrato tonal de profissional da clínica"></div>
+          <div class="card-body">
+            <span class="badge">Alinhamento</span>
+            <h3>Alinhadores invisíveis</h3>
+            <p>Acompanhamento próximo, escaneamentos periódicos e previsão de resultado desde o início.</p>
+            <a class="btn btn-ghost" href="#0" style="padding-left:0">Saiba mais <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILOSOFIA / ESPAÇO -->
+  <section id="espaco" style="background:var(--surface-alt)" aria-labelledby="espaco-title">
+    <div class="container" style="display:grid;gap:48px;align-items:center;grid-template-columns:1fr">
+      <style>@media(min-width:1024px){#espaco .container{grid-template-columns:1fr 1fr;gap:72px}}</style>
+      <div class="reveal" style="border-radius:20px;aspect-ratio:4/3;box-shadow:var(--shadow-md);background:radial-gradient(100% 80% at 80% 20%,rgba(232,213,183,.5),rgba(232,213,183,0) 60%),linear-gradient(140deg,#D8E0D5,#A8BCA6 60%,#84A085)" role="img" aria-label="Simulação de foto tonal da sala de espera com luz natural"></div>
+      <div class="reveal" style="transition-delay:.12s">
+        <span class="eyebrow">O espaço</span>
+        <h2 id="espaco-title">Calma também é <span class="em-italic">tratamento</span></h2>
+        <p style="margin:20px 0;max-width:480px">Luz natural, silêncio e tempo de consulta sem pressa. O consultório foi desenhado para desarmar a ansiedade antes mesmo da primeira conversa.</p>
+        <p style="font-family:var(--font-heading);font-style:italic;font-size:21px;color:var(--primary-dark);max-width:420px">"Nenhum paciente deveria decidir sobre o próprio sorriso com pressa."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INPUTS -->
+  <section id="contato" aria-labelledby="form-title">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Componentes</span>
+        <h2 id="form-title">Inputs — default, focus e erro</h2>
+        <p>Clique nos campos para ver o focus ring sage. O erro combina borda, ícone e texto — nunca só cor.</p>
+      </div>
+      <form class="form-demo reveal" onsubmit="return false">
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input id="nome" type="text" placeholder="Como podemos te chamar?" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="tel">Telefone / WhatsApp</label>
+          <input id="tel" type="tel" placeholder="(11) 90000-0000" autocomplete="tel">
+        </div>
+        <div class="field has-error">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" value="paciente@exemplo" aria-invalid="true" aria-describedby="email-err">
+          <p class="error-msg" id="email-err"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6.2" fill="none" stroke="#B5482F" stroke-width="1.4"/><path d="M7 3.6v4.2" stroke="#B5482F" stroke-width="1.4" stroke-linecap="round"/><circle cx="7" cy="10.2" r=".9" fill="#B5482F"/></svg>Informe um e-mail válido — ex.: nome@dominio.com.br</p>
+        </div>
+        <div><button class="btn btn-primary btn-lg" type="submit">Agende sua avaliação</button></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTO -->
+  <section class="testimonial" aria-labelledby="depo-title">
+    <div class="container">
+      <h2 id="depo-title" class="sr-only" style="position:absolute;left:-9999px">Depoimentos</h2>
+      <div class="quote-wrap reveal">
+        <span class="quote-mark" aria-hidden="true">"</span>
+        <blockquote>
+          <p>Pela primeira vez saí de uma consulta sabendo exatamente o plano, os prazos e o porquê de cada etapa. O resultado ficou natural — ninguém percebe, todo mundo nota.</p>
+        </blockquote>
+        <p class="quote-author">Mariana C. · Facetas em cerâmica</p>
+        <div class="quote-dots" role="group" aria-label="Navegar entre depoimentos">
+          <button aria-current="true" aria-label="Depoimento 1"><span></span></button>
+          <button aria-label="Depoimento 2"><span></span></button>
+          <button aria-label="Depoimento 3"><span></span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="equipe" aria-labelledby="steps-title">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Como funciona</span>
+        <h2 id="steps-title">Três passos, sem pressa</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="step-num" aria-hidden="true">1</span><h3>Avaliação</h3><p>Escaneamento digital, fotografias e uma conversa honesta sobre expectativas.</p></div>
+        <div class="step reveal" style="transition-delay:.09s"><span class="step-num" aria-hidden="true">2</span><h3>Plano visual</h3><p>Você vê a simulação do resultado e aprova cada etapa antes de começar.</p></div>
+        <div class="step reveal" style="transition-delay:.18s"><span class="step-num" aria-hidden="true">3</span><h3>Tratamento</h3><p>Sessões agendadas no seu ritmo, com acompanhamento próximo até a revisão final.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANIMAÇÕES -->
+  <section style="background:var(--surface-alt)" aria-labelledby="anim-title">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Motion</span>
+        <h2 id="anim-title">Animações do DS</h2>
+        <p>Sutis e funcionais — fade-in-up com stagger, shadow-lift, underline-grow. Tudo desativado sob <code>prefers-reduced-motion</code>.</p>
+      </div>
+      <div class="anim-demo">
+        <div class="anim-tile reveal">
+          <h4>fade-in-up · 800ms · stagger 90ms</h4>
+          <p>Entrada padrão de seções e cards (24px, uma vez só).</p>
+          <div class="anim-stage" data-anim-stage><div class="anim-chip"></div><div class="anim-chip champagne"></div><div class="anim-chip sage"></div></div>
+          <button class="replay-btn" data-replay>Reproduzir novamente</button>
+        </div>
+        <div class="anim-tile reveal" style="transition-delay:.09s">
+          <h4>shadow-lift · 320ms</h4>
+          <p>Hover em cards: sombra sm→lg + translateY(-4px). Teste no card abaixo.</p>
+          <div class="anim-stage"><div class="card" style="width:100%;max-width:260px;padding:20px 24px;border-radius:16px"><strong style="font-family:var(--font-heading);font-size:19px">Passe o mouse aqui</strong><p style="font-size:13px;margin-top:4px">A sombra faz o trabalho — sem escala, sem cor berrante.</p></div></div>
+        </div>
+        <div class="anim-tile reveal" style="transition-delay:.18s">
+          <h4>underline-grow · 320ms</h4>
+          <p>Sublinhado champagne cresce da esquerda no hover.</p>
+          <div class="anim-stage"><ul class="nav-links" style="display:flex"><li><a href="#0">Tratamentos</a></li><li><a href="#0">O espaço</a></li><li><a href="#0">Equipe</a></li></ul></div>
+        </div>
+        <div class="anim-tile reveal" style="transition-delay:.27s">
+          <h4>button-soften + ghost arrow · 200ms</h4>
+          <p>Hover discreto: um passo de cor mais escuro; seta desliza 4px.</p>
+          <div class="anim-stage"><button class="btn btn-primary">Agende sua avaliação</button><a class="btn btn-ghost" href="#0">Ver mais <span class="arrow" aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section style="background:var(--surface-champagne);text-align:center" aria-labelledby="cta-title">
+    <div class="container reveal" style="max-width:760px">
+      <span class="eyebrow">Primeiro passo</span>
+      <h2 id="cta-title">Cada detalhe do seu sorriso merece <span class="em-italic">atenção de especialista</span></h2>
+      <p style="margin:20px auto 36px;max-width:520px">Uma avaliação sem compromisso, no seu tempo. Sem promoções gritadas — só um plano honesto.</p>
+      <a class="btn btn-primary btn-lg" href="#0">Agende sua avaliação</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p class="footer-signature">Seu sorriso, tratado como arte.</p>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">Atelier<span class="em-italic">Oral</span></p>
+        <p class="footer-brand-desc">Odontologia estética boutique — planejamento digital, materiais de alto padrão e tempo de consulta de verdade.</p>
+      </div>
+      <div><h4>Tratamentos</h4><ul><li><a href="#0">Lentes &amp; facetas</a></li><li><a href="#0">Implantes guiados</a></li><li><a href="#0">Alinhadores</a></li><li><a href="#0">Clareamento</a></li></ul></div>
+      <div><h4>Clínica</h4><ul><li><a href="#0">O espaço</a></li><li><a href="#0">Equipe</a></li><li><a href="#0">Como funciona</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="#0">WhatsApp</a></li><li><a href="#0">contato@atelieroral.com.br</a></li><li><a href="#0">Seg–Sex · 9h às 19h</a></li></ul></div>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 AtelierOral — exemplo fictício do DS 02.2</span>
+      <span>Resp. técnica: Dra. Exemplo · CRO-SP 00000 · Política de privacidade</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Scroll reveal (fade-in-up)
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduced || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){el.classList.add('is-visible');});
+  }else{
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target);}
+      });
+    },{threshold:0.15});
+    reveals.forEach(function(el){io.observe(el);});
+  }
+
+  // Nav scrolled state
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  },{passive:true});
+
+  // Replay fade-in-up demo
+  document.querySelectorAll('[data-replay]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      if(reduced) return;
+      var chips = btn.parentElement.querySelectorAll('.anim-chip');
+      chips.forEach(function(c,i){
+        c.classList.remove('play-fade');
+        void c.offsetWidth;
+        c.style.animationDelay = (i*90)+'ms';
+        c.classList.add('play-fade');
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

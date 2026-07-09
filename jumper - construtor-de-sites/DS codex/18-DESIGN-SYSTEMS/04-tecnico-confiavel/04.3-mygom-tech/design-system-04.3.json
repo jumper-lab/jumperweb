@@ -1,0 +1,1056 @@
+{
+  "schema_version": "3.0.0-codex-distinct",
+  "design_system_id": "04.3",
+  "design_system_name": "Mygom Product Cockpit System",
+  "category": "04 — Técnico e Confiável",
+  "subcategory": "SaaS / produto digital",
+  "import_policy": "Pacote separado para validação manual em DS codex. Não mover para o sistema oficial sem revisão humana de originalidade, cobertura e compatibilidade.",
+  "inspiration_site": {
+    "name": "Mygom.tech",
+    "url": "https://mygom.tech/",
+    "awards": [
+      "Referencia visual em validacao autoral; premios/reconhecimentos nao devem ser tratados como verificados ate auditoria humana com fontes."
+    ],
+    "design_studio_or_author": "Product growth team",
+    "why_chosen": "Mygom.tech foi usado como repertório para product cockpit, layered dashboard, feature proof before claim. O DS traduz a lógica de experiência do site em decisões reutilizáveis sem copiar layout, texto, imagens ou componentes."
+  },
+  "source_site_translation": {
+    "observed_visual_pattern": "product cockpit, layered dashboard, feature proof before claim",
+    "site_anatomy_to_cover": {
+      "navigation": "workspace nav with product tour anchor",
+      "hero": "dashboard frame hero with task layers, proof pills and tour CTA",
+      "primary_sections": [
+        "Product cockpit",
+        "Feature stack",
+        "Workflow automation",
+        "Comparison table",
+        "Security proof",
+        "Customer scenarios",
+        "Trial form",
+        "Footer as workspace map"
+      ],
+      "conversion_paths": [
+        "Start free",
+        "Watch product tour",
+        "contact/support route"
+      ],
+      "footer_role": "Footer as workspace map"
+    },
+    "what_to_reinterpret": [
+      "Ritmo principal: dashboard cockpit",
+      "Padrão de navegação: workspace nav with product tour anchor",
+      "Componentes próprios: dashboard-frame, feature-stack-row, workflow-node-card, comparison-ledger, security-proof-pill, trial-start-form",
+      "Motion signature: dashboard layer parallax, node connect, restrained hover glow"
+    ],
+    "what_not_to_copy": [
+      "layout exato do site fonte",
+      "copy real do site fonte",
+      "imagens reais do site fonte",
+      "classes CSS do site fonte",
+      "componentes proprietários do site fonte"
+    ],
+    "jumper_usage_boundary": "Usar como repertório visual e estrutural. O cliente final ainda precisa nascer do briefing, do DS final do cliente e do plano autoral."
+  },
+  "uniqueness_fingerprint": {
+    "layout_architecture": "dashboard cockpit",
+    "navigation_pattern": "workspace nav with product tour anchor",
+    "hero_architecture": "dashboard frame hero with task layers, proof pills and tour CTA",
+    "section_flow": [
+      "Product cockpit",
+      "Feature stack",
+      "Workflow automation",
+      "Comparison table",
+      "Security proof",
+      "Customer scenarios",
+      "Trial form",
+      "Footer as workspace map"
+    ],
+    "component_set": [
+      "dashboard-frame",
+      "feature-stack-row",
+      "workflow-node-card",
+      "comparison-ledger",
+      "security-proof-pill",
+      "trial-start-form"
+    ],
+    "motion_signature": "dashboard layer parallax, node connect, restrained hover glow",
+    "responsive_strategy": "dashboard screenshot crops into annotated cards",
+    "density": "product-led",
+    "whitespace": "balanced",
+    "prohibited_similarity_checks": [
+      "não reutilizar hero split automático",
+      "não usar grid genérico de três cards sem função",
+      "não repetir ordem de seções de outro DS",
+      "não usar botão e card com mesmo comportamento dos demais DSs"
+    ]
+  },
+  "colors": {
+    "primary": "#08111F",
+    "primary_usage": "ação principal, ponto de marca e destaque de navegação",
+    "secondary": "#6C8CFF",
+    "secondary_usage": "ênfase secundária, estado ativo e composição visual",
+    "surface": "#F7FAFC",
+    "surface_alt": "#E8ECFF",
+    "text_primary": "#172033",
+    "text_secondary": "#5D6678",
+    "text_muted": "#5D6678",
+    "border": "#A6B7FF",
+    "error": "#B42318",
+    "success": "#027A48",
+    "warning": "#B54708",
+    "neutral_scale": {
+      "50": "#F7FAFC",
+      "100": "#F7FAFC",
+      "200": "#E8ECFF",
+      "300": "#A6B7FF",
+      "400": "#5D6678",
+      "500": "#6C8CFF",
+      "600": "#08111F",
+      "700": "#070E19",
+      "800": "#050B14",
+      "900": "#172033"
+    },
+    "contrast_verification": {
+      "text_on_surface": "15.52:1 (AAA)",
+      "cta_on_primary": "18.91:1 (AAA)",
+      "text_on_surface_alt": "13.85:1 (AAA)",
+      "notes": "Pares críticos recalculados. Em implementação real, imagens e overlays precisam passar nova checagem."
+    }
+  },
+  "typography": {
+    "heading_font": "Sora",
+    "body_font": "Inter",
+    "mono_font": "JetBrains Mono",
+    "base_size": "16px",
+    "tone_reason": "Sora sustenta product cockpit, layered dashboard, feature proof before claim; Inter mantém leitura funcional.",
+    "scales": {
+      "mobile": {
+        "h1": {
+          "size": "2.35rem",
+          "weight": "800",
+          "line_height": "0.98"
+        },
+        "h2": {
+          "size": "1.65rem",
+          "weight": "700",
+          "line_height": "1.12"
+        },
+        "h3": {
+          "size": "1.2rem",
+          "weight": "700",
+          "line_height": "1.25"
+        },
+        "body": {
+          "size": "1rem",
+          "weight": "400",
+          "line_height": "1.62"
+        },
+        "small": {
+          "size": "0.875rem",
+          "weight": "500",
+          "line_height": "1.45"
+        }
+      },
+      "desktop": {
+        "h1": {
+          "size": "4.6rem",
+          "weight": "800",
+          "line_height": "0.92"
+        },
+        "h2": {
+          "size": "3.2rem",
+          "weight": "760",
+          "line_height": "1.02"
+        },
+        "h3": {
+          "size": "1.65rem",
+          "weight": "720",
+          "line_height": "1.18"
+        },
+        "body": {
+          "size": "1.08rem",
+          "weight": "400",
+          "line_height": "1.68"
+        },
+        "small": {
+          "size": "0.86rem",
+          "weight": "600",
+          "line_height": "1.42"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "xxl": "48px",
+      "xxxl": "72px",
+      "xxxxl": "96px"
+    },
+    "section_spacing": {
+      "mobile": "48px",
+      "tablet": "68px",
+      "desktop": "92px"
+    },
+    "container_max_width": "1320px"
+  },
+  "borders": {
+    "radius": {
+      "none": "0px",
+      "xs": "2px",
+      "sm": "4px",
+      "md": "10px",
+      "lg": "10px",
+      "xl": "10px",
+      "full": "999px"
+    },
+    "usage": {
+      "buttons": "10px",
+      "cards": "10px",
+      "inputs": "10px",
+      "reason": "Raio definido para combinar com product cockpit, layered dashboard, feature proof before claim."
+    }
+  },
+  "shadows": {
+    "xs": "0 1px 2px rgba(0,0,0,.06)",
+    "sm": "0 4px 14px rgba(0,0,0,.08)",
+    "md": "0 14px 42px rgba(0,0,0,.12)",
+    "lg": "0 28px 80px rgba(0,0,0,.18)",
+    "usage": "sombras discretas conforme hierarquia"
+  },
+  "motion": {
+    "durations": {
+      "fast": "220ms",
+      "base": "340ms",
+      "slow": "620ms"
+    },
+    "easings": {
+      "standard": "cubic-bezier(.2,0,.2,1)",
+      "entrance": "cubic-bezier(.16,1,.3,1)",
+      "exit": "cubic-bezier(.7,0,.84,0)"
+    },
+    "animations": [
+      {
+        "name": "dashboard-layer-parallax-node-connect-restrained-hover-glow",
+        "duration": "520ms",
+        "easing": "entrance",
+        "trigger": "section enters viewport",
+        "notes": "dashboard layer parallax, node connect, restrained hover glow"
+      },
+      {
+        "name": "dashboard-cockpit-hover",
+        "duration": "180ms",
+        "easing": "standard",
+        "trigger": "interactive hover/focus",
+        "notes": "o hover deve reforçar o componente específico, não apenas subir card"
+      }
+    ],
+    "reduced_motion": "Manter hierarquia com cor, borda e estado ativo; remover parallax, drift e deslocamentos."
+  },
+  "components": {
+    "navigation": {
+      "pattern": "workspace nav with product tour anchor",
+      "behavior": "context-aware sticky header",
+      "mobile": "dashboard screenshot crops into annotated cards",
+      "states": [
+        "default",
+        "active section",
+        "menu open",
+        "focus visible"
+      ]
+    },
+    "hero": {
+      "height": "68-84vh",
+      "composition": "dashboard frame hero with task layers, proof pills and tour CTA",
+      "text_color": "colors.text_primary",
+      "media_rule": "imagem, produto, diagrama ou textura real precisa ter função comercial/narrativa",
+      "forbidden": "hero split automático com texto sempre à esquerda e imagem decorativa sem função"
+    },
+    "buttons": {
+      "primary": {
+        "bg": "colors.primary",
+        "text": "#FFFFFF",
+        "padding": "14px 24px",
+        "border_radius": "borders.radius.md",
+        "hover": "contextual state tied to DS motion",
+        "focus": "2px outline colors.secondary offset 3px"
+      },
+      "secondary": {
+        "bg": "transparent",
+        "text": "colors.text_primary",
+        "border": "1px colors.border",
+        "padding": "12px 20px",
+        "hover": "surface_alt + active border"
+      },
+      "ghost": {
+        "bg": "transparent",
+        "text": "colors.text_primary",
+        "border": "none",
+        "hover": "underline or active rail marker"
+      }
+    },
+    "unique_components": [
+      {
+        "name": "dashboard-frame",
+        "role": "Product cockpit",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar dashboard-frame para Mygom Product Cockpit System; não substituir por card genérico."
+      },
+      {
+        "name": "feature-stack-row",
+        "role": "Feature stack",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar feature-stack-row para Mygom Product Cockpit System; não substituir por card genérico."
+      },
+      {
+        "name": "workflow-node-card",
+        "role": "Workflow automation",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar workflow-node-card para Mygom Product Cockpit System; não substituir por card genérico."
+      },
+      {
+        "name": "comparison-ledger",
+        "role": "Comparison table",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar comparison-ledger para Mygom Product Cockpit System; não substituir por card genérico."
+      },
+      {
+        "name": "security-proof-pill",
+        "role": "Security proof",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar security-proof-pill para Mygom Product Cockpit System; não substituir por card genérico."
+      },
+      {
+        "name": "trial-start-form",
+        "role": "Customer scenarios",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar trial-start-form para Mygom Product Cockpit System; não substituir por card genérico."
+      }
+    ],
+    "forms": {
+      "style": "trial-start-form",
+      "fields": [
+        "name/email or intent",
+        "business-specific selector",
+        "message/notes"
+      ],
+      "error_state": "inline, explicit and high contrast",
+      "success_state": "keeps user in same context"
+    },
+    "footer": {
+      "role": "Footer as workspace map",
+      "layout": "functional grouped footer",
+      "must_include": [
+        "primary action",
+        "contact path",
+        "navigation recap",
+        "legal/accessibility links"
+      ]
+    }
+  },
+  "composition": {
+    "grid_system": "dashboard cockpit",
+    "max_width": "1320px",
+    "density": "product-led",
+    "whitespace": "balanced",
+    "image_treatment": "Imagens devem sustentar product cockpit, layered dashboard, feature proof before claim.",
+    "page_flow": [
+      {
+        "order": 1,
+        "section": "Product cockpit",
+        "layout": "dashboard frame hero with task layers, proof pills and tour CTA",
+        "component": "dashboard-frame"
+      },
+      {
+        "order": 2,
+        "section": "Feature stack",
+        "layout": "asymmetric editorial block",
+        "component": "feature-stack-row"
+      },
+      {
+        "order": 3,
+        "section": "Workflow automation",
+        "layout": "functional conversion module",
+        "component": "workflow-node-card"
+      },
+      {
+        "order": 4,
+        "section": "Comparison table",
+        "layout": "wide proof band",
+        "component": "comparison-ledger"
+      },
+      {
+        "order": 5,
+        "section": "Security proof",
+        "layout": "asymmetric editorial block",
+        "component": "security-proof-pill"
+      },
+      {
+        "order": 6,
+        "section": "Customer scenarios",
+        "layout": "functional conversion module",
+        "component": "trial-start-form"
+      },
+      {
+        "order": 7,
+        "section": "Trial form",
+        "layout": "wide proof band",
+        "component": "dashboard-frame"
+      },
+      {
+        "order": 8,
+        "section": "Footer as workspace map",
+        "layout": "asymmetric editorial block",
+        "component": "feature-stack-row"
+      }
+    ],
+    "structural_variations": [
+      {
+        "name": "baseline source-informed",
+        "description": "dashboard cockpit"
+      },
+      {
+        "name": "conversion-heavy variant",
+        "description": "Antecipar Start free sem trocar a anatomia dashboard cockpit."
+      },
+      {
+        "name": "editorial-deep variant",
+        "description": "Aumentar storytelling de Feature stack mantendo componentes dashboard-frame e feature-stack-row."
+      }
+    ],
+    "selected_variation": "baseline source-informed with business-specific conversion accents"
+  },
+  "voice_and_tone": {
+    "tone": "clear, competent and product-first",
+    "examples_headlines": [
+      "dashboard frame hero with task layers, proof pills and tour CTA",
+      "Product cockpit",
+      "product cockpit, layered dashboard, feature proof before claim"
+    ],
+    "examples_cta": [
+      "Start free",
+      "Watch product tour"
+    ],
+    "avoid": [
+      "avoid empty gradient SaaS cards without workflow context",
+      "claims without visible proof",
+      "generic template language"
+    ]
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "text_on_surface": "15.52:1 (AAA)",
+      "cta_on_primary": "18.91:1 (AAA)"
+    },
+    "keyboard_navigation": "ordem lógica; estados ativos e foco visível em navegação, cards e formulários",
+    "focus_states": "2px outline com offset 3px usando secondary ou primary conforme contraste",
+    "alt_text": "Descrever função da imagem no padrão product cockpit, layered dashboard, feature proof before claim, não apenas aparência.",
+    "touch_targets": "44px mínimo; ações principais não dependem de hover"
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "SaaS / produto digital",
+      "operators comparing SaaS tools"
+    ],
+    "conversion_factors": [
+      "Start free",
+      "Watch product tour",
+      "Workflow automation",
+      "dashboard-frame"
+    ],
+    "core_web_vitals": {
+      "lcp_target": "< 2.5s",
+      "inp_target": "< 200ms",
+      "cls_target": "< 0.1"
+    },
+    "seo_schema": [
+      "Organization",
+      "LocalBusiness/Product/Service conforme cliente",
+      "BreadcrumbList",
+      "FAQPage quando houver FAQ"
+    ]
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "accessibility_wcag_aa": true,
+    "source_site_covered": true,
+    "clean_room_ready": true,
+    "not_a_template_skin": true
+  },
+  "implementation_depth_checks": [
+    {
+      "check": 1,
+      "area": "nav",
+      "rule": "Validar Mygom Product Cockpit System: nav deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra dashboard-frame conectado à seção Product cockpit.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 2,
+      "area": "hero",
+      "rule": "Validar Mygom Product Cockpit System: hero deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra feature-stack-row conectado à seção Feature stack.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 3,
+      "area": "sections",
+      "rule": "Validar Mygom Product Cockpit System: sections deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra workflow-node-card conectado à seção Workflow automation.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 4,
+      "area": "components",
+      "rule": "Validar Mygom Product Cockpit System: components deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra comparison-ledger conectado à seção Comparison table.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 5,
+      "area": "forms",
+      "rule": "Validar Mygom Product Cockpit System: forms deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra security-proof-pill conectado à seção Security proof.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 6,
+      "area": "motion",
+      "rule": "Validar Mygom Product Cockpit System: motion deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra trial-start-form conectado à seção Customer scenarios.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 7,
+      "area": "responsive",
+      "rule": "Validar Mygom Product Cockpit System: responsive deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra dashboard-frame conectado à seção Trial form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 8,
+      "area": "accessibility",
+      "rule": "Validar Mygom Product Cockpit System: accessibility deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra feature-stack-row conectado à seção Footer as workspace map.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 9,
+      "area": "conversion",
+      "rule": "Validar Mygom Product Cockpit System: conversion deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra workflow-node-card conectado à seção Product cockpit.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 10,
+      "area": "nav",
+      "rule": "Validar Mygom Product Cockpit System: nav deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra comparison-ledger conectado à seção Feature stack.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 11,
+      "area": "hero",
+      "rule": "Validar Mygom Product Cockpit System: hero deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra security-proof-pill conectado à seção Workflow automation.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 12,
+      "area": "sections",
+      "rule": "Validar Mygom Product Cockpit System: sections deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra trial-start-form conectado à seção Comparison table.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 13,
+      "area": "components",
+      "rule": "Validar Mygom Product Cockpit System: components deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra dashboard-frame conectado à seção Security proof.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 14,
+      "area": "forms",
+      "rule": "Validar Mygom Product Cockpit System: forms deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra feature-stack-row conectado à seção Customer scenarios.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 15,
+      "area": "motion",
+      "rule": "Validar Mygom Product Cockpit System: motion deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra workflow-node-card conectado à seção Trial form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 16,
+      "area": "responsive",
+      "rule": "Validar Mygom Product Cockpit System: responsive deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra comparison-ledger conectado à seção Footer as workspace map.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 17,
+      "area": "accessibility",
+      "rule": "Validar Mygom Product Cockpit System: accessibility deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra security-proof-pill conectado à seção Product cockpit.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 18,
+      "area": "conversion",
+      "rule": "Validar Mygom Product Cockpit System: conversion deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra trial-start-form conectado à seção Feature stack.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 19,
+      "area": "nav",
+      "rule": "Validar Mygom Product Cockpit System: nav deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra dashboard-frame conectado à seção Workflow automation.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 20,
+      "area": "hero",
+      "rule": "Validar Mygom Product Cockpit System: hero deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra feature-stack-row conectado à seção Comparison table.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 21,
+      "area": "sections",
+      "rule": "Validar Mygom Product Cockpit System: sections deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra workflow-node-card conectado à seção Security proof.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 22,
+      "area": "components",
+      "rule": "Validar Mygom Product Cockpit System: components deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra comparison-ledger conectado à seção Customer scenarios.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 23,
+      "area": "forms",
+      "rule": "Validar Mygom Product Cockpit System: forms deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra security-proof-pill conectado à seção Trial form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 24,
+      "area": "motion",
+      "rule": "Validar Mygom Product Cockpit System: motion deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra trial-start-form conectado à seção Footer as workspace map.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 25,
+      "area": "responsive",
+      "rule": "Validar Mygom Product Cockpit System: responsive deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra dashboard-frame conectado à seção Product cockpit.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 26,
+      "area": "accessibility",
+      "rule": "Validar Mygom Product Cockpit System: accessibility deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra feature-stack-row conectado à seção Feature stack.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 27,
+      "area": "conversion",
+      "rule": "Validar Mygom Product Cockpit System: conversion deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra workflow-node-card conectado à seção Workflow automation.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 28,
+      "area": "nav",
+      "rule": "Validar Mygom Product Cockpit System: nav deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra comparison-ledger conectado à seção Comparison table.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 29,
+      "area": "hero",
+      "rule": "Validar Mygom Product Cockpit System: hero deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra security-proof-pill conectado à seção Security proof.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 30,
+      "area": "sections",
+      "rule": "Validar Mygom Product Cockpit System: sections deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra trial-start-form conectado à seção Customer scenarios.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 31,
+      "area": "components",
+      "rule": "Validar Mygom Product Cockpit System: components deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra dashboard-frame conectado à seção Trial form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 32,
+      "area": "forms",
+      "rule": "Validar Mygom Product Cockpit System: forms deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra feature-stack-row conectado à seção Footer as workspace map.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 33,
+      "area": "motion",
+      "rule": "Validar Mygom Product Cockpit System: motion deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra workflow-node-card conectado à seção Product cockpit.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 34,
+      "area": "responsive",
+      "rule": "Validar Mygom Product Cockpit System: responsive deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra comparison-ledger conectado à seção Feature stack.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 35,
+      "area": "accessibility",
+      "rule": "Validar Mygom Product Cockpit System: accessibility deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra security-proof-pill conectado à seção Workflow automation.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 36,
+      "area": "conversion",
+      "rule": "Validar Mygom Product Cockpit System: conversion deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra trial-start-form conectado à seção Comparison table.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 37,
+      "area": "nav",
+      "rule": "Validar Mygom Product Cockpit System: nav deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra dashboard-frame conectado à seção Security proof.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 38,
+      "area": "hero",
+      "rule": "Validar Mygom Product Cockpit System: hero deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra feature-stack-row conectado à seção Customer scenarios.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 39,
+      "area": "sections",
+      "rule": "Validar Mygom Product Cockpit System: sections deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra workflow-node-card conectado à seção Trial form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 40,
+      "area": "components",
+      "rule": "Validar Mygom Product Cockpit System: components deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra comparison-ledger conectado à seção Footer as workspace map.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 41,
+      "area": "forms",
+      "rule": "Validar Mygom Product Cockpit System: forms deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra security-proof-pill conectado à seção Product cockpit.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 42,
+      "area": "motion",
+      "rule": "Validar Mygom Product Cockpit System: motion deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra trial-start-form conectado à seção Feature stack.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 43,
+      "area": "responsive",
+      "rule": "Validar Mygom Product Cockpit System: responsive deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra dashboard-frame conectado à seção Workflow automation.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 44,
+      "area": "accessibility",
+      "rule": "Validar Mygom Product Cockpit System: accessibility deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra feature-stack-row conectado à seção Comparison table.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 45,
+      "area": "conversion",
+      "rule": "Validar Mygom Product Cockpit System: conversion deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra workflow-node-card conectado à seção Security proof.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 46,
+      "area": "nav",
+      "rule": "Validar Mygom Product Cockpit System: nav deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra comparison-ledger conectado à seção Customer scenarios.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 47,
+      "area": "hero",
+      "rule": "Validar Mygom Product Cockpit System: hero deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra security-proof-pill conectado à seção Trial form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 48,
+      "area": "sections",
+      "rule": "Validar Mygom Product Cockpit System: sections deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra trial-start-form conectado à seção Footer as workspace map.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 49,
+      "area": "components",
+      "rule": "Validar Mygom Product Cockpit System: components deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra dashboard-frame conectado à seção Product cockpit.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 50,
+      "area": "forms",
+      "rule": "Validar Mygom Product Cockpit System: forms deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra feature-stack-row conectado à seção Feature stack.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 51,
+      "area": "motion",
+      "rule": "Validar Mygom Product Cockpit System: motion deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra workflow-node-card conectado à seção Workflow automation.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 52,
+      "area": "responsive",
+      "rule": "Validar Mygom Product Cockpit System: responsive deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra comparison-ledger conectado à seção Comparison table.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 53,
+      "area": "accessibility",
+      "rule": "Validar Mygom Product Cockpit System: accessibility deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra security-proof-pill conectado à seção Security proof.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 54,
+      "area": "conversion",
+      "rule": "Validar Mygom Product Cockpit System: conversion deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra trial-start-form conectado à seção Customer scenarios.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 55,
+      "area": "nav",
+      "rule": "Validar Mygom Product Cockpit System: nav deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra dashboard-frame conectado à seção Trial form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 56,
+      "area": "hero",
+      "rule": "Validar Mygom Product Cockpit System: hero deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra feature-stack-row conectado à seção Footer as workspace map.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 57,
+      "area": "sections",
+      "rule": "Validar Mygom Product Cockpit System: sections deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra workflow-node-card conectado à seção Product cockpit.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 58,
+      "area": "components",
+      "rule": "Validar Mygom Product Cockpit System: components deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra comparison-ledger conectado à seção Feature stack.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 59,
+      "area": "forms",
+      "rule": "Validar Mygom Product Cockpit System: forms deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra security-proof-pill conectado à seção Workflow automation.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 60,
+      "area": "motion",
+      "rule": "Validar Mygom Product Cockpit System: motion deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra trial-start-form conectado à seção Comparison table.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 61,
+      "area": "responsive",
+      "rule": "Validar Mygom Product Cockpit System: responsive deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra dashboard-frame conectado à seção Security proof.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 62,
+      "area": "accessibility",
+      "rule": "Validar Mygom Product Cockpit System: accessibility deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra feature-stack-row conectado à seção Customer scenarios.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 63,
+      "area": "conversion",
+      "rule": "Validar Mygom Product Cockpit System: conversion deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra workflow-node-card conectado à seção Trial form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 64,
+      "area": "nav",
+      "rule": "Validar Mygom Product Cockpit System: nav deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra comparison-ledger conectado à seção Footer as workspace map.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 65,
+      "area": "hero",
+      "rule": "Validar Mygom Product Cockpit System: hero deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra security-proof-pill conectado à seção Product cockpit.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 66,
+      "area": "sections",
+      "rule": "Validar Mygom Product Cockpit System: sections deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra trial-start-form conectado à seção Feature stack.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 67,
+      "area": "components",
+      "rule": "Validar Mygom Product Cockpit System: components deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra dashboard-frame conectado à seção Workflow automation.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 68,
+      "area": "forms",
+      "rule": "Validar Mygom Product Cockpit System: forms deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra feature-stack-row conectado à seção Comparison table.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 69,
+      "area": "motion",
+      "rule": "Validar Mygom Product Cockpit System: motion deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra workflow-node-card conectado à seção Security proof.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 70,
+      "area": "responsive",
+      "rule": "Validar Mygom Product Cockpit System: responsive deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra comparison-ledger conectado à seção Customer scenarios.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 71,
+      "area": "accessibility",
+      "rule": "Validar Mygom Product Cockpit System: accessibility deve expressar dashboard cockpit.",
+      "evidence": "Preview ou implementação mostra security-proof-pill conectado à seção Trial form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 72,
+      "area": "conversion",
+      "rule": "Validar Mygom Product Cockpit System: conversion deve expressar product cockpit, layered dashboard, feature proof before claim.",
+      "evidence": "Preview ou implementação mostra trial-start-form conectado à seção Footer as workspace map.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    }
+  ],
+  "source_verification": {
+    "status": "needs-human-source-verification-before-official-import",
+    "correction_reason": "Removidas formulacoes que pareciam premios/benchmarks comprovados sem evidencia anexada ao pacote.",
+    "source_url": "https://mygom.tech/"
+  },
+  "functional_requirements": {
+    "preview_must_include": [
+      "navigation",
+      "hero",
+      "interactive mode selector",
+      "active component state",
+      "real form controls",
+      "aria-live result area",
+      "clickable color tokens",
+      "section coverage",
+      "responsive behavior",
+      "focus-visible states"
+    ],
+    "business_specific_interaction": "Workspace",
+    "expected_result": "Trial configurado atualizado",
+    "failure_fixed": "SaaS sem trial, workflow ou comparacao de produto"
+  },
+  "visual_quality_review": {
+    "previous_failure": "Preview visual era superficial e/ou estatico; nao provava funcionalidade do DS.",
+    "current_standard": "Preview deve funcionar como cockpit SaaS, com controle Workspace, formulario e estado ativo.",
+    "reject_if": [
+      "parecer poster estatico",
+      "nao tiver formulario ou estado ativo",
+      "nao mostrar componentes do segmento",
+      "usar grid generico de cards sem funcao"
+    ]
+  }
+}

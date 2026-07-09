@@ -1,0 +1,530 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "03.3",
+  "design_system_name": "Sorveteria Movimento",
+  "category": "03 — Energético e Vibrante",
+  "subcategory": "Candy playful — rosa-chiclete + amarelo, stickers, confetti e grid assimétrico",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Boba Ice Cream (referência principal) + Sheetal Ice Cream (referência secundária)",
+    "url": "https://www.awwwards.com/inspiration/website-for-buying-ice-cream",
+    "location": "Internacional (projetos digitais de marcas de sorvete)",
+    "awards": [
+      "Boba Ice Cream — Awwwards Site of the Day (projeto de Zhenya Rynzhuk / Synchronized)",
+      "Sheetal Ice Cream — Awwwards Nominee (estúdio Eight Petals)"
+    ],
+    "why_chosen": "Boba Ice Cream prova que uma marca de sorvete pode tratar diversão como produto: cores doces em altíssima saturação, tipografia display gigante e composição que parece uma mesa cheia de adesivos. Sheetal Ice Cream soma o lado 'fun, clean and colorful' — paleta de doceria com organização impecável por baixo do caos aparente. Este DS captura essa essência: energia de sneaker store playful aplicada a sorveteria/açaí, com rosa-chiclete + amarelo, badges SVG, marquee e confetti. É referência estilística de mood e ritmo — nenhum layout, texto ou estrutura foi copiado."
+  },
+  "colors": {
+    "primary": "#FF1493",
+    "primary_usage": "Cor de marca e de impacto: fundos de hero, headings display grandes (≥ 24px bold), stickers, marquee, bordas grossas e formas decorativas. NÃO usar como texto normal sobre superfícies claras (contraste 3.46:1 — só passa AA para texto grande). Para texto corrente, links e botões com label pequeno, usar o tom derivado primary_deep.",
+    "primary_deep": "#C4006B",
+    "primary_deep_usage": "Derivado escurecido do rosa-chiclete para uso textual: links, labels de botão outline, texto de destaque em body. 5.60:1 sobre surface (passa AA texto normal); branco sobre ele rende 5.90:1 (botões sólidos).",
+    "secondary": "#FFD700",
+    "secondary_usage": "Amarelo-manteiga de festa: fundos de badges/stickers, faixas de marquee, highlights atrás de palavras, hover de cards. SEMPRE com texto escuro por cima (#2A1220 = 12.42:1). Nunca como texto sobre fundo claro (1.33:1).",
+    "surface": "#FFF7FB",
+    "surface_alt": "#FFE3F1",
+    "surface_dark": "#2A1220",
+    "text_primary": "#2A1220",
+    "text_secondary": "#5C3A4E",
+    "text_muted": "#8A5E75",
+    "border": "#F5C9E0",
+    "error": "#D11414",
+    "success": "#1B7A43",
+    "warning": "#8A5900",
+    "neutral_scale": {
+      "50": "#FFF7FB",
+      "100": "#FFE3F1",
+      "200": "#F5C9E0",
+      "300": "#E3A8C6",
+      "400": "#C687A8",
+      "500": "#A66A8B",
+      "600": "#8A5E75",
+      "700": "#5C3A4E",
+      "800": "#3F2334",
+      "900": "#2A1220"
+    },
+    "contrast_verification": {
+      "primary_on_surface": "3.46:1 (#FF1493 sobre #FFF7FB) — passa AA apenas para texto grande (≥ 24px ou 18.66px bold) e elementos gráficos (≥ 3:1). Para texto normal usar primary_deep.",
+      "primary_deep_on_surface": "5.60:1 (#C4006B sobre #FFF7FB) — passa AA texto normal.",
+      "text_primary_on_surface": "16.54:1 (#2A1220 sobre #FFF7FB) — passa AAA.",
+      "text_secondary_on_surface": "9.19:1 — passa AAA.",
+      "text_muted_on_surface": "5.07:1 — passa AA texto normal.",
+      "secondary_on_surface": "1.33:1 (#FFD700 sobre #FFF7FB) — REPROVADO para texto; uso exclusivamente decorativo/fundo.",
+      "text_primary_on_secondary": "12.42:1 (#2A1220 sobre #FFD700) — passa AAA; combinação oficial dos stickers.",
+      "white_on_primary": "3.64:1 (#FFFFFF sobre #FF1493) — só texto grande; CTAs sólidos pequenos usam primary_deep.",
+      "white_on_primary_deep": "5.90:1 (#FFFFFF sobre #C4006B) — passa AA; combinação oficial de botão sólido.",
+      "secondary_on_surface_dark": "12.42:1 (#FFD700 sobre #2A1220) — passa AAA; usada na seção dark de fechamento.",
+      "white_on_surface_dark": "17.42:1 — passa AAA.",
+      "error_on_surface": "5.22:1 | success: 5.10:1 | warning: 5.68:1 — todos passam AA.",
+      "notes": "O brief pedia #FF1493 como primária. O contraste real de 3.46:1 sobre a superfície rosada reprova para texto normal, então o DS mantém #FF1493 como cor de marca/display e deriva #C4006B (mesmo matiz, mais profundo) para todo uso textual e botões pequenos. Ajuste documentado — a essência rosa-chiclete permanece intacta."
+    }
+  },
+  "typography": {
+    "heading_font": "Oswald",
+    "heading_font_source": "Google Fonts",
+    "heading_weights": [500, 600, 700],
+    "heading_treatment": "Bold 700, UPPERCASE, condensado, letter-spacing 0.01em a 0.04em. Headings display podem ganhar rotação de -2° a 2° e palavras destacadas com highlight amarelo ou outline rosa.",
+    "body_font": "Space Grotesk",
+    "body_font_source": "Google Fonts",
+    "body_weights": [400, 500, 700],
+    "mono_font": "não aplicável",
+    "base_size": "16px",
+    "line_height_body": 1.6,
+    "scales": {
+      "mobile": {
+        "h1": { "size": "40px", "line_height": 1.05, "weight": 700, "case": "uppercase", "letter_spacing": "0.01em" },
+        "h2": { "size": "30px", "line_height": 1.1, "weight": 700, "case": "uppercase", "letter_spacing": "0.01em" },
+        "h3": { "size": "22px", "line_height": 1.2, "weight": 600, "case": "uppercase", "letter_spacing": "0.02em" },
+        "body": { "size": "16px", "line_height": 1.6, "weight": 400 },
+        "small": { "size": "13px", "line_height": 1.5, "weight": 500, "letter_spacing": "0.04em" }
+      },
+      "desktop": {
+        "h1": { "size": "76px", "line_height": 0.98, "weight": 700, "case": "uppercase", "letter_spacing": "0.005em" },
+        "h2": { "size": "48px", "line_height": 1.05, "weight": 700, "case": "uppercase", "letter_spacing": "0.01em" },
+        "h3": { "size": "28px", "line_height": 1.15, "weight": 600, "case": "uppercase", "letter_spacing": "0.02em" },
+        "body": { "size": "17px", "line_height": 1.65, "weight": 400 },
+        "small": { "size": "14px", "line_height": 1.5, "weight": 500, "letter_spacing": "0.04em" }
+      },
+      "fluid_recipe": "h1: clamp(2.5rem, 1.4rem + 5.5vw, 4.75rem); h2: clamp(1.875rem, 1.2rem + 3vw, 3rem); h3: clamp(1.375rem, 1.15rem + 1vw, 1.75rem)"
+    }
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — batem exatamente com colors, typography, spacing, borders, shadows e motion deste DS.",
+    "tokens": {
+      "--color-primary": "#FF1493",
+      "--color-primary-deep": "#C4006B",
+      "--color-secondary": "#FFD700",
+      "--color-surface": "#FFF7FB",
+      "--color-surface-alt": "#FFE3F1",
+      "--color-surface-dark": "#2A1220",
+      "--color-text": "#2A1220",
+      "--color-text-secondary": "#5C3A4E",
+      "--color-text-muted": "#8A5E75",
+      "--color-border": "#F5C9E0",
+      "--color-error": "#D11414",
+      "--color-success": "#1B7A43",
+      "--color-warning": "#8A5900",
+      "--color-neutral-50": "#FFF7FB",
+      "--color-neutral-100": "#FFE3F1",
+      "--color-neutral-200": "#F5C9E0",
+      "--color-neutral-300": "#E3A8C6",
+      "--color-neutral-400": "#C687A8",
+      "--color-neutral-500": "#A66A8B",
+      "--color-neutral-600": "#8A5E75",
+      "--color-neutral-700": "#5C3A4E",
+      "--color-neutral-800": "#3F2334",
+      "--color-neutral-900": "#2A1220",
+      "--font-heading": "'Oswald', 'Arial Narrow', sans-serif",
+      "--font-body": "'Space Grotesk', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "--text-h1": "clamp(2.5rem, 1.4rem + 5.5vw, 4.75rem)",
+      "--text-h2": "clamp(1.875rem, 1.2rem + 3vw, 3rem)",
+      "--text-h3": "clamp(1.375rem, 1.15rem + 1vw, 1.75rem)",
+      "--text-body": "clamp(1rem, 0.96rem + 0.15vw, 1.0625rem)",
+      "--text-small": "0.875rem",
+      "--line-height-body": "1.6",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "40px",
+      "--space-xxl": "64px",
+      "--space-xxxl": "96px",
+      "--space-xxxxl": "128px",
+      "--section-gap": "clamp(64px, 6vw + 32px, 120px)",
+      "--radius-sm": "8px",
+      "--radius-md": "16px",
+      "--radius-lg": "24px",
+      "--radius-xl": "32px",
+      "--radius-blob": "58% 42% 55% 45% / 52% 48% 55% 45%",
+      "--radius-full": "9999px",
+      "--stroke-thin": "2px",
+      "--stroke-medium": "3px",
+      "--shadow-sticker": "4px 4px 0 #2A1220",
+      "--shadow-sticker-hover": "6px 6px 0 #2A1220",
+      "--shadow-sticker-pink": "4px 4px 0 #FF1493",
+      "--shadow-pop": "8px 8px 0 #FFD700",
+      "--shadow-soft": "0 8px 24px rgba(255, 20, 147, 0.18)",
+      "--duration-instant": "150ms",
+      "--duration-fast": "200ms",
+      "--duration-base": "300ms",
+      "--duration-slow": "400ms",
+      "--duration-marquee": "18s",
+      "--duration-confetti": "3.5s",
+      "--ease-standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--ease-pop": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "--ease-bounce-in": "cubic-bezier(0.68, -0.4, 0.32, 1.4)",
+      "--container-max": "1240px",
+      "--content-max": "680px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "40px",
+      "xxl": "64px",
+      "xxxl": "96px",
+      "xxxxl": "128px"
+    },
+    "section_spacing": {
+      "mobile": "64px",
+      "tablet": "88px",
+      "desktop": "120px"
+    },
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "32px",
+      "container_desktop": "48px"
+    },
+    "container_max_width": "1240px",
+    "gutters": "16px mobile / 24px tablet / 32px desktop — mas o grid assimétrico permite elementos que sangram para fora do container (stickers, marquee full-bleed)"
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "blob": "58% 42% 55% 45% / 52% 48% 55% 45%",
+      "full": "9999px"
+    },
+    "radius_usage": {
+      "buttons": "full (pílula sempre — botão de sorveteria é redondo e gordo)",
+      "cards": "lg (24px) com borda sólida 3px",
+      "inputs": "md (16px) com borda 3px",
+      "images": "lg (24px) ou blob para fotos de produto",
+      "containers": "xl (32px) em seções internas destacadas",
+      "badges": "full para pills, blob para stickers orgânicos"
+    },
+    "stroke": {
+      "thin": "2px solid",
+      "medium": "3px solid",
+      "note": "Bordas grossas e sólidas (estilo sticker die-cut) são assinatura do DS: cards, botões outline e inputs usam 3px em #2A1220 ou #FF1493."
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "sticker": "4px 4px 0 #2A1220",
+    "sticker_hover": "6px 6px 0 #2A1220",
+    "sticker_pink": "4px 4px 0 #FF1493",
+    "pop": "8px 8px 0 #FFD700",
+    "soft": "0 8px 24px rgba(255, 20, 147, 0.18)",
+    "shadow_usage": "Nada de sombras difusas corporativas: a assinatura é hard shadow deslocada (offset sólido, sem blur) imitando adesivo colado. Cards e botões usam 'sticker'; no hover o elemento translada -2px e a sombra cresce para 'sticker_hover'. 'pop' (amarela) marca o card em destaque. 'soft' só em overlays/modais."
+  },
+  "motion": {
+    "durations": {
+      "instant": "150ms",
+      "fast": "200ms",
+      "base": "300ms",
+      "slow": "400ms",
+      "marquee": "18s",
+      "confetti": "3.5s"
+    },
+    "easings": {
+      "standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "pop": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "bounce_in": "cubic-bezier(0.68, -0.4, 0.32, 1.4)",
+      "linear": "linear"
+    },
+    "animations": [
+      { "name": "sticker-pop", "duration": "300ms", "easing": "pop", "trigger": "entrada no viewport (IntersectionObserver) — badges e stickers escalam de 0 com leve rotação, em stagger de 80ms" },
+      { "name": "btn-pop-hover", "duration": "200ms", "easing": "pop", "trigger": "hover/focus em botões — translate(-2px,-2px) + hard shadow cresce" },
+      { "name": "color-invert", "duration": "250ms", "easing": "standard", "trigger": "hover em cards e links de menu — fundo e texto invertem (claro→rosa, texto→branco)" },
+      { "name": "marquee-scroll", "duration": "18s", "easing": "linear", "trigger": "contínuo — faixa de texto repetido rolando horizontalmente; pausa em hover e vira estático com reduced motion" },
+      { "name": "confetti-fall", "duration": "3.5s", "easing": "linear", "trigger": "contínuo no hero — 12 a 16 partículas CSS (quadrados/círculos rosa, amarelo, branco) caindo com rotação; removido com reduced motion" },
+      { "name": "wiggle", "duration": "400ms", "easing": "standard", "trigger": "hover em stickers — rotação oscilante -3°/3°" },
+      { "name": "scoop-bounce", "duration": "400ms", "easing": "bounce_in", "trigger": "entrada do H1 do hero — sobe 24px com overshoot" }
+    ],
+    "prefers_reduced_motion": true,
+    "reduced_motion_strategy": "Com prefers-reduced-motion: reduce, confetti é removido (display:none), marquee vira faixa estática centralizada, e todas as transições caem para 0.01ms. Nenhum conteúdo depende de animação para ser compreendido."
+  },
+  "components": {
+    "buttons": {
+      "variants": {
+        "primary": {
+          "background": "#C4006B",
+          "color": "#FFFFFF",
+          "border": "3px solid #2A1220",
+          "border_radius": "9999px",
+          "shadow": "4px 4px 0 #2A1220",
+          "font": "Space Grotesk 700, 16px, uppercase, letter-spacing 0.04em",
+          "hover": "background #FF1493 (label sobe para 18px+ bold ou mantém branco em área grande), translate(-2px,-2px), shadow 6px 6px 0 #2A1220",
+          "focus": "outline 3px solid #C4006B, outline-offset 3px",
+          "active": "translate(2px,2px), shadow 2px 2px 0 #2A1220",
+          "disabled": "background #E3A8C6, color #FFF7FB, border #E3A8C6, sem sombra, cursor not-allowed"
+        },
+        "secondary": {
+          "background": "#FFD700",
+          "color": "#2A1220",
+          "border": "3px solid #2A1220",
+          "border_radius": "9999px",
+          "shadow": "4px 4px 0 #2A1220",
+          "hover": "background #2A1220, color #FFD700 (inversão de cor 250ms)",
+          "focus": "outline 3px solid #C4006B, outline-offset 3px",
+          "disabled": "background #FFF0B8, color #8A5E75, sem sombra"
+        },
+        "ghost": {
+          "background": "transparent",
+          "color": "#C4006B",
+          "border": "3px solid #FF1493",
+          "border_radius": "9999px",
+          "hover": "background #FF1493, color #FFFFFF (label 700 e ≥ 16px em botão grande), wiggle sutil",
+          "focus": "outline 3px solid #C4006B, outline-offset 3px",
+          "disabled": "border #F5C9E0, color #C687A8"
+        }
+      },
+      "sizes": {
+        "sm": "padding 10px 20px, font 14px",
+        "md": "padding 14px 28px, font 16px",
+        "lg": "padding 18px 40px, font 18px"
+      },
+      "min_touch_target": "44px de altura em todos os tamanhos"
+    },
+    "cards": {
+      "style": "Fundo #FFFFFF ou #FFE3F1, borda 3px solid #2A1220, radius 24px, hard shadow 4px 4px 0 #2A1220. Cada card do grid pode ter rotação própria (-2°, 0°, 1.5°) para efeito de adesivos espalhados.",
+      "hover": "translate(-3px,-3px) + shadow 7px 7px 0 #2A1220 + rotação zera (o card 'se endireita'), 250ms pop",
+      "featured": "shadow 8px 8px 0 #FFD700 + badge 'MAIS PEDIDO' colado no canto com rotação -6°",
+      "media": "Bloco de cor/gradiente candy (rosa→amarelo) com ilustração SVG do sabor; radius 16px interno",
+      "content": "Título Oswald 600 uppercase, descrição Space Grotesk, preço em pill amarela com texto escuro"
+    },
+    "inputs": {
+      "default": "Fundo #FFFFFF, borda 3px solid #2A1220, radius 16px, padding 14px 18px, fonte Space Grotesk 16px, placeholder #8A5E75",
+      "focus": "borda #C4006B + shadow 4px 4px 0 #FFD700 + outline 2px solid #C4006B offset 2px",
+      "error": "borda #D11414, mensagem 14px #D11414 com ícone; nunca só cor — sempre texto explicativo",
+      "label": "Space Grotesk 700, 14px, uppercase, letter-spacing 0.04em, #2A1220"
+    },
+    "hero": {
+      "layout": "Assimétrico radical: H1 gigante Oswald ocupando ~65% à esquerda com palavras rotacionadas e highlight amarelo; à direita, blob rosa com ilustração de casquinha SVG sangrando para fora do container; stickers ('NOVO!', 'AÇAÍ!') espalhados por cima; confetti caindo atrás do texto; marquee full-bleed fechando a dobra",
+      "background": "#FFF7FB com formas geométricas (círculos #FFE3F1, meia-lua #FFD700) posicionadas em absolute",
+      "cta_pair": "primary ('Vem se refrescar!') + ghost ('Ver sabores')"
+    },
+    "navigation": {
+      "style": "Header sticky fundo #FFF7FB, borda inferior 3px solid #2A1220. Logo à esquerda (Oswald 700 com círculo rosa), links Space Grotesk 700 uppercase 14px. Hover: highlight amarelo desliza atrás do link (inversão suave). CTA pill rosa à direita.",
+      "mobile": "Hambúrguer 48x48px abre painel full-screen rosa #FF1493 com links brancos gigantes em Oswald e stickers decorativos; fecha com X 48px"
+    },
+    "footer": {
+      "style": "Fundo #2A1220, texto #FFF7FB, títulos de coluna em #FFD700 (12.42:1). Marquee 'VEM SE REFRESCAR ✦' em rosa #FF69B4 no topo do footer. Links com underline no hover. Créditos em 14px #E3A8C6.",
+      "columns": "Logo + tagline | Cardápio | Unidades e horários | Redes sociais com ícones SVG em pills"
+    },
+    "testimonials": {
+      "style": "Cards-polaroid com rotações alternadas (-2°/2°), borda 3px, hard shadow; citação Space Grotesk 500 itálico 18px, nome em pill amarela, estrelas SVG rosa",
+      "layout": "Faixa horizontal com overflow-x em mobile (scroll-snap), grid 3 colunas desalinhado em desktop"
+    },
+    "badges": {
+      "style": "Assinatura do DS. Pills: fundo #FFD700, texto #2A1220 700 uppercase 12-13px, borda 2px #2A1220, rotação -6° a 6°. Stickers orgânicos: SVG blob rosa/#FF1493 com texto branco grande (≥ 15px bold) ou contorno branco duplo estilo die-cut.",
+      "examples": ["NOVO!", "MAIS PEDIDO", "SEM LACTOSE", "AÇAÍ TURBINADO", "SÓ HOJE"]
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Divertido, exclamativo, jovem e direto — como um amigo animado chamando para tomar sorvete. Frases curtas, muita exclamação, gírias leves, zero formalidade. Nunca infantilizado a ponto de excluir adolescentes e jovens adultos.",
+    "headline_examples": [
+      "Felicidade em forma de casquinha!",
+      "Vem se refrescar: 32 sabores esperando por você",
+      "O açaí mais turbinado do bairro chegou",
+      "Dia quente? A gente resolve em duas bolas",
+      "Sorvete bom é sorvete agora!"
+    ],
+    "cta_examples": [
+      "Vem se refrescar!",
+      "Quero meu sorvete",
+      "Ver sabores",
+      "Montar meu açaí",
+      "Pedir no zap"
+    ],
+    "avoid": [
+      "Tom corporativo ou institucional ('excelência em sorvetes desde...')",
+      "Jargão gourmet pretensioso ('experiência sensorial premium')",
+      "Texto longo e explicativo — aqui tudo é curto e gostoso",
+      "Diminutivos em excesso ('sorvetinho', 'docinho') que infantilizam demais",
+      "Promessas de saúde/dieta ('zero culpa', 'fit') fora de linha de produto específica"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas de base, mas usado de forma assimétrica extrema: elementos cruzam colunas, sangram o container, sobrepõem-se com rotação. A ordem visual vem da hierarquia tipográfica e das cores, não do alinhamento.",
+    "page_flow": [
+      { "section": "header", "layout": "sticky, borda inferior grossa, CTA pill sempre visível" },
+      { "section": "hero", "layout": "assimétrico 65/35 com blob sangrando à direita, stickers sobrepostos, confetti e H1 display rotacionado" },
+      { "section": "marquee", "layout": "faixa full-bleed amarela com texto rolando 'SORVETE ✦ AÇAÍ ✦ MILKSHAKE ✦' separando hero do conteúdo" },
+      { "section": "sabores (cards)", "layout": "grid 3 colunas com cards em rotações alternadas e um card destacado maior (2 colunas) — grade proposital-mente 'torta'" },
+      { "section": "monte-seu-acai", "layout": "seção surface_alt rosa-claro, split invertido (ilustração à esquerda, passos numerados em pills à direita)" },
+      { "section": "depoimentos", "layout": "faixa horizontal de polaroids rotacionados com scroll-snap" },
+      { "section": "unidades + horários", "layout": "seção dark #2A1220 com títulos amarelos — inversão total de clima para fechar com contraste" },
+      { "section": "cta-final", "layout": "bloco rosa #FF1493 centralizado com H2 branco gigante e botão amarelo — última chamada exclamativa" },
+      { "section": "footer", "layout": "dark, 4 colunas, marquee decorativo no topo" }
+    ],
+    "image_treatment": "Sem fotografia obrigatória: ilustrações SVG flat de casquinhas/copos, blobs de gradiente candy (rosa→amarelo, rosa→lilás) e blocos de cor. Quando houver foto real de produto, aplicar radius blob ou 24px + borda 3px, como figurinha colada.",
+    "density": "Alta nos momentos de festa (hero, cards, marquee), com respiros generosos entre seções para o olho descansar — o contraste denso/vazio é parte do ritmo.",
+    "whitespace": "Generoso entre seções (96-120px desktop); apertado e proposital dentro das composições de stickers."
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "body_text": "#2A1220 sobre #FFF7FB = 16.54:1 (AAA)",
+      "links_and_emphasis": "#C4006B sobre #FFF7FB = 5.60:1 (AA)",
+      "buttons": "branco sobre #C4006B = 5.90:1 (AA); #2A1220 sobre #FFD700 = 12.42:1 (AAA)",
+      "display_only": "#FF1493 reservado para texto grande (3.46:1 ≥ 3:1) e gráficos",
+      "dark_section": "#FFD700 e #FFFFFF sobre #2A1220 = 12.42:1 e 17.42:1"
+    },
+    "keyboard_navigation": "Ordem de tab segue o fluxo visual; menu mobile com focus trap; marquee e confetti não recebem foco; skip-link 'Pular para o conteúdo' visível ao focar.",
+    "focus_states": "Outline 3px solid #C4006B com offset 3px em todos os interativos — visível sobre qualquer superfície da paleta (também aplicado sobre amarelo e rosa).",
+    "alt_text": "Ilustrações de sabores com alt descritivo ('Casquinha de morango com confeitos'); stickers puramente decorativos com aria-hidden='true'.",
+    "semantic_html": "header/nav/main/section/article/footer; h1 único; cards como article; marquee com aria-hidden e conteúdo equivalente acessível quando informativo.",
+    "touch_targets": "44px minimum",
+    "motion_safety": "prefers-reduced-motion remove confetti, congela marquee e zera transições; nenhuma animação pisca acima de 3x/segundo."
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Coluna única: H1 40px uppercase (rotação suave permitida) → parágrafo curto → par de CTAs empilhados full-width (max 360px) → blob/ilustração de casquinha abaixo; confetti reduzido a 6-8 partículas; 1-2 stickers apenas para não poluir",
+      "tablet": "H1 escala fluida, blob à direita menor ainda dentro do container; CTAs lado a lado; até 3 stickers",
+      "desktop": "Assimétrico 65/35: H1 gigante (até 76px) à esquerda com palavras rotacionadas e highlight amarelo, blob rosa com casquinha SVG sangrando para fora à direita, stickers espalhados por cima, confetti (12-16 partículas) atrás do texto"
+    },
+    "sabores_grid": {
+      "mobile": "1 coluna, cards full-width, rotações reduzidas a no máx ±1° (evita corte na viewport estreita), gap 16px",
+      "tablet": "2 colunas, gap 24px, rotações alternadas ±2°",
+      "desktop": "3 colunas com 1 card destaque ocupando 2 colunas, gap 32px, rotações alternadas (-2°, 0°, 1.5°) para efeito de adesivos espalhados"
+    },
+    "navigation": {
+      "mobile_tablet": "Logo + hambúrguer 48x48px; painel full-screen rosa #FF1493 com links brancos gigantes em Oswald e stickers decorativos; fecha com X 48px",
+      "desktop": "Logo (Oswald 700 com círculo rosa) + 4-5 links Space Grotesk 700 uppercase inline + CTA pill rosa à direita"
+    },
+    "footer": {
+      "mobile": "4 colunas empilhadas (logo+tagline → cardápio → unidades/horários → redes), marquee decorativo no topo mantido; contato e horários em destaque",
+      "desktop": "4 colunas lado a lado sobre fundo #2A1220 com marquee 'VEM SE REFRESCAR ✦' no topo"
+    },
+    "touch_adjustments": "Em touch o hover de inversão de cor e o btn-pop-hover viram estado :active (translate(2px,2px) + shadow reduzida); wiggle de stickers desativado; marquee com pausa por toque; alvos de toque garantidos em 44px (hambúrguer/X em 48px). Depoimentos e faixa de sabores usam scroll-snap horizontal nativo."
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente — coerentes com components.buttons, cards e inputs deste DS.",
+    "button_primary": ["default", "hover (background #FF1493 + translate(-2px,-2px) + shadow 6px 6px 0 #2A1220)", "focus-visible (outline 3px #C4006B offset 3px)", "active (translate(2px,2px) + shadow 2px 2px 0 #2A1220)", "disabled (background #E3A8C6, color #FFF7FB, sem sombra)", "loading (spinner 16px branco + texto 'Enviando...')"],
+    "button_secondary": ["default (#FFD700 + texto #2A1220)", "hover (inversão: background #2A1220, color #FFD700, 250ms)", "focus-visible", "active", "disabled (background #FFF0B8, color #8A5E75, sem sombra)"],
+    "link_nav": ["default", "hover (highlight amarelo desliza atrás do link / inversão suave)", "focus-visible", "current (highlight amarelo fixo ou sublinhado rosa)"],
+    "card_sabor": ["default (borda 3px + shadow sticker + rotação própria)", "hover (translate(-3px,-3px) + shadow 7px 7px 0 #2A1220 + rotação zera, 250ms pop)", "focus-within", "featured (shadow 8px 8px 0 #FFD700 + badge 'MAIS PEDIDO' rotacionado)"],
+    "input": ["default (borda 3px solid #2A1220, radius 16px)", "focus (borda #C4006B + shadow 4px 4px 0 #FFD700 + outline 2px #C4006B offset 2px)", "filled", "error (borda #D11414 + mensagem 14px #D11414 com ícone + aria-describedby)", "disabled", "success"],
+    "nav_header": ["topo (fundo #FFF7FB, borda inferior 3px solid #2A1220)", "sticky (mantém borda grossa)", "menu mobile aberto (painel full-screen rosa, focus trap, fecha por Esc)"]
+  },
+  "photography_direction": {
+    "style": "Ilustração-first e produto vibrante — o DS não depende de fotografia; quando há foto, ela é de produto colorido tratada como figurinha colada, cheia de energia e saturação alta.",
+    "subjects": [
+      "Casquinhas e copos de sorvete com bolas coloridas e confeitos, close saturado",
+      "Açaí montado com toppings vistosos vistos de cima (flat lay)",
+      "Milkshakes e bubble tea com cores candy e canudo",
+      "Mãos jovens segurando o sorvete, movimento e diversão",
+      "Detalhe de textura (granulado, calda escorrendo) em close macro"
+    ],
+    "light": "Luz clara, alta-chave, sem sombras dramáticas — clima de dia quente e ensolarado; flash direto estilo Instagram é bem-vindo.",
+    "color_grading": "Saturação alta, cores vivas e doces (rosa, amarelo, lilás), fundo limpo ou candy. Proibido: dessaturação, tons frios/moody, preto e branco, clima gourmet escuro.",
+    "framing": "Enquadramentos dinâmicos: closes generosos, ângulos levemente inclinados, produto centralizado sobre fundo de cor sólida da paleta; recortes ousados que sangram do container.",
+    "avoid": [
+      "Fotografia gourmet escura/fine dining (pertence a outra personalidade)",
+      "Stock corporativo sem energia ou com sorrisos falsos",
+      "Fundos neutros/bege sem cor — mata a vibração candy do DS",
+      "Foto sem borda/tratamento (deve sempre parecer sticker: radius 24px ou blob + borda 3px)"
+    ],
+    "fallback_sem_foto": "Ilustrações SVG flat de casquinhas/copos, blocos de cor sólida e gradientes candy (135deg #FF1493 → #FFD700 ou #FF1493 → #E3A8C6), blobs em #FFE3F1/#FFD700 com borda 3px #2A1220. Nunca usar #FFD700 nem #FF1493 como texto sobre superfície clara nos fallbacks (decorativo apenas)."
+  },
+  "iconography": {
+    "style": "Linha grossa (stroke 2.5–3px), cantos arredondados (stroke-linecap/linejoin round), grid 24x24 — peso coerente com as bordas sticker de 3px do DS; ícones podem ganhar leve rotação e viver dentro de pills.",
+    "color": "#C4006B ou #2A1220 sobre superfícies claras; #FFD700 ou #FFFFFF sobre a seção dark #2A1220.",
+    "recommended_set": "Lucide (open source, MIT) com stroke ajustado para 2.5–3px, ou Phosphar 'bold'; complementar com stickers/emojis SVG próprios (casquinha, estrela, faísca ✦) para o mood candy.",
+    "usage": "Ícone sempre acompanhado de texto (nunca única affordance); ícones de rede social do footer dentro de pills com borda 3px.",
+    "decorative_shapes": "Blobs orgânicos (border-radius 58% 42% 55% 45% / 52% 48% 55% 45%), círculos #FFE3F1, meia-lua #FFD700, confetti (quadrados/círculos rosa+amarelo+branco), faíscas/estrelas ✦ — sempre aria-hidden='true'."
+  },
+  "do_dont": {
+    "do": [
+      "Usar #FF1493 (rosa-chiclete) só em display ≥ 24px / 18.66px bold, stickers e áreas gráficas",
+      "Usar #C4006B (primary_deep) para texto corrente, links e botões sólidos pequenos (5.60:1)",
+      "Combinar texto #2A1220 sobre #FFD700 nos stickers (12.42:1) — combinação oficial",
+      "Aplicar hard shadow deslocada sem blur (estilo adesivo) em cards e botões",
+      "Dar rotação leve (-6° a 6°) a stickers e cards para efeito de adesivos espalhados",
+      "Manter H1/H2 em Oswald bold uppercase; body em Space Grotesk",
+      "Deixar 96–120px de respiro entre seções no desktop apesar da densidade interna"
+    ],
+    "dont": [
+      "Usar #FF1493 como cor de texto corrido (3.46:1 — falha AA; usar #C4006B)",
+      "Usar #FFD700 (amarelo) como texto sobre fundo claro (1.33:1 — decorativo apenas)",
+      "Usar branco pequeno sobre #FF1493 (3.64:1); para CTA sólido pequeno usar fundo #C4006B (5.90:1)",
+      "Trocar hard shadow sólida por sombra difusa corporativa (mata a assinatura sticker)",
+      "Manter confetti/marquee sem respeitar prefers-reduced-motion (remover confetti, congelar marquee, transições 0.01ms)",
+      "Fazer qualquer animação piscar acima de 3x/segundo",
+      "Encher tudo de rotação/stickers a ponto de comprometer legibilidade — o caos é organizado por baixo",
+      "Misturar mais de 2 famílias tipográficas além de Oswald + Space Grotesk"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Oswald:wght@500;600;700 e Space+Grotesk:wght@400;500;700 com display=swap. Preload do subset latin do Oswald (fonte do LCP no H1 do hero).",
+    "js_budget": "Zero JS obrigatório — confetti, marquee, hovers e inversões de cor são CSS puro. IntersectionObserver opcional só para o stagger de entrada (sticker-pop) e menu mobile (toggle + focus trap). Sem frameworks. JS < 15KB.",
+    "seo_local": "Schema.org LocalBusiness / IceCreamShop (ou FoodEstablishment) com endereço, geo, telefone e openingHours; título com bairro/cidade ('Sorveteria X — 32 sabores no Bairro Y'). Cardápio com Menu/MenuItem quando houver preços.",
+    "whatsapp_cta": "Botão sticky 'Pedir no zap' no mobile — link wa.me com mensagem pré-preenchida animada ('Oi! Vi o site e quero montar meu açaí 🍧'). É o funil principal do segmento.",
+    "adaptation_guide": "Ao adaptar para outro segmento energético (hamburgueria, açaíteria, doceria, festa infantil): manter a estrutura de motion (hard shadow, pop, confetti/marquee), o par tipográfico e a lógica de contraste (rosa display + primary_deep textual). Trocar a paleta candy por outra dupla saturada de alto contraste se necessário, o vocabulário do voice_and_tone e as ilustrações de produto. A essência é energia lúdica com organização por baixo do caos, não o sorvete em si."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "energetico",
+      "vibrante",
+      "candy",
+      "rosa-chiclete",
+      "amarelo",
+      "playful",
+      "stickers",
+      "confetti",
+      "marquee",
+      "grid-assimetrico",
+      "sorveteria",
+      "acai"
+    ],
+    "related_docs": [
+      "previews/markdown/03-3-sorveteria-movimento.md",
+      "previews/html/03-3-sorveteria-movimento.html",
+      "docs/03-3-sorveteria-movimento/components.md",
+      "docs/03-3-sorveteria-movimento/animations.css",
+      "docs/03-3-sorveteria-movimento/accessibility-report.md",
+      "docs/03-3-sorveteria-movimento/benchmarking.md",
+      "docs/03-3-sorveteria-movimento/color-variations.md",
+      "docs/03-3-sorveteria-movimento/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Sorveteria e gelateria jovem",
+      "Açaíteria",
+      "Bubble tea / chá gelado",
+      "Doceria criativa (brigaderia, cookies, milkshakes)",
+      "Buffet de festa infantil e espaços kids"
+    ],
+    "conversion_factors": [
+      "CTA 'Pedir no zap' sticky no mobile — pedido por WhatsApp é o funil principal do segmento",
+      "Cardápio visual com preço em pill de alto contraste reduz fricção de decisão",
+      "Badges de escassez/novidade ('SÓ HOJE', 'NOVO!') geram urgência lúdica sem agressividade",
+      "Seção 'monte seu açaí' em passos numerados espelha o balcão físico e aumenta ticket médio",
+      "Endereço + horário na seção dark de alto contraste — decisão de visita em segundos",
+      "Depoimentos estilo polaroid humanizam e funcionam como prova social nativa de Instagram"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "Hero 100% CSS/SVG (sem imagem hero pesada); fontes com display=swap e preconnect; LCP alvo < 2.0s",
+      "cls_strategy": "Stickers e blobs em position:absolute com dimensões fixas não empurram layout; marquee com altura reservada; CLS < 0.05",
+      "js_budget": "Zero JS obrigatório — confetti, marquee e hovers são CSS puro; IntersectionObserver opcional só para stagger de entrada"
+    }
+  }
+}

@@ -1,0 +1,306 @@
+/* ==========================================================================
+   DS 05.1 — Café de Especialidade (Origem & Torra)
+   animations.css — Sistema de movimento
+   --------------------------------------------------------------------------
+   Mood: terroso escuro, editorial, capítulos numerados, grão de filme.
+   Animações LENTAS e quase subliminares (400–900ms).
+   Todos os valores derivados fielmente do JSON (motion.durations,
+   motion.easings, motion.animations).
+   ========================================================================== */
+
+:root {
+  /* --- Durações (motion.durations) --- */
+  --duration-instant: 150ms; /* microinterações, feedback imediato */
+  --duration-fast: 300ms;    /* hovers, botões, sublinhados */
+  --duration-base: 500ms;    /* transições padrão de conteúdo */
+  --duration-slow: 700ms;    /* suavização de parallax (lerp) */
+  --duration-slower: 900ms;  /* reveals editoriais, numeração de capítulo */
+
+  /* --- Easings (motion.easings) --- */
+  --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);   /* padrão, ida e volta */
+  --easing-entrance: cubic-bezier(0.16, 1, 0.3, 1);  /* entradas suaves, desacelera no fim */
+  --easing-drift: cubic-bezier(0.33, 0, 0.2, 1);     /* deriva lenta do parallax */
+
+  /* --- Deslocamentos e cores usados nas animações --- */
+  --reveal-offset: 28px;              /* translateY inicial do reveal-lento */
+  --chapter-number-opacity: 0.25;     /* opacidade final da numeração gigante */
+  --color-primary: #8B5E3C;           /* marrom-café (button-fill, numeração) */
+  --color-primary-deep: #6E4A2F;      /* hover de botão sólido */
+  --color-secondary: #2F5233;         /* verde-musgo (underline-grow) */
+}
+
+/* ==========================================================================
+   1. reveal-lento
+   duration 900ms · easing entrance
+   Trigger: IntersectionObserver ao entrar 20% no viewport.
+   Fade + translateY(28px) → 0. Texto e imagens entram devagar,
+   como página de revista virando.
+   ========================================================================== */
+@keyframes reveal-lento {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-offset));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estado inicial (antes do observer adicionar .is-visible) */
+.reveal-lento {
+  opacity: 0;
+  transform: translateY(var(--reveal-offset));
+  will-change: opacity, transform;
+}
+
+/* Classe aplicada por IntersectionObserver quando 20% entra no viewport */
+.reveal-lento.is-visible {
+  animation: reveal-lento var(--duration-slower) var(--easing-entrance) both;
+}
+
+/* ==========================================================================
+   2. parallax-sutil
+   suavização 700–900ms (lerp) · easing drift
+   Trigger: scroll. Imagens de capítulo deslocam no MÁXIMO 6–8% da própria
+   altura. Nunca parallax agressivo — o efeito deve ser quase subliminar.
+   A posição real (--parallax-y) é calculada em JS via requestAnimationFrame
+   com lerp; a transição abaixo suaviza cada atualização.
+   ========================================================================== */
+.parallax-sutil {
+  --parallax-y: 0px; /* atualizado por JS, limitado a ~6–8% da altura */
+  transform: translate3d(0, var(--parallax-y), 0);
+  transition: transform var(--duration-slow) var(--easing-drift);
+  will-change: transform;
+}
+
+/* ==========================================================================
+   3. grain-drift
+   8s loop · linear · contínuo
+   Textura de grão de filme (SVG feTurbulence, fractalNoise) com leve
+   deslocamento de background-position, simulando fotografia analógica.
+   O SVG vai embutido como data-URI (zero requests extras).
+   ========================================================================== */
+@keyframes grain-drift {
+  0%   { background-position: 0 0; }
+  25%  { background-position: -6% 4%; }
+  50%  { background-position: 4% -6%; }
+  75%  { background-position: -4% -4%; }
+  100% { background-position: 0 0; }
+}
+
+.grain-drift {
+  position: relative;
+}
+
+.grain-drift::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.32; /* faixa recomendada 0.25–0.4 */
+  mix-blend-mode: multiply;
+  /* feTurbulence fractalNoise embutido como data-URI */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+  background-size: 200px 200px;
+  animation: grain-drift 8s linear infinite;
+}
+
+/* ==========================================================================
+   4. chapter-number-fade
+   duration 900ms · easing entrance · delay 120ms após o título
+   Numeração gigante do capítulo sobe de opacity 0 → 0.25.
+   ========================================================================== */
+@keyframes chapter-number-fade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: var(--chapter-number-opacity);
+    transform: translateY(0);
+  }
+}
+
+.chapter-number-fade {
+  opacity: 0;
+  color: var(--color-primary);
+  will-change: opacity, transform;
+}
+
+.chapter-number-fade.is-visible {
+  /* delay de 120ms em relação ao título do capítulo */
+  animation: chapter-number-fade var(--duration-slower) var(--easing-entrance) 120ms both;
+}
+
+/* ==========================================================================
+   5. hover-card-lift
+   duration 300ms · easing standard · hover/focus-visible
+   Card sobe 4px, sombra sm → md, imagem interna dá zoom de 1.03.
+   ========================================================================== */
+.hover-card-lift {
+  transition:
+    transform var(--duration-fast) var(--easing-standard),
+    box-shadow var(--duration-fast) var(--easing-standard);
+  box-shadow: 0 2px 6px rgba(34, 26, 19, 0.08); /* shadow sm */
+}
+
+.hover-card-lift:hover,
+.hover-card-lift:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(34, 26, 19, 0.10); /* shadow md */
+}
+
+/* imagem interna do card */
+.hover-card-lift .card-image {
+  transition: transform var(--duration-fast) var(--easing-standard);
+  will-change: transform;
+}
+
+.hover-card-lift:hover .card-image,
+.hover-card-lift:focus-visible .card-image {
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   6. button-fill
+   duration 300ms · easing standard · hover/focus-visible
+   Botão outline preenche do fundo para o marrom-café; botão sólido
+   escurece para primary_deep.
+   ========================================================================== */
+.button-fill {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color var(--duration-fast) var(--easing-standard);
+}
+
+/* Camada de preenchimento que cresce a partir do fundo */
+.button-fill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-primary);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform var(--duration-fast) var(--easing-standard);
+}
+
+.button-fill:hover::before,
+.button-fill:focus-visible::before {
+  transform: scaleY(1);
+}
+
+.button-fill:hover,
+.button-fill:focus-visible {
+  color: #FFFFFF;
+}
+
+/* Variante sólida: apenas escurece para primary_deep */
+.button-fill--solid {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  transition: background-color var(--duration-fast) var(--easing-standard);
+}
+
+.button-fill--solid:hover,
+.button-fill--solid:focus-visible {
+  background: var(--color-primary-deep);
+}
+
+/* ==========================================================================
+   7. underline-grow
+   duration 300ms · easing standard · hover em links
+   Sublinhado cresce da esquerda para a direita em cor secondary.
+   ========================================================================== */
+.underline-grow {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.underline-grow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-secondary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-fast) var(--easing-standard);
+}
+
+.underline-grow:hover::after,
+.underline-grow:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ==========================================================================
+   MOTION SAFETY — prefers-reduced-motion (reduced_motion_strategy)
+   - parallax desativado (transform: none)
+   - reveals viram fade simples de 150ms
+   - grain-drift congela (textura estática mantida)
+   - transições reduzidas a 100ms
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+
+  /* Reveals: viram fade simples de 150ms, sem deslocamento */
+  .reveal-lento,
+  .reveal-lento.is-visible {
+    transform: none !important;
+    animation: none !important;
+  }
+  .reveal-lento {
+    opacity: 0;
+    transition: opacity 150ms linear;
+  }
+  .reveal-lento.is-visible {
+    opacity: 1;
+  }
+
+  /* Numeração de capítulo: aparece sem deslocamento */
+  .chapter-number-fade,
+  .chapter-number-fade.is-visible {
+    transform: none !important;
+    animation: none !important;
+  }
+  .chapter-number-fade {
+    transition: opacity 150ms linear;
+  }
+  .chapter-number-fade.is-visible {
+    opacity: var(--chapter-number-opacity);
+  }
+
+  /* Parallax: totalmente desativado */
+  .parallax-sutil {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Grain-drift: congela — textura estática mantida, sem animação de loop */
+  .grain-drift::after {
+    animation: none !important;
+    background-position: 0 0 !important;
+  }
+
+  /* Todas as demais transições reduzidas a 100ms */
+  .hover-card-lift,
+  .hover-card-lift .card-image,
+  .button-fill,
+  .button-fill::before,
+  .button-fill--solid,
+  .underline-grow::after {
+    transition-duration: 100ms !important;
+  }
+
+  /* Salvaguarda global: nada anima acima de 100ms com reduce ativo */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

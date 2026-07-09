@@ -1,0 +1,1445 @@
+{
+  "schema_version": "jumper-reference-design-system.v2.from-scratch",
+  "meta": {
+    "id": "reference-ds-01-pinchmans-ca",
+    "name": "Pinchmans.ca Reference Design System",
+    "source_site": "pinchmans.ca",
+    "source_path": "_jumper-sites-system/_referencias-visuais/01-acolhedor-familiar/pinchmans.ca",
+    "personality_slug": "01-acolhedor-familiar",
+    "personality_label": "Acolhedor Familiar",
+    "created_from": "single reference website folder, rebuilt from source files after audit",
+    "generated_at": "2026-06-03",
+    "output_scope": "reference personality DS only; not a client DS and not final DS",
+    "approval_gate": "must be approved before generating the next reference DS"
+  },
+  "extraction_audit": {
+    "analyzed_files": [
+      "index.html",
+      "assets/2c24c1e46a67a345_styles.css",
+      "assets/e09a03b46b7be2ab_scripts.js",
+      "assets/495f53454da0d134_plugins.js",
+      "assets/a46629cb53ac832b_css.css",
+      "Conteudo bruto de captura removido. Use apenas os sinais sintetizados deste design system."
+    ],
+    "detected_runtime_libraries": [
+      {
+        "name": "Skeleton grid",
+        "evidence": ".container, .columns, offset-by-* widths, max-width 1100px"
+      },
+      {
+        "name": "Headroom.js",
+        "evidence": "mobile nav pinned slideInDown and unpinned slideOutUp after 150px offset"
+      },
+      {
+        "name": "smoothScroll",
+        "evidence": "speed 750, easing easeInOutQuart, offset 50"
+      },
+      {
+        "name": "parallax-window",
+        "evidence": ".parallax-window header and .story-img imageSrc configuration"
+      },
+      {
+        "name": "Rellax.js",
+        "evidence": ".rellax with speeds -3 to 4 across hero, line art and images"
+      },
+      {
+        "name": "WOW.js",
+        "evidence": ".wow fadeIn/fadeInUp/draw-line staged reveals"
+      },
+      {
+        "name": "Owl Carousel",
+        "evidence": "loop true, autoplay 6000ms, fadeOut/lazy opacity/chevron nav"
+      },
+      {
+        "name": "FontAwesome",
+        "evidence": "phone, map-marker, clock-o, shopping-bag, gift, cutlery, coffee, chevron, instagram, facebook"
+      },
+      {
+        "name": "Inputmask + reCAPTCHA",
+        "evidence": "phone mask and disabled submit until validation/human check"
+      }
+    ],
+    "detected_assets": {
+      "hero_and_story": [
+        "da5b87c4445f96bc_header.jpg",
+        "af1d4dbed9ed6c45_ourstory.jpg"
+      ],
+      "product_tiles": [
+        "3e27b81382cbf8be_bread.jpg",
+        "4eee7215ec258b6b_pressed-sandwiches.jpg",
+        "a8cc9b13c20288c1_tarts.jpg",
+        "a63596aa7f995b2a_quiche.jpg",
+        "c994f40d18f88d8c_cookies.jpg",
+        "06684d3ae035ff90_cakes.jpg",
+        "ffcc11ef308ad669_biscuits.jpg",
+        "24956953c06c1c64_sticky-buns.jpg",
+        "57dbf94a5654f690_empanadas.jpg",
+        "b0f546d22b051989_croissants.jpg",
+        "27f5def1ded62581_coffee.jpg",
+        "f7c80da77fd0b1b4_pies.jpg"
+      ],
+      "logo_and_ornaments": [
+        "4683011c8fdb3475_logo.svg",
+        "625fe30b6bc0c300_logo-black.svg",
+        "7812fbb275fd6d0a_sunrise.svg",
+        "afae56ae26a5cbdf_cross.svg",
+        "75e5b2bfd3a46bca_gift-basket.svg"
+      ],
+      "fonts": [
+        "Gilroy Regular/Bold/Black local WOFF",
+        "Lora regular/italic/bold WOFF2",
+        "FontAwesome WOFF2"
+      ]
+    },
+    "source_dna_summary": "Editorial artisan bakery system: dark roasted foundation, warm paper panels, uppercase Gilroy display, Lora prose, parallax food photography, drawn vector rules, square offset frames, fixed ticker, slide-down mobile nav and full-screen flyout menus."
+  },
+  "reference_character": {
+    "essence": "warm artisan editorial with crafted bakery tactility",
+    "tone": [
+      "handmade",
+      "local",
+      "slow-food",
+      "familial",
+      "premium without luxury coldness",
+      "menu-board practical"
+    ],
+    "avoid": [
+      "generic pastel bakery",
+      "soft rounded cards",
+      "left-copy-over-gradient repetition",
+      "single-image hero with no system behavior",
+      "neon accents",
+      "excessive brown-only sameness"
+    ],
+    "transferable_principle": "Use warmth through dark cacao/paper contrast, product photography, human-scale labels and drawn-line motion; do not copy the brand logo or exact commercial copy."
+  },
+  "tokens": {
+    "colors": {
+      "primary": [
+        {
+          "name": "Cacao Ground",
+          "hex": "#352824",
+          "rgb": "53, 40, 36",
+          "hsl": "15 19% 17%",
+          "role": "main dark background, hero base, footer, warm overlays",
+          "contrast_on_cream": "AA/AAA depending weight",
+          "usage": [
+            "background",
+            "section band",
+            "image overlay",
+            "button hover"
+          ]
+        },
+        {
+          "name": "Espresso Ink",
+          "hex": "#2C211E",
+          "rgb": "44, 33, 30",
+          "hsl": "13 19% 15%",
+          "role": "navigation, flyout menus, primary text on cream when not pure black",
+          "contrast_on_cream": "AAA",
+          "usage": [
+            "ticker",
+            "menu overlay",
+            "primary CTA",
+            "borders"
+          ]
+        },
+        {
+          "name": "Charcoal Pastry Ink",
+          "hex": "#231F1F",
+          "rgb": "35, 31, 31",
+          "hsl": "0 6% 14%",
+          "role": "line art, copy, outlines, close icons",
+          "contrast_on_cream": "AAA",
+          "usage": [
+            "text",
+            "SVG strokes",
+            "borders"
+          ]
+        }
+      ],
+      "neutrals": [
+        {
+          "name": "Warm Flour",
+          "hex": "#FFF8EB",
+          "rgb": "255, 248, 235",
+          "hsl": "39 100% 96%",
+          "role": "text on dark, pale block fills, hero strokes",
+          "usage": [
+            "text",
+            "panel background",
+            "line art",
+            "nav link underline"
+          ]
+        },
+        {
+          "name": "Bakery Paper",
+          "hex": "#FFF7EA",
+          "rgb": "255, 247, 234",
+          "hsl": "37 100% 96%",
+          "role": "forms, callouts, menu light mode",
+          "usage": [
+            "form background",
+            "callout background",
+            "flyout light variant"
+          ]
+        },
+        {
+          "name": "White Plate",
+          "hex": "#FFFFFF",
+          "rgb": "255, 255, 255",
+          "hsl": "0 0% 100%",
+          "role": "quiet white sections and image gutters",
+          "usage": [
+            "section background",
+            "image frame",
+            "breathing space"
+          ]
+        },
+        {
+          "name": "Cooling Rack Line",
+          "hex": "#E1E1E1",
+          "rgb": "225, 225, 225",
+          "hsl": "0 0% 88%",
+          "role": "low-emphasis dividers only",
+          "usage": [
+            "table lines",
+            "disabled borders"
+          ]
+        }
+      ],
+      "feedback": [
+        {
+          "name": "Validation Blush",
+          "hex": "#FFD0D0",
+          "rgb": "255, 208, 208",
+          "hsl": "0 100% 91%",
+          "role": "form fail state background",
+          "usage": [
+            "input.fail",
+            "textarea.fail"
+          ]
+        }
+      ],
+      "legacy_do_not_extend": [
+        {
+          "name": "Skeleton Blue",
+          "hex": "#33C3F0",
+          "role": "present in Skeleton button-primary defaults; treat as inherited noise, not a personality accent"
+        }
+      ],
+      "opacity_variants": [
+        {
+          "token": "overlay-cacao-90",
+          "value": "rgba(53, 40, 36, 0.90)",
+          "use": "social/image hover with text still readable"
+        },
+        {
+          "token": "overlay-cacao-75",
+          "value": "rgba(53, 40, 36, 0.75)",
+          "use": "carousel description overlay"
+        },
+        {
+          "token": "overlay-cacao-55",
+          "value": "rgba(53, 40, 36, 0.55)",
+          "use": "hero photography readability fallback"
+        },
+        {
+          "token": "focus-cream-35",
+          "value": "rgba(255, 248, 235, 0.35)",
+          "use": "soft focus ring on dark"
+        }
+      ],
+      "gradients": [
+        {
+          "name": "Oven Shadow",
+          "css": "linear-gradient(135deg, rgba(44,33,30,.96), rgba(53,40,36,.72), rgba(35,31,31,.96))",
+          "role": "preview-only dimensional overlay; source site mostly uses flat color, so keep gradients subtle"
+        },
+        {
+          "name": "Warm Plate Wash",
+          "css": "linear-gradient(180deg, #FFF8EB 0%, #FFFFFF 70%, #FFF7EA 100%)",
+          "role": "long documentation sections and preview background"
+        }
+      ]
+    },
+    "typography": {
+      "font_loading_strategy": [
+        {
+          "family": "Gilroy",
+          "source": "local WOFF files inside reference assets",
+          "weights": [
+            500,
+            700,
+            900
+          ],
+          "use": "display, navigation, CTAs, labels"
+        },
+        {
+          "family": "Lora",
+          "source": "Google Fonts mirrored WOFF2 local files",
+          "weights": [
+            400,
+            700
+          ],
+          "styles": [
+            "normal",
+            "italic"
+          ],
+          "use": "body prose, menu descriptions, story copy"
+        },
+        {
+          "family": "FontAwesome",
+          "source": "local WOFF2",
+          "use": "utility icons only"
+        }
+      ],
+      "stacks": {
+        "display": "'Gilroy', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+        "body": "'Lora', Georgia, serif",
+        "ui": "'Gilroy', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+        "mono": "'JetBrains Mono', 'SFMono-Regular', Consolas, monospace"
+      },
+      "scale": {
+        "h1": {
+          "family": "Gilroy",
+          "weight": 900,
+          "size": "clamp(3.4rem, 8vw, 9.8rem)",
+          "line_height": 0.96,
+          "letter_spacing": "0.12rem",
+          "text_transform": "uppercase",
+          "use": "hero poster headline and large sectional assertions"
+        },
+        "h2": {
+          "family": "Gilroy",
+          "weight": 900,
+          "size": "clamp(2.8rem, 5vw, 6.4rem)",
+          "line_height": 1.04,
+          "letter_spacing": "0.14rem",
+          "text_transform": "uppercase",
+          "use": "major section titles"
+        },
+        "h3": {
+          "family": "Gilroy",
+          "weight": 800,
+          "size": "clamp(2.0rem, 3vw, 3.6rem)",
+          "line_height": 1.18,
+          "letter_spacing": "0.15rem",
+          "text_transform": "uppercase",
+          "use": "menu headings, panel titles"
+        },
+        "h4": {
+          "family": "Gilroy",
+          "weight": 700,
+          "size": "2.4rem",
+          "line_height": 1.28,
+          "letter_spacing": "0.12rem",
+          "text_transform": "none",
+          "use": "component names and menu item titles"
+        },
+        "h5": {
+          "family": "Gilroy",
+          "weight": 700,
+          "size": "1.8rem",
+          "line_height": 1.4,
+          "letter_spacing": "0.056rem",
+          "text_transform": "none",
+          "use": "form titles and compact module headings"
+        },
+        "h6": {
+          "family": "Gilroy",
+          "weight": 900,
+          "size": "1.2rem",
+          "line_height": 1.6,
+          "letter_spacing": "0.2rem",
+          "text_transform": "uppercase",
+          "use": "hours labels, metadata labels"
+        },
+        "body_lg": {
+          "family": "Lora",
+          "weight": 400,
+          "size": "2.0rem",
+          "line_height": 1.9,
+          "letter_spacing": "0.06rem",
+          "text_transform": "none",
+          "use": "story and callout copy"
+        },
+        "body": {
+          "family": "Lora",
+          "weight": 400,
+          "size": "1.6rem",
+          "line_height": 1.75,
+          "letter_spacing": "0.088rem",
+          "text_transform": "none",
+          "use": "forms, menu details, long prose"
+        },
+        "body_sm": {
+          "family": "Lora",
+          "weight": 400,
+          "size": "1.4rem",
+          "line_height": 1.65,
+          "letter_spacing": "0.1rem",
+          "text_transform": "none",
+          "use": "specialty captions"
+        },
+        "label": {
+          "family": "Gilroy",
+          "weight": 700,
+          "size": "1.2rem",
+          "line_height": 1.2,
+          "letter_spacing": "0.1rem",
+          "text_transform": "uppercase",
+          "use": "ticker, badges, nav microcopy"
+        },
+        "caption": {
+          "family": "Gilroy",
+          "weight": 700,
+          "size": "1.1rem",
+          "line_height": 1.35,
+          "letter_spacing": "0.12rem",
+          "text_transform": "uppercase",
+          "use": "token captions and preview annotations"
+        },
+        "helper": {
+          "family": "Lora",
+          "weight": 400,
+          "size": "1.3rem",
+          "line_height": 1.5,
+          "letter_spacing": "0.04rem",
+          "text_transform": "none",
+          "use": "form hints and pronunciation notes"
+        }
+      }
+    },
+    "layout": {
+      "grid": {
+        "base": "Skeleton-inspired 12-column float/grid translation",
+        "container_max": "1100px source / 1500px expanded menu",
+        "desktop_width": "80%",
+        "mobile_width": "90-100%",
+        "gutters": "4% desktop, 20px mobile"
+      },
+      "spacing": {
+        "xs": "0.5rem",
+        "sm": "1rem",
+        "md": "2.5rem",
+        "lg": "5rem",
+        "xl": "7.5rem",
+        "xxl": "10rem",
+        "section": "15rem"
+      },
+      "radius": {
+        "default": "0px",
+        "forms": "0px",
+        "photo": "0px",
+        "exception": "Skeleton inherited 4px should be reset for Jumper DS"
+      },
+      "borders": {
+        "drawn_rule": "5px SVG stroke",
+        "offset_frame": "2-3px solid ink shifted -5px",
+        "menu_divider": "1px solid currentColor",
+        "tile_border": "2px solid cream"
+      },
+      "z_index": {
+        "ticker": 9998,
+        "mobile_nav": 9990,
+        "flyout": 9999,
+        "hero_content": 100,
+        "parallax_mirror": -100
+      },
+      "session_principles": [
+        "Hero sessions must occupy the full viewport as a capability demo.",
+        "Use full-width bands, not nested decorative cards.",
+        "Alternate dense editorial text sections with product-image grids to prevent brown monotony.",
+        "Use asymmetry from offsets, negative margins and parallax speeds instead of centered cards."
+      ]
+    },
+    "iconography": {
+      "set": "FontAwesome 4 + custom bakery SVG ornaments",
+      "stroke": "FontAwesome solid glyphs; custom SVG strokes 5px, square caps when line art",
+      "color_rules": [
+        "cream icons on cacao/espresso",
+        "espresso icons on warm paper",
+        "do not introduce rounded outline icon library unless mapped carefully"
+      ],
+      "detected_icons": [
+        {
+          "name": "phone",
+          "class": "fa fa-phone",
+          "use": "ticker contact"
+        },
+        {
+          "name": "map-marker",
+          "class": "fa fa-map-marker",
+          "use": "address/directions"
+        },
+        {
+          "name": "clock-o",
+          "class": "fa fa-clock-o",
+          "use": "hours anchor"
+        },
+        {
+          "name": "shopping-bag",
+          "class": "fa fa-shopping-bag",
+          "use": "order online CTA"
+        },
+        {
+          "name": "gift",
+          "class": "fa fa-gift",
+          "use": "holiday/gift menu CTA"
+        },
+        {
+          "name": "cutlery",
+          "class": "fa fa-cutlery",
+          "use": "menu or catering category"
+        },
+        {
+          "name": "coffee",
+          "class": "fa fa-coffee",
+          "use": "drink/coffee category"
+        },
+        {
+          "name": "chevron-left/right",
+          "class": "fa fa-chevron-*",
+          "use": "carousel nav"
+        },
+        {
+          "name": "instagram/facebook",
+          "class": "fa fa-instagram / fa-facebook",
+          "use": "social links"
+        }
+      ],
+      "custom_svg_assets": [
+        {
+          "name": "logo mark",
+          "file": "4683011c8fdb3475_logo.svg",
+          "use": "brand reference only; do not reuse for client identity"
+        },
+        {
+          "name": "sunrise ornament",
+          "file": "7812fbb275fd6d0a_sunrise.svg",
+          "use": "parallax decorative landmark"
+        },
+        {
+          "name": "cross ornament",
+          "file": "afae56ae26a5cbdf_cross.svg",
+          "use": "centered callout crest"
+        },
+        {
+          "name": "gift basket illustration",
+          "file": "75e5b2bfd3a46bca_gift-basket.svg",
+          "use": "one-off editorial illustration module"
+        }
+      ],
+      "accessibility": "Icon-only actions need aria-label; decorative SVG line art must be aria-hidden; FontAwesome glyphs inside text links should not duplicate label meaning."
+    }
+  },
+  "components": {
+    "hero_poster_vitrine": {
+      "purpose": "full-viewport opening demo that translates source hero/parallax/ticker into a reusable system",
+      "observed_source": [
+        ".header height 100vh",
+        ".bg-container parallax-window",
+        ".line-1/.line-2 draw-line",
+        ".rellax speeds 0.25 to 4",
+        "fixed ticker above nav"
+      ],
+      "classes": [
+        "ds-pinch-hero-poster",
+        "ds-pinch-hero-media",
+        "ds-pinch-hero-strata",
+        "ds-pinch-hero-type-band",
+        "ds-pinch-hero-proofbar"
+      ],
+      "anatomy": [
+        "fixed ticker",
+        "brand/navigation strip",
+        "large uppercase title",
+        "floating Lora proof copy",
+        "drawn rule SVGs",
+        "parallax image planes",
+        "icon proof rail"
+      ],
+      "visual_variants": [
+        {
+          "name": "Menu-board poster",
+          "layout": "headline centered and split by vertical/horizontal rules, product image behind right/bottom plane",
+          "best_for": "restaurants, bakeries, cafes"
+        },
+        {
+          "name": "Story panel poster",
+          "layout": "left image well, right warm-paper editorial block, slow parallax ornament",
+          "best_for": "family/local brands"
+        },
+        {
+          "name": "Product atlas poster",
+          "layout": "oversized headline over 3 asymmetric product tiles, ticker remains top anchor",
+          "best_for": "food catalogs"
+        }
+      ],
+      "motion": {
+        "entry": "draw-line 750ms + fadeInLeft 750ms + delayed content fadeIn 1.25s",
+        "scroll": "parallax background speed .25, type speed 2, rules speed 3-4",
+        "hover": "CTA underline scaleX, proof tiles lift -6px and warm overlay reduces opacity"
+      },
+      "accessibility": {
+        "overlay": "use rgba(44,33,30,.55-.72) when cream text crosses image",
+        "reduced_motion": "freeze parallax and run one fade only"
+      }
+    },
+    "ticker_bar": {
+      "classes": [
+        "ds-pinch-ticker",
+        "ds-pinch-ticker-text",
+        "ds-pinch-order-chip"
+      ],
+      "anatomy": [
+        "left phone/address",
+        "right hours/order",
+        "order chip inverted cream-on-dark"
+      ],
+      "styles": {
+        "bg": "#2C211E",
+        "color": "#FFF8EB",
+        "height": "auto; 1rem vertical padding",
+        "font": "Gilroy 700 1.2rem uppercase",
+        "tracking": "0.1rem"
+      },
+      "states": {
+        "mobile": "hide phone/hours; show directions and order",
+        "hover": "underline 1px scaleX; order chip underline grows from center"
+      }
+    },
+    "mobile_nav_headroom": {
+      "classes": [
+        "ds-pinch-mobile-nav",
+        "ds-pinch-mobile-nav.is-active",
+        "ds-pinch-hamburger--squeeze"
+      ],
+      "observed_source": "fixed mobile-nav top -250px, active top 38px, .6s cubic-bezier(.77,0,.175,1), Headroom slideInDown/slideOutUp",
+      "anatomy": [
+        "inline nav links",
+        "center logo",
+        "hamburger squeeze"
+      ],
+      "motion": "top slide + hamburger squeeze transform with 75ms segment timings",
+      "rules": [
+        "use above 38px ticker offset",
+        "keep z-index below ticker but above hero",
+        "close nav after mob-link click"
+      ]
+    },
+    "text_link_button": {
+      "classes": [
+        "ds-pinch-link-arrow",
+        "ds-pinch-btn-text-link"
+      ],
+      "observed_source": "links use literal > glyph and underline pseudo-element",
+      "styles": {
+        "font": "Gilroy 600 uppercase 1.4rem",
+        "letter_spacing": ".1rem",
+        "color": "#FFF8EB",
+        "underline": "scaleX(0 -> 1) 400ms cubic-bezier(.77,0,.175,1)"
+      },
+      "variants": [
+        "cream-on-dark",
+        "ink-on-paper",
+        "order-chip inverted"
+      ],
+      "states": {
+        "hover": "underline expands, optional arrow translateX(4px)",
+        "focus": "2px cream/ink outline offset 4px",
+        "disabled": "opacity .45; no transform"
+      }
+    },
+    "image_specialty_grid": {
+      "classes": [
+        "ds-pinch-menu-grid",
+        "ds-pinch-specialty-block",
+        "ds-pinch-specialty-caption"
+      ],
+      "observed_source": ".menu-grid-block dark bg; .menu-grid top -135px; .specialty-block height 300px background-size cover",
+      "anatomy": [
+        "dark section base",
+        "negative-offset product grid",
+        "square image tiles",
+        "Lora captions"
+      ],
+      "image_rules": [
+        "crop center",
+        "no rounded corners",
+        "alternate product categories",
+        "caption under image on dark base"
+      ],
+      "motion": {
+        "entry": "fadeInUp staggered 0.25s",
+        "hover": "scale image 1.03 inside overflow hidden; overlay cacao .2 -> .55"
+      }
+    },
+    "callout_offset_frame": {
+      "classes": [
+        "ds-pinch-callout",
+        "ds-pinch-offset-frame",
+        "ds-pinch-ornament-cross"
+      ],
+      "observed_source": ".callout bg #FFF7EA, :before 3px dark border shifted top -5%, left -1.25%",
+      "anatomy": [
+        "warm paper panel",
+        "offset black frame",
+        "centered statement",
+        "optional crest icon",
+        "drawn lines crossing section"
+      ],
+      "rules": [
+        "not a generic card; use as statement block only",
+        "max 1 per long section",
+        "avoid nested panels"
+      ]
+    },
+    "order_form": {
+      "classes": [
+        "ds-pinch-order-form",
+        "ds-pinch-input-container",
+        "ds-pinch-select",
+        "ds-pinch-submit"
+      ],
+      "observed_source": "order form 95% width, warm paper, inputs inside offset 2px border, fail blush, square submit",
+      "anatomy": [
+        "center intro text",
+        "two-column input grid",
+        "offset borders",
+        "select caret via :after",
+        "submit CTA",
+        "success/fail message"
+      ],
+      "states": {
+        "default": "white input, no border, wrapper offset frame",
+        "focus": "cream/ink outline + input bg #fff",
+        "fail": "#FFD0D0 bg, placeholder ink",
+        "disabled": "opacity .5 pointer-events none",
+        "success": "centered check SVG and Lora copy"
+      },
+      "motion": "focus/validation 150-300ms ease; submit text changes to Submitting during fetch"
+    },
+    "flyout_menu_overlay": {
+      "classes": [
+        "ds-pinch-menu-container",
+        "ds-pinch-flyout-menu",
+        "ds-pinch-flyout-menu.light",
+        "ds-pinch-close-x"
+      ],
+      "observed_source": ".menu-container fixed; .menu translateX(100%) -> 0 active; 0.3s cubic-bezier(.645,.045,.355,1); body locked after 355ms",
+      "anatomy": [
+        "sticky close icon",
+        "center logo",
+        "large heading",
+        "menu item groups",
+        "light/dark variants"
+      ],
+      "states": {
+        "closed": "pointer-events none, transform translateX(100%)",
+        "active": "pointer-events all, translateX(0), lock document scroll",
+        "light": "warm paper bg, espresso text and borders"
+      },
+      "accessibility": [
+        "trap focus inside overlay",
+        "Esc closes",
+        "return focus to trigger",
+        "aria-modal true if dialog semantics are used"
+      ]
+    },
+    "story_split_parallax": {
+      "classes": [
+        "ds-pinch-story-split",
+        "ds-pinch-story-text",
+        "ds-pinch-story-img",
+        "ds-pinch-dictionary"
+      ],
+      "observed_source": ".our-story 50/50 columns; story text cacao; story image parallax; dictionary terms pinchman/pronunciation/definition",
+      "anatomy": [
+        "dark text panel",
+        "parallax image half",
+        "dictionary microcopy",
+        "drawn line connectors"
+      ],
+      "motion": "image scrolls slower than text; lines draw as panel enters"
+    },
+    "carousel": {
+      "classes": [
+        "ds-pinch-carousel",
+        "ds-pinch-carousel-desc",
+        "ds-pinch-carousel-nav"
+      ],
+      "observed_source": "Owl Carousel autoplay 6000ms, nav chevrons, fadeOut, lazy opacity 400ms, height 500ms",
+      "anatomy": [
+        "full image slide",
+        "cacao translucent description panel",
+        "chevron controls"
+      ],
+      "accessibility": [
+        "pause on hover/focus",
+        "aria-live polite off while autoplaying",
+        "manual controls labeled"
+      ]
+    },
+    "badges_and_labels": {
+      "classes": [
+        "ds-pinch-badge",
+        "ds-pinch-menu-label",
+        "ds-pinch-proof-chip"
+      ],
+      "source_translation": "No rounded badge system in source; derive from ticker/order chip and menu headings",
+      "styles": {
+        "radius": 0,
+        "border": "1-2px solid currentColor",
+        "font": "Gilroy 700 uppercase",
+        "padding": ".55rem .8rem",
+        "letter_spacing": ".1rem"
+      },
+      "variants": [
+        "dark outline on paper",
+        "cream outline on dark",
+        "filled cream chip"
+      ]
+    },
+    "tooltips": {
+      "classes": [
+        "ds-pinch-tooltip",
+        "ds-pinch-tooltip-trigger"
+      ],
+      "source_translation": "Not explicit in source; derive from label system for icon-only actions",
+      "styles": {
+        "bg": "#2C211E",
+        "color": "#FFF8EB",
+        "radius": 0,
+        "border": "1px solid #FFF8EB",
+        "font": "Gilroy 700 uppercase 1.1rem"
+      },
+      "motion": "opacity 0 -> 1 and translateY(4px -> 0) in 180ms"
+    }
+  },
+  "motion_system": {
+    "principles": [
+      "motion should feel handmade and staged, not slick SaaS",
+      "drawn lines establish craft",
+      "parallax provides depth but must not harm reading",
+      "menus use decisive lateral motion",
+      "buttons use underlines not pill morphs"
+    ],
+    "timings": {
+      "fast": "150ms",
+      "standard": "300-400ms",
+      "page_entry": "750ms",
+      "carousel": "6000ms autoplay",
+      "nav": "600ms",
+      "scroll": "750ms easeInOutQuart"
+    },
+    "easings": {
+      "signature": "cubic-bezier(0.77, 0, 0.175, 1)",
+      "flyout": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+      "hamburger_in": "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+      "hamburger_out": "cubic-bezier(0.215, 0.61, 0.355, 1)"
+    },
+    "keyframes": [
+      {
+        "name": "ds-pinch-draw-line",
+        "from": "stroke-dashoffset:400; opacity:0",
+        "to": "stroke-dashoffset:0; opacity:1",
+        "duration": "750ms"
+      },
+      {
+        "name": "ds-pinch-fade-in-left",
+        "from": "opacity:0; transform:translate3d(-100%,0,0)",
+        "to": "opacity:1; transform:none",
+        "duration": "750ms"
+      },
+      {
+        "name": "ds-pinch-fade-in-up",
+        "from": "opacity:0; transform:translate3d(0,100%,0)",
+        "to": "opacity:1; transform:none",
+        "duration": "750ms"
+      },
+      {
+        "name": "ds-pinch-slide-in-down",
+        "from": "transform:translate3d(0,-100%,0)",
+        "to": "transform:none",
+        "duration": "600-750ms"
+      },
+      {
+        "name": "ds-pinch-slide-out-up",
+        "from": "transform:none",
+        "to": "transform:translate3d(0,-100%,0)",
+        "duration": "600-750ms"
+      },
+      {
+        "name": "ds-pinch-flyout-x",
+        "from": "transform:translateX(100%)",
+        "to": "transform:translateX(0)",
+        "duration": "300ms"
+      },
+      {
+        "name": "ds-pinch-warm-glow",
+        "from": "filter:brightness(.82) saturate(.96)",
+        "to": "filter:brightness(1.02) saturate(1.05)",
+        "duration": "200ms"
+      }
+    ],
+    "stagger": [
+      "anim-one 0ms",
+      "anim-two 250ms",
+      "anim-three 500ms",
+      "anim-four 750ms",
+      "anim-five 1000ms",
+      "anim-six 1250ms",
+      "anim-seven 1500ms"
+    ],
+    "parallax": {
+      "layers": [
+        {
+          "selector": ".ds-pinch-parallax-bg",
+          "speed": 0.25,
+          "use": "hero photo depth"
+        },
+        {
+          "selector": ".ds-pinch-parallax-type",
+          "speed": 2,
+          "use": "large hero title / callout"
+        },
+        {
+          "selector": ".ds-pinch-parallax-rule-fast",
+          "speed": 3,
+          "use": "hero vertical/horizontal rules"
+        },
+        {
+          "selector": ".ds-pinch-parallax-rule-faster",
+          "speed": 4,
+          "use": "foreground rule accent"
+        },
+        {
+          "selector": ".ds-pinch-parallax-ornament",
+          "speed": -1,
+          "use": "sunrise/cross ornament counter motion"
+        },
+        {
+          "selector": ".ds-pinch-parallax-section-line",
+          "speed": -2,
+          "use": "section line art"
+        },
+        {
+          "selector": ".ds-pinch-parallax-story-image",
+          "speed": 0.6,
+          "use": "story split image"
+        }
+      ],
+      "reduced_motion": "set transforms to none; keep static layering and one opacity reveal"
+    }
+  },
+  "implementation_contract": {
+    "naming": {
+      "prefix": "ds-pinch-",
+      "state": "is-",
+      "motion": "motion-",
+      "utility": "u-"
+    },
+    "required_css_classes": [
+      "ds-pinch-hero-poster",
+      "ds-pinch-ticker",
+      "ds-pinch-mobile-nav",
+      "ds-pinch-hamburger--squeeze",
+      "ds-pinch-drawn-rule",
+      "ds-pinch-link-arrow",
+      "ds-pinch-menu-grid",
+      "ds-pinch-specialty-block",
+      "ds-pinch-callout",
+      "ds-pinch-order-form",
+      "ds-pinch-input-container",
+      "ds-pinch-flyout-menu",
+      "ds-pinch-story-split",
+      "ds-pinch-carousel",
+      "ds-pinch-badge",
+      "ds-pinch-tooltip"
+    ],
+    "css_custom_properties": {
+      "--pinch-cacao": "#352824",
+      "--pinch-ink": "#2C211E",
+      "--pinch-espresso": "#231F1F",
+      "--pinch-roast": "#2D211E",
+      "--pinch-cream": "#FFF8EB",
+      "--pinch-paper": "#FFF7EA",
+      "--pinch-blush": "#FFD0D0",
+      "--pinch-ease-signature": "cubic-bezier(.77,0,.175,1)",
+      "--pinch-ease-flyout": "cubic-bezier(.645,.045,.355,1)"
+    },
+    "js_hooks": [
+      "data-scroll",
+      "data-rellax-speed",
+      "data-rellax-percentage",
+      "data-menu-target",
+      "data-carousel",
+      "data-tooltip"
+    ],
+    "export": {
+      "css": "PostCSS + Autoprefixer compatible",
+      "js": "Vite/library optional for menu/parallax/carousel hooks",
+      "assets": "keep reference assets in personality folder; client implementation should replace brand-owned logos/photos unless licensed"
+    }
+  },
+  "accessibility": {
+    "contrast": [
+      {
+        "pairing": "Warm Flour on Cacao Ground",
+        "intent": "AAA for large/normal text"
+      },
+      {
+        "pairing": "Espresso Ink on Warm Flour",
+        "intent": "AAA"
+      },
+      {
+        "pairing": "White on photography",
+        "intent": "requires cacao overlay >= 55%"
+      },
+      {
+        "pairing": "Validation Blush with Espresso text",
+        "intent": "AA for form errors"
+      }
+    ],
+    "focus": "2px solid current readable color, 4px offset; for dark backgrounds use Warm Flour, for paper use Espresso Ink.",
+    "reduced_motion": "Respect prefers-reduced-motion by disabling parallax, carousel autoplay and repeated icon pulse; keep content visible.",
+    "menu_dialog": "Flyout menus must lock scroll only while active, trap focus, expose close button label, and restore focus on close.",
+    "forms": "Required fields need visible text/aria-required; errors should not rely only on blush background."
+  },
+  "risks_and_mitigations": [
+    {
+      "risk": "Dark brown dominance can become heavy across many sessions.",
+      "mitigation": "Alternate cacao bands with warm paper/white sessions and use product photography as relief."
+    },
+    {
+      "risk": "Hero text over food photography can lose contrast.",
+      "mitigation": "Use source-like dark border band or overlay at rgba(44,33,30,.55+) before cream text."
+    },
+    {
+      "risk": "Parallax and negative margins can collide on mobile.",
+      "mitigation": "Freeze parallax below 768px and convert split/offset layouts to stacked flow."
+    },
+    {
+      "risk": "Brand-specific logo/cross/sunrise could leak into client identity.",
+      "mitigation": "Treat as reference ornaments; create new icons/marks per client."
+    },
+    {
+      "risk": "Source Skeleton blue button token is unrelated to the brand.",
+      "mitigation": "Flag as legacy and avoid mapping it to accent."
+    },
+    {
+      "risk": "Full-screen menus can trap keyboard users if implemented casually.",
+      "mitigation": "Use dialog semantics, focus trap and Esc close."
+    }
+  ],
+  "preview_artifacts": {
+    "markdown": "design-systems/previews/markdown/reference-ds-01-pinchmans-ca-preview.md",
+    "visual_html": "design-systems/previews/html/reference-ds-01-pinchmans-ca-visual-preview.html",
+    "visual_png": "design-systems/previews/screenshots/reference-ds-01-pinchmans-ca/reference-ds-01-pinchmans-ca-visual-preview.png",
+    "menu_open_png": "design-systems/previews/screenshots/reference-ds-01-pinchmans-ca/reference-ds-01-pinchmans-ca-visual-preview-menu-open.png"
+  },
+  "preview_quality_contract": {
+    "status": "revised after full-DS audit",
+    "principle": "The visual preview must be a navigable design-system demo, not a static screenshot composition.",
+    "required_interactions": [
+      "hamburger opens full-screen flyout menu",
+      "menu links navigate to internal DS sessions and close overlay",
+      "Escape closes menu and modal",
+      "component modal opens/closes and uses dialog semantics",
+      "tooltips appear on hover/focus-within",
+      "all anchor links target real sections",
+      "desktop and mobile previews must have no horizontal overflow"
+    ],
+    "required_component_lab": [
+      "buttons: primary, outline, text-link and disabled",
+      "inputs: offset-frame text/email fields and submit",
+      "badges: filled and outline square labels",
+      "tooltip: square high-contrast helper",
+      "modal: cacao backdrop and warm-paper dialog",
+      "nav: compact menu-board navigation",
+      "cards: editorial item card with internal frame",
+      "icons: utility set displayed as tokens"
+    ],
+    "visual_guardrails": [
+      "no decorative panel may overlap a following section",
+      "system tags may not overlap CTAs",
+      "menus must not be permanently open in the hero composition",
+      "mobile line art must not cross body text or controls",
+      "proof elements must remain clickable and readable"
+    ]
+  },
+  "effects_and_interaction_contract": {
+    "status": "explicit motion/effects layer added after review",
+    "gradients": {
+      "design_intent": "The original reference is mostly flat-color and photographic. Gradients must be subtle atmospheric helpers, not a new decorative language.",
+      "tokens": [
+        {
+          "name": "oven-shadow-overlay",
+          "css": "linear-gradient(90deg, rgba(44,33,30,.96), rgba(53,40,36,.68), rgba(35,31,31,.92))",
+          "use": "hero image readability and dark warm depth",
+          "avoid": "do not use as purple/blue decorative gradient"
+        },
+        {
+          "name": "cacao-vignette",
+          "css": "radial-gradient(circle at 70% 25%, rgba(255,248,235,.08), rgba(44,33,30,0) 34%), linear-gradient(180deg, rgba(35,31,31,.22), rgba(35,31,31,.88))",
+          "use": "long dark sessions where photography or line art needs depth"
+        },
+        {
+          "name": "paper-wash",
+          "css": "linear-gradient(180deg, #FFF8EB 0%, #FFFFFF 66%, #FFF7EA 100%)",
+          "use": "documentation, form and token sessions when a white-to-paper transition is needed"
+        },
+        {
+          "name": "product-hover-warmth",
+          "css": "linear-gradient(180deg, rgba(44,33,30,0), rgba(44,33,30,.62))",
+          "use": "specialty/product image hover labels"
+        }
+      ],
+      "rules": [
+        "Use gradients primarily as overlays over image or paper transitions.",
+        "Keep opacity low enough that the system still reads as flat editorial, not glossy.",
+        "Never replace the cacao/paper contrast with a generic gradient background."
+      ]
+    },
+    "opacity_system": {
+      "tokens": [
+        {
+          "name": "image-readability-strong",
+          "value": "rgba(44,33,30,.72)",
+          "use": "cream text over bright food photography"
+        },
+        {
+          "name": "image-readability-standard",
+          "value": "rgba(44,33,30,.55)",
+          "use": "hero and story overlays"
+        },
+        {
+          "name": "panel-glass-cacao",
+          "value": "rgba(44,33,30,.66)",
+          "use": "contract panel and floating labels"
+        },
+        {
+          "name": "hover-overlay-soft",
+          "value": "rgba(53,40,36,.28)",
+          "use": "product tile hover base"
+        },
+        {
+          "name": "hover-overlay-deep",
+          "value": "rgba(53,40,36,.76)",
+          "use": "product captions and image hover text"
+        },
+        {
+          "name": "disabled-control",
+          "value": ".45 opacity",
+          "use": "disabled buttons/fields"
+        },
+        {
+          "name": "line-art-muted",
+          "value": "rgba(255,248,235,.48)",
+          "use": "secondary icon/button borders on dark"
+        }
+      ],
+      "accessibility_rule": "Opacity cannot be the only state signal. For disabled/error/active states combine opacity with cursor, border, text or layout changes."
+    },
+    "mouse_over_states": {
+      "global_principle": "Hover states should feel like paper, ink and product photography responding to touch, not like app chrome.",
+      "patterns": [
+        {
+          "component": "text-link",
+          "hover": "underline scaleX(0 -> 1), 250-400ms, signature easing",
+          "focus": "visible outline with 4px offset"
+        },
+        {
+          "component": "order-chip",
+          "hover": "center underline expands to 82%; background remains cream",
+          "focus": "outline in cream/ink depending background"
+        },
+        {
+          "component": "button-primary",
+          "hover": "translateY(-3px) + slight background warmth",
+          "active": "translateY(0) and brightness(.92)"
+        },
+        {
+          "component": "specialty-image",
+          "hover": "caption slides from bottom, overlay deepens, image scale 1.03",
+          "active": "caption remains visible"
+        },
+        {
+          "component": "hamburger",
+          "hover": "top/bottom bars offset horizontally; click opens flyout",
+          "active": "aria-expanded true"
+        },
+        {
+          "component": "tooltip-trigger",
+          "hover": "tooltip opacity 0 -> 1 and translateY(.4rem -> 0)",
+          "focus": "same as hover"
+        },
+        {
+          "component": "modal-trigger",
+          "hover": "button lift; click opens cacao backdrop",
+          "active": "modal focus moves to close button"
+        }
+      ]
+    },
+    "entrances_and_exits": {
+      "entry_principle": "Entrances reveal craft: lines draw, type rises, images breathe in. Exits are decisive and directional: overlays slide out or fade quickly.",
+      "entrance_patterns": [
+        {
+          "name": "draw-line-in",
+          "properties": "scaleX or stroke-dashoffset 400 -> 0, opacity 0 -> 1",
+          "duration": "750-950ms",
+          "easing": "cubic-bezier(.77,0,.175,1)",
+          "use": "section rules and hero lines"
+        },
+        {
+          "name": "fade-up-in",
+          "properties": "opacity 0 -> 1; translateY(4rem -> 0)",
+          "duration": "750-850ms",
+          "easing": "signature",
+          "use": "hero copy, component groups, product cards"
+        },
+        {
+          "name": "fade-left-in",
+          "properties": "opacity 0 -> 1; translateX(-4rem -> 0)",
+          "duration": "750ms",
+          "easing": "signature",
+          "use": "kickers, proof rails, editorial labels"
+        },
+        {
+          "name": "photo-breathe-in",
+          "properties": "scale(1.01 -> 1.04); translateY(-1.2rem -> 1.2rem)",
+          "duration": "8-12s alternate",
+          "easing": "signature",
+          "use": "hero/product/story photography"
+        }
+      ],
+      "exit_patterns": [
+        {
+          "name": "flyout-exit-x",
+          "properties": "translateX(0 -> 100%)",
+          "duration": "300ms",
+          "easing": "cubic-bezier(.645,.045,.355,1)",
+          "use": "full-screen menu close"
+        },
+        {
+          "name": "modal-fade-out",
+          "properties": "opacity 1 -> 0; panel translateY(0 -> 2rem)",
+          "duration": "250ms",
+          "easing": "ease/signature",
+          "use": "modal close"
+        },
+        {
+          "name": "nav-slide-out-up",
+          "properties": "translateY(0 -> -100%)",
+          "duration": "600-750ms",
+          "easing": "signature",
+          "use": "Headroom-style mobile nav"
+        },
+        {
+          "name": "caption-slide-out",
+          "properties": "translateY(0 -> 130%)",
+          "duration": "350ms",
+          "easing": "signature",
+          "use": "product tile hover exit"
+        }
+      ],
+      "reduced_motion": "Disable parallax, long breathing loops and repeated pulses. Keep one opacity reveal with no transform."
+    }
+  },
+  "outputs": {
+    "json": "design-systems/json/reference-ds-01-pinchmans-ca.json",
+    "markdown": "design-systems/previews/markdown/reference-ds-01-pinchmans-ca-preview.md",
+    "html": "design-systems/previews/html/reference-ds-01-pinchmans-ca-visual-preview.html",
+    "screenshots": "design-systems/previews/screenshots/reference-ds-01-pinchmans-ca/"
+  },
+  "exports": {
+    "markdown": "design-systems/previews/markdown/reference-ds-01-pinchmans-ca-preview.md",
+    "visual_html": "design-systems/previews/html/reference-ds-01-pinchmans-ca-visual-preview.html",
+    "visual_png": "design-systems/previews/screenshots/reference-ds-01-pinchmans-ca/reference-ds-01-pinchmans-ca-visual-preview.png",
+    "menu_open_png": "design-systems/previews/screenshots/reference-ds-01-pinchmans-ca/reference-ds-01-pinchmans-ca-visual-preview-menu-open.png"
+  },
+  "id": "reference-ds-01-pinchmans-ca",
+  "referenceSite": "pinchmans.ca",
+  "personalitySlug": "01-acolhedor-familiar",
+  "source": {
+    "sourceReferenceId": "pinchmans.ca",
+    "sourceReferenceNote": "Referencia visual ja convertida em DS-base; arquivo pesado original nao e necessario no fluxo oficial.",
+    "extractedSitePath": "_jumper-sites-system/_referencias-visuais/01-acolhedor-familiar/design-systems/preview-assets/pinchmans.ca",
+    "extractedSignals": {
+      "siteDir": "pinchmans.ca",
+      "extractedAt": "2026-06-05",
+      "fileCount": 59,
+      "imageCount": 34,
+      "fontCount": 8,
+      "scriptCount": 6,
+      "cssCount": 3,
+      "colors": [
+        "#fff",
+        "#444746",
+        "#f9f9f9",
+        "#4d90fe",
+        "#222",
+        "rgba(0,0,0,.1)",
+        "#b2b2b2",
+        "#ebebeb",
+        "#f1f1f1",
+        "#d93025",
+        "rgba(0,0,0,.08)",
+        "#525252",
+        "#000",
+        "#d3d3d3",
+        "#f00",
+        "#555",
+        "#f5f5f5",
+        "#1a73e8",
+        "#d8d8d8",
+        "#185abc",
+        "rgba(73,143,225,.5)",
+        "#e24a4a",
+        "rgba(226,74,74,.49)",
+        "#dfdfdf"
+      ],
+      "fontFamilies": [
+        "Roboto,helvetica,arial,sans-serif"
+      ],
+      "fontFiles": [
+        "2adefcbc041e7d18_fontawesome-webfont.woff2",
+        "3d536d49566e82a7_0QIhMX1D_JOuMw_LIftLtfOm8w.woff2",
+        "4feabe8db7d618b7_Gilroy-Regular.woff",
+        "55606fbc76dc232c_0QIvMX1D_JOuMwT7I_FMl_GW8g.woff2",
+        "6b102ab35aa1f2b3_0QIvMX1D_JOuMwr7I_FMl_E.woff2",
+        "8139a402ce239285_KFO7CnqEu92Fr1ME7kSn66aGLdTylU.woff2",
+        "97ff627efe96ef59_Gilroy-Bold.woff",
+        "b8c34b169f567a62_Gilroy-Black.woff"
+      ],
+      "imageSamples": [
+        "assets/06684d3ae035ff90_cakes.jpg",
+        "assets/07c9ad6465f5e1f5_slider-3.jpg",
+        "assets/1b9efb22c9385009_logo_48.png",
+        "assets/24956953c06c1c64_sticky-buns.jpg",
+        "assets/27f5def1ded62581_coffee.jpg",
+        "assets/300ab1bd20da04fb_apple-touch-icon.png",
+        "assets/39d9c07dddbe2171_hours-1.jpg",
+        "assets/3e27b81382cbf8be_bread.jpg",
+        "assets/4683011c8fdb3475_logo.svg",
+        "assets/4a310efbb5836edd_cake-03.jpg",
+        "assets/4eee7215ec258b6b_pressed-sandwiches.jpg",
+        "assets/52e42c63bc3f6acc_slider-1.jpg",
+        "assets/57dbf94a5654f690_empanadas.jpg",
+        "assets/625fe30b6bc0c300_logo-black.svg",
+        "assets/75e5b2bfd3a46bca_gift-basket.svg",
+        "assets/7812fbb275fd6d0a_sunrise.svg"
+      ],
+      "textSnippets": [
+        "Google Maps",
+        "Pinchman"
+      ]
+    }
+  },
+  "referenceUsage": {
+    "siteSpecific": true,
+    "notPersonalityWide": true,
+    "qualityRule": "Usar como referencia individual do site; nao padronizar componentes, hero, motion ou menus entre DSs."
+  },
+  "previewNavigation": [
+    {
+      "id": "menu-top",
+      "label": "Menu / top",
+      "menuLabel": "Ticker + nav"
+    },
+    {
+      "id": "top",
+      "label": "Top",
+      "menuLabel": "Topo poster"
+    },
+    {
+      "id": "hero",
+      "label": "Sessao Hero",
+      "menuLabel": "Hero forno editorial"
+    },
+    {
+      "id": "color-tokens",
+      "label": "Tokens de cor",
+      "menuLabel": "Cacao / farinha"
+    },
+    {
+      "id": "gradients",
+      "label": "Gradientes / opacidade",
+      "menuLabel": "Oven shadow"
+    },
+    {
+      "id": "type-system",
+      "label": "Type system",
+      "menuLabel": "Gilroy + Lora"
+    },
+    {
+      "id": "type-detail",
+      "label": "Tipografia detalhada",
+      "menuLabel": "Escala de padaria"
+    },
+    {
+      "id": "effects",
+      "label": "Efeitos e mouse overs",
+      "menuLabel": "Hover de produto"
+    },
+    {
+      "id": "components",
+      "label": "Componentes",
+      "menuLabel": "Componentes de balcao"
+    },
+    {
+      "id": "contract",
+      "label": "Contrato sem repeticao",
+      "menuLabel": "Estados globais Pinchmans"
+    },
+    {
+      "id": "menu-board",
+      "label": "Menu board component",
+      "menuLabel": "Menu board escuro"
+    },
+    {
+      "id": "reference-slip",
+      "label": "Reference slip",
+      "menuLabel": "Slip de pedido artesanal"
+    },
+    {
+      "id": "cards-sections",
+      "label": "Cards e secoes",
+      "menuLabel": "Cards de especialidades"
+    },
+    {
+      "id": "story",
+      "label": "Story split parallax",
+      "menuLabel": "Historia parallax"
+    },
+    {
+      "id": "icons",
+      "label": "Icones",
+      "menuLabel": "Icones de loja"
+    },
+    {
+      "id": "handoff",
+      "label": "Handoff de referencia",
+      "menuLabel": "Handoff bakery"
+    },
+    {
+      "id": "motion",
+      "label": "Motion contract",
+      "menuLabel": "Motion draw-line"
+    },
+    {
+      "id": "replay-motion",
+      "label": "Replay motion",
+      "menuLabel": "Replay draw-line"
+    }
+  ],
+  "requiredPreviewContract": {
+    "allMenuLinksMustResolve": true,
+    "heroMustOccupyFullViewport": true,
+    "noRepeatedGenericSections": true,
+    "noClippedTextOrOverlaps": true,
+    "showGradientsOpacityHoverEntryExitParallaxIcons": true
+  }
+}

@@ -1,0 +1,615 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "04.3",
+  "design_system_name": "Contabilidade Premium",
+  "category": "04 — Técnico e Confiável",
+  "subcategory": "Serviços financeiros e consultivos — credibilidade mensurável, dados como protagonistas",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Crowe (crowe.com) + Pearl Accountants (pearlaccountants.com)",
+    "url": "https://crowe.com",
+    "location": "Crowe Global — rede internacional (Chicago, EUA); Pearl Accountants — Londres, Reino Unido",
+    "awards": [
+      "Crowe Global: 8ª maior rede global de contabilidade por receita, com mais de 200 firmas independentes em 145+ países (dado confirmado via pesquisa em 2026)",
+      "Pearl Accountants: citada como referência estilística de design limpo com badges de credibilidade — sem prêmios específicos confirmados; nenhum prêmio foi inventado"
+    ],
+    "why_chosen": "A Crowe representa o padrão visual das grandes redes de auditoria: sobriedade cromática, tipografia grotesca disciplinada e dados institucionais em destaque. A Pearl Accountants adiciona a camada de conversão para pequenos negócios: badges de credibilidade visíveis, prova social com números reais e CTAs de diagnóstico. A essência capturada é 'dados específicos > promessas vagas' — números grandes em fonte mono, counters animados, tabelas elegantes e um dourado sutil que sinaliza premium sem ostentação. Nota tipográfica: a referência usa GT America (comercial); o DS adota Archivo (Google Fonts) como substituta oficial documentada."
+  },
+  "colors": {
+    "primary": "#2C3E50",
+    "primary_usage": "Charcoal — cor institucional. Headings, botões primários, navbar, footer e seções dark de estatísticas. Contraste 10.98:1 sobre branco (AAA).",
+    "secondary": "#D4AF37",
+    "secondary_usage": "Dourado-sutil — SOMENTE accent decorativo: filetes, sublinhados de heading, ícones, bordas de badge, marcadores de tabela e detalhes de counters. NUNCA como texto sobre fundo claro (2.10:1 — reprova). Para texto dourado sobre claro, usar o token derivado secondary_text (#8A6A1B).",
+    "secondary_text": "#8A6A1B",
+    "secondary_text_usage": "Tom dourado-escuro derivado de #D4AF37 (mesmo matiz, luminância reduzida) para texto dourado sobre superfícies claras. Contraste 5.05:1 sobre branco (AA). Ajuste documentado em contrast_verification.notes.",
+    "secondary_on_dark": "#E8C766",
+    "secondary_on_dark_usage": "Dourado-claro para números e destaques sobre seções charcoal-escuras (#1B2733). Contraste 9.24:1 (AAA).",
+    "surface": "#FFFFFF",
+    "surface_alt": "#F7F8FA",
+    "surface_dark": "#1B2733",
+    "surface_dark_usage": "Fundo das seções de estatísticas/counters e do footer — o palco onde os dados dourados brilham.",
+    "text_primary": "#1B2733",
+    "text_secondary": "#4A5C6E",
+    "text_muted": "#5F6E7D",
+    "text_on_dark": "#FFFFFF",
+    "text_on_dark_secondary": "#B0BAC4",
+    "border": "#D8DEE4",
+    "error": "#C0392B",
+    "success": "#1E8449",
+    "warning": "#9C6500",
+    "neutral_scale": {
+      "50": "#F7F8FA",
+      "100": "#EDF0F3",
+      "200": "#D8DEE4",
+      "300": "#B8C2CC",
+      "400": "#8D9AA7",
+      "500": "#6B7A89",
+      "600": "#4A5C6E",
+      "700": "#3A4B5C",
+      "800": "#2C3E50",
+      "900": "#1B2733"
+    },
+    "gold_scale": {
+      "100": "#F5EDD6",
+      "200": "#EAD9A0",
+      "300": "#E8C766",
+      "500": "#D4AF37",
+      "700": "#8A6A1B"
+    },
+    "contrast_verification": {
+      "primary_on_surface": "10.98:1 (#2C3E50 sobre #FFFFFF) — AAA para texto normal",
+      "text_primary_on_surface": "15.17:1 (#1B2733 sobre #FFFFFF) — AAA",
+      "text_secondary_on_surface": "6.89:1 (#4A5C6E sobre #FFFFFF) — AA/AAA",
+      "text_muted_on_surface": "5.23:1 (#5F6E7D sobre #FFFFFF) — AA",
+      "secondary_on_surface": "2.10:1 (#D4AF37 sobre #FFFFFF) — REPROVA para texto; uso restrito a elementos decorativos",
+      "secondary_text_on_surface": "5.05:1 (#8A6A1B sobre #FFFFFF) — AA texto normal",
+      "secondary_text_on_surface_alt": "4.75:1 (#8A6A1B sobre #F7F8FA) — AA texto normal",
+      "secondary_on_dark_section": "9.24:1 (#E8C766 sobre #1B2733) — AAA; #D4AF37 sobre #1B2733 = 7.21:1 (AAA)",
+      "white_on_primary": "10.98:1 (#FFFFFF sobre #2C3E50) — AAA (botões primários)",
+      "charcoal_on_gold_button": "5.22:1 (#2C3E50 sobre #D4AF37) — AA (botão dourado usa texto charcoal, nunca branco)",
+      "text_on_dark_secondary": "7.70:1 (#B0BAC4 sobre #1B2733) — AAA",
+      "error_on_surface": "5.44:1 — AA",
+      "success_on_surface": "4.72:1 — AA",
+      "warning_on_surface": "4.91:1 (#9C6500) — AA",
+      "notes": "O brief indicava #D4AF37 como secundária, mas dourado sobre branco rende apenas 2.10:1. Solução em três tokens: (1) #D4AF37 permanece como accent puramente decorativo em fundos claros; (2) #8A6A1B (dourado-escuro, mesmo matiz ~46°) foi derivado para qualquer TEXTO dourado sobre claro — 5.05:1, AA; (3) #E8C766 (dourado-claro) para números sobre seções escuras — 9.24:1, AAA. text_muted foi ajustado de #6B7A89 (4.40:1, reprovava por pouco) para #5F6E7D (5.23:1). Todas as razões calculadas com a fórmula de luminância relativa WCAG 2.1."
+    }
+  },
+  "typography": {
+    "heading_font": "Archivo",
+    "heading_font_source": "Google Fonts",
+    "heading_font_note": "Substituta documentada de GT America (Grilli Type, comercial) usada pela referência. Archivo é uma grotesca americana com largura e postura neutras muito próximas, disponível em variable font.",
+    "body_font": "IBM Plex Sans",
+    "body_font_source": "Google Fonts",
+    "body_font_note": "Grotesca corporativa com excelente legibilidade em corpo pequeno e tabelas; DNA técnico-institucional alinhado à personalidade 04.",
+    "mono_font": "IBM Plex Mono",
+    "mono_font_source": "Google Fonts",
+    "mono_font_usage": "EXCLUSIVA para dados numéricos: counters do hero, estatísticas, valores em tabelas, percentuais e badges numéricos. Usar font-variant-numeric: tabular-nums para alinhamento de colunas. É a assinatura visual do DS — números nunca aparecem na fonte de texto.",
+    "base_size": "16px",
+    "scales": {
+      "mobile": {
+        "h1": { "size": "34px", "line_height": "1.15", "weight": "700", "letter_spacing": "-0.02em", "font": "Archivo" },
+        "h2": { "size": "26px", "line_height": "1.2", "weight": "700", "letter_spacing": "-0.015em", "font": "Archivo" },
+        "h3": { "size": "20px", "line_height": "1.3", "weight": "600", "letter_spacing": "-0.01em", "font": "Archivo" },
+        "body": { "size": "16px", "line_height": "1.6", "weight": "400", "letter_spacing": "0", "font": "IBM Plex Sans" },
+        "small": { "size": "14px", "line_height": "1.5", "weight": "400", "letter_spacing": "0.01em", "font": "IBM Plex Sans" },
+        "stat_number": { "size": "40px", "line_height": "1.05", "weight": "600", "letter_spacing": "-0.01em", "font": "IBM Plex Mono" },
+        "overline": { "size": "12px", "line_height": "1.4", "weight": "600", "letter_spacing": "0.12em", "transform": "uppercase", "font": "IBM Plex Sans" }
+      },
+      "desktop": {
+        "h1": { "size": "52px", "line_height": "1.1", "weight": "700", "letter_spacing": "-0.025em", "font": "Archivo" },
+        "h2": { "size": "38px", "line_height": "1.15", "weight": "700", "letter_spacing": "-0.02em", "font": "Archivo" },
+        "h3": { "size": "26px", "line_height": "1.25", "weight": "600", "letter_spacing": "-0.01em", "font": "Archivo" },
+        "body": { "size": "17px", "line_height": "1.65", "weight": "400", "letter_spacing": "0", "font": "IBM Plex Sans" },
+        "small": { "size": "14px", "line_height": "1.5", "weight": "400", "letter_spacing": "0.01em", "font": "IBM Plex Sans" },
+        "stat_number": { "size": "64px", "line_height": "1.0", "weight": "600", "letter_spacing": "-0.02em", "font": "IBM Plex Mono" },
+        "overline": { "size": "13px", "line_height": "1.4", "weight": "600", "letter_spacing": "0.14em", "transform": "uppercase", "font": "IBM Plex Sans" }
+      }
+    }
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — valores idênticos aos de colors, typography, spacing, borders, shadows e motion deste DS.",
+    "tokens": {
+      "--color-primary": "#2C3E50",
+      "--color-secondary": "#D4AF37",
+      "--color-secondary-text": "#8A6A1B",
+      "--color-secondary-on-dark": "#E8C766",
+      "--color-surface": "#FFFFFF",
+      "--color-surface-alt": "#F7F8FA",
+      "--color-surface-dark": "#1B2733",
+      "--color-text": "#1B2733",
+      "--color-text-secondary": "#4A5C6E",
+      "--color-text-muted": "#5F6E7D",
+      "--color-text-on-dark": "#FFFFFF",
+      "--color-text-on-dark-secondary": "#B0BAC4",
+      "--color-border": "#D8DEE4",
+      "--color-error": "#C0392B",
+      "--color-success": "#1E8449",
+      "--color-warning": "#9C6500",
+      "--color-neutral-50": "#F7F8FA",
+      "--color-neutral-100": "#EDF0F3",
+      "--color-neutral-200": "#D8DEE4",
+      "--color-neutral-300": "#B8C2CC",
+      "--color-neutral-400": "#8D9AA7",
+      "--color-neutral-500": "#6B7A89",
+      "--color-neutral-600": "#4A5C6E",
+      "--color-neutral-700": "#3A4B5C",
+      "--color-neutral-800": "#2C3E50",
+      "--color-neutral-900": "#1B2733",
+      "--color-gold-100": "#F5EDD6",
+      "--color-gold-200": "#EAD9A0",
+      "--color-gold-300": "#E8C766",
+      "--color-gold-500": "#D4AF37",
+      "--color-gold-700": "#8A6A1B",
+      "--font-heading": "'Archivo', 'Helvetica Neue', Arial, sans-serif",
+      "--font-body": "'IBM Plex Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "--font-mono": "'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace",
+      "--text-h1": "clamp(2.125rem, 1.6rem + 2.4vw, 3.25rem)",
+      "--text-h2": "clamp(1.625rem, 1.35rem + 1.2vw, 2.375rem)",
+      "--text-h3": "clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem)",
+      "--text-body": "clamp(1rem, 0.97rem + 0.12vw, 1.0625rem)",
+      "--text-small": "0.875rem",
+      "--text-stat": "clamp(2.5rem, 1.6rem + 3.6vw, 4rem)",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "32px",
+      "--space-xxl": "48px",
+      "--space-xxxl": "72px",
+      "--space-xxxxl": "104px",
+      "--section-gap": "clamp(56px, 4vw + 32px, 104px)",
+      "--radius-none": "0",
+      "--radius-sm": "4px",
+      "--radius-md": "6px",
+      "--radius-lg": "10px",
+      "--radius-full": "9999px",
+      "--shadow-xs": "0 1px 2px rgba(27, 39, 51, 0.05)",
+      "--shadow-sm": "0 1px 3px rgba(27, 39, 51, 0.08)",
+      "--shadow-md": "0 4px 12px rgba(27, 39, 51, 0.10)",
+      "--shadow-lg": "0 10px 28px rgba(27, 39, 51, 0.14)",
+      "--focus-ring": "0 0 0 3px rgba(212, 175, 55, 0.45)",
+      "--duration-instant": "120ms",
+      "--duration-fast": "180ms",
+      "--duration-base": "260ms",
+      "--duration-slow": "420ms",
+      "--duration-counter": "1400ms",
+      "--ease-standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--ease-decelerate": "cubic-bezier(0, 0, 0.2, 1)",
+      "--ease-counter": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "--container-max": "1200px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "xxl": "48px",
+      "xxxl": "72px",
+      "xxxxl": "104px"
+    },
+    "section_spacing": {
+      "mobile": "56px",
+      "tablet": "80px",
+      "desktop": "104px"
+    },
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "32px",
+      "container_desktop": "48px"
+    },
+    "container_max_width": "1200px",
+    "gutters": "24px (mobile) / 32px (desktop) — grid de 12 colunas"
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "4px",
+      "md": "6px",
+      "lg": "10px",
+      "full": "9999px"
+    },
+    "radius_usage": {
+      "buttons": "4px — cantos quase retos comunicam rigor e precisão",
+      "cards": "6px — discreto, nunca lúdico",
+      "inputs": "4px",
+      "images": "6px",
+      "containers": "10px apenas em painéis de destaque (bloco de diagnóstico); seções full-width sem radius",
+      "badges": "9999px (pill) — únicos elementos arredondados, criando contraste proposital com o resto"
+    },
+    "stroke": {
+      "thin": "1px solid #D8DEE4",
+      "medium": "2px solid #2C3E50",
+      "gold_accent": "borda esquerda de 3px #D4AF37 em cards de destaque e células de total em tabelas"
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "xs": "0 1px 2px rgba(27, 39, 51, 0.05)",
+    "sm": "0 1px 3px rgba(27, 39, 51, 0.08)",
+    "md": "0 4px 12px rgba(27, 39, 51, 0.10)",
+    "lg": "0 10px 28px rgba(27, 39, 51, 0.14)",
+    "focus_ring": "0 0 0 3px rgba(212, 175, 55, 0.45)",
+    "shadow_usage": "Sombras contidas e frias (base charcoal, nunca preto puro). Cards em repouso usam xs + borda 1px; hover eleva para md com translateY(-2px). lg reservado para o painel de diagnóstico/CTA flutuante. Dropdown da navegação usa md. Nada de sombras coloridas ou glow — o brilho do DS vem do dourado, não da luz."
+  },
+  "motion": {
+    "durations": {
+      "instant": "120ms",
+      "fast": "180ms",
+      "base": "260ms",
+      "slow": "420ms",
+      "counter": "1400ms",
+      "counter_stagger": "150ms entre counters consecutivos"
+    },
+    "easings": {
+      "standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "decelerate": "cubic-bezier(0, 0, 0.2, 1)",
+      "counter": "cubic-bezier(0.16, 1, 0.3, 1) — desaceleração longa: o número 'assenta' no valor final"
+    },
+    "animations": [
+      { "name": "count-up", "duration": "1400ms", "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "trigger": "IntersectionObserver ao entrar 30% no viewport, dispara uma única vez; números sobem de 0 ao valor final em requestAnimationFrame com tabular-nums para evitar tremor de largura" },
+      { "name": "fade-in-up", "duration": "420ms", "easing": "cubic-bezier(0, 0, 0.2, 1)", "trigger": "scroll (IntersectionObserver); translateY(16px)→0 + opacity 0→1; stagger de 80ms entre cards irmãos" },
+      { "name": "gold-underline-reveal", "duration": "420ms", "easing": "cubic-bezier(0.4, 0, 0.2, 1)", "trigger": "scroll: o filete dourado sob o H2 cresce de scaleX(0) a scaleX(1), transform-origin left" },
+      { "name": "button-hover", "duration": "180ms", "easing": "cubic-bezier(0.4, 0, 0.2, 1)", "trigger": "hover/focus: background escurece um passo e translateY(-1px); sem mudança de tamanho" },
+      { "name": "card-lift", "duration": "260ms", "easing": "cubic-bezier(0.4, 0, 0.2, 1)", "trigger": "hover: translateY(-2px) + shadow xs→md + borda esquerda dourada surge" },
+      { "name": "table-row-highlight", "duration": "120ms", "easing": "linear", "trigger": "hover em linha de tabela: background #F7F8FA" }
+    ],
+    "prefers_reduced_motion": true,
+    "reduced_motion_strategy": "Com prefers-reduced-motion: counters renderizam o valor final imediatamente (sem contagem), fade-ins viram opacity estática, e todas as transições caem para 0.01ms. O conteúdo numérico NUNCA depende da animação para ser legível."
+  },
+  "components": {
+    "buttons": {
+      "primary": {
+        "background": "#2C3E50",
+        "color": "#FFFFFF",
+        "border": "none",
+        "radius": "4px",
+        "padding": "14px 28px",
+        "font": "IBM Plex Sans 600, 16px, letter-spacing 0.01em",
+        "hover": "background #1B2733, translateY(-1px)",
+        "focus": "outline 3px rgba(212,175,55,0.45), outline-offset 2px",
+        "active": "background #1B2733, translateY(0)",
+        "disabled": "background #D8DEE4, color #6B7A89, cursor not-allowed"
+      },
+      "gold": {
+        "background": "#D4AF37",
+        "color": "#2C3E50",
+        "border": "none",
+        "radius": "4px",
+        "padding": "14px 28px",
+        "font": "IBM Plex Sans 600, 16px",
+        "hover": "background #C9A227, translateY(-1px)",
+        "focus": "outline 3px rgba(44,62,80,0.4), outline-offset 2px",
+        "disabled": "background #EAD9A0, color #8A6A1B com opacity 0.7",
+        "usage": "CTA de máximo destaque (1 por página, ex: 'Agende um diagnóstico gratuito'). Texto SEMPRE charcoal (5.22:1) — branco sobre dourado reprova."
+      },
+      "secondary": {
+        "background": "transparent",
+        "color": "#2C3E50",
+        "border": "2px solid #2C3E50",
+        "radius": "4px",
+        "padding": "12px 26px",
+        "hover": "background #2C3E50, color #FFFFFF",
+        "focus": "outline 3px rgba(212,175,55,0.45), outline-offset 2px",
+        "disabled": "border-color #D8DEE4, color #6B7A89"
+      },
+      "ghost": {
+        "background": "transparent",
+        "color": "#8A6A1B",
+        "border": "none",
+        "padding": "12px 8px",
+        "decoration": "seta → e sublinhado dourado 2px que desliza no hover",
+        "usage": "links de aprofundamento ('Ver metodologia completa →')"
+      },
+      "sizes": {
+        "sm": "10px 18px / 14px",
+        "md": "14px 28px / 16px",
+        "lg": "17px 36px / 17px"
+      }
+    },
+    "cards": {
+      "stat_card": {
+        "structure": "número gigante (IBM Plex Mono, counter animado) + label overline + descrição de 1 linha",
+        "background": "transparente sobre seção dark (#1B2733) com número em #E8C766, ou #FFFFFF com borda sobre seção clara com número em #2C3E50",
+        "border": "1px solid rgba(255,255,255,0.12) na versão dark; 1px solid #D8DEE4 na clara",
+        "radius": "6px",
+        "padding": "32px",
+        "note": "componente-assinatura do DS — os dados são os protagonistas"
+      },
+      "service_card": {
+        "background": "#FFFFFF",
+        "border": "1px solid #D8DEE4",
+        "radius": "6px",
+        "padding": "32px",
+        "shadow": "xs",
+        "hover": "translateY(-2px), shadow md, borda esquerda 3px #D4AF37 surge",
+        "structure": "ícone linear 32px (stroke #8A6A1B) + h3 + body + métrica de resultado em mono ('média de 23% de economia') + ghost link"
+      },
+      "testimonial_card": {
+        "background": "#F7F8FA",
+        "border_left": "3px solid #D4AF37",
+        "radius": "6px",
+        "padding": "32px",
+        "structure": "resultado numérico em destaque (mono, #8A6A1B) ANTES da citação + citação body + nome/cargo/empresa + badge do segmento",
+        "note": "o depoimento abre com o número, não com o elogio — prova social mensurável"
+      }
+    },
+    "inputs": {
+      "default": {
+        "background": "#FFFFFF",
+        "border": "1px solid #D8DEE4",
+        "radius": "4px",
+        "padding": "13px 16px",
+        "font": "IBM Plex Sans 16px",
+        "placeholder": "#5F6E7D"
+      },
+      "focus": "border-color #2C3E50 + box-shadow 0 0 0 3px rgba(212,175,55,0.30)",
+      "error": "border-color #C0392B + mensagem 14px #C0392B com ícone; aria-describedby ligando input à mensagem",
+      "label": "14px, weight 600, #1B2733, margin-bottom 6px — sempre visível, nunca placeholder-como-label",
+      "campos_numericos": "valores monetários em IBM Plex Mono alinhados à direita"
+    },
+    "hero": {
+      "layout": "split 55/45: à esquerda overline dourada + H1 + subtítulo + par de CTAs (gold + secondary); à direita, painel de dados — card branco elevado com mini-tabela de resultados reais e 2 counters",
+      "background": "#FFFFFF com filete dourado de 3px no topo da página (assinatura visual)",
+      "headline_pattern": "número específico + resultado ('R$ 4,2 milhões economizados em impostos para nossos clientes')",
+      "trust_bar": "faixa logo abaixo do hero com 3-4 badges de credibilidade (CRC, anos de mercado, nº de clientes, certificações) separadas por divisores de 1px",
+      "note": "o hero NÃO usa foto — usa o painel de dados como imagem. Diferencial explícito frente aos irmãos 04.1 (terminal dark) e 04.2 (ilustração geométrica)."
+    },
+    "navigation": {
+      "height": "72px desktop / 60px mobile",
+      "background": "#FFFFFF, borda inferior 1px #D8DEE4; ganha shadow sm ao rolar",
+      "logo": "wordmark Archivo 700 em #2C3E50 com ponto dourado",
+      "links": "IBM Plex Sans 15px 500 #4A5C6E; hover #1B2733 com sublinhado dourado 2px",
+      "cta": "botão gold sm à direita ('Diagnóstico gratuito')",
+      "mobile": "hambúrguer → painel full-screen charcoal com links grandes e telefone clicável"
+    },
+    "footer": {
+      "background": "#1B2733",
+      "structure": "4 colunas: sobre + selos de credibilidade (CRC/certificações em badges outline dourado), serviços, escritório com endereço e mapa textual, e bloco de contato com telefone em IBM Plex Mono",
+      "text": "#B0BAC4 (7.70:1); títulos de coluna em overline #E8C766",
+      "bottom_bar": "linha 1px rgba(255,255,255,0.12) + CNPJ e registro CRC em mono 13px — transparência como credibilidade"
+    },
+    "testimonials": {
+      "layout": "grid de 2 colunas desktop / 1 mobile, com card de destaque ocupando linha inteira contendo case completo: desafio → ação → resultado em 3 números",
+      "style": "ver testimonial_card; sem carrossel — depoimentos estáticos são mais críveis e acessíveis"
+    },
+    "badges": {
+      "credential_badge": {
+        "style": "pill 9999px, borda 1px #D4AF37, background #FFFFFF, texto 13px 600 #8A6A1B, ícone check 14px",
+        "usage": "CRC ativo, ISO, anos de mercado, associações — sempre verificáveis, nunca genéricos ('selo de qualidade' proibido)"
+      },
+      "metric_badge": {
+        "style": "retângulo 4px, background #F5EDD6, texto IBM Plex Mono 13px #8A6A1B (4.1:1 sobre o tint — usar 14px+ bold ou #7A5C15 para AA estrito; documentado no accessibility-report)",
+        "usage": "destaques numéricos inline ('+23% economia média')"
+      },
+      "dark_badge": {
+        "style": "pill, borda 1px #E8C766, texto #E8C766 sobre seções dark",
+        "usage": "versão dos credential badges para footer e seção de stats"
+      }
+    },
+    "tables": {
+      "style": "cabeçalho #2C3E50 com texto branco overline; linhas zebradas #FFFFFF/#F7F8FA; valores em IBM Plex Mono tabular-nums alinhados à direita; linha de total com borda superior 2px #D4AF37 e weight 600; hover de linha #EDF0F3",
+      "usage": "tabelas de planos/preços e comparativos de regime tributário — componente central do DS",
+      "responsive": "mobile: scroll horizontal em wrapper com overflow-x auto + dica visual de gradiente, ou colapso em cards por linha"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Objetivo, preciso e quantificado. Cada afirmação vem acompanhada de um número verificável. Zero adjetivos vazios: em vez de 'excelência em contabilidade', diz 'R$ 4,2 milhões economizados em impostos'. Trata o leitor como gestor inteligente que decide por dados. Formal na medida — próximo de CFO, acessível a MEI.",
+    "headline_examples": [
+      "R$ 4,2 milhões economizados em impostos para nossos clientes nos últimos 3 anos.",
+      "347 empresas atendidas. 98,6% de renovação de contrato. 12 anos de CRC ativo.",
+      "Seu regime tributário errado pode custar 23% do seu lucro. Nós calculamos o certo.",
+      "Fechamento contábil em até 5 dias úteis — com auditoria interna em cada entrega."
+    ],
+    "cta_examples": [
+      "Agende um diagnóstico gratuito",
+      "Calcule sua economia tributária",
+      "Receba a análise do seu regime em 48h",
+      "Fale com um contador — resposta em até 2h úteis"
+    ],
+    "avoid": [
+      "Promessas vagas: 'qualidade e confiança', 'atendimento diferenciado', 'excelência'",
+      "Superlativos sem prova: 'a melhor contabilidade da região'",
+      "Números redondos inventados ('mais de 1000 clientes') — números específicos são mais críveis (347, 98,6%)",
+      "Tom infantilizado, emojis, humor forçado",
+      "Jargão contábil sem tradução (explicar SPED, DCTF quando aparecerem)",
+      "Urgência artificial ('últimas vagas!') — incompatível com credibilidade"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas, max-width 1200px, gutter 24-32px. Layout ancorado em alinhamentos rígidos à esquerda — nada centralizado exceto a seção de stats dark, cujos counters centralizados criam o único momento cerimonial da página.",
+    "page_flow": [
+      { "section": "topbar de credibilidade", "layout": "faixa 40px #1B2733 com registro CRC + telefone em mono — antes mesmo da navegação" },
+      { "section": "navegação", "layout": "logo esquerda, links centro-direita, CTA gold" },
+      { "section": "hero split 55/45", "layout": "texto + CTAs à esquerda; painel de dados (mini-tabela + 2 counters) à direita como 'imagem'" },
+      { "section": "trust bar", "layout": "4 badges de credibilidade em linha, divisores 1px, fundo #F7F8FA" },
+      { "section": "serviços", "layout": "grid 3 colunas de service cards, cada um com métrica de resultado em mono" },
+      { "section": "stats dark (assinatura)", "layout": "full-bleed #1B2733, 4 counters gigantes #E8C766 centralizados com labels overline — o clímax visual da página" },
+      { "section": "metodologia", "layout": "lista numerada 01-04 em mono dourado, alternando texto/detalhe, layout 2 colunas" },
+      { "section": "tabela comparativa", "layout": "tabela elegante de planos ou regimes tributários, linha de total dourada" },
+      { "section": "depoimentos com números", "layout": "grid 2 col + case de destaque full-width" },
+      { "section": "CTA de diagnóstico", "layout": "painel radius 10px, fundo #2C3E50 com filete dourado, formulário curto de 3 campos" },
+      { "section": "footer dark", "layout": "4 colunas + bottom bar com CNPJ/CRC em mono" }
+    ],
+    "image_treatment": "Fotografia é coadjuvante e rara: quando usada, retratos da equipe em ambiente real, dessaturação leve (saturate 0.85) e overlay charcoal 10% para harmonizar. JAMAIS banco de imagem de aperto de mãos. O 'visual' do DS são os próprios dados: painéis, tabelas, counters e gráficos de barra simples em CSS.",
+    "density": "Média-alta: informação abundante, mas respirada por whitespace disciplinado. Tabelas e painéis compactos; seções narrativas arejadas.",
+    "whitespace": "Generoso entre seções (104px desktop), contido dentro dos componentes de dados (paddings de 24-32px) — o contraste de densidade guia o olho do panorama ao detalhe."
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "texto_normal": "todos os pares de texto ≥ 4.5:1 (mínimo real do DS: 4.72:1 success; corpo em 15.17:1)",
+      "texto_grande": "≥ 3:1 em todos os casos",
+      "dourado_decorativo": "#D4AF37 sobre branco (2.10:1) permitido apenas em elementos não-textuais e não-informativos (filetes, bordas); qualquer texto dourado usa #8A6A1B (5.05:1) ou #E8C766 sobre dark (9.24:1)",
+      "componentes_ui": "bordas de input (#D8DEE4) acompanhadas de label de alto contraste; estado de foco com anel dourado 3:1+ contra adjacências"
+    },
+    "keyboard_navigation": "Ordem de tabulação segue o fluxo visual; skip-link 'Pular para o conteúdo' como primeiro elemento focável; menu mobile com focus-trap e fechamento por Esc; tabelas navegáveis célula a célula com th[scope] corretos.",
+    "focus_states": "Anel dourado 3px rgba(212,175,55,0.45) com outline-offset 2px em todos os interativos; sobre seções dark, anel #E8C766 sólido de 2px. Nunca outline:none sem substituto.",
+    "alt_text": "Ícones decorativos com aria-hidden='true'; counters com aria-label contendo o valor final por extenso ('347 empresas atendidas') para leitores de tela não dependerem da animação; gráficos CSS acompanhados de tabela visualmente oculta (.sr-only).",
+    "semantic_html": "header/nav/main/section/footer; h1 único; tabelas com caption, thead, th scope='col/row'; formulários com label explícito e aria-describedby em erros; counters em <span> com aria-live='off' (valor final no aria-label).",
+    "touch_targets": "44px minimum — botões md têm 48px de altura; links de navegação mobile 48px; linhas de tabela clicáveis 44px+"
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Coluna única: overline dourada → h1 34px → subtítulo → CTA gold full-width (max 360px) + CTA secondary abaixo → painel de dados (mini-tabela + 2 counters) por último. Filete dourado de 3px permanece no topo da página.",
+      "tablet": "Coluna única centralizada à esquerda; painel de dados abaixo do texto com largura maior; CTAs lado a lado.",
+      "desktop": "Split 55/45: texto + par de CTAs à esquerda, painel de dados elevado à direita como 'imagem'. h1 52px, stat_number 64px."
+    },
+    "service_grid": {
+      "mobile": "1 coluna, service cards full-width, gap 24px",
+      "tablet": "2 colunas, gap 24px",
+      "desktop": "3 colunas, gap 32px"
+    },
+    "stats_dark": {
+      "mobile": "2x2 de counters, número stat 40px, centralizado sobre #1B2733",
+      "tablet": "2x2 ou 4 em linha conforme largura, número intermediário",
+      "desktop": "4 counters gigantes em linha, número 64px, centralizados — clímax da página"
+    },
+    "table": {
+      "mobile": "Scroll horizontal em wrapper overflow-x auto com dica de gradiente, ou colapso em cards por linha; valores em mono tabular-nums",
+      "desktop": "Tabela completa 12 colunas, linha de total com borda superior 2px dourada"
+    },
+    "navigation": {
+      "mobile_tablet": "Logo + hambúrguer (48px de toque); painel full-screen charcoal com links grandes e telefone clicável; altura 60px",
+      "desktop": "Logo esquerda + links centro-direita + botão gold sm; altura 72px; ganha shadow sm ao rolar"
+    },
+    "footer": {
+      "mobile": "4 colunas empilhadas, contato/telefone (mono) primeiro; bottom bar com CNPJ/CRC abaixo",
+      "desktop": "4 colunas: sobre+selos / serviços / escritório / contato; bottom bar full-width com CNPJ e CRC em mono"
+    },
+    "touch_adjustments": "Card-lift (translateY -2px) vira active-state discreto (background alt) no touch; linhas de tabela clicáveis com 44px+ de altura; sem dependência de hover para revelar informação numérica."
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente, coerentes com components.buttons/inputs/cards/navigation.",
+    "button_primary": ["default (#2C3E50/branco)", "hover (background #1B2733 + translateY(-1px))", "focus-visible (outline 3px rgba(212,175,55,0.45), offset 2px)", "active (background #1B2733, translateY(0))", "disabled (background #D8DEE4, color #6B7A89)", "loading (spinner 16px branco + texto 'Processando...')"],
+    "button_gold": ["default (#D4AF37/charcoal — texto sempre charcoal, nunca branco)", "hover (background #C9A227 + translateY(-1px))", "focus-visible (outline 3px rgba(44,62,80,0.4), offset 2px)", "active", "disabled (background #EAD9A0, color #8A6A1B opacity 0.7)"],
+    "button_secondary": ["default (outline 2px #2C3E50)", "hover (background #2C3E50, color #FFFFFF)", "focus-visible (outline 3px rgba(212,175,55,0.45))", "active", "disabled (border #D8DEE4, color #6B7A89)"],
+    "link_nav": ["default (#4A5C6E)", "hover (#1B2733 + sublinhado dourado 2px)", "focus-visible (anel dourado)", "current (sublinhado dourado fixo)"],
+    "card_stat": ["default (número renderizado via counter)", "in-view (count-up dispara via IntersectionObserver, uma vez)", "reduced-motion (valor final imediato, sem contagem)"],
+    "card_service": ["default (shadow xs + borda 1px)", "hover (translateY(-2px) + shadow md + borda esquerda 3px #D4AF37)", "focus-within"],
+    "input": ["default (borda 1px #D8DEE4)", "focus (borda #2C3E50 + anel 3px rgba(212,175,55,0.30))", "filled", "error (borda #C0392B + mensagem + aria-describedby)", "disabled"],
+    "nav_header": ["topo (fundo #FFFFFF sólido, borda inferior 1px)", "rolado (ganha shadow sm)", "menu mobile aberto (painel charcoal full-screen com focus trap e fechamento por Esc)"]
+  },
+  "photography_direction": {
+    "style": "Documental corporativo sóbrio e raro — fotografia é coadjuvante; o protagonismo visual é dos DADOS (painéis, counters, tabelas). Quando usada, retrata a equipe real em ambiente de trabalho, nunca banco de imagem.",
+    "subjects": [
+      "Retratos da equipe/sócios em escritório real, postura profissional",
+      "Reunião de consultoria com cliente vista de forma discreta",
+      "Detalhe de ambiente institucional (mesa, documentos, tela com gráfico) sem encenação",
+      "Fachada/recepção do escritório sinalizando estrutura física real"
+    ],
+    "light": "Neutra e uniforme, temperatura fria-neutra (~5000–5600K); sem drama, sem golden hour. Sombras controladas e limpas.",
+    "color_grading": "Dessaturação leve (saturate 0.85) + overlay charcoal 10% (#2C3E50) para harmonizar com a paleta. Nunca virar quente ou vibrante.",
+    "framing": "Enquadramentos retos e alinhados à grade; alturas de olhar profissionais; profundidade de campo moderada. Radius 6px nas imagens.",
+    "avoid": [
+      "Banco de imagem de aperto de mãos ou 'equipe genérica sorrindo'",
+      "Fotos calorosas/afetivas (pertencem à personalidade 01)",
+      "Filtros vibrantes, HDR, saturação alta",
+      "Foto no hero — o hero usa o painel de dados como imagem"
+    ],
+    "fallback_sem_foto": "O padrão do DS: painéis de dados em HTML/CSS, mini-tabelas, counters em IBM Plex Mono e gráficos de barra simples em CSS. Gradientes charcoal→charcoal-escuro (135deg, #2C3E50 → #1B2733) com filetes dourados #D4AF37 puramente decorativos (2.10:1 — nunca texto sobre claro). Sobre seções dark, destaques em #E8C766 (9.24:1)."
+  },
+  "iconography": {
+    "style": "Linha (stroke 1.75–2px), cantos retos a levemente arredondados, grid 24x24 — precisão e rigor técnico, nunca lúdico.",
+    "color": "#8A6A1B (dourado-escuro) sobre superfícies claras; #E8C766 (dourado-claro) sobre seções dark; #2C3E50 quando ícone estrutural em UI.",
+    "recommended_set": "Lucide ou Feather (open source, MIT), stroke ajustado para ~1.75; ícones geométricos e sóbrios coerentes com o mood institucional.",
+    "usage": "Ícones sempre acompanhados de texto — nunca ícone sozinho como única affordance. Decorativos com aria-hidden='true'. Ícone linear 32px stroke #8A6A1B no topo de cada service card.",
+    "decorative_shapes": "Filetes e sublinhados dourados 3px (#D4AF37), marcadores de lista, bordas esquerdas de card e células de total em tabelas. Formas geométricas retas, jamais orgânicas/blobs — sempre aria-hidden."
+  },
+  "do_dont": {
+    "do": [
+      "Usar IBM Plex Mono EXCLUSIVAMENTE para dados numéricos (counters, estatísticas, valores de tabela) com font-variant-numeric: tabular-nums — é a assinatura do DS",
+      "Abrir headlines e depoimentos com números específicos ('347 empresas', 'R$ 4,2 mi'), nunca com promessas vagas",
+      "Usar texto charcoal (#2C3E50) sobre botão dourado — 5.22:1 (AA); branco sobre dourado reprova",
+      "Usar #8A6A1B para qualquer TEXTO dourado sobre fundo claro (5.05:1, AA) e #E8C766 para números sobre seções dark (9.24:1, AAA)",
+      "Reservar min-width em ch nos counters (tabular-nums) para CLS < 0.05 ao contar",
+      "Prover aria-label com o valor final por extenso nos counters — leitores de tela não dependem da animação",
+      "Manter badges verificáveis (CRC, ISO, anos de mercado) e transparência (CNPJ/CRC no footer)"
+    ],
+    "dont": [
+      "Usar #D4AF37 (dourado) como cor de TEXTO sobre fundo claro — apenas 2.10:1, reprova AA; é accent puramente decorativo (filetes, bordas, ícones)",
+      "Usar branco sobre botão dourado (reprova) — texto sempre charcoal",
+      "Colocar números na fonte de texto — números vivem sempre em IBM Plex Mono",
+      "Fazer o conteúdo numérico depender da animação de counter para ser legível (respeitar prefers-reduced-motion: valor final imediato)",
+      "Usar sombras coloridas, glow ou preto puro — sombras frias base charcoal; o brilho vem do dourado",
+      "Usar foto no hero ou banco de imagem de aperto de mãos",
+      "Criar urgência artificial ('últimas vagas!') ou superlativos sem prova — incompatível com credibilidade",
+      "Usar carrossel de depoimentos — depoimentos estáticos são mais críveis e acessíveis"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Archivo:wght@600;700, IBM Plex Sans:wght@400;500;600 e IBM Plex Mono:wght@600 com display=swap. Fallback métrico: Helvetica/Arial para Archivo e IBM Plex Sans; SFMono/Consolas para IBM Plex Mono.",
+    "js_budget": "JS mínimo (~2KB, zero frameworks): um único IntersectionObserver para counters (count-up com requestAnimationFrame) e fade-in-up; toggle do menu mobile com focus trap. INP < 200ms.",
+    "seo_local": "Schema.org LocalBusiness/AccountingService (ou LegalService/ProfessionalService conforme segmento) com endereço, geo, telefone e horários; título com cidade/segmento ('Contabilidade em São Paulo — economia tributária comprovada'). Marcar credenciais (CRC) em texto verificável.",
+    "whatsapp_cta": "Link wa.me com mensagem pré-preenchida objetiva e profissional ('Olá! Gostaria de agendar um diagnóstico tributário gratuito.'); usar como CTA secundário de baixo atrito, sem infantilização.",
+    "adaptation_guide": "Ao adaptar para outro segmento da personalidade 04-técnico-confiável (advocacia tributária, auditoria, consultoria B2B, engenharia/laudos): manter paleta charcoal+dourado, tipografia Archivo/IBM Plex e o protagonismo dos dados (counters mono, tabelas, painéis). Trocar o vocabulário do voice_and_tone e as métricas exibidas. A essência é 'dados específicos > promessas vagas', não o segmento contábil."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true,
+    "uniqueness_notes": "Distinção radical dos irmãos: 04.1 SaaS é dark-mode roxo #5E3DD2 dev-first; 04.2 Fintech é light navy #0F3460 + verde #16A085 com ilustrações geométricas. O 04.3 é light charcoal #2C3E50 + dourado #D4AF37, sem ilustrações — o protagonismo é dos DADOS: counters mono, tabelas, painéis numéricos. Nenhum hex, fonte de heading ou padrão de composição compartilhado."
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "tecnico",
+      "confiavel",
+      "charcoal",
+      "dourado-premium",
+      "grotesca-disciplinada",
+      "dados-protagonistas",
+      "counters-mono",
+      "tabelas-elegantes",
+      "credibilidade-mensuravel",
+      "b2b-consultivo"
+    ],
+    "related_docs": [
+      "previews/markdown/04-3-contabilidade-premium.md",
+      "previews/html/04-3-contabilidade-premium.html",
+      "docs/04-3-contabilidade-premium/components.md",
+      "docs/04-3-contabilidade-premium/animations.css",
+      "docs/04-3-contabilidade-premium/accessibility-report.md",
+      "docs/04-3-contabilidade-premium/benchmarking.md",
+      "docs/04-3-contabilidade-premium/color-variations.md",
+      "docs/04-3-contabilidade-premium/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Contabilidade e BPO financeiro",
+      "Auditoria e perícia contábil",
+      "Advocacia tributária",
+      "Consultoria B2B (financeira, gestão, compliance)",
+      "Engenharia e laudos técnicos"
+    ],
+    "conversion_factors": [
+      "Números específicos no hero (R$ 4,2 mi, 98,6%) geram credibilidade imediata — dados específicos superam promessas vagas em confiança percebida",
+      "Trust bar com credenciais verificáveis (CRC, certificações) logo após o hero reduz a barreira de ceticismo do decisor B2B",
+      "CTA de baixo atrito ('diagnóstico gratuito') em vez de 'contrate' — compatível com ciclo de decisão consultivo",
+      "Counters animados atraem o olhar para a prova social sem vídeo/foto, mantendo a página leve",
+      "Tabela comparativa de planos/regimes transforma decisão abstrata em escolha concreta",
+      "Depoimentos que abrem com resultado numérico (não com elogio) funcionam como mini-cases",
+      "Telefone e prazo de resposta explícitos ('resposta em até 2h úteis') sinalizam operação organizada"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "Hero sem imagem (painel de dados em HTML/CSS) → LCP é texto; fonts com preconnect + display=swap; alvo < 1.8s",
+      "fid_inp_strategy": "JS mínimo: um único script de IntersectionObserver para counters e fade-ins (~2KB); sem frameworks; INP < 200ms",
+      "cls_strategy": "Counters com min-width reservada em ch (tabular-nums) para não deslocar layout ao contar; fontes com fallback métrico (Arial/Helvetica ajustados); CLS < 0.05"
+    }
+  }
+}

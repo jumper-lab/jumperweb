@@ -1,0 +1,251 @@
+/* ============================================================
+   DS 03.2 — Hamburgueria Vibrante · animations.css
+   Princípio: energia de balcão em serviço — RÁPIDO (100–300ms),
+   com overshoot (snap) e "mordida" (chomp). Reveal 500ms.
+   Assinatura: flip-invert de cor, sombra dura deslocada (hard),
+   cards rotacionados do grid desordenado e blobs flutuantes.
+   Só transform/opacity (compositor) — zero layout thrash.
+   Vermelho-tomate #E63946 + amarelo-mostarda #F1C232 + carvão #221510.
+   ============================================================ */
+
+:root {
+  --dur-instant: 100ms;
+  --dur-fast: 200ms;
+  --dur-base: 250ms;
+  --dur-slow: 300ms;
+  --dur-reveal: 500ms;
+  --dur-float: 6s;
+  --ease-punch: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-snap: cubic-bezier(0.68, -0.35, 0.265, 1.35);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --color-primary: #E63946;
+  --color-primary-dark: #C1121F;
+  --color-secondary: #F1C232;
+  --color-charcoal: #221510;
+  --color-cream: #FFF8F0;
+  --shadow-hard: 6px 6px 0 #221510;
+  --shadow-hard-hover: 10px 10px 0 #221510;
+  --glow-red: 0 12px 40px rgba(230, 57, 70, 0.35);
+}
+
+/* ------------------------------------------------------------
+   1. FLIP-INVERT — hover de botões e links
+   Inversão total de cor: fundo vermelho vira mostarda, texto
+   branco vira carvão (e vice-versa). 200ms standard + scale(1.05).
+   ------------------------------------------------------------ */
+.btn-primary {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  transition:
+    background-color var(--dur-fast) var(--ease-standard),
+    color var(--dur-fast) var(--ease-standard),
+    transform var(--dur-fast) var(--ease-standard),
+    box-shadow var(--dur-fast) var(--ease-standard);
+}
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--color-secondary);
+  color: var(--color-charcoal);
+  transform: scale(1.05);
+}
+.btn-primary--hero { box-shadow: var(--glow-red); }
+.btn-secondary {
+  background: var(--color-secondary);
+  color: var(--color-charcoal);
+  border-radius: 9999px;
+  transition:
+    background-color var(--dur-fast) var(--ease-standard),
+    color var(--dur-fast) var(--ease-standard),
+    transform var(--dur-fast) var(--ease-standard);
+}
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: var(--color-charcoal);
+  color: var(--color-secondary);
+  transform: scale(1.05);
+}
+.btn-primary:disabled,
+.btn-secondary:disabled {
+  background: #DDC3AE;
+  color: #7A6558;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------
+   2. CHOMP — active/press em CTAs ("mordida")
+   scale(0.94), 150ms punch. No primário, escurece para C1121F.
+   ------------------------------------------------------------ */
+.btn-primary:active {
+  transform: scale(0.94);
+  background: var(--color-primary-dark);
+  transition-duration: 150ms;
+}
+.btn-secondary:active { transform: scale(0.94); transition-duration: 150ms; }
+
+/* ------------------------------------------------------------
+   3. SCALE-PUNCH — hover em cards de menu
+   scale(1.06) rotate(-1deg) agressivo com overshoot (snap),
+   sombra dura cresce de hard para hard_hover. 250ms.
+   O rotate final zera a rotação de repouso do card.
+   ------------------------------------------------------------ */
+.menu-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: var(--shadow-hard);
+  transition:
+    transform var(--dur-base) var(--ease-snap),
+    box-shadow var(--dur-base) var(--ease-snap);
+}
+/* rotações de repouso do grid desordenado */
+.menu-card:nth-child(3n+1) { transform: rotate(-2deg); }
+.menu-card:nth-child(3n+2) { transform: rotate(1.5deg); }
+.menu-card:nth-child(3n)   { transform: rotate(-1deg); }
+.menu-card:hover,
+.menu-card:focus-within {
+  transform: scale(1.06) rotate(0deg);   /* se endireita e cresce */
+  box-shadow: var(--shadow-hard-hover);
+}
+
+/* ------------------------------------------------------------
+   4. CHOMP (press em card) — reforço tátil opcional
+   ------------------------------------------------------------ */
+.menu-card:active { transform: scale(0.98) rotate(0deg); }
+
+/* ------------------------------------------------------------
+   5. SIZZLE-RISE — scroll-reveal dos blocos/cards
+   Entra de baixo translateY(32px) + rotação residual até o
+   ângulo final de repouso do card. 500ms punch.
+   Uso: .reveal no elemento; JS adiciona .is-visible no viewport.
+   ------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-punch),
+    transform var(--dur-reveal) var(--ease-punch);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+/* reveal que assenta em card rotacionado: preserva o ângulo final */
+.reveal.menu-card.is-visible:nth-child(3n+1) { transform: rotate(-2deg); }
+.reveal.menu-card.is-visible:nth-child(3n+2) { transform: rotate(1.5deg); }
+.reveal.menu-card.is-visible:nth-child(3n)   { transform: rotate(-1deg); }
+/* stagger opcional de 80ms por item */
+.reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal:nth-child(2) { transition-delay: 80ms; }
+.reveal:nth-child(3) { transition-delay: 160ms; }
+
+/* ------------------------------------------------------------
+   6. DRIP-UNDERLINE — hover em links de navegação
+   Sublinhado mostarda 4px escorre da esquerda para a direita.
+   scaleX 0→1 com origin left, 300ms punch.
+   ------------------------------------------------------------ */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 4px;
+  background: var(--color-secondary);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-slow) var(--ease-punch);
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after { transform: scaleX(1); }
+
+/* ------------------------------------------------------------
+   7. FLOAT-INGREDIENT — blobs orgânicos SVG do hero
+   Formas de tomate/mostarda flutuam sutilmente. 6s ease-in-out
+   infinite alternate. Puramente decorativo (aria-hidden).
+   ------------------------------------------------------------ */
+.blob {
+  animation: float-ingredient var(--dur-float) ease-in-out infinite alternate;
+  will-change: transform;
+}
+.blob--delayed { animation-delay: -3s; }
+@keyframes float-ingredient {
+  from { transform: translateY(0) rotate(0deg); }
+  to   { transform: translateY(-18px) rotate(6deg); }
+}
+
+/* ------------------------------------------------------------
+   8. NAV SCROLL SHRINK — barra encolhe após 80px de scroll
+   padding 24px → 12px, ganha shadow sm. (classe via JS)
+   ------------------------------------------------------------ */
+.site-header {
+  padding-block: 24px;
+  background: var(--color-cream);
+  transition:
+    padding var(--dur-fast) var(--ease-standard),
+    box-shadow var(--dur-fast) var(--ease-standard);
+}
+.site-header.is-scrolled {
+  padding-block: 12px;
+  box-shadow: 0 2px 8px rgba(34, 21, 16, 0.10);
+}
+
+/* ------------------------------------------------------------
+   9. OUTLINE / SECONDARY hover em seções escuras
+   ------------------------------------------------------------ */
+.btn-outline {
+  background: transparent;
+  border: 3px solid var(--color-charcoal);
+  color: var(--color-charcoal);
+  border-radius: 9999px;
+  transition:
+    background-color var(--dur-fast) var(--ease-standard),
+    color var(--dur-fast) var(--ease-standard);
+}
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background: var(--color-charcoal);
+  color: var(--color-cream);
+}
+
+/* ------------------------------------------------------------
+   JS mínimo de referência (IntersectionObserver):
+
+   const io = new IntersectionObserver((entries) => {
+     entries.forEach((e) => {
+       if (!e.isIntersecting) return;
+       e.target.classList.add('is-visible');
+       io.unobserve(e.target);
+     });
+   }, { threshold: 0.2 });
+   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+   ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------
+   PREFERS-REDUCED-MOTION — obrigatório.
+   Blobs param; scale-punch/chomp/sizzle viram opacidade simples;
+   flip-invert de cor MANTÉM (é feedback de estado, não movimento)
+   mas sem scale; drip-underline aparece instantâneo.
+   Cards mantêm a rotação de repouso (é layout, não animação).
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .blob { animation: none !important; transform: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .reveal.menu-card.is-visible:nth-child(3n+1),
+  .menu-card:nth-child(3n+1) { transform: rotate(-2deg) !important; }
+  .reveal.menu-card.is-visible:nth-child(3n+2),
+  .menu-card:nth-child(3n+2) { transform: rotate(1.5deg) !important; }
+  .reveal.menu-card.is-visible:nth-child(3n),
+  .menu-card:nth-child(3n)   { transform: rotate(-1deg) !important; }
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .menu-card:hover { transform: none; }  /* mantém só a inversão de cor */
+  .menu-card:hover:nth-child(3n+1) { transform: rotate(-2deg); }
+  .menu-card:hover:nth-child(3n+2) { transform: rotate(1.5deg); }
+  .menu-card:hover:nth-child(3n)   { transform: rotate(-1deg); }
+}

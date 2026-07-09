@@ -1,0 +1,588 @@
+{
+  "id": "reference-ds-03-airbnb-com",
+  "clientSlug": "airbnb-com",
+  "clientName": "Airbnb",
+  "personalitySlug": "01-acolhedor-familiar",
+  "regeneratedAt": "2026-06-05",
+  "referenceQualityBaseline": "reference-ds-01-pinchmans-ca-visual-preview.html",
+  "source": {
+    "type": "single-reference-design-system",
+    "folder": "_jumper-sites-system/_referencias-visuais/01-acolhedor-familiar/design-systems/preview-assets/airbnb.com",
+    "assetsUsed": [
+      "e453088a42f1e022_cd59751b-42f5-4a8f-b16f-62226f.jpeg",
+      "381e37a986719ea0_9d10e2ed-9732-4e23-883e-56d9f1.jpeg",
+      "6cfae6a1c3597fe7_3776086b-67f4-4461-92fb-69a117.jpeg",
+      "74e29e7076b288b4_7ac4a435-565a-4ec7-b3d7-53a7cb.jpeg",
+      "0332d4bf5bad9886_90ec204f-e37e-4ada-830e-9bc90b.jpeg"
+    ],
+    "inferredDecisions": [
+      "O produto principal e a busca; por isso a hero vira interface funcional, nao cartaz.",
+      "Cards devem manter proporcao fixa para evitar layout shift.",
+      "Coral deve ser acao, nao fundo dominante.",
+      "Motion precisa ser rapido e utilitario."
+    ],
+    "sourceReferenceId": "airbnb.com",
+    "sourceReferenceNote": "Referencia visual ja convertida em DS-base; arquivo pesado original nao e necessario no fluxo oficial.",
+    "extractedSitePath": "_jumper-sites-system/_referencias-visuais/01-acolhedor-familiar/design-systems/preview-assets/airbnb.com",
+    "extractedSignals": {
+      "siteDir": "airbnb.com",
+      "extractedAt": "2026-06-05",
+      "fileCount": 472,
+      "imageCount": 91,
+      "fontCount": 1,
+      "scriptCount": 83,
+      "cssCount": 1,
+      "colors": [
+        "#ffffff",
+        "#FF5A5F",
+        "rgba(0,0,0,0.28)",
+        "rgba(0,0,0,0.04)",
+        "rgba(0,0,0,0.2)",
+        "rgba(0,0,0,0.12)",
+        "rgba(0,0,0,0.08)",
+        "rgba(0,0,0,0.18)",
+        "#DDDDDD",
+        "rgba(0,0,0,0.02)",
+        "rgba(0,0,0,0.16)",
+        "rgba(0,0,0,0.10)",
+        "#000000",
+        "#222222",
+        "#6A6A6A",
+        "#B0B0B0",
+        "#EBEBEB",
+        "#F7F7F7",
+        "#FFFFFF",
+        "#C13515",
+        "#B32505",
+        "#FFF8F6",
+        "#F7F6F2",
+        "#F5F1EA"
+      ],
+      "fontFamilies": [
+        "Airbnb Cereal VF,Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif",
+        "inherit",
+        "var(--typography-font-family-cereal-font-family)",
+        "Airbnb Cereal VF, Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif",
+        "Airbnb Cereal VF"
+      ],
+      "fontFiles": [
+        "c00b6f4fa7f5ac0b_AirbnbCerealVF_W_Wght.8816d9e5.woff2"
+      ],
+      "imageSamples": [
+        "assets/01e699cbc356d63d_10fa94b2-f8a1-4bd0-a0db-d4d24b.jpeg",
+        "assets/03041704b004297e_dd3de567-71f9-42eb-8fe2-de8b3b.jpeg",
+        "assets/0332d4bf5bad9886_90ec204f-e37e-4ada-830e-9bc90b.jpeg",
+        "assets/055d620172d35a7f_480e6323-9dc5-4cb9-9faf-cdefc8.jpeg",
+        "assets/05c55c97c446ff1c_f36ee00e-31ee-4893-9a09-2afc38.jpeg",
+        "assets/068b3955c66a0449_0d189acb-3f82-4b2c-b95f-ad1d6a.png",
+        "assets/0d795fffa9b7d0bb_480e6323-9dc5-4cb9-9faf-cdefc8.jpeg",
+        "assets/11d8f6ed9cd5fe55_fd818f7c-a024-4a16-b6f2-e87fe1.jpeg",
+        "assets/1a4517776307e80e_90ec204f-e37e-4ada-830e-9bc90b.jpeg",
+        "assets/1ea4550a746e7029_34823c39-8469-4fca-9cd5-a56115.png",
+        "assets/24d3f8ddd0d869b8_7a736b2e-0f4f-4fcd-8d06-5b4dfc.jpeg",
+        "assets/2aa4fa20701cdd6d_p.png",
+        "assets/2c061148191de2a0_e26b63c5-0903-422f-b8ec-e224c3.jpeg",
+        "assets/30f44b0f4d466cdd_a2958fdc-b830-4c4a-b57c-c4b3ad.jpeg",
+        "assets/311e338605f7f84b_e86d3064-6d0a-4419-91e7-c7aade.jpeg",
+        "assets/3288088253b190fa_a2958fdc-b830-4c4a-b57c-c4b3ad.jpeg"
+      ],
+      "textSnippets": [
+        "Host an experience on Airbnb",
+        "Apply now to turn your passion, skills, or story into a one-of-a-kind Airbnb Experience for millions of guests around the world.",
+        "Airbnb | Alojamientos para vacaciones, cabañas, casas en la playa y más",
+        "Encuentra un alojamiento en Airbnb para cada tipo de viaje → 7 millones de alojamientos vacacionales → 2 millones de alojamientos Favoritos entre huéspedes → Más de 220 países y re",
+        "Find Airbnbs with accessibility features",
+        "Discover unique homes with verified accessibility features including step-free paths into the home, bedroom and bathroom"
+      ]
+    }
+  },
+  "designIntent": {
+    "voice": "Sistema visual para marketplace acolhedor: busca como produto central, categorias escaneaveis, cards com fotografia real, mapa, filtros, wishlist e microinteracoes utilitarias.",
+    "heroPolicy": "first hero session is full viewport and demonstrates DS capabilities visually",
+    "noFlowUsage": true,
+    "sitePersonality": "Marketplace de estadias: busca como produto central, cards escaneaveis, mapa, wishlist e microinteracoes utilitarias.",
+    "componentLens": "Cada componente deve reduzir friccao: filtros claros, chips, pins pulsantes, feedback rapido e superficie limpa."
+  },
+  "colors": {
+    "palette": [
+      {
+        "name": "Air Coral",
+        "hex": "#FF385C",
+        "rgb": "rgb(255,56,92)",
+        "hsl": "hsl(349 100% 61%)",
+        "usage": "primary CTA / active icon"
+      },
+      {
+        "name": "Raush Ink",
+        "hex": "#222222",
+        "rgb": "rgb(34,34,34)",
+        "hsl": "hsl(0 0% 13%)",
+        "usage": "primary text"
+      },
+      {
+        "name": "Fog Text",
+        "hex": "#717171",
+        "rgb": "rgb(113,113,113)",
+        "hsl": "hsl(0 0% 44%)",
+        "usage": "metadata / helper"
+      },
+      {
+        "name": "Line Grey",
+        "hex": "#DDDDDD",
+        "rgb": "rgb(221,221,221)",
+        "hsl": "hsl(0 0% 87%)",
+        "usage": "borders"
+      },
+      {
+        "name": "Canvas",
+        "hex": "#F7F7F7",
+        "rgb": "rgb(247,247,247)",
+        "hsl": "hsl(0 0% 97%)",
+        "usage": "page background"
+      },
+      {
+        "name": "Snow",
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255,255,255)",
+        "hsl": "hsl(0 0% 100%)",
+        "usage": "surface"
+      },
+      {
+        "name": "Wish Pink",
+        "hex": "#E31C5F",
+        "rgb": "rgb(227,28,95)",
+        "hsl": "hsl(340 78% 50%)",
+        "usage": "wishlist / hover"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Coral Sweep",
+        "value": "linear-gradient(135deg, rgba(255,56,92,.96), rgba(227,28,95,.86))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Search Halo",
+        "value": "radial-gradient(circle at 50% 35%, rgba(255,56,92,.18), transparent 42%)",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Map Wash",
+        "value": "radial-gradient(circle at 28% 18%, rgba(255,56,92,.16), transparent 34%), linear-gradient(135deg,#f7f7f7,#fff)",
+        "participation": "background / overlay / hover / active states"
+      }
+    ],
+    "semantic": {
+      "primary": "Air Coral",
+      "text": "Fog Text",
+      "surface": "Raush Ink",
+      "accent": "Line Grey",
+      "focus": "Wish Pink",
+      "contrastIntent": "AA minimum for body text; overlay required on image text."
+    },
+    "opacityPolicy": "A escala de opacidade e global para evitar repeticao. Cada cor herda globalTokens.opacityScale e so deve variar quando houver necessidade real de contraste/contexto.",
+    "contextualUsageRules": {
+      "text": "Escolher token semantico de texto; sobre imagem usar overlay antes de reduzir contraste.",
+      "background": "Usar surface/background conforme personalidade do site; evitar aplicar cor decorativa como fundo dominante sem motivo.",
+      "border": "Usar neutral/accent em opacidade baixa pela escala global.",
+      "hover": "Usar accent/focus ou overlay curto conforme componente.",
+      "active": "Aumentar contraste ou reduzir elevacao por 120-180ms.",
+      "disabled": "Aplicar globalTokens.opacityScale.disabled sem apagar legibilidade."
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif",
+      "ui": "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif",
+      "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+      "load": "system-first stack; no blocking remote font"
+    },
+    "scale": {
+      "h1": {
+        "family": "Display",
+        "weight": "760",
+        "size": "clamp(3.4rem, 7.2vw, 8rem)",
+        "lineHeight": ".9",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "h2": {
+        "family": "Display",
+        "weight": "720",
+        "size": "clamp(2.6rem, 5.4vw, 6rem)",
+        "lineHeight": ".95",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "h3": {
+        "family": "Display",
+        "weight": "680",
+        "size": "clamp(1.9rem, 3vw, 3.2rem)",
+        "lineHeight": "1.05",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "h4": {
+        "family": "UI",
+        "weight": "760",
+        "size": "1.55rem",
+        "lineHeight": "1.16",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "h5": {
+        "family": "UI",
+        "weight": "820",
+        "size": "1.08rem",
+        "lineHeight": "1.2",
+        "letterSpacing": ".08em",
+        "textTransform": "uppercase"
+      },
+      "h6": {
+        "family": "UI",
+        "weight": "860",
+        "size": ".86rem",
+        "lineHeight": "1.2",
+        "letterSpacing": ".14em",
+        "textTransform": "uppercase"
+      },
+      "body-lg": {
+        "family": "UI",
+        "weight": "420",
+        "size": "1.22rem",
+        "lineHeight": "1.6",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "body": {
+        "family": "UI",
+        "weight": "420",
+        "size": "1rem",
+        "lineHeight": "1.58",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "body-sm": {
+        "family": "UI",
+        "weight": "420",
+        "size": ".9rem",
+        "lineHeight": "1.45",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      },
+      "caption": {
+        "family": "Mono/UI",
+        "weight": "820",
+        "size": ".76rem",
+        "lineHeight": "1.35",
+        "letterSpacing": ".12em",
+        "textTransform": "uppercase"
+      },
+      "label": {
+        "family": "Mono/UI",
+        "weight": "850",
+        "size": ".8rem",
+        "lineHeight": "1.2",
+        "letterSpacing": ".12em",
+        "textTransform": "uppercase"
+      },
+      "helper": {
+        "family": "UI",
+        "weight": "420",
+        "size": ".78rem",
+        "lineHeight": "1.35",
+        "letterSpacing": "0",
+        "textTransform": "none"
+      }
+    },
+    "siteSpecificRoles": [
+      "hero-search: sans pesada para comando",
+      "pill-label: label curto de filtro",
+      "price-chip: preco/rating forte",
+      "helper-filter: texto auxiliar de categorias"
+    ]
+  },
+  "icons": {
+    "description": "Rounded line icons de marketplace: search, heart, sliders, map-pin, star, user, chevron. Active em Air Coral e hover em Wish Pink.",
+    "stroke": "1.6-1.9",
+    "behavior": "currentColor, hover accent, focus visible"
+  },
+  "components": {
+    "ab-search-pill": {
+      "role": "barra de busca expandida",
+      "motion": "shadow lift, foco coral, divisores internos, CTA circular",
+      "motionType": "microinteraction",
+      "uniqueBehavior": "shadow lift, foco coral, divisores internos, CTA circular"
+    },
+    "ab-filter-modal": {
+      "role": "modal de filtros",
+      "motion": "fade/scale, chips, stepper e fechamento por Esc",
+      "motionType": "modal-transition",
+      "uniqueBehavior": "fade/scale, chips, stepper e fechamento por Esc"
+    },
+    "ab-listing-card": {
+      "role": "card de hospedagem",
+      "motion": "imagem 4:3, heart hover, rating e preco",
+      "motionType": "hover-depth",
+      "uniqueBehavior": "imagem 4:3, heart hover, rating e preco"
+    },
+    "ab-category-rail": {
+      "role": "trilho de categorias",
+      "motion": "underline ativo, scroll mobile, fade lateral",
+      "motionType": "microinteraction",
+      "uniqueBehavior": "underline ativo, scroll mobile, fade lateral"
+    },
+    "ab-map-split": {
+      "role": "painel de mapa",
+      "motion": "pins pulsantes, chips de preco, fallback static",
+      "motionType": "microinteraction",
+      "uniqueBehavior": "pins pulsantes, chips de preco, fallback static"
+    },
+    "ab-toast-save": {
+      "role": "toast de wishlist",
+      "motion": "slide-up 220ms e retorno automatico",
+      "motionType": "flyout",
+      "uniqueBehavior": "slide-up 220ms e retorno automatico"
+    },
+    "ab-skeleton-shimmer": {
+      "role": "loading skeleton",
+      "motion": "shimmer linear desativado em reduced-motion",
+      "motionType": "microinteraction",
+      "uniqueBehavior": "shimmer linear desativado em reduced-motion"
+    },
+    "ab-icon-button": {
+      "role": "botao iconico",
+      "motion": "aria-label obrigatorio, hover Canvas",
+      "motionType": "hover-depth",
+      "uniqueBehavior": "aria-label obrigatorio, hover Canvas"
+    }
+  },
+  "motion": {
+    "entry": [
+      "fade-up",
+      "fade-left",
+      "draw-line",
+      "stagger"
+    ],
+    "exit": [
+      "flyout-x",
+      "modal-fade-down",
+      "caption-exit"
+    ],
+    "background": [
+      "hero-zoom",
+      "ambient-drift"
+    ],
+    "parallax": [
+      "data-speed controlled; reduced-motion fallback"
+    ],
+    "replay": true
+  },
+  "accessibility": {
+    "focus": "visible outline using focus token",
+    "reducedMotion": "animations disabled or static",
+    "keyboard": "menu/modal close by Esc",
+    "contrast": "4.5:1 target"
+  },
+  "risks": [
+    "Coral em texto pequeno sobre branco pode falhar; usar em fill, icones ou labels grandes.",
+    "Categoria horizontal precisa touch scrolling.",
+    "Modal de filtros deve ficar obvio e fechavel."
+  ],
+  "outputs": {
+    "json": "design-systems/json/reference-ds-03-airbnb-com.json",
+    "markdown": "design-systems/previews/markdown/reference-ds-03-airbnb-com-preview.md",
+    "html": "design-systems/previews/html/reference-ds-03-airbnb-com-visual-preview.html",
+    "screenshots": "design-systems/previews/screenshots/reference-ds-03-airbnb-com/"
+  },
+  "schemaVersion": "reference-ds.compact.v2",
+  "globalTokens": {
+    "opacityScale": {
+      "solid": "100%",
+      "raisedSurface": "86%",
+      "overlayText": "64%",
+      "pressedSurface": "40%",
+      "disabled": "18%",
+      "hairline": "8%"
+    },
+    "componentStateContract": [
+      "default",
+      "hover",
+      "focus-visible",
+      "active",
+      "loading",
+      "disabled"
+    ],
+    "interactionContract": {
+      "focus": "2px outline usando token focus/accent, outline-offset 4px, nunca depender apenas de cor.",
+      "hover": "Transform/overlay curto, sem deslocar layout nem esconder CTA principal.",
+      "active": "Reduzir elevacao ou aumentar contraste por 120-180ms.",
+      "disabled": "Opacidade global disabled + cursor sem acao + contraste ainda legivel quando houver texto."
+    },
+    "motionContract": {
+      "entry": "fade/slide curto com easing do site; conteudo importante nao depende de animacao para existir.",
+      "exit": "fade/scale/slide reversivel para menu, modal, caption e toast.",
+      "parallax": "Camadas com limite de deslocamento, fallback estatico em prefers-reduced-motion.",
+      "replay": "Preview HTML deve permitir auditoria visual do motion principal."
+    }
+  },
+  "componentsDefaults": {
+    "stateContract": [
+      "default",
+      "hover",
+      "focus-visible",
+      "active",
+      "loading",
+      "disabled"
+    ],
+    "focus": "2px outline usando token focus/accent, outline-offset 4px, nunca depender apenas de cor.",
+    "reducedMotion": "Desativar transforms continuos e manter conteudo estatico equivalente.",
+    "opacityScaleRef": "globalTokens.opacityScale",
+    "implementationRule": "Nao repetir contrato global em cada componente; documentar apenas papel, motionType, uniqueBehavior e risco quando existir."
+  },
+  "heroSystem": {
+    "anatomy": [
+      "Busca central e tratada como produto",
+      "Cards orbitais reforcam variedade/confianca",
+      "Pins e preco dao contexto imediato",
+      "CTA coral reservado para decisao principal"
+    ],
+    "fullViewport": true,
+    "detailPolicy": "Hero deve documentar layout, camadas, media, CTA, motion e menu relacionado no proprio preview visual."
+  },
+  "menuSystem": {
+    "characteristics": [
+      "Menu se comporta como filtro expandido",
+      "Chips Where/When/Who aparecem no overlay",
+      "Fechamento por Esc evita friccao"
+    ],
+    "interaction": "Abrir por hamburger, fechar por link, botao fechar e tecla Esc; overlay deve preservar a personalidade do site."
+  },
+  "effects": {
+    "signature": [
+      "card lift + heart/save affordance",
+      "pins pulsantes com fallback",
+      "toast de wishlist curto",
+      "categoria com underline ativo"
+    ]
+  },
+  "referenceUsage": {
+    "type": "visual-reference-input",
+    "folder": "01-acolhedor-familiar",
+    "crossesWith": "clientes/[slug]/data/design-system.json",
+    "purpose": "Referencia de descoberta e reserva. Fornece busca central, filtros, pills arredondados, mapa/cartoes, wishlist, pin pulse e modal de filtros para cruzar com o DS do cliente; nao e formulario final nem tela copiada.",
+    "nonGoals": [
+      "nao criar DS final do cliente",
+      "nao representar fluxo de formulario do cliente",
+      "nao misturar personalidade de outros sites"
+    ],
+    "differentiationRules": [
+      "Diferenciar por search command hero, rail de categorias, cards arredondados e CTA coral.",
+      "Usar motion de pins, skeleton shimmer, card lift, toast e modal filter.",
+      "Evitar menus editoriais ou quadros de produto: o comportamento principal e explorar/filtrar/guardar."
+    ],
+    "siteSpecific": true,
+    "notPersonalityWide": true,
+    "qualityRule": "Usar como referencia individual do site; nao padronizar componentes, hero, motion ou menus entre DSs."
+  },
+  "referenceSite": "airbnb.com",
+  "previewNavigation": [
+    {
+      "id": "menu-top",
+      "label": "Menu / top",
+      "menuLabel": "Filtro topo"
+    },
+    {
+      "id": "top",
+      "label": "Top",
+      "menuLabel": "Topo marketplace"
+    },
+    {
+      "id": "hero",
+      "label": "Sessao Hero",
+      "menuLabel": "Hero command search"
+    },
+    {
+      "id": "color-tokens",
+      "label": "Tokens de cor",
+      "menuLabel": "Tokens de busca"
+    },
+    {
+      "id": "gradients",
+      "label": "Gradientes / opacidade",
+      "menuLabel": "Cloud / coral opacity"
+    },
+    {
+      "id": "type-system",
+      "label": "Type system",
+      "menuLabel": "Sans utilitaria"
+    },
+    {
+      "id": "type-detail",
+      "label": "Tipografia detalhada",
+      "menuLabel": "Preco / label / helper"
+    },
+    {
+      "id": "effects",
+      "label": "Efeitos e mouse overs",
+      "menuLabel": "Hover de card"
+    },
+    {
+      "id": "components",
+      "label": "Componentes",
+      "menuLabel": "Componentes reserva"
+    },
+    {
+      "id": "contract",
+      "label": "Contrato sem repeticao",
+      "menuLabel": "Contrato marketplace"
+    },
+    {
+      "id": "menu-board",
+      "label": "Menu board component",
+      "menuLabel": "Menu board de filtros"
+    },
+    {
+      "id": "reference-slip",
+      "label": "Reference slip",
+      "menuLabel": "Slip de reserva"
+    },
+    {
+      "id": "cards-sections",
+      "label": "Cards e secoes",
+      "menuLabel": "Cards estadia"
+    },
+    {
+      "id": "story",
+      "label": "Story split parallax",
+      "menuLabel": "Mapa parallax"
+    },
+    {
+      "id": "icons",
+      "label": "Icones",
+      "menuLabel": "Icones marketplace"
+    },
+    {
+      "id": "handoff",
+      "label": "Handoff de referencia",
+      "menuLabel": "Handoff exploracao"
+    },
+    {
+      "id": "motion",
+      "label": "Motion contract",
+      "menuLabel": "Motion mapa"
+    },
+    {
+      "id": "replay-motion",
+      "label": "Replay motion",
+      "menuLabel": "Replay mapa"
+    }
+  ],
+  "requiredPreviewContract": {
+    "allMenuLinksMustResolve": true,
+    "heroMustOccupyFullViewport": true,
+    "noRepeatedGenericSections": true,
+    "noClippedTextOrOverlaps": true,
+    "showGradientsOpacityHoverEntryExitParallaxIcons": true
+  }
+}

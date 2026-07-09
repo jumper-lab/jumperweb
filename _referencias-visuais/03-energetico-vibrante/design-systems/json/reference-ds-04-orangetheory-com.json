@@ -1,0 +1,717 @@
+{
+  "id": "reference-ds-04-orangetheory-com",
+  "clientSlug": "orangetheory-com",
+  "clientName": "Orangetheory",
+  "personalitySlug": "03-energetico-vibrante",
+  "regeneratedAt": "2026-06-05",
+  "referenceQualityBaseline": "reference-ds-01-pinchmans-ca-visual-preview.html + pasta 01 aprovada",
+  "source": {
+    "site": "orangetheory.com",
+    "localPath": "_jumper-sites-system/_referencias-visuais/03-energetico-vibrante/design-systems/preview-assets/orangetheory.com",
+    "sourceReferenceId": "orangetheory.com",
+    "sourceReferenceNote": "Referencia visual ja convertida em DS-base; arquivo pesado original nao e necessario no fluxo oficial.",
+    "imagesUsed": [
+      "../../preview-assets/orangetheory.com/assets/96cad9c1591fe39b_688b89cfd6614fdfc21c2dba_summe.webp",
+      "../../preview-assets/orangetheory.com/assets/eaffc4ff9448255f_688b89cfd6614fdfc21c2dba_summe.webp",
+      "../../preview-assets/orangetheory.com/assets/561f2b1dc1ee95e8_679b3121247cbc4c03354a94_home-.webp",
+      "../../preview-assets/orangetheory.com/assets/e65e7bec56b463e6_688b89cfd6614fdfc21c2dba_summe.webp",
+      "../../preview-assets/orangetheory.com/assets/8e6832d57cbffc58_686eb4b7961e873d58723ac8_start.webp",
+      "../../preview-assets/orangetheory.com/assets/5e8394dc18648442_686eb4b7961e873d58723ac8_start.webp",
+      "../../preview-assets/orangetheory.com/assets/8eacbcec3415ae40_68d3cbfb633e79e220db7f6b_woman.webp",
+      "../../preview-assets/orangetheory.com/assets/4970605b70e5d426_686eb4b7961e873d58723ac8_start.webp",
+      "../../preview-assets/orangetheory.com/assets/c62b9e49b9e14dc8_6894b64ba3ace28b30ee9e89_Home_.avif",
+      "../../preview-assets/orangetheory.com/assets/35bfe04d149649a1_688b89cfd6614fdfc21c2dba_summe.webp"
+    ],
+    "extractedSignals": {
+      "sourceColors": [
+        {
+          "hex": "#F26922",
+          "count": 73,
+          "hsl": "hsl(20 89% 54%)"
+        },
+        {
+          "hex": "#2E2E2E",
+          "count": 33,
+          "hsl": "hsl(0 0% 18%)"
+        },
+        {
+          "hex": "#0A0A0A",
+          "count": 18,
+          "hsl": "hsl(0 0% 4%)"
+        },
+        {
+          "hex": "#F2F2F2",
+          "count": 17,
+          "hsl": "hsl(0 0% 95%)"
+        },
+        {
+          "hex": "#FF8633",
+          "count": 13,
+          "hsl": "hsl(24 100% 60%)"
+        },
+        {
+          "hex": "#333",
+          "count": 11,
+          "hsl": "hsl(0 0% 20%)"
+        },
+        {
+          "hex": "#CCC",
+          "count": 11,
+          "hsl": "hsl(0 0% 80%)"
+        },
+        {
+          "hex": "#F4EDDF",
+          "count": 11,
+          "hsl": "hsl(40 49% 92%)"
+        },
+        {
+          "hex": "#F7F7F7",
+          "count": 10,
+          "hsl": "hsl(0 0% 97%)"
+        },
+        {
+          "hex": "#6F767B",
+          "count": 9,
+          "hsl": "hsl(205 5% 46%)"
+        }
+      ],
+      "fonts": [
+        "8a4f44c34509084a_677e0a93c742a023b87fb525_PPRig.otf",
+        "965a877b16635161_677e0a9317ac21f05a438854_PPRig.otf",
+        "9ecdd009a0fb3aaa_677e0a93a3eb025e6437a21e_PPRig.otf",
+        "bdb96165b2eafb04_677e0a9317ac21f05a438857_PPRig.otf"
+      ],
+      "title": "Group Fitness Classes &amp; Heart Rate-Based Interval Training",
+      "sourceText": [
+        [
+          "As many classes as you want.",
+          "Build the strength you need to keep up with your busy summer of fun.",
+          "Get your first month of unlimited classes for just $99 with purchase of a performance monitor.⁺⁺ Terms apply.",
+          "The workout that works out well.",
+          "In weeks, most members notice the shift: more energy, a better mood, and real momentum.",
+          "On average, members lose 8.6% body fat and gain 2.6% lean muscle from 18 classes in just 8 weeks.",
+          "1 That kind of progress is why millions of members across 1,500 studios worldwide have chosen Orangetheory to achieve their fitness goals.",
+          "Not your thing after 30 days?",
+          "No sweat—we’ll refund your money.",
+          "You don’t need to be fit to get started.",
+          "Just show up—we’ve got you.",
+          "With expert coaching and OTconnect™ technology, every workout adjusts to your fitness level and your goals.",
+          "Whether you’re easing in or pushing hard, we meet you with encouragement and support—not pressure.",
+          "Every step forward builds a body—and mindset—that’s stronger than yesterday.",
+          "Learn more about the workout.",
+          "The workout that works for people like you.",
+          "OTF has really kept me on track as part of my daily routine.",
+          "It's one of the best decisions I have made for myself.",
+          "Nicole P OTF Waterford My initial goal was to get moving and increase my energy levels.",
+          "In the process, I have lost over 20 pounds, lost inches, built muscles, and feel stronger than ever!",
+          "Max D OTF Royal Palm Beach Start your fitness journey today.",
+          "Valid at participating studios only.",
+          "See studios for details.",
+          "Recommended retail price of a casual visit is $35; however, prices do vary, as each studio is individually owned and operated.",
+          "Offer may be subject to satisfactory completion of pre-exercise screening and/or standard temporary/guest membership terms.",
+          "Restrictions may apply; inquire at local studio for additional information.",
+          "† Offer limited to Premier members who complete 12 sessions within a month of membership start date.",
+          "All sessions must be at the member’s home studio.",
+          "Member must notify their home studio within 30 days of membership start date to initiate cancellation and receive refund of membership dues.",
+          "OTBeat® sales are not refundable.",
+          "Restrictions may apply; inquire at local studio for additional information.",
+          "Former members must not have had an active membership or package for sixty (60) days prior to rejoin date.",
+          "Participating studios only.",
+          "Additional restrictions may apply, inquire at local studio for more information.",
+          "** Valid for non-members only.",
+          "All classes taken during the Five Day Paid Trial period may only be taken at the studio location where the Five Day Paid Trial was purchased.",
+          "Once a Five Day Paid Trial is purchased, the five-day timeframe is initiated.",
+          "Valid for one time purchase only.",
+          "Offer available at participating studios only.",
+          "Other terms apply, see studio for full details.",
+          "⁺⁺Offer valid 6/1/2026–6/30/2026.",
+          "Pay $99 for your first month of a Premier membership.",
+          "Performance Monitor purchase required.",
+          "For complete terms and conditions go to http://orangetheory.com/promotion-terms or visit studio for more details.",
+          "We also share information about your use of our site with our social media, advertising and analytics partners.",
+          "You can exercise your rights to opt-out of sale of processing personal data for targeted advertising by clicking the link on the right.",
+          "Click on the different category headings to find out more and change our default settings according to your preference.",
+          "You may exercise your rights by using the toggles below.",
+          "If you opt out, the ads and content that you see may not be as relevant to you.",
+          "They help us to know which pages are the most and least popular and see how visitors move around the site.",
+          "They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites.",
+          "They do not store directly personal information, but are based on uniquely identifying your browser and internet device."
+        ]
+      ],
+      "assetCounts": {
+        "images": 29,
+        "css": 4,
+        "fonts": 4
+      }
+    }
+  },
+  "designIntent": {
+    "tone": "fitness cientifico / calor / dados",
+    "summary": "Referencia de treino energetico com cor proprietaria, metricas, prova de resultado e CTA trial.",
+    "hero": "Energia mensuravel: treino, zonas e resultado.",
+    "nonGoal": "Nao e DS final do cliente; nao contem fluxo real de formulario."
+  },
+  "colors": {
+    "palette": [
+      {
+        "name": "OT Orange",
+        "hex": "#F15A24",
+        "rgb": "rgb(241,90,36)",
+        "hsl": "hsl(16 88% 54%)",
+        "usage": "primary accent"
+      },
+      {
+        "name": "Deep Charcoal",
+        "hex": "#1A1A1A",
+        "rgb": "rgb(26,26,26)",
+        "hsl": "hsl(0 0% 10%)",
+        "usage": "text / dark panel"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255,255,255)",
+        "hsl": "hsl(0 0% 100%)",
+        "usage": "surface"
+      },
+      {
+        "name": "Burnt Red",
+        "hex": "#B83A1B",
+        "rgb": "rgb(184,58,27)",
+        "hsl": "hsl(12 74% 41%)",
+        "usage": "active / intensity"
+      },
+      {
+        "name": "Warm Grey",
+        "hex": "#E8E2D9",
+        "rgb": "rgb(232,226,217)",
+        "hsl": "hsl(36 25% 88%)",
+        "usage": "neutral background"
+      },
+      {
+        "name": "Metric Blue",
+        "hex": "#2780A8",
+        "rgb": "rgb(39,128,168)",
+        "hsl": "hsl(199 62% 41%)",
+        "usage": "data secondary"
+      },
+      {
+        "name": "Success Green",
+        "hex": "#6C8A35",
+        "rgb": "rgb(108,138,53)",
+        "hsl": "hsl(81 45% 37%)",
+        "usage": "progress / badge"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Afterburn",
+        "value": "linear-gradient(135deg, rgba(241,90,36,.88), rgba(184,58,27,.54), rgba(26,26,26,.92))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Studio Heat",
+        "value": "linear-gradient(180deg, rgba(26,26,26,.84), rgba(241,90,36,.28))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Metric Glow",
+        "value": "radial-gradient(circle at 18% 22%, rgba(241,90,36,.35), transparent 32%), radial-gradient(circle at 78% 72%, rgba(39,128,168,.22), transparent 38%)",
+        "participation": "background / overlay / hover / active states"
+      }
+    ],
+    "semantic": {
+      "primary": "OT Orange",
+      "text": "#1A1A1A",
+      "surface": "#FFFFFF",
+      "accent": "Burnt Red",
+      "focus": "Success Green",
+      "contrastIntent": "AA minimum for body text; generated preview overrides --c2 as light surface and --c3 as dark text to avoid low-contrast sections."
+    },
+    "opacityPolicy": "Escala global para evitar repeticao: 100,86,64,40,18,8.",
+    "contextualUsageRules": {
+      "text": "Usar token semantico com contraste AA.",
+      "background": "Usar surface/background conforme personalidade do site.",
+      "border": "Usar neutral/accent em baixa opacidade.",
+      "hover": "Accent/focus ou overlay curto.",
+      "active": "Aumentar contraste ou reduzir elevacao 120-180ms.",
+      "disabled": "Opacidade global sem apagar legibilidade."
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "PPRig, Arial Black, sans-serif",
+      "ui": "Inter, system-ui, sans-serif",
+      "mono": "ui-monospace, Menlo, monospace",
+      "loading": "local when available; fallback stack otherwise"
+    },
+    "scale": {
+      "h1": {
+        "size": "clamp(3rem,7vw,7.8rem)",
+        "weight": 760,
+        "lineHeight": 0.88,
+        "letterSpacing": 0
+      },
+      "h2": {
+        "size": "clamp(2.15rem,4.9vw,5.35rem)",
+        "weight": 720,
+        "lineHeight": 0.94,
+        "letterSpacing": 0
+      },
+      "h3": {
+        "size": "clamp(1.6rem,3vw,3rem)",
+        "weight": 680,
+        "lineHeight": 1.05,
+        "letterSpacing": 0
+      },
+      "bodyLg": {
+        "size": "1.22rem",
+        "weight": 420,
+        "lineHeight": 1.6,
+        "letterSpacing": 0
+      },
+      "body": {
+        "size": "1rem",
+        "weight": 420,
+        "lineHeight": 1.58,
+        "letterSpacing": 0
+      },
+      "bodySm": {
+        "size": ".9rem",
+        "weight": 420,
+        "lineHeight": 1.45,
+        "letterSpacing": 0
+      },
+      "caption": {
+        "size": ".76rem",
+        "weight": 820,
+        "lineHeight": 1.35,
+        "letterSpacing": ".12em",
+        "textTransform": "uppercase"
+      }
+    },
+    "siteSpecificRoles": [
+      {
+        "role": "zone-title",
+        "family": "Display heavy",
+        "weight": "900",
+        "size": "clamp(4rem,8vw,8.5rem)",
+        "lineHeight": ".86",
+        "letterSpacing": "0",
+        "usage": "Titulo de intensidade."
+      },
+      {
+        "role": "metric-label",
+        "family": "Mono/UI",
+        "weight": "900",
+        "size": ".72rem",
+        "lineHeight": "1.1",
+        "letterSpacing": ".14em",
+        "usage": "Splat, zona, bpm, tempo."
+      },
+      {
+        "role": "body-result",
+        "family": "UI",
+        "weight": "520",
+        "size": "1rem",
+        "lineHeight": "1.52",
+        "letterSpacing": "0",
+        "usage": "Explica resultado sem exagero."
+      }
+    ]
+  },
+  "icons": {
+    "set": [
+      "heart",
+      "fire",
+      "timer",
+      "map",
+      "chart",
+      "arrow"
+    ],
+    "stroke": 1.8,
+    "color": "currentColor",
+    "hover": "focus/accent token",
+    "rule": "icone nao desloca layout no hover"
+  },
+  "components": {
+    "splat-meter": {
+      "role": "splat meter",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "meter fill",
+      "visual": "Referencia Orangetheory: fitness cientifico / calor / dados",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "class-timeline": {
+      "role": "class timeline",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "orange pulse",
+      "visual": "Referencia Orangetheory: fitness cientifico / calor / dados",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "heart-rate-card": {
+      "role": "heart rate card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "timeline reveal",
+      "visual": "Referencia Orangetheory: fitness cientifico / calor / dados",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "studio-locator": {
+      "role": "studio locator",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "trial modal",
+      "visual": "Referencia Orangetheory: fitness cientifico / calor / dados",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "trial-modal": {
+      "role": "trial modal",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "meter fill",
+      "visual": "Referencia Orangetheory: fitness cientifico / calor / dados",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "coach-card": {
+      "role": "coach card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "orange pulse",
+      "visual": "Referencia Orangetheory: fitness cientifico / calor / dados",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "result-badge": {
+      "role": "result badge",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "timeline reveal",
+      "visual": "Referencia Orangetheory: fitness cientifico / calor / dados",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "orange-cta": {
+      "role": "orange cta",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "trial modal",
+      "visual": "Referencia Orangetheory: fitness cientifico / calor / dados",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    }
+  },
+  "motion": {
+    "entry": [
+      "fade-up",
+      "draw-line",
+      "stagger"
+    ],
+    "exit": [
+      "flyout-x",
+      "modal-fade-down",
+      "caption-exit"
+    ],
+    "background": [
+      "ambient drift",
+      "hero zoom"
+    ],
+    "parallax": "limited scroll response with reduced-motion fallback",
+    "siteSpecific": [
+      "meter fill",
+      "orange pulse",
+      "timeline reveal",
+      "trial modal"
+    ]
+  },
+  "accessibility": {
+    "contrast": "AA minimo; overlay obrigatorio sobre imagem",
+    "focus": "2px solid focus token",
+    "reducedMotion": true,
+    "skipLinks": true,
+    "modal": "Esc/overlay/botao fecham"
+  },
+  "risks": [
+    "Laranja em fundo branco precisa peso alto.",
+    "Metricas nao podem parecer dashboard frio.",
+    "Motion de pulso deve parar em reduced-motion."
+  ],
+  "heroSystem": {
+    "layout": "metric",
+    "rules": [
+      "Hero full viewport com metricas e foto ativa.",
+      "Menu deve destacar treino, ciencia, estudios e trial.",
+      "Componentes usam zonas e progresso como linguagem.",
+      "Motion pulsa, mas nao pisca."
+    ],
+    "fullViewport": true
+  },
+  "menuSystem": {
+    "items": [
+      "Workout",
+      "Science",
+      "Studios",
+      "Results",
+      "Try"
+    ],
+    "note": "Menu metrico: foco em prova, resultado e trial.",
+    "behavior": "overlay flyout, Esc closes, link closes"
+  },
+  "effects": {
+    "signature": [
+      "meter fill",
+      "orange pulse",
+      "timeline reveal",
+      "trial modal"
+    ]
+  },
+  "referenceUsage": {
+    "type": "visual-reference-input",
+    "folder": "03-energetico-vibrante",
+    "crossesWith": "clientes/[slug]/data/design-system.json",
+    "purpose": "Insumo de fitness com ciencia e calor. O DS final escolhe quais metricas reais usar.",
+    "nonGoals": [
+      "nao criar DS final do cliente",
+      "nao representar personalidade da pasta",
+      "nao usar padrao generico para todos os sites"
+    ],
+    "differentiationRules": [
+      "Hero full viewport com metricas e foto ativa.",
+      "Menu deve destacar treino, ciencia, estudios e trial.",
+      "Componentes usam zonas e progresso como linguagem.",
+      "Motion pulsa, mas nao pisca."
+    ],
+    "siteSpecific": true,
+    "qualityRule": "Preview precisa demonstrar personalidade do site extraido, com menu completo, hero, tokens, gradientes, tipo, efeitos, componentes, cards/secoes, story parallax, icones, handoff e motion linkados.",
+    "notPersonalityWide": true
+  },
+  "outputs": {
+    "json": "design-systems/json/reference-ds-04-orangetheory-com.json",
+    "markdown": "design-systems/previews/markdown/reference-ds-04-orangetheory-com-preview.md",
+    "html": "design-systems/previews/html/reference-ds-04-orangetheory-com-visual-preview.html"
+  },
+  "schemaVersion": "reference-ds-v2",
+  "globalTokens": {
+    "opacityScale": {
+      "solid": 1,
+      "strong": 0.86,
+      "medium": 0.64,
+      "soft": 0.4,
+      "wash": 0.18,
+      "hairline": 0.08
+    },
+    "radius": "0-10px conforme referencia; cards ate 8px salvo marcas arredondadas",
+    "spacing": "clamp responsive"
+  },
+  "componentsDefaults": {
+    "states": [
+      "default",
+      "hover",
+      "focus-visible",
+      "active",
+      "loading",
+      "disabled"
+    ],
+    "referenceOnly": true
+  },
+  "previewNavigation": [
+    {
+      "order": 1,
+      "id": "menu-top",
+      "label": "Menu / top",
+      "href": "#menu-top"
+    },
+    {
+      "order": 2,
+      "id": "top",
+      "label": "Top",
+      "href": "#top"
+    },
+    {
+      "order": 3,
+      "id": "hero",
+      "label": "Sessao Hero",
+      "href": "#hero"
+    },
+    {
+      "order": 4,
+      "id": "color-tokens",
+      "label": "tokens de cor",
+      "href": "#color-tokens"
+    },
+    {
+      "order": 5,
+      "id": "gradients",
+      "label": "gradientes / opacidade",
+      "href": "#gradients"
+    },
+    {
+      "order": 6,
+      "id": "type-system",
+      "label": "type system",
+      "href": "#type-system"
+    },
+    {
+      "order": 7,
+      "id": "type-detail",
+      "label": "tipografia detalhada",
+      "href": "#type-detail"
+    },
+    {
+      "order": 8,
+      "id": "effects",
+      "label": "efeitos e mouse overs",
+      "href": "#effects"
+    },
+    {
+      "order": 9,
+      "id": "components",
+      "label": "componentes",
+      "href": "#components"
+    },
+    {
+      "order": 10,
+      "id": "contract",
+      "label": "contrato sem repeticao",
+      "href": "#contract"
+    },
+    {
+      "order": 11,
+      "id": "menu-board",
+      "label": "menu board component",
+      "href": "#menu-board"
+    },
+    {
+      "order": 12,
+      "id": "reference-slip",
+      "label": "reference slip",
+      "href": "#reference-slip"
+    },
+    {
+      "order": 13,
+      "id": "cards-sections",
+      "label": "cards e secoes",
+      "href": "#cards-sections"
+    },
+    {
+      "order": 14,
+      "id": "story",
+      "label": "story split parallax",
+      "href": "#story"
+    },
+    {
+      "order": 15,
+      "id": "icons",
+      "label": "icones",
+      "href": "#icons"
+    },
+    {
+      "order": 16,
+      "id": "handoff",
+      "label": "handoff de referencia",
+      "href": "#handoff"
+    },
+    {
+      "order": 17,
+      "id": "motion",
+      "label": "motion contract",
+      "href": "#motion"
+    },
+    {
+      "order": 18,
+      "id": "replay-motion",
+      "label": "Replay motion",
+      "href": "#replay-motion"
+    }
+  ],
+  "requiredPreviewSections": [
+    "Menu / top",
+    "Sessao Hero",
+    "tokens de cor",
+    "gradientes / opacidade",
+    "type system",
+    "tipografia detalhada",
+    "efeitos e mouse overs",
+    "componentes",
+    "contrato sem repeticao",
+    "menu board component",
+    "reference slip",
+    "cards e secoes",
+    "story split parallax",
+    "icones",
+    "handoff de referencia",
+    "motion contract",
+    "Replay motion"
+  ],
+  "requiredPreviewContract": {
+    "allMenuLinksMustResolve": true,
+    "menuHasTopAndHeroAsSeparateAnchors": true,
+    "heroMustOccupyFullViewport": true,
+    "noRepeatedGenericSections": true,
+    "noClippedTextOrOverlaps": true,
+    "showGradientsOpacityHoverEntryExitParallaxIcons": true
+  }
+}

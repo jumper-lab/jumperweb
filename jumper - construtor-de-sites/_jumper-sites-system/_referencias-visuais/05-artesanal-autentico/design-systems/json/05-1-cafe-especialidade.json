@@ -1,0 +1,579 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "05.1",
+  "design_system_name": "Café de Especialidade — Origem & Torra",
+  "category": "05 — Artesanal e Autêntico",
+  "subcategory": "Café de especialidade, torrefação artesanal e empórios de origem",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Ceremony Coffee Roasters",
+    "url": "https://ceremonycoffee.com",
+    "location": "Annapolis, Maryland, EUA",
+    "awards": [
+      "Awwwards Site of the Day — 8 de maio de 2018",
+      "Awwwards — indicado a Ecommerce of the Year 2018",
+      "Site por Drexler (Baltimore) — case público: +400% em vendas online após o redesign"
+    ],
+    "secondary_reference": {
+      "name": "Verve Coffee Roasters",
+      "url": "https://vervecoffee.com",
+      "awards": ["Awwwards Honorable Mention"],
+      "note": "Referência estilística complementar: luz natural, storytelling farm-to-cup e fotografia de processo."
+    },
+    "why_chosen": "O Ceremony rompeu a convenção da categoria ao tratar café como narrativa sensorial — em vez de sacas e grãos, mostra as notas de sabor e a jornada do produto. Capturamos dessa essência o ritmo editorial, a tipografia serifada expressiva e a ideia de que o PROCESSO é o argumento de venda. A Verve soma o mood terroso de origem: mãos, ferramentas, colheita, luz de fim de tarde. Nada aqui é cópia de layout — é repertório de atmosfera.",
+    "font_substitution_note": "As referências usam fontes comerciais próprias de e-commerce premium; este DS adota Cormorant Garamond + Inter (ambas Google Fonts) como fontes oficiais, sem dependência comercial."
+  },
+  "essence": {
+    "mood": "terroso, escuro, editorial, com alma de fazenda e precisão de laboratório de torra",
+    "keywords": ["origem", "torra", "grão de filme", "capítulos numerados", "farm-to-cup", "anti-massificação"],
+    "target_feeling": "aqui tem alma, tem história, vale o preço diferenciado — o processo é a venda",
+    "audience": "consumidores conscientes, coffee lovers, público anti-massificação que paga por procedência",
+    "uniqueness_guard": "Distinto do DS 02.2 (que usa Cormorant com sage claro e mood leve): aqui o mood é terroso ESCURO, com capítulos editoriais numerados, textura de grão de filme e narrativa vertical de origem. Distinto dos irmãos 05.2 (terracota #9B6B47 + Fraunces, moody magazine) e 05.3 (dourado-grão #C19A6B + Newsreader, luz natural): paleta marrom-café + verde-musgo exclusiva e composição em capítulos verticais."
+  },
+  "colors": {
+    "primary": "#8B5E3C",
+    "primary_usage": "Marrom-café: CTAs, links, numeração de capítulos, detalhes de marca. Sobre creme (#F7F2EA) atinge 5.01:1 — aprovado AA para texto normal. Sobre surface_alt (#EFE5D6) cai para 4.48:1 — nesse fundo, usar apenas em texto grande (≥24px ou ≥18.66px bold) ou trocar pela variante primary_deep.",
+    "primary_deep": "#6E4A2F",
+    "primary_deep_usage": "Variante escura do marrom-café para texto normal sobre surface_alt (6.28:1) e estados hover/active de botões.",
+    "secondary": "#2F5233",
+    "secondary_usage": "Verde-musgo: selos de origem, tags de processo, links secundários, fundos de destaque botânico. Sobre creme atinge 7.94:1 — aprovado AA e AAA.",
+    "surface": "#F7F2EA",
+    "surface_alt": "#EFE5D6",
+    "surface_dark": "#221A13",
+    "surface_dark_usage": "Fundo dos capítulos escuros da narrativa de origem (Colheita, Torra). Texto creme #F7F2EA sobre ele atinge 15.38:1.",
+    "text_primary": "#2B211A",
+    "text_secondary": "#5C4A3A",
+    "text_muted": "#7A6A5B",
+    "text_on_dark": "#F7F2EA",
+    "border": "#D9CCB8",
+    "error": "#9E3B2B",
+    "success": "#2E5D36",
+    "warning": "#756019",
+    "neutral_scale": {
+      "50": "#FAF6EF",
+      "100": "#F0E8DB",
+      "200": "#E2D6C3",
+      "300": "#CBBBA4",
+      "400": "#A99680",
+      "500": "#857260",
+      "600": "#6B5A49",
+      "700": "#524437",
+      "800": "#382E25",
+      "900": "#221A13"
+    },
+    "contrast_verification": {
+      "primary_on_surface": "5.01:1 — AA aprovado para texto normal (#8B5E3C sobre #F7F2EA)",
+      "primary_on_surface_alt": "4.48:1 — abaixo de 4.5:1; usar só texto grande, ou usar primary_deep #6E4A2F (6.28:1)",
+      "primary_deep_on_surface": "7.02:1 — AA e AAA",
+      "text_primary_on_surface": "14.12:1 — AAA",
+      "text_secondary_on_surface": "7.55:1 — AAA",
+      "text_muted_on_surface": "4.66:1 — AA (usar só em legendas e metadados)",
+      "secondary_on_surface": "7.94:1 — AA e AAA",
+      "white_on_primary": "5.58:1 — AA (texto branco em botões marrom-café)",
+      "white_on_secondary": "8.84:1 — AAA",
+      "text_on_dark_on_surface_dark": "15.38:1 — AAA (#F7F2EA sobre #221A13)",
+      "error_on_surface": "6.05:1 — AA",
+      "success_on_surface": "6.89:1 — AA",
+      "warning_on_surface": "5.47:1 — AA",
+      "notes": "Paleta indicada no brief (#8B5E3C / #2F5233) verificada e mantida como está sobre o creme principal. Único ajuste documentado: criação de primary_deep #6E4A2F para texto normal sobre surface_alt, onde o primary original fica 0.02 abaixo do mínimo AA. O warning foi calibrado para #756019 (ocre torrado) porque tons de âmbar mais claros falhavam em 4.5:1."
+    }
+  },
+  "typography": {
+    "heading_font": "Cormorant Garamond",
+    "heading_font_source": "Google Fonts",
+    "heading_font_note": "Mesma família do DS 02.2, mas aqui usada em pesos 500-600, corpo grande, itálico em destaques narrativos e SEMPRE sobre paleta terrosa escura — o mood resultante é radicalmente distinto do sage claro do 02.2.",
+    "body_font": "Inter",
+    "body_font_source": "Google Fonts",
+    "mono_font": "não se aplica — metadados de torra usam Inter em caps espaçadas",
+    "base_size": "16px",
+    "fallbacks": {
+      "heading": "'Cormorant Garamond', 'Times New Roman', Georgia, serif",
+      "body": "'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
+    },
+    "scales": {
+      "mobile": {
+        "h1": { "size": "40px", "line_height": "1.1", "weight": "600", "letter_spacing": "-0.01em", "family": "Cormorant Garamond" },
+        "h2": { "size": "30px", "line_height": "1.15", "weight": "600", "letter_spacing": "-0.005em", "family": "Cormorant Garamond" },
+        "h3": { "size": "23px", "line_height": "1.25", "weight": "600", "letter_spacing": "0", "family": "Cormorant Garamond" },
+        "body": { "size": "16px", "line_height": "1.7", "weight": "400", "letter_spacing": "0", "family": "Inter" },
+        "small": { "size": "13px", "line_height": "1.5", "weight": "500", "letter_spacing": "0.12em", "transform": "uppercase", "family": "Inter" }
+      },
+      "desktop": {
+        "h1": { "size": "68px", "line_height": "1.05", "weight": "600", "letter_spacing": "-0.015em", "family": "Cormorant Garamond" },
+        "h2": { "size": "44px", "line_height": "1.1", "weight": "600", "letter_spacing": "-0.01em", "family": "Cormorant Garamond" },
+        "h3": { "size": "28px", "line_height": "1.2", "weight": "600", "letter_spacing": "0", "family": "Cormorant Garamond" },
+        "body": { "size": "17px", "line_height": "1.75", "weight": "400", "letter_spacing": "0", "family": "Inter" },
+        "small": { "size": "13px", "line_height": "1.5", "weight": "500", "letter_spacing": "0.14em", "transform": "uppercase", "family": "Inter" }
+      }
+    },
+    "special_styles": {
+      "chapter_number": "Cormorant Garamond 500 itálico, 96-140px, cor primary com opacidade 0.25, numeração 01/02/03/04 posicionada atrás do título do capítulo",
+      "eyebrow": "Inter 500, 12-13px, uppercase, letter-spacing 0.14em, cor secondary — usado como 'DA FAZENDA', 'NA TORRA', etc.",
+      "narrative_emphasis": "trechos-chave do storytelling em Cormorant Garamond itálico 1.35em, cor primary_deep"
+    }
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — valores idênticos aos definidos em colors, typography, spacing, borders, shadows e motion deste DS",
+    "tokens": {
+      "--color-primary": "#8B5E3C",
+      "--color-primary-deep": "#6E4A2F",
+      "--color-primary-active": "#5C3E27",
+      "--color-secondary": "#2F5233",
+      "--color-surface": "#F7F2EA",
+      "--color-surface-alt": "#EFE5D6",
+      "--color-surface-dark": "#221A13",
+      "--color-text": "#2B211A",
+      "--color-text-secondary": "#5C4A3A",
+      "--color-text-muted": "#7A6A5B",
+      "--color-text-on-dark": "#F7F2EA",
+      "--color-border": "#D9CCB8",
+      "--color-error": "#9E3B2B",
+      "--color-success": "#2E5D36",
+      "--color-warning": "#756019",
+      "--color-neutral-50": "#FAF6EF",
+      "--color-neutral-100": "#F0E8DB",
+      "--color-neutral-200": "#E2D6C3",
+      "--color-neutral-300": "#CBBBA4",
+      "--color-neutral-400": "#A99680",
+      "--color-neutral-500": "#857260",
+      "--color-neutral-600": "#6B5A49",
+      "--color-neutral-700": "#524437",
+      "--color-neutral-800": "#382E25",
+      "--color-neutral-900": "#221A13",
+      "--font-heading": "'Cormorant Garamond', 'Times New Roman', Georgia, serif",
+      "--font-body": "'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "--text-h1": "clamp(2.5rem, 1.6rem + 3.75vw, 4.25rem)",
+      "--text-h2": "clamp(1.875rem, 1.45rem + 1.75vw, 2.75rem)",
+      "--text-h3": "clamp(1.4375rem, 1.32rem + 0.5vw, 1.75rem)",
+      "--text-body": "clamp(1rem, 0.96rem + 0.15vw, 1.0625rem)",
+      "--text-small": "0.8125rem",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "40px",
+      "--space-xxl": "64px",
+      "--space-xxxl": "96px",
+      "--space-xxxxl": "144px",
+      "--section-gap": "clamp(72px, 6vw + 40px, 144px)",
+      "--radius-none": "0",
+      "--radius-sm": "3px",
+      "--radius-md": "6px",
+      "--radius-lg": "12px",
+      "--radius-full": "999px",
+      "--shadow-xs": "0 1px 2px rgba(34, 26, 19, 0.06)",
+      "--shadow-sm": "0 2px 6px rgba(34, 26, 19, 0.08)",
+      "--shadow-md": "0 6px 18px rgba(34, 26, 19, 0.10)",
+      "--shadow-lg": "0 14px 34px rgba(34, 26, 19, 0.14)",
+      "--shadow-xl": "0 24px 56px rgba(34, 26, 19, 0.18)",
+      "--duration-instant": "150ms",
+      "--duration-fast": "300ms",
+      "--duration-base": "500ms",
+      "--duration-slow": "700ms",
+      "--duration-slower": "900ms",
+      "--ease-standard": "cubic-bezier(0.4, 0.0, 0.2, 1)",
+      "--ease-entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "--ease-drift": "cubic-bezier(0.33, 0.0, 0.2, 1)",
+      "--container-max": "1200px",
+      "--content-max": "720px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "40px",
+      "xxl": "64px",
+      "xxxl": "96px",
+      "xxxxl": "144px"
+    },
+    "section_spacing": {
+      "mobile": "72px",
+      "tablet": "104px",
+      "desktop": "144px"
+    },
+    "section_spacing_note": "Capítulos da narrativa respiram mais que seções comuns: no desktop, 144px entre capítulos reforça o ritmo de leitura editorial lenta.",
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "40px",
+      "container_desktop": "64px"
+    },
+    "container_max_width": "1200px",
+    "narrative_max_width": "720px — colunas de texto narrativo nunca passam de ~68ch para leitura confortável",
+    "gutters": "24px (mobile) / 32px (desktop)"
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "3px",
+      "md": "6px",
+      "lg": "12px",
+      "full": "999px"
+    },
+    "radius_usage": {
+      "buttons": "3px — quase reto, tom artesanal-sério, nada de pílulas",
+      "cards": "6px",
+      "inputs": "3px",
+      "images": "6px — fotos de processo levemente arredondadas; retratos de produtor podem usar full em avatares",
+      "containers": "0 — capítulos sangram de borda a borda"
+    },
+    "stroke": {
+      "thin": "1px solid #D9CCB8",
+      "medium": "2px solid #8B5E3C"
+    },
+    "decorative_rule": "linha horizontal de 48px, 2px, cor primary — usada sob eyebrows de capítulo, lembra régua de prova de torra"
+  },
+  "shadows": {
+    "none": "none",
+    "xs": "0 1px 2px rgba(34, 26, 19, 0.06)",
+    "sm": "0 2px 6px rgba(34, 26, 19, 0.08)",
+    "md": "0 6px 18px rgba(34, 26, 19, 0.10)",
+    "lg": "0 14px 34px rgba(34, 26, 19, 0.14)",
+    "xl": "0 24px 56px rgba(34, 26, 19, 0.18)",
+    "shadow_usage": "Sombras quentes (base #221A13, nunca preto puro) e discretas — o DS prefere profundidade por camadas de cor e textura de grão a sombras chamativas. Cards usam sm em repouso e md no hover; modais usam lg; nada usa xl exceto imagem destacada do hero."
+  },
+  "motion": {
+    "durations": {
+      "instant": "150ms",
+      "fast": "300ms",
+      "base": "500ms",
+      "slow": "700ms",
+      "slower": "900ms"
+    },
+    "easings": {
+      "standard": "cubic-bezier(0.4, 0.0, 0.2, 1)",
+      "entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "drift": "cubic-bezier(0.33, 0.0, 0.2, 1)"
+    },
+    "animations": [
+      { "name": "reveal-lento", "duration": "900ms", "easing": "entrance", "trigger": "IntersectionObserver ao entrar 20% no viewport", "description": "fade + translateY(28px) → 0; texto narrativo e imagens de capítulo entram devagar, como página de revista virando" },
+      { "name": "parallax-sutil", "duration": "700-900ms de suavização (lerp)", "easing": "drift", "trigger": "scroll", "description": "imagens de capítulo deslocam no máximo 6-8% da própria altura; NUNCA parallax agressivo — o efeito deve ser quase subliminar" },
+      { "name": "grain-drift", "duration": "8s loop", "easing": "linear (steps opcional)", "trigger": "contínuo, pausado com prefers-reduced-motion", "description": "textura de grão de filme (SVG feTurbulence) com leve deslocamento de background-position, simulando fotografia analógica" },
+      { "name": "chapter-number-fade", "duration": "900ms", "easing": "entrance", "trigger": "scroll into view", "description": "numeração gigante do capítulo sobe de opacity 0 → 0.25 com delay de 120ms em relação ao título" },
+      { "name": "hover-card-lift", "duration": "300ms", "easing": "standard", "trigger": "hover/focus-visible", "description": "card sobe 4px, sombra sm → md, imagem interna dá zoom de 1.03" },
+      { "name": "button-fill", "duration": "300ms", "easing": "standard", "trigger": "hover/focus-visible", "description": "botão outline preenche do fundo para o marrom-café; botão sólido escurece para primary_deep" },
+      { "name": "underline-grow", "duration": "300ms", "easing": "standard", "trigger": "hover em links", "description": "sublinhado cresce da esquerda para a direita em cor secondary" }
+    ],
+    "prefers_reduced_motion": true,
+    "reduced_motion_strategy": "Com prefers-reduced-motion: parallax desativado (transform: none), reveals viram fade simples de 150ms, grain-drift congela (textura estática mantida), transições reduzidas a 100ms."
+  },
+  "components": {
+    "buttons": {
+      "variants": {
+        "primary": {
+          "background": "#8B5E3C",
+          "color": "#FFFFFF",
+          "border": "none",
+          "hover": "background #6E4A2F, translateY(-1px)",
+          "active": "background #5C3E27",
+          "focus": "outline 2px solid #2F5233, outline-offset 3px",
+          "disabled": "background #CBBBA4, color #F7F2EA, cursor not-allowed"
+        },
+        "secondary": {
+          "background": "transparent",
+          "color": "#6E4A2F",
+          "border": "1.5px solid #8B5E3C",
+          "hover": "background #8B5E3C, color #FFFFFF (efeito button-fill)",
+          "active": "background #6E4A2F, border-color #6E4A2F",
+          "focus": "outline 2px solid #2F5233, outline-offset 3px",
+          "disabled": "border-color #CBBBA4, color #A99680"
+        },
+        "ghost": {
+          "background": "transparent",
+          "color": "#2F5233",
+          "border": "none",
+          "detail": "sublinhado underline-grow no hover; usado em 'Conheça nossos produtores →'",
+          "focus": "outline 2px solid #2F5233, outline-offset 3px"
+        },
+        "on_dark": {
+          "background": "transparent",
+          "color": "#F7F2EA",
+          "border": "1.5px solid rgba(247, 242, 234, 0.5)",
+          "hover": "background #F7F2EA, color #221A13",
+          "usage": "CTAs dentro dos capítulos escuros"
+        }
+      },
+      "sizes": {
+        "sm": { "padding": "10px 20px", "font": "Inter 500 14px" },
+        "md": { "padding": "14px 30px", "font": "Inter 500 15px, letter-spacing 0.02em" },
+        "lg": { "padding": "18px 40px", "font": "Inter 500 16px, letter-spacing 0.02em" }
+      },
+      "radius": "3px",
+      "min_touch_target": "44px de altura garantidos em md e lg"
+    },
+    "cards": {
+      "product_card": {
+        "structure": "imagem 4:5 (gradiente texturizado simulando foto) + eyebrow de origem em secondary + nome em Cormorant 24px + notas de sabor em text_secondary + preço em Inter 600",
+        "background": "#FFFFFF sobre surface, ou surface sobre surface_alt",
+        "border": "1px solid #D9CCB8",
+        "radius": "6px",
+        "shadow": "sm em repouso, md + lift 4px no hover",
+        "detail": "tag de processo (ex: 'LAVADO', 'NATURAL') como badge verde-musgo no canto da imagem"
+      },
+      "origin_card": {
+        "structure": "retrato do produtor (círculo 72px) + nome + fazenda/região + altitude + varietal em lista de metadados",
+        "usage": "grade 'Conheça nossos produtores'"
+      },
+      "chapter_block": {
+        "structure": "número gigante translúcido + eyebrow + H2 + narrativa (máx 68ch) + imagem full-bleed com parallax sutil e overlay de grão",
+        "alternation": "capítulos alternam claro (surface) e escuro (surface_dark), e alternam imagem à esquerda/direita no desktop"
+      }
+    },
+    "inputs": {
+      "default": "background #FFFFFF, border 1px solid #D9CCB8, radius 3px, padding 14px 16px, Inter 16px, placeholder #7A6A5B",
+      "focus": "border-color #8B5E3C, box-shadow 0 0 0 3px rgba(139, 94, 60, 0.15), outline none (indicador via border+shadow)",
+      "error": "border-color #9E3B2B, mensagem em #9E3B2B 14px com ícone; aria-describedby ligando input à mensagem",
+      "success": "border-color #2E5D36",
+      "label": "Inter 500 14px, color text_primary, margin-bottom 6px",
+      "min_height": "48px"
+    },
+    "hero": {
+      "layout": "hero editorial de capa de revista: eyebrow 'TORREFAÇÃO DE ORIGEM' + H1 em Cormorant 68px em duas linhas + subtítulo narrativo + CTA primário e ghost lado a lado; imagem NÃO fica ao lado — fica ABAIXO da dobra de texto, full-bleed com grão de filme, puxando o usuário para o primeiro capítulo",
+      "background": "surface com textura de grão sutil",
+      "height": "auto — o hero é curto de propósito (70-80vh no desktop); a promessa está nos capítulos",
+      "scroll_cue": "indicação 'role para conhecer a origem ↓' em small caps"
+    },
+    "navigation": {
+      "desktop": "topbar transparente sobre o hero, fundo surface com blur ao rolar; logo tipográfico em Cormorant à esquerda, links Inter small-caps ao centro-direita, CTA 'Comprar café' como botão secondary",
+      "mobile": "logo + hambúrguer; menu abre em painel de tela cheia surface_dark com links em Cormorant 32px creme",
+      "active_state": "link ativo com sublinhado 2px em secondary",
+      "height": "72px desktop / 60px mobile"
+    },
+    "footer": {
+      "background": "#221A13",
+      "color": "#F7F2EA",
+      "structure": "4 colunas desktop (marca + assinatura narrativa, navegação, contato, newsletter 'Cartas da torra'), empilhadas no mobile",
+      "detail": "linha de crédito de origem: 'Grãos de produtores parceiros — safra atual' em text muted claro (#CBBBA4 sobre escuro, 8.2:1)",
+      "newsletter": "input on-dark com botão on_dark"
+    },
+    "testimonials": {
+      "style": "citação editorial: aspas tipográficas gigantes em Cormorant itálico (cor primary, opacidade 0.3), texto da avaliação em Cormorant itálico 24-28px, autor em Inter small-caps com cidade",
+      "layout": "uma citação por vez, centralizada, largura máx 720px — sem carrossel automático; navegação por pontos acessíveis",
+      "background": "surface_alt"
+    },
+    "badges": {
+      "process_tag": "fundo #2F5233, texto #FFFFFF, Inter 600 11px uppercase ls 0.1em, radius 3px, padding 4px 10px — 'LAVADO', 'NATURAL', 'HONEY'",
+      "score_tag": "borda 1px primary, texto primary_deep — '87 PONTOS SCA'",
+      "origin_tag": "fundo transparente, texto secondary com ícone de folha SVG inline — 'MANTIQUEIRA DE MINAS'"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "narrativo, de origem, caloroso mas preciso — voz de quem conhece o produtor pelo nome e a curva de torra de cor. Fala de processo com orgulho, nunca com jargão esnobe. Primeira pessoa do plural ('nós torramos', 'nossa parceria').",
+    "headline_examples": [
+      "Da fazenda à sua xícara, cada etapa tem nome e sobrenome.",
+      "Torramos pouco, torramos devagar, torramos com propósito.",
+      "O café que você bebe começou a ser escrito na florada.",
+      "Conheça a altitude, o solo e as mãos por trás deste grão."
+    ],
+    "cta_examples": [
+      "Conheça nossos produtores",
+      "Descubra a safra atual",
+      "Assine o clube da torra",
+      "Role para conhecer a origem"
+    ],
+    "microcopy_examples": [
+      "Torrado esta semana em nosso ateliê",
+      "Colheita 2026 — Mantiqueira de Minas, 1.250m",
+      "Frete cuidadoso: seu café viaja protegido da luz e do calor"
+    ],
+    "avoid": [
+      "linguagem de commodity ('melhor preço', 'promoção imperdível', 'atacado')",
+      "urgência artificial e contadores de escassez",
+      "jargão técnico sem tradução (falar 'notas de catação' sem explicar)",
+      "tom esnobe que exclui iniciantes — o DS convida, não intimida",
+      "superlativos vazios ('o melhor café do mundo')"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas / 1200px máx; texto narrativo em 6-7 colunas centrais (máx 68ch); imagens de capítulo sangram full-bleed",
+    "signature_pattern": "NARRATIVA VERTICAL DE ORIGEM EM CAPÍTULOS NUMERADOS — assinatura composicional exclusiva deste DS: a home é lida como um ensaio fotográfico em 4 capítulos (01 A Origem, 02 A Colheita, 03 A Torra, 04 A Xícara), alternando fundos claros e escuros, com numeração gigante translúcida e grão de filme sobre as imagens.",
+    "page_flow": [
+      { "section": "navigation", "layout": "topbar transparente → sólida ao rolar" },
+      { "section": "hero editorial", "layout": "texto centralizado tipo capa de revista + imagem full-bleed abaixo com grão de filme + scroll cue" },
+      { "section": "capítulo 01 — A Origem", "layout": "fundo surface; número gigante + narrativa à esquerda, imagem parallax à direita; mapa/altitude como metadados" },
+      { "section": "capítulo 02 — A Colheita", "layout": "fundo surface_dark; imagem full-bleed de mãos/colheita com overlay de grão; texto creme centralizado sobre faixa inferior" },
+      { "section": "capítulo 03 — A Torra", "layout": "fundo surface; espelhado do cap. 01 (imagem à esquerda); curva de torra desenhada em SVG como elemento gráfico" },
+      { "section": "capítulo 04 — A Xícara", "layout": "fundo surface_alt; grade de product cards (3 col desktop / 1 col mobile) com badges de processo" },
+      { "section": "produtores", "layout": "grade de origin cards com retratos circulares + CTA 'Conheça nossos produtores'" },
+      { "section": "depoimento", "layout": "citação editorial única, centralizada, em surface_alt" },
+      { "section": "clube/newsletter", "layout": "faixa escura com convite 'Cartas da torra'" },
+      { "section": "footer", "layout": "4 colunas em surface_dark" }
+    ],
+    "image_treatment": "Fotografia com grão de filme analógico: no preview, simulado com gradientes quentes multicamada + SVG feTurbulence (fractalNoise) como overlay de ruído em opacidade 0.25-0.4 + leve vinheta radial. Fotos reais devem privilegiar mãos, ferramentas, colheita e vapor — processo visível, nunca banco de imagem genérico. Tom quente (WB deslocado para âmbar), sombras esverdeadas.",
+    "density": "baixa — poucas informações por dobra, muito respiro; o usuário desce a página como quem lê uma reportagem",
+    "whitespace": "generoso e assimétrico: 144px entre capítulos no desktop; margens internas de texto largas; a numeração translúcida ocupa espaço 'vazio' de propósito"
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "normal_text": "≥ 4.5:1 verificado — corpo usa #2B211A (14.12:1) e #5C4A3A (7.55:1) sobre creme; #F7F2EA (15.38:1) sobre escuro",
+      "large_text": "≥ 3:1 verificado — headings em primary sobre surface_alt (4.48:1) só permitidos por serem grandes",
+      "ui_components": "bordas de inputs (#D9CCB8) acompanhadas de labels de alto contraste; estados de foco com anel verde-musgo 2px"
+    },
+    "keyboard_navigation": "toda a navegação operável por Tab/Shift+Tab; menu mobile com focus trap e fechamento por Esc; skip-link 'Pular para o conteúdo' como primeiro elemento focável; carrossel de depoimentos navegável por setas com botões reais",
+    "focus_states": "outline 2px solid #2F5233 com offset 3px em elementos claros; outline #F7F2EA em fundos escuros; nunca outline: none sem substituto visível",
+    "alt_text": "imagens narrativas exigem alt descritivo do PROCESSO ('Mãos de produtora selecionando cerejas maduras de café'); texturas e gradientes decorativos usam alt vazio e aria-hidden",
+    "semantic_html": "header/nav/main/section/article/footer; capítulos como <section> com aria-labelledby no H2; numeração decorativa com aria-hidden='true'; landmarks únicos",
+    "touch_targets": "44px minimum — botões md/lg, links de navegação mobile com padding ampliado, pontos do carrossel com área de 44px",
+    "motion_safety": "prefers-reduced-motion desativa parallax e grain-drift; nenhuma animação pisca acima de 3Hz; autoplay inexistente"
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Coluna única: eyebrow 'TORREFAÇÃO DE ORIGEM' → H1 Cormorant 40px em duas linhas → subtítulo narrativo → CTA primário e ghost empilhados (full-width, máx 360px) → imagem full-bleed com grão abaixo → scroll cue",
+      "tablet": "Texto centralizado com largura confortável; CTA primário e ghost lado a lado; imagem full-bleed abaixo com grão de filme",
+      "desktop": "Hero editorial curto (70–80vh): H1 Cormorant 68px centralizado tipo capa de revista, imagem full-bleed ABAIXO da dobra de texto, scroll cue 'role para conhecer a origem ↓'"
+    },
+    "chapter_block": {
+      "mobile": "Empilhado: número translúcido + eyebrow + H2 + narrativa (máx 68ch) + imagem full-bleed abaixo; capítulos escuros (surface_dark) mantêm texto creme centralizado",
+      "tablet": "Narrativa e imagem ainda majoritariamente empilhadas; parallax reduzido",
+      "desktop": "Alternância imagem esquerda/direita (cap. 01 imagem à direita, cap. 03 espelhado à esquerda); narrativa em 6–7 colunas centrais máx 68ch; parallax sutil 6–8%; 144px entre capítulos"
+    },
+    "product_grid": {
+      "mobile": "1 coluna, product cards full-width, gutter 24px",
+      "tablet": "2 colunas, gutter 24px",
+      "desktop": "3 colunas, gutter 32px"
+    },
+    "navigation": {
+      "mobile_tablet": "Logo Cormorant + hambúrguer (44px); menu abre em painel fullscreen surface_dark com links Cormorant 32px creme; altura 60px",
+      "desktop": "Topbar transparente sobre o hero → fundo surface com blur ao rolar; logo à esquerda, links Inter small-caps ao centro-direita, CTA 'Comprar café' como botão secondary; altura 72px"
+    },
+    "footer": {
+      "mobile": "4 colunas empilhadas sobre surface_dark, contato/newsletter em destaque",
+      "desktop": "4 colunas (marca+assinatura / navegação / contato / newsletter 'Cartas da torra') sobre surface_dark"
+    },
+    "touch_adjustments": "Hover-card-lift e underline-grow viram active-state no touch; parallax e grain-drift respeitam prefers-reduced-motion; alvos de toque mín. 44px (botões md/lg, links do menu mobile, pontos do carrossel de depoimentos)"
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente, coerentes com components deste DS",
+    "button_primary": ["default (bg #8B5E3C, texto branco)", "hover (bg #6E4A2F + translateY(-1px), button-fill 300ms)", "focus-visible (outline 2px #2F5233, offset 3px)", "active (bg #5C3E27)", "disabled (bg #CBBBA4, texto #F7F2EA, cursor not-allowed)", "loading (spinner 16px branco + texto 'Enviando...')"],
+    "button_secondary": ["default (outline 1.5px #8B5E3C, texto #6E4A2F)", "hover (button-fill: bg #8B5E3C, texto branco)", "focus-visible (outline 2px #2F5233, offset 3px)", "active (bg #6E4A2F, border #6E4A2F)", "disabled (border #CBBBA4, texto #A99680)"],
+    "link_nav": ["default", "hover (underline-grow em secondary)", "focus-visible (outline 2px #2F5233)", "current/active (sublinhado 2px fixo em secondary)"],
+    "card_product": ["default (shadow sm)", "hover (lift 4px, shadow sm→md, imagem zoom 1.03)", "focus-within"],
+    "input": ["default (border 1px #D9CCB8)", "focus (border #8B5E3C + box-shadow 0 0 0 3px rgba(139,94,60,0.15))", "filled", "error (border #9E3B2B + mensagem + aria-describedby)", "success (border #2E5D36)", "disabled"],
+    "nav_header": ["topo (topbar transparente sobre hero)", "rolado (fundo surface com blur)", "menu mobile aberto (painel surface_dark com focus trap + Esc)"]
+  },
+  "photography_direction": {
+    "style": "Documental de origem farm-to-cup — processo visível e mãos reais, com grão de filme analógico; nunca banco de imagem genérico",
+    "subjects": [
+      "Mãos de produtor(a) selecionando cerejas maduras de café",
+      "Ferramentas e etapas de torra; tambor, curva, grãos esfriando",
+      "Colheita e paisagem de fazenda em luz de fim de tarde",
+      "Vapor subindo da xícara, textura de grão em close",
+      "Retratos de produtores com nome (usados em origin cards, avatar circular)"
+    ],
+    "light": "Natural e quente, direção lateral suave; golden hour para externas de colheita",
+    "color_grading": "Temperatura quente (WB deslocado para âmbar), sombras levemente esverdeadas para dialogar com o verde-musgo; saturação natural. Proibido: filtros frios, HDR artificial, preto e branco dramático",
+    "framing": "Alturas de olhar humanas, profundidade de campo rasa em closes de processo; imagens de capítulo full-bleed com overlay de grão (feTurbulence, opacidade 0.25–0.4) e vinheta radial leve",
+    "avoid": [
+      "Stock genérico de sacas e grãos sem contexto humano",
+      "Fotos massificadas de coffee shop com filtro frio",
+      "Parallax agressivo sobre a imagem (máx 6–8% da altura)",
+      "Imagens sem processo/pessoas num site que vende procedência"
+    ],
+    "fallback_sem_foto": "Gradientes quentes multicamada (135deg, #8B5E3C → #6E4A2F → #221A13) + overlay SVG feTurbulence (fractalNoise, opacidade 0.25–0.4) simulando grão de filme + vinheta radial; sombras esverdeadas puxando para secondary #2F5233. Overlay decorativo sempre aria-hidden e alt vazio"
+  },
+  "iconography": {
+    "style": "Linha (stroke 1.5px), cantos com stroke-linecap round, grid 24x24 — traço fino e artesanal coerente com o mood editorial",
+    "color": "#6E4A2F (primary_deep) sobre claro, #F7F2EA (text_on_dark) sobre surface_dark; ícone de folha em #2F5233 (secondary) para selos de origem",
+    "recommended_set": "Lucide ou Feather (open source, MIT), ajustando stroke para 1.5",
+    "usage": "Ícones sempre acompanhados de texto — nunca ícone sozinho como única affordance; ícone de folha SVG inline acompanha origin_tag",
+    "decorative_shapes": "Régua de prova de torra (linha horizontal 48px, 2px, primary sob eyebrows), curva de torra desenhada em SVG no capítulo 03, textura de grão de filme (feTurbulence) — sempre aria-hidden"
+  },
+  "do_dont": {
+    "do": [
+      "Usar Cormorant Garamond itálico em trechos-chave do storytelling (narrative_emphasis, cor primary_deep)",
+      "Alternar capítulos claros (surface) e escuros (surface_dark) com numeração gigante translúcida",
+      "Deixar 144px de respiro entre capítulos no desktop; texto narrativo máx 68ch (720px)",
+      "Usar #6E4A2F (primary_deep) para texto normal sobre surface_alt (6.28:1)",
+      "Aplicar sombras quentes com base #221A13, nunca preto puro",
+      "Manter botões quase retos (radius 3px) — tom artesanal-sério, nada de pílulas",
+      "Contar o processo com nome do produtor, altitude e safra reais"
+    ],
+    "dont": [
+      "Usar #8B5E3C (primary) como texto normal sobre surface_alt #EFE5D6 (4.48:1, falha AA) — usar #6E4A2F ou reservar para texto grande ≥24px",
+      "Usar #7A6A5B (text_muted) fora de legendas e metadados (só 4.66:1 sobre surface)",
+      "Aplicar parallax agressivo — máximo 6–8% da altura da imagem, quase subliminar",
+      "Forçar hero em 100vh; o hero é curto de propósito (70–80vh), a promessa está nos capítulos",
+      "Usar linguagem de commodity, urgência artificial ou tom esnobe",
+      "Misturar mais de 2 famílias tipográficas além de Cormorant Garamond + Inter",
+      "Encher a dobra — densidade baixa, muito respiro, leitura de reportagem"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600 e Inter:wght@400;500;600 com display=swap",
+    "js_budget": "Comportamentos essenciais: menu mobile (toggle + focus trap + Esc), IntersectionObserver para reveals (reveal-lento, chapter-number-fade), parallax via transform + requestAnimationFrame com lerp (nunca scroll handler síncrono), grão de filme como SVG data-URI (zero requests). Zero frameworks obrigatórios; tudo pausável com prefers-reduced-motion",
+    "seo_local": "Schema.org LocalBusiness/CafeOrCoffeeShop (ou Store para torrefação com venda direta) com endereço, geo, telefone e horários; Product + Offer nos cafés; título com origem/cidade ('Torrefação X — Café de especialidade da Mantiqueira de Minas')",
+    "whatsapp_cta": "Link wa.me com mensagem pré-preenchida na voz do DS ('Oi! Quero conhecer a safra atual e assinar o clube da torra') — usado no header e na faixa de clube/newsletter",
+    "adaptation_guide": "Ao adaptar para outro segmento artesanal (vinícola natural, chocolataria bean-to-bar, queijaria de fazenda): manter paleta marrom-café + verde-musgo, tipografia Cormorant+Inter, motion lento e a composição em capítulos numerados; trocar o vocabulário do voice_and_tone (torra→fermentação/colheita/afinação) e os subjects da fotografia. A essência é a narrativa vertical de origem, não o café"
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true,
+    "uniqueness_notes": "Paleta #8B5E3C + #2F5233 não colide com 05.2 (#9B6B47/#4A4A48) nem 05.3 (#C19A6B/#8B7355). Composição em capítulos numerados verticais é exclusiva. Cormorant Garamond compartilhada com 02.2, mas em mood terroso escuro com grão de filme — resultado visual radicalmente distinto."
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "artesanal",
+      "autentico",
+      "cafe-especialidade",
+      "terroso-escuro",
+      "marrom-cafe",
+      "verde-musgo",
+      "editorial",
+      "capitulos-numerados",
+      "grao-de-filme",
+      "storytelling-origem",
+      "farm-to-cup",
+      "serif-cormorant"
+    ],
+    "related_docs": [
+      "previews/markdown/05-1-cafe-especialidade.md",
+      "previews/html/05-1-cafe-especialidade.html",
+      "docs/05-1-cafe-especialidade/components.md",
+      "docs/05-1-cafe-especialidade/animations.css",
+      "docs/05-1-cafe-especialidade/accessibility-report.md",
+      "docs/05-1-cafe-especialidade/benchmarking.md",
+      "docs/05-1-cafe-especialidade/color-variations.md",
+      "docs/05-1-cafe-especialidade/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "café de especialidade e coffee shops de origem",
+      "torrefação artesanal com venda direta",
+      "empório artesanal de produtos de procedência",
+      "vinícola pequena / produtor de vinho natural",
+      "chocolataria bean-to-bar e queijaria de fazenda"
+    ],
+    "conversion_factors": [
+      "storytelling de processo justifica ticket alto — o capítulo de torra É a página de vendas",
+      "rosto e nome do produtor geram confiança de procedência (prova social de origem)",
+      "badges técnicos (pontuação SCA, processo, altitude) dão racionalização para a compra emocional",
+      "clube de assinatura ('Cartas da torra') converte compra única em receita recorrente",
+      "hero curto com scroll cue aumenta profundidade de rolagem e engajamento com a narrativa",
+      "depoimento único e editorial (sem carrossel frenético) transmite curadoria, não volume"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "hero sem imagem acima da dobra de texto (LCP é o H1 tipográfico); fontes com preconnect + font-display: swap; imagem do hero com loading eager mas abaixo do texto",
+      "cls_strategy": "aspect-ratio fixo em todas as imagens e cards; numeração de capítulo com dimensões reservadas; fontes com fallback métrico próximo",
+      "inp_strategy": "parallax via transform + requestAnimationFrame com lerp (nunca scroll handler síncrono pesado); IntersectionObserver para reveals; grão em SVG data-URI (zero requests extras)",
+      "targets": { "LCP": "< 2.5s", "INP": "< 200ms", "CLS": "< 0.1" }
+    }
+  }
+}

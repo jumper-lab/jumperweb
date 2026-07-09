@@ -1,0 +1,549 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "02.1",
+  "design_system_name": "Advocacia Sofisticada",
+  "category": "02 — Premium e Sofisticado",
+  "subcategory": "Serviços profissionais de alto valor — advocacia, consultoria executiva, family office",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Kauff McGuire & Margolis LLP",
+    "url": "https://kaufflaw.com (domínio institucional: kmm.com)",
+    "location": "Nova York / Los Angeles, EUA",
+    "awards": [
+      "AVA Digital Gold Award (design do site, agência PaperStreet)"
+    ],
+    "why_chosen": "Escritório de labor & employment com mais de 50 anos que traduz autoridade em restrição visual: quase-preto profundo, dourado usado como fio condutor (nunca como tinta), tipografia serif editorial em corpos grandes e espaço em branco que comunica confiança sem gritar. A essência capturada é a de 'grande firma com trato de boutique' — sofisticação calma, hierarquia impecável, zero ruído.",
+    "font_note": "A referência usa tipografia comercial de estilo grotesco suíço (família Söhne). Este DS substitui oficialmente por Inter (Google Fonts), a alternativa aberta mais próxima em desenho e métricas. O display serif editorial fica com Playfair Display (Google Fonts)."
+  },
+  "colors": {
+    "primary": "#1A1A1A",
+    "primary_usage": "Quase-preto de tinta editorial. Headings, texto principal, botões primários, hero dark, footer. É a cor que sustenta a sensação de gravidade e permanência — usar em massa, sem medo.",
+    "secondary": "#C9A961",
+    "secondary_usage": "Dourado champagne. EXCLUSIVAMENTE como acento: filetes (hairlines), sublinhados de link, numeração de cases, ícones, detalhes de hover e texto sobre fundos escuros. NUNCA como cor de texto normal sobre fundo claro (contraste 2.14:1 — reprovado). Para texto dourado sobre claro, usar o token gold_ink.",
+    "gold_ink": "#83672B",
+    "gold_ink_usage": "Versão 'tinta' do dourado para texto sobre superfícies claras (5.07:1 — AA). Eyebrows, labels, links dourados em fundo claro.",
+    "surface": "#FAF9F7",
+    "surface_alt": "#F2F0EB",
+    "surface_dark": "#14161C",
+    "surface_dark_usage": "Azul-noite quase-preto para hero split-screen, faixas de prova social e footer. Levemente mais frio que o primary para criar profundidade entre camadas escuras.",
+    "text_primary": "#1A1A1A",
+    "text_secondary": "#454440",
+    "text_muted": "#66645E",
+    "text_on_dark": "#FAF9F7",
+    "text_on_dark_secondary": "#E8E6E1",
+    "border": "#E3E0D8",
+    "error": "#9B2C2C",
+    "success": "#2F6B4F",
+    "warning": "#8F5B13",
+    "neutral_scale": {
+      "50": "#FAF9F7",
+      "100": "#F2F0EB",
+      "200": "#E3E0D8",
+      "300": "#CFCBC1",
+      "400": "#A8A49A",
+      "500": "#7E7B73",
+      "600": "#5C5A54",
+      "700": "#3F3E3A",
+      "800": "#26262A",
+      "900": "#14161C"
+    },
+    "contrast_verification": {
+      "text_primary_on_surface": "16.54:1 (#1A1A1A sobre #FAF9F7) — AAA",
+      "primary_on_surface": "16.54:1 — AAA para texto e componentes",
+      "secondary_on_surface": "2.14:1 (#C9A961 sobre #FAF9F7) — REPROVADO para texto; permitido apenas em elementos decorativos (filetes, ornamentos) sem função informativa",
+      "gold_ink_on_surface": "5.07:1 (#83672B sobre #FAF9F7) — AA texto normal",
+      "secondary_on_primary": "7.73:1 (#C9A961 sobre #1A1A1A) — AA/AAA, uso liberado em fundos escuros",
+      "secondary_on_surface_dark": "8.04:1 (#C9A961 sobre #14161C) — AAA",
+      "text_secondary_on_surface": "9.27:1 (#454440 sobre #FAF9F7) — AAA",
+      "text_muted_on_surface": "4.99:1 (#66645E sobre #FAF9F7) — AA",
+      "text_muted_on_surface_alt": "4.61:1 (#66645E sobre #F2F0EB) — AA",
+      "text_on_dark_on_surface_dark": "17.19:1 (#FAF9F7 sobre #14161C) — AAA",
+      "error_on_surface": "7.15:1 — AAA",
+      "success_on_surface": "5.98:1 — AA/AAA",
+      "warning_on_surface": "5.43:1 — AA",
+      "notes": "O dourado champagne original (#C9A961) foi mantido como acento, mas ganhou o par funcional #83672B (gold_ink) para qualquer texto dourado sobre superfícies claras. Todas as razões calculadas pela fórmula de luminância relativa WCAG 2.1."
+    }
+  },
+  "typography": {
+    "heading_font": "Playfair Display",
+    "heading_font_source": "Google Fonts",
+    "heading_font_note": "Serif display editorial de alto contraste. Usar pesos 500 (Medium) e 600 (SemiBold); evitar 900 — o excesso de peso quebra a elegância. Itálico permitido para destaques de uma palavra em headlines.",
+    "body_font": "Inter",
+    "body_font_source": "Google Fonts",
+    "body_font_note": "Substituta oficial da Söhne (comercial, usada na referência). Pesos 400, 500 e 600. Letter-spacing +0.08em em labels uppercase.",
+    "mono_font": "não aplicável",
+    "base_size": "16px",
+    "scales": {
+      "mobile": {
+        "h1": { "size": "2.25rem (36px)", "line_height": "1.15", "weight": "500", "letter_spacing": "-0.01em", "font": "Playfair Display" },
+        "h2": { "size": "1.75rem (28px)", "line_height": "1.2", "weight": "500", "letter_spacing": "-0.005em", "font": "Playfair Display" },
+        "h3": { "size": "1.25rem (20px)", "line_height": "1.3", "weight": "600", "letter_spacing": "0", "font": "Playfair Display" },
+        "body": { "size": "1rem (16px)", "line_height": "1.65", "weight": "400", "font": "Inter" },
+        "small": { "size": "0.875rem (14px)", "line_height": "1.5", "weight": "400", "font": "Inter" },
+        "eyebrow": { "size": "0.75rem (12px)", "line_height": "1.4", "weight": "600", "letter_spacing": "0.14em", "transform": "uppercase", "font": "Inter" }
+      },
+      "desktop": {
+        "h1": { "size": "3.75rem (60px)", "line_height": "1.08", "weight": "500", "letter_spacing": "-0.015em", "font": "Playfair Display" },
+        "h2": { "size": "2.5rem (40px)", "line_height": "1.15", "weight": "500", "letter_spacing": "-0.01em", "font": "Playfair Display" },
+        "h3": { "size": "1.5rem (24px)", "line_height": "1.3", "weight": "600", "letter_spacing": "0", "font": "Playfair Display" },
+        "body": { "size": "1.0625rem (17px)", "line_height": "1.7", "weight": "400", "font": "Inter" },
+        "small": { "size": "0.875rem (14px)", "line_height": "1.5", "weight": "400", "font": "Inter" },
+        "eyebrow": { "size": "0.8125rem (13px)", "line_height": "1.4", "weight": "600", "letter_spacing": "0.16em", "transform": "uppercase", "font": "Inter" }
+      }
+    },
+    "fluid_recommendation": "h1: clamp(2.25rem, 1.5rem + 3.2vw, 3.75rem); h2: clamp(1.75rem, 1.35rem + 1.8vw, 2.5rem)"
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — valores idênticos aos definidos em colors, typography, spacing, borders, shadows e motion",
+    "tokens": {
+      "--color-primary": "#1A1A1A",
+      "--color-secondary": "#C9A961",
+      "--color-gold-ink": "#83672B",
+      "--color-surface": "#FAF9F7",
+      "--color-surface-alt": "#F2F0EB",
+      "--color-surface-dark": "#14161C",
+      "--color-text": "#1A1A1A",
+      "--color-text-secondary": "#454440",
+      "--color-text-muted": "#66645E",
+      "--color-text-on-dark": "#FAF9F7",
+      "--color-text-on-dark-secondary": "#E8E6E1",
+      "--color-border": "#E3E0D8",
+      "--color-error": "#9B2C2C",
+      "--color-success": "#2F6B4F",
+      "--color-warning": "#8F5B13",
+      "--color-neutral-50": "#FAF9F7",
+      "--color-neutral-100": "#F2F0EB",
+      "--color-neutral-200": "#E3E0D8",
+      "--color-neutral-300": "#CFCBC1",
+      "--color-neutral-400": "#A8A49A",
+      "--color-neutral-500": "#7E7B73",
+      "--color-neutral-600": "#5C5A54",
+      "--color-neutral-700": "#3F3E3A",
+      "--color-neutral-800": "#26262A",
+      "--color-neutral-900": "#14161C",
+      "--font-heading": "'Playfair Display', Georgia, 'Times New Roman', serif",
+      "--font-body": "'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "--text-h1": "clamp(2.25rem, 1.5rem + 3.2vw, 3.75rem)",
+      "--text-h2": "clamp(1.75rem, 1.35rem + 1.8vw, 2.5rem)",
+      "--text-h3": "clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)",
+      "--text-body": "clamp(1rem, 0.97rem + 0.15vw, 1.0625rem)",
+      "--text-small": "0.875rem",
+      "--text-eyebrow": "clamp(0.75rem, 0.72rem + 0.1vw, 0.8125rem)",
+      "--space-xs": "8px",
+      "--space-sm": "16px",
+      "--space-md": "24px",
+      "--space-lg": "40px",
+      "--space-xl": "64px",
+      "--space-xxl": "96px",
+      "--space-xxxl": "128px",
+      "--space-xxxxl": "160px",
+      "--section-gap": "clamp(72px, 6vw + 40px, 144px)",
+      "--radius-none": "0",
+      "--radius-sm": "2px",
+      "--radius-md": "4px",
+      "--radius-lg": "8px",
+      "--radius-full": "9999px",
+      "--stroke-thin": "1px",
+      "--stroke-medium": "2px",
+      "--shadow-xs": "0 1px 2px rgba(20, 22, 28, 0.05)",
+      "--shadow-sm": "0 2px 8px rgba(20, 22, 28, 0.06)",
+      "--shadow-md": "0 8px 24px rgba(20, 22, 28, 0.08)",
+      "--shadow-lg": "0 16px 48px rgba(20, 22, 28, 0.12)",
+      "--duration-instant": "150ms",
+      "--duration-fast": "300ms",
+      "--duration-base": "400ms",
+      "--duration-slow": "500ms",
+      "--ease-standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--ease-decelerate": "cubic-bezier(0, 0, 0.2, 1)",
+      "--ease-editorial": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+      "--container-max": "1240px",
+      "--content-max": "68ch",
+      "--hairline": "48px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "8px",
+      "sm": "16px",
+      "md": "24px",
+      "lg": "40px",
+      "xl": "64px",
+      "xxl": "96px",
+      "xxxl": "128px",
+      "xxxxl": "160px"
+    },
+    "section_spacing": {
+      "mobile": "72px",
+      "tablet": "104px",
+      "desktop": "144px"
+    },
+    "padding": {
+      "container_mobile": "24px",
+      "container_tablet": "48px",
+      "container_desktop": "64px"
+    },
+    "container_max_width": "1240px",
+    "content_max_width": "68ch para blocos de texto corrido",
+    "gutters": "32px (desktop) / 20px (mobile)",
+    "philosophy": "O espaço em branco É o luxo. Seções respiram em 144px no desktop; nunca comprimir para caber mais conteúdo — cortar conteúdo antes de cortar espaço."
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "2px",
+      "md": "4px",
+      "lg": "8px",
+      "full": "9999px"
+    },
+    "radius_usage": {
+      "buttons": "0 — cantos retos comunicam rigor e tradição",
+      "cards": "0 com filete superior dourado de 2px",
+      "inputs": "0, apenas border-bottom (estilo editorial)",
+      "images": "0 — fotografia sempre em blocos retos",
+      "containers": "0"
+    },
+    "stroke": {
+      "thin": "1px — bordas de card, divisores, inputs",
+      "medium": "2px — filete dourado de destaque, focus ring, borda de botão outline"
+    },
+    "signature_detail": "Hairline dourado horizontal de 48px x 2px (#C9A961) como marcador de início de seção, sempre alinhado à esquerda do bloco de texto."
+  },
+  "shadows": {
+    "none": "none",
+    "xs": "0 1px 2px rgba(20, 22, 28, 0.05)",
+    "sm": "0 2px 8px rgba(20, 22, 28, 0.06)",
+    "md": "0 8px 24px rgba(20, 22, 28, 0.08)",
+    "lg": "0 16px 48px rgba(20, 22, 28, 0.12)",
+    "shadow_usage": "Sombra é quase ausente neste DS — a profundidade vem de camadas de cor (surface / surface_alt / surface_dark) e filetes. Usar sm em cards apenas no hover; md reservado a dropdowns e modais. Nunca usar sombras coloridas ou de espalhamento largo."
+  },
+  "motion": {
+    "durations": {
+      "instant": "150ms",
+      "fast": "300ms",
+      "base": "400ms",
+      "slow": "500ms"
+    },
+    "easings": {
+      "standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "decelerate": "cubic-bezier(0, 0, 0.2, 1)",
+      "editorial": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+    },
+    "animations": [
+      { "name": "fade-rise", "duration": "500ms", "easing": "editorial", "trigger": "IntersectionObserver ao entrar na viewport", "description": "Opacidade 0→1 + translateY(16px)→0. O único reveal do sistema. Sem bounce, sem overshoot." },
+      { "name": "hairline-draw", "duration": "500ms", "easing": "decelerate", "trigger": "IntersectionObserver, delay 120ms após fade-rise do bloco", "description": "Filete dourado cresce de width 0 → 48px (scaleX)." },
+      { "name": "link-underline", "duration": "300ms", "easing": "standard", "trigger": "hover/focus", "description": "Sublinhado dourado desliza da esquerda (transform: scaleX 0→1, transform-origin left)." },
+      { "name": "button-shift", "duration": "300ms", "easing": "standard", "trigger": "hover/focus", "description": "Botão primário: background #1A1A1A → #14161C e seta interna desloca 4px. Sem mudança de escala." },
+      { "name": "card-lift", "duration": "400ms", "easing": "standard", "trigger": "hover", "description": "translateY(-4px) + sombra sm + filete superior dourado expande de 48px para 100%." },
+      { "name": "image-reveal", "duration": "500ms", "easing": "editorial", "trigger": "IntersectionObserver", "description": "Cortina: bloco de cor surface_dark recolhe (scaleY 1→0, origin top) revelando a imagem B&W por baixo." },
+      { "name": "stagger-cases", "duration": "500ms cada, delay incremental 100ms", "easing": "editorial", "trigger": "IntersectionObserver na grade de cases", "description": "fade-rise em cascata discreta, máximo 4 itens por lote." }
+    ],
+    "philosophy": "Movimento como mordomia: presente, impecável, invisível. Nada acima de 500ms, nenhum bounce, nenhuma rotação, nenhum parallax agressivo. Se a animação chama atenção para si, ela está errada.",
+    "prefers_reduced_motion": true
+  },
+  "components": {
+    "buttons": {
+      "primary": {
+        "background": "#1A1A1A",
+        "color": "#FAF9F7",
+        "border": "none",
+        "radius": "0",
+        "padding": "16px 40px",
+        "font": "Inter 600, 14px, letter-spacing 0.08em, uppercase",
+        "hover": "background #14161C; seta interna translada 4px; transição 300ms",
+        "focus": "outline 2px solid #83672B, outline-offset 3px",
+        "active": "background #26262A",
+        "disabled": "background #CFCBC1, color #7E7B73, cursor not-allowed"
+      },
+      "secondary": {
+        "background": "transparent",
+        "color": "#1A1A1A",
+        "border": "1px solid #1A1A1A",
+        "radius": "0",
+        "padding": "15px 40px",
+        "hover": "background #1A1A1A, color #FAF9F7, transição 300ms",
+        "focus": "outline 2px solid #83672B, outline-offset 3px",
+        "disabled": "border e color #CFCBC1"
+      },
+      "gold_on_dark": {
+        "context": "apenas sobre surface_dark ou primary",
+        "background": "transparent",
+        "color": "#C9A961",
+        "border": "1px solid #C9A961",
+        "hover": "background #C9A961, color #14161C",
+        "focus": "outline 2px solid #C9A961, outline-offset 3px"
+      },
+      "text_link": {
+        "color": "#1A1A1A (claro) / #C9A961 (escuro)",
+        "decoration": "sublinhado dourado 2px que desliza no hover (link-underline)",
+        "font": "Inter 500"
+      },
+      "sizes": { "sm": "12px 28px / 13px", "md": "16px 40px / 14px", "lg": "20px 52px / 15px" },
+      "min_touch_target": "48px de altura em todos os tamanhos"
+    },
+    "cards": {
+      "case_card": {
+        "background": "#FAF9F7",
+        "border": "1px solid #E3E0D8",
+        "border_top": "2px solid #C9A961 nos primeiros 48px (pseudo-elemento)",
+        "radius": "0",
+        "padding": "40px",
+        "structure": "numeração serif dourada (01, 02...) → eyebrow uppercase → título Playfair → resultado em destaque → link 'Ver o caso'",
+        "hover": "card-lift: translateY(-4px), sombra sm, filete expande para 100%"
+      },
+      "profile_card": {
+        "background": "#F2F0EB",
+        "structure": "retrato B&W (bloco 3:4) → nome Playfair → cargo eyebrow gold_ink → uma linha de credencial",
+        "image_treatment": "grayscale(100%) contrast(1.05); no hover, grayscale(60%) em 500ms"
+      },
+      "stat_card": {
+        "background": "transparent sobre surface_dark",
+        "structure": "número gigante Playfair 500 em #C9A961 + label Inter em #E8E6E1",
+        "example": "R$ 2,3 bi — recuperados para nossos clientes"
+      }
+    },
+    "inputs": {
+      "style": "editorial: sem caixa, apenas border-bottom 1px solid #A8A49A sobre fundo transparente",
+      "padding": "12px 0",
+      "font": "Inter 400, 16px (nunca menor — evita zoom no iOS)",
+      "label": "eyebrow uppercase 12px, gold_ink (#83672B), sempre visível acima do campo (nunca placeholder-only)",
+      "focus": "border-bottom 2px solid #83672B + label reforça para #1A1A1A; transição 300ms",
+      "error": "border-bottom 2px solid #9B2C2C + mensagem 14px #9B2C2C com ícone; aria-describedby ligado",
+      "success": "border-bottom 2px solid #2F6B4F",
+      "placeholder": "#7E7B73 — apenas exemplo de formato, nunca instrução"
+    },
+    "hero": {
+      "layout": "split-screen assimétrico 55/45: coluna esquerda surface (#FAF9F7) com eyebrow dourado + H1 Playfair + parágrafo + CTA duplo; coluna direita bloco fotográfico B&W full-bleed até a borda",
+      "mobile": "empilha — texto primeiro, imagem depois em faixa 16:10",
+      "height": "min-height 88vh no desktop; nunca 100vh forçado",
+      "detail": "hairline dourado de 48px acima do eyebrow; imagem entra com image-reveal (cortina)"
+    },
+    "navigation": {
+      "style": "header transparente sobre hero, fundo #FAF9F7 com border-bottom 1px #E3E0D8 ao rolar",
+      "height": "88px desktop / 64px mobile",
+      "logo": "wordmark serif à esquerda",
+      "links": "Inter 500 14px, letter-spacing 0.04em; sublinhado dourado no hover/ativo",
+      "cta": "botão secondary compacto 'Agende uma consulta' à direita",
+      "mobile": "menu full-screen surface_dark com links Playfair 32px em stagger fade-rise, fechamento com Esc"
+    },
+    "footer": {
+      "background": "#14161C",
+      "color": "#E8E6E1",
+      "structure": "4 colunas desktop (marca+frase institucional / áreas de atuação / escritório+contato / OAB e selos) → barra inferior com copyright e privacidade",
+      "detail": "hairline dourado full-width 1px separando as colunas da barra inferior; links com sublinhado dourado no hover",
+      "contrast": "links #E8E6E1 sobre #14161C = 14.50:1"
+    },
+    "testimonials": {
+      "layout": "uma citação por vez, centralizada, max-width 780px, sobre surface_alt",
+      "quote": "Playfair Display itálico 28px (desktop), aspas tipográficas douradas grandes como ornamento",
+      "attribution": "eyebrow: nome + cargo em Inter, gold_ink",
+      "navigation": "dots discretos + setas; auto-rotate desligado por padrão (respeito ao leitor)",
+      "social_proof_bar": "faixa sobre surface_dark com 4-6 logos de clientes/selos em monocromo #A8A49A, hover revela #FAF9F7"
+    },
+    "badges": {
+      "credential_badge": "borda 1px #C9A961, fundo transparente, texto eyebrow; usado para 'Ranked Band 1', 'OAB/SP', selos de câmaras e rankings",
+      "usage": "máximo 4 por seção — credencial em excesso vira ruído"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Formal elegante com autoridade calma. Frases curtas, verbos precisos, zero superlativo vazio. Fala-se de resultados e décadas, não de 'paixão'. Trata o leitor como par intelectual: COO, CFO, fundador. Nunca alarmista, nunca vendedor.",
+    "headline_examples": [
+      "Décadas defendendo o que importa.",
+      "Questões complexas exigem aconselhamento sereno.",
+      "O contencioso que sua diretoria não precisa acompanhar de perto.",
+      "Precisão jurídica para decisões que não admitem erro."
+    ],
+    "cta_examples": [
+      "Agende uma consulta confidencial",
+      "Fale com um sócio",
+      "Conheça nossos casos",
+      "Solicite uma análise preliminar"
+    ],
+    "avoid": [
+      "Exclamações e urgência artificial ('Não perca!', 'Últimas vagas')",
+      "Diminutivos e informalidade ('a gente resolve rapidinho')",
+      "Superlativos sem lastro ('o melhor escritório do Brasil')",
+      "Jargão jurídico gratuito quando há palavra simples",
+      "Emojis e pontuação expressiva",
+      "Promessas de resultado — vedadas pelo Código de Ética da OAB"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas, gutter 32px, container 1240px. Assimetria editorial deliberada: blocos de texto ocupam 5-6 colunas com 1 coluna de respiro antes da imagem; nada centralizado exceto depoimentos.",
+    "page_flow": [
+      { "section": "hero", "layout": "split-screen 55/45 — texto à esquerda sobre surface, fotografia B&W à direita full-bleed" },
+      { "section": "barra de prova social", "layout": "faixa surface_dark com logos monocromáticos e um stat central dourado" },
+      { "section": "áreas de atuação", "layout": "lista editorial numerada (01–05) em duas colunas: número+título Playfair à esquerda, descrição à direita; divisores 1px" },
+      { "section": "cases de sucesso", "layout": "grade assimétrica 2 colunas com cards de case; primeiro card em destaque ocupando largura dupla" },
+      { "section": "depoimento", "layout": "citação única centralizada sobre surface_alt, aspas douradas ornamentais" },
+      { "section": "equipe", "layout": "grade 3 colunas de profile cards com retratos B&W" },
+      { "section": "CTA final", "layout": "faixa surface_dark, headline Playfair branca, botão gold_on_dark 'Agende uma consulta confidencial'" },
+      { "section": "footer", "layout": "4 colunas sobre surface_dark com hairline dourado" }
+    ],
+    "image_treatment": "Fotografia editorial em preto e branco: grayscale(100%) contrast(1.05) brightness(0.98). Retratos com luz lateral, arquitetura e detalhes de escritório. Sem overlay colorido — quando precisar de texto sobre imagem, usar gradiente #14161C 85%→40%. Proibido: banco de imagem sorridente genérico, aperto de mãos, martelo de juiz.",
+    "density": "Baixa. Máximo 2 blocos de informação por viewport no desktop.",
+    "whitespace": "Extremo e intencional — 144px entre seções no desktop, 40px+ ao redor de qualquer headline. O vazio é o que separa este DS de um site comum de advocacia."
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "body_text": "#1A1A1A sobre #FAF9F7 = 16.54:1 (AAA)",
+      "secondary_text": "#454440 = 9.27:1 (AAA); muted #66645E = 4.99:1 (AA)",
+      "gold_rule": "#C9A961 nunca como texto sobre claro (2.14:1); usar #83672B (5.07:1) — dourado decorativo permitido apenas sem função informativa",
+      "dark_sections": "#FAF9F7 sobre #14161C = 17.19:1; #C9A961 sobre #14161C = 8.04:1"
+    },
+    "keyboard_navigation": "Ordem de tab segue fluxo visual; skip-link 'Ir para o conteúdo' visível no focus; menu mobile com focus trap e fechamento por Esc; carrossel de depoimentos operável por setas do teclado.",
+    "focus_states": "outline 2px solid #83672B com offset 3px em fundo claro; 2px solid #C9A961 em fundo escuro. Nunca remover outline sem substituto visível.",
+    "alt_text": "Retratos: 'Retrato em preto e branco de [Nome], sócia da área de [área]'. Imagens de ambiente decorativas: alt=\"\" + role=presentation.",
+    "semantic_html": "header/nav/main/section/article/footer; um h1 por página; landmarks nomeados (aria-label em navs múltiplas); listas reais para áreas de atuação numeradas.",
+    "touch_targets": "44px minimum — botões com 48px de altura; links de navegação com padding que garante área de 44x44px."
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Empilha em coluna única: hairline dourado → eyebrow → H1 Playfair 36px → parágrafo → CTA duplo full-width (max 360px) → bloco fotográfico B&W 16:10 abaixo (image-reveal)",
+      "tablet": "Coluna única centralizada com imagem maior em faixa; H1 intermediário; CTA duplo lado a lado",
+      "desktop": "Split-screen assimétrico 55/45, texto à esquerda sobre surface verticalmente centralizado, fotografia B&W full-bleed à direita; min-height 88vh"
+    },
+    "cases_grid": {
+      "mobile": "1 coluna, cards de case full-width, gap 24px; primeiro card sem largura dupla",
+      "tablet": "2 colunas, gap 32px",
+      "desktop": "Grade assimétrica 2 colunas com primeiro card em largura dupla; gap 32px; stagger-cases máximo 4 por lote"
+    },
+    "navigation": {
+      "mobile_tablet": "Logo wordmark + hambúrguer (toque 48px); menu full-screen surface_dark com links Playfair 32px em stagger fade-rise, fechamento por Esc",
+      "desktop": "Header 88px: logo à esquerda + links inline Inter 500 14px + botão secondary 'Agende uma consulta' à direita; transparente sobre hero, surface com border-bottom 1px ao rolar"
+    },
+    "footer": {
+      "mobile": "4 colunas empilhadas sobre surface_dark, contato/escritório primeiro; hairline dourado full-width separa a barra inferior",
+      "desktop": "4 colunas (marca+frase / áreas de atuação / escritório+contato / OAB e selos) com hairline dourado full-width acima da barra de copyright"
+    },
+    "touch_adjustments": "card-lift vira active-state discreto (sem translateY, apenas filete dourado expande) no touch; carrossel de depoimentos com scroll-snap nativo e setas de 48px; alvos mínimos de 44x44px em todos os links"
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente, coerentes com o descrito em components",
+    "button_primary": ["default (bg #1A1A1A, texto #FAF9F7)", "hover (bg #14161C + seta interna +4px, 300ms)", "focus-visible (outline 2px #83672B, offset 3px)", "active (bg #26262A)", "disabled (bg #CFCBC1, texto #7E7B73, cursor not-allowed)", "loading (spinner 16px claro + texto 'Enviando...')"],
+    "button_secondary": ["default (transparente, borda 1px #1A1A1A)", "hover (bg #1A1A1A, texto #FAF9F7, 300ms)", "focus-visible (outline 2px #83672B, offset 3px)", "active", "disabled (borda e texto #CFCBC1)"],
+    "link_nav": ["default (Inter 500 14px)", "hover (sublinhado dourado desliza da esquerda, link-underline 300ms)", "focus-visible (outline 2px #83672B)", "current (sublinhado dourado fixo)"],
+    "card_case": ["default (bg #FAF9F7, borda 1px #E3E0D8, filete superior dourado 48px)", "hover (card-lift: translateY(-4px) + sombra sm + filete expande para 100%)", "focus-within"],
+    "input": ["default (border-bottom 1px #A8A49A, sem caixa)", "focus (border-bottom 2px #83672B + label reforça para #1A1A1A, 300ms)", "filled", "error (border-bottom 2px #9B2C2C + mensagem #9B2C2C com ícone + aria-describedby)", "success (border-bottom 2px #2F6B4F)", "disabled"],
+    "nav_header": ["topo (transparente sobre hero)", "rolado (fundo #FAF9F7 + border-bottom 1px #E3E0D8)", "menu mobile aberto (surface_dark, focus trap, fechamento por Esc)"]
+  },
+  "photography_direction": {
+    "style": "Editorial em preto e branco, sóbria e institucional — grayscale(100%) contrast(1.05) brightness(0.98). Autoridade calma, nunca dramática.",
+    "subjects": [
+      "Retratos de sócios e advogadas com luz lateral suave, olhar sereno e direto",
+      "Arquitetura corporativa e detalhes de escritório (mesa, estante jurídica, vidro, concreto)",
+      "Mãos e detalhes de documentos/caneta em close, profundidade rasa",
+      "Interiores amplos com espaço negativo que reforça a gravidade e permanência"
+    ],
+    "light": "Natural lateral controlada, alto contraste editorial; sombras profundas mantidas, sem estouro de altas-luzes.",
+    "color_grading": "Preto e branco integral (grayscale 100%), contraste levemente elevado (1.05), sem viés de cor. Proibido overlay colorido; para texto sobre imagem, gradiente #14161C 85%→40%.",
+    "framing": "Enquadramento sempre em blocos retos (radius 0), full-bleed no hero; retratos em bloco 3:4; alturas de olhar humanas, composição assimétrica com espaço negativo generoso.",
+    "avoid": [
+      "Banco de imagem sorridente genérico e aperto de mãos corporativo",
+      "Martelo de juiz, balança clichê e togas encenadas",
+      "Overlays coloridos, HDR artificial ou fotografia saturada",
+      "Cantos arredondados na fotografia — quebra o rigor do DS"
+    ],
+    "fallback_sem_foto": "Blocos de cor chapada em surface_dark (#14161C) e primary (#1A1A1A) com filete dourado #C9A961 (decorativo, sem função informativa) e ornamentos SVG em linha fina dourada; gradiente vertical #14161C→#26262A. Nunca usar #C9A961 como texto informativo sobre superfície clara (2.14:1 — reprovado)."
+  },
+  "iconography": {
+    "style": "Linha fina (stroke 1.5px), cantos retos ou levemente arredondados, grid 24x24 — coerente com o rigor editorial; densidade baixa, ícone como acento e não como decoração.",
+    "color": "#1A1A1A sobre superfícies claras; #C9A961 (dourado) sobre superfícies escuras (surface_dark/primary), onde o contraste é liberado (8.04:1).",
+    "recommended_set": "Lucide ou Feather (open source, MIT), com stroke ajustado para 1.5px para leveza editorial.",
+    "usage": "Ícone sempre acompanhado de texto — nunca como única affordance. Máximo 1 ícone por item; evitar ícones preenchidos.",
+    "decorative_shapes": "Hairlines douradas horizontais de 48px x 2px (#C9A961), filetes de topo de card e aspas tipográficas douradas ornamentais — todos aria-hidden e sem função informativa."
+  },
+  "do_dont": {
+    "do": [
+      "Usar #1A1A1A em massa para headings, texto e botões primários — a gravidade é a marca",
+      "Usar o dourado #C9A961 apenas como acento (filetes, sublinhados, numeração, ícones, hover)",
+      "Para texto dourado sobre fundo claro, usar gold_ink #83672B (5.07:1 — AA)",
+      "Deixar 144px de respiro entre seções no desktop; cortar conteúdo antes de cortar espaço",
+      "Manter cantos retos (radius 0) em botões, cards e imagens",
+      "Um único CTA por seção; itálico da Playfair só para uma palavra em headline",
+      "Fotografia sempre em preto e branco editorial"
+    ],
+    "dont": [
+      "Usar #C9A961 como cor de texto sobre fundo claro (2.14:1 — reprovado; usar #83672B)",
+      "Usar o dourado como tinta de preenchimento de área grande — só como fio condutor",
+      "Animações acima de 500ms, bounce, overshoot, rotação ou parallax agressivo",
+      "Usar peso 900 na Playfair — quebra a elegância (limitar a 500/600)",
+      "Cantos arredondados, sombras coloridas ou de espalhamento largo",
+      "Exclamações, urgência artificial, emojis ou promessas de resultado (vedadas pela OAB)",
+      "Comprimir seções para caber mais conteúdo — o vazio é o luxo"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Playfair Display:ital,wght@0,500;0,600;1,500 e Inter:wght@400;500;600 com display=swap; fallback métrico Georgia para Playfair e system-ui para Inter (size-adjust)",
+    "js_budget": "Zero framework obrigatório. Três comportamentos: menu mobile full-screen (toggle + focus trap + Esc), IntersectionObserver para reveals (fade-rise, hairline-draw, image-reveal ~1KB) e carrossel de depoimentos opcional (carrega só se houver mais de 1 depoimento).",
+    "seo_local": "Schema.org LegalService/Attorney (ou ProfessionalService para consultorias) com endereço, geo, telefone, áreas de atuação (areaServed) e horários; título com cidade/área ('Escritório X — Advocacia empresarial em São Paulo').",
+    "whatsapp_cta": "Uso discreto e opcional — decisores preferem formulário de 'consulta confidencial' ou telefone institucional. Se usado, link wa.me com mensagem sóbria ('Gostaria de agendar uma consulta confidencial.'), nunca botão flutuante chamativo.",
+    "adaptation_guide": "Ao adaptar para outro segmento premium (consultoria executiva, family office, auditoria boutique): manter paleta quase-preto+dourado-acento, tipografia Playfair/Inter, cantos retos, whitespace de 144px e motion editorial ≤500ms; trocar vocabulário do voice_and_tone e a metáfora fotográfica. A essência é a sofisticação calma e a restrição, não o tema jurídico."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "premium",
+      "sofisticado",
+      "advocacia",
+      "quase-preto",
+      "dourado-acento",
+      "serif-editorial",
+      "playfair-inter",
+      "cantos-retos",
+      "fotografia-pb",
+      "whitespace-extremo",
+      "autoridade-calma"
+    ],
+    "related_docs": [
+      "previews/markdown/02-1-advocacia-sofisticada.md",
+      "previews/html/02-1-advocacia-sofisticada.html",
+      "docs/02-1-advocacia-sofisticada/components.md",
+      "docs/02-1-advocacia-sofisticada/animations.css",
+      "docs/02-1-advocacia-sofisticada/accessibility-report.md",
+      "docs/02-1-advocacia-sofisticada/benchmarking.md",
+      "docs/02-1-advocacia-sofisticada/color-variations.md",
+      "docs/02-1-advocacia-sofisticada/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Escritórios de advocacia empresarial e contencioso estratégico",
+      "Consultorias executivas e de governança",
+      "Family offices e gestoras de patrimônio",
+      "Auditorias e assessorias boutique",
+      "Peritos e pareceristas de alto valor"
+    ],
+    "conversion_factors": [
+      "Prova social imediata: logos de clientes e stat dourado logo abaixo do hero — decisores compram por pares",
+      "CTA de baixa fricção e alto sigilo: 'consulta confidencial' remove a barreira psicológica do decisor",
+      "Cases com números concretos (valores recuperados, prazos) em vez de adjetivos",
+      "Retratos reais da equipe em B&W: humaniza sem quebrar a gravidade",
+      "Um único CTA por seção — decisores odeiam ser vendidos duas vezes na mesma tela",
+      "Formulário mínimo (nome, e-mail corporativo, mensagem) com promessa de resposta em 1 dia útil"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "Hero split-screen usa bloco de cor + imagem única com fetchpriority=high, AVIF/WebP, dimensionada por srcset; fontes com preconnect + font-display: swap",
+      "cls_strategy": "aspect-ratio reservado em todos os blocos fotográficos; fallbacks de fonte métricas próximas (Georgia para Playfair, system-ui para Inter) com size-adjust",
+      "js_strategy": "Zero framework obrigatório — reveals com IntersectionObserver vanilla (~1KB); carrossel só carrega se houver mais de 1 depoimento",
+      "target": "LCP < 2.0s em 4G, CLS < 0.05, INP < 200ms"
+    }
+  }
+}

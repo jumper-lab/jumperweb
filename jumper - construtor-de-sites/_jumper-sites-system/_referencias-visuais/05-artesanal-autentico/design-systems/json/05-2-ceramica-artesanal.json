@@ -1,0 +1,576 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "05.2",
+  "design_system_name": "Cerâmica Artesanal",
+  "category": "05 — Artesanal e Autêntico",
+  "subcategory": "Cerâmica / Ateliê / Objeto autoral",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Farmhouse Pottery",
+    "url": "https://farmhousepottery.com",
+    "location": "Woodstock, Vermont, EUA",
+    "founded": "2012, por James Zilian (ex-Simon Pearce, formado em cerâmica pela Maine College of Art)",
+    "awards": [],
+    "awards_note": "Nenhum prêmio específico confirmado em pesquisa — usada como referência estilística. Fatos confirmados: fundada em 2012, começou no porão da casa da família em Woodstock com um forno e duas rodas, loja física aberta em 2014, filosofia farm-to-table e slow living.",
+    "reference_fonts_commercial": "A referência usa tipografia grotesca comercial no corpo (estilo Söhne). Substituída por Inter (Google Fonts) — ver typography.substitution_note.",
+    "why_chosen": "A Farmhouse Pottery transforma o processo manual em narrativa central: fotografia moody de mãos no barro, peças em fundo escuro, texto contemplativo e ritmo editorial de revista. É a essência perfeita para negócios em que o produto tem alma e o cliente compra a história tanto quanto o objeto. Capturamos o mood matérico e escultural — nunca o layout literal."
+  },
+  "essence": {
+    "keywords": ["matérico", "escultural", "moody", "editorial", "handmade", "contemplativo", "bruto", "um-de-cada-vez"],
+    "target_feeling": "handmade é storytelling — cada peça tem alma",
+    "audience": "colecionadores, apreciadores de artesanato, decoradores, arquitetos de interiores",
+    "differentiation_note": "NÃO confundir com irmãos e vizinhos: 01.1 usa terracota quente #B85C38 + Lora (padaria aconchegante); 02.3 usa marrom queimado #2A1F14 + ouro (hotel de luxo); 01.3 usa Fraunces com rosa antigo floral; 05.1 usa #8B5E3C + verde-musgo + Cormorant (café de origem); 05.3 usa #C19A6B + #8B7355 + Newsreader (padaria de fermentação, luz natural). O 05.2 é terracota CRUA fosca + preto-fumaça, mood escuro/matérico, grid magazine com proporções de imagem variadas e cursor customizado."
+  },
+  "colors": {
+    "primary": "#9B6B47",
+    "primary_usage": "Terracota crua fosca — cor do barro antes do esmalte. Usar em CTAs (com texto branco), destaques gráficos, linhas de apoio, numerais editoriais grandes e overlays. Sobre off-white, APENAS em texto grande (≥24px ou 18.66px bold) ou elementos não-textuais: contraste 4.04:1.",
+    "primary_dark": "#7A5236",
+    "primary_dark_usage": "Versão escurecida da terracota para texto normal sobre superfícies claras (links, labels, eyebrows). Contraste 6.00:1 sobre surface — ajuste documentado em contrast_verification.notes.",
+    "primary_light": "#C89A76",
+    "primary_light_usage": "Terracota clara (barro seco) — usada APENAS sobre fundos escuros (seções smoke): 6.08:1 sobre #262523. Nunca sobre superfícies claras.",
+    "secondary": "#4A4A48",
+    "secondary_usage": "Preto-fumaça — cor de forno a lenha. Texto de apoio forte, ícones, bordas de foco alternativas, botões secundários outline. Contraste 7.83:1 sobre surface (AAA).",
+    "smoke_deep": "#262523",
+    "smoke_deep_usage": "Preto-fumaça profundo para seções moody de página inteira (hero alternativo, bloco de processo, footer). Texto off-white sobre ele: 13.50:1.",
+    "surface": "#F5F0E8",
+    "surface_alt": "#EDE5D8",
+    "text_primary": "#2B2A28",
+    "text_secondary": "#5C5A55",
+    "text_muted": "#6B675D",
+    "text_on_dark": "#F5F0E8",
+    "border": "#D8CFC0",
+    "error": "#8C3B2A",
+    "success": "#4E6147",
+    "warning": "#7A5A14",
+    "neutral_scale": {
+      "50": "#F9F6F0",
+      "100": "#F5F0E8",
+      "200": "#EDE5D8",
+      "300": "#D8CFC0",
+      "400": "#AFA79A",
+      "500": "#8A8378",
+      "600": "#6B675D",
+      "700": "#4A4A48",
+      "800": "#33322F",
+      "900": "#262523"
+    },
+    "contrast_verification": {
+      "primary_on_surface": "4.04:1 (#9B6B47 sobre #F5F0E8) — passa AA apenas para texto grande (≥3:1); reprovado para texto normal",
+      "white_on_primary": "4.58:1 (#FFFFFF sobre #9B6B47) — AA para texto normal ✓ (botões)",
+      "primary_dark_on_surface": "6.00:1 (#7A5236 sobre #F5F0E8) — AA texto normal ✓",
+      "text_primary_on_surface": "12.64:1 (#2B2A28 sobre #F5F0E8) — AAA ✓",
+      "text_secondary_on_surface": "6.07:1 — AA ✓",
+      "text_muted_on_surface": "4.97:1 — AA ✓",
+      "secondary_on_surface": "7.83:1 (#4A4A48 sobre #F5F0E8) — AAA ✓",
+      "text_on_dark_on_smoke_deep": "13.50:1 (#F5F0E8 sobre #262523) — AAA ✓",
+      "primary_light_on_smoke_deep": "6.08:1 (#C89A76 sobre #262523) — AA ✓",
+      "error_on_surface": "6.67:1 ✓",
+      "success_on_surface": "5.92:1 ✓",
+      "warning_on_surface": "5.61:1 ✓",
+      "notes": "Ajuste documentado: a terracota crua #9B6B47 do brief foi mantida como primary, mas rende só 4.04:1 sobre off-white — portanto seu uso textual em fundo claro fica restrito a display/headings grandes. Para links, eyebrows e texto normal em terracota criou-se o token primary_dark #7A5236 (6.00:1). Para fundos escuros criou-se primary_light #C89A76 (6.08:1 sobre #262523), porque #9B6B47 sobre #262523 dá apenas 3.35:1 (só texto grande). Todos os valores calculados com a fórmula de luminância relativa WCAG 2.1."
+    }
+  },
+  "typography": {
+    "heading_font": "Fraunces",
+    "heading_font_source": "Google Fonts",
+    "heading_font_settings": "Variable: usar optical size alto (opsz 72+) e peso 350–500 para o mood editorial; SOFT/WONK em 0. Itálico permitido em palavras-destaque dentro de headlines.",
+    "body_font": "Inter",
+    "body_font_source": "Google Fonts",
+    "mono_font": "não aplicável",
+    "substitution_note": "A referência (Farmhouse Pottery) usa grotesca comercial estilo Söhne no corpo. Söhne → Inter (Google Fonts), a alternativa aberta mais próxima em desenho e neutralidade. Fraunces é a voz display do DS — atenção: o DS 01.3 também usa Fraunces, mas com paleta rosa antigo floral e pesos altos; aqui Fraunces trabalha em pesos leves (350–500), opsz alto e tracking apertado, com mood escuro e matérico.",
+    "differentiation": "Fraunces leve + Inter: contraste entre serifada de alto contraste óptico (voz contemplativa) e grotesca funcional (voz de catálogo). Headlines longas em peso 400 com itálico pontual — nunca bold pesado.",
+    "base_size": "16px",
+    "scales": {
+      "mobile": {
+        "h1": { "size": "40px", "line_height": "1.08", "weight": "400", "letter_spacing": "-0.02em", "font": "Fraunces" },
+        "h2": { "size": "30px", "line_height": "1.15", "weight": "400", "letter_spacing": "-0.015em", "font": "Fraunces" },
+        "h3": { "size": "22px", "line_height": "1.25", "weight": "500", "letter_spacing": "-0.01em", "font": "Fraunces" },
+        "body": { "size": "16px", "line_height": "1.65", "weight": "400", "letter_spacing": "0", "font": "Inter" },
+        "small": { "size": "13px", "line_height": "1.5", "weight": "400", "letter_spacing": "0.01em", "font": "Inter" },
+        "eyebrow": { "size": "12px", "line_height": "1.4", "weight": "600", "letter_spacing": "0.16em", "transform": "uppercase", "font": "Inter" }
+      },
+      "desktop": {
+        "h1": { "size": "72px", "line_height": "1.02", "weight": "380", "letter_spacing": "-0.025em", "font": "Fraunces" },
+        "h2": { "size": "48px", "line_height": "1.1", "weight": "400", "letter_spacing": "-0.02em", "font": "Fraunces" },
+        "h3": { "size": "28px", "line_height": "1.25", "weight": "500", "letter_spacing": "-0.01em", "font": "Fraunces" },
+        "body": { "size": "17px", "line_height": "1.7", "weight": "400", "letter_spacing": "0", "font": "Inter" },
+        "small": { "size": "14px", "line_height": "1.5", "weight": "400", "letter_spacing": "0.01em", "font": "Inter" },
+        "eyebrow": { "size": "13px", "line_height": "1.4", "weight": "600", "letter_spacing": "0.18em", "transform": "uppercase", "font": "Inter" }
+      }
+    },
+    "fluid_formula": "clamp() entre os polos mobile/desktop — ex.: h1 = clamp(2.5rem, 1.5rem + 4.2vw, 4.5rem)",
+    "editorial_numerals": "Numerais grandes em Fraunces itálico (01, 02, 03) marcam capítulos do processo — 96–160px, cor primary com opacidade 0.9, sobre claro ou escuro conforme contraste de texto grande."
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — derivados fielmente de colors, typography, spacing, borders, shadows e motion deste DS.",
+    "tokens": {
+      "--color-primary": "#9B6B47",
+      "--color-primary-dark": "#7A5236",
+      "--color-primary-darker": "#6B4730",
+      "--color-primary-light": "#C89A76",
+      "--color-secondary": "#4A4A48",
+      "--color-smoke-deep": "#262523",
+      "--color-surface": "#F5F0E8",
+      "--color-surface-alt": "#EDE5D8",
+      "--color-text": "#2B2A28",
+      "--color-text-secondary": "#5C5A55",
+      "--color-text-muted": "#6B675D",
+      "--color-text-on-dark": "#F5F0E8",
+      "--color-border": "#D8CFC0",
+      "--color-error": "#8C3B2A",
+      "--color-success": "#4E6147",
+      "--color-warning": "#7A5A14",
+      "--color-neutral-50": "#F9F6F0",
+      "--color-neutral-100": "#F5F0E8",
+      "--color-neutral-200": "#EDE5D8",
+      "--color-neutral-300": "#D8CFC0",
+      "--color-neutral-400": "#AFA79A",
+      "--color-neutral-500": "#8A8378",
+      "--color-neutral-600": "#6B675D",
+      "--color-neutral-700": "#4A4A48",
+      "--color-neutral-800": "#33322F",
+      "--color-neutral-900": "#262523",
+      "--font-heading": "'Fraunces', Georgia, 'Times New Roman', serif",
+      "--font-body": "'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "--text-h1": "clamp(2.5rem, 1.5rem + 4.2vw, 4.5rem)",
+      "--text-h2": "clamp(1.875rem, 1.4rem + 2vw, 3rem)",
+      "--text-h3": "clamp(1.375rem, 1.25rem + 0.5vw, 1.75rem)",
+      "--text-body": "clamp(1rem, 0.96rem + 0.15vw, 1.0625rem)",
+      "--text-small": "clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem)",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "40px",
+      "--space-xxl": "64px",
+      "--space-xxxl": "96px",
+      "--space-xxxxl": "144px",
+      "--section-gap": "clamp(64px, 6vw + 32px, 144px)",
+      "--radius-none": "0",
+      "--radius-xs": "2px",
+      "--radius-sm": "4px",
+      "--radius-md": "8px",
+      "--radius-lg": "16px",
+      "--radius-organic": "58% 42% 55% 45% / 52% 48% 55% 45%",
+      "--radius-full": "9999px",
+      "--shadow-xs": "0 1px 2px rgba(38, 37, 35, 0.06)",
+      "--shadow-sm": "0 2px 8px rgba(38, 37, 35, 0.08)",
+      "--shadow-md": "0 8px 24px rgba(38, 37, 35, 0.10)",
+      "--shadow-lg": "0 16px 48px rgba(38, 37, 35, 0.14)",
+      "--shadow-xl": "0 32px 80px rgba(38, 37, 35, 0.18)",
+      "--duration-instant": "120ms",
+      "--duration-fast": "240ms",
+      "--duration-base": "480ms",
+      "--duration-slow": "900ms",
+      "--duration-reveal": "1200ms",
+      "--ease-standard": "cubic-bezier(0.33, 1, 0.68, 1)",
+      "--ease-entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "--ease-exit": "cubic-bezier(0.7, 0, 0.84, 0)",
+      "--ease-drift": "cubic-bezier(0.45, 0.05, 0.55, 0.95)",
+      "--container-max": "1360px",
+      "--content-max": "680px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "40px",
+      "xxl": "64px",
+      "xxxl": "96px",
+      "xxxxl": "144px"
+    },
+    "section_spacing": {
+      "mobile": "64px",
+      "tablet": "96px",
+      "desktop": "144px"
+    },
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "40px",
+      "container_desktop": "64px"
+    },
+    "container_max_width": "1360px",
+    "content_max_width": "680px (blocos de leitura contemplativa)",
+    "gutters": "24px mobile / 32px tablet / 40px desktop — gutters generosos reforçam o ritmo de revista",
+    "rhythm_note": "Whitespace assimétrico intencional: blocos de texto deslocados do centro, respiros amplos antes de imagens-herói. O vazio é material do design."
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "xs": "2px",
+      "sm": "4px",
+      "md": "8px",
+      "lg": "16px",
+      "organic": "58% 42% 55% 45% / 52% 48% 55% 45%",
+      "full": "9999px"
+    },
+    "radius_usage": {
+      "buttons": "none (0) — botões retos, tipográficos, com underline animado ou borda fina; o DS evita pílulas",
+      "cards": "none (0) — cards de peça são imagens sangradas com legenda abaixo, sem moldura arredondada",
+      "inputs": "none (0) com borda inferior única (estilo editorial) ou xs (2px) na variante caixa",
+      "images": "none para o grid magazine; 'organic' (border-radius orgânico irregular) reservado para 1–2 destaques por página simulando silhueta de peça torneada",
+      "containers": "none — seções sangram de borda a borda"
+    },
+    "stroke": {
+      "thin": "1px solid #D8CFC0",
+      "medium": "2px solid #4A4A48"
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "xs": "0 1px 2px rgba(38, 37, 35, 0.06)",
+    "sm": "0 2px 8px rgba(38, 37, 35, 0.08)",
+    "md": "0 8px 24px rgba(38, 37, 35, 0.10)",
+    "lg": "0 16px 48px rgba(38, 37, 35, 0.14)",
+    "xl": "0 32px 80px rgba(38, 37, 35, 0.18)",
+    "shadow_usage": "Sombras raras e difusas — o DS prefere profundidade por cor (seções smoke) a profundidade por sombra. xs/sm apenas em elementos flutuantes (nav sticky, cursor-dot); md em imagens destacadas no hover; lg/xl reservadas para modal/overlay. Nunca sombras duras coloridas."
+  },
+  "motion": {
+    "durations": {
+      "instant": "120ms",
+      "fast": "240ms",
+      "base": "480ms",
+      "slow": "900ms",
+      "reveal": "1200ms"
+    },
+    "easings": {
+      "standard": "cubic-bezier(0.33, 1, 0.68, 1)",
+      "entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "exit": "cubic-bezier(0.7, 0, 0.84, 0)",
+      "drift": "cubic-bezier(0.45, 0.05, 0.55, 0.95)"
+    },
+    "animations": [
+      { "name": "reveal-up", "duration": "1200ms", "easing": "entrance", "trigger": "IntersectionObserver ao entrar 15% no viewport", "description": "Blocos sobem 32px com fade — lento e contemplativo, um elemento por vez com stagger de 120ms" },
+      { "name": "reveal-clip", "duration": "1200ms", "easing": "entrance", "trigger": "scroll into view", "description": "Imagens revelam com clip-path inset de baixo para cima, como peça saindo do forno" },
+      { "name": "parallax-drift", "duration": "contínuo (scroll-driven)", "easing": "linear ao scroll", "trigger": "scroll", "description": "Parallax sutil: imagens deslocam no máximo 6–8% da altura; formas SVG orgânicas de fundo derivam a 0.3x da velocidade de scroll" },
+      { "name": "cursor-dot", "duration": "240ms", "easing": "standard", "trigger": "mousemove (somente pointer: fine)", "description": "Cursor customizado discreto: ponto de 8px em terracota que segue o mouse com leve atraso; expande para anel de 40px com rótulo 'ver' sobre imagens clicáveis" },
+      { "name": "underline-ink", "duration": "480ms", "easing": "standard", "trigger": "hover/focus em links e botões ghost", "description": "Sublinhado cresce da esquerda como pincelada de engobe" },
+      { "name": "image-breathe", "duration": "900ms", "easing": "standard", "trigger": "hover em card de peça", "description": "Imagem escala 1.03 dentro de container overflow hidden; legenda desliza 4px — nada salta" },
+      { "name": "numeral-fade", "duration": "1200ms", "easing": "entrance", "trigger": "scroll into view", "description": "Numerais editoriais gigantes surgem com fade + tracking fechando de 0.1em para -0.02em" }
+    ],
+    "prefers_reduced_motion": true,
+    "reduced_motion_fallback": "Todos os reveals viram opacity simples de 200ms; parallax e cursor customizado são totalmente desativados; cursor volta ao nativo."
+  },
+  "components": {
+    "buttons": {
+      "philosophy": "Botões tipográficos e retos — parecem impressos, não 'clicáveis de software'. Sem radius, sem sombra.",
+      "variants": {
+        "primary": {
+          "background": "#9B6B47",
+          "color": "#FFFFFF",
+          "border": "none",
+          "contrast": "4.58:1 ✓ AA",
+          "hover": "background #7A5236; leve translateY(-1px); transição 240ms",
+          "focus": "outline 2px solid #7A5236, outline-offset 3px",
+          "active": "background #6B4730",
+          "disabled": "background #D8CFC0, color #6B675D, cursor not-allowed"
+        },
+        "secondary": {
+          "background": "transparent",
+          "color": "#2B2A28",
+          "border": "1px solid #4A4A48",
+          "hover": "background #2B2A28, color #F5F0E8",
+          "focus": "outline 2px solid #7A5236, outline-offset 3px",
+          "disabled": "border-color #D8CFC0, color #6B675D"
+        },
+        "ghost": {
+          "background": "transparent",
+          "color": "#7A5236",
+          "border": "none",
+          "detail": "uppercase, letter-spacing 0.14em, sublinhado animado underline-ink",
+          "hover": "sublinhado completa em 480ms; cor #2B2A28",
+          "focus": "outline 2px solid #7A5236, outline-offset 3px"
+        },
+        "on_dark": {
+          "background": "#C89A76",
+          "color": "#262523",
+          "note": "usar em seções smoke; contraste 6.08:1 ✓",
+          "hover": "background #F5F0E8"
+        }
+      },
+      "sizes": {
+        "sm": { "padding": "10px 20px", "font_size": "13px", "min_height": "40px" },
+        "md": { "padding": "14px 32px", "font_size": "14px", "min_height": "48px" },
+        "lg": { "padding": "18px 44px", "font_size": "15px", "min_height": "56px" }
+      },
+      "typography": "Inter 600, uppercase, letter-spacing 0.12em"
+    },
+    "cards": {
+      "piece_card": {
+        "structure": "imagem sangrada (sem moldura) + legenda abaixo: nome da peça em Fraunces 22px, linha de apoio em Inter 14px muted, preço/nota em Inter 13px",
+        "background": "transparent — a card é a própria imagem",
+        "border": "none",
+        "radius": "0",
+        "hover": "image-breathe (scale 1.03 interna) + legenda desloca 4px; cursor-dot expande com rótulo 'ver'",
+        "aspect_ratios": "variadas por posição no grid magazine: 3:4, 4:5, 1:1, 16:10 — nunca todas iguais na mesma linha"
+      },
+      "process_card": {
+        "structure": "numeral Fraunces itálico gigante + título h3 + parágrafo curto; fundo surface_alt ou smoke_deep alternando",
+        "padding": "40px",
+        "border": "1px solid #D8CFC0 apenas na variante clara"
+      },
+      "editorial_card": {
+        "structure": "citação em Fraunces itálico 28px + autor em eyebrow — usada para depoimentos e frases do artesão",
+        "background": "#262523 com texto #F5F0E8"
+      }
+    },
+    "inputs": {
+      "style": "editorial: sem caixa, borda inferior 1px #4A4A48, fundo transparente, padding vertical 14px",
+      "label": "eyebrow Inter 12px uppercase letter-spacing 0.14em, cor #5C5A55",
+      "placeholder": "#6B675D (4.97:1 ✓)",
+      "focus": "borda inferior 2px #7A5236 + label muda para #7A5236; sem glow",
+      "error": "borda inferior 2px #8C3B2A + mensagem Inter 13px #8C3B2A com ícone; aria-describedby ligado",
+      "success": "borda inferior 2px #4E6147",
+      "disabled": "borda #D8CFC0, texto #6B675D, cursor not-allowed",
+      "min_height": "48px"
+    },
+    "hero": {
+      "layout": "split assimétrico 5/7: coluna esquerda (5) com eyebrow + h1 + parágrafo + CTA duplo sobre surface; coluna direita (7) imagem moody sangrando até a borda da tela, mais alta que a dobra",
+      "alternate": "hero invertido full-smoke (#262523) com h1 off-white e peça em destaque com border-radius orgânico — usar em páginas internas",
+      "headline_style": "Fraunces 380, uma palavra-chave em itálico, quebra de linha manual pensada",
+      "media_treatment": "gradientes profundos (smoke → terracota transparente) + formas orgânicas SVG simulando peças torneadas; em produção, fotografia moody de processo e mãos",
+      "cta_pattern": "primário ('Explorar a coleção') + ghost ('Conheça o ateliê')"
+    },
+    "navigation": {
+      "structure": "topbar minimalista: wordmark em Fraunces à esquerda, 4–5 links Inter uppercase 13px ao centro-direita, CTA ghost à direita",
+      "background": "transparente sobre hero; ao rolar, vira sticky com fundo rgba(245,240,232,0.92) + backdrop-blur 12px + borda inferior 1px",
+      "mobile": "hambúrguer que abre overlay full-screen smoke_deep com links em Fraunces 32px e reveal escalonado",
+      "active_state": "sublinhado 1px terracota permanente",
+      "height": "72px desktop / 60px mobile"
+    },
+    "footer": {
+      "background": "#262523",
+      "color": "#F5F0E8",
+      "structure": "4 colunas desktop (história curta do ateliê, navegação, visitas/endereço, newsletter editorial) → 1 coluna mobile; assinatura final com frase-manifesto em Fraunces itálico",
+      "newsletter": "input editorial com borda inferior clara + botão on_dark",
+      "links_hover": "underline-ink em #C89A76",
+      "legal": "Inter 12px, rgba(245,240,232,0.64) — mínimo 4.5:1 verificado sobre smoke_deep"
+    },
+    "testimonials": {
+      "style": "editorial_card: citação grande Fraunces itálico sobre smoke_deep, sem carrossel automático — navegação manual por setas com aria-label",
+      "attribution": "nome + contexto ('colecionadora, São Paulo') em eyebrow terracota clara #C89A76",
+      "layout": "uma citação por vez, centralizada, max-width 780px"
+    },
+    "badges": {
+      "style": "selo tipográfico: borda 1px, uppercase Inter 11px letter-spacing 0.16em, sem fundo",
+      "examples": ["FEITO À MÃO", "PEÇA ÚNICA", "PEQUENOS LOTES", "ESGOTADO"],
+      "sold_out": "borda e texto #6B675D",
+      "highlight": "borda e texto #7A5236"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "contemplativo e material — fala de barro, fogo, tempo e mãos; frases curtas, presente do indicativo, zero urgência artificial. A marca narra o processo em vez de vender atributos.",
+    "headline_examples": [
+      "Feito à mão, um de cada vez.",
+      "O barro lembra de cada gesto.",
+      "Peças que carregam o tempo do forno.",
+      "Da roda para a sua mesa, sem pressa."
+    ],
+    "cta_examples": [
+      "Explorar a coleção",
+      "Conheça o ateliê",
+      "Ver o processo",
+      "Reservar peça única",
+      "Agendar visita ao ateliê"
+    ],
+    "microcopy_examples": [
+      "Cada peça varia levemente — é assim que deve ser.",
+      "Lote de outubro: 18 peças torneadas.",
+      "Enviamos com dupla proteção e carinho de quem fez."
+    ],
+    "avoid": [
+      "urgência de e-commerce ('últimas unidades!', 'compre já', contadores regressivos)",
+      "jargão de marketing ('qualidade premium', 'produtos incríveis')",
+      "exclamações em série e emojis",
+      "linguagem industrial ('linha de produção', 'estoque')",
+      "diminutivos fofos — o tom é sóbrio, não meigo"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas / gutter 40px desktop; o grid magazine quebra alinhamentos de propósito — imagens ocupam 5, 7 ou 12 colunas com proporções variadas (3:4, 4:5, 1:1, 16:10) e offsets verticais entre colunas vizinhas",
+    "page_flow": [
+      { "section": "hero", "layout": "split assimétrico 5/7, imagem sangrando à direita, headline Fraunces com itálico pontual" },
+      { "section": "manifesto", "layout": "faixa smoke_deep de borda a borda; frase única em Fraunces 48px off-white, max-width 900px, centralizada — pausa contemplativa" },
+      { "section": "colecao", "layout": "grid magazine 2–3 colunas com proporções mistas e offsets verticais; piece_cards sem moldura; entrelinhas com muito ar" },
+      { "section": "processo", "layout": "sequência numerada 01–04 em linha do tempo vertical, numerais Fraunces gigantes, alternando fundo claro/escuro; parallax sutil nas imagens" },
+      { "section": "ateliê", "layout": "bloco editorial 2 colunas: texto contemplativo (content_max_width 680px) + imagem alta 4:5 com border-radius orgânico" },
+      { "section": "depoimento", "layout": "editorial_card única sobre smoke_deep" },
+      { "section": "visita/CTA final", "layout": "convite para conhecer o ateliê: endereço, horários, CTA primário — tom de porta aberta, não de checkout" },
+      { "section": "footer", "layout": "smoke_deep, 4 colunas, assinatura-manifesto" }
+    ],
+    "image_treatment": "fotografia moody: fundos escuros, luz lateral única, mãos trabalhando, texturas de barro cru em macro. Nos previews e protótipos, simular com gradientes profundos (smoke→terracota), grain sutil via SVG feTurbulence e silhuetas orgânicas de peças em SVG inline. Proporções sempre variadas — nunca grade uniforme de quadrados",
+    "density": "baixa — poucas peças por dobra, cada uma com espaço de galeria",
+    "whitespace": "generoso e assimétrico; o vazio funciona como pedestal. Seções escuras criam capítulos e ritmo de revista impressa"
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "body_text": "#2B2A28 sobre #F5F0E8 = 12.64:1 (AAA)",
+      "secondary_text": "#5C5A55 = 6.07:1 (AA)",
+      "muted_text": "#6B675D = 4.97:1 (AA)",
+      "buttons": "#FFFFFF sobre #9B6B47 = 4.58:1 (AA)",
+      "links": "#7A5236 = 6.00:1 (AA) + sublinhado permanente (não depende só de cor)",
+      "dark_sections": "#F5F0E8 sobre #262523 = 13.50:1 (AAA); terracota clara #C89A76 = 6.08:1 (AA)"
+    },
+    "keyboard_navigation": "ordem de tab segue o fluxo visual; skip-link 'Ir para o conteúdo' visível ao focar; overlay de menu mobile com focus-trap e fechamento por Esc; carrossel de depoimentos operável por setas do teclado",
+    "focus_states": "outline 2px #7A5236 com offset 3px em fundo claro; outline #C89A76 em fundo escuro — nunca remover outline sem substituto visível",
+    "alt_text": "toda imagem de peça descreve material, técnica e cor ('Vaso torneado em argila vermelha sem esmalte, 24cm'); imagens decorativas (formas SVG, grain) com aria-hidden='true'",
+    "semantic_html": "header/nav/main/section/article/footer; um h1 por página; landmarks com aria-label; citações em <blockquote> com <cite>",
+    "touch_targets": "44px minimum — botões md/lg ≥48px; links de nav com padding expandido",
+    "motion": "prefers-reduced-motion reduz reveals a fades de 200ms e desativa parallax e cursor customizado; cursor customizado nunca substitui o nativo funcionalmente (é overlay decorativo com pointer-events: none)"
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Coluna única: eyebrow → h1 40px → parágrafo → CTA primário + ghost empilhados → imagem moody 4:5 abaixo, sangrando nas laterais",
+      "tablet": "Coluna única com imagem maior acima ou ao lado; CTAs lado a lado; gutters 32px",
+      "desktop": "Split assimétrico 5/7: texto (5) à esquerda sobre surface, imagem (7) sangrando à borda direita e mais alta que a dobra"
+    },
+    "colecao_grid": {
+      "mobile": "1 coluna, piece_cards full-width com proporções variadas mantidas (3:4, 4:5, 1:1), gap 24px",
+      "tablet": "2 colunas com offsets verticais reduzidos, gap 32px",
+      "desktop": "grid magazine 2–3 colunas com proporções mistas e offsets verticais entre colunas vizinhas, gutter 40px"
+    },
+    "navigation": {
+      "mobile_tablet": "Wordmark Fraunces + hambúrguer 44px; overlay full-screen smoke_deep com links Fraunces 32px e reveal escalonado; height 60px",
+      "desktop": "Wordmark à esquerda + 4–5 links Inter uppercase 13px ao centro-direita + CTA ghost à direita; transparente sobre hero, sticky com backdrop-blur 12px ao rolar; height 72px"
+    },
+    "footer": {
+      "mobile": "Colunas empilhadas em 1 coluna (história → navegação → visitas/endereço → newsletter), assinatura-manifesto por último",
+      "desktop": "4 colunas smoke_deep: história curta / navegação / visitas+endereço / newsletter editorial"
+    },
+    "touch_adjustments": "image-breathe e cursor-dot desativados em pointer: coarse; hover de cards vira estado ativo discreto; alvos de toque ≥44px (botões md/lg ≥48px); grid magazine mantém aspect-ratio reservado para evitar CLS"
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente, coerentes com components deste DS.",
+    "button_primary": ["default (#9B6B47, texto #FFFFFF)", "hover (#7A5236 + translateY(-1px), 240ms)", "focus-visible (outline 2px #7A5236, offset 3px)", "active (#6B4730)", "disabled (#D8CFC0, texto #6B675D, not-allowed)", "loading (spinner 16px branco + 'Enviando...')"],
+    "button_secondary": ["default (transparente, borda 1px #4A4A48, texto #2B2A28)", "hover (fundo #2B2A28, texto #F5F0E8)", "focus-visible (outline 2px #7A5236, offset 3px)", "active", "disabled (borda #D8CFC0, texto #6B675D)"],
+    "link_nav": ["default (Inter uppercase)", "hover (underline-ink cresce da esquerda)", "focus-visible (outline 2px #7A5236)", "current (sublinhado 1px terracota permanente)"],
+    "card_piece": ["default (imagem sangrada + legenda)", "hover (image-breathe scale 1.03 + legenda desloca 4px + cursor-dot 'ver')", "focus-within (outline visível no link da peça)"],
+    "input": ["default (borda inferior 1px #4A4A48, fundo transparente)", "focus (borda inferior 2px #7A5236 + label #7A5236, sem glow)", "filled", "error (borda inferior 2px #8C3B2A + mensagem #8C3B2A + aria-describedby)", "success (borda inferior 2px #4E6147)", "disabled (borda #D8CFC0, texto #6B675D)"],
+    "nav_header": ["topo (transparente sobre hero)", "rolado (sticky rgba(245,240,232,0.92) + backdrop-blur 12px + borda inferior 1px)", "menu mobile aberto (overlay smoke_deep com focus-trap e Esc)"]
+  },
+  "photography_direction": {
+    "style": "Moody escultural — o processo manual como narrativa: barro, fogo, tempo e mãos, em fundos escuros com luz lateral única, ritmo editorial de revista.",
+    "subjects": [
+      "Mãos trabalhando o barro na roda, textura crua em macro",
+      "Peça finalizada em fundo escuro, luz lateral esculpindo a forma",
+      "Detalhe de superfície fosca e engobe — grão do material",
+      "Forno e ateliê em penumbra, com uma peça em foco",
+      "Sequência de processo (torneamento → secagem → queima) para a seção 01–04"
+    ],
+    "light": "Natural lateral única e direcional, contraste marcado, sombras profundas — luz de janela ou softbox lateral; nunca luz frontal chapada.",
+    "color_grading": "Temperatura quente-terrosa em tons de barro e fumaça; sombras profundas rumo ao smoke_deep #262523; saturação sóbria. Proibido: HDR artificial, filtros frios, alta-chave clean.",
+    "framing": "Closes com profundidade de campo rasa; peça como objeto de galeria com muito ar ao redor; proporções sempre variadas (3:4, 4:5, 1:1, 16:10) — nunca grade uniforme de quadrados.",
+    "avoid": [
+      "Fotografia clara e clean de e-commerce em fundo branco",
+      "Grade uniforme de quadrados iguais na mesma linha",
+      "Stock genérico sem alma do processo",
+      "Sorrisos posados de marketing — o foco é o objeto e o gesto"
+    ],
+    "fallback_sem_foto": "Gradientes profundos smoke_deep→terracota (135deg, #262523 → rgba(155,107,71,0.7)), grain sutil via SVG feTurbulence e silhuetas orgânicas de peças torneadas em SVG inline (border-radius orgânico). Terracota crua #9B6B47 só como forma/overlay ou texto grande sobre claro (4.04:1); primary_light #C89A76 apenas sobre fundos escuros (6.08:1)."
+  },
+  "iconography": {
+    "style": "Linha fina (stroke 1.5px), traço editorial e discreto, grid 24x24, stroke-linecap round; ícones raros — o DS prefere numerais editoriais e tipografia a ícones.",
+    "color": "#7A5236 sobre superfícies claras; #C89A76 sobre seções smoke_deep",
+    "recommended_set": "Lucide ou Feather (open source, MIT), com stroke ajustado para 1.5",
+    "usage": "Ícone sempre acompanhado de texto — nunca como única affordance; evitar ícones decorativos que compitam com a fotografia moody.",
+    "decorative_shapes": "Silhuetas orgânicas de peças torneadas em SVG (border-radius orgânico), grain via feTurbulence e o cursor-dot terracota — todos aria-hidden e pointer-events: none quando decorativos."
+  },
+  "do_dont": {
+    "do": [
+      "Usar Fraunces em pesos leves (350–500), opsz alto e itálico pontual em 1 palavra da headline",
+      "Usar numerais editoriais gigantes (01–04) em Fraunces itálico para marcar capítulos do processo",
+      "Criar capítulos e ritmo com seções smoke_deep de borda a borda — profundidade por cor, não por sombra",
+      "Deixar whitespace assimétrico e generoso (até 144px entre seções no desktop); o vazio é pedestal",
+      "Variar proporções de imagem no grid magazine (3:4, 4:5, 1:1, 16:10) — nunca grade uniforme",
+      "Botões retos sem radius nem pílula, tipográficos com underline-ink"
+    ],
+    "dont": [
+      "Usar terracota crua #9B6B47 como texto normal sobre off-white (4.04:1 — falha AA; usar #7A5236 para links/texto e reservar #9B6B47 para display ≥24px ou botões com texto branco)",
+      "Usar primary_light #C89A76 sobre superfícies claras (só sobre smoke_deep, 6.08:1)",
+      "Usar #9B6B47 como texto sobre smoke_deep (3.35:1 — só texto grande; usar #C89A76)",
+      "Deslocar imagens em parallax além de 6–8% da altura",
+      "Manter cursor customizado ou parallax com prefers-reduced-motion ativo (reduzir reveals a fades de 200ms e voltar ao cursor nativo)",
+      "Usar urgência de e-commerce, exclamações em série ou grade uniforme de quadrados",
+      "Misturar mais de 2 famílias tipográficas ou usar Fraunces em bold pesado"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Fraunces:ital,opsz,wght@0,9..144,350;0,9..144,400;0,9..144,500;1,9..144,400 e Inter:wght@400;600 com display=swap",
+    "js_budget": "Comportamentos enxutos: menu mobile (toggle + focus-trap + Esc), IntersectionObserver único para reveals (reveal-up/reveal-clip/numeral-fade), parallax e cursor-dot via transform + requestAnimationFrame (só pointer: fine), carrossel manual de depoimentos por setas. Zero frameworks obrigatórios; tudo desativado sob prefers-reduced-motion.",
+    "seo_local": "Schema.org LocalBusiness + Store/ArtGallery para o ateliê (endereço, geo, horários de visita e telefone); Product com material e disponibilidade para peças; título com bairro/cidade ('Cerâmica X — Ateliê de olaria em Y')",
+    "whatsapp_cta": "Link wa.me com mensagem pré-preenchida sóbria e sem urgência ('Olá! Vi as peças no site e queria saber sobre o próximo lote / agendar uma visita ao ateliê')",
+    "adaptation_guide": "Ao adaptar para outro segmento artesanal (marcenaria autoral, joalheria, vidraria, brechó curado): manter paleta terracota crua + preto-fumaça, Fraunces leve + Inter, motion contemplativo e o grid magazine com proporções variadas; trocar apenas o vocabulário do voice_and_tone e a metáfora fotográfica (barro → madeira/metal/vidro). A essência é o mood matérico e o storytelling de processo, nunca o produto específico."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "artesanal",
+      "autentico",
+      "ceramica",
+      "materico",
+      "escultural",
+      "moody",
+      "editorial",
+      "terracota-crua",
+      "preto-fumaca",
+      "fraunces",
+      "grid-magazine",
+      "storytelling-processo"
+    ],
+    "related_docs": [
+      "previews/markdown/05-2-ceramica-artesanal.md",
+      "previews/html/05-2-ceramica-artesanal.html",
+      "docs/05-2-ceramica-artesanal/components.md",
+      "docs/05-2-ceramica-artesanal/animations.css",
+      "docs/05-2-ceramica-artesanal/accessibility-report.md",
+      "docs/05-2-ceramica-artesanal/benchmarking.md",
+      "docs/05-2-ceramica-artesanal/color-variations.md",
+      "docs/05-2-ceramica-artesanal/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "cerâmica e ateliês de olaria",
+      "marcenaria autoral",
+      "joalheria autoral / ourivesaria",
+      "ateliê de arte e objeto",
+      "brechó curado / garimpo de design",
+      "vidraria e sopro artesanal"
+    ],
+    "conversion_factors": [
+      "storytelling de processo (seção 01–04) constrói valor percebido antes do preço — essencial para tíquete alto artesanal",
+      "badges 'peça única' e 'pequenos lotes' criam escassez legítima sem urgência artificial",
+      "fotografia moody + whitespace de galeria posiciona o produto como objeto de coleção, sustentando margem",
+      "CTA 'Agendar visita ao ateliê' gera lead qualificado offline — decoradores e colecionadores compram após visita",
+      "depoimentos com contexto profissional ('decoradora, São Paulo') funcionam como prova social B2B",
+      "newsletter editorial ('lotes do mês') cria recorrência de audiência para drops de produção limitada"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "hero sem imagem raster obrigatória (gradiente+SVG inline) = LCP tipográfico < 1.5s; em produção, preload da imagem hero e AVIF/WebP com width/height explícitos",
+      "cls_strategy": "aspect-ratio reservado em todas as mídias do grid magazine; fontes com font-display: swap + fallback metric-compatible (size-adjust)",
+      "inp_strategy": "cursor customizado via transform + requestAnimationFrame (sem layout); IntersectionObserver único para todos os reveals; parallax só via transform em compositor",
+      "targets": { "LCP": "< 2.5s", "INP": "< 200ms", "CLS": "< 0.1" }
+    }
+  }
+}

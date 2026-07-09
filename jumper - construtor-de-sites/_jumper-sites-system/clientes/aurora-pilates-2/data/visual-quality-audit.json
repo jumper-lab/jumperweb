@@ -1,0 +1,139 @@
+{
+  "schema_version": "3.0.0",
+  "stage": "visual_quality_audit",
+  "client_name": "Aurora Pilates & Movimento",
+  "client_slug": "aurora-pilates-2",
+  "status": "approved_with_fixes",
+  "date": "2026-07-08",
+  "preview_url": "http://127.0.0.1:4325/",
+  "build_output": "dist/",
+  "screenshots": {
+    "desktop_hero_final": "data/visual-review/redesign-clean-desktop-1440.png",
+    "mobile_hero_final": "data/visual-review/redesign-clean-mobile-390.png",
+    "desktop_fullpage_final": "data/visual-review/redesign-final-fullpage-1440.png",
+    "mobile_fullpage_final": "data/visual-review/redesign-final-fullpage-390.png",
+    "motion_desktop_hero_settled": "data/visual-review/motion-final-desktop-settled.png",
+    "motion_mobile_hero_settled": "data/visual-review/motion-final-mobile-settled.png",
+    "motion_desktop_scrolled_review": "data/visual-review/motion-final-desktop-scrolled-review.png",
+    "motion_mobile_scrolled_review": "data/visual-review/motion-final-mobile-scrolled-review.png",
+    "hero_exact_narrow_short": "data/visual-review/hero-fixed-viewport-narrow-short.png",
+    "hero_exact_mobile": "data/visual-review/hero-fixed-viewport-mobile.png",
+    "hero_exact_tablet": "data/visual-review/hero-fixed-viewport-tablet.png",
+    "hero_exact_desktop_short": "data/visual-review/hero-fixed-viewport-desktop-short.png",
+    "hero_exact_desktop": "data/visual-review/hero-fixed-viewport-desktop.png",
+    "hero_exact_wide": "data/visual-review/hero-fixed-viewport-wide.png",
+    "final_cta_redesign_desktop": "data/visual-review/final-cta-redesign-desktop.png",
+    "final_cta_redesign_mobile": "data/visual-review/final-cta-redesign-mobile.png"
+  },
+  "first_fold": {
+    "five_second_test": "approved",
+    "print_test": "approved",
+    "competitor_test": "approved",
+    "viewport_coverage": "approved: hero and image measure 100% of viewport width and height on 320x568, 390x900, 768x1024, 1366x720, 1440x1000 and 1920x1080; next section visible pixels = 0",
+    "notes": "A primeira dobra comunica studio boutique de pilates, cuidado técnico e agendamento sem depender de estatísticas genéricas. A mídia IA tem contexto claro de espaço premium e o CTA principal é imediato. O hero foi corrigido para tela inteira real usando height 100vh/100svh/100dvh e max-height 100dvh."
+  },
+  "visual_checks": {
+    "hero": "approved_with_fixes",
+    "navigation": "approved",
+    "section_rhythm": "approved_with_fixes",
+    "typography": "approved",
+    "media": "approved_with_fixes",
+    "cta_visibility": "approved",
+    "notes": [
+      "A primeira versão foi reprovada visualmente por excesso de vazio, pouca densidade e seções com aparência fraca.",
+      "O hero perdeu a faixa pesada de números e ganhou nota editorial de avaliação inicial.",
+      "Foram adicionadas duas imagens IA novas para método e espaço, eliminando repetição do mesmo asset.",
+      "A Astro Dev Toolbar foi desativada para não contaminar screenshots e previews.",
+      "Containers de imagem foram corrigidos para o Astro renderizar as imagens imersivas corretamente.",
+      "Refinamento de motion adicionado nesta rodada: entrada do header, entrada do hero, revelações por scroll e hover em botões, imagens, serviços, depoimentos e cartões.",
+      "O motion é discreto e editorial: ele reforça sofisticação sem virar efeito decorativo ou comprometer a leitura.",
+      "Correção posterior: primeira dobra ajustada para height 100vh/100svh/100dvh, max-height 100dvh e imagem 100% cover; nenhum bloco seguinte entra na primeira viewport antes do scroll.",
+      "Correção posterior: CTA final redesenhado; saiu o card escuro centralizado e entrou uma faixa editorial full-width com headline, ação e etapas da avaliação."
+    ]
+  },
+  "layout_checks": {
+    "mobile_320": "approved",
+    "mobile_390": "approved",
+    "tablet_768": "approved",
+    "desktop_1024": "approved",
+    "desktop_1440": "approved",
+    "horizontal_overflow": "0px em todos os viewports testados",
+    "text_clipping": "not_detected",
+    "overlap": "not_detected"
+  },
+  "functional_checks": {
+    "astro_check": "passed",
+    "astro_build": "passed",
+    "main_cta": "https://wa.me/5541999991201?text=Quero%20agendar%20uma%20aula%20experimental",
+    "menu_mobile": "implemented with aria-expanded",
+    "entry_motion": "IntersectionObserver with scroll fallback; all reveal elements become visible after scroll pass",
+    "internal_links": "present",
+    "external_map_link": "present"
+  },
+  "accessibility_checks": {
+    "semantic_structure": "header/nav/main/section/footer present",
+    "headings": "single h1 and ordered section headings",
+    "focus_visible": "present",
+    "touch_targets": "44px minimum for primary controls",
+    "alt_text": "contextual alt text for all AI-generated images",
+    "motion": "prefers-reduced-motion respected; content stays visible for users who request reduced motion",
+    "contrast": "DS records AA/AAA pairs; final screenshots inspected for hero/menu readability"
+  },
+  "performance_checks": {
+    "image_pipeline": "Astro optimized all three IA images to WebP variants",
+    "build_time": "Astro build completed successfully",
+    "javascript": "small inline script only for header, menu and reveal behavior",
+    "dev_toolbar": "disabled in astro.config.mjs",
+    "video": "not used because real client video is pending and generic video would weaken specificity"
+  },
+  "deep_review_passes": [
+    {
+      "pass": 1,
+      "focus": "Reprovação estética inicial",
+      "result": "Site considerado fraco; redesign completo aplicado em hero, ritmo, imagens, serviços, espaço e depoimentos."
+    },
+    {
+      "pass": 2,
+      "focus": "Imagem e composição",
+      "result": "Novas imagens IA adicionadas; containers de imagem corrigidos; full-page desktop passou visualmente."
+    },
+    {
+      "pass": 3,
+      "focus": "Responsividade e funcionamento",
+      "result": "Playwright validou 320, 390, 768, 1024 e 1440px com overflow 0, sem console errors, CTA presente e imagens completas."
+    },
+    {
+      "pass": 4,
+      "focus": "Motion e refinamento",
+      "result": "Foram adicionadas animações de entrada e estados hover; build aprovado e Playwright confirmou sem overflow, sem erros de console, imagens completas e todos os reveals visíveis após rolagem."
+    },
+    {
+      "pass": 5,
+      "focus": "Primeira dobra em tela inteira",
+      "result": "Hero corrigido para height 100vh/100svh/100dvh e max-height 100dvh. Playwright confirmou heroViewportRatio 1.0, heroWidthRatio 1.0, imageViewportRatio 1.0, imageWidthRatio 1.0, nextVisiblePixels 0 e conteúdo crítico visível em 320x568, 390x900, 768x1024, 1366x720, 1440x1000 e 1920x1080."
+    },
+    {
+      "pass": 6,
+      "focus": "CTA final",
+      "result": "Seção final redesenhada em composição full-width de duas colunas no desktop e coluna editorial no mobile. Build aprovado, sem overflow e sem texto provisório."
+    }
+  ],
+  "known_issues": [
+    {
+      "issue": "Fotos reais da fachada, equipe e vídeo curto ainda não foram enviados pelo cliente.",
+      "impact": "Baixo para preview; as imagens IA atuais estão coerentes e finalizáveis, mas devem ser substituídas por assets reais quando chegarem.",
+      "next_action": "Trocar `aurora-hero-studio.png`, `aurora-method-detail.png` e `aurora-space-corner.png` por fotos reais equivalentes, mantendo crops e contraste."
+    },
+    {
+      "issue": "CNPJ, domínio e confirmação pública do endereço ainda estão pendentes no briefing.",
+      "impact": "Baixo para preview; relevante antes de publicação definitiva.",
+      "next_action": "Atualizar content/README quando o cliente confirmar."
+    },
+    {
+      "issue": "npm audit reportou vulnerabilidades transitivas no ambiente de dependências.",
+      "impact": "Não bloqueou o build local; evitar `audit fix --force` sem revisão porque pode trocar versões principais.",
+      "next_action": "Revisar dependências antes de deploy final se o cliente for publicado em produção."
+    }
+  ],
+  "final_recommendation": "Aprovado para nova avaliação visual. A versão redesenhada substitui a anterior e agora inclui hero em tela inteira real, motion editorial, hover refinado e validação visual específica para esta rodada."
+}

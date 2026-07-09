@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "client_name": "Aurora Pilates & Movimento",
+  "client_slug": "aurora-pilates-2",
+  "model": "M1",
+  "model_description": "One Page",
+  "personality": "B",
+  "personality_name": "Premium sofisticado",
+  "engine": "ds-autoral",
+  "framework": "astro",
+  "output_mode": "static",
+  "build_command": "npm run build",
+  "dev_command": "npm run dev",
+  "preview_command": "npm run preview"
+}

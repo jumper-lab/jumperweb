@@ -1,0 +1,662 @@
+{
+  "id": "reference-ds-02-bluebottlecoffee-com",
+  "clientSlug": "bluebottlecoffee-com",
+  "clientName": "Blue Bottle Coffee",
+  "personalitySlug": "05-artesanal-autentico",
+  "regeneratedAt": "2026-06-05",
+  "referenceQualityBaseline": "reference-ds-01-pinchmans-ca-visual-preview.html + pasta 01 aprovada",
+  "source": {
+    "site": "bluebottlecoffee.com",
+    "localPath": "_jumper-sites-system/_referencias-visuais/05-artesanal-autentico/design-systems/preview-assets/bluebottlecoffee.com",
+    "sourceReferenceId": "bluebottlecoffee.com",
+    "sourceReferenceNote": "Referencia visual ja convertida em DS-base; arquivo pesado original nao e necessario no fluxo oficial.",
+    "imagesUsed": [
+      "../../preview-assets/bluebottlecoffee.com/assets/0568508f5b33eb07_HP_MAY_WK4_M6_Desktop.jpg",
+      "../../preview-assets/bluebottlecoffee.com/assets/4b13ddf93605b60f_HP_MAY_WK2_M1C_Desktop.jpg",
+      "../../preview-assets/bluebottlecoffee.com/assets/d893c18a94b2a4af_Subscriptions_Desktop_2.jpg",
+      "../../preview-assets/bluebottlecoffee.com/assets/5c20f49816524d00_HP_MAY_WK4_M6_Desktop.jpg",
+      "../../preview-assets/bluebottlecoffee.com/assets/4b317085d3c3bae0_Blue_Bottle_Oakbrook_Center_Ca.jpg",
+      "../../preview-assets/bluebottlecoffee.com/assets/a49392e3f03c90f1_HP_MAY_WK4_M1A_Desktop.jpg",
+      "../../preview-assets/bluebottlecoffee.com/assets/7fa3c659c84f5ae0_Blue_Bottle_Oakbrook_Center_Ca.jpg",
+      "../../preview-assets/bluebottlecoffee.com/assets/a104db1d36114a57_HP_FEBWK2_M7_Desktop.jpg",
+      "../../preview-assets/bluebottlecoffee.com/assets/10d6d9edd496a760_M1_Hero_Holiday_Instant_Bundle.png",
+      "../../preview-assets/bluebottlecoffee.com/assets/f9c73d5fea822740_HP_JUN_WK2_M3_Desktop.jpg"
+    ],
+    "extractedSignals": {
+      "sourceColors": [
+        {
+          "hex": "#E7E7E7",
+          "count": 20,
+          "hsl": "hsl(0 0% 91%)"
+        },
+        {
+          "hex": "#2563EB",
+          "count": 17,
+          "hsl": "hsl(221 83% 53%)"
+        },
+        {
+          "hex": "#2B2B2B",
+          "count": 14,
+          "hsl": "hsl(0 0% 17%)"
+        },
+        {
+          "hex": "#333",
+          "count": 13,
+          "hsl": "hsl(0 0% 20%)"
+        },
+        {
+          "hex": "#344EF4",
+          "count": 9,
+          "hsl": "hsl(232 90% 58%)"
+        },
+        {
+          "hex": "#545454",
+          "count": 9,
+          "hsl": "hsl(0 0% 33%)"
+        },
+        {
+          "hex": "#F6F6F7",
+          "count": 8,
+          "hsl": "hsl(240 6% 97%)"
+        },
+        {
+          "hex": "#2979FF",
+          "count": 8,
+          "hsl": "hsl(218 100% 58%)"
+        },
+        {
+          "hex": "#0D6EFD",
+          "count": 6,
+          "hsl": "hsl(216 98% 52%)"
+        },
+        {
+          "hex": "#DC3545",
+          "count": 6,
+          "hsl": "hsl(354 70% 54%)"
+        }
+      ],
+      "fonts": [
+        "bf3a14f66c8512e5_ABC_Diatype_Regular.woff2",
+        "ff77023cd7bd32f5_ABC_Marfa_Regular.woff2"
+      ],
+      "title": "Blue Bottle Coffee | Fresh Roasted Specialty Coffee",
+      "sourceText": [
+        []
+      ],
+      "assetCounts": {
+        "images": 71,
+        "css": 5,
+        "fonts": 2
+      }
+    }
+  },
+  "designIntent": {
+    "tone": "artesanal limpo / cafe / assinatura",
+    "summary": "Referencia de cafe artesanal com azul icone, produto limpo, assinatura e guias de preparo.",
+    "hero": "Ritual de cafe com frescor, clareza e assinatura.",
+    "nonGoal": "Nao e DS final do cliente; nao contem fluxo real de formulario."
+  },
+  "colors": {
+    "palette": [
+      {
+        "name": "Bottle Blue",
+        "hex": "#00A5C8",
+        "rgb": "rgb(0,165,200)",
+        "hsl": "hsl(191 100% 39%)",
+        "usage": "primary accent"
+      },
+      {
+        "name": "Clean Cream",
+        "hex": "#F7F3EA",
+        "rgb": "rgb(247,243,234)",
+        "hsl": "hsl(42 45% 94%)",
+        "usage": "background"
+      },
+      {
+        "name": "Ink",
+        "hex": "#1C2326",
+        "rgb": "rgb(28,35,38)",
+        "hsl": "hsl(198 15% 13%)",
+        "usage": "text"
+      },
+      {
+        "name": "Porcelain",
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255,255,255)",
+        "hsl": "hsl(0 0% 100%)",
+        "usage": "surface"
+      },
+      {
+        "name": "Soft Blue",
+        "hex": "#B9E4EE",
+        "rgb": "rgb(185,228,238)",
+        "hsl": "hsl(191 61% 83%)",
+        "usage": "hover / wash"
+      },
+      {
+        "name": "Roast Taupe",
+        "hex": "#A68B76",
+        "rgb": "rgb(166,139,118)",
+        "hsl": "hsl(26 21% 56%)",
+        "usage": "secondary"
+      },
+      {
+        "name": "Fresh Green",
+        "hex": "#6E8F5B",
+        "rgb": "rgb(110,143,91)",
+        "hsl": "hsl(98 22% 46%)",
+        "usage": "success / origin"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Blue Ritual",
+        "value": "linear-gradient(135deg, rgba(247,243,234,.98), rgba(0,165,200,.24), rgba(185,228,238,.36))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Cafe Shadow",
+        "value": "linear-gradient(180deg, rgba(28,35,38,.82), rgba(28,35,38,.3))",
+        "participation": "background / overlay / hover / active states"
+      },
+      {
+        "name": "Morning Steam",
+        "value": "radial-gradient(circle at 18% 20%, rgba(0,165,200,.2), transparent 34%), radial-gradient(circle at 78% 72%, rgba(166,139,118,.18), transparent 38%)",
+        "participation": "background / overlay / hover / active states"
+      }
+    ],
+    "semantic": {
+      "primary": "Bottle Blue",
+      "text": "#1C2326",
+      "surface": "#F7F3EA",
+      "accent": "Porcelain",
+      "focus": "Fresh Green",
+      "contrastIntent": "AA minimum for body text; generated preview overrides --c2 as light surface and --c3 as dark text to avoid low-contrast sections."
+    },
+    "opacityPolicy": "Escala global para evitar repeticao: 100,86,64,40,18,8.",
+    "contextualUsageRules": {
+      "text": "Usar token semantico com contraste AA.",
+      "background": "Usar surface/background conforme personalidade do site.",
+      "border": "Usar neutral/accent em baixa opacidade.",
+      "hover": "Accent/focus ou overlay curto.",
+      "active": "Aumentar contraste ou reduzir elevacao 120-180ms.",
+      "disabled": "Opacidade global sem apagar legibilidade."
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "ABC Marfa, Georgia, serif",
+      "ui": "ABC Diatype, Inter, system-ui, sans-serif",
+      "mono": "ui-monospace, Menlo, monospace",
+      "loading": "local when available; fallback stack otherwise"
+    },
+    "scale": {
+      "h1": {
+        "size": "clamp(3rem,7vw,7.8rem)",
+        "weight": 760,
+        "lineHeight": 0.88,
+        "letterSpacing": 0
+      },
+      "h2": {
+        "size": "clamp(2.15rem,4.9vw,5.35rem)",
+        "weight": 720,
+        "lineHeight": 0.94,
+        "letterSpacing": 0
+      },
+      "h3": {
+        "size": "clamp(1.6rem,3vw,3rem)",
+        "weight": 680,
+        "lineHeight": 1.05,
+        "letterSpacing": 0
+      },
+      "bodyLg": {
+        "size": "1.22rem",
+        "weight": 420,
+        "lineHeight": 1.6,
+        "letterSpacing": 0
+      },
+      "body": {
+        "size": "1rem",
+        "weight": 420,
+        "lineHeight": 1.58,
+        "letterSpacing": 0
+      },
+      "bodySm": {
+        "size": ".9rem",
+        "weight": 420,
+        "lineHeight": 1.45,
+        "letterSpacing": 0
+      },
+      "caption": {
+        "size": ".76rem",
+        "weight": 820,
+        "lineHeight": 1.35,
+        "letterSpacing": ".12em",
+        "textTransform": "uppercase"
+      }
+    },
+    "siteSpecificRoles": [
+      {
+        "role": "ritual-title",
+        "family": "Display serif",
+        "weight": "620",
+        "size": "clamp(4rem,7vw,8rem)",
+        "lineHeight": ".92",
+        "letterSpacing": "0",
+        "usage": "Titulo de ritual/produto."
+      },
+      {
+        "role": "brew-label",
+        "family": "Mono/UI",
+        "weight": "800",
+        "size": ".72rem",
+        "lineHeight": "1.2",
+        "letterSpacing": ".12em",
+        "usage": "Metodo, moagem, tempo."
+      },
+      {
+        "role": "body-clean",
+        "family": "UI",
+        "weight": "420",
+        "size": "1rem",
+        "lineHeight": "1.6",
+        "letterSpacing": "0",
+        "usage": "Descricao clara de produto."
+      }
+    ]
+  },
+  "icons": {
+    "set": [
+      "cup",
+      "drop",
+      "bag",
+      "gift",
+      "map",
+      "arrow"
+    ],
+    "stroke": 1.8,
+    "color": "currentColor",
+    "hover": "focus/accent token",
+    "rule": "icone nao desloca layout no hover"
+  },
+  "components": {
+    "brew-method-card": {
+      "role": "brew method card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "steam fade",
+      "visual": "Referencia Blue Bottle Coffee: artesanal limpo / cafe / assinatura",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "subscription-quiz": {
+      "role": "subscription quiz",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "blue underline",
+      "visual": "Referencia Blue Bottle Coffee: artesanal limpo / cafe / assinatura",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "clean-product-tile": {
+      "role": "clean product tile",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "bag lift",
+      "visual": "Referencia Blue Bottle Coffee: artesanal limpo / cafe / assinatura",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "store-card": {
+      "role": "store card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "drawer slide",
+      "visual": "Referencia Blue Bottle Coffee: artesanal limpo / cafe / assinatura",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "bag-detail": {
+      "role": "bag detail",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "steam fade",
+      "visual": "Referencia Blue Bottle Coffee: artesanal limpo / cafe / assinatura",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "cart-drawer": {
+      "role": "cart drawer",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "blue underline",
+      "visual": "Referencia Blue Bottle Coffee: artesanal limpo / cafe / assinatura",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "gift-card": {
+      "role": "gift card",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "bag lift",
+      "visual": "Referencia Blue Bottle Coffee: artesanal limpo / cafe / assinatura",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    },
+    "ritual-tabs": {
+      "role": "ritual tabs",
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "loading",
+        "disabled",
+        "reduced-motion"
+      ],
+      "motion": "drawer slide",
+      "visual": "Referencia Blue Bottle Coffee: artesanal limpo / cafe / assinatura",
+      "referenceOnly": true,
+      "doNotUseAs": "tela final do cliente"
+    }
+  },
+  "motion": {
+    "entry": [
+      "fade-up",
+      "draw-line",
+      "stagger"
+    ],
+    "exit": [
+      "flyout-x",
+      "modal-fade-down",
+      "caption-exit"
+    ],
+    "background": [
+      "ambient drift",
+      "hero zoom"
+    ],
+    "parallax": "limited scroll response with reduced-motion fallback",
+    "siteSpecific": [
+      "steam fade",
+      "blue underline",
+      "bag lift",
+      "drawer slide"
+    ]
+  },
+  "accessibility": {
+    "contrast": "AA minimo; overlay obrigatorio sobre imagem",
+    "focus": "2px solid focus token",
+    "reducedMotion": true,
+    "skipLinks": true,
+    "modal": "Esc/overlay/botao fecham"
+  },
+  "risks": [
+    "Azul claro em texto pequeno falha.",
+    "Excesso de branco precisa borda e sombra.",
+    "Nao virar checkout final."
+  ],
+  "heroSystem": {
+    "layout": "clean-coffee",
+    "rules": [
+      "Hero full viewport claro, produto e ritual.",
+      "Menu deve priorizar shop, subscription, cafes e brew guides.",
+      "Azul aparece como foco e reconhecimento.",
+      "Motion e leve como vapor, sem exagero."
+    ],
+    "fullViewport": true
+  },
+  "menuSystem": {
+    "items": [
+      "Shop",
+      "Subscribe",
+      "Brew Guides",
+      "Cafes",
+      "Gifts"
+    ],
+    "note": "Menu de cafe limpo: ecommerce simples e ritual no centro.",
+    "behavior": "overlay flyout, Esc closes, link closes"
+  },
+  "effects": {
+    "signature": [
+      "steam fade",
+      "blue underline",
+      "bag lift",
+      "drawer slide"
+    ]
+  },
+  "referenceUsage": {
+    "type": "visual-reference-input",
+    "folder": "05-artesanal-autentico",
+    "crossesWith": "clientes/[slug]/data/design-system.json",
+    "purpose": "Insumo de cafe artesanal limpo. O DS final decide oferta real e nivel de minimalismo.",
+    "nonGoals": [
+      "nao criar DS final do cliente",
+      "nao representar personalidade da pasta",
+      "nao usar padrao generico para todos os sites"
+    ],
+    "differentiationRules": [
+      "Hero full viewport claro, produto e ritual.",
+      "Menu deve priorizar shop, subscription, cafes e brew guides.",
+      "Azul aparece como foco e reconhecimento.",
+      "Motion e leve como vapor, sem exagero."
+    ],
+    "siteSpecific": true,
+    "qualityRule": "Preview precisa demonstrar personalidade do site extraido, com menu completo, hero, tokens, gradientes, tipo, efeitos, componentes, cards/secoes, story parallax, icones, handoff e motion linkados.",
+    "notPersonalityWide": true
+  },
+  "outputs": {
+    "json": "design-systems/json/reference-ds-02-bluebottlecoffee-com.json",
+    "markdown": "design-systems/previews/markdown/reference-ds-02-bluebottlecoffee-com-preview.md",
+    "html": "design-systems/previews/html/reference-ds-02-bluebottlecoffee-com-visual-preview.html"
+  },
+  "schemaVersion": "reference-ds-v2",
+  "globalTokens": {
+    "opacityScale": {
+      "solid": 1,
+      "strong": 0.86,
+      "medium": 0.64,
+      "soft": 0.4,
+      "wash": 0.18,
+      "hairline": 0.08
+    },
+    "radius": "0-10px conforme referencia; cards ate 8px salvo marcas arredondadas",
+    "spacing": "clamp responsive"
+  },
+  "componentsDefaults": {
+    "states": [
+      "default",
+      "hover",
+      "focus-visible",
+      "active",
+      "loading",
+      "disabled"
+    ],
+    "referenceOnly": true
+  },
+  "previewNavigation": [
+    {
+      "order": 1,
+      "id": "menu-top",
+      "label": "Menu / top",
+      "href": "#menu-top"
+    },
+    {
+      "order": 2,
+      "id": "top",
+      "label": "Top",
+      "href": "#top"
+    },
+    {
+      "order": 3,
+      "id": "hero",
+      "label": "Sessao Hero",
+      "href": "#hero"
+    },
+    {
+      "order": 4,
+      "id": "color-tokens",
+      "label": "tokens de cor",
+      "href": "#color-tokens"
+    },
+    {
+      "order": 5,
+      "id": "gradients",
+      "label": "gradientes / opacidade",
+      "href": "#gradients"
+    },
+    {
+      "order": 6,
+      "id": "type-system",
+      "label": "type system",
+      "href": "#type-system"
+    },
+    {
+      "order": 7,
+      "id": "type-detail",
+      "label": "tipografia detalhada",
+      "href": "#type-detail"
+    },
+    {
+      "order": 8,
+      "id": "effects",
+      "label": "efeitos e mouse overs",
+      "href": "#effects"
+    },
+    {
+      "order": 9,
+      "id": "components",
+      "label": "componentes",
+      "href": "#components"
+    },
+    {
+      "order": 10,
+      "id": "contract",
+      "label": "contrato sem repeticao",
+      "href": "#contract"
+    },
+    {
+      "order": 11,
+      "id": "menu-board",
+      "label": "menu board component",
+      "href": "#menu-board"
+    },
+    {
+      "order": 12,
+      "id": "reference-slip",
+      "label": "reference slip",
+      "href": "#reference-slip"
+    },
+    {
+      "order": 13,
+      "id": "cards-sections",
+      "label": "cards e secoes",
+      "href": "#cards-sections"
+    },
+    {
+      "order": 14,
+      "id": "story",
+      "label": "story split parallax",
+      "href": "#story"
+    },
+    {
+      "order": 15,
+      "id": "icons",
+      "label": "icones",
+      "href": "#icons"
+    },
+    {
+      "order": 16,
+      "id": "handoff",
+      "label": "handoff de referencia",
+      "href": "#handoff"
+    },
+    {
+      "order": 17,
+      "id": "motion",
+      "label": "motion contract",
+      "href": "#motion"
+    },
+    {
+      "order": 18,
+      "id": "replay-motion",
+      "label": "Replay motion",
+      "href": "#replay-motion"
+    }
+  ],
+  "requiredPreviewSections": [
+    "Menu / top",
+    "Sessao Hero",
+    "tokens de cor",
+    "gradientes / opacidade",
+    "type system",
+    "tipografia detalhada",
+    "efeitos e mouse overs",
+    "componentes",
+    "contrato sem repeticao",
+    "menu board component",
+    "reference slip",
+    "cards e secoes",
+    "story split parallax",
+    "icones",
+    "handoff de referencia",
+    "motion contract",
+    "Replay motion"
+  ],
+  "requiredPreviewContract": {
+    "allMenuLinksMustResolve": true,
+    "menuHasTopAndHeroAsSeparateAnchors": true,
+    "heroMustOccupyFullViewport": true,
+    "noRepeatedGenericSections": true,
+    "noClippedTextOrOverlaps": true,
+    "showGradientsOpacityHoverEntryExitParallaxIcons": true
+  }
+}

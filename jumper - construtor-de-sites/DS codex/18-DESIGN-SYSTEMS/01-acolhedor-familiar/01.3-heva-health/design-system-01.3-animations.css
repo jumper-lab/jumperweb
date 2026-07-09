@@ -1,0 +1,119 @@
+:root{--primary:#5D6F43;--secondary:#CDBB8E;--surface:#FAF7EF;--surface-alt:#E7E1D2;--text:#22281D;--muted:#6C725F;--border:#CAC2AD;--heading:"Cormorant Garamond";--body:"Inter";--mono:"IBM Plex Mono";--radius:6px;}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-journal-masthead-with-appointment-rail { animation: reveal-journal-masthead-with-appointment-rail 620ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes reveal-journal-masthead-with-appointment-rail { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+  .motion-signature { transition: transform 220ms ease, filter 220ms ease, background 220ms ease; }
+  .motion-signature:hover { transform: translateY(-3px); }
+  .nav-active-marker { transition: width 180ms ease; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+:focus-visible { outline: 2px solid var(--secondary); outline-offset: 3px; }
+
+
+/* Component motion map for Heva Calm Care Journal System */
+.care-route-chip-motion {
+  --component-index: 1;
+  transform-origin: center right;
+  transition: transform 180ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.care-route-chip-motion:hover {
+  transform: translateY(-2px);
+}
+.care-route-chip-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.practitioner-profile-slab-motion {
+  --component-index: 2;
+  transform-origin: center left;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.practitioner-profile-slab-motion:hover {
+  transform: translateY(-2px);
+}
+.practitioner-profile-slab-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.visit-detail-row-motion {
+  --component-index: 3;
+  transform-origin: center right;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.visit-detail-row-motion:hover {
+  transform: translateY(-2px);
+}
+.visit-detail-row-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.appointment-rail-motion {
+  --component-index: 4;
+  transform-origin: center left;
+  transition: transform 180ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.appointment-rail-motion:hover {
+  transform: translateY(-2px);
+}
+.appointment-rail-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.calm-faq-card-motion {
+  --component-index: 5;
+  transform-origin: center right;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.calm-faq-card-motion:hover {
+  transform: translateY(-2px);
+}
+.calm-faq-card-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.insurance-pill-motion {
+  --component-index: 6;
+  transform-origin: center left;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.insurance-pill-motion:hover {
+  transform: translateY(-2px);
+}
+.insurance-pill-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .section-care-route-finder-enter { animation: section-care-route-finder-enter 360ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-care-route-finder-enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+  .section-practitioner-trust-panel-enter { animation: section-practitioner-trust-panel-enter 380ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-practitioner-trust-panel-enter { from { opacity: 0; transform: translateY(19px); } to { opacity: 1; transform: none; } }
+
+  .section-treatment-journal-enter { animation: section-treatment-journal-enter 400ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-treatment-journal-enter { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+  .section-insurance-and-visit-details-enter { animation: section-insurance-and-visit-details-enter 420ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-insurance-and-visit-details-enter { from { opacity: 0; transform: translateY(21px); } to { opacity: 1; transform: none; } }
+
+  .section-calm-faq-enter { animation: section-calm-faq-enter 440ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-calm-faq-enter { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+
+  .section-patient-story-enter { animation: section-patient-story-enter 460ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-patient-story-enter { from { opacity: 0; transform: translateY(23px); } to { opacity: 1; transform: none; } }
+
+  .section-booking-bar-enter { animation: section-booking-bar-enter 480ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-booking-bar-enter { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+  .section-footer-as-clinic-dossier-enter { animation: section-footer-as-clinic-dossier-enter 500ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-footer-as-clinic-dossier-enter { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: none; } }
+
+}

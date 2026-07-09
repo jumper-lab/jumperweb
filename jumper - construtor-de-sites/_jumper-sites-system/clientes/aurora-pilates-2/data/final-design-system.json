@@ -1,0 +1,265 @@
+{
+  "schema_version": "3.0.0",
+  "stage": "final_design_system",
+  "client_name": "Aurora Pilates & Movimento",
+  "client_slug": "aurora-pilates-2",
+  "model": "M1",
+  "personality": "B",
+  "personality_name": "Premium sofisticado",
+  "client_truth": {
+    "business": "Studio boutique de pilates, fisioterapia preventiva e movimento consciente em Curitiba.",
+    "audience": "Adultos de 30 a 65 anos que querem se mover com segurança, reduzir rigidez, ganhar autonomia e evitar treinos impessoais.",
+    "conversion": "Agendar aula experimental avaliativa pelo WhatsApp.",
+    "non_negotiables": [
+      "comunicar acompanhamento técnico e personalizado",
+      "mostrar que não é uma academia comum",
+      "preservar calma, confiança e proximidade humana",
+      "evitar promessas de cura, milagre, corpo perfeito ou performance agressiva"
+    ]
+  },
+  "visual_thesis": "Um refúgio urbano de movimento consciente: tela inicial imersiva, calma editorial, materialidade natural e precisão técnica suficiente para parecer saúde premium sem virar clínica fria.",
+  "signature_element": {
+    "name": "Linha de respiração",
+    "description": "Um traço fino, vertical ou horizontal, usado como pausa visual para sugerir alinhamento corporal, cadência e controle. Nunca aparece como divisor decorativo solto; sempre ancora títulos, números ou chamadas.",
+    "usage": [
+      "antes do eyebrow no hero",
+      "marcando o início das seções principais",
+      "como indicador ativo no menu e nos cards de serviços"
+    ]
+  },
+  "repertoire_used": [
+    {
+      "source": "02-2 Clínica Dental Premium",
+      "principle": "sage/champagne, fotografia tonal e saúde premium com acolhimento",
+      "application": "verde oliva profundo, off-white quente, CTA laranja queimado e texto limpo para transmitir técnica sem frieza"
+    },
+    {
+      "source": "02-3 Hotel Boutique Luxuoso",
+      "principle": "experiência imersiva, respiro e uma ideia por tela",
+      "application": "hero em viewport inteira, imagem dominante e primeira dobra 100% dedicada à entrada do site"
+    },
+    {
+      "source": "02-1 Advocacia Sofisticada",
+      "principle": "hierarquia editorial, assimetria e confiança por composição",
+      "application": "títulos serifados grandes, grid com colunas silenciosas e botões sóbrios"
+    }
+  ],
+  "global_reference_repertoire": [
+    {
+      "source": "NOHrD",
+      "principle": "equipamentos e materiais físicos tratados com desejo visual",
+      "application": "mídia deve destacar madeira, aparelho, textura e gesto do movimento, não sorrisos genéricos"
+    },
+    {
+      "source": "Aman",
+      "principle": "luxo por silêncio, escala e fotografia imersiva",
+      "application": "menos blocos por viewport, mais pausa e imagem em escala generosa"
+    },
+    {
+      "source": "Aesop",
+      "principle": "organização editorial sensorial",
+      "application": "copy curta, labels precisos, menu elegante e seções com ritmo de leitura"
+    }
+  ],
+  "anti_generic_decisions": [
+    "não usar visual de academia fitness",
+    "não usar foto sorridente de banco sem contexto",
+    "não transformar estatísticas em faixa pesada no hero",
+    "não repetir grid de cards como solução para todas as seções",
+    "não usar promessas médicas absolutas",
+    "não usar verde neon, roxo forte ou rosa fitness",
+    "não colocar texto explicando que a imagem é temporária no site"
+  ],
+  "tokens": {
+    "colors": {
+      "olive_950": "#1F2A1C",
+      "olive_850": "#283322",
+      "olive_650": "#586849",
+      "sand_100": "#F4EFE6",
+      "sand_200": "#E7DDCE",
+      "sand_350": "#CDBFAE",
+      "mineral_600": "#6B6D63",
+      "ink": "#1C211A",
+      "muted": "#596254",
+      "action": "#C96F3E",
+      "action_dark": "#9F4E2B",
+      "white": "#FFFFFF"
+    },
+    "contrast_pairs": [
+      {"pair": "ink on sand_100", "ratio": "14.1:1", "wcag": "AAA"},
+      {"pair": "sand_100 on olive_950", "ratio": "12.4:1", "wcag": "AAA"},
+      {"pair": "white on action_dark", "ratio": "6.2:1", "wcag": "AA"},
+      {"pair": "olive_850 on sand_100", "ratio": "11.5:1", "wcag": "AAA"}
+    ],
+    "typography": {
+      "display_font": "Cormorant Garamond",
+      "body_font": "Inter",
+      "fallback": "Georgia for display, system-ui for body",
+      "scale": {
+        "hero": "clamp(3.4rem, 8vw, 8.8rem)",
+        "h2": "clamp(2.4rem, 5vw, 5.8rem)",
+        "h3": "clamp(1.5rem, 2.3vw, 2.4rem)",
+        "body": "clamp(1rem, 1.1vw, 1.14rem)",
+        "small": "0.84rem",
+        "label": "0.72rem"
+      },
+      "line_heights": {
+        "display": "0.95",
+        "heading": "1.05",
+        "body": "1.72",
+        "label": "1.2"
+      },
+      "letter_spacing": {
+        "display": "0",
+        "body": "0",
+        "label": "0"
+      }
+    },
+    "spacing": {
+      "unit": "8px",
+      "scale": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "40px",
+        "2xl": "64px",
+        "3xl": "96px",
+        "4xl": "144px"
+      },
+      "container": "min(92vw, 1440px)",
+      "narrow": "min(88vw, 760px)"
+    },
+    "radius": {
+      "button": "999px",
+      "media": "28px",
+      "small": "10px"
+    },
+    "motion": {
+      "fast": "180ms",
+      "base": "360ms",
+      "slow": "700ms",
+      "ease": "cubic-bezier(.22,.8,.24,1)",
+      "settle": "cubic-bezier(.16,1,.3,1)"
+    }
+  },
+  "hero_direction": {
+    "composition": "Hero full-bleed com height 100vh/100svh/100dvh e max-height 100dvh, imagem de fundo ocupando exatamente toda a primeira tela em altura e largura, véu oliva translúcido e conteúdo ancorado no terço inferior esquerdo em largura editorial. A primeira viewport deve ser inteira do hero, sem faixa visível da próxima seção e sem a seção ultrapassar a altura do navegador.",
+    "message_order": [
+      "eyebrow: Studio boutique no Batel",
+      "headline: Movimento consciente para viver melhor o próprio corpo.",
+      "subheadline: Pilates, fisioterapia preventiva e educação corporal em turmas pequenas, com avaliação individual antes de começar.",
+      "CTA primário: Agendar aula experimental",
+      "CTA secundário textual: Conhecer o método"
+    ],
+    "media": "Imagem IA principal: studio boutique de pilates em Curitiba, luz natural suave, aparelho de madeira, tecido off-white, vegetação discreta, sem rosto em close, sensação premium e silenciosa.",
+    "crop": "Desktop: foco no aparelho e na luz lateral, deixando área escura suave para texto. Mobile: crop vertical com o aparelho e janela; texto em painel translúcido baixo se o contraste exigir.",
+    "blocked_patterns": [
+      "split hero automático sem função narrativa",
+      "hero centralizado com cards de estatística",
+      "imagem de pessoa sorrindo posada",
+      "vídeo ou foto que mostre apenas fragmento corporal sem contexto"
+    ]
+  },
+  "navigation_direction": {
+    "desktop": "Header transparente sobre o hero, com wordmark à esquerda, links editoriais no centro e CTA compacto à direita. Ao rolar, vira barra sólida off-white com sombra mínima e indicador fino de seção ativa.",
+    "mobile": "Topo limpo com wordmark e botão menu. Menu abre como painel off-white com links grandes, CTA destacado e dados de contato essenciais.",
+    "links": ["Método", "Aulas", "Depoimentos", "Localização", "Agendar"],
+    "states": "Hover por mudança de cor e pequena linha de respiração abaixo do link; focus-visible com outline oliva."
+  },
+  "media_direction": {
+    "primary": "Imagens geradas por IA sob medida enquanto fotos reais não chegam.",
+    "ai_prompts": [
+      {
+        "name": "hero-studio",
+        "prompt": "photorealistic boutique pilates studio in Curitiba, premium calm interior, wooden reformer equipment, soft morning natural light, olive and warm off-white palette, linen textures, subtle plants, no visible logos, no exaggerated smiles, editorial luxury wellness photography, wide angle, cinematic but realistic"
+      },
+      {
+        "name": "method-detail",
+        "prompt": "close detail of pilates reformer wood, hands adjusting spring with calm professional gesture, warm natural light, premium wellness studio, shallow depth of field, olive shadows, editorial composition"
+      },
+      {
+        "name": "space-corner",
+        "prompt": "quiet boutique pilates studio corner with mat, reformer, window light and natural materials, premium spa-like movement space, warm off-white, olive accents, realistic architectural photography"
+      }
+    ],
+    "pexels": "Liberado apenas como segunda opção quando imagem IA, foto real ou asset do cliente não resolverem. A busca deve privilegiar pilates studio, reformer pilates, wellness studio, natural light.",
+    "video": "Usar apenas se houver vídeo real ou vídeo Pexels com enquadramento contextual do espaço e movimento completo; não usar takes fechados sem leitura do ambiente.",
+    "fallback": "Blocos visuais editoriais com textura sutil e molduras de mídia, sem texto explicando ausência de imagem."
+  },
+  "section_system": [
+    {
+      "id": "metodo",
+      "role": "corrigir a expectativa do visitante",
+      "anatomy": "duas colunas assimétricas: label pequeno à esquerda, título grande à direita, parágrafo abaixo do título e mídia detalhe deslocada"
+    },
+    {
+      "id": "diferenciais",
+      "role": "provar proximidade e técnica",
+      "anatomy": "lista editorial numerada em três linhas amplas, sem cards iguais; cada item tem número, título e texto curto"
+    },
+    {
+      "id": "servicos",
+      "role": "mostrar caminhos sem parecer catálogo",
+      "anatomy": "accordion ou lista lateral com serviço ativo e descrição; aula experimental aparece como destaque principal"
+    },
+    {
+      "id": "depoimentos",
+      "role": "trazer confiança humana",
+      "anatomy": "uma citação grande por vez com autores discretos e fundo areia"
+    },
+    {
+      "id": "localizacao",
+      "role": "converter pela proximidade regional",
+      "anatomy": "mapa ou bloco de endereço + horários + CTA; foco em Batel e regiões próximas"
+    },
+    {
+      "id": "cta-final",
+      "role": "fechar com ação simples",
+      "anatomy": "faixa editorial full-width em fundo oliva, sem card arredondado; headline à esquerda, texto curto, WhatsApp e três etapas da avaliação à direita"
+    }
+  ],
+  "component_language": {
+    "buttons": {
+      "primary": "pill laranja queimado, texto branco, padding generoso, hover escurece e desloca 1px",
+      "secondary": "texto sublinhado por linha fina animada, sem pill pesado",
+      "focus": "outline 2px oliva com offset 3px"
+    },
+    "cards": "usar com parcimônia; quando houver, borda fina areia, fundo transparente, sem sombra padrão",
+    "forms": "campos grandes, label visível, erro claro e CTA WhatsApp quando formulário completo não for necessário",
+    "icons": "preferir numerais editoriais, labels e pequenos traços; ícones só quando comunicarem função real"
+  },
+  "responsive_rules": {
+    "mobile": "Hero ocupa exatamente 100vh/100svh/100dvh, com imagem cobrindo toda a primeira tela em altura e largura; texto mantém respiro e não pode estourar a viewport em telas baixas. Menu em painel. Seções alternam label acima e título abaixo; nenhuma imagem pode esmagar texto.",
+    "tablet": "Hero preserva imagem imersiva e conteúdo em bloco inferior; seções de duas colunas começam a aparecer com offsets menores.",
+    "desktop": "Container largo, hero em height 100vh/100svh/100dvh, conteúdo no terço inferior esquerdo e primeira dobra inteiramente dedicada ao hero. Seções usam assimetria editorial.",
+    "wide": "Limitar largura de texto e manter imagem full-bleed; não esticar cards ou linhas de leitura além do confortável."
+  },
+  "accessibility_floor": {
+    "wcag": "AA mínimo em todos os pares de texto usados",
+    "focus": "focus-visible em links, botões e controles",
+    "touch_targets": "44px mínimo",
+    "headings": "um h1, hierarquia sem saltos",
+    "alt_text": "alt contextual para todas as imagens",
+    "motion": "prefers-reduced-motion respeitado"
+  },
+  "performance_floor": {
+    "images": "formatos modernos, largura responsiva, hero prioritário e imagens abaixo da dobra lazy",
+    "fonts": "preconnect, font-display swap e apenas pesos necessários",
+    "javascript": "somente para menu, accordion e microinterações essenciais",
+    "targets": {
+      "lcp": "< 2.5s",
+      "cls": "< 0.1",
+      "inp": "< 200ms"
+    }
+  },
+  "quality_gate": [
+    "a primeira dobra comunica boutique, pilates e cuidado técnico em 5 segundos",
+    "o hero não poderia servir para uma academia genérica",
+    "menu tem desenho e estados próprios",
+    "mídia tem contexto claro de studio/movimento",
+    "nenhuma seção repete a mesma anatomia da anterior",
+    "mobile mantém impacto visual e leitura sem corte",
+    "CTA principal está sempre fácil sem dominar a experiência"
+  ]
+}

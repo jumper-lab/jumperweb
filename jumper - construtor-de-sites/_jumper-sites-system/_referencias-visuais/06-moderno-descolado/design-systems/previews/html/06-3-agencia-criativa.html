@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DS 06.3 — Agência Criativa · Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#0A0A0A; --secondary:#9D4EDD; --accent-text:#C77DFF;
+  --surface:#0A0A0A; --surface-alt:#141419; --surface-raised:#1B1B22;
+  --text-primary:#F5F3F7; --text-secondary:#A9A9B8; --text-muted:#78788A;
+  --border:#2A2A33; --error:#FF6B6B; --success:#34D399; --warning:#FBBF24;
+  --p400:#B15EF0; --p600:#7B2CBF;
+  --font-head:'DM Serif Display','Didot',Georgia,serif;
+  --font-body:'Space Grotesk','Helvetica Neue',Arial,sans-serif;
+  --radius-full:9999px;
+  --d-instant:120ms; --d-fast:240ms; --d-base:480ms; --d-slow:800ms; --d-cine:1200ms;
+  --e-standard:cubic-bezier(0.4,0,0.2,1); --e-dramatic:cubic-bezier(0.76,0,0.24,1);
+  --e-reveal:cubic-bezier(0.16,1,0.3,1); --e-snap:cubic-bezier(0.87,0,0.13,1);
+  --glow-sm:0 0 16px rgba(157,78,221,.35); --glow-md:0 0 40px rgba(157,78,221,.45); --glow-lg:0 0 80px rgba(157,78,221,.35);
+  --container:1440px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--surface);color:var(--text-primary);font-family:var(--font-body);font-size:1.125rem;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+@media(min-width:768px){.container{padding:0 48px}}
+@media(min-width:1024px){.container{padding:0 80px}}
+h1,h2,h3{font-family:var(--font-head);font-weight:400;line-height:1}
+h1{font-size:clamp(3rem,14vw,4.5rem);line-height:.95;letter-spacing:-0.02em}
+@media(min-width:768px){h1{font-size:clamp(4.5rem,10vw,10rem);line-height:.9;letter-spacing:-0.03em}}
+h2{font-size:2.25rem;line-height:1.05;letter-spacing:-0.01em}
+@media(min-width:768px){h2{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1;letter-spacing:-0.02em}}
+h3{font-size:1.5rem;line-height:1.15}
+@media(min-width:768px){h3{font-size:1.875rem;line-height:1.1}}
+.accent-italic{font-style:italic;color:var(--secondary)}
+.eyebrow{font-family:var(--font-body);font-weight:500;font-size:.875rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary)}
+.muted{color:var(--text-muted)}
+.sec{color:var(--text-secondary)}
+.accent{color:var(--accent-text)}
+
+/* scroll progress */
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--secondary);z-index:60;box-shadow:var(--glow-sm)}
+
+.skip{position:absolute;left:-999px;top:8px;background:var(--secondary);color:#fff;padding:10px 16px;font-weight:500;z-index:100;border-radius:var(--radius-full)}
+.skip:focus{left:8px}
+
+/* NAV */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:50;height:80px;display:flex;align-items:center;transition:background var(--d-fast),backdrop-filter var(--d-fast)}
+header.nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(12px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.logo{font-family:var(--font-head);font-size:1.75rem}
+.nav-links{display:none;gap:32px;align-items:center}
+@media(min-width:900px){.nav-links{display:flex}}
+.nav-link{font-family:var(--font-body);font-weight:500;font-size:.875rem;text-transform:uppercase;letter-spacing:0.1em;position:relative;padding:4px 0}
+.nav-link::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:100%;background:var(--secondary);transform:scaleX(0);transform-origin:left;transition:transform var(--d-fast) var(--e-standard)}
+.nav-link:hover::after,.nav-link:focus-visible::after{transform:scaleX(1)}
+.nav-link:hover{color:var(--accent-text)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:500;border-radius:var(--radius-full);cursor:pointer;border:none;letter-spacing:0.02em;transition:all var(--d-fast) var(--e-standard);min-height:48px}
+.btn-md{padding:16px 40px;font-size:1rem}
+.btn-lg{padding:20px 56px;font-size:1.125rem}
+.btn-sm{padding:12px 28px;font-size:.875rem}
+.btn-primary{background:var(--secondary);color:#fff}
+.btn-primary:hover{background:var(--p400);box-shadow:var(--glow-sm);transform:translateY(-2px)}
+.btn-primary:focus-visible{outline:2px solid var(--accent-text);outline-offset:3px}
+.btn-primary:active{background:var(--p600);transform:scale(.98)}
+.btn-primary:disabled{background:var(--border);color:var(--text-muted);cursor:not-allowed;box-shadow:none;transform:none}
+.btn-secondary{background:transparent;color:var(--text-primary);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--secondary);color:var(--accent-text)}
+.btn-secondary:focus-visible{outline:2px solid var(--accent-text);outline-offset:3px}
+.btn-secondary:disabled{border-color:var(--surface-alt);color:var(--n500,#55555F);cursor:not-allowed}
+.ghost-arrow{color:var(--accent-text);position:relative;display:inline-flex;gap:8px;align-items:center;font-weight:500;font-size:1rem}
+.ghost-arrow .arr{transition:transform var(--d-fast) var(--e-standard)}
+.ghost-arrow:hover .arr{transform:translateX(8px)}
+.ghost-arrow::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:var(--secondary);transform:scaleX(0);transform-origin:left;transition:transform var(--d-fast) var(--e-standard)}
+.ghost-arrow:hover::after,.ghost-arrow:focus-visible::after{transform:scaleX(1)}
+
+/* HERO */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hero .aura{position:absolute;top:30%;left:35%;width:60vw;height:60vw;max-width:800px;max-height:800px;border-radius:50%;
+  background:radial-gradient(circle,rgba(157,78,221,.35),transparent 60%);filter:blur(40px);z-index:0;animation:aura-pulse 8s ease-in-out infinite}
+.hero .eyebrow{margin-bottom:24px;display:block;position:relative;z-index:2}
+.hero h1{position:relative;z-index:2;max-width:14ch}
+.hero-line{display:block;overflow:hidden}
+.hero-line span{display:block;animation:line-reveal var(--d-cine) var(--e-reveal) both}
+.hero-line:nth-child(2) span{animation-delay:.12s}
+.hero-line:nth-child(3) span{animation-delay:.24s}
+.scroll-ind{position:relative;z-index:2;margin-top:48px;display:flex;align-items:center;gap:16px;color:var(--text-muted);font-size:.875rem;text-transform:uppercase;letter-spacing:0.1em}
+.scroll-ind .line{width:1px;height:48px;background:var(--text-muted);position:relative;overflow:hidden}
+.scroll-ind .line::after{content:"";position:absolute;top:0;left:0;width:100%;height:40%;background:var(--secondary);animation:scroll-drop 2.4s var(--e-reveal) infinite}
+
+/* MANIFESTO */
+.manifesto{min-height:80vh;display:flex;align-items:center}
+.manifesto p{font-family:var(--font-body);font-size:clamp(1.75rem,4vw,3.25rem);line-height:1.25;max-width:20ch;margin:0 auto;text-align:center}
+.manifesto .ink{color:var(--text-muted);transition:color var(--d-base)}
+.manifesto .ink.lit{color:var(--text-primary)}
+.manifesto .ink.purple{color:var(--accent-text)}
+
+/* CHAPTER */
+.chapter{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.chapter-num{position:absolute;top:8%;font-family:var(--font-head);font-size:clamp(5rem,12vw,12rem);line-height:1;color:transparent;-webkit-text-stroke:1px var(--border);z-index:0;pointer-events:none}
+.chapter .inner{position:relative;z-index:1;max-width:60ch}
+
+/* WORK PANELS */
+.work{display:grid;gap:64px}
+.panel{background:var(--surface-alt);border:1px solid var(--border);transition:transform var(--d-base) var(--e-standard),border-color var(--d-base);transform-style:preserve-3d}
+.panel:hover{border-color:var(--secondary);transform:perspective(900px) rotateX(2deg) rotateY(-3deg)}
+.panel:focus-within{border-color:var(--accent-text);border-width:2px}
+.panel .img{aspect-ratio:16/10;overflow:hidden}
+.panel .img>div{width:100%;height:100%;transition:transform var(--d-base) var(--e-standard);
+  background:linear-gradient(135deg,#0A0A0A 0%,#3C0E68 55%,#9D4EDD 120%);mix-blend-mode:normal}
+.panel:hover .img>div{transform:scale(1.04)}
+.pv1>div{background:linear-gradient(135deg,#0A0A0A,#5A189A 60%,#C77DFF)!important}
+.pv2>div{background:radial-gradient(80% 80% at 30% 30%,#9D4EDD,#240046 70%,#0A0A0A)!important}
+.pv3>div{background:conic-gradient(from 220deg at 60% 40%,#0A0A0A,#7B2CBF,#0A0A0A)!important}
+.panel .body{padding:32px}
+.panel .eyebrow{display:block;margin-bottom:12px}
+.panel h3{margin-bottom:12px}
+.panel:hover h3{animation:glitch-flash var(--d-base) steps(6) both}
+.panel .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+@media(min-width:768px){
+  .panel.left{margin-right:20%}
+  .panel.right{margin-left:20%}
+}
+
+/* CHIP */
+.chip{display:inline-flex;align-items:center;font-family:var(--font-body);font-size:.75rem;text-transform:uppercase;letter-spacing:0.08em;border:1px solid var(--border);border-radius:var(--radius-full);padding:6px 14px;color:var(--text-secondary);transition:border-color var(--d-fast)}
+.chip:hover{border-color:var(--secondary)}
+
+/* INPUTS */
+.form{max-width:640px}
+.field{margin-bottom:40px}
+.field label{display:block;font-family:var(--font-body);font-weight:500;font-size:.875rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary);margin-bottom:8px}
+.field input,.field textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--border);color:var(--text-primary);font-family:var(--font-body);font-size:1.5rem;padding:16px 0;transition:border-color var(--d-fast)}
+.field textarea{resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:var(--text-muted)}
+.field input:focus,.field textarea:focus{outline:none;border-bottom:2px solid var(--secondary)}
+.field input:focus+.fl,.field:focus-within label{color:var(--accent-text)}
+.field input:focus-visible{outline:2px solid var(--accent-text);outline-offset:6px}
+.field.error input{border-bottom:2px solid var(--error)}
+.field.error .msg{color:var(--error);font-size:.875rem;margin-top:8px;display:flex;gap:6px;align-items:center}
+.field.success input{border-bottom:2px solid var(--success)}
+
+/* TESTIMONIAL */
+.testi{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.testi .qmark{font-family:var(--font-head);font-size:8rem;line-height:.5;color:transparent;-webkit-text-stroke:1px var(--secondary);margin-bottom:24px}
+.testi blockquote{font-family:var(--font-head);font-size:clamp(1.75rem,3.5vw,3rem);line-height:1.2;max-width:18ch;margin-bottom:32px}
+.testi cite{font-style:normal;font-family:var(--font-body);font-size:.875rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary)}
+
+/* CTA FINAL */
+.cta-final{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.cta-final .aura{position:absolute;width:70vw;height:70vw;max-width:700px;max-height:700px;border-radius:50%;background:radial-gradient(circle,rgba(157,78,221,.45),transparent 60%);filter:blur(40px);z-index:0}
+.cta-final h2{position:relative;z-index:2;font-size:clamp(3rem,10vw,8rem);max-width:12ch;margin-bottom:40px}
+.cta-final h2:hover{animation:glitch-flash var(--d-base) steps(6) both}
+.cta-final .btn{position:relative;z-index:2}
+
+/* SWATCHES */
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+.sw{border:1px solid var(--border)}
+.sw .ch{height:88px}
+.sw .m2{padding:12px;font-size:.8125rem}
+.sw .m2 .name{font-weight:700}
+.sw .m2 .hex{color:var(--text-muted)}
+
+/* TYPE SPEC */
+.spec-row{border-top:1px solid var(--border);padding:24px 0}
+.spec-row .lbl{font-size:.8125rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:8px}
+
+/* MOTION DEMO */
+.demo-grid{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:768px){.demo-grid{grid-template-columns:repeat(2,1fr)}}
+.demo{background:var(--surface-alt);border:1px solid var(--border);padding:32px}
+.demo h3{margin-bottom:8px}
+.tilt-box{aspect-ratio:16/10;margin-top:16px;background:linear-gradient(135deg,#0A0A0A,#5A189A 60%,#C77DFF);transition:transform var(--d-base) var(--e-standard)}
+.demo:hover .tilt-box{transform:perspective(900px) rotateX(3deg) rotateY(-4deg)}
+.glitch-box{font-family:var(--font-head);font-size:2.5rem;margin-top:16px}
+.demo:hover .glitch-box{animation:glitch-flash var(--d-base) steps(6) both}
+
+/* MARQUEE */
+.marquee{overflow:hidden;white-space:nowrap;padding:32px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.marquee-track{display:inline-block;animation:marquee 18s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee a{font-family:var(--font-head);font-size:clamp(2rem,5vw,4.5rem);margin:0 24px}
+.marquee a:hover{color:var(--accent-text)}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:80px 0 40px}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:40px;margin-bottom:48px}
+@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+.footer-grid h4{font-size:.875rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary);margin-bottom:16px}
+.footer-grid a,.footer-grid p{color:var(--text-secondary);font-size:1rem;display:block;margin-bottom:8px}
+.footer-grid a:hover{color:var(--accent-text)}
+.footer-email{font-family:var(--font-head);font-size:1.875rem;color:var(--text-primary)!important;margin-top:8px}
+.legal{border-top:1px solid var(--border);padding-top:24px;font-size:.8125rem;color:var(--text-muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+.section-label{margin-bottom:48px}
+.section-label .eyebrow{display:block;margin-bottom:16px}
+
+/* KEYFRAMES */
+@keyframes line-reveal{0%{transform:translateY(110%)}100%{transform:translateY(0)}}
+@keyframes aura-pulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+@keyframes scroll-drop{0%{transform:translateY(-100%)}100%{transform:translateY(300%)}}
+@keyframes glitch-flash{0%{clip-path:none;text-shadow:none;transform:translate(0)}
+  20%{clip-path:inset(20% 0 40% 0);text-shadow:-3px 0 var(--secondary),3px 0 #fff;transform:translate(-2px,0)}
+  40%{clip-path:inset(60% 0 10% 0);text-shadow:3px 0 var(--secondary),-3px 0 #fff;transform:translate(2px,0)}
+  60%{clip-path:inset(10% 0 60% 0);text-shadow:-2px 0 var(--accent-text)}
+  100%{clip-path:none;text-shadow:none;transform:translate(0)}}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes reveal-up{0%{opacity:0;transform:translateY(40px)}100%{opacity:1;transform:translateY(0)}}
+.reveal{animation:reveal-up var(--d-slow) var(--e-reveal) both}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.15s!important;scroll-behavior:auto!important}
+  .hero-line span{transform:none!important;animation:fade .15s both!important}
+  .hero .aura,.cta-final .aura{animation:none!important}
+  .scroll-ind .line::after{display:none}
+  .panel:hover,.demo:hover .tilt-box{transform:none!important}
+  .marquee-track{animation-play-state:paused!important}
+  .manifesto .ink{color:var(--text-primary)!important}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<a href="#main" class="skip">Pular para o conteúdo</a>
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <div class="logo">Prisma<span class="accent">.</span></div>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#trabalhos" class="nav-link">Trabalhos</a>
+      <a href="#processo" class="nav-link">Processo</a>
+      <a href="#contato" class="nav-link">Contato</a>
+    </nav>
+    <a href="#contato" class="btn btn-primary btn-sm">Vamos criar</a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero container" aria-label="Destaque">
+    <div class="aura" aria-hidden="true"></div>
+    <span class="eyebrow">Agência criativa · Direção de arte</span>
+    <h1>
+      <span class="hero-line"><span>Toda marca</span></span>
+      <span class="hero-line"><span>tem um <em class="accent-italic">filme</em></span></span>
+      <span class="hero-line"><span>dentro dela.</span></span>
+    </h1>
+    <div class="scroll-ind"><span class="line" aria-hidden="true"></span> role para começar</div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto container" aria-label="Manifesto">
+    <p>
+      <span class="ink lit">Não</span> <span class="ink lit">seguimos</span> <span class="ink">tendência.</span>
+      <span class="ink">A</span> <span class="ink purple">gente</span> <span class="ink purple">grava</span> <span class="ink">a</span> <span class="ink">próxima.</span>
+    </p>
+  </section>
+
+  <!-- TRABALHOS (CAPÍTULO 01) -->
+  <section class="chapter container" id="trabalhos" aria-label="Capítulo 01 — Trabalhos">
+    <span class="chapter-num" aria-hidden="true">01</span>
+    <div class="section-label"><span class="eyebrow">Capítulo 01 — Trabalhos</span><h2>O que a gente <em class="accent-italic">fez</em></h2></div>
+    <div class="work">
+      <article class="panel left" tabindex="0"><div class="img pv1"><div></div></div><div class="body"><span class="eyebrow">Lançamento · 2025</span><h3>Rebrand da Órbita Records</h3><p class="sec">Identidade, filme de lançamento e direção de arte para o selo.</p><div class="tags"><span class="chip">Branding</span><span class="chip">Filme</span><span class="chip">Digital</span></div><p style="margin-top:16px"><a href="#" class="ghost-arrow">Ver projeto <span class="arr">→</span></a></p></div></article>
+      <article class="panel right" tabindex="0"><div class="img pv2"><div></div></div><div class="body"><span class="eyebrow">Campanha · 2024</span><h3>Filme "Ruído Branco"</h3><p class="sec">Direção e pós para a campanha de estreia da marca Névoa.</p><div class="tags"><span class="chip">Filme</span><span class="chip">Direção</span></div><p style="margin-top:16px"><a href="#" class="ghost-arrow">Ver projeto <span class="arr">→</span></a></p></div></article>
+      <article class="panel left" tabindex="0"><div class="img pv3"><div></div></div><div class="body"><span class="eyebrow">Identidade · 2024</span><h3>Coletivo Fósforo</h3><p class="sec">Sistema visual vivo para um coletivo de arte independente.</p><div class="tags"><span class="chip">Branding</span><span class="chip">Arte</span></div><p style="margin-top:16px"><a href="#" class="ghost-arrow">Ver projeto <span class="arr">→</span></a></p></div></article>
+    </div>
+  </section>
+
+  <!-- PROCESSO (CAPÍTULO 02) -->
+  <section class="chapter container" id="processo" aria-label="Capítulo 02 — Processo">
+    <span class="chapter-num" aria-hidden="true">02</span>
+    <div class="inner">
+      <span class="eyebrow">Capítulo 02 — Processo</span>
+      <h2 style="margin:16px 0 24px">Escutar. Escrever. <em class="accent-italic">Dirigir</em>.</h2>
+      <p class="sec">Toda marca chega com um roteiro pela metade. A gente escuta o que ainda não foi dito, escreve a sinopse da marca e dirige cada frame até virar filme. Sem briefing genérico, sem entregável de gaveta.</p>
+    </div>
+  </section>
+
+  <!-- PALETA -->
+  <section class="container" aria-label="Paleta">
+    <div class="section-label"><span class="eyebrow">Sistema</span><h2>Paleta</h2></div>
+    <div class="swatches">
+      <div class="sw"><div class="ch" style="background:#0A0A0A;border-bottom:1px solid var(--border)"></div><div class="m2"><div class="name">primary</div><div class="hex">#0A0A0A</div></div></div>
+      <div class="sw"><div class="ch" style="background:#9D4EDD"></div><div class="m2"><div class="name">secondary</div><div class="hex">#9D4EDD</div></div></div>
+      <div class="sw"><div class="ch" style="background:#C77DFF"></div><div class="m2"><div class="name">accent_text</div><div class="hex">#C77DFF</div></div></div>
+      <div class="sw"><div class="ch" style="background:#141419"></div><div class="m2"><div class="name">surface_alt</div><div class="hex">#141419</div></div></div>
+      <div class="sw"><div class="ch" style="background:#1B1B22"></div><div class="m2"><div class="name">surface_raised</div><div class="hex">#1B1B22</div></div></div>
+      <div class="sw"><div class="ch" style="background:#F5F3F7"></div><div class="m2"><div class="name">text_primary</div><div class="hex">#F5F3F7</div></div></div>
+      <div class="sw"><div class="ch" style="background:#A9A9B8"></div><div class="m2"><div class="name">text_secondary</div><div class="hex">#A9A9B8</div></div></div>
+      <div class="sw"><div class="ch" style="background:#2A2A33"></div><div class="m2"><div class="name">border</div><div class="hex">#2A2A33</div></div></div>
+    </div>
+    <p class="sec" style="margin-top:24px;font-size:1rem">O roxo puro <strong style="color:var(--secondary)">#9D4EDD</strong> (4.31:1) só em texto grande, UI e superfícies. Links e corpo usam o tint <strong class="accent">#C77DFF</strong> (7.36:1). Botão roxo sempre com texto branco.</p>
+  </section>
+
+  <!-- TIPOGRAFIA -->
+  <section class="container" style="background:var(--surface-alt)" aria-label="Tipografia">
+    <div class="section-label"><span class="eyebrow">Tipografia</span><h2>DM Serif + Grotesk</h2></div>
+    <div class="spec-row"><div class="lbl">H1 · DM Serif Display</div><h1 style="font-size:clamp(2.5rem,8vw,6rem)">Ideias que não cabem no <em class="accent-italic">feed</em></h1></div>
+    <div class="spec-row"><div class="lbl">H2 · DM Serif Display</div><h2>Fazemos marcas inesquecíveis</h2></div>
+    <div class="spec-row"><div class="lbl">H3 · DM Serif Display</div><h3>A gente dirige</h3></div>
+    <div class="spec-row"><div class="lbl">Body · Space Grotesk</div><p>Primeira pessoa do plural, frases curtas e afirmativas. Vocabulário de cinema e música. A agência não pede — afirma.</p></div>
+    <div class="spec-row"><div class="lbl">Eyebrow · Space Grotesk caps</div><span class="eyebrow">Capítulo 03 — Processo</span></div>
+  </section>
+
+  <!-- BOTÕES -->
+  <section class="container" aria-label="Botões">
+    <div class="section-label"><span class="eyebrow">Componentes</span><h2>Botões</h2></div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center">
+      <button class="btn btn-primary btn-md">Comece um projeto</button>
+      <button class="btn btn-secondary btn-md">Veja o que fizemos</button>
+      <a href="#" class="ghost-arrow">Ver projeto <span class="arr">→</span></a>
+      <button class="btn btn-primary btn-md" disabled>Indisponível</button>
+    </div>
+    <p class="sec" style="margin-top:16px;font-size:1rem">Pílulas full 9999px — botão primário ganha glow roxo e deslocamento magnético no hover.</p>
+  </section>
+
+  <!-- INPUTS -->
+  <section class="container" style="background:var(--surface-alt)" aria-label="Formulário">
+    <div class="section-label"><span class="eyebrow">Formulário editorial</span><h2>Contato</h2></div>
+    <form class="form" onsubmit="return false">
+      <div class="field"><label for="nm">Seu nome</label><input id="nm" placeholder="Como te chamamos?"></div>
+      <div class="field success"><label for="em">E-mail</label><input id="em" value="ola@marca.com.br"></div>
+      <div class="field error"><label for="ms">Sua história</label><input id="ms" placeholder="Conta pra gente" aria-describedby="merr"><div class="msg" id="merr"><span aria-hidden="true">⚠</span> Precisamos de pelo menos uma frase.</div></div>
+      <button class="btn btn-primary btn-lg" type="submit">Vamos criar juntos</button>
+    </form>
+  </section>
+
+  <!-- DEPOIMENTO (CAPÍTULO 03) -->
+  <section class="testi container" aria-label="Capítulo 03 — Depoimento">
+    <div class="qmark" aria-hidden="true">“</div>
+    <blockquote>Entregaram um filme onde a gente só pedia um logo.</blockquote>
+    <cite>— Helena V., fundadora da Névoa</cite>
+  </section>
+
+  <!-- MOTION DEMO -->
+  <section class="container" aria-label="Motion">
+    <div class="section-label"><span class="eyebrow">Motion</span><h2>Animações</h2></div>
+    <div class="demo-grid">
+      <div class="demo"><h3>panel-tilt-3d</h3><p class="sec" style="font-size:1rem">480ms · perspective(900px) · segue o cursor</p><div class="tilt-box"></div></div>
+      <div class="demo"><h3>glitch-flash</h3><p class="sec" style="font-size:1rem">480ms · steps(6) · RGB split roxo/branco pontual</p><div class="glitch-box">Prisma</div></div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final container" id="contato" aria-label="Chamada final">
+    <div class="aura" aria-hidden="true"></div>
+    <h2>Vamos criar <em class="accent-italic">juntos</em>.</h2>
+    <a href="#" class="btn btn-primary btn-lg">Comece um projeto</a>
+  </section>
+</main>
+
+<!-- PRÉ-FOOTER MARQUEE -->
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><a href="#contato">Vamos criar juntos —</a><a href="#contato">Vamos criar juntos —</a><a href="#contato">Vamos criar juntos —</a><a href="#contato">Vamos criar juntos —</a></div></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Prisma</h4><p class="sec">Dirigimos marcas como filmes. Uma ideia por tela, uma marca por vez.</p></div>
+      <div><h4>Navegação</h4><a href="#trabalhos">Trabalhos</a><a href="#processo">Processo</a><a href="#contato">Contato</a></div>
+      <div><h4>Fale com a gente</h4><address style="font-style:normal"><a href="mailto:ola@prisma.studio" class="footer-email">ola@prisma.studio</a></address><a href="#" class="sec">@prisma.studio</a></div>
+    </div>
+    <div class="legal"><span>© 2026 Prisma Studio · Agência criativa</span><span>Design System 06.3 — Jumper Site Factory</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'),prog=document.getElementById('progress');
+  var onScroll=function(){
+    nav.classList.toggle('scrolled',window.scrollY>80);
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    prog.style.width=(h>0?(window.scrollY/h*100):0)+'%';
+  };
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  // manifesto-ink on scroll
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce&&'IntersectionObserver' in window){
+    var inks=document.querySelectorAll('.manifesto .ink');
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('lit');});},{threshold:.5,rootMargin:'-20% 0px'});
+    inks.forEach(function(i){io.observe(i);});
+  }
+})();
+</script>
+</body>
+</html>

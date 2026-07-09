@@ -1,0 +1,585 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "04.1",
+  "design_system_name": "SaaS Minimalista",
+  "category": "04 — Técnico e Confiável",
+  "subcategory": "Dark mode dev-first — produto como protagonista",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Linear",
+    "url": "https://linear.app",
+    "location": "San Francisco, EUA (empresa remota)",
+    "awards": [
+      "Referência estilística mundial em design de produto dev-first — o 'Linear look' virou vocabulário da indústria",
+      "Fundada em 2019 por Karri Saarinen (ex-Principal Designer do Airbnb e ex-Head of Design da Coinbase), Tuomas Artman e Jori Lallo",
+      "Usada por mais de 33.000 empresas, incluindo OpenAI, Coinbase e Ramp",
+      "Karri Saarinen recebeu Material Design Award pelo trabalho nos apps do Airbnb (pré-Linear)"
+    ],
+    "why_chosen": "A Linear definiu a estética do SaaS moderno: dark mode como escolha deliberada (não como tema alternativo), tipografia densa e precisa, screenshots de produto tratados como peça central da narrativa e animações que existem para comunicar estado — nunca para decorar. A essência capturada aqui é a confiança pela clareza: cada elemento parece calculado, e é exatamente essa precisão que transmite 'estes profissionais sabem o que estão fazendo'. Este DS traduz esse mood para negócios tech brasileiros sem copiar layout, textos ou estrutura."
+  },
+  "colors": {
+    "primary": "#5E3DD2",
+    "primary_usage": "Roxo elétrico. Uso restrito a PREENCHIMENTOS: botões primários (com texto branco, 6.83:1), gradientes sutis, glows, barras de progresso e detalhes gráficos. NUNCA como cor de texto sobre fundo escuro — contraste de apenas 2.89:1 sobre #0A0A0F (falha WCAG até para texto grande).",
+    "primary_light": "#9D8CFF",
+    "primary_light_usage": "Variação clara derivada do primary (mesmo matiz, luminosidade elevada). É a cor oficial de LINKS, texto de destaque, ícones ativos e labels roxos sobre fundo escuro: 7.18:1 sobre #0A0A0F (AA texto normal, AAA texto grande). Derivação documentada em contrast_verification.notes.",
+    "secondary": "#FFFFFF",
+    "secondary_usage": "Branco puro para CTAs secundários de alto impacto (botão branco sobre dark, padrão do segmento), logos e momentos de máximo contraste. Para texto corrido usar text_primary (#F7F8F8), que é o off-white do sistema.",
+    "surface": "#0A0A0F",
+    "surface_alt": "#16161D",
+    "surface_raised": "#1C1C25",
+    "text_primary": "#F7F8F8",
+    "text_secondary": "#B4B6C0",
+    "text_muted": "#8A8F98",
+    "border": "#26262F",
+    "border_strong": "#3E4046",
+    "error": "#F87171",
+    "success": "#4ADE80",
+    "warning": "#FBBF24",
+    "neutral_scale": {
+      "50": "#F7F8F8",
+      "100": "#E3E4E8",
+      "200": "#C9CBD4",
+      "300": "#B4B6C0",
+      "400": "#8A8F98",
+      "500": "#62666D",
+      "600": "#3E4046",
+      "700": "#26262F",
+      "800": "#16161D",
+      "900": "#0A0A0F"
+    },
+    "gradients": {
+      "hero_glow": "radial-gradient(ellipse 60% 45% at 50% 0%, rgba(94, 61, 210, 0.28), transparent 70%)",
+      "card_sheen": "linear-gradient(135deg, rgba(94, 61, 210, 0.12), rgba(10, 10, 15, 0) 55%)",
+      "text_gradient": "linear-gradient(120deg, #F7F8F8 30%, #9D8CFF 100%)",
+      "border_glow": "linear-gradient(90deg, rgba(94, 61, 210, 0), rgba(157, 140, 255, 0.5), rgba(94, 61, 210, 0))",
+      "usage": "Gradientes sempre SUTIS e sempre sobre dark — sugerem profundidade e luz de interface, nunca viram fundo colorido chapado. Opacidade máxima de roxo em gradiente: 0.3."
+    },
+    "contrast_verification": {
+      "primary_on_surface": "2.89:1 (#5E3DD2 sobre #0A0A0F) — REPROVADO para texto; aprovado apenas como cor de preenchimento não-textual (UI components exigem 3:1 para bordas/ícones significativos — usar #9D8CFF nesses casos)",
+      "primary_light_on_surface": "7.18:1 (#9D8CFF sobre #0A0A0F) — AA texto normal, AAA texto grande",
+      "primary_light_on_surface_alt": "6.54:1 (#9D8CFF sobre #16161D) — AA texto normal",
+      "text_primary_on_surface": "18.56:1 (#F7F8F8 sobre #0A0A0F) — AAA",
+      "text_primary_on_surface_alt": "16.92:1 (#F7F8F8 sobre #16161D) — AAA",
+      "text_secondary_on_surface": "9.78:1 (#B4B6C0 sobre #0A0A0F) — AAA",
+      "text_muted_on_surface": "6.08:1 (#8A8F98 sobre #0A0A0F) — AA (usar só em legendas e metadados)",
+      "secondary_on_surface": "19.75:1 (#FFFFFF sobre #0A0A0F) — AAA",
+      "white_on_primary": "6.83:1 (#FFFFFF sobre #5E3DD2) — AA texto normal (botão primário aprovado)",
+      "surface_on_success": "11.33:1 (#0A0A0F sobre #4ADE80) — badges de sucesso com texto escuro",
+      "error_on_surface": "7.14:1 (#F87171 sobre #0A0A0F) — AA",
+      "warning_on_surface": "11.83:1 (#FBBF24 sobre #0A0A0F) — AAA",
+      "notes": "AJUSTE DOCUMENTADO: o brief pedia #5E3DD2 como primária. Verificação real mostrou 2.89:1 sobre o surface escuro — insuficiente para qualquer texto. Mantivemos #5E3DD2 como cor de marca e preenchimento (essência preservada) e derivamos #9D8CFF (mesmo matiz violeta, +42% de luminância relativa) como tom funcional para texto/links/ícones sobre dark. Todos os valores calculados com a fórmula de luminância relativa WCAG 2.1."
+    }
+  },
+  "typography": {
+    "heading_font": "Inter Tight",
+    "heading_font_source": "Google Fonts",
+    "heading_font_note": "SUBSTITUIÇÃO DOCUMENTADA: a referência (Linear) usa fontes comerciais proprietárias da família grotesca suíça (estilo PP Neue Montreal / Inter Display customizada). Inter Tight é a alternativa Google Fonts mais próxima: grotesca geométrica, largura condensada, excelente em pesos 600–800 e tracking negativo.",
+    "body_font": "Inter",
+    "body_font_source": "Google Fonts",
+    "mono_font": "JetBrains Mono",
+    "mono_font_source": "Google Fonts",
+    "mono_usage": "Código, dados, métricas, labels técnicos (eyebrows), atalhos de teclado e tabelas de números. É parte da identidade — aparece em pequenas doses em toda página.",
+    "base_size": "16px",
+    "weights_used": {
+      "heading": [600, 700, 800],
+      "body": [400, 500, 600],
+      "mono": [400, 500]
+    },
+    "letter_spacing_rules": {
+      "h1_h2": "-0.03em (tracking negativo forte — assinatura do estilo)",
+      "h3": "-0.02em",
+      "body": "0",
+      "mono_labels": "+0.08em com text-transform: uppercase"
+    },
+    "scales": {
+      "mobile": {
+        "h1": { "size": "38px", "line_height": "1.08", "weight": 800, "letter_spacing": "-0.03em", "font": "Inter Tight" },
+        "h2": { "size": "28px", "line_height": "1.15", "weight": 700, "letter_spacing": "-0.03em", "font": "Inter Tight" },
+        "h3": { "size": "20px", "line_height": "1.3", "weight": 600, "letter_spacing": "-0.02em", "font": "Inter Tight" },
+        "body": { "size": "16px", "line_height": "1.6", "weight": 400, "letter_spacing": "0", "font": "Inter" },
+        "small": { "size": "14px", "line_height": "1.5", "weight": 400, "letter_spacing": "0", "font": "Inter" },
+        "mono_label": { "size": "12px", "line_height": "1.4", "weight": 500, "letter_spacing": "0.08em", "font": "JetBrains Mono", "transform": "uppercase" }
+      },
+      "desktop": {
+        "h1": { "size": "64px", "line_height": "1.05", "weight": 800, "letter_spacing": "-0.03em", "font": "Inter Tight" },
+        "h2": { "size": "44px", "line_height": "1.1", "weight": 700, "letter_spacing": "-0.03em", "font": "Inter Tight" },
+        "h3": { "size": "24px", "line_height": "1.3", "weight": 600, "letter_spacing": "-0.02em", "font": "Inter Tight" },
+        "body": { "size": "17px", "line_height": "1.65", "weight": 400, "letter_spacing": "0", "font": "Inter" },
+        "small": { "size": "14px", "line_height": "1.5", "weight": 400, "letter_spacing": "0", "font": "Inter" },
+        "mono_label": { "size": "13px", "line_height": "1.4", "weight": 500, "letter_spacing": "0.08em", "font": "JetBrains Mono", "transform": "uppercase" }
+      }
+    },
+    "fluid_recipe": "h1: clamp(2.375rem, 1.6rem + 3.4vw, 4rem); h2: clamp(1.75rem, 1.3rem + 2vw, 2.75rem); h3: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)"
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto. Valores idênticos aos tokens já definidos em colors, typography, spacing, borders, shadows e motion deste DS.",
+    "tokens": {
+      "--color-primary": "#5E3DD2",
+      "--color-primary-hover": "#6D4BE0",
+      "--color-primary-active": "#4F32B8",
+      "--color-primary-light": "#9D8CFF",
+      "--color-secondary": "#FFFFFF",
+      "--color-surface": "#0A0A0F",
+      "--color-surface-alt": "#16161D",
+      "--color-surface-raised": "#1C1C25",
+      "--color-text": "#F7F8F8",
+      "--color-text-secondary": "#B4B6C0",
+      "--color-text-muted": "#8A8F98",
+      "--color-border": "#26262F",
+      "--color-border-strong": "#3E4046",
+      "--color-error": "#F87171",
+      "--color-success": "#4ADE80",
+      "--color-warning": "#FBBF24",
+      "--color-neutral-50": "#F7F8F8",
+      "--color-neutral-100": "#E3E4E8",
+      "--color-neutral-200": "#C9CBD4",
+      "--color-neutral-300": "#B4B6C0",
+      "--color-neutral-400": "#8A8F98",
+      "--color-neutral-500": "#62666D",
+      "--color-neutral-600": "#3E4046",
+      "--color-neutral-700": "#26262F",
+      "--color-neutral-800": "#16161D",
+      "--color-neutral-900": "#0A0A0F",
+      "--gradient-hero-glow": "radial-gradient(ellipse 60% 45% at 50% 0%, rgba(94, 61, 210, 0.28), transparent 70%)",
+      "--gradient-text": "linear-gradient(120deg, #F7F8F8 30%, #9D8CFF 100%)",
+      "--font-heading": "'Inter Tight', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "--font-body": "'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "--font-mono": "'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace",
+      "--text-h1": "clamp(2.375rem, 1.6rem + 3.4vw, 4rem)",
+      "--text-h2": "clamp(1.75rem, 1.3rem + 2vw, 2.75rem)",
+      "--text-h3": "clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)",
+      "--text-body": "clamp(1rem, 0.96rem + 0.15vw, 1.0625rem)",
+      "--text-small": "0.875rem",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "40px",
+      "--space-xxl": "64px",
+      "--space-xxxl": "96px",
+      "--space-xxxxl": "144px",
+      "--section-gap": "clamp(72px, 6vw + 40px, 144px)",
+      "--radius-none": "0",
+      "--radius-sm": "6px",
+      "--radius-md": "10px",
+      "--radius-lg": "14px",
+      "--radius-xl": "20px",
+      "--radius-full": "9999px",
+      "--shadow-sm": "0 1px 2px rgba(0, 0, 0, 0.5)",
+      "--shadow-md": "0 4px 16px rgba(0, 0, 0, 0.45)",
+      "--shadow-lg": "0 12px 40px rgba(0, 0, 0, 0.55)",
+      "--shadow-glow-primary": "0 0 0 1px rgba(94, 61, 210, 0.45), 0 0 24px rgba(94, 61, 210, 0.25)",
+      "--shadow-glow-soft": "0 0 32px rgba(157, 140, 255, 0.12)",
+      "--duration-instant": "120ms",
+      "--duration-fast": "200ms",
+      "--duration-base": "300ms",
+      "--duration-slow": "400ms",
+      "--duration-reveal": "600ms",
+      "--ease-out": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "--ease-in-out": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "--container-max": "1180px",
+      "--container-wide": "1360px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "40px",
+      "xxl": "64px",
+      "xxxl": "96px",
+      "xxxxl": "144px"
+    },
+    "section_spacing": {
+      "mobile": "72px",
+      "tablet": "104px",
+      "desktop": "144px"
+    },
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "40px",
+      "container_desktop": "64px"
+    },
+    "container_max_width": "1180px",
+    "container_wide_max_width": "1360px (apenas para faixas de screenshot de produto)",
+    "gutters": "24px mobile / 32px desktop",
+    "density_note": "Denso nos componentes (padding interno enxuto), generoso entre seções. O contraste denso-dentro/espaçado-fora é parte da assinatura."
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "6px",
+      "md": "10px",
+      "lg": "14px",
+      "xl": "20px",
+      "full": "9999px"
+    },
+    "radius_usage": {
+      "buttons": "10px (md) — nunca pill em CTAs principais; pill (full) só em badges/tags",
+      "cards": "14px (lg)",
+      "inputs": "10px (md)",
+      "images": "14px (lg) com borda 1px #26262F — screenshots de produto sempre emoldurados",
+      "containers": "20px (xl) para faixas destacadas e janelas de produto simuladas"
+    },
+    "stroke": {
+      "thin": "1px solid #26262F",
+      "medium": "1px solid #3E4046",
+      "note": "Bordas de 1px em quase tudo — no dark mode a borda substitui a sombra como definidor de forma. Borda com brilho: 1px + gradiente border_glow no hover."
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "sm": "0 1px 2px rgba(0, 0, 0, 0.5)",
+    "md": "0 4px 16px rgba(0, 0, 0, 0.45)",
+    "lg": "0 12px 40px rgba(0, 0, 0, 0.55)",
+    "glow_primary": "0 0 0 1px rgba(94, 61, 210, 0.45), 0 0 24px rgba(94, 61, 210, 0.25)",
+    "glow_soft": "0 0 32px rgba(157, 140, 255, 0.12)",
+    "shadow_usage": "Sombra pura tem papel pequeno no dark mode — profundidade vem de camadas de surface (#0A0A0F → #16161D → #1C1C25) + bordas 1px. glow_primary é reservado para hover/focus de CTAs e para a moldura do screenshot principal do hero. Nunca usar glow em mais de 2 elementos simultâneos por viewport."
+  },
+  "motion": {
+    "durations": {
+      "instant": "120ms",
+      "fast": "200ms",
+      "base": "300ms",
+      "slow": "400ms",
+      "reveal": "600ms"
+    },
+    "easings": {
+      "out": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "in_out": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "linear": "linear",
+      "note": "ease-out expressivo (expo-out) em tudo que entra; nada de bounce/elastic — animação aqui comunica estado, não personalidade lúdica."
+    },
+    "animations": [
+      { "name": "fade-rise", "duration": "600ms", "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "trigger": "scroll into view (IntersectionObserver)", "description": "Elemento sobe 16px com fade. Stagger de 80ms entre irmãos. Entrada padrão de todas as seções." },
+      { "name": "btn-glow", "duration": "300ms", "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "trigger": "hover/focus em botão primário", "description": "Box-shadow anima de none para glow_primary + leve clareamento do fundo (#5E3DD2 → #6D4BE0). Sem translateY — botão não pula." },
+      { "name": "card-lift", "duration": "300ms", "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "trigger": "hover em card", "description": "Borda anima de #26262F para rgba(157,140,255,0.4) + fundo de #16161D para #1C1C25. Elevação por cor, não por movimento." },
+      { "name": "link-underline", "duration": "200ms", "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "trigger": "hover em link", "description": "Sublinhado cresce da esquerda (transform: scaleX 0→1, transform-origin left) em #9D8CFF." },
+      { "name": "hero-glow-breathe", "duration": "8s", "easing": "ease-in-out", "trigger": "loop contínuo no fundo do hero", "description": "Radial glow roxo oscila opacidade 0.2→0.3. Imperceptível conscientemente; dá vida ao dark. Desligado em prefers-reduced-motion." },
+      { "name": "counter-up", "duration": "1200ms", "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "trigger": "scroll into view em métricas", "description": "Números de métricas contam de 0 ao valor final em JetBrains Mono (largura tabular — sem layout shift)." },
+      { "name": "nav-blur-in", "duration": "300ms", "easing": "cubic-bezier(0.65, 0, 0.35, 1)", "trigger": "scroll > 24px", "description": "Header ganha backdrop-filter: blur(12px), fundo rgba(10,10,15,0.8) e borda inferior 1px." }
+    ],
+    "prefers_reduced_motion": true,
+    "reduced_motion_strategy": "Todas as transições caem para 0.01ms, loops (hero-glow-breathe) são desligados, counter-up mostra o valor final direto. Estados de hover mantêm mudança de cor (sem movimento)."
+  },
+  "components": {
+    "buttons": {
+      "variants": {
+        "primary": {
+          "background": "#5E3DD2",
+          "color": "#FFFFFF",
+          "border": "none",
+          "hover": "background #6D4BE0 + shadow glow_primary",
+          "focus": "outline 2px solid #9D8CFF, outline-offset 2px",
+          "active": "background #4F32B8",
+          "disabled": "background #26262F, color #62666D, cursor not-allowed"
+        },
+        "secondary": {
+          "background": "#FFFFFF",
+          "color": "#0A0A0F",
+          "border": "none",
+          "hover": "background #E3E4E8",
+          "focus": "outline 2px solid #9D8CFF, outline-offset 2px",
+          "usage": "CTA branco de alto impacto — típico do segmento; máximo 1 por viewport"
+        },
+        "ghost": {
+          "background": "transparent",
+          "color": "#F7F8F8",
+          "border": "1px solid #3E4046",
+          "hover": "border-color rgba(157,140,255,0.5) + background rgba(157,140,255,0.06)",
+          "focus": "outline 2px solid #9D8CFF, outline-offset 2px"
+        },
+        "link": {
+          "background": "none",
+          "color": "#9D8CFF",
+          "decoration": "sublinhado animado scaleX no hover",
+          "usage": "Ações terciárias, 'Ver documentação →'"
+        }
+      },
+      "sizes": {
+        "sm": { "padding": "8px 16px", "font_size": "14px", "min_height": "36px" },
+        "md": { "padding": "12px 24px", "font_size": "15px", "min_height": "44px" },
+        "lg": { "padding": "16px 32px", "font_size": "16px", "min_height": "52px" }
+      },
+      "shape": "border-radius 10px, font-weight 600, font-family Inter, sem uppercase",
+      "touch_target": "mínimo 44px de altura no mobile (usar size md ou lg)"
+    },
+    "cards": {
+      "default": {
+        "background": "#16161D",
+        "border": "1px solid #26262F",
+        "radius": "14px",
+        "padding": "28px",
+        "shadow": "none — profundidade por camada de cor"
+      },
+      "hover": "borda rgba(157,140,255,0.4) + fundo #1C1C25 em 300ms; se o card for link, cursor pointer e título ganha seta →",
+      "feature_card": "Ícone SVG 24px em #9D8CFF no topo, título H3, corpo text_secondary. Grid assimétrico: primeiro card pode ocupar 2 colunas (col-span-2) com mini-screenshot.",
+      "metric_card": "Número gigante em JetBrains Mono 40-56px #F7F8F8, label em mono_label #8A8F98. Usado na faixa de prova social."
+    },
+    "inputs": {
+      "default": {
+        "background": "#0A0A0F",
+        "border": "1px solid #3E4046",
+        "radius": "10px",
+        "padding": "12px 16px",
+        "color": "#F7F8F8",
+        "placeholder": "#62666D",
+        "min_height": "44px"
+      },
+      "focus": "border-color #9D8CFF + box-shadow 0 0 0 3px rgba(157,140,255,0.18); sem outline duplicado",
+      "error": "border-color #F87171 + mensagem 13px #F87171 com ícone; aria-invalid=true e aria-describedby na mensagem",
+      "label": "14px, weight 500, #B4B6C0, margin-bottom 6px",
+      "success": "border-color #4ADE80 apenas quando validação explícita agrega (ex: cupom aplicado)"
+    },
+    "hero": {
+      "layout": "Assimétrico vertical: conteúdo alinhado à ESQUERDA em coluna de 7/12 (não centralizado — quebra deliberada do padrão SaaS centrado), screenshot de produto ancorado à direita sangrando para fora do container no desktop. No mobile, empilha: texto → CTA → screenshot.",
+      "background": "surface #0A0A0F + hero_glow radial no topo + grid de linhas 1px rgba(255,255,255,0.03) opcional",
+      "eyebrow": "mono_label em #9D8CFF precedido de tag estilo código: '// lançamento' ou badge pill com borda",
+      "headline": "H1 Inter Tight 800, tracking -0.03em, até 8 palavras; última palavra pode receber text_gradient",
+      "subheadline": "18-20px text_secondary, máximo 2 linhas, largura máx 52ch",
+      "cta_pattern": "Primário (roxo) + ghost lado a lado; microcopy de fricção zero abaixo: 'Grátis para começar. Sem cartão.'",
+      "product_screenshot": "Moldura: radius 14px, borda 1px #26262F, glow_soft, barra de janela simulada com 3 dots. É o elemento de maior peso visual da página."
+    },
+    "navigation": {
+      "type": "Header fixo, altura 64px, transparente no topo → blur escuro após scroll (nav-blur-in)",
+      "logo": "wordmark 20px weight 700 Inter Tight",
+      "links": "15px weight 500 #B4B6C0, hover #F7F8F8 em 200ms, 5 itens no máximo",
+      "cta": "botão primário size sm à direita",
+      "mobile": "menu hambúrguer 44x44px abre painel full-screen #0A0A0F com links 24px empilhados e fade-rise staggered"
+    },
+    "footer": {
+      "background": "#0A0A0F com borda superior 1px #26262F",
+      "layout": "4 colunas desktop (produto/empresa/recursos/legal) + coluna de marca; empilha em 2 colunas no tablet, 1 no mobile",
+      "text": "14px #8A8F98, títulos de coluna em mono_label",
+      "extra": "status do sistema com dot verde pulsante ('Todos os sistemas operacionais') — micro-sinal de confiabilidade técnica",
+      "bottom_bar": "copyright + seletor de idioma + ícones sociais 20px #62666D hover #F7F8F8"
+    },
+    "testimonials": {
+      "style": "Sem carrossel. Grid assimétrico de citações curtas em cards: 1 citação-âncora grande (2 colunas, texto 22px) + 2-4 menores. Autor com avatar em iniciais (círculo com gradiente roxo), nome #F7F8F8, cargo/empresa em mono 12px #8A8F98.",
+      "logos": "Faixa 'Confiado por' com wordmarks em #62666D (hover #B4B6C0), sem cor — logos monocromáticos são código visual de B2B sério."
+    },
+    "badges": {
+      "tag": "pill 9999px, borda 1px #3E4046, fundo rgba(157,140,255,0.08), texto 12px mono #9D8CFF",
+      "status": "dot 8px colorido (success/warning/error) + label 13px; usado em changelog e status de sistema",
+      "keyboard": "tecla estilo kbd: fundo #1C1C25, borda 1px #3E4046, radius 6px, JetBrains Mono 12px — reforça o público dev"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Direto, técnico sem jargão vazio, confiante sem arrogância. Frases curtas, verbos de entrega. Zero superlativo genérico ('o melhor', 'incrível'). Números e especificidade no lugar de adjetivos. Fala de igual para igual com quem constrói software.",
+    "headline_examples": [
+      "Construído para times que entregam.",
+      "Menos reunião. Mais deploy.",
+      "A infraestrutura que o seu produto merece.",
+      "Do commit ao cliente em minutos.",
+      "Software sério para quem leva prazo a sério."
+    ],
+    "cta_examples": [
+      "Comece grátis",
+      "Ver demonstração",
+      "Falar com engenharia",
+      "Ler a documentação",
+      "Agendar diagnóstico técnico"
+    ],
+    "microcopy_examples": [
+      "Grátis para começar. Sem cartão de crédito.",
+      "Setup em menos de 5 minutos.",
+      "Seus dados ficam no Brasil. LGPD por padrão."
+    ],
+    "avoid": [
+      "Superlativos vazios: 'revolucionário', 'incrível', 'o melhor do mercado'",
+      "Jargão corporativo: 'soluções sinérgicas', 'alavancar resultados'",
+      "Tom infantilizado ou emojis em headlines",
+      "Promessas sem número: preferir 'reduza o tempo de build em 40%' a 'muito mais rápido'",
+      "Exclamações — o ponto final transmite mais confiança que o ponto de exclamação"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas, max-width 1180px, gutter 32px — mas usado de forma ASSIMÉTRICA: hero em 7/12 + screenshot sangrado, features em 2fr-1fr-1fr, citação-âncora em 2 colunas. A quebra do grid centrado simétrico é a assinatura composicional deste DS.",
+    "page_flow": [
+      { "section": "nav", "layout": "header fixo 64px, transparente → blur após scroll" },
+      { "section": "hero", "layout": "texto à esquerda (7/12) + screenshot de produto sangrando à direita; glow radial roxo no topo" },
+      { "section": "prova social", "layout": "faixa de logos monocromáticos + 3 metric cards com counter-up (ex: '99.9% uptime', '2.400+ deploys/mês')" },
+      { "section": "features", "layout": "grid assimétrico 2fr-1fr-1fr: primeiro card duplo com mini-screenshot, demais com ícone; segunda linha inverte 1fr-1fr-2fr" },
+      { "section": "produto em detalhe", "layout": "seção alternada: screenshot grande à esquerda + texto à direita; próxima inverte. Screenshot sempre emoldurado com barra de janela" },
+      { "section": "depoimentos", "layout": "grid assimétrico: 1 citação-âncora (2 col, 22px) + 2-4 cards menores" },
+      { "section": "cta final", "layout": "centralizado (única seção centrada — contraste deliberado), H2 grande + botão primário + ghost, glow sutil atrás" },
+      { "section": "footer", "layout": "4 colunas + marca, status do sistema com dot verde" }
+    ],
+    "image_treatment": "SEM fotografia de banco de imagens. O 'retrato' deste DS é o próprio produto: screenshots reais emoldurados (radius 14px, borda 1px, barra de janela com 3 dots), diagramas em SVG com linhas 1px e nós roxos, e blocos de código com syntax highlight discreto. Se precisar de pessoas (time), fotos em P&B com leve overlay roxo.",
+    "density": "Alta densidade informacional dentro dos componentes, respiro generoso entre seções (144px desktop). Textos curtos, muitos números.",
+    "whitespace": "O escuro É o whitespace. Áreas vazias de #0A0A0F entre blocos funcionam como pausa; resistir à tentação de preencher."
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "text_normal": "Mínimo 4.5:1 — atendido: text_primary 18.56:1, text_secondary 9.78:1, text_muted 6.08:1, links #9D8CFF 7.18:1",
+      "text_large": "Mínimo 3:1 — todos os headings em #F7F8F8 (18.56:1) ou gradiente que termina em #9D8CFF (7.18:1)",
+      "ui_components": "Mínimo 3:1 — ícones/bordas significativas usam #9D8CFF ou #8A8F98; #5E3DD2 puro proibido como cor significativa isolada sobre dark (2.89:1)",
+      "button_primary": "#FFFFFF sobre #5E3DD2 = 6.83:1 (AA)"
+    },
+    "keyboard_navigation": "Toda a navegação operável por Tab/Shift+Tab/Enter/Esc. Menu mobile com focus trap e fechamento por Esc. Skip link 'Pular para o conteúdo' visível no primeiro Tab. Ordem do DOM = ordem visual (cuidado com o grid assimétrico: order do CSS nunca contradiz o DOM).",
+    "focus_states": "outline 2px solid #9D8CFF com offset 2px em TODOS os interativos, via :focus-visible. Contraste do outline sobre #0A0A0F: 7.18:1. Nunca remover outline sem substituto visível.",
+    "alt_text": "Screenshots de produto com alt descritivo do que a tela mostra ('Painel de deploys com 3 ambientes ativos'), não 'screenshot'. SVGs decorativos com aria-hidden='true'. Logos de clientes com alt do nome da empresa.",
+    "semantic_html": "header/nav/main/section/article/footer; um h1 por página; landmarks com aria-label quando repetidos; botões são <button>, links são <a>; métricas animadas com aria-live='polite' desativado durante a contagem (valor final no atributo).",
+    "touch_targets": "44px minimum",
+    "dark_mode_specifics": "Evitar branco puro #FFFFFF em texto corrido longo (halation em astigmatismo) — text_primary é #F7F8F8. Testar glow effects com usuários sensíveis a brilho; prefers-reduced-motion desliga o glow-breathe.",
+    "prefers_reduced_motion": "Media query obrigatória — ver motion.reduced_motion_strategy"
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Coluna única empilhada: eyebrow mono → h1 38px (weight 800, tracking -0.03em) → subheadline → CTA primário full-width + ghost abaixo → screenshot de produto emoldurado. Glow radial roxo suave no topo.",
+      "tablet": "Coluna única com screenshot maior centralizado; CTAs lado a lado; glow mais amplo.",
+      "desktop": "Assimétrico: texto à esquerda em 7/12 verticalmente centralizado, h1 64px, screenshot de produto ancorado à direita sangrando para fora do container; hero_glow radial no topo + grid de linhas 1px rgba(255,255,255,0.03)."
+    },
+    "features_grid": {
+      "mobile": "1 coluna, cards full-width, gap 24px; primeiro card sem col-span (empilha normal).",
+      "tablet": "2 colunas, gap 24px; card duplo ocupa a linha inteira.",
+      "desktop": "Grid assimétrico 2fr-1fr-1fr (primeiro card duplo com mini-screenshot); segunda linha inverte 1fr-1fr-2fr; gap 32px."
+    },
+    "navigation": {
+      "mobile_tablet": "Logo + hambúrguer 44x44px; painel full-screen #0A0A0F com links 24px empilhados e fade-rise staggered; focus trap.",
+      "desktop": "Header fixo 64px, transparente no topo → nav-blur-in (backdrop-filter blur 12px + fundo rgba(10,10,15,0.8) + borda inferior 1px) após scroll > 24px; logo + até 5 links + botão primário sm."
+    },
+    "footer": {
+      "mobile": "Colunas empilhadas em 1 coluna; status do sistema com dot verde visível.",
+      "tablet": "2 colunas.",
+      "desktop": "4 colunas (produto/empresa/recursos/legal) + coluna de marca; bottom bar com copyright, seletor de idioma e ícones sociais."
+    },
+    "touch_adjustments": "Alvos de toque mínimo 44px (botões size md ou lg no mobile). Hover de card (card-lift por cor) vira estado :active com mudança de borda/fundo no touch; glow_primary de botão só em teclado/pointer fino. Screenshots sangrados no desktop passam a contidos no container no mobile para evitar scroll horizontal."
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente, coerentes com components. Foco sempre via :focus-visible com outline 2px #9D8CFF, offset 2px.",
+    "button_primary": ["default (#5E3DD2, texto #FFFFFF)", "hover (#6D4BE0 + shadow glow_primary, sem translateY)", "focus-visible (outline 2px #9D8CFF, offset 2px)", "active (#4F32B8)", "disabled (fundo #26262F, texto #62666D, cursor not-allowed)", "loading (spinner 16px branco + texto, largura preservada)"],
+    "button_secondary": ["default (#FFFFFF, texto #0A0A0F — máximo 1 por viewport)", "hover (#E3E4E8)", "focus-visible (outline 2px #9D8CFF, offset 2px)", "active (leve escurecimento)", "disabled (fundo #26262F, texto #62666D)"],
+    "link_nav": ["default (#B4B6C0)", "hover (#F7F8F8 em 200ms)", "focus-visible (outline 2px #9D8CFF)", "current (indicador ativo #F7F8F8)"],
+    "card_feature": ["default (fundo #16161D, borda 1px #26262F)", "hover (card-lift: borda rgba(157,140,255,0.4) + fundo #1C1C25 em 300ms; se link, título ganha seta →)", "focus-within (outline 2px #9D8CFF)"],
+    "input": ["default (fundo #0A0A0F, borda 1px #3E4046, placeholder #62666D)", "focus (borda #9D8CFF + box-shadow 0 0 0 3px rgba(157,140,255,0.18))", "filled", "error (borda #F87171 + mensagem 13px #F87171 com ícone, aria-invalid, aria-describedby)", "disabled", "success (borda #4ADE80 quando validação explícita agrega)"],
+    "nav_header": ["topo (transparente sobre surface)", "rolado (nav-blur-in: backdrop-filter blur 12px + fundo rgba(10,10,15,0.8) + borda inferior 1px)", "menu mobile aberto (painel full-screen #0A0A0F, focus trap, fecha por Esc)"]
+  },
+  "photography_direction": {
+    "style": "SEM fotografia de banco de imagens. O 'retrato' deste DS é o próprio produto: screenshots reais de interface emoldurados, diagramas em SVG e blocos de código. Quando pessoas forem necessárias (time), fotos em P&B com leve overlay roxo.",
+    "subjects": [
+      "Screenshots de produto reais emoldurados (radius 14px, borda 1px #26262F, barra de janela simulada com 3 dots)",
+      "Diagramas técnicos em SVG com linhas 1px e nós/acentos em #9D8CFF",
+      "Blocos de código com syntax highlight discreto em JetBrains Mono",
+      "Métricas e dashboards de produto (uptime, deploys, latência)",
+      "Retratos de time em preto e branco com overlay roxo sutil, quando houver pessoas"
+    ],
+    "light": "Interface luminosa sobre fundo escuro — a 'luz' vem do glow roxo (rgba(94,61,210,~0.25)) e do off-white #F7F8F8 do conteúdo, nunca de iluminação fotográfica quente.",
+    "color_grading": "Monocromático dark com acento roxo. Screenshots preservam suas cores reais mas são emoldurados sobre surface #0A0A0F. Overlay roxo (opacidade máx 0.3) só em fotos de pessoas. Proibido: filtros quentes, saturação alta, HDR.",
+    "framing": "Screenshots sangrando para fora do container no hero desktop (elemento de maior peso visual); molduras sempre com barra de janela de 3 dots; profundidade por camadas de surface (#0A0A0F → #16161D → #1C1C25) e bordas 1px, não por sombra.",
+    "avoid": [
+      "Fotografia stock genérica de 'pessoas de negócios apertando as mãos'",
+      "Fundos claros ou coloridos chapados — o dark é a identidade",
+      "Glow roxo em mais de 2 elementos por viewport (halation / ruído visual)",
+      "#5E3DD2 puro como cor de texto ou ícone significativo sobre dark (2.89:1 — falha)"
+    ],
+    "fallback_sem_foto": "Simular janela de produto em SVG/CSS: retângulo radius 14px, borda 1px #26262F, barra superior com 3 dots, fundo #16161D com card_sheen (linear-gradient(135deg, rgba(94,61,210,0.12), rgba(10,10,15,0) 55%)). Diagramas com linhas 1px #3E4046 e nós #9D8CFF. Gradiente de texto text_gradient (#F7F8F8 → #9D8CFF) e hero_glow radial roxo para dar profundidade — sempre sutil, sobre dark."
+  },
+  "iconography": {
+    "style": "Linha (stroke 1.5–1.75px), cantos levemente arredondados, grid 24x24. Preciso e minimalista — coerente com o mood dev-first; nada de ícones preenchidos coloridos.",
+    "color": "#9D8CFF para ícones ativos/de destaque e ícones significativos (3:1+ sobre dark), #8A8F98 para ícones secundários/metadados. #5E3DD2 puro proibido como cor de ícone significativo isolado sobre dark (2.89:1).",
+    "recommended_set": "Lucide (open source, MIT) — traço geométrico preciso combina com Inter Tight; alternativa Feather. Manter stroke consistente em 1.75.",
+    "usage": "Ícone SVG 24px #9D8CFF no topo dos feature cards. Ícones sempre com rótulo textual — nunca única affordance. SVGs decorativos com aria-hidden='true'.",
+    "decorative_shapes": "Grid de linhas 1px rgba(255,255,255,0.03), radial glow roxo (hero_glow), border_glow em hover (linear-gradient roxo), teclas kbd (fundo #1C1C25, borda 1px #3E4046, radius 6px) e dots de status coloridos — todos decorativos com aria-hidden."
+  },
+  "do_dont": {
+    "do": [
+      "Usar #9D8CFF (não #5E3DD2) para links, texto de destaque e ícones ativos sobre dark (7.18:1 — AA)",
+      "Usar #5E3DD2 apenas como preenchimento: botões primários (texto branco 6.83:1), gradientes e glows",
+      "Manter JetBrains Mono em pequenas doses (eyebrows, métricas, kbd) como elemento de identidade",
+      "Aplicar tracking negativo -0.03em em h1/h2 (assinatura do estilo)",
+      "Deixar o escuro respirar: 144px entre seções no desktop, o dark É o whitespace",
+      "Definir forma por borda 1px + camadas de surface, não por sombra",
+      "Emoldurar todo screenshot de produto com borda 1px e barra de janela de 3 dots"
+    ],
+    "dont": [
+      "Usar #5E3DD2 como cor de texto sobre #0A0A0F (2.89:1 — falha AA até para texto grande; usar #9D8CFF)",
+      "Usar #5E3DD2 como cor de ícone/borda significativa isolada sobre dark (< 3:1)",
+      "Usar branco puro #FFFFFF em texto corrido longo (halation; usar text_primary #F7F8F8)",
+      "Colocar glow (glow_primary/soft) em mais de 2 elementos simultâneos por viewport",
+      "Usar bounce/elastic em animações — motion comunica estado, não personalidade lúdica",
+      "Usar uppercase em CTAs ou exclamações — o ponto final transmite mais confiança",
+      "Misturar mais de as 3 famílias definidas (Inter Tight / Inter / JetBrains Mono)",
+      "Centralizar seções (exceto o CTA final, que é a única seção centrada por contraste deliberado)"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Inter Tight:wght@600;700;800, Inter:wght@400;500;600 e JetBrains Mono:wght@400;500 com display=swap. Preload do Inter Tight 800 (usado no h1/LCP).",
+    "js_budget": "Comportamentos mínimos: menu mobile (toggle + focus trap), IntersectionObserver para fade-rise (stagger 80ms), counter-up das métricas (font tabular, sem shift), nav-blur-in por scroll e hero-glow-breathe (desligado em prefers-reduced-motion). Animações só em transform/opacity/box-shadow. Zero frameworks obrigatórios.",
+    "seo_local": "Schema.org SoftwareApplication (ou Organization/Product para SaaS B2B) com nome, categoria, oferta/preço e aggregateRating quando houver; título técnico e específico ('Nome — Infraestrutura de deploy para times de engenharia'). Para consultoria/software house, ProfessionalService com área de atuação.",
+    "whatsapp_cta": "Menos central que em negócio local — o público prefere 'Falar com engenharia' / 'Agendar diagnóstico técnico'. Se usado, link wa.me com mensagem técnica pré-preenchida ('Oi, quero avaliar a integração de vocês com nosso stack'). CTAs primários preferem trial ('Comece grátis') e demo.",
+    "adaptation_guide": "Ao adaptar para outro segmento tech (dev-tools, fintech dev-first, infra/API): manter dark mode, paleta roxa (#5E3DD2 preenchimento / #9D8CFF texto), trio tipográfico e motion funcional; trocar vocabulário do voice_and_tone e o conteúdo dos screenshots de produto. A essência é a confiança pela clareza e precisão, não o produto específico."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true,
+    "uniqueness_notes": "Único dark mode da personalidade 04. Não compartilha nenhum hex, fonte ou composição com 04.2 Fintech (light, navy #0F3460 + verde #16A085, IBM Plex Sans, simétrico Stripe-like) nem com 04.3 Contabilidade (charcoal #2C3E50 + dourado #D4AF37, badges de credibilidade). Assinaturas próprias: grid assimétrico quebrado, glow roxo funcional, JetBrains Mono como elemento de identidade, screenshot de produto como herói."
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "tecnico",
+      "confiavel",
+      "dark-mode",
+      "roxo-eletrico",
+      "saas",
+      "dev-first",
+      "grotesca-inter-tight",
+      "jetbrains-mono",
+      "grid-assimetrico",
+      "glow-funcional",
+      "screenshot-de-produto",
+      "b2b-tech"
+    ],
+    "related_docs": [
+      "previews/markdown/04-1-saas-minimalista.md",
+      "previews/html/04-1-saas-minimalista.html",
+      "docs/04-1-saas-minimalista/components.md",
+      "docs/04-1-saas-minimalista/animations.css",
+      "docs/04-1-saas-minimalista/accessibility-report.md",
+      "docs/04-1-saas-minimalista/benchmarking.md",
+      "docs/04-1-saas-minimalista/color-variations.md",
+      "docs/04-1-saas-minimalista/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "SaaS e micro-SaaS brasileiros",
+      "Agência de tecnologia / consultoria de engenharia",
+      "Software house e fábrica de software",
+      "Startup de dev-tools, APIs e infraestrutura",
+      "Produtos B2B tech vendendo para CTOs e times de engenharia"
+    ],
+    "conversion_factors": [
+      "Screenshot de produto no hero reduz incerteza — decisor técnico quer ver a interface antes de falar com vendas",
+      "Microcopy de fricção zero junto ao CTA ('Sem cartão. Setup em 5 min.') aumenta cliques em trial",
+      "Métricas específicas com counter-up (uptime, deploys, latência) substituem adjetivos e constroem credibilidade",
+      "Logos monocromáticos de clientes + citação-âncora com cargo técnico (CTO, Head de Eng) geram prova social qualificada",
+      "Dark mode sinaliza pertencimento à cultura dev — o público-alvo passa o dia em IDEs escuras",
+      "Status do sistema no footer (dot verde) comunica maturidade operacional",
+      "CTA duplo (primário 'Comece grátis' + ghost 'Ver demonstração') atende os dois estágios de intenção"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "Screenshot do hero como <img> com fetchpriority='high', width/height explícitos e formato AVIF/WebP; glow em CSS puro (zero custo de rede); fonts com font-display: swap e preload do Inter Tight 800",
+      "cls_strategy": "Dimensões explícitas em toda mídia; counter-up com font tabular (sem shift); nav com altura fixa 64px",
+      "inp_strategy": "Animações só em transform/opacity/box-shadow (compositor); IntersectionObserver em vez de scroll listeners; blur do header com will-change contido",
+      "targets": { "LCP": "< 2.5s", "INP": "< 200ms", "CLS": "< 0.1" }
+    }
+  }
+}

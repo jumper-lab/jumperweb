@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DS 03.1 — Academia CrossFit Energia | Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #FFD600;
+    --secondary: #000000;
+    --surface: #000000;
+    --surface-alt: #111111;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B3B3B3;
+    --text-muted: #8A8A8A;
+    --border: #2A2A2A;
+    --error: #FF5C51;
+    --success: #4ADE80;
+    --warning: #FFB020;
+    --glow: 0 0 24px rgba(255,214,0,0.35);
+    --glow-strong: 0 0 48px rgba(255,214,0,0.5);
+    --punch: cubic-bezier(0.16, 1, 0.3, 1);
+    --snap: cubic-bezier(0.7, 0, 0.3, 1);
+    --font-heading: 'Anton', 'Arial Narrow', Impact, sans-serif;
+    --font-body: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--surface);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, .anton {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 0.95;
+  }
+  .container { max-width: 1440px; margin: 0 auto; padding: 0 20px; }
+  @media (min-width: 480px) { .container { padding: 0 40px; } }
+  @media (min-width: 1024px) { .container { padding: 0 64px; } }
+  section { padding: 64px 0; }
+  @media (min-width: 1024px) { section { padding: 128px 0; } }
+
+  .eyebrow {
+    font: 700 13px/1.2 var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 16px;
+  }
+  .section-title { font-size: clamp(36px, 6vw, 64px); margin-bottom: 32px; }
+  .section-label {
+    font: 700 12px/1 var(--font-body);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 24px;
+  }
+
+  /* ============ SKIP LINK ============ */
+  .skip-link {
+    position: absolute; left: -9999px; top: 0; z-index: 200;
+    background: var(--primary); color: var(--secondary);
+    padding: 12px 24px; font-weight: 800; text-decoration: none;
+  }
+  .skip-link:focus { left: 0; }
+
+  /* ============ NAV ============ */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(0,0,0,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px;
+    gap: 16px;
+  }
+  @media (min-width: 1024px) { nav { padding: 20px 64px; } }
+  .nav-logo { font-family: var(--font-heading); font-size: 24px; text-transform: uppercase; color: var(--text-primary); text-decoration: none; }
+  .nav-logo span { color: var(--primary); }
+  .nav-links { display: none; gap: 32px; list-style: none; }
+  @media (min-width: 1024px) { .nav-links { display: flex; } }
+  .nav-links a {
+    font: 700 14px/1 var(--font-body);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-primary); text-decoration: none;
+    padding: 8px 0; position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; left: 0; bottom: 0;
+    width: 100%; height: 4px; background: var(--primary);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 300ms var(--snap);
+  }
+  .nav-links a:hover::after, .nav-links a:focus-visible::after { transform: scaleX(1); }
+  .nav-links a:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+
+  /* ============ BUTTONS ============ */
+  .btn {
+    display: inline-block;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 200ms var(--snap);
+    border: 2px solid transparent;
+  }
+  .btn-primary { background: var(--primary); color: var(--secondary); border-color: var(--primary); }
+  .btn-primary:hover { background: var(--secondary); color: var(--primary); box-shadow: var(--glow); }
+  .btn-primary:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; }
+  .btn-primary:active { transform: scale(0.97); }
+  .btn-secondary { background: transparent; color: var(--text-primary); border-color: #FFFFFF; }
+  .btn-secondary:hover { background: #FFFFFF; color: var(--secondary); }
+  .btn-secondary:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+  .btn:disabled, .btn[aria-disabled="true"] {
+    background: #444444; color: #8A8A8A; border-color: #444444;
+    cursor: not-allowed; box-shadow: none; transform: none;
+  }
+  .btn-sm { padding: 10px 20px; font-size: 14px; min-height: 40px; }
+  .btn-md { padding: 14px 32px; font-size: 18px; min-height: 48px; }
+  .btn-lg { padding: 18px 48px; font-size: 22px; min-height: 56px; }
+  .btn-xl { padding: 24px 64px; font-size: clamp(20px, 3vw, 28px); min-height: 72px; }
+  .btn-ghost {
+    font: 700 14px/1 var(--font-body);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--primary); text-decoration: none;
+    padding: 8px 0; position: relative; display: inline-block;
+  }
+  .btn-ghost::after {
+    content: ''; position: absolute; left: 0; bottom: 0;
+    width: 100%; height: 4px; background: var(--primary);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 300ms var(--snap);
+  }
+  .btn-ghost:hover::after, .btn-ghost:focus-visible::after { transform: scaleX(1); }
+  .btn-ghost:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100svh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    position: relative; overflow: hidden;
+    padding: 0 0 48px;
+  }
+  .hero-media {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      repeating-linear-gradient(-55deg, transparent 0 120px, rgba(255,214,0,0.06) 120px 160px),
+      linear-gradient(120deg, #000000 0%, #1c1c1c 40%, #0a0a0a 60%, #222222 100%);
+    background-size: 400% 400%, 300% 300%;
+    animation: videoSim 8s linear infinite alternate;
+  }
+  @keyframes videoSim {
+    0% { background-position: 0% 0%, 0% 50%; }
+    100% { background-position: 100% 100%, 100% 50%; }
+  }
+  .hero-overlay { position: absolute; inset: 0; z-index: 1; background: rgba(0,0,0,0.55); }
+  .hero-content { position: relative; z-index: 2; padding: 0 20px; }
+  @media (min-width: 1024px) { .hero-content { padding: 0 64px; } }
+  .hero h1 {
+    font-size: clamp(56px, 13vw, 176px);
+    line-height: 0.9;
+    max-width: 90vw;
+    margin: 16px 0 32px;
+  }
+  .hero h1 .yellow { color: var(--primary); }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; margin-bottom: 64px; }
+  .slam { opacity: 0; transform: translateY(40px) scale(0.96); animation: slam 300ms var(--punch) forwards; }
+  .slam-2 { animation-delay: 60ms; }
+  .slam-3 { animation-delay: 120ms; }
+  @keyframes slam { to { opacity: 1; transform: translateY(0) scale(1); } }
+
+  /* ============ MARQUEE ============ */
+  .marquee {
+    background: var(--primary);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 14px 0;
+    border-top: 2px solid var(--secondary);
+    border-bottom: 2px solid var(--secondary);
+  }
+  .marquee-track {
+    display: inline-flex;
+    animation: marquee 18s linear infinite;
+  }
+  .marquee--fast .marquee-track { animation-duration: 10s; }
+  .marquee-item {
+    font-family: var(--font-heading);
+    font-size: clamp(20px, 3vw, 32px);
+    text-transform: uppercase;
+    color: var(--secondary);
+    padding: 0 24px;
+    flex-shrink: 0;
+  }
+  .marquee--dark { background: var(--surface-alt); border-color: var(--border); }
+  .marquee--dark .marquee-item { color: var(--primary); }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ============ SWATCHES ============ */
+  .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
+  .swatch { border: 1px solid var(--border); }
+  .swatch-color { height: 90px; }
+  .swatch-info { padding: 12px; background: var(--surface-alt); }
+  .swatch-name { font: 700 13px/1.3 var(--font-body); text-transform: uppercase; letter-spacing: 0.06em; }
+  .swatch-hex { font: 700 13px/1.6 var(--font-mono); color: var(--text-secondary); }
+
+  /* ============ TYPE SPECIMEN ============ */
+  .type-row { border-bottom: 1px solid var(--border); padding: 24px 0; }
+  .type-meta { font: 700 12px/1 var(--font-mono); color: var(--text-muted); margin-bottom: 8px; display: block; }
+  .spec-display { font-family: var(--font-heading); text-transform: uppercase; font-size: clamp(48px, 9vw, 140px); line-height: 0.9; }
+  .spec-h1 { font-size: clamp(48px, 7vw, 96px); }
+  .spec-h2 { font-size: clamp(36px, 5vw, 64px); }
+  .spec-h3 { font-size: clamp(24px, 2.5vw, 32px); }
+  .spec-body { max-width: 640px; color: var(--text-secondary); font-size: 18px; }
+  .spec-mono { font: 700 clamp(28px, 4vw, 48px)/1.1 var(--font-mono); color: var(--primary); }
+
+  /* ============ CARDS ============ */
+  .card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  @media (min-width: 480px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .card-grid { grid-template-columns: repeat(3, 1fr); } }
+  .class-card {
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    padding: 32px;
+    transition: transform 250ms var(--punch), border-color 250ms var(--punch), box-shadow 250ms var(--punch);
+  }
+  .class-card:hover, .class-card:focus-within {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+    box-shadow: var(--glow);
+  }
+  .class-card h3 { font-size: 28px; margin-bottom: 12px; }
+  .class-card p { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; }
+  .class-card--active { border-left: 4px solid var(--primary); }
+
+  /* ============ STATS ============ */
+  .stats { background: var(--surface-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .stats-grid { display: grid; grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  @media (min-width: 480px) { .stats-grid { grid-template-columns: repeat(3, 1fr); } }
+  .stat-number { font: 700 clamp(48px, 6vw, 80px)/1 var(--font-mono); color: var(--primary); }
+  .stat-label { font: 700 13px/1.4 var(--font-body); text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-primary); margin-top: 8px; }
+
+  /* ============ BADGES ============ */
+  .badge-urgency {
+    display: inline-block;
+    background: var(--primary); color: var(--secondary);
+    font: 800 12px/1 var(--font-body);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding: 8px 14px;
+    animation: pulseBadge 1.6s ease-in-out infinite;
+  }
+  @keyframes pulseBadge {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.55; transform: scale(1.04); }
+  }
+  .badge-pill {
+    display: inline-block;
+    border: 1px solid var(--border); border-radius: 9999px;
+    color: var(--text-secondary);
+    font: 700 12px/1 var(--font-body);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding: 8px 16px;
+    transition: border-color 200ms var(--snap), color 200ms var(--snap);
+  }
+  .badge-pill:hover { border-color: var(--primary); color: var(--primary); }
+
+  /* ============ INPUTS ============ */
+  .form-demo { max-width: 520px; }
+  .form-group { margin-bottom: 24px; }
+  .form-group label {
+    display: block;
+    font: 700 13px/1 var(--font-body);
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+  .form-group input, .form-group select {
+    width: 100%;
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    color: var(--text-primary);
+    font: 400 16px/1.4 var(--font-body);
+    padding: 14px 16px;
+    min-height: 48px;
+  }
+  .form-group input::placeholder { color: var(--text-muted); }
+  .form-group input:focus, .form-group select:focus {
+    outline: none;
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 0 3px rgba(255,214,0,0.25);
+    padding: 13px 15px;
+  }
+  .input-error input { border: 2px solid var(--error); padding: 13px 15px; }
+  .error-msg { color: var(--error); font-size: 14px; margin-top: 6px; display: block; }
+  .input-focus-demo input { border: 2px solid var(--primary); box-shadow: 0 0 0 3px rgba(255,214,0,0.25); padding: 13px 15px; }
+
+  /* ============ TESTIMONIAL ============ */
+  .testimonial { background: var(--surface-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .testimonial blockquote { position: relative; max-width: 900px; padding-left: 24px; }
+  .testimonial blockquote::before {
+    content: '“';
+    position: absolute; left: -8px; top: -30px;
+    font-family: var(--font-heading);
+    font-size: 120px; color: var(--primary); line-height: 1;
+  }
+  .testimonial .quote {
+    font-family: var(--font-heading);
+    font-size: clamp(24px, 4vw, 40px);
+    text-transform: uppercase; line-height: 1.05;
+    margin-bottom: 24px;
+  }
+  .testimonial .quote em { color: var(--primary); font-style: normal; }
+  .testimonial cite { font-style: normal; display: block; }
+  .testimonial cite strong { color: var(--text-primary); }
+  .testimonial cite span { color: var(--text-muted); font-size: 14px; display: block; }
+
+  /* ============ PLANS ============ */
+  .plan-card { background: var(--surface-alt); border: 1px solid var(--border); padding: 40px 32px; position: relative; }
+  .plan-card h3 { font-size: 24px; margin-bottom: 8px; }
+  .plan-price { font: 700 clamp(40px, 5vw, 56px)/1 var(--font-mono); margin: 16px 0; }
+  .plan-price small { font-size: 16px; color: var(--text-muted); }
+  .plan-card ul { list-style: none; margin: 24px 0; }
+  .plan-card li { padding: 8px 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 15px; }
+  .plan-card--featured { background: var(--primary); border-color: var(--primary); }
+  .plan-card--featured h3, .plan-card--featured .plan-price, .plan-card--featured li { color: var(--secondary); }
+  .plan-card--featured li { border-color: rgba(0,0,0,0.2); }
+  .plan-card--featured .plan-price small { color: rgba(0,0,0,0.6); }
+  .plan-badge {
+    position: absolute; top: -14px; left: 24px;
+    background: var(--secondary); color: var(--primary);
+    font: 800 12px/1 var(--font-body);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding: 8px 14px;
+    transform: rotate(-3deg);
+  }
+  .btn-invert { background: var(--secondary); color: var(--primary); border-color: var(--secondary); width: 100%; }
+  .btn-invert:hover { background: transparent; color: var(--secondary); box-shadow: none; }
+  .btn-invert:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; }
+
+  /* ============ MEDIA SIM ============ */
+  .media-sim {
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #111111 0%, #2A2A2A 55%, #191919 100%);
+    position: relative; overflow: hidden;
+  }
+  .media-sim::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(-55deg, transparent 62%, var(--primary) 62%, var(--primary) 68%, transparent 68%);
+  }
+  .split { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+  @media (min-width: 1024px) { .split { grid-template-columns: 1fr 1fr; gap: 64px; } }
+  .split ol { list-style: none; counter-reset: item; }
+  .split ol li { counter-increment: item; padding: 20px 0; border-bottom: 1px solid var(--border); display: flex; gap: 20px; align-items: baseline; }
+  .split ol li::before {
+    content: counter(item, decimal-leading-zero);
+    font: 700 20px/1 var(--font-mono);
+    color: var(--primary);
+  }
+  .split ol h3 { font-size: 24px; margin-bottom: 4px; }
+  .split ol p { color: var(--text-secondary); font-size: 15px; }
+
+  /* ============ CTA FINAL ============ */
+  .cta-final { text-align: center; }
+  .cta-final h2 { font-size: clamp(56px, 11vw, 150px); line-height: 0.9; margin-bottom: 40px; }
+  .cta-final h2 span { color: var(--primary); }
+
+  /* ============ FOOTER ============ */
+  footer { border-top: 4px solid var(--primary); padding: 0 0 32px; }
+  .footer-cols { display: grid; grid-template-columns: 1fr; gap: 40px; padding: 64px 0 48px; }
+  @media (min-width: 480px) { .footer-cols { grid-template-columns: repeat(3, 1fr); } }
+  .footer-cols h3 { font-size: 20px; margin-bottom: 16px; color: var(--primary); }
+  .footer-cols p, .footer-cols a { color: var(--text-secondary); font-size: 15px; text-decoration: none; display: block; padding: 4px 0; }
+  .footer-cols a:hover { color: var(--primary); }
+  .footer-cols .mono { font-family: var(--font-mono); font-size: 14px; }
+  .footer-legal { border-top: 1px solid var(--border); padding-top: 24px; color: var(--text-muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+
+  /* ============ DEMO HELPERS ============ */
+  .demo-row { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; margin-bottom: 24px; }
+  .state-label { font: 700 11px/1 var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 8px; text-transform: uppercase; }
+
+  /* ============ REDUCED MOTION ============ */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .marquee-track { animation: none; }
+    .hero-media { animation: none; }
+    .badge-urgency { animation: none; }
+    .slam { animation: none; opacity: 1; transform: none; }
+    * { transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- NAVIGATION -->
+<nav aria-label="Navegação principal">
+  <a class="nav-logo" href="#">FORÇA<span>+</span>BOX</a>
+  <ul class="nav-links">
+    <li><a href="#modalidades">Modalidades</a></li>
+    <li><a href="#planos">Planos</a></li>
+    <li><a href="#depoimentos">Resultados</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a class="btn btn-primary btn-sm" href="#cta">Aula Grátis</a>
+</nav>
+
+<main id="conteudo">
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-media" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <span class="eyebrow slam">Box de CrossFit · Seg a Sáb, 6h às 22h</span>
+    <h1>
+      <span class="slam slam-2" style="display:block">Sem desculpas.</span>
+      <span class="yellow slam slam-3" style="display:block">Comece hoje.</span>
+    </h1>
+    <div class="hero-ctas slam slam-3">
+      <a class="btn btn-primary btn-xl" href="#cta">Sua primeira aula é grátis</a>
+      <a class="btn-ghost" href="#modalidades">Ver todas as modalidades →</a>
+    </div>
+  </div>
+  <div class="marquee marquee--fast" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">Primeira aula grátis ★</span>
+      <span class="marquee-item">Sem fidelidade ★</span>
+      <span class="marquee-item">Turmas de 16 atletas ★</span>
+      <span class="marquee-item">Primeira aula grátis ★</span>
+      <span class="marquee-item">Sem fidelidade ★</span>
+      <span class="marquee-item">Turmas de 16 atletas ★</span>
+    </div>
+  </div>
+  <p class="sr-only">Primeira aula grátis. Sem fidelidade. Turmas de 16 atletas.</p>
+</header>
+
+<!-- PALETTE -->
+<section>
+  <div class="container">
+    <span class="section-label">DS 03.1 · Paleta</span>
+    <h2 class="section-title">Preto absoluto.<br>Amarelo <span style="color:var(--primary)">neon</span>.</h2>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#FFD600"></div><div class="swatch-info"><span class="swatch-name">Primary</span><span class="swatch-hex">#FFD600</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#000000; border-bottom:1px solid var(--border)"></div><div class="swatch-info"><span class="swatch-name">Secondary / Surface</span><span class="swatch-hex">#000000</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#111111"></div><div class="swatch-info"><span class="swatch-name">Surface Alt</span><span class="swatch-hex">#111111</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FFFFFF"></div><div class="swatch-info"><span class="swatch-name">Text Primary</span><span class="swatch-hex">#FFFFFF</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#B3B3B3"></div><div class="swatch-info"><span class="swatch-name">Text Secondary</span><span class="swatch-hex">#B3B3B3</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#8A8A8A"></div><div class="swatch-info"><span class="swatch-name">Text Muted</span><span class="swatch-hex">#8A8A8A</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#2A2A2A"></div><div class="swatch-info"><span class="swatch-name">Border</span><span class="swatch-hex">#2A2A2A</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FF5C51"></div><div class="swatch-info"><span class="swatch-name">Error</span><span class="swatch-hex">#FF5C51</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#4ADE80"></div><div class="swatch-info"><span class="swatch-name">Success</span><span class="swatch-hex">#4ADE80</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FFB020"></div><div class="swatch-info"><span class="swatch-name">Warning</span><span class="swatch-hex">#FFB020</span></div></div>
+    </div>
+    <p style="color:var(--text-secondary); margin-top:24px; max-width:720px">
+      <strong style="color:var(--primary)">Regra de ouro:</strong> sobre amarelo, texto SEMPRE preto (14.87:1).
+      Branco sobre amarelo é proibido (1.41:1). Amarelo nunca sobre branco.
+    </p>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section style="padding-top:0">
+  <div class="container">
+    <span class="section-label">Tipografia ao vivo</span>
+    <div class="type-row">
+      <span class="type-meta">DISPLAY · Anton · clamp(96px, 11vw, 176px) · uppercase</span>
+      <p class="spec-display">Treino <span style="color:var(--primary)">forte</span></p>
+    </div>
+    <div class="type-row">
+      <span class="type-meta">H1 · Anton · clamp(48px, 7vw, 96px)</span>
+      <p class="spec-display spec-h1">Comunidade mais forte</p>
+    </div>
+    <div class="type-row">
+      <span class="type-meta">H2 · Anton · clamp(36px, 5vw, 64px)</span>
+      <p class="spec-display spec-h2">Aqui ninguém treina sozinho</p>
+    </div>
+    <div class="type-row">
+      <span class="type-meta">H3 · Anton · 24–32px</span>
+      <p class="spec-display spec-h3">Modalidades para todos os níveis</p>
+    </div>
+    <div class="type-row">
+      <span class="type-meta">BODY · Inter · 16–18px · line-height 1.6</span>
+      <p class="spec-body">Nosso método combina levantamento de peso olímpico, ginástica e condicionamento metabólico em aulas de 60 minutos. Cada treino é escalado para o seu nível — do primeiro dia ao pódio.</p>
+    </div>
+    <div class="type-row">
+      <span class="type-meta">DADOS · JetBrains Mono · contadores e preços</span>
+      <p class="spec-mono">21:15:09 — WOD DO DIA</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE DARK -->
+<div class="marquee marquee--dark" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Força ★ Resistência ★ Comunidade ★ Disciplina ★</span>
+    <span class="marquee-item">Força ★ Resistência ★ Comunidade ★ Disciplina ★</span>
+  </div>
+</div>
+
+<!-- BUTTONS -->
+<section>
+  <div class="container">
+    <span class="section-label">Botões · todos os estados</span>
+    <h2 class="section-title">CTAs impossíveis<br>de ignorar</h2>
+    <div class="demo-row">
+      <div><span class="state-label">Primary / default→hover</span><button class="btn btn-primary btn-md">Quero começar agora</button></div>
+      <div><span class="state-label">Secondary</span><button class="btn btn-secondary btn-md">Ver horários</button></div>
+      <div><span class="state-label">Disabled</span><button class="btn btn-primary btn-md" disabled>Turma lotada</button></div>
+      <div><span class="state-label">Ghost</span><a class="btn-ghost" href="#planos">Ver todos os planos →</a></div>
+    </div>
+    <div class="demo-row">
+      <div><span class="state-label">SM · 40px</span><button class="btn btn-primary btn-sm">Aula grátis</button></div>
+      <div><span class="state-label">MD · 48px</span><button class="btn btn-primary btn-md">Aula grátis</button></div>
+      <div><span class="state-label">LG · 56px</span><button class="btn btn-primary btn-lg">Aula grátis</button></div>
+    </div>
+    <div class="demo-row">
+      <div><span class="state-label">XL CTA · 72px · hero e seção final</span><button class="btn btn-primary btn-xl">Garantir minha vaga</button></div>
+    </div>
+    <p style="color:var(--text-muted); font-size:14px">Focus: outline 3px + offset 3px (use Tab para testar). Hover: inversão de cor + glow em 200ms.</p>
+  </div>
+</section>
+
+<!-- CARDS / MODALIDADES -->
+<section id="modalidades" style="padding-top:0">
+  <div class="container">
+    <span class="section-label">Cards · hover para energizar</span>
+    <h2 class="section-title">Modalidades</h2>
+    <div class="card-grid">
+      <article class="class-card">
+        <span class="eyebrow">CrossFit</span>
+        <h3>WOD Oficial</h3>
+        <p>Aula clássica de 60 min: força + ginástica + metcon. Escalável para qualquer nível.</p>
+        <a class="btn-ghost" href="#cta">Agendar aula →</a>
+      </article>
+      <article class="class-card class-card--active">
+        <span class="eyebrow">Iniciantes</span>
+        <h3>Fundamentos</h3>
+        <p>4 semanas de base técnica com coach dedicado. O ponto de partida de todo atleta.</p>
+        <a class="btn-ghost" href="#cta">Agendar aula →</a>
+      </article>
+      <article class="class-card">
+        <span class="eyebrow">Condicionamento</span>
+        <h3>Engine HIIT</h3>
+        <p>45 minutos de intervalado puro para queimar e construir resistência de verdade.</p>
+        <a class="btn-ghost" href="#cta">Agendar aula →</a>
+      </article>
+    </div>
+    <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap">
+      <span class="badge-pill">CrossFit</span>
+      <span class="badge-pill">LPO</span>
+      <span class="badge-pill">Ginástica</span>
+      <span class="badge-pill">Mobilidade</span>
+      <span class="badge-urgency">Últimas vagas — turma das 19h</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div><div class="stat-number" data-count="500">+500</div><div class="stat-label">Alunos ativos</div></div>
+      <div><div class="stat-number" data-count="40">40</div><div class="stat-label">Aulas por semana</div></div>
+      <div><div class="stat-number" data-count="600">600m²</div><div class="stat-label">De box equipado</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT / METODOLOGIA -->
+<section>
+  <div class="container split">
+    <div class="media-sim" role="img" aria-label="Simulação de foto: atleta em treino de levantamento de peso, alto contraste preto e branco com faixa amarela diagonal"></div>
+    <div>
+      <span class="section-label">Metodologia</span>
+      <h2 class="section-title" style="font-size:clamp(32px,4vw,48px)">Como você evolui aqui</h2>
+      <ol>
+        <li><div><h3>Avaliação zero enrolação</h3><p>Coach avalia seu nível na primeira aula grátis. Sem vendedor, sem pressão.</p></div></li>
+        <li><div><h3>Treino escalado</h3><p>Todo WOD tem versão iniciante, intermediária e RX. Você compete só com você.</p></div></li>
+        <li><div><h3>Resultado medido</h3><p>Acompanhamento trimestral de cargas, tempos e composição corporal.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial" id="depoimentos">
+  <div class="container">
+    <span class="section-label">Depoimento · manchete de resultado</span>
+    <blockquote>
+      <p class="quote">Perdi <em>14kg em 5 meses</em> e ganhei uma segunda família. Hoje a aula das 19h é o melhor horário do meu dia.</p>
+      <cite>
+        <strong>Carla Menezes</strong>
+        <span>6 meses de box · turma das 19h</span>
+      </cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- INPUTS -->
+<section>
+  <div class="container">
+    <span class="section-label">Formulário · estados</span>
+    <h2 class="section-title" style="font-size:clamp(32px,4vw,48px)">Agende sua aula grátis</h2>
+    <form class="form-demo" onsubmit="return false">
+      <div class="form-group">
+        <label for="nome">Seu nome</label>
+        <input type="text" id="nome" placeholder="Como podemos te chamar?">
+      </div>
+      <div class="form-group input-focus-demo">
+        <label for="whats">WhatsApp (estado: focus)</label>
+        <input type="tel" id="whats" placeholder="(11) 90000-0000">
+      </div>
+      <div class="form-group input-error">
+        <label for="email">E-mail (estado: erro)</label>
+        <input type="email" id="email" value="email-invalido" aria-invalid="true" aria-describedby="email-err">
+        <span class="error-msg" id="email-err">⚠ Digite um e-mail válido para receber a confirmação.</span>
+      </div>
+      <button class="btn btn-primary btn-lg" type="submit">Agendar aula experimental</button>
+      <p style="color:var(--text-muted); font-size:13px; margin-top:12px">Sem fidelidade. Sem letra miúda. Respondemos em até 2h no horário do box.</p>
+    </form>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section id="planos" style="padding-top:0">
+  <div class="container">
+    <span class="section-label">Planos</span>
+    <h2 class="section-title">Escolha seu ritmo</h2>
+    <div class="card-grid">
+      <article class="plan-card">
+        <h3>3x semana</h3>
+        <div class="plan-price">R$189<small>/mês</small></div>
+        <ul><li>12 aulas por mês</li><li>Todas as modalidades</li><li>App de acompanhamento</li></ul>
+        <a class="btn btn-secondary btn-md" href="#cta" style="width:100%">Começar</a>
+      </article>
+      <article class="plan-card plan-card--featured">
+        <span class="plan-badge">Mais escolhido</span>
+        <h3>Ilimitado</h3>
+        <div class="plan-price">R$249<small>/mês</small></div>
+        <ul><li>Aulas ilimitadas</li><li>Todas as modalidades</li><li>Avaliação física trimestral</li><li>Open box aos sábados</li></ul>
+        <a class="btn btn-invert btn-md" href="#cta">Garantir minha vaga</a>
+      </article>
+      <article class="plan-card">
+        <h3>Drop-in</h3>
+        <div class="plan-price">R$45<small>/aula</small></div>
+        <ul><li>Aula avulsa</li><li>Ideal para visitantes</li><li>Sem compromisso</li></ul>
+        <a class="btn btn-secondary btn-md" href="#cta" style="width:100%">Começar</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="cta">
+  <div class="container">
+    <span class="badge-urgency">Últimas vagas da turma das 19h</span>
+    <h2 style="margin-top:24px">Comece <span>hoje.</span></h2>
+    <a class="btn btn-primary btn-xl" href="#conteudo">Sua primeira aula é grátis</a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="contato">
+  <div class="marquee marquee--dark" aria-hidden="true">
+    <div class="marquee-track" style="animation-duration:28s">
+      <span class="marquee-item">Força+Box ★ Força+Box ★ Força+Box ★ Força+Box ★</span>
+      <span class="marquee-item">Força+Box ★ Força+Box ★ Força+Box ★ Força+Box ★</span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-cols">
+      <div>
+        <h3>Contato</h3>
+        <p>Rua do Treino, 123 — Centro</p>
+        <p class="mono">Seg–Sex 06h–22h · Sáb 08h–12h</p>
+        <a href="#">WhatsApp: (11) 90000-0000</a>
+      </div>
+      <div>
+        <h3>Modalidades</h3>
+        <a href="#modalidades">CrossFit WOD</a>
+        <a href="#modalidades">Fundamentos</a>
+        <a href="#modalidades">Engine HIIT</a>
+        <a href="#modalidades">Mobilidade</a>
+      </div>
+      <div>
+        <h3>Siga o box</h3>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 Força+Box · CNPJ 00.000.000/0001-00</span>
+      <span>DS 03.1 — Academia CrossFit Energia · Jumper Site Factory</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // counter-up: anima números de prova social ao entrar na viewport (roda 1x)
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var els = document.querySelectorAll('.stat-number');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        io.unobserve(el);
+        var finalText = el.textContent;
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        var start = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var p = Math.min((ts - start) / 1200, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = finalText.replace(/\d+/, Math.round(target * eased));
+          if (p < 1) requestAnimationFrame(step); else el.textContent = finalText;
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.4 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>

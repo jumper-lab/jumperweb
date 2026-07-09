@@ -1,0 +1,11 @@
+{
+  "name": "jumper-briefing-quiz",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "serve:local": "node local-server.mjs",
+    "check": "node --check quiz.js && node --check local-server.mjs && node --check api/briefings.js && node --check notion-client.mjs"
+  }
+}

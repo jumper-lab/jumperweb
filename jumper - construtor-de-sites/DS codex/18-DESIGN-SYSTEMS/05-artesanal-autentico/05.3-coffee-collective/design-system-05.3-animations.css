@@ -1,0 +1,119 @@
+:root{--primary:#3C2F25;--secondary:#8FA36A;--surface:#F3EFE7;--surface-alt:#DED4C5;--text:#211B16;--muted:#6B5F52;--border:#C8BBA8;--heading:"Spectral";--body:"Inter";--mono:"Roboto Mono";--radius:5px;}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-producer-timeline-grid { animation: reveal-producer-timeline-grid 620ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes reveal-producer-timeline-grid { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+  .motion-signature { transition: transform 220ms ease, filter 220ms ease, background 220ms ease; }
+  .motion-signature:hover { transform: translateY(-3px); }
+  .nav-active-marker { transition: width 180ms ease; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+:focus-visible { outline: 2px solid var(--secondary); outline-offset: 3px; }
+
+
+/* Component motion map for Coffee Collective Farmline System */
+.producer-story-card-motion {
+  --component-index: 1;
+  transform-origin: center right;
+  transition: transform 180ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.producer-story-card-motion:hover {
+  transform: translateY(-2px);
+}
+.producer-story-card-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.farmline-timeline-motion {
+  --component-index: 2;
+  transform-origin: center left;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.farmline-timeline-motion:hover {
+  transform: translateY(-2px);
+}
+.farmline-timeline-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.coffee-catalogue-tile-motion {
+  --component-index: 3;
+  transform-origin: center right;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.coffee-catalogue-tile-motion:hover {
+  transform: translateY(-2px);
+}
+.coffee-catalogue-tile-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.direct-trade-metric-motion {
+  --component-index: 4;
+  transform-origin: center left;
+  transition: transform 180ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.direct-trade-metric-motion:hover {
+  transform: translateY(-2px);
+}
+.direct-trade-metric-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.cafe-location-row-motion {
+  --component-index: 5;
+  transform-origin: center right;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.cafe-location-row-motion:hover {
+  transform: translateY(-2px);
+}
+.cafe-location-row-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.supply-chain-footer-motion {
+  --component-index: 6;
+  transform-origin: center left;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.supply-chain-footer-motion:hover {
+  transform: translateY(-2px);
+}
+.supply-chain-footer-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .section-producer-timeline-enter { animation: section-producer-timeline-enter 360ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-producer-timeline-enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+  .section-coffee-catalogue-enter { animation: section-coffee-catalogue-enter 380ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-coffee-catalogue-enter { from { opacity: 0; transform: translateY(19px); } to { opacity: 1; transform: none; } }
+
+  .section-direct-trade-explanation-enter { animation: section-direct-trade-explanation-enter 400ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-direct-trade-explanation-enter { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+  .section-cafe-locations-enter { animation: section-cafe-locations-enter 420ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-cafe-locations-enter { from { opacity: 0; transform: translateY(21px); } to { opacity: 1; transform: none; } }
+
+  .section-education-journal-enter { animation: section-education-journal-enter 440ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-education-journal-enter { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+
+  .section-subscription-path-enter { animation: section-subscription-path-enter 460ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-subscription-path-enter { from { opacity: 0; transform: translateY(23px); } to { opacity: 1; transform: none; } }
+
+  .section-producer-stories-enter { animation: section-producer-stories-enter 480ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-producer-stories-enter { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+  .section-footer-as-supply-chain-map-enter { animation: section-footer-as-supply-chain-map-enter 500ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-footer-as-supply-chain-map-enter { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: none; } }
+
+}

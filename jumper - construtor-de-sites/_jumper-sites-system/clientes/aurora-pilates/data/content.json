@@ -1,0 +1,164 @@
+{
+  "schema_version": "2.0.0",
+  "client_name": "Aurora Pilates & Movimento",
+  "client_slug": "aurora-pilates",
+  "source_briefing": "briefing/briefing-normalizado.md",
+  "brand": {
+    "name": "Aurora Pilates & Movimento",
+    "tagline": "Studio boutique de pilates e movimento consciente para pessoas que querem força, mobilidade e bem-estar com acompanhamento próximo.",
+    "voice_quote": "A gente acredita que movimento bem orientado muda a forma como a pessoa vive o próprio corpo todos os dias.",
+    "founded": 2022,
+    "google_rating": "4.9",
+    "google_reviews_count": 42
+  },
+  "contact": {
+    "email": "contato@aurorapilatesmovimento.com.br",
+    "phone": "+55 41 3333-1201",
+    "whatsapp": "+55 41 99999-1201",
+    "whatsapp_link": "https://wa.me/5541999991201?text=Quero%20agendar%20uma%20aula%20experimental",
+    "instagram": "@aurorapilates.movimento",
+    "facebook": "https://facebook.com/aurorapilatesmovimento",
+    "address": {
+      "street": "Rua das Araucárias, 184",
+      "neighborhood": "Batel",
+      "city": "Curitiba",
+      "state": "PR",
+      "zip": "80240-000",
+      "show_on_site": true,
+      "show_map": true
+    },
+    "hours": {
+      "weekdays": "Segunda a sexta: 7h às 20h",
+      "saturday": "Sábados: 8h às 12h (somente com agendamento)",
+      "sunday": "Fechado"
+    },
+    "best_contact_time": "Segundas, quartas e sextas entre 13h e 15h"
+  },
+  "hero": {
+    "eyebrow": "Pilates & Movimento Consciente — Curitiba",
+    "headline": "Movimento que cabe na sua vida, não na sua rotina.",
+    "subheadline": "Studio boutique com turmas de até 3 pessoas, avaliação individual e acompanhamento técnico próximo. Para quem quer se mover melhor, não apenas se exercitar.",
+    "cta_primary": {
+      "text": "Agendar aula experimental",
+      "link": "https://wa.me/5541999991201?text=Quero%20agendar%20uma%20aula%20experimental"
+    },
+    "cta_secondary": {
+      "text": "Conhecer o studio",
+      "link": "#sobre"
+    }
+  },
+  "trust_bar": {
+    "items": [
+      "180+ alunos acompanhados",
+      "Turmas de até 3 pessoas",
+      "4,9 no Google"
+    ]
+  },
+  "about": {
+    "title": "Um espaço pensado para o seu movimento",
+    "body": "A Aurora nasceu da crença de que movimento bem orientado transforma a forma como a pessoa vive o próprio corpo. Não é academia, não é treino genérico. É um studio boutique onde cada aluno recebe avaliação individual, plano personalizado e acompanhamento técnico de perto — com turmas de no máximo 3 pessoas.",
+    "highlight": "Avaliação individual antes de iniciar qualquer programa."
+  },
+  "differentials": [
+    {
+      "title": "Turmas de até 3",
+      "description": "Acompanhamento próximo de verdade. Sem lotação, sem improviso, sem genérico.",
+      "number": "01"
+    },
+    {
+      "title": "Avaliação inicial",
+      "description": "Antes de qualquer exercício, a gente conversa, observa e entende o que o seu corpo precisa.",
+      "number": "02"
+    },
+    {
+      "title": "Pilates + Fisioterapia",
+      "description": "Integração entre pilates contemporâneo, fisioterapia preventiva e educação corporal.",
+      "number": "03"
+    }
+  ],
+  "services": [
+    {
+      "name": "Aula experimental avaliativa",
+      "description": "Primeiro contato para entender objetivos e limitações. Conversa inicial, observação de mobilidade e indicação do melhor plano.",
+      "highlight": true
+    },
+    {
+      "name": "Pilates em aparelhos",
+      "description": "Turmas pequenas com acompanhamento próximo. Exercícios adaptados para cada nível."
+    },
+    {
+      "name": "Pilates terapêutico",
+      "description": "Foco em dor, mobilidade e retorno gradual ao movimento. Indicado para quem vem de lesão ou tem restrições."
+    },
+    {
+      "name": "Treino de mobilidade",
+      "description": "Sessões para melhorar postura, amplitude de movimento e controle corporal."
+    },
+    {
+      "name": "Programa 60+ ativo",
+      "description": "Movimento seguro para longevidade e autonomia. Trabalho adaptado para a faixa etária."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Voltei a me movimentar sem medo depois de anos com dor lombar.",
+      "author": "Renata M.",
+      "permission": "first_name"
+    },
+    {
+      "quote": "As aulas são técnicas, mas o clima é leve. Eu me sinto acompanhada de verdade.",
+      "author": "Paulo R.",
+      "permission": "first_name"
+    },
+    {
+      "quote": "O espaço transmite calma e profissionalismo desde a chegada.",
+      "author": "Camila S.",
+      "permission": "first_name"
+    }
+  ],
+  "pricing": {
+    "display_type": "range_from",
+    "note": "Valores serão confirmados pelo cliente. Exibir faixa a partir de."
+  },
+  "stats": [
+    {
+      "number": "180+",
+      "label": "Alunos acompanhados"
+    },
+    {
+      "number": "3",
+      "label": "Alunos por turma"
+    },
+    {
+      "number": "4,9",
+      "label": "Avaliação no Google"
+    }
+  ],
+  "seo": {
+    "title": "Aurora Pilates & Movimento — Studio boutique em Batel, Curitiba",
+    "description": "Pilates em aparelhos com turmas de até 3 pessoas, avaliação individual e acompanhamento técnico. Agende sua aula experimental no Batel, Curitiba.",
+    "keywords": ["pilates curitiba", "pilates batel", "fisioterapia preventiva", "movimento consciente", "studio pilates curitiba"]
+  },
+  "blog": {
+    "enabled": false
+  },
+  "media": {
+    "has_real_photos": false,
+    "photos_pending": ["fachada", "retratos da equipe", "vídeo curto de aula"],
+    "photos_eta": "5 dias",
+    "use_ai_images": true,
+    "use_pexels_as_fallback": true,
+    "pexels_only_if_needed": true
+  },
+  "pixels": {
+    "ga4": null,
+    "meta_pixel": null,
+    "note": "Cliente não possui. Criar do zero se fizer sentido para campanha futura."
+  },
+  "pending": [
+    "Confirmar domínio",
+    "Enviar fotos finais do espaço",
+    "Validar se endereço completo deve aparecer publicamente",
+    "Enviar CNPJ"
+  ]
+}

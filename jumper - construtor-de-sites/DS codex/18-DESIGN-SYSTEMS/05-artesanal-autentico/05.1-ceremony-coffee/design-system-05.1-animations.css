@@ -1,0 +1,119 @@
+:root{--primary:#5A3825;--secondary:#B7793E;--surface:#F8F1E7;--surface-alt:#EAD8C3;--text:#2A1A12;--muted:#745C4C;--border:#D6BFA5;--heading:"Recoleta";--body:"Source Serif 4";--mono:"IBM Plex Mono";--radius:7px;}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-cupping-journal-commerce { animation: reveal-cupping-journal-commerce 620ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes reveal-cupping-journal-commerce { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+  .motion-signature { transition: transform 220ms ease, filter 220ms ease, background 220ms ease; }
+  .motion-signature:hover { transform: translateY(-3px); }
+  .nav-active-marker { transition: width 180ms ease; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+:focus-visible { outline: 2px solid var(--secondary); outline-offset: 3px; }
+
+
+/* Component motion map for Ceremony Cupping Journal System */
+.flavor-note-card-motion {
+  --component-index: 1;
+  transform-origin: center right;
+  transition: transform 180ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.flavor-note-card-motion:hover {
+  transform: translateY(-2px);
+}
+.flavor-note-card-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.roast-finder-filter-motion {
+  --component-index: 2;
+  transform-origin: center left;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.roast-finder-filter-motion:hover {
+  transform: translateY(-2px);
+}
+.roast-finder-filter-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.origin-story-slab-motion {
+  --component-index: 3;
+  transform-origin: center right;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.origin-story-slab-motion:hover {
+  transform: translateY(-2px);
+}
+.origin-story-slab-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.subscription-builder-motion {
+  --component-index: 4;
+  transform-origin: center left;
+  transition: transform 180ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.subscription-builder-motion:hover {
+  transform: translateY(-2px);
+}
+.subscription-builder-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.brew-method-step-motion {
+  --component-index: 5;
+  transform-origin: center right;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.brew-method-step-motion:hover {
+  transform: translateY(-2px);
+}
+.brew-method-step-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.tasting-ledger-footer-motion {
+  --component-index: 6;
+  transform-origin: center left;
+  transition: transform 260ms cubic-bezier(.2,0,.2,1), opacity 220ms ease, filter 220ms ease;
+}
+.tasting-ledger-footer-motion:hover {
+  transform: translateY(-2px);
+}
+.tasting-ledger-footer-motion:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .section-roast-finder-enter { animation: section-roast-finder-enter 360ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-roast-finder-enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+  .section-flavor-note-cards-enter { animation: section-flavor-note-cards-enter 380ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-flavor-note-cards-enter { from { opacity: 0; transform: translateY(19px); } to { opacity: 1; transform: none; } }
+
+  .section-origin-story-enter { animation: section-origin-story-enter 400ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-origin-story-enter { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+  .section-subscription-builder-enter { animation: section-subscription-builder-enter 420ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-subscription-builder-enter { from { opacity: 0; transform: translateY(21px); } to { opacity: 1; transform: none; } }
+
+  .section-brew-guide-enter { animation: section-brew-guide-enter 440ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-brew-guide-enter { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+
+  .section-seasonal-release-enter { animation: section-seasonal-release-enter 460ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-seasonal-release-enter { from { opacity: 0; transform: translateY(23px); } to { opacity: 1; transform: none; } }
+
+  .section-wholesale-path-enter { animation: section-wholesale-path-enter 480ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-wholesale-path-enter { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+  .section-footer-as-tasting-ledger-enter { animation: section-footer-as-tasting-ledger-enter 500ms cubic-bezier(.16,1,.3,1) both; }
+  @keyframes section-footer-as-tasting-ledger-enter { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: none; } }
+
+}

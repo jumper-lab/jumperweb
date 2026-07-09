@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DS 04.2 — Fintech Confiança | Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#0F3460; --primary-hover:#1B2C4A; --primary-active:#0C2A4E;
+    --secondary:#16A085; --green-text:#0E7A65; --green-bg:#E6F5F1;
+    --surface:#FFFFFF; --surface-alt:#F6F9FC;
+    --text-1:#0F1F35; --text-2:#42526E; --text-3:#64748B;
+    --border:#E3E8EF; --border-md:#CBD5E1;
+    --error:#B42318; --warning:#B45309;
+    --n50:#F6F9FC; --n100:#EDF2F7; --n200:#E3E8EF; --n300:#CBD5E1; --n400:#94A3B8;
+    --n500:#64748B; --n600:#42526E; --n700:#2C3E5C; --n800:#1B2C4A; --n900:#0F1F35;
+    --font-h:'IBM Plex Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --font-b:'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --font-m:'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+    --sh-xs:0 1px 2px rgba(15,31,53,.05); --sh-sm:0 2px 6px rgba(15,31,53,.06);
+    --sh-md:0 6px 16px rgba(15,31,53,.08); --sh-lg:0 16px 40px rgba(15,31,53,.10);
+    --ring:0 0 0 3px rgba(22,160,133,.35);
+    --r-btn:8px; --r-card:12px; --r-ct:16px;
+    --dur-fast:200ms; --dur-base:300ms; --ease:cubic-bezier(.4,0,.2,1); --ease-out:cubic-bezier(0,0,.2,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-b);font-size:16px;line-height:1.65;color:var(--text-1);background:var(--surface);-webkit-font-smoothing:antialiased}
+  .container{max-width:1160px;margin:0 auto;padding:0 20px}
+  @media(min-width:480px){.container{padding:0 40px}}
+  @media(min-width:1024px){.container{padding:0 64px}}
+  h1,h2,h3,h4{font-family:var(--font-h);color:var(--text-1)}
+  h1{font-size:clamp(2.125rem,1.4rem + 2.6vw,3.5rem);line-height:1.08;font-weight:700;letter-spacing:-.025em}
+  h2{font-size:clamp(1.625rem,1.2rem + 1.6vw,2.375rem);line-height:1.15;font-weight:600;letter-spacing:-.02em}
+  h3{font-size:clamp(1.25rem,1.1rem + .5vw,1.5rem);line-height:1.3;font-weight:600;letter-spacing:-.01em}
+  p{color:var(--text-2)}
+  section{padding:64px 0}
+  @media(min-width:480px){section{padding:96px 0}}
+  @media(min-width:1024px){section{padding:128px 0}}
+  .section-alt{background:var(--surface-alt)}
+  .eyebrow{font-family:var(--font-b);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--green-text);display:block;margin-bottom:16px}
+  .section-head{text-align:center;max-width:720px;margin:0 auto 64px}
+  .section-head p{margin-top:16px;font-size:17px}
+  .mono{font-family:var(--font-m);font-variant-numeric:tabular-nums}
+
+  /* ---------- skip link ---------- */
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--primary);color:#fff;padding:12px 24px;border-radius:0 0 8px 0;z-index:99}
+  .skip-link:focus{left:0}
+
+  /* ---------- navbar ---------- */
+  .nav{position:sticky;top:0;background:var(--surface);z-index:50;border-bottom:1px solid transparent;transition:border-color var(--dur-fast) var(--ease)}
+  .nav.scrolled{border-bottom-color:var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  @media(min-width:1024px){.nav-inner{height:72px}}
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--font-h);font-weight:700;font-size:19px;color:var(--primary);text-decoration:none}
+  .nav-links{display:none;align-items:center;gap:32px;list-style:none}
+  @media(min-width:1024px){.nav-links{display:flex}}
+  .nav-links a{font-size:15px;font-weight:500;color:var(--text-2);text-decoration:none;position:relative;padding:4px 0}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--secondary);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-fast) var(--ease-out)}
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--primary)}
+  .nav-links a:hover::after,.nav-links a:focus-visible::after{transform:scaleX(1)}
+  .nav-cta{display:none}
+  @media(min-width:1024px){.nav-cta{display:inline-flex}}
+  .hamburger{display:inline-flex;flex-direction:column;gap:5px;background:none;border:none;padding:12px;cursor:pointer;border-radius:8px}
+  .hamburger span{width:22px;height:2px;background:var(--primary);border-radius:2px}
+  .hamburger:focus-visible{outline:none;box-shadow:var(--ring)}
+  @media(min-width:1024px){.hamburger{display:none}}
+  .mobile-menu{display:none;position:fixed;inset:0;background:var(--surface);z-index:60;padding:24px 20px;flex-direction:column}
+  .mobile-menu.open{display:flex}
+  .mobile-menu ul{list-style:none;margin-top:48px;display:flex;flex-direction:column;gap:8px}
+  .mobile-menu a{font-family:var(--font-h);font-size:28px;font-weight:600;color:var(--text-1);text-decoration:none;display:block;padding:12px 0}
+  .mobile-menu .close-btn{align-self:flex-end;background:none;border:1px solid var(--border);border-radius:8px;padding:10px 16px;font-family:var(--font-b);font-size:14px;cursor:pointer;color:var(--text-2)}
+  .mobile-menu .btn{margin-top:auto}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-b);font-weight:600;font-size:15px;border-radius:var(--r-btn);padding:12px 24px;min-height:44px;border:none;cursor:pointer;text-decoration:none;transition:background var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease),box-shadow var(--dur-fast) var(--ease)}
+  .btn .arr{transition:transform var(--dur-fast) var(--ease)}
+  .btn:hover .arr{transform:translateX(2px)}
+  .btn-lg{padding:16px 32px;font-size:16px;min-height:52px}
+  .btn-primary{background:var(--primary);color:#fff}
+  .btn-primary:hover{background:var(--primary-hover)}
+  .btn-primary:active{background:var(--primary-active)}
+  .btn-primary:focus-visible{outline:none;box-shadow:var(--ring)}
+  .btn-primary:disabled{background:var(--n300);color:var(--n500);cursor:not-allowed}
+  .btn-secondary{background:transparent;color:var(--primary);border:1.5px solid var(--primary)}
+  .btn-secondary:hover{background:var(--surface-alt)}
+  .btn-secondary:focus-visible{outline:none;box-shadow:var(--ring)}
+  .btn-secondary:disabled{border-color:var(--n300);color:var(--n400);cursor:not-allowed}
+  .link-ghost{display:inline-flex;align-items:center;gap:6px;color:var(--green-text);font-weight:600;font-size:15px;text-decoration:none;position:relative}
+  .link-ghost::after{content:'';position:absolute;left:0;bottom:-3px;width:100%;height:2px;background:var(--green-text);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-fast) var(--ease-out)}
+  .link-ghost:hover::after,.link-ghost:focus-visible::after{transform:scaleX(1)}
+  .link-ghost:focus-visible{outline:none;box-shadow:var(--ring);border-radius:4px}
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0}
+  @media(min-width:1024px){.hero{padding:96px 0}}
+  .hero-grid{display:grid;gap:48px;align-items:center}
+  @media(min-width:1024px){.hero-grid{grid-template-columns:55fr 45fr;gap:64px}}
+  .hero h1 .hl{color:var(--primary);box-shadow:inset 0 -0.18em 0 rgba(22,160,133,.35)}
+  .hero .sub{font-size:clamp(1.0625rem,1rem + .4vw,1.25rem);margin:24px 0 32px;max-width:540px}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:16px}
+  .trust-row{margin-top:56px}
+  .trust-row .label{font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);margin-bottom:16px}
+  .trust-logos{display:flex;flex-wrap:wrap;gap:28px;align-items:center}
+  .trust-logos svg{opacity:.85}
+  .hero-visual{position:relative}
+
+  /* ---------- metrics band ---------- */
+  .metrics-grid{display:grid;gap:24px;grid-template-columns:1fr}
+  @media(min-width:480px){.metrics-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.metrics-grid{grid-template-columns:repeat(4,1fr)}}
+  .data-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);padding:28px 32px;box-shadow:var(--sh-xs)}
+  .data-card .lbl{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-2);margin-bottom:12px}
+  .data-card .num{font-family:var(--font-m);font-variant-numeric:tabular-nums;font-size:clamp(1.75rem,1.4rem + 1.2vw,2.75rem);line-height:1.05;font-weight:500;color:var(--primary)}
+  .data-card .delta{font-size:14px;font-weight:600;color:var(--green-text);margin-top:8px;display:flex;align-items:center;gap:4px}
+
+  /* ---------- features ---------- */
+  .features-grid{display:grid;gap:24px;grid-template-columns:1fr}
+  @media(min-width:480px){.features-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.features-grid{grid-template-columns:repeat(3,1fr)}}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);padding:32px;box-shadow:var(--sh-xs);transition:transform var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
+  .card:hover{transform:translateY(-2px);box-shadow:var(--sh-md)}
+  .card h3{margin:20px 0 10px}
+  .card p{font-size:15px;margin-bottom:20px}
+
+  /* ---------- how it works ---------- */
+  .steps-wrap{overflow-x:auto}
+  .steps-legend{display:grid;gap:24px;grid-template-columns:1fr;margin-top:40px}
+  @media(min-width:1024px){.steps-legend{grid-template-columns:repeat(3,1fr)}}
+  .steps-legend h3{font-size:18px;display:flex;gap:10px;align-items:baseline}
+  .steps-legend .n{font-family:var(--font-m);color:var(--green-text);font-size:15px}
+  .steps-legend p{font-size:15px;margin-top:6px}
+
+  /* ---------- testimonial ---------- */
+  .testimonial{display:grid;gap:40px;align-items:center}
+  @media(min-width:1024px){.testimonial{grid-template-columns:2fr 1fr;gap:64px}}
+  .testimonial blockquote{font-family:var(--font-h);font-size:clamp(1.25rem,1.1rem + .8vw,1.5rem);line-height:1.45;font-weight:500;color:var(--text-1)}
+  .testimonial .who{margin-top:24px;font-size:14px;color:var(--text-2)}
+  .testimonial .who strong{color:var(--text-1)}
+  .t-metric{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-ct);padding:32px;text-align:center}
+  .t-metric .num{font-family:var(--font-m);font-size:clamp(2rem,1.6rem + 1.4vw,3rem);font-weight:500;color:var(--green-text)}
+  .t-metric .lbl{font-size:14px;color:var(--text-2);margin-top:8px}
+
+  /* ---------- form / inputs ---------- */
+  .form-grid{display:grid;gap:24px;grid-template-columns:1fr;max-width:720px;margin:0 auto}
+  @media(min-width:480px){.form-grid{grid-template-columns:1fr 1fr}}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field label{font-size:14px;font-weight:500;color:var(--text-1)}
+  .field input,.field select{font-family:var(--font-b);font-size:16px;color:var(--text-1);background:var(--surface);border:1px solid var(--border-md);border-radius:8px;padding:12px 16px;min-height:48px;transition:border-color var(--dur-fast) var(--ease),box-shadow var(--dur-fast) var(--ease)}
+  .field input::placeholder{color:var(--text-3)}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--primary);box-shadow:var(--ring)}
+  .field.has-error input{border-color:var(--error)}
+  .field .err{display:flex;gap:6px;align-items:center;font-size:14px;color:var(--error)}
+  .form-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+
+  /* ---------- CTA final ---------- */
+  .cta-final{background:var(--primary);border-radius:0}
+  .cta-final .inner{text-align:center;max-width:720px;margin:0 auto}
+  .cta-final h2{color:#fff}
+  .cta-final p{color:#B8C7DC;margin:16px 0 32px}
+  .btn-on-navy{background:#fff;color:var(--primary)}
+  .btn-on-navy:hover{background:var(--n100)}
+  .btn-on-navy:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(255,255,255,.45)}
+  .cta-final .compliance{margin-top:32px;font-family:var(--font-m);font-size:12px;color:#B8C7DC;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--primary);color:#fff;padding:64px 0 32px}
+  .footer-grid{display:grid;gap:40px;grid-template-columns:1fr 1fr}
+  @media(min-width:1024px){.footer-grid{grid-template-columns:repeat(4,1fr)}}
+  .footer-grid h4{color:#fff;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+  .footer-grid ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-grid a{color:#B8C7DC;text-decoration:none;font-size:15px}
+  .footer-grid a:hover,.footer-grid a:focus-visible{color:#fff;text-decoration:underline}
+  .footer-legal{border-top:1px solid rgba(255,255,255,.15);margin-top:48px;padding-top:24px;font-family:var(--font-m);font-size:12px;color:#B8C7DC;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+
+  /* ---------- style guide extras ---------- */
+  .guide-note{background:var(--green-bg);border:1px solid rgba(14,122,101,.25);border-radius:var(--r-card);padding:20px 24px;font-size:14px;color:var(--green-text);margin-bottom:48px}
+  .swatch-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  .swatch{border:1px solid var(--border);border-radius:var(--r-card);overflow:hidden;background:var(--surface)}
+  .swatch .chip{height:72px}
+  .swatch .meta{padding:12px 14px;font-size:13px}
+  .swatch .meta strong{display:block;color:var(--text-1)}
+  .swatch .meta code{font-family:var(--font-m);font-size:12px;color:var(--text-2)}
+  .type-specimen{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:var(--r-ct);padding:32px}
+  .type-specimen .cap{font-size:12px;font-family:var(--font-m);color:var(--text-3);margin-bottom:4px}
+  .states-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:24px}
+  .badge{display:inline-flex;align-items:center;gap:6px;border-radius:9999px;padding:4px 14px;font-size:13px;font-weight:500;background:var(--surface-alt);border:1px solid var(--border);color:var(--text-2)}
+  .badge.green{background:var(--green-bg);border-color:rgba(14,122,101,.25);color:var(--green-text)}
+  .demo-anim-box{display:flex;flex-wrap:wrap;gap:24px}
+  .demo-anim-box .card{width:220px}
+  .fake-focus{box-shadow:var(--ring)}
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0;transform:translateY(12px);transition:opacity var(--dur-base) var(--ease-out),transform var(--dur-base) var(--ease-out)}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal.d1{transition-delay:60ms}.reveal.d2{transition-delay:120ms}.reveal.d3{transition-delay:180ms}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#main" aria-label="Página inicial — Axis Pagamentos">
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="2" y="2" width="11" height="11" rx="2" fill="#0F3460"/><rect x="15" y="2" width="11" height="11" rx="2" fill="#16A085"/><rect x="2" y="15" width="11" height="11" rx="2" fill="#16A085" opacity=".45"/><rect x="15" y="15" width="11" height="11" rx="2" fill="#0F3460"/></svg>
+      Axis
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#solucoes">Soluções</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#taxas">Taxas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="#contato" class="btn btn-primary nav-cta">Fale com um especialista</a>
+      <button class="hamburger" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="close-btn" id="closeBtn">Fechar ✕</button>
+  <ul>
+    <li><a href="#solucoes">Soluções</a></li>
+    <li><a href="#como-funciona">Como funciona</a></li>
+    <li><a href="#taxas">Taxas</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="#contato" class="btn btn-primary btn-lg">Fale com um especialista</a>
+</div>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Infraestrutura financeira B2B</span>
+      <h1 id="hero-title">Sua operação financeira, <span class="hl">simplificada</span>.</h1>
+      <p class="sub">Receba em 1 dia útil, concilie em 1 clique e acompanhe cada centavo em tempo real. Integração documentada, suporte de gente que entende a sua operação.</p>
+      <div class="hero-ctas">
+        <a href="#contato" class="btn btn-primary btn-lg">Fale com um especialista <span class="arr" aria-hidden="true">→</span></a>
+        <a href="#como-funciona" class="btn btn-secondary btn-lg">Comece a integrar</a>
+      </div>
+      <div class="trust-row">
+        <p class="label">Empresas que confiam</p>
+        <div class="trust-logos" aria-label="Logos de clientes (exemplos ilustrativos)">
+          <svg width="86" height="20" viewBox="0 0 86 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="none" stroke="#94A3B8" stroke-width="2.5"/><rect x="26" y="6" width="58" height="8" rx="4" fill="#94A3B8"/></svg>
+          <svg width="80" height="20" viewBox="0 0 80 20" aria-hidden="true"><rect x="0" y="2" width="16" height="16" rx="3" fill="#94A3B8"/><rect x="24" y="6" width="54" height="8" rx="4" fill="#94A3B8"/></svg>
+          <svg width="88" height="20" viewBox="0 0 88 20" aria-hidden="true"><path d="M2 18 L10 2 L18 18 Z" fill="#94A3B8"/><rect x="26" y="6" width="60" height="8" rx="4" fill="#94A3B8"/></svg>
+          <svg width="76" height="20" viewBox="0 0 76 20" aria-hidden="true"><rect x="0" y="4" width="6" height="12" fill="#94A3B8"/><rect x="8" y="1" width="6" height="18" fill="#94A3B8"/><rect x="16" y="7" width="6" height="9" fill="#94A3B8"/><rect x="30" y="6" width="46" height="8" rx="4" fill="#94A3B8"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ilustração geométrica única: grid + formas + dashboard flutuante -->
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 480 420" width="100%" role="img" aria-label="Ilustração geométrica de dashboard financeiro" style="max-width:520px;display:block;margin:0 auto">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M40 0H0V40" fill="none" stroke="#EDF2F7" stroke-width="1"/>
+          </pattern>
+          <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0" stop-color="#16A085"/><stop offset="1" stop-color="#0F3460"/>
+          </linearGradient>
+        </defs>
+        <rect width="480" height="420" fill="url(#grid)"/>
+        <!-- formas geométricas de fundo -->
+        <circle cx="404" cy="72" r="46" fill="none" stroke="#16A085" stroke-width="2"/>
+        <circle cx="404" cy="72" r="8" fill="#16A085"/>
+        <rect x="24" y="300" width="88" height="88" rx="14" fill="#0F3460" opacity=".08"/>
+        <rect x="44" y="320" width="88" height="88" rx="14" fill="none" stroke="#0F3460" stroke-width="2"/>
+        <path d="M40 90 L76 26 L112 90 Z" fill="none" stroke="#16A085" stroke-width="2"/>
+        <line x1="360" y1="330" x2="452" y2="330" stroke="#0F3460" stroke-width="2"/>
+        <line x1="360" y1="346" x2="428" y2="346" stroke="#16A085" stroke-width="2"/>
+        <line x1="360" y1="362" x2="444" y2="362" stroke="#CBD5E1" stroke-width="2"/>
+        <!-- card de dashboard flutuante -->
+        <g filter="none">
+          <rect x="88" y="86" width="304" height="212" rx="14" fill="#FFFFFF" stroke="#E3E8EF"/>
+          <rect x="88" y="86" width="304" height="44" rx="14" fill="#F6F9FC"/>
+          <rect x="88" y="116" width="304" height="14" fill="#F6F9FC"/>
+          <circle cx="112" cy="108" r="6" fill="#0F3460"/>
+          <rect x="128" y="102" width="96" height="12" rx="6" fill="#CBD5E1"/>
+          <rect x="336" y="100" width="40" height="16" rx="8" fill="#E6F5F1"/>
+          <!-- número principal -->
+          <text x="112" y="172" font-family="IBM Plex Mono, Menlo, monospace" font-size="30" font-weight="500" fill="#0F3460">R$ 2,4 mi</text>
+          <text x="112" y="194" font-family="Inter, Arial, sans-serif" font-size="12" fill="#0E7A65">▲ +18,2% no mês</text>
+          <!-- gráfico de barras -->
+          <rect x="112" y="248" width="24" height="28" rx="3" fill="url(#bar)" opacity=".55"/>
+          <rect x="146" y="234" width="24" height="42" rx="3" fill="url(#bar)" opacity=".7"/>
+          <rect x="180" y="222" width="24" height="54" rx="3" fill="url(#bar)" opacity=".85"/>
+          <rect x="214" y="206" width="24" height="70" rx="3" fill="url(#bar)"/>
+          <!-- linha de tendência -->
+          <polyline points="268,258 300,240 328,246 364,214" fill="none" stroke="#16A085" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="364" cy="214" r="5" fill="#16A085"/>
+        </g>
+        <!-- mini-card flutuante -->
+        <g>
+          <rect x="300" y="266" width="152" height="72" rx="12" fill="#FFFFFF" stroke="#E3E8EF"/>
+          <circle cx="326" cy="302" r="12" fill="#E6F5F1"/>
+          <path d="M320 302 l4 4 l8 -9" fill="none" stroke="#0E7A65" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="348" y="288" width="80" height="10" rx="5" fill="#CBD5E1"/>
+          <rect x="348" y="306" width="56" height="10" rx="5" fill="#EDF2F7"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== METRICS BAND ===================== -->
+<section class="section-alt" aria-label="Métricas de resultado" style="padding:64px 0">
+  <div class="container">
+    <div class="metrics-grid">
+      <div class="data-card reveal"><p class="lbl">Volume processado</p><p class="num">R$ 1,2 bi</p><p class="delta">▲ +34% ao ano</p></div>
+      <div class="data-card reveal d1"><p class="lbl">Prazo de repasse</p><p class="num">D+1</p><p class="delta">dia útil, sempre</p></div>
+      <div class="data-card reveal d2"><p class="lbl">Disponibilidade</p><p class="num">99,99%</p><p class="delta">últimos 12 meses</p></div>
+      <div class="data-card reveal d3"><p class="lbl">Empresas ativas</p><p class="num">3.800+</p><p class="delta">▲ +120/mês</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURES ===================== -->
+<section id="solucoes" aria-labelledby="features-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Soluções</span>
+      <h2 id="features-title">Menos planilha, mais decisão</h2>
+      <p>Três frentes que resolvem o financeiro de ponta a ponta — sem retrabalho e sem surpresa no fechamento.</p>
+    </div>
+    <div class="features-grid">
+      <article class="card reveal">
+        <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="3" fill="#0F3460"/><rect x="22" y="4" width="14" height="14" rx="3" fill="none" stroke="#16A085" stroke-width="2"/><rect x="4" y="22" width="14" height="14" rx="3" fill="none" stroke="#0F3460" stroke-width="2"/><rect x="22" y="22" width="14" height="14" rx="3" fill="#16A085"/></svg>
+        <h3>Recebimentos unificados</h3>
+        <p>Pix, boleto e cartão em uma única conciliação. Cada transação com taxa, prazo e status visíveis em tempo real.</p>
+        <a class="link-ghost" href="#taxas">Ver taxas e prazos <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="card reveal d1">
+        <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" fill="none" stroke="#0F3460" stroke-width="2"/><path d="M20 10 v10 l7 5" fill="none" stroke="#16A085" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Repasse em D+1</h3>
+        <p>Fluxo de caixa previsível: o dinheiro cai em 1 dia útil, com extrato exportável e API de consulta para o seu ERP.</p>
+        <a class="link-ghost" href="#como-funciona">Como funciona <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="card reveal d2">
+        <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 34 L6 22 M16 34 L16 14 M26 34 L26 18 M36 34 L36 8" stroke="#0F3460" stroke-width="3" stroke-linecap="round"/><circle cx="36" cy="8" r="4" fill="#16A085"/></svg>
+        <h3>Painel de dados ao vivo</h3>
+        <p>Receita, inadimplência e ticket médio em um painel que o seu contador e o seu CFO leem do mesmo jeito.</p>
+        <a class="link-ghost" href="#contato">Agendar demonstração <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMO FUNCIONA (diagrama) ===================== -->
+<section id="como-funciona" class="section-alt" aria-labelledby="how-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Como funciona</span>
+      <h2 id="how-title">Da integração ao repasse em 3 passos</h2>
+    </div>
+    <div class="steps-wrap reveal">
+      <svg viewBox="0 0 960 150" width="100%" style="min-width:640px;display:block" role="img" aria-label="Diagrama: 1 integrar, 2 processar, 3 receber — fluxo da esquerda para a direita">
+        <line x1="120" y1="60" x2="420" y2="60" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="6 6"/>
+        <line x1="540" y1="60" x2="840" y2="60" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="6 6"/>
+        <circle cx="120" cy="60" r="44" fill="#FFFFFF" stroke="#0F3460" stroke-width="2"/>
+        <path d="M104 60 h14 m-7 -7 v14 M126 48 h12 v24 h-12" fill="none" stroke="#0F3460" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="480" cy="60" r="44" fill="#0F3460"/>
+        <path d="M462 60 h12 l6 -14 l8 24 l6 -10 h10" fill="none" stroke="#16A085" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="840" cy="60" r="44" fill="#FFFFFF" stroke="#16A085" stroke-width="2"/>
+        <path d="M826 62 l8 8 l16 -18" fill="none" stroke="#0E7A65" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="120" y="132" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#0F1F35">1 · Integre</text>
+        <text x="480" y="132" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#0F1F35">2 · Processe</text>
+        <text x="840" y="132" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#0F1F35">3 · Receba</text>
+      </svg>
+    </div>
+    <div class="steps-legend">
+      <div class="reveal"><h3><span class="n">01</span> Integre em horas</h3><p>API REST documentada, SDKs e sandbox liberado no cadastro. Seu time integra sem abrir chamado.</p></div>
+      <div class="reveal d1"><h3><span class="n">02</span> Processe com segurança</h3><p>Criptografia de ponta a ponta, antifraude nativo e conformidade PCI-DSS e LGPD desde o primeiro Pix.</p></div>
+      <div class="reveal d2"><h3><span class="n">03</span> Receba em D+1</h3><p>Repasse em 1 dia útil com conciliação automática no seu ERP — cada centavo rastreável.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DEPOIMENTO ===================== -->
+<section aria-labelledby="dep-title">
+  <div class="container">
+    <h2 id="dep-title" class="eyebrow" style="text-align:center">Quem usa, comprova</h2>
+    <div class="testimonial" style="background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r-ct);padding:clamp(32px,3vw + 20px,64px)">
+      <div class="reveal">
+        <svg width="44" height="32" viewBox="0 0 44 32" aria-hidden="true"><path d="M0 32 V16 C0 6 6 0 16 0 v8 c-5 0-8 3-8 8 h10 v16 Z" fill="#16A085"/><path d="M26 32 V16 C26 6 32 0 42 0 v8 c-5 0-8 3-8 8 h10 v16 Z" fill="#16A085" opacity=".45"/></svg>
+        <blockquote>“Fechávamos o mês em cinco dias. Hoje a conciliação é automática e o financeiro acompanha o caixa em tempo real — a diretoria decide com número do dia, não do mês passado.”</blockquote>
+        <p class="who"><strong>Renata Almeida</strong> · CFO, Grupo Meridiano (logística, 240 funcionários)</p>
+      </div>
+      <div class="t-metric reveal d1">
+        <p class="num mono">−82%</p>
+        <p class="lbl">tempo de fechamento contábil após a integração</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FORM / CONTATO ===================== -->
+<section id="contato" class="section-alt" aria-labelledby="form-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Contato</span>
+      <h2 id="form-title">Fale com um especialista</h2>
+      <p>Resposta em até 1 dia útil. Sem compromisso, sem script de venda.</p>
+    </div>
+    <form class="form-grid" novalidate>
+      <div class="field">
+        <label for="nome">Nome completo</label>
+        <input id="nome" name="nome" type="text" placeholder="Ana Souza" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="empresa">Empresa</label>
+        <input id="empresa" name="empresa" type="text" placeholder="Razão social ou fantasia" autocomplete="organization">
+      </div>
+      <div class="field has-error">
+        <label for="email">E-mail corporativo</label>
+        <input id="email" name="email" type="email" value="ana@empresa" aria-invalid="true" aria-describedby="email-err">
+        <p class="err" id="email-err"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6.2" fill="none" stroke="#B42318" stroke-width="1.5"/><path d="M7 3.6v4" stroke="#B42318" stroke-width="1.6" stroke-linecap="round"/><circle cx="7" cy="10.2" r=".9" fill="#B42318"/></svg> Informe um e-mail válido (ex.: ana@empresa.com.br)</p>
+      </div>
+      <div class="field">
+        <label for="volume">Volume mensal estimado</label>
+        <select id="volume" name="volume">
+          <option>Até R$ 50 mil</option>
+          <option>R$ 50 mil – R$ 500 mil</option>
+          <option>Acima de R$ 500 mil</option>
+        </select>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary btn-lg">Agendar demonstração <span class="arr" aria-hidden="true">→</span></button>
+        <span class="badge green">✓ Seus dados protegidos — LGPD</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== STYLE GUIDE ===================== -->
+<section id="taxas" aria-labelledby="guide-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Style guide do DS 04.2</span>
+      <h2 id="guide-title">Tokens ao vivo</h2>
+      <p>Paleta, tipografia, estados e animações deste design system, demonstrados na prática.</p>
+    </div>
+
+    <p class="guide-note"><strong>Regra de contraste:</strong> #16A085 (3.28:1) só em texto grande e grafismos; texto verde normal usa #0E7A65 (5.26:1). Botão primário navy: 12.50:1.</p>
+
+    <h3 style="margin-bottom:24px">Paleta</h3>
+    <div class="swatch-grid" style="margin-bottom:64px">
+      <div class="swatch"><div class="chip" style="background:#0F3460"></div><div class="meta"><strong>Primary · Navy</strong><code>#0F3460</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#16A085"></div><div class="meta"><strong>Secondary · Verde</strong><code>#16A085</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#0E7A65"></div><div class="meta"><strong>Verde texto-seguro</strong><code>#0E7A65</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#F6F9FC;border-bottom:1px solid #E3E8EF"></div><div class="meta"><strong>Surface alt</strong><code>#F6F9FC</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#0F1F35"></div><div class="meta"><strong>Text primary</strong><code>#0F1F35</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#42526E"></div><div class="meta"><strong>Text secondary</strong><code>#42526E</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#64748B"></div><div class="meta"><strong>Text muted</strong><code>#64748B</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#E3E8EF"></div><div class="meta"><strong>Border</strong><code>#E3E8EF</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#B42318"></div><div class="meta"><strong>Error</strong><code>#B42318</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#B45309"></div><div class="meta"><strong>Warning</strong><code>#B45309</code></div></div>
+    </div>
+
+    <h3 style="margin-bottom:24px">Tipografia ao vivo</h3>
+    <div class="type-specimen" style="margin-bottom:64px">
+      <div><p class="cap">H1 · IBM Plex Sans 700 · 56/34px</p><h1>Clareza que gera confiança</h1></div>
+      <div><p class="cap">H2 · IBM Plex Sans 600 · 38/26px</p><h2>Dados como protagonistas</h2></div>
+      <div><p class="cap">H3 · IBM Plex Sans 600 · 24/20px</p><h3>Grids simétricos, espaço máximo</h3></div>
+      <div><p class="cap">Body · Inter 400 · 17/16px (substitui Söhne)</p><p>A infraestrutura de pagamentos que cresce com a sua empresa. Cada frase entrega uma informação verificável ou um próximo passo — números sempre que possível.</p></div>
+      <div><p class="cap">Dados · IBM Plex Mono 500 · tabular-nums</p><p class="mono" style="font-size:32px;color:var(--primary)">R$ 1.234.567,89 · D+1 · 99,99%</p></div>
+    </div>
+
+    <h3 style="margin-bottom:24px">Botões — todos os estados</h3>
+    <div class="states-row">
+      <button class="btn btn-primary">Default</button>
+      <button class="btn btn-primary" style="background:var(--primary-hover)">Hover</button>
+      <button class="btn btn-primary fake-focus">Focus</button>
+      <button class="btn btn-primary" disabled>Disabled</button>
+    </div>
+    <div class="states-row" style="margin-bottom:64px">
+      <button class="btn btn-secondary">Secundário</button>
+      <button class="btn btn-secondary" style="background:var(--surface-alt)">Hover</button>
+      <button class="btn btn-secondary fake-focus">Focus</button>
+      <button class="btn btn-secondary" disabled>Disabled</button>
+      <a class="link-ghost" href="#taxas">Link ghost com seta <span aria-hidden="true">→</span></a>
+    </div>
+
+    <h3 style="margin-bottom:24px">Badges</h3>
+    <div class="states-row" style="margin-bottom:64px">
+      <span class="badge">Conformidade PCI-DSS</span>
+      <span class="badge green">✓ LGPD</span>
+      <span class="badge">Integração: ativa</span>
+    </div>
+
+    <h3 style="margin-bottom:24px">Animações do DS (hover nos cards, reveal ao rolar)</h3>
+    <div class="demo-anim-box">
+      <div class="card reveal"><p class="cap mono" style="font-size:12px;color:var(--text-3)">card-lift · 200ms</p><p>Passe o mouse: elevação de −2px com sombra fria.</p></div>
+      <div class="card reveal d1"><p class="cap mono" style="font-size:12px;color:var(--text-3)">fade-in-up · 300ms</p><p>Esta caixa entrou com reveal on scroll e stagger de 60ms.</p></div>
+      <div class="card reveal d2"><p class="cap mono" style="font-size:12px;color:var(--text-3)">prefers-reduced-motion</p><p>Com movimento reduzido no sistema, tudo aparece imediatamente.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA FINAL ===================== -->
+<section class="cta-final" aria-labelledby="cta-title">
+  <div class="container inner">
+    <h2 id="cta-title">Pronto para simplificar sua operação?</h2>
+    <p>Integração em horas, repasse em D+1 e um especialista dedicado no primeiro mês.</p>
+    <a href="#contato" class="btn btn-on-navy btn-lg">Fale com um especialista <span class="arr" aria-hidden="true">→</span></a>
+    <div class="compliance"><span>PCI-DSS Nível 1</span><span>LGPD</span><span>ISO 27001</span><span>Bacen — instituição autorizada</span></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Produto</h4>
+        <ul><li><a href="#solucoes">Recebimentos</a></li><li><a href="#solucoes">Repasses D+1</a></li><li><a href="#solucoes">Painel de dados</a></li><li><a href="#taxas">Taxas e prazos</a></li></ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul><li><a href="#main">Sobre</a></li><li><a href="#main">Carreiras</a></li><li><a href="#main">Imprensa</a></li></ul>
+      </div>
+      <div>
+        <h4>Recursos</h4>
+        <ul><li><a href="#como-funciona">Documentação</a></li><li><a href="#como-funciona">Status da API</a></li><li><a href="#main">Central de ajuda</a></li></ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul><li><a href="#contato">Fale com um especialista</a></li><li><a href="#contato">suporte@exemplo.com.br</a></li><li><a href="#contato">0800 000 0000</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>Axis Pagamentos S.A. · CNPJ 00.000.000/0001-00</span>
+      <span>PCI-DSS · LGPD · ISO 27001</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // navbar border ao rolar
+  var nav = document.getElementById('nav');
+  addEventListener('scroll', function(){ nav.classList.toggle('scrolled', scrollY > 8); }, {passive:true});
+
+  // menu mobile com focus trap simples + Escape
+  var menu = document.getElementById('mobileMenu'),
+      btn = document.getElementById('menuBtn'),
+      closeBtn = document.getElementById('closeBtn');
+  function openMenu(){ menu.classList.add('open'); btn.setAttribute('aria-expanded','true'); closeBtn.focus(); }
+  function closeMenu(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.focus(); }
+  btn.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  menu.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeMenu();
+    if(e.key === 'Tab'){
+      var f = menu.querySelectorAll('a,button');
+      var first = f[0], last = f[f.length-1];
+      if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
+  });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  // reveal on scroll (respeita prefers-reduced-motion)
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduced || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('visible'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); }
+      });
+    }, {threshold:.15});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+</script>
+</body>
+</html>

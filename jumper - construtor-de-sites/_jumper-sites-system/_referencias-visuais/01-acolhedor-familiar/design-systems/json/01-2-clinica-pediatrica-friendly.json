@@ -1,0 +1,573 @@
+{
+  "schema_version": "2.0.0",
+  "design_system_id": "01.2",
+  "design_system_name": "Clínica Pediátrica Friendly",
+  "category": "01 — Acolhedor e Familiar",
+  "subcategory": "Saúde infantil lúdica e tranquilizadora",
+  "role_in_system": "ds-base de personalidade — repertório, nunca molde",
+  "base_inspiration_site": {
+    "name": "Clínicas pediátricas premium internacionais (referência estilística composta)",
+    "url": "https://www.childrenshospital.org / https://www.luriechildrens.org",
+    "location": "Boston e Chicago, EUA",
+    "awards": [
+      "Referência estilística — nenhum prêmio de web design específico foi confirmado em pesquisa; não citar prêmios inventados"
+    ],
+    "why_chosen": "Sites pediátricos premium como Boston Children's Hospital e Lurie Children's equilibram autoridade médica com leveza visual: azuis suaves, ilustração amigável, navegação descomplicada e rostos humanos em destaque. A essência capturada aqui é a redução ativa de ansiedade dos pais — informação clara, tom gentil e confiança construída por depoimentos e equipe visível. Nada do layout foi copiado; apenas o mood de 'hospital que sorri' foi traduzido para um DS autoral com ilustração hand-drawn simulada em SVG."
+  },
+  "colors": {
+    "primary": "#87CEEB",
+    "primary_usage": "Azul-céu é a alma do DS, mas tem contraste de apenas 1.74:1 sobre branco — NUNCA usar para texto ou CTA sobre fundo claro. Usar como: fundos de seção (faixas de céu), blobs decorativos atrás de ilustrações, bordas de avatares, fundos de badges e estados hover suaves. Para ação e texto, usar primary_deep.",
+    "primary_deep": "#1E6E96",
+    "primary_deep_usage": "Azul-profundo derivado do azul-céu (mesmo matiz ~197°, luminosidade reduzida até passar AA). É a cor funcional: botões primários, links, ícones de ação, headings de destaque. Contraste 5.64:1 sobre branco e 5.45:1 sobre surface — AA para texto normal.",
+    "primary_deep_hover": "#17587A",
+    "secondary": "#FFE4B5",
+    "secondary_usage": "Amarelo-manteiga é calor e brincadeira: fundos de cards de depoimento, highlight atrás de palavras-chave no hero (efeito marca-texto), sol e detalhes das ilustrações SVG, fundo de badges de confiança. Contraste 1.23:1 sobre branco — apenas superfície, nunca texto.",
+    "secondary_deep": "#8F6400",
+    "secondary_deep_usage": "Âmbar-profundo derivado do amarelo-manteiga para texto pequeno sobre fundos claros de amarelo (labels de badge, eyebrow text). Contraste 5.26:1 sobre branco.",
+    "surface": "#F7FCFF",
+    "surface_alt": "#EAF6FC",
+    "text_primary": "#1F3B4D",
+    "text_secondary": "#35536A",
+    "text_muted": "#5B7181",
+    "border": "#D2E4EE",
+    "error": "#B3372E",
+    "success": "#1F7A45",
+    "warning": "#8F6400",
+    "neutral_scale": {
+      "50": "#F4F9FC",
+      "100": "#E6F1F7",
+      "200": "#D2E4EE",
+      "300": "#B4CFDD",
+      "400": "#8FB2C4",
+      "500": "#6E93A6",
+      "600": "#557489",
+      "700": "#3F5A6C",
+      "800": "#2C4252",
+      "900": "#1F3B4D"
+    },
+    "contrast_verification": {
+      "primary_on_surface": "1.74:1 (#87CEEB sobre #FFFFFF) — REPROVADO para texto; por isso o azul-céu é rebaixado a cor de superfície/decoração e o primary_deep #1E6E96 assume texto e CTAs",
+      "primary_deep_on_white": "5.64:1 (#1E6E96 sobre #FFFFFF) — AA texto normal ✔",
+      "primary_deep_on_surface": "5.45:1 (#1E6E96 sobre #F7FCFF) — AA texto normal ✔",
+      "white_on_primary_deep": "5.64:1 (#FFFFFF sobre #1E6E96) — AA para texto de botão ✔",
+      "text_primary_on_surface": "11.35:1 (#1F3B4D sobre #F7FCFF) — AAA ✔",
+      "text_primary_on_white": "11.73:1 — AAA ✔",
+      "text_secondary_on_surface": "7.83:1 (#35536A sobre #F7FCFF) — AAA ✔",
+      "text_muted_on_surface": "4.93:1 (#5B7181 sobre #F7FCFF) — AA texto normal ✔",
+      "secondary_on_surface": "1.23:1 (#FFE4B5) — apenas superfície decorativa, nunca texto",
+      "secondary_deep_on_white": "5.26:1 (#8F6400 sobre #FFFFFF) — AA ✔",
+      "error_on_white": "6.00:1 (#B3372E) — AA ✔",
+      "success_on_white": "5.35:1 (#1F7A45) — AA ✔",
+      "text_primary_on_primary": "6.73:1 (#1F3B4D sobre #87CEEB) — AA ✔ (texto escuro sobre faixas de azul-céu)",
+      "text_primary_on_secondary": "9.50:1 (#1F3B4D sobre #FFE4B5) — AAA ✔",
+      "notes": "Ajuste documentado: o brief pedia #87CEEB como primária, mas ela falha WCAG sobre claros (1.74:1). Mantivemos o azul-céu como identidade visual dominante em superfícies e derivamos #1E6E96 (mesmo matiz, mais escuro) como cor funcional de CTAs, links e ícones. Todas as razões calculadas com luminância relativa WCAG 2.1."
+    }
+  },
+  "typography": {
+    "heading_font": "Nunito",
+    "heading_font_source": "Google Fonts",
+    "heading_font_fallback": "'Nunito', 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif",
+    "heading_weights": [700, 800],
+    "body_font": "Karla",
+    "body_font_source": "Google Fonts",
+    "body_font_fallback": "'Karla', 'Helvetica Neue', Arial, sans-serif",
+    "body_weights": [400, 500, 700],
+    "mono_font": "não aplicável neste DS",
+    "base_size": "16px",
+    "font_pairing_rationale": "Nunito tem terminais totalmente arredondados — a fonte 'de pelúcia' entre as sans do Google Fonts, perfeita para reduzir ansiedade sem parecer infantil demais. Karla, com sua largura generosa e leve irregularidade humanista, mantém o corpo de texto caloroso e altamente legível para pais lendo no celular na sala de espera.",
+    "scales": {
+      "mobile": {
+        "h1": { "size": "34px", "line_height": "1.15", "weight": 800, "letter_spacing": "-0.01em", "font": "Nunito" },
+        "h2": { "size": "26px", "line_height": "1.2", "weight": 800, "letter_spacing": "-0.005em", "font": "Nunito" },
+        "h3": { "size": "20px", "line_height": "1.3", "weight": 700, "letter_spacing": "0", "font": "Nunito" },
+        "body": { "size": "16px", "line_height": "1.65", "weight": 400, "letter_spacing": "0", "font": "Karla" },
+        "small": { "size": "14px", "line_height": "1.5", "weight": 400, "letter_spacing": "0.01em", "font": "Karla" },
+        "eyebrow": { "size": "13px", "line_height": "1.4", "weight": 700, "letter_spacing": "0.12em", "transform": "uppercase", "font": "Karla" }
+      },
+      "desktop": {
+        "h1": { "size": "56px", "line_height": "1.1", "weight": 800, "letter_spacing": "-0.015em", "font": "Nunito" },
+        "h2": { "size": "40px", "line_height": "1.15", "weight": 800, "letter_spacing": "-0.01em", "font": "Nunito" },
+        "h3": { "size": "26px", "line_height": "1.25", "weight": 700, "letter_spacing": "0", "font": "Nunito" },
+        "body": { "size": "18px", "line_height": "1.7", "weight": 400, "letter_spacing": "0", "font": "Karla" },
+        "small": { "size": "15px", "line_height": "1.5", "weight": 400, "letter_spacing": "0.01em", "font": "Karla" },
+        "eyebrow": { "size": "14px", "line_height": "1.4", "weight": 700, "letter_spacing": "0.14em", "transform": "uppercase", "font": "Karla" }
+      }
+    }
+  },
+  "css_custom_properties": {
+    "description": "Tokens prontos para colar no :root do projeto — derivados fielmente de colors, typography, spacing, borders, shadows e motion deste DS",
+    "tokens": {
+      "--color-primary": "#87CEEB",
+      "--color-primary-deep": "#1E6E96",
+      "--color-primary-deep-hover": "#17587A",
+      "--color-secondary": "#FFE4B5",
+      "--color-secondary-deep": "#8F6400",
+      "--color-surface": "#F7FCFF",
+      "--color-surface-alt": "#EAF6FC",
+      "--color-text": "#1F3B4D",
+      "--color-text-secondary": "#35536A",
+      "--color-text-muted": "#5B7181",
+      "--color-border": "#D2E4EE",
+      "--color-error": "#B3372E",
+      "--color-success": "#1F7A45",
+      "--color-warning": "#8F6400",
+      "--color-neutral-50": "#F4F9FC",
+      "--color-neutral-100": "#E6F1F7",
+      "--color-neutral-200": "#D2E4EE",
+      "--color-neutral-300": "#B4CFDD",
+      "--color-neutral-400": "#8FB2C4",
+      "--color-neutral-500": "#6E93A6",
+      "--color-neutral-600": "#557489",
+      "--color-neutral-700": "#3F5A6C",
+      "--color-neutral-800": "#2C4252",
+      "--color-neutral-900": "#1F3B4D",
+      "--font-heading": "'Nunito', 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif",
+      "--font-body": "'Karla', 'Helvetica Neue', Arial, sans-serif",
+      "--text-h1": "clamp(2.125rem, 1.5rem + 2.6vw, 3.5rem)",
+      "--text-h2": "clamp(1.625rem, 1.3rem + 1.5vw, 2.5rem)",
+      "--text-h3": "clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem)",
+      "--text-body": "clamp(1rem, 0.96rem + 0.18vw, 1.125rem)",
+      "--text-small": "0.9375rem",
+      "--text-eyebrow": "0.8125rem",
+      "--space-xs": "4px",
+      "--space-sm": "8px",
+      "--space-md": "16px",
+      "--space-lg": "24px",
+      "--space-xl": "32px",
+      "--space-xxl": "48px",
+      "--space-xxxl": "72px",
+      "--space-xxxxl": "104px",
+      "--section-gap": "clamp(56px, 5vw + 32px, 104px)",
+      "--radius-none": "0",
+      "--radius-sm": "10px",
+      "--radius-md": "16px",
+      "--radius-lg": "24px",
+      "--radius-xl": "32px",
+      "--radius-full": "999px",
+      "--shadow-sm": "0 2px 6px rgba(31, 59, 77, 0.06)",
+      "--shadow-md": "0 6px 18px rgba(31, 59, 77, 0.08)",
+      "--shadow-lg": "0 14px 34px rgba(31, 59, 77, 0.11)",
+      "--focus-ring": "0 0 0 4px rgba(30, 110, 150, 0.28)",
+      "--duration-fast": "300ms",
+      "--duration-base": "400ms",
+      "--duration-slow": "500ms",
+      "--duration-ambient": "6s",
+      "--ease-gentle-bounce": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "--ease-soft-out": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      "--ease-float": "ease-in-out",
+      "--container-max": "1160px"
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "xxl": "48px",
+      "xxxl": "72px",
+      "xxxxl": "104px"
+    },
+    "section_spacing": {
+      "mobile": "56px",
+      "tablet": "80px",
+      "desktop": "104px"
+    },
+    "padding": {
+      "container_mobile": "20px",
+      "container_tablet": "32px",
+      "container_desktop": "48px",
+      "card_mobile": "20px",
+      "card_desktop": "28px",
+      "button_horizontal": "28px",
+      "button_vertical": "14px"
+    },
+    "container_max_width": "1160px",
+    "gutters": "24px (mobile) / 32px (desktop) entre colunas de grid"
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "10px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "full": "999px"
+    },
+    "radius_usage": {
+      "buttons": "full (999px) — pílulas, o formato mais amigável possível",
+      "cards": "lg (24px) — cantos generosamente arredondados, sensação de brinquedo macio",
+      "inputs": "md (16px)",
+      "images": "xl (32px) com um canto assimétrico opcional (border-radius: 32px 32px 32px 8px) para toque hand-drawn",
+      "containers": "lg (24px) para faixas destacadas dentro de seções",
+      "badges": "full (999px)"
+    },
+    "stroke": {
+      "thin": "1.5px solid #D2E4EE",
+      "medium": "2.5px solid #87CEEB — bordas 'desenhadas', levemente mais grossas que o comum, reforçam o mood ilustrado"
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "sm": "0 2px 6px rgba(31, 59, 77, 0.06)",
+    "md": "0 6px 18px rgba(31, 59, 77, 0.08)",
+    "lg": "0 14px 34px rgba(31, 59, 77, 0.11)",
+    "focus_ring": "0 0 0 4px rgba(30, 110, 150, 0.28)",
+    "shadow_usage": "Sombras sempre azuladas (base #1F3B4D com alfa baixo), nunca preto puro — mantêm o clima aéreo de céu. Cards usam md em repouso e lg no hover, acompanhando o micro-bounce. Nada de sombras duras ou deslocadas: profundidade suave, como nuvem."
+  },
+  "motion": {
+    "durations": {
+      "fast": "300ms",
+      "base": "400ms",
+      "slow": "500ms",
+      "ambient": "6s (animações de flutuação contínuas, decorativas)"
+    },
+    "easings": {
+      "gentle_bounce": "cubic-bezier(0.34, 1.56, 0.64, 1) — overshoot suave, o 'quique de bola macia' do DS",
+      "soft_out": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      "float": "ease-in-out (para loops ambientais)"
+    },
+    "animations": [
+      { "name": "fade-rise", "duration": "500ms", "easing": "soft_out", "trigger": "entrada de seções ao rolar (IntersectionObserver), translateY(24px)→0 + opacity" },
+      { "name": "gentle-bounce-in", "duration": "500ms", "easing": "gentle_bounce", "trigger": "entrada de cards e badges, scale(0.92)→1 com leve overshoot" },
+      { "name": "balloon-float", "duration": "6s loop", "easing": "float", "trigger": "elementos decorativos do hero (nuvens, balão) flutuam ±10px verticalmente, contínuo" },
+      { "name": "wiggle-hover", "duration": "400ms", "easing": "gentle_bounce", "trigger": "hover em ícones de serviço: rotate(-3deg)→rotate(2deg)→0, uma vez só, nunca em loop" },
+      { "name": "button-pop", "duration": "300ms", "easing": "gentle_bounce", "trigger": "hover/focus em botões: translateY(-2px) + scale(1.03) + sombra md→lg" },
+      { "name": "avatar-hello", "duration": "400ms", "easing": "gentle_bounce", "trigger": "hover em card de equipe: avatar sobe 4px e a borda azul-céu engrossa" }
+    ],
+    "prefers_reduced_motion": true,
+    "motion_philosophy": "Brincalhão mas nunca frenético: uma criança calma, não uma criança com açúcar. Durações 300–500ms, overshoots discretos (≤4% de scale), loops apenas em decoração de fundo e desligados via prefers-reduced-motion."
+  },
+  "components": {
+    "buttons": {
+      "primary": {
+        "background": "#1E6E96",
+        "color": "#FFFFFF",
+        "border": "none",
+        "radius": "999px",
+        "padding": "14px 28px",
+        "font": "Nunito 700, 16px",
+        "shadow": "0 6px 18px rgba(30, 110, 150, 0.25)",
+        "hover": "background #17587A, translateY(-2px) scale(1.03), sombra lg — button-pop 300ms",
+        "focus": "outline visível: box-shadow 0 0 0 4px rgba(30,110,150,0.28)",
+        "active": "scale(0.98), sombra sm",
+        "disabled": "background #B4CFDD, color #F7FCFF, sem sombra, cursor not-allowed"
+      },
+      "secondary": {
+        "background": "transparent",
+        "color": "#1E6E96",
+        "border": "2.5px solid #87CEEB",
+        "radius": "999px",
+        "padding": "12px 26px",
+        "hover": "background #EAF6FC, border-color #1E6E96",
+        "focus": "mesmo focus ring do primário",
+        "disabled": "border #D2E4EE, color #8FB2C4"
+      },
+      "ghost": {
+        "background": "transparent",
+        "color": "#1E6E96",
+        "underline": "decoração wavy opcional (text-decoration: underline wavy #87CEEB 2px) para o toque hand-drawn",
+        "hover": "color #17587A"
+      },
+      "sizes": {
+        "sm": "10px 20px / 14px",
+        "md": "14px 28px / 16px",
+        "lg": "18px 36px / 18px — usado no CTA principal do hero"
+      }
+    },
+    "cards": {
+      "service_card": {
+        "background": "#FFFFFF",
+        "border": "1.5px solid #D2E4EE",
+        "radius": "24px",
+        "padding": "28px",
+        "shadow": "md",
+        "icon": "círculo 64px com fundo #EAF6FC ou #FFF4DE alternado, contendo ícone SVG traço 2.5px na cor #1E6E96",
+        "hover": "translateY(-4px), sombra lg, ícone faz wiggle-hover"
+      },
+      "team_card": {
+        "background": "#F7FCFF",
+        "radius": "24px",
+        "avatar": "círculo 96px, SVG ilustrado ou foto, borda 3px #87CEEB",
+        "content": "nome em Nunito 700, especialidade em Karla #5B7181, CRM visível para confiança",
+        "hover": "avatar-hello: avatar translateY(-4px), borda vira #1E6E96"
+      },
+      "testimonial_card": {
+        "background": "#FFF4DE (derivado clareado do amarelo-manteiga) ou #FFE4B5 no destaque",
+        "radius": "24px 24px 24px 8px — canto assimétrico como balão de fala",
+        "quote_mark": "aspas grandes em Nunito 800 #1E6E96, 48px",
+        "author": "avatar circular 44px + nome + 'mãe do/da [nome]' em #5B7181",
+        "stars": "5 estrelas SVG #8F6400"
+      }
+    },
+    "inputs": {
+      "default": {
+        "background": "#FFFFFF",
+        "border": "1.5px solid #D2E4EE",
+        "radius": "16px",
+        "padding": "14px 18px",
+        "font": "Karla 16px",
+        "placeholder": "#5B7181",
+        "label": "Karla 700, 14px, #35536A, acima do campo"
+      },
+      "focus": "border 2px #1E6E96 + focus ring suave, transição 300ms",
+      "error": "border 2px #B3372E + mensagem 14px #B3372E com ícone, aria-describedby ligado",
+      "success": "border 2px #1F7A45",
+      "disabled": "background #F4F9FC, color #8FB2C4"
+    },
+    "hero": {
+      "layout": "split 55/45: texto à esquerda (eyebrow + H1 com palavra destacada por marca-texto amarelo + parágrafo + 2 CTAs + linha de badges de confiança), ilustração SVG hand-drawn à direita (cena: criança + pediatra, nuvens flutuando em balloon-float, sol amarelo-manteiga)",
+      "background": "gradiente vertical #F7FCFF → #EAF6FC com nuvens SVG decorativas; curva ondulada (wave divider SVG) na base fazendo a transição para a seção seguinte",
+      "trust_badges_inline": "3 mini-badges sob os CTAs: '+10 anos cuidando de famílias', 'Atendimento humanizado', 'Convênios aceitos'",
+      "mobile": "empilha: ilustração reduzida acima do texto, CTAs full-width"
+    },
+    "navigation": {
+      "style": "topbar clara #F7FCFF com blur leve ao rolar, logo à esquerda, links Karla 500 no centro, CTA-pílula 'Agendar consulta' à direita",
+      "height": "72px desktop / 60px mobile",
+      "links_hover": "underline wavy #87CEEB 2px, 300ms",
+      "mobile": "menu hambúrguer (área de toque 44px) abrindo drawer com links grandes e CTA no rodapé do drawer",
+      "active_link": "cor #1E6E96 + underline wavy persistente"
+    },
+    "footer": {
+      "background": "#1F3B4D (navy profundo — o 'céu à noite' do DS)",
+      "text": "#E6F1F7, links com hover #87CEEB",
+      "structure": "4 colunas desktop (clínica + contato + horários + convênios/social), empilhadas no mobile",
+      "detail": "onda SVG invertida no topo do footer + estrelinhas SVG decorativas discretas",
+      "legal": "linha final com CNPJ, responsável técnico e CRM — obrigatório para credibilidade médica"
+    },
+    "testimonials": {
+      "section_layout": "título central + grid 3 colunas (1 no mobile), card do meio em destaque com fundo #FFE4B5 e leve scale(1.02)",
+      "content_pattern": "depoimento curto (máx. 3 linhas) + nome do responsável + vínculo ('mãe do Theo, 4 anos') + estrelas",
+      "trust_note": "microcopy sob o grid: 'Depoimentos reais de famílias atendidas' + nota média"
+    },
+    "badges": {
+      "trust_badge": {
+        "background": "#FFFFFF",
+        "border": "1.5px solid #D2E4EE",
+        "radius": "999px",
+        "padding": "8px 16px",
+        "content": "ícone SVG 20px #1E6E96 + texto Karla 700 14px #35536A",
+        "examples": ["Pediatras com RQE", "Sala de espera lúdica", "Pronto atendimento", "Telemedicina disponível"]
+      },
+      "highlight_badge": "variante com fundo #FFE4B5 e texto #8F6400 para selos quentes ('Mais agendado')"
+    }
+  },
+  "voice_and_tone": {
+    "tone": "Gentil, confiante e empático. Fala com o pai e a mãe de igual para igual, sem jargão médico e sem infantilizar o adulto. Cada frase reduz ansiedade: nomeia o medo e responde com acolhimento e competência. Diminutivos com carinho e moderação ('pequeno' sim, 'dodói' não).",
+    "headline_examples": [
+      "Cuidamos do seu pequeno como se fosse nosso",
+      "Consulta sem choro? Aqui a gente tenta todo dia — e quase sempre consegue",
+      "Pediatria que acolhe a criança e tranquiliza a família",
+      "Do primeiro resfriado à primeira bicicleta: estamos junto em cada fase"
+    ],
+    "cta_examples": [
+      "Agende uma consulta sem estresse",
+      "Conheça nossa equipe",
+      "Falar com a recepção pelo WhatsApp",
+      "Ver convênios aceitos"
+    ],
+    "avoid": [
+      "Terminologia médica sem tradução (usar 'vacina' e explicar, não só 'imunobiológico')",
+      "Tom alarmista ou de urgência artificial ('Não espere ficar grave!')",
+      "Infantilização excessiva do texto — o leitor é o adulto responsável",
+      "Promessas clínicas absolutas ('curamos', 'garantimos') — vetado por ética médica",
+      "Humor que minimize a preocupação dos pais"
+    ]
+  },
+  "composition": {
+    "grid": "12 colunas, max-width 1160px, gutter 32px; seções alternam largura cheia (faixas de cor) e conteúdo contido",
+    "page_flow": [
+      { "section": "navigation", "layout": "topbar fixa clara com CTA-pílula à direita" },
+      { "section": "hero", "layout": "split 55/45 texto + ilustração SVG, wave divider na base, nuvens em float ambiente" },
+      { "section": "trust_strip", "layout": "faixa horizontal de 4 badges de confiança sobre fundo #EAF6FC, logo abaixo do hero — responde a ansiedade antes de vender" },
+      { "section": "services", "layout": "grid 3x2 de cards com ícones ilustrados alternando fundos azul/amarelo nos círculos" },
+      { "section": "team", "layout": "título + grid de 4 team_cards com avatares circulares grandes; humaniza antes do depoimento" },
+      { "section": "testimonials", "layout": "grid 3 colunas, card central destacado em amarelo-manteiga, balões de fala assimétricos" },
+      { "section": "how_it_works", "layout": "3 passos numerados em linha (agendar → chegar → consultar) com linha tracejada hand-drawn conectando" },
+      { "section": "cta_final", "layout": "faixa #87CEEB com texto navy, ilustração de balão e CTA branco de alto contraste" },
+      { "section": "footer", "layout": "navy 4 colunas com onda no topo e dados de responsabilidade médica" }
+    ],
+    "image_treatment": "Ilustração SVG hand-drawn é o tratamento principal (traço 2.5–3px arredondado, paleta do DS, formas orgânicas imperfeitas). Fotos reais, quando existirem, entram em molduras xl com canto assimétrico e leve moldura azul-céu — nunca fotos frias de banco de imagem com jaleco genérico.",
+    "density": "Arejada — uma ideia por seção, no máximo 6 cards por grid",
+    "whitespace": "Generoso: 104px entre seções no desktop; o respiro é parte da mensagem de calma"
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "body_text": "#1F3B4D sobre #F7FCFF = 11.35:1 (AAA)",
+      "cta": "#FFFFFF sobre #1E6E96 = 5.64:1 (AA)",
+      "muted_text": "#5B7181 sobre #F7FCFF = 4.93:1 (AA)",
+      "rule": "azul-céu #87CEEB e amarelo #FFE4B5 são proibidos como cor de texto sobre fundos claros"
+    },
+    "keyboard_navigation": "Ordem de tab lógica (nav → hero CTAs → seções → footer); skip-link 'Pular para o conteúdo' visível ao foco; drawer mobile com focus trap e fechamento por Esc",
+    "focus_states": "Focus ring de 4px rgba(30,110,150,0.28) + borda sólida em todos os interativos; nunca outline:none sem substituto",
+    "alt_text": "Ilustrações decorativas (nuvens, blobs) com aria-hidden='true'; ilustrações informativas (cena da consulta) com alt descritivo; avatares da equipe com alt 'Dra. Fulana, pediatra'",
+    "semantic_html": "header/nav/main/section/article/footer; um h1 único no hero; depoimentos em blockquote com cite; landmarks nomeados via aria-label",
+    "touch_targets": "44px minimum",
+    "motion_safety": "prefers-reduced-motion desativa loops (balloon-float) e converte entradas em fade simples de 150ms",
+    "forms": "Labels sempre visíveis (nunca placeholder como label), erros com aria-describedby e ícone além da cor"
+  },
+  "responsive_behavior": {
+    "breakpoints": {
+      "mobile": "320–479px",
+      "tablet": "480–1023px",
+      "desktop": "1024px+"
+    },
+    "hero": {
+      "mobile": "Coluna única empilhada: ilustração SVG reduzida acima → eyebrow → h1 34px → parágrafo → 2 CTAs full-width → linha de trust badges; nuvens em balloon-float mantidas mas discretas",
+      "tablet": "Coluna única centralizada com ilustração maior; CTAs lado a lado, trust badges em linha única",
+      "desktop": "Split 55/45: texto à esquerda verticalmente centralizado, ilustração SVG à direita com nuvens/balão em balloon-float, wave divider na base"
+    },
+    "services_grid": {
+      "mobile": "1 coluna, cards full-width, gap 24px",
+      "tablet": "2 colunas, gap 24px",
+      "desktop": "3 colunas (grid 3x2), gap 32px"
+    },
+    "team_grid": {
+      "mobile": "1–2 colunas de team_cards, avatares centralizados",
+      "desktop": "4 colunas de team_cards com avatares circulares 96px"
+    },
+    "testimonials": {
+      "mobile": "1 coluna, card central sem destaque de escala (evita scroll horizontal)",
+      "desktop": "3 colunas, card do meio destacado em #FFE4B5 com scale(1.02)"
+    },
+    "navigation": {
+      "mobile_tablet": "Logo + hambúrguer 44px; drawer com links grandes e CTA-pílula no rodapé do drawer",
+      "desktop": "Logo à esquerda + links inline no centro + CTA-pílula 'Agendar consulta' à direita, altura 72px"
+    },
+    "footer": {
+      "mobile": "4 colunas empilhadas, contato/horários primeiro; onda SVG no topo mantida",
+      "desktop": "4 colunas (clínica + contato + horários + convênios/social) navy #1F3B4D"
+    },
+    "touch_adjustments": "Alvos de toque mínimos 44px; hover-lift de cards vira active scale(0.98) no touch; wiggle-hover e avatar-hello não disparam em touch; loops (balloon-float) respeitam prefers-reduced-motion"
+  },
+  "states_matrix": {
+    "description": "Estados obrigatórios a implementar por componente, coerentes com o bloco components",
+    "button_primary": ["default", "hover (background #17587A, button-pop translateY(-2px) scale(1.03), sombra lg)", "focus-visible (focus ring 4px rgba(30,110,150,0.28))", "active (scale(0.98), sombra sm)", "disabled (background #B4CFDD, color #F7FCFF, cursor not-allowed)", "loading (spinner 16px branco + 'Agendando...')"],
+    "button_secondary": ["default (borda 2.5px #87CEEB, texto #1E6E96)", "hover (background #EAF6FC, border-color #1E6E96)", "focus-visible (mesmo focus ring)", "active (scale(0.98))", "disabled (border #D2E4EE, color #8FB2C4)"],
+    "link_nav": ["default", "hover (underline wavy #87CEEB 2px)", "focus-visible (focus ring)", "current (cor #1E6E96 + underline wavy persistente)"],
+    "card_service": ["default (sombra md)", "hover (translateY(-4px), sombra lg, ícone faz wiggle-hover)", "focus-within (focus ring no card)"],
+    "input": ["default", "focus (border 2px #1E6E96 + focus ring, 300ms)", "filled", "error (border 2px #B3372E + mensagem #B3372E com ícone + aria-describedby)", "disabled (background #F4F9FC, color #8FB2C4)", "success (border 2px #1F7A45)"],
+    "nav_header": ["topo (fundo sólido #F7FCFF)", "rolado (blur leve)", "menu mobile aberto (drawer com focus trap e Esc)"]
+  },
+  "photography_direction": {
+    "style": "Ilustração SVG hand-drawn é o tratamento primário (traço arredondado 2.5–3px, formas orgânicas imperfeitas, paleta do DS). Quando houver foto real, é documental afetiva — famílias e equipe em momentos genuínos, nunca stock frio de jaleco",
+    "subjects": [
+      "Cena criança + pediatra em consulta acolhedora (ilustração)",
+      "Nuvens, sol amarelo-manteiga e balão flutuando (decoração de hero)",
+      "Equipe pediátrica sorrindo, rostos humanos e próximos",
+      "Criança tranquila brincando na sala de espera lúdica",
+      "Mãos de adulto e criança, gesto de cuidado em close"
+    ],
+    "light": "Natural, clara e difusa — clima de manhã de céu aberto; nada de luz dura ou clínica fria",
+    "color_grading": "Temperatura levemente quente, saturação natural, azuis suaves e amarelos manteiga em harmonia. Proibido: dessaturação dramática, tons hospitalares esverdeados, HDR",
+    "framing": "Alturas de olhar humanas, contato visual em ao menos uma foto; molduras xl (32px) com um canto assimétrico (32px 32px 32px 8px) e leve moldura azul-céu",
+    "avoid": [
+      "Stock genérico de médicos de jaleco com estetoscópio posado",
+      "Fotos frias/clínicas que aumentam a ansiedade dos pais",
+      "Crianças chorando ou imagens de procedimentos invasivos",
+      "Filtros frios ou preto e branco que roubam o calor da paleta"
+    ],
+    "fallback_sem_foto": "Ilustração SVG inline hand-drawn na paleta do DS: gradiente vertical #F7FCFF → #EAF6FC de fundo, blobs em #87CEEB, sol e nuvens em #FFE4B5/#FFF4DE, traço de contorno #1E6E96 (nunca usar #87CEEB nem #FFE4B5 como texto — apenas superfície/decoração, conforme contrast_verification)"
+  },
+  "iconography": {
+    "style": "Linha arredondada (stroke 2.5px, stroke-linecap/linejoin round), grid 24x24 — traço 'desenhado' propositalmente mais grosso que o comum, coerente com o mood ilustrado hand-drawn",
+    "color": "#1E6E96 sobre claro; #E6F1F7 ou #87CEEB sobre o navy do footer",
+    "recommended_set": "Lucide ou Feather (open source, MIT), ajustando stroke para 2.5px; ícones dentro de círculo 64px com fundo #EAF6FC ou #FFF4DE alternado nos service_cards",
+    "usage": "Ícone sempre acompanhado de texto — nunca como única affordance; wiggle-hover discreto (uma vez, nunca em loop) no hover de ícones de serviço",
+    "decorative_shapes": "Nuvens, sol, balão, estrelinhas e blobs SVG em #87CEEB/#FFE4B5, wave dividers entre seções — todos com aria-hidden='true'"
+  },
+  "do_dont": {
+    "do": [
+      "Usar #1E6E96 (primary_deep) para todo texto, link, ícone de ação e CTA — passa AA (5.64:1 sobre branco)",
+      "Reservar o azul-céu #87CEEB para superfícies, faixas, blobs, bordas de avatar e badges",
+      "Aplicar highlight amarelo-manteiga (efeito marca-texto) atrás de 1 palavra-chave do H1",
+      "Colocar a trust strip imediatamente após o hero — responde à ansiedade antes de vender",
+      "Mostrar equipe com rosto, nome e CRM/RQE antes dos depoimentos",
+      "Usar sombras sempre azuladas (base #1F3B4D), nunca preto puro; cards md em repouso e lg no hover",
+      "Manter overshoots discretos (≤4% de scale) e desligar loops via prefers-reduced-motion",
+      "Botões pílula (999px) em Nunito 700 sentence case"
+    ],
+    "dont": [
+      "Usar #87CEEB (azul-céu) como cor de texto ou CTA sobre fundo claro — falha AA (1.74:1); usar #1E6E96",
+      "Usar #FFE4B5 (amarelo-manteiga) como texto sobre fundos claros — apenas superfície (1.23:1)",
+      "Tom alarmista ou urgência artificial ('Não espere ficar grave!')",
+      "Infantilizar o texto — o leitor é o adulto responsável; nada de 'dodói'",
+      "Prometer resultado clínico absoluto ('curamos', 'garantimos') — vetado por ética médica",
+      "Loops de animação frenéticos ou fora da decoração de fundo",
+      "Misturar mais de 2 famílias tipográficas além de Nunito + Karla",
+      "Encher a grid — máximo 6 cards por seção, uma ideia por seção"
+    ]
+  },
+  "implementation_notes": {
+    "fonts_loading": "<link rel='preconnect' href='https://fonts.googleapis.com'> + <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin> + Nunito:wght@700;800 e Karla:wght@400;500;700 com display=swap",
+    "js_budget": "Zero JS obrigatório além de: menu mobile (toggle + focus trap + Esc) e IntersectionObserver para fade-rise/gentle-bounce-in. Animações em CSS puro (transform/opacity); ilustrações e wave dividers em SVG inline. Zero frameworks.",
+    "seo_local": "Schema.org MedicalClinic/Physician (specialty 'Pediatrics') com horários, geo, telefone e responsável técnico; título com bairro/cidade ('Clínica Pediátrica X — Pediatria na Vila Y')",
+    "whatsapp_cta": "Link wa.me com mensagem pré-preenchida acolhedora ('Oi! Gostaria de agendar uma consulta para meu filho(a)...') — canal de conversão secundário de baixa fricção, coerente com 'Falar com a recepção pelo WhatsApp'",
+    "adaptation_guide": "Ao adaptar para outro segmento infantil (odontopediatria, escola infantil, fono/psicologia infantil): manter paleta azul-céu/amarelo, Nunito+Karla, motion gentle-bounce e a ilustração hand-drawn; trocar o vocabulário do voice_and_tone e a metáfora das ilustrações. A essência é reduzir a ansiedade dos pais, não a especialidade."
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "performance": "LCP < 2.5s, FID < 100ms, CLS < 0.1",
+    "accessibility_wcag_aa": true,
+    "consistency": true,
+    "flexibility": true,
+    "uniqueness_notes": "Radicalmente distinto do DS 01.1 (padaria: terracota + Lora serif + fotografia quente): aqui é azul-céu + Nunito/Karla rounded sans + ilustração SVG hand-drawn, hero split com cena ilustrada, trust strip pós-hero e depoimentos em balão de fala — nenhum hex, fonte ou composição compartilhados."
+  },
+  "metadata": {
+    "created": "2026-07-07",
+    "language": "pt-BR",
+    "status": "ativo",
+    "tags": [
+      "acolhedor",
+      "familiar",
+      "saude-infantil",
+      "pediatria",
+      "azul-ceu",
+      "rounded-sans",
+      "ilustracao-hand-drawn",
+      "svg-inline",
+      "cards-arredondados",
+      "reducao-de-ansiedade",
+      "trust-strip",
+      "whitespace-generoso"
+    ],
+    "related_docs": [
+      "previews/markdown/01-2-clinica-pediatrica-friendly.md",
+      "previews/html/01-2-clinica-pediatrica-friendly.html",
+      "docs/01-2-clinica-pediatrica-friendly/components.md",
+      "docs/01-2-clinica-pediatrica-friendly/animations.css",
+      "docs/01-2-clinica-pediatrica-friendly/accessibility-report.md",
+      "docs/01-2-clinica-pediatrica-friendly/benchmarking.md",
+      "docs/01-2-clinica-pediatrica-friendly/color-variations.md",
+      "docs/01-2-clinica-pediatrica-friendly/responsive-guide.md"
+    ]
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Pediatria e clínicas infantis",
+      "Odontopediatria",
+      "Escola infantil e berçário",
+      "Fonoaudiologia infantil",
+      "Psicologia infantil e terapia ocupacional",
+      "Vacinação e imunização infantil"
+    ],
+    "conversion_factors": [
+      "CTA 'Agendar consulta' persistente na nav e repetido a cada 2 seções",
+      "Trust strip imediatamente após o hero — responde à ansiedade antes do pitch",
+      "Equipe com rosto, nome e CRM antes dos depoimentos (prova de competência → prova social)",
+      "Depoimentos de pais com vínculo explícito ('mãe do Theo, 4 anos') — especificidade gera credibilidade",
+      "WhatsApp como canal de conversão secundário de baixa fricção",
+      "Seção 'como funciona' em 3 passos reduz incerteza do primeiro agendamento"
+    ],
+    "core_web_vitals": {
+      "lcp_strategy": "Hero em SVG inline (sem request de imagem) + fonts com preconnect e font-display:swap — LCP alvo < 2.0s",
+      "cls_strategy": "Dimensões explícitas em todos os SVGs e avatares; animações só via transform/opacity",
+      "inp_strategy": "Zero JS obrigatório além do IntersectionObserver opcional; animações em CSS puro"
+    }
+  }
+}

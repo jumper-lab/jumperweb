@@ -1,0 +1,1056 @@
+{
+  "schema_version": "3.0.0-codex-distinct",
+  "design_system_id": "06.1",
+  "design_system_name": "Monolith Ink Portfolio System",
+  "category": "06 — Moderno e Descolado",
+  "subcategory": "Estúdio de tatuagem / arte",
+  "import_policy": "Pacote separado para validação manual em DS codex. Não mover para o sistema oficial sem revisão humana de originalidade, cobertura e compatibilidade.",
+  "inspiration_site": {
+    "name": "Monolith Studio",
+    "url": "https://monolithstudio.com/",
+    "awards": [
+      "Referencia visual em validacao autoral; premios/reconhecimentos nao devem ser tratados como verificados ate auditoria humana com fontes."
+    ],
+    "design_studio_or_author": "Creative studio identity team",
+    "why_chosen": "Monolith Studio foi usado como repertório para near-black portfolio wall, artist authorship, volumetric mark. O DS traduz a lógica de experiência do site em decisões reutilizáveis sem copiar layout, texto, imagens ou componentes."
+  },
+  "source_site_translation": {
+    "observed_visual_pattern": "near-black portfolio wall, artist authorship, volumetric mark",
+    "site_anatomy_to_cover": {
+      "navigation": "artist index rail with booking rules",
+      "hero": "near-black immersive mark, massive type and rotating artist index",
+      "primary_sections": [
+        "Artist index",
+        "Portfolio wall",
+        "Flash availability",
+        "Booking rules",
+        "Studio ethos",
+        "Aftercare guide",
+        "Consultation form",
+        "Footer as archive stamp"
+      ],
+      "conversion_paths": [
+        "View artists",
+        "Book a session",
+        "contact/support route"
+      ],
+      "footer_role": "Footer as archive stamp"
+    },
+    "what_to_reinterpret": [
+      "Ritmo principal: portfolio monolith wall",
+      "Padrão de navegação: artist index rail with booking rules",
+      "Componentes próprios: artist-index-rail, portfolio-wall-tile, flash-sheet-card, booking-rule-panel, aftercare-accordion, archive-stamp-footer",
+      "Motion signature: slow 3D mark drift, portfolio mask reveal, magnetic artist rail"
+    ],
+    "what_not_to_copy": [
+      "layout exato do site fonte",
+      "copy real do site fonte",
+      "imagens reais do site fonte",
+      "classes CSS do site fonte",
+      "componentes proprietários do site fonte"
+    ],
+    "jumper_usage_boundary": "Usar como repertório visual e estrutural. O cliente final ainda precisa nascer do briefing, do DS final do cliente e do plano autoral."
+  },
+  "uniqueness_fingerprint": {
+    "layout_architecture": "portfolio monolith wall",
+    "navigation_pattern": "artist index rail with booking rules",
+    "hero_architecture": "near-black immersive mark, massive type and rotating artist index",
+    "section_flow": [
+      "Artist index",
+      "Portfolio wall",
+      "Flash availability",
+      "Booking rules",
+      "Studio ethos",
+      "Aftercare guide",
+      "Consultation form",
+      "Footer as archive stamp"
+    ],
+    "component_set": [
+      "artist-index-rail",
+      "portfolio-wall-tile",
+      "flash-sheet-card",
+      "booking-rule-panel",
+      "aftercare-accordion",
+      "archive-stamp-footer"
+    ],
+    "motion_signature": "slow 3D mark drift, portfolio mask reveal, magnetic artist rail",
+    "responsive_strategy": "portfolio wall becomes vertical artist archive",
+    "density": "immersive",
+    "whitespace": "dramatic",
+    "prohibited_similarity_checks": [
+      "não reutilizar hero split automático",
+      "não usar grid genérico de três cards sem função",
+      "não repetir ordem de seções de outro DS",
+      "não usar botão e card com mesmo comportamento dos demais DSs"
+    ]
+  },
+  "colors": {
+    "primary": "#050505",
+    "primary_usage": "ação principal, ponto de marca e destaque de navegação",
+    "secondary": "#E8E3D8",
+    "secondary_usage": "ênfase secundária, estado ativo e composição visual",
+    "surface": "#2E2E2E",
+    "surface_alt": "#171717",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#C8C2B8",
+    "text_muted": "#C8C2B8",
+    "border": "#6C665F",
+    "error": "#B42318",
+    "success": "#027A48",
+    "warning": "#B54708",
+    "neutral_scale": {
+      "50": "#363636",
+      "100": "#2E2E2E",
+      "200": "#171717",
+      "300": "#6C665F",
+      "400": "#C8C2B8",
+      "500": "#E8E3D8",
+      "600": "#050505",
+      "700": "#040404",
+      "800": "#030303",
+      "900": "#FFFFFF"
+    },
+    "contrast_verification": {
+      "text_on_surface": "13.58:1 (AAA)",
+      "cta_on_primary": "20.38:1 (AAA)",
+      "text_on_surface_alt": "17.93:1 (AAA)",
+      "notes": "Pares críticos recalculados. Em implementação real, imagens e overlays precisam passar nova checagem."
+    }
+  },
+  "typography": {
+    "heading_font": "Archivo Black",
+    "body_font": "Inter",
+    "mono_font": "Space Mono",
+    "base_size": "16px",
+    "tone_reason": "Archivo Black sustenta near-black portfolio wall, artist authorship, volumetric mark; Inter mantém leitura funcional.",
+    "scales": {
+      "mobile": {
+        "h1": {
+          "size": "3rem",
+          "weight": "800",
+          "line_height": "0.98"
+        },
+        "h2": {
+          "size": "1.65rem",
+          "weight": "700",
+          "line_height": "1.12"
+        },
+        "h3": {
+          "size": "1.2rem",
+          "weight": "700",
+          "line_height": "1.25"
+        },
+        "body": {
+          "size": "1rem",
+          "weight": "400",
+          "line_height": "1.62"
+        },
+        "small": {
+          "size": "0.875rem",
+          "weight": "500",
+          "line_height": "1.45"
+        }
+      },
+      "desktop": {
+        "h1": {
+          "size": "6.8rem",
+          "weight": "800",
+          "line_height": "0.92"
+        },
+        "h2": {
+          "size": "3.2rem",
+          "weight": "760",
+          "line_height": "1.02"
+        },
+        "h3": {
+          "size": "1.65rem",
+          "weight": "720",
+          "line_height": "1.18"
+        },
+        "body": {
+          "size": "1.08rem",
+          "weight": "400",
+          "line_height": "1.68"
+        },
+        "small": {
+          "size": "0.86rem",
+          "weight": "600",
+          "line_height": "1.42"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "xxl": "48px",
+      "xxxl": "72px",
+      "xxxxl": "96px"
+    },
+    "section_spacing": {
+      "mobile": "48px",
+      "tablet": "68px",
+      "desktop": "92px"
+    },
+    "container_max_width": "1320px"
+  },
+  "borders": {
+    "radius": {
+      "none": "0px",
+      "xs": "2px",
+      "sm": "4px",
+      "md": "0px",
+      "lg": "0px",
+      "xl": "0px",
+      "full": "999px"
+    },
+    "usage": {
+      "buttons": "0px",
+      "cards": "0px",
+      "inputs": "0px",
+      "reason": "Raio definido para combinar com near-black portfolio wall, artist authorship, volumetric mark."
+    }
+  },
+  "shadows": {
+    "xs": "0 1px 2px rgba(0,0,0,.06)",
+    "sm": "0 4px 14px rgba(0,0,0,.08)",
+    "md": "0 14px 42px rgba(0,0,0,.12)",
+    "lg": "0 28px 80px rgba(0,0,0,.18)",
+    "usage": "sombras discretas conforme hierarquia"
+  },
+  "motion": {
+    "durations": {
+      "fast": "220ms",
+      "base": "520ms",
+      "slow": "620ms"
+    },
+    "easings": {
+      "standard": "cubic-bezier(.2,0,.2,1)",
+      "entrance": "cubic-bezier(.16,1,.3,1)",
+      "exit": "cubic-bezier(.7,0,.84,0)"
+    },
+    "animations": [
+      {
+        "name": "slow-3d-mark-drift-portfolio-mask-reveal-magnetic-artist-rail",
+        "duration": "520ms",
+        "easing": "entrance",
+        "trigger": "section enters viewport",
+        "notes": "slow 3D mark drift, portfolio mask reveal, magnetic artist rail"
+      },
+      {
+        "name": "portfolio-monolith-wall-hover",
+        "duration": "180ms",
+        "easing": "standard",
+        "trigger": "interactive hover/focus",
+        "notes": "o hover deve reforçar o componente específico, não apenas subir card"
+      }
+    ],
+    "reduced_motion": "Manter hierarquia com cor, borda e estado ativo; remover parallax, drift e deslocamentos."
+  },
+  "components": {
+    "navigation": {
+      "pattern": "artist index rail with booking rules",
+      "behavior": "context-aware sticky header",
+      "mobile": "portfolio wall becomes vertical artist archive",
+      "states": [
+        "default",
+        "active section",
+        "menu open",
+        "focus visible"
+      ]
+    },
+    "hero": {
+      "height": "88-100vh",
+      "composition": "near-black immersive mark, massive type and rotating artist index",
+      "text_color": "colors.text_primary",
+      "media_rule": "imagem, produto, diagrama ou textura real precisa ter função comercial/narrativa",
+      "forbidden": "hero split automático com texto sempre à esquerda e imagem decorativa sem função"
+    },
+    "buttons": {
+      "primary": {
+        "bg": "colors.primary",
+        "text": "#FFFFFF",
+        "padding": "14px 24px",
+        "border_radius": "borders.radius.md",
+        "hover": "contextual state tied to DS motion",
+        "focus": "2px outline colors.secondary offset 3px"
+      },
+      "secondary": {
+        "bg": "transparent",
+        "text": "colors.text_primary",
+        "border": "1px colors.border",
+        "padding": "12px 20px",
+        "hover": "surface_alt + active border"
+      },
+      "ghost": {
+        "bg": "transparent",
+        "text": "colors.text_primary",
+        "border": "none",
+        "hover": "underline or active rail marker"
+      }
+    },
+    "unique_components": [
+      {
+        "name": "artist-index-rail",
+        "role": "Artist index",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar artist-index-rail para Monolith Ink Portfolio System; não substituir por card genérico."
+      },
+      {
+        "name": "portfolio-wall-tile",
+        "role": "Portfolio wall",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar portfolio-wall-tile para Monolith Ink Portfolio System; não substituir por card genérico."
+      },
+      {
+        "name": "flash-sheet-card",
+        "role": "Flash availability",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar flash-sheet-card para Monolith Ink Portfolio System; não substituir por card genérico."
+      },
+      {
+        "name": "booking-rule-panel",
+        "role": "Booking rules",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar booking-rule-panel para Monolith Ink Portfolio System; não substituir por card genérico."
+      },
+      {
+        "name": "aftercare-accordion",
+        "role": "Studio ethos",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar aftercare-accordion para Monolith Ink Portfolio System; não substituir por card genérico."
+      },
+      {
+        "name": "archive-stamp-footer",
+        "role": "Aftercare guide",
+        "states": [
+          "default",
+          "hover",
+          "focus",
+          "empty/loading when applicable"
+        ],
+        "implementation_note": "Criar archive-stamp-footer para Monolith Ink Portfolio System; não substituir por card genérico."
+      }
+    ],
+    "forms": {
+      "style": "contextual short form",
+      "fields": [
+        "name/email or intent",
+        "business-specific selector",
+        "message/notes"
+      ],
+      "error_state": "inline, explicit and high contrast",
+      "success_state": "keeps user in same context"
+    },
+    "footer": {
+      "role": "Footer as archive stamp",
+      "layout": "archive/coordinate footer",
+      "must_include": [
+        "primary action",
+        "contact path",
+        "navigation recap",
+        "legal/accessibility links"
+      ]
+    }
+  },
+  "composition": {
+    "grid_system": "portfolio monolith wall",
+    "max_width": "1320px",
+    "density": "immersive",
+    "whitespace": "dramatic",
+    "image_treatment": "Imagens devem sustentar near-black portfolio wall, artist authorship, volumetric mark.",
+    "page_flow": [
+      {
+        "order": 1,
+        "section": "Artist index",
+        "layout": "near-black immersive mark, massive type and rotating artist index",
+        "component": "artist-index-rail"
+      },
+      {
+        "order": 2,
+        "section": "Portfolio wall",
+        "layout": "asymmetric editorial block",
+        "component": "portfolio-wall-tile"
+      },
+      {
+        "order": 3,
+        "section": "Flash availability",
+        "layout": "functional conversion module",
+        "component": "flash-sheet-card"
+      },
+      {
+        "order": 4,
+        "section": "Booking rules",
+        "layout": "wide proof band",
+        "component": "booking-rule-panel"
+      },
+      {
+        "order": 5,
+        "section": "Studio ethos",
+        "layout": "asymmetric editorial block",
+        "component": "aftercare-accordion"
+      },
+      {
+        "order": 6,
+        "section": "Aftercare guide",
+        "layout": "functional conversion module",
+        "component": "archive-stamp-footer"
+      },
+      {
+        "order": 7,
+        "section": "Consultation form",
+        "layout": "wide proof band",
+        "component": "artist-index-rail"
+      },
+      {
+        "order": 8,
+        "section": "Footer as archive stamp",
+        "layout": "asymmetric editorial block",
+        "component": "portfolio-wall-tile"
+      }
+    ],
+    "structural_variations": [
+      {
+        "name": "baseline source-informed",
+        "description": "portfolio monolith wall"
+      },
+      {
+        "name": "conversion-heavy variant",
+        "description": "Antecipar View artists sem trocar a anatomia portfolio monolith wall."
+      },
+      {
+        "name": "editorial-deep variant",
+        "description": "Aumentar storytelling de Portfolio wall mantendo componentes artist-index-rail e portfolio-wall-tile."
+      }
+    ],
+    "selected_variation": "baseline source-informed with business-specific conversion accents"
+  },
+  "voice_and_tone": {
+    "tone": "serious, art-forward and uncompromising",
+    "examples_headlines": [
+      "near-black immersive mark, massive type and rotating artist index",
+      "Artist index",
+      "near-black portfolio wall, artist authorship, volumetric mark"
+    ],
+    "examples_cta": [
+      "View artists",
+      "Book a session"
+    ],
+    "avoid": [
+      "avoid nightclub neon that cheapens tattoo authorship",
+      "claims without visible proof",
+      "generic template language"
+    ]
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": {
+      "text_on_surface": "13.58:1 (AAA)",
+      "cta_on_primary": "20.38:1 (AAA)"
+    },
+    "keyboard_navigation": "ordem lógica; estados ativos e foco visível em navegação, cards e formulários",
+    "focus_states": "2px outline com offset 3px usando secondary ou primary conforme contraste",
+    "alt_text": "Descrever função da imagem no padrão near-black portfolio wall, artist authorship, volumetric mark, não apenas aparência.",
+    "touch_targets": "44px mínimo; ações principais não dependem de hover"
+  },
+  "benchmarking": {
+    "ideal_for": [
+      "Estúdio de tatuagem / arte",
+      "culture-forward clients choosing artists by style"
+    ],
+    "conversion_factors": [
+      "View artists",
+      "Book a session",
+      "Flash availability",
+      "artist-index-rail"
+    ],
+    "core_web_vitals": {
+      "lcp_target": "< 2.5s",
+      "inp_target": "< 200ms",
+      "cls_target": "< 0.1"
+    },
+    "seo_schema": [
+      "Organization",
+      "LocalBusiness/Product/Service conforme cliente",
+      "BreadcrumbList",
+      "FAQPage quando houver FAQ"
+    ]
+  },
+  "quality_checklist": {
+    "visual_uniqueness": true,
+    "functional_tested": true,
+    "mobile_responsive": true,
+    "accessibility_wcag_aa": true,
+    "source_site_covered": true,
+    "clean_room_ready": true,
+    "not_a_template_skin": true
+  },
+  "implementation_depth_checks": [
+    {
+      "check": 1,
+      "area": "nav",
+      "rule": "Validar Monolith Ink Portfolio System: nav deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra artist-index-rail conectado à seção Artist index.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 2,
+      "area": "hero",
+      "rule": "Validar Monolith Ink Portfolio System: hero deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra portfolio-wall-tile conectado à seção Portfolio wall.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 3,
+      "area": "sections",
+      "rule": "Validar Monolith Ink Portfolio System: sections deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra flash-sheet-card conectado à seção Flash availability.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 4,
+      "area": "components",
+      "rule": "Validar Monolith Ink Portfolio System: components deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra booking-rule-panel conectado à seção Booking rules.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 5,
+      "area": "forms",
+      "rule": "Validar Monolith Ink Portfolio System: forms deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra aftercare-accordion conectado à seção Studio ethos.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 6,
+      "area": "motion",
+      "rule": "Validar Monolith Ink Portfolio System: motion deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra archive-stamp-footer conectado à seção Aftercare guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 7,
+      "area": "responsive",
+      "rule": "Validar Monolith Ink Portfolio System: responsive deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra artist-index-rail conectado à seção Consultation form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 8,
+      "area": "accessibility",
+      "rule": "Validar Monolith Ink Portfolio System: accessibility deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra portfolio-wall-tile conectado à seção Footer as archive stamp.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 9,
+      "area": "conversion",
+      "rule": "Validar Monolith Ink Portfolio System: conversion deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra flash-sheet-card conectado à seção Artist index.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 10,
+      "area": "nav",
+      "rule": "Validar Monolith Ink Portfolio System: nav deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra booking-rule-panel conectado à seção Portfolio wall.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 11,
+      "area": "hero",
+      "rule": "Validar Monolith Ink Portfolio System: hero deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra aftercare-accordion conectado à seção Flash availability.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 12,
+      "area": "sections",
+      "rule": "Validar Monolith Ink Portfolio System: sections deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra archive-stamp-footer conectado à seção Booking rules.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 13,
+      "area": "components",
+      "rule": "Validar Monolith Ink Portfolio System: components deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra artist-index-rail conectado à seção Studio ethos.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 14,
+      "area": "forms",
+      "rule": "Validar Monolith Ink Portfolio System: forms deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra portfolio-wall-tile conectado à seção Aftercare guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 15,
+      "area": "motion",
+      "rule": "Validar Monolith Ink Portfolio System: motion deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra flash-sheet-card conectado à seção Consultation form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 16,
+      "area": "responsive",
+      "rule": "Validar Monolith Ink Portfolio System: responsive deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra booking-rule-panel conectado à seção Footer as archive stamp.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 17,
+      "area": "accessibility",
+      "rule": "Validar Monolith Ink Portfolio System: accessibility deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra aftercare-accordion conectado à seção Artist index.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 18,
+      "area": "conversion",
+      "rule": "Validar Monolith Ink Portfolio System: conversion deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra archive-stamp-footer conectado à seção Portfolio wall.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 19,
+      "area": "nav",
+      "rule": "Validar Monolith Ink Portfolio System: nav deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra artist-index-rail conectado à seção Flash availability.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 20,
+      "area": "hero",
+      "rule": "Validar Monolith Ink Portfolio System: hero deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra portfolio-wall-tile conectado à seção Booking rules.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 21,
+      "area": "sections",
+      "rule": "Validar Monolith Ink Portfolio System: sections deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra flash-sheet-card conectado à seção Studio ethos.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 22,
+      "area": "components",
+      "rule": "Validar Monolith Ink Portfolio System: components deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra booking-rule-panel conectado à seção Aftercare guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 23,
+      "area": "forms",
+      "rule": "Validar Monolith Ink Portfolio System: forms deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra aftercare-accordion conectado à seção Consultation form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 24,
+      "area": "motion",
+      "rule": "Validar Monolith Ink Portfolio System: motion deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra archive-stamp-footer conectado à seção Footer as archive stamp.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 25,
+      "area": "responsive",
+      "rule": "Validar Monolith Ink Portfolio System: responsive deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra artist-index-rail conectado à seção Artist index.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 26,
+      "area": "accessibility",
+      "rule": "Validar Monolith Ink Portfolio System: accessibility deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra portfolio-wall-tile conectado à seção Portfolio wall.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 27,
+      "area": "conversion",
+      "rule": "Validar Monolith Ink Portfolio System: conversion deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra flash-sheet-card conectado à seção Flash availability.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 28,
+      "area": "nav",
+      "rule": "Validar Monolith Ink Portfolio System: nav deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra booking-rule-panel conectado à seção Booking rules.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 29,
+      "area": "hero",
+      "rule": "Validar Monolith Ink Portfolio System: hero deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra aftercare-accordion conectado à seção Studio ethos.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 30,
+      "area": "sections",
+      "rule": "Validar Monolith Ink Portfolio System: sections deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra archive-stamp-footer conectado à seção Aftercare guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 31,
+      "area": "components",
+      "rule": "Validar Monolith Ink Portfolio System: components deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra artist-index-rail conectado à seção Consultation form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 32,
+      "area": "forms",
+      "rule": "Validar Monolith Ink Portfolio System: forms deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra portfolio-wall-tile conectado à seção Footer as archive stamp.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 33,
+      "area": "motion",
+      "rule": "Validar Monolith Ink Portfolio System: motion deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra flash-sheet-card conectado à seção Artist index.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 34,
+      "area": "responsive",
+      "rule": "Validar Monolith Ink Portfolio System: responsive deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra booking-rule-panel conectado à seção Portfolio wall.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 35,
+      "area": "accessibility",
+      "rule": "Validar Monolith Ink Portfolio System: accessibility deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra aftercare-accordion conectado à seção Flash availability.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 36,
+      "area": "conversion",
+      "rule": "Validar Monolith Ink Portfolio System: conversion deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra archive-stamp-footer conectado à seção Booking rules.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 37,
+      "area": "nav",
+      "rule": "Validar Monolith Ink Portfolio System: nav deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra artist-index-rail conectado à seção Studio ethos.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 38,
+      "area": "hero",
+      "rule": "Validar Monolith Ink Portfolio System: hero deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra portfolio-wall-tile conectado à seção Aftercare guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 39,
+      "area": "sections",
+      "rule": "Validar Monolith Ink Portfolio System: sections deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra flash-sheet-card conectado à seção Consultation form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 40,
+      "area": "components",
+      "rule": "Validar Monolith Ink Portfolio System: components deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra booking-rule-panel conectado à seção Footer as archive stamp.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 41,
+      "area": "forms",
+      "rule": "Validar Monolith Ink Portfolio System: forms deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra aftercare-accordion conectado à seção Artist index.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 42,
+      "area": "motion",
+      "rule": "Validar Monolith Ink Portfolio System: motion deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra archive-stamp-footer conectado à seção Portfolio wall.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 43,
+      "area": "responsive",
+      "rule": "Validar Monolith Ink Portfolio System: responsive deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra artist-index-rail conectado à seção Flash availability.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 44,
+      "area": "accessibility",
+      "rule": "Validar Monolith Ink Portfolio System: accessibility deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra portfolio-wall-tile conectado à seção Booking rules.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 45,
+      "area": "conversion",
+      "rule": "Validar Monolith Ink Portfolio System: conversion deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra flash-sheet-card conectado à seção Studio ethos.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 46,
+      "area": "nav",
+      "rule": "Validar Monolith Ink Portfolio System: nav deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra booking-rule-panel conectado à seção Aftercare guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 47,
+      "area": "hero",
+      "rule": "Validar Monolith Ink Portfolio System: hero deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra aftercare-accordion conectado à seção Consultation form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 48,
+      "area": "sections",
+      "rule": "Validar Monolith Ink Portfolio System: sections deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra archive-stamp-footer conectado à seção Footer as archive stamp.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 49,
+      "area": "components",
+      "rule": "Validar Monolith Ink Portfolio System: components deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra artist-index-rail conectado à seção Artist index.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 50,
+      "area": "forms",
+      "rule": "Validar Monolith Ink Portfolio System: forms deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra portfolio-wall-tile conectado à seção Portfolio wall.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 51,
+      "area": "motion",
+      "rule": "Validar Monolith Ink Portfolio System: motion deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra flash-sheet-card conectado à seção Flash availability.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 52,
+      "area": "responsive",
+      "rule": "Validar Monolith Ink Portfolio System: responsive deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra booking-rule-panel conectado à seção Booking rules.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 53,
+      "area": "accessibility",
+      "rule": "Validar Monolith Ink Portfolio System: accessibility deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra aftercare-accordion conectado à seção Studio ethos.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 54,
+      "area": "conversion",
+      "rule": "Validar Monolith Ink Portfolio System: conversion deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra archive-stamp-footer conectado à seção Aftercare guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 55,
+      "area": "nav",
+      "rule": "Validar Monolith Ink Portfolio System: nav deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra artist-index-rail conectado à seção Consultation form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 56,
+      "area": "hero",
+      "rule": "Validar Monolith Ink Portfolio System: hero deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra portfolio-wall-tile conectado à seção Footer as archive stamp.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 57,
+      "area": "sections",
+      "rule": "Validar Monolith Ink Portfolio System: sections deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra flash-sheet-card conectado à seção Artist index.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 58,
+      "area": "components",
+      "rule": "Validar Monolith Ink Portfolio System: components deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra booking-rule-panel conectado à seção Portfolio wall.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 59,
+      "area": "forms",
+      "rule": "Validar Monolith Ink Portfolio System: forms deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra aftercare-accordion conectado à seção Flash availability.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 60,
+      "area": "motion",
+      "rule": "Validar Monolith Ink Portfolio System: motion deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra archive-stamp-footer conectado à seção Booking rules.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 61,
+      "area": "responsive",
+      "rule": "Validar Monolith Ink Portfolio System: responsive deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra artist-index-rail conectado à seção Studio ethos.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 62,
+      "area": "accessibility",
+      "rule": "Validar Monolith Ink Portfolio System: accessibility deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra portfolio-wall-tile conectado à seção Aftercare guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 63,
+      "area": "conversion",
+      "rule": "Validar Monolith Ink Portfolio System: conversion deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra flash-sheet-card conectado à seção Consultation form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 64,
+      "area": "nav",
+      "rule": "Validar Monolith Ink Portfolio System: nav deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra booking-rule-panel conectado à seção Footer as archive stamp.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 65,
+      "area": "hero",
+      "rule": "Validar Monolith Ink Portfolio System: hero deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra aftercare-accordion conectado à seção Artist index.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 66,
+      "area": "sections",
+      "rule": "Validar Monolith Ink Portfolio System: sections deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra archive-stamp-footer conectado à seção Portfolio wall.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 67,
+      "area": "components",
+      "rule": "Validar Monolith Ink Portfolio System: components deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra artist-index-rail conectado à seção Flash availability.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 68,
+      "area": "forms",
+      "rule": "Validar Monolith Ink Portfolio System: forms deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra portfolio-wall-tile conectado à seção Booking rules.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 69,
+      "area": "motion",
+      "rule": "Validar Monolith Ink Portfolio System: motion deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra flash-sheet-card conectado à seção Studio ethos.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 70,
+      "area": "responsive",
+      "rule": "Validar Monolith Ink Portfolio System: responsive deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra booking-rule-panel conectado à seção Aftercare guide.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 71,
+      "area": "accessibility",
+      "rule": "Validar Monolith Ink Portfolio System: accessibility deve expressar portfolio monolith wall.",
+      "evidence": "Preview ou implementação mostra aftercare-accordion conectado à seção Consultation form.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    },
+    {
+      "check": 72,
+      "area": "conversion",
+      "rule": "Validar Monolith Ink Portfolio System: conversion deve expressar near-black portfolio wall, artist authorship, volumetric mark.",
+      "evidence": "Preview ou implementação mostra archive-stamp-footer conectado à seção Footer as archive stamp.",
+      "reject_if": "parecer troca de cor sobre estrutura usada em outro DS"
+    }
+  ],
+  "source_verification": {
+    "status": "needs-human-source-verification-before-official-import",
+    "correction_reason": "Removidas formulacoes que pareciam premios/benchmarks comprovados sem evidencia anexada ao pacote.",
+    "source_url": "https://monolithstudio.com/"
+  },
+  "functional_requirements": {
+    "preview_must_include": [
+      "navigation",
+      "hero",
+      "interactive mode selector",
+      "active component state",
+      "real form controls",
+      "aria-live result area",
+      "clickable color tokens",
+      "section coverage",
+      "responsive behavior",
+      "focus-visible states"
+    ],
+    "business_specific_interaction": "Estilo",
+    "expected_result": "Consulta de tattoo atualizada",
+    "failure_fixed": "tattoo sem filtro de artista, flash ou regras de reserva"
+  },
+  "visual_quality_review": {
+    "previous_failure": "Preview visual era superficial e/ou estatico; nao provava funcionalidade do DS.",
+    "current_standard": "Preview deve funcionar como mural de artistas, com controle Estilo, formulario e estado ativo.",
+    "reject_if": [
+      "parecer poster estatico",
+      "nao tiver formulario ou estado ativo",
+      "nao mostrar componentes do segmento",
+      "usar grid generico de cards sem funcao"
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Aurora Pilates">
+  <rect width="64" height="64" rx="18" fill="#1F2A1C"/>
+  <path d="M18 48 32 14l14 34h-7l-2.8-7.4H27.4L24.7 48H18Zm11.4-13h4.8L32 28.8 29.4 35Z" fill="#F4EFE6"/>
+  <path d="M16 52h32" stroke="#C96F3E" stroke-width="3" stroke-linecap="round"/>
+</svg>

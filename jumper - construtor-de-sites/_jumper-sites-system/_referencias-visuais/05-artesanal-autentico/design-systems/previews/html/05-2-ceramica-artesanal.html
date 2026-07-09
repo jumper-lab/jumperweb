@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DS 05.2 — Cerâmica Artesanal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,350;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#9B6B47; --primary-dark:#7A5236; --primary-darker:#6B4730; --primary-light:#C89A76;
+    --secondary:#4A4A48; --smoke:#262523;
+    --surface:#F5F0E8; --surface-alt:#EDE5D8;
+    --text-primary:#2B2A28; --text-secondary:#5C5A55; --text-muted:#6B675D; --text-on-dark:#F5F0E8;
+    --border:#D8CFC0; --error:#8C3B2A; --success:#4E6147; --warning:#7A5A14;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Inter',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+    --organic:58% 42% 55% 45% / 52% 48% 55% 45%;
+    --sh-sm:0 2px 8px rgba(38,37,35,.08); --sh-md:0 8px 24px rgba(38,37,35,.10); --sh-lg:0 16px 48px rgba(38,37,35,.14);
+    --d-instant:120ms; --d-fast:240ms; --d-base:480ms; --d-slow:900ms; --d-reveal:1200ms;
+    --e-standard:cubic-bezier(0.33,1,0.68,1); --e-entrance:cubic-bezier(0.16,1,0.3,1); --e-exit:cubic-bezier(0.7,0,0.84,0); --e-drift:cubic-bezier(0.45,0.05,0.55,0.95);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--surface);color:var(--text-primary);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  @media(pointer:fine){body{cursor:none}}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;font-variation-settings:'opsz' 100}
+  a{color:var(--primary-dark)}
+  img{max-width:100%}
+  .wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.wrap{padding:0 40px}}
+  @media(min-width:1024px){.wrap{padding:0 64px}}
+  .content{max-width:680px}
+  .eyebrow{font-family:var(--sans);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:0.18em;color:var(--primary-dark)}
+  .skip{position:absolute;left:-999px;top:0;background:var(--smoke);color:var(--text-on-dark);padding:12px 20px;z-index:100}
+  .skip:focus{left:8px;top:8px}
+
+  .grain{position:absolute;inset:0;pointer-events:none;opacity:.30;mix-blend-mode:overlay;background-repeat:repeat;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  /* custom cursor */
+  #cur,#cur-ring{position:fixed;top:0;left:0;z-index:200;pointer-events:none;border-radius:999px;transform:translate(-50%,-50%)}
+  #cur{width:8px;height:8px;background:var(--primary)}
+  #cur-ring{width:8px;height:8px;border:1px solid var(--primary);transition:width var(--d-fast) var(--e-standard),height var(--d-fast) var(--e-standard),opacity var(--d-fast);opacity:0;display:grid;place-items:center}
+  #cur-ring.on{width:56px;height:56px;opacity:1}
+  #cur-ring span{font-family:var(--sans);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--primary);opacity:0;transition:opacity var(--d-fast)}
+  #cur-ring.on span{opacity:1}
+  @media(pointer:coarse){#cur,#cur-ring{display:none}}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;transition:background var(--d-fast),box-shadow var(--d-fast),border-color var(--d-fast);border-bottom:1px solid transparent}
+  header.nav.scrolled{background:rgba(245,240,232,.92);backdrop-filter:blur(12px);border-bottom-color:var(--border)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:var(--serif);font-size:26px;color:var(--text-primary);text-decoration:none;font-variation-settings:'opsz' 80}
+  .nav-links{display:none;gap:30px;align-items:center}
+  @media(min-width:900px){.nav-links{display:flex}}
+  .nav-links a{font-family:var(--sans);font-size:13px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary);text-decoration:none;padding:6px 0;position:relative}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--primary);transition:width var(--d-base) var(--e-standard)}
+  .nav-links a:hover::after,.nav-links a:focus-visible::after,.nav-links a.active::after{width:100%}
+  .nav-links a.active::after{width:100%}
+
+  /* buttons — flat, typographic, no radius */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-weight:600;text-transform:uppercase;letter-spacing:0.12em;font-size:14px;
+    padding:14px 32px;border:1px solid transparent;border-radius:0;cursor:pointer;text-decoration:none;min-height:48px;
+    transition:background var(--d-fast) var(--e-standard),color var(--d-fast),transform var(--d-fast),border-color var(--d-fast)}
+  .btn-lg{padding:18px 44px;font-size:15px;min-height:56px}
+  .btn:focus-visible{outline:2px solid var(--primary-dark);outline-offset:3px}
+  .btn-primary{background:var(--primary);color:#fff}
+  .btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px)}
+  .btn-primary:active{background:var(--primary-darker)}
+  .btn-primary:disabled{background:var(--border);color:var(--text-muted);cursor:not-allowed;transform:none}
+  .btn-secondary{background:transparent;color:var(--text-primary);border-color:var(--secondary)}
+  .btn-secondary:hover{background:var(--text-primary);color:var(--surface)}
+  .btn-secondary:disabled{border-color:var(--border);color:var(--text-muted);cursor:not-allowed}
+  .btn-ghost{background:transparent;border:none;color:var(--primary-dark);padding:12px 2px;position:relative;letter-spacing:0.14em}
+  .btn-ghost::after{content:"";position:absolute;left:2px;bottom:8px;height:1px;width:0;background:currentColor;transition:width var(--d-base) var(--e-standard)}
+  .btn-ghost:hover{color:var(--text-primary)}
+  .btn-ghost:hover::after,.btn-ghost:focus-visible::after{width:calc(100% - 4px)}
+  .btn-ondark{background:var(--primary-light);color:var(--smoke);border:none}
+  .btn-ondark:hover{background:var(--surface)}
+
+  /* hero split 5/7 */
+  .hero{position:relative}
+  .hero-grid{display:grid;grid-template-columns:1fr;min-height:auto}
+  @media(min-width:900px){.hero-grid{grid-template-columns:5fr 7fr;min-height:88vh}}
+  .hero-txt{padding:72px 0 64px;display:flex;flex-direction:column;justify-content:center}
+  @media(min-width:900px){.hero-txt{padding-right:56px}}
+  .hero-txt h1{font-size:clamp(40px,2.5vw+28px,72px);font-weight:380;letter-spacing:-0.025em;line-height:1.02;margin:18px 0 22px;font-variation-settings:'opsz' 144}
+  .hero-txt h1 em{font-style:italic}
+  .hero-txt p{color:var(--text-secondary);max-width:42ch;margin-bottom:30px}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .hero-media{position:relative;min-height:52vh;background:linear-gradient(150deg,#3a2d22 0%,#26221d 45%,#6b4a30 120%);overflow:hidden}
+  @media(min-width:900px){.hero-media{min-height:auto}}
+  .vessel{position:absolute;width:min(42%,320px);aspect-ratio:3/4;left:50%;top:52%;transform:translate(-50%,-50%);
+    background:radial-gradient(60% 55% at 40% 35%,#c89a76,#8a5c3c 55%,#4a3120 100%);border-radius:var(--organic);box-shadow:0 30px 70px rgba(0,0,0,.4)}
+
+  /* sections */
+  section.blk{padding:64px 0}
+  @media(min-width:768px){section.blk{padding:96px 0}}
+  @media(min-width:1024px){section.blk{padding:144px 0}}
+  .dark{background:var(--smoke);color:var(--text-on-dark);position:relative;overflow:hidden}
+  .dark h1,.dark h2,.dark h3{color:var(--text-on-dark)}
+  .dark .eyebrow{color:var(--primary-light)}
+
+  /* manifesto */
+  .manifesto{text-align:center}
+  .manifesto p{font-family:var(--serif);font-size:clamp(28px,3vw+12px,48px);font-weight:400;line-height:1.15;max-width:900px;margin:0 auto;letter-spacing:-0.02em}
+  .manifesto em{font-style:italic;color:var(--primary-light)}
+
+  /* magazine grid */
+  .mag{display:grid;grid-template-columns:1fr;gap:40px}
+  @media(min-width:700px){.mag{grid-template-columns:1fr 1fr;gap:40px 40px}}
+  @media(min-width:1024px){.mag{grid-template-columns:repeat(12,1fr);gap:48px 40px;align-items:start}}
+  .piece{position:relative}
+  @media(min-width:1024px){
+    .piece.a{grid-column:1/6}
+    .piece.b{grid-column:7/13;margin-top:80px}
+    .piece.c{grid-column:1/5;margin-top:40px}
+    .piece.d{grid-column:6/13}
+  }
+  .piece-img{position:relative;overflow:hidden;background:linear-gradient(155deg,#4a3120,#26221d 70%)}
+  .piece.a .piece-img{aspect-ratio:4/5;background:linear-gradient(150deg,#5a3d28,#26221d 70%)}
+  .piece.b .piece-img{aspect-ratio:16/10;background:linear-gradient(150deg,#6b4a30,#2f281f 75%)}
+  .piece.c .piece-img{aspect-ratio:1/1;background:radial-gradient(70% 70% at 45% 40%,#c89a76,#5a3d28 60%,#26221d)}
+  .piece.d .piece-img{aspect-ratio:3/4;background:linear-gradient(160deg,#7a5236,#26221d 70%)}
+  .piece-img .zoom{position:absolute;inset:0;transition:transform var(--d-slow) var(--e-standard)}
+  .piece:hover .piece-img .zoom,.piece:focus-within .piece-img .zoom{transform:scale(1.03)}
+  .piece cap,.piece .cap{display:block;transition:transform var(--d-slow) var(--e-standard);padding-top:14px}
+  .piece:hover .cap{transform:translateY(-4px)}
+  .piece .cap h3{font-size:22px;font-variation-settings:'opsz' 40;margin-bottom:4px}
+  .piece .cap .sup{font-size:14px;color:var(--text-muted)}
+  .piece .cap .pr{font-size:13px;color:var(--text-secondary);margin-top:2px}
+  .badge{display:inline-block;border:1px solid var(--primary-dark);color:var(--primary-dark);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;padding:4px 10px;font-weight:600}
+  .badge.sold{border-color:var(--text-muted);color:var(--text-muted)}
+
+  /* process timeline */
+  .proc{display:grid;grid-template-columns:1fr;gap:0}
+  .proc-step{display:grid;grid-template-columns:1fr;gap:16px;padding:40px 0;border-top:1px solid var(--border)}
+  @media(min-width:768px){.proc-step{grid-template-columns:auto 1fr;gap:40px;align-items:baseline}}
+  .proc-step:first-child{border-top:none}
+  .proc-num{font-family:var(--serif);font-style:italic;font-size:clamp(64px,8vw,120px);line-height:.8;color:var(--primary);opacity:.9}
+  .dark .proc-num{color:var(--primary-light)}
+  .proc-step h3{font-size:28px;font-variation-settings:'opsz' 50;margin-bottom:8px}
+  .proc-step p{color:var(--text-secondary);max-width:56ch}
+  .dark .proc-step p{color:#cfc9bd}
+  .dark .proc-step{border-color:rgba(245,240,232,.14)}
+
+  /* atelier */
+  .atelier{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+  @media(min-width:900px){.atelier{grid-template-columns:1fr 1fr}}
+  .atelier-img{aspect-ratio:4/5;background:radial-gradient(70% 60% at 40% 35%,#c89a76,#5a3d28 55%,#26221d);border-radius:var(--organic);position:relative;overflow:hidden}
+
+  /* testimonial */
+  .quote{max-width:780px;margin:0 auto;text-align:center}
+  .quote blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3vw,32px);line-height:1.35;margin-bottom:20px}
+  .quote cite{font-family:var(--sans);font-style:normal;font-size:13px;text-transform:uppercase;letter-spacing:0.16em;color:var(--primary-light)}
+  .tnav{display:flex;gap:12px;justify-content:center;margin-top:26px}
+  .tnav button{width:44px;height:44px;border:1px solid rgba(245,240,232,.3);background:none;color:var(--text-on-dark);cursor:pointer;font-size:16px;border-radius:0}
+  .tnav button:hover{border-color:var(--primary-light)}
+  .tnav button:focus-visible{outline:2px solid var(--primary-light);outline-offset:2px}
+
+  /* visit CTA */
+  .visit{display:grid;grid-template-columns:1fr;gap:32px}
+  @media(min-width:768px){.visit{grid-template-columns:1fr 1fr;gap:64px;align-items:center}}
+  .visit dl{display:grid;grid-template-columns:auto 1fr;gap:8px 24px;font-family:var(--sans)}
+  .visit dt{font-size:12px;text-transform:uppercase;letter-spacing:0.14em;color:var(--text-muted)}
+  .visit dd{color:var(--text-primary)}
+
+  /* editorial inputs */
+  .form{max-width:480px}
+  .field{margin-bottom:28px}
+  .field label{display:block;font-family:var(--sans);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:0.14em;color:var(--text-secondary);margin-bottom:8px}
+  .field input{width:100%;background:transparent;border:none;border-bottom:1px solid var(--secondary);padding:12px 0;font-family:var(--sans);font-size:16px;min-height:48px;color:var(--text-primary)}
+  .field input::placeholder{color:var(--text-muted)}
+  .field input:focus{outline:none;border-bottom:2px solid var(--primary-dark)}
+  .field input:focus+.flabel,.field.focusdemo label{color:var(--primary-dark)}
+  .field.err input{border-bottom:2px solid var(--error)}
+  .field.err .msg{color:var(--error);font-size:13px;margin-top:8px;display:flex;gap:6px;align-items:center}
+  .field.ok input{border-bottom:2px solid var(--success)}
+
+  /* palette / specimen shared */
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:14px;margin-top:24px}
+  .sw{border:1px solid var(--border)}
+  .sw .chip{height:70px}
+  .sw .lab{padding:8px 10px;font-family:var(--sans);font-size:12px}
+  .sw .lab b{display:block;font-size:13px}
+  .sw .hex{color:var(--text-muted);font-variant-numeric:tabular-nums}
+  .spec>*{margin-bottom:12px}
+  .spec .lab{font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted)}
+  .section-label{font-family:var(--sans);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);border-bottom:1px dashed var(--border);padding-bottom:8px;margin-bottom:28px}
+
+  /* footer */
+  footer{background:var(--smoke);color:var(--text-on-dark);padding:96px 0 40px;position:relative;overflow:hidden}
+  .foot-grid{display:grid;grid-template-columns:1fr;gap:40px}
+  @media(min-width:768px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1.3fr}}
+  footer h4{font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:var(--primary-light);margin-bottom:16px}
+  footer a{color:#cfc9bd;text-decoration:none;display:block;padding:5px 0;font-size:15px}
+  footer a:hover{color:var(--text-on-dark)}
+  .manifesto-sign{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3vw,32px);color:var(--primary-light);margin-top:48px;max-width:20ch}
+  .legal{color:rgba(245,240,232,.64);font-size:12px;margin-top:28px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(32px);transition:opacity var(--d-reveal) var(--e-entrance),transform var(--d-reveal) var(--e-entrance)}
+  .reveal.in{opacity:1;transform:none}
+  .clip{clip-path:inset(0 0 100% 0);transition:clip-path var(--d-reveal) var(--e-entrance)}
+  .clip.in{clip-path:inset(0 0 0 0)}
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{animation:none!important}
+    body,body *{cursor:auto!important}
+    #cur,#cur-ring{display:none!important}
+    .reveal,.clip{transition:opacity 200ms ease}
+    .reveal{transform:none}
+    .clip{clip-path:none}
+    .btn:hover{transform:none}
+    .piece:hover .piece-img .zoom{transform:none}
+    .piece:hover .cap{transform:none}
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Ir para o conteúdo</a>
+<div id="cur" aria-hidden="true"></div>
+<div id="cur-ring" aria-hidden="true"><span>ver</span></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="logo">Ateliê Barro Vivo</a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#colecao">Coleção</a>
+      <a href="#processo">Processo</a>
+      <a href="#atelie">Ateliê</a>
+      <a href="#visita">Visita</a>
+      <a href="#visita" class="btn-ghost" style="min-height:auto">Agendar visita</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-txt">
+          <span class="eyebrow">Cerâmica autoral · pequenos lotes</span>
+          <h1>Feito à mão, <em>um</em> de cada vez.</h1>
+          <p>O barro lembra de cada gesto. Peças que carregam o tempo do forno — da roda para a sua mesa, sem pressa.</p>
+          <div class="hero-cta">
+            <a href="#colecao" class="btn btn-primary btn-lg" data-view>Explorar a coleção</a>
+            <a href="#atelie" class="btn-ghost">Conheça o ateliê</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-media" style="grid-column:auto">
+      <div class="vessel" aria-hidden="true"></div>
+      <div class="grain" aria-hidden="true"></div>
+    </div>
+  </section>
+  <style>
+    @media(min-width:900px){
+      .hero .wrap{position:relative;z-index:2}
+      .hero{display:grid;grid-template-columns:5fr 7fr}
+      .hero>.wrap{grid-column:1;max-width:none;padding-left:max(20px,calc((100vw - 1360px)/2 + 64px))}
+      .hero .hero-grid{grid-template-columns:1fr;min-height:88vh}
+      .hero .hero-media{grid-column:2}
+    }
+  </style>
+
+  <!-- MANIFESTO -->
+  <section class="blk dark manifesto">
+    <div class="grain" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="reveal">Cada peça varia levemente — <em>é assim que deve ser.</em> O vazio ao redor é parte do objeto.</p>
+    </div>
+  </section>
+
+  <!-- COLEÇÃO -->
+  <section class="blk" id="colecao">
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:48px">
+        <span class="eyebrow">A coleção</span>
+        <h2 style="font-size:clamp(30px,3vw+14px,48px);letter-spacing:-0.02em;margin-top:12px">Objetos que carregam o tempo</h2>
+      </div>
+      <div class="mag">
+        <article class="piece a reveal" tabindex="0" data-view>
+          <div class="piece-img"><div class="zoom"></div><div class="grain" aria-hidden="true"></div></div>
+          <div class="cap">
+            <span class="badge">Peça única</span>
+            <h3 style="margin-top:10px">Vaso Torneado nº 12</h3>
+            <div class="sup">Argila vermelha sem esmalte · 24cm</div>
+            <div class="pr">R$ 480</div>
+          </div>
+        </article>
+        <article class="piece b reveal" tabindex="0" data-view>
+          <div class="piece-img"><div class="zoom"></div><div class="grain" aria-hidden="true"></div></div>
+          <div class="cap">
+            <span class="badge">Pequenos lotes</span>
+            <h3 style="margin-top:10px">Travessa Bruta</h3>
+            <div class="sup">Grês queimado a lenha · 32cm</div>
+            <div class="pr">R$ 320</div>
+          </div>
+        </article>
+        <article class="piece c reveal" tabindex="0" data-view>
+          <div class="piece-img"><div class="zoom"></div><div class="grain" aria-hidden="true"></div></div>
+          <div class="cap">
+            <span class="badge sold">Esgotado</span>
+            <h3 style="margin-top:10px">Tigela Engobe</h3>
+            <div class="sup">Argila clara, engobe terracota · 14cm</div>
+            <div class="pr">—</div>
+          </div>
+        </article>
+        <article class="piece d reveal" tabindex="0" data-view>
+          <div class="piece-img"><div class="zoom"></div><div class="grain" aria-hidden="true"></div></div>
+          <div class="cap">
+            <span class="badge">Feito à mão</span>
+            <h3 style="margin-top:10px">Jarra Alta</h3>
+            <div class="sup">Grês esmaltado fosco · 38cm</div>
+            <div class="pr">R$ 560</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section class="blk dark" id="processo">
+    <div class="grain" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:40px">
+        <span class="eyebrow">O processo</span>
+        <h2 style="font-size:clamp(30px,3vw+14px,48px);letter-spacing:-0.02em;margin-top:12px">Da terra ao forno</h2>
+      </div>
+      <div class="proc">
+        <div class="proc-step reveal"><div class="proc-num" aria-hidden="true">01</div><div><h3>A terra</h3><p>A argila descansa até chegar ao ponto. É matéria bruta que responde à mão — cada torrão tem sua vontade.</p></div></div>
+        <div class="proc-step reveal"><div class="proc-num" aria-hidden="true">02</div><div><h3>A roda</h3><p>Uma peça de cada vez, sob os dedos. O centro é encontrado com paciência; a forma emerge do gesto, não do molde.</p></div></div>
+        <div class="proc-step reveal"><div class="proc-num" aria-hidden="true">03</div><div><h3>A secagem</h3><p>Dias de sombra e ar. A pressa racha o barro — o tempo é ingrediente, não obstáculo.</p></div></div>
+        <div class="proc-step reveal"><div class="proc-num" aria-hidden="true">04</div><div><h3>O forno</h3><p>Fogo a lenha marca cada peça de forma irrepetível. O que sai é único porque o fogo é único.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATELIÊ -->
+  <section class="blk" id="atelie">
+    <div class="wrap">
+      <div class="atelier">
+        <div class="content reveal">
+          <span class="eyebrow">O ateliê</span>
+          <h2 style="font-size:clamp(30px,3vw+14px,48px);letter-spacing:-0.02em;margin:12px 0 16px">Um forno, duas rodas, tempo de sobra</h2>
+          <p style="color:var(--text-secondary)">Trabalhamos com o que a terra dá e o fogo decide. Não há linha de produção — há dias no barro. Cada objeto sai daqui com a assinatura de quem o fez, no gesto e na leve imperfeição.</p>
+          <div style="margin-top:24px"><a href="#visita" class="btn btn-secondary" data-view>Agendar visita ao ateliê</a></div>
+        </div>
+        <div class="atelier-img reveal clip" role="img" aria-label="Mãos moldando um vaso na roda de oleiro sob luz lateral">
+          <div class="grain" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTO -->
+  <section class="blk dark">
+    <div class="grain" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="quote reveal">
+        <blockquote id="q-text">Comprei uma travessa e ganhei uma história. Cada peça que levo para os projetos dos meus clientes carrega uma conversa sobre o ofício.</blockquote>
+        <cite id="q-cite">Helena M. — decoradora, São Paulo</cite>
+        <div class="tnav">
+          <button id="prev" aria-label="Depoimento anterior">←</button>
+          <button id="next" aria-label="Próximo depoimento">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISITA / CTA final -->
+  <section class="blk" id="visita" style="background:var(--surface-alt)">
+    <div class="wrap">
+      <div class="visit">
+        <div class="reveal">
+          <span class="eyebrow">Porta aberta</span>
+          <h2 style="font-size:clamp(30px,3vw+14px,48px);letter-spacing:-0.02em;margin:12px 0 16px">Venha ver de perto</h2>
+          <p style="color:var(--text-secondary);margin-bottom:24px">Colecionadores e decoradores são bem-vindos. Marque uma visita e conheça as peças em produção — sem pressa, sem checkout.</p>
+          <dl>
+            <dt>Endereço</dt><dd>Estrada do Barro, 108 · Serra da Mantiqueira</dd>
+            <dt>Visitas</dt><dd>Quinta a sábado, 10h–17h · com hora marcada</dd>
+            <dt>Lote atual</dt><dd>Outubro — 18 peças torneadas</dd>
+          </dl>
+          <div style="margin-top:24px"><a href="#" class="btn btn-primary btn-lg" data-view>Agendar visita ao ateliê</a></div>
+        </div>
+        <form class="form reveal" onsubmit="return false">
+          <div class="field"><label for="nome">Nome</label><input id="nome" type="text" placeholder="Como te chamamos?"></div>
+          <div class="field ok"><label for="mail">E-mail (válido)</label><input id="mail" type="email" value="helena@estudio.com"></div>
+          <div class="field err"><label for="dia">Dia da visita (erro)</label><input id="dia" type="text" value="segunda" aria-describedby="dia-msg" aria-invalid="true"><div class="msg" id="dia-msg"><span aria-hidden="true">⚠</span> Recebemos visitas de quinta a sábado.</div></div>
+          <button class="btn btn-primary" type="submit">Reservar peça única</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWCASE -->
+  <section class="blk" aria-label="Amostra de componentes e tokens">
+    <div class="wrap">
+      <p class="section-label">Amostra do design system — tokens ao vivo</p>
+
+      <h3 style="font-size:28px;margin-bottom:8px">Paleta</h3>
+      <div class="swatches">
+        <div class="sw"><div class="chip" style="background:#9B6B47"></div><div class="lab"><b>primary</b><span class="hex">#9B6B47</span></div></div>
+        <div class="sw"><div class="chip" style="background:#7A5236"></div><div class="lab"><b>primary_dark</b><span class="hex">#7A5236</span></div></div>
+        <div class="sw"><div class="chip" style="background:#C89A76"></div><div class="lab"><b>primary_light</b><span class="hex">#C89A76</span></div></div>
+        <div class="sw"><div class="chip" style="background:#4A4A48"></div><div class="lab"><b>secondary</b><span class="hex">#4A4A48</span></div></div>
+        <div class="sw"><div class="chip" style="background:#262523"></div><div class="lab"><b>smoke_deep</b><span class="hex">#262523</span></div></div>
+        <div class="sw"><div class="chip" style="background:#F5F0E8"></div><div class="lab"><b>surface</b><span class="hex">#F5F0E8</span></div></div>
+        <div class="sw"><div class="chip" style="background:#EDE5D8"></div><div class="lab"><b>surface_alt</b><span class="hex">#EDE5D8</span></div></div>
+        <div class="sw"><div class="chip" style="background:#8C3B2A"></div><div class="lab"><b>error</b><span class="hex">#8C3B2A</span></div></div>
+        <div class="sw"><div class="chip" style="background:#4E6147"></div><div class="lab"><b>success</b><span class="hex">#4E6147</span></div></div>
+        <div class="sw"><div class="chip" style="background:#7A5A14"></div><div class="lab"><b>warning</b><span class="hex">#7A5A14</span></div></div>
+      </div>
+
+      <h3 style="font-size:28px;margin:48px 0 8px">Tipografia</h3>
+      <div class="spec">
+        <div class="lab">H1 · Fraunces 380 · opsz 144</div>
+        <div style="font-family:var(--serif);font-weight:380;font-size:clamp(40px,2.5vw+28px,72px);line-height:1.02;letter-spacing:-0.025em;font-variation-settings:'opsz' 144">O barro <em style="font-style:italic">lembra</em></div>
+        <div class="lab">H2 · Fraunces 400</div>
+        <h2 style="font-size:48px;letter-spacing:-0.02em">Da roda para a mesa</h2>
+        <div class="lab">H3 · Fraunces 500</div>
+        <h3 style="font-size:28px;font-variation-settings:'opsz' 50">Peça única</h3>
+        <div class="lab">Body · Inter 400</div>
+        <p style="max-width:60ch">Fala de barro, fogo, tempo e mãos; frases curtas, presente do indicativo, zero urgência artificial. A marca narra o processo em vez de vender atributos.</p>
+      </div>
+
+      <h3 style="font-size:28px;margin:48px 0 16px">Botões — estados</h3>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-primary" style="background:var(--primary-dark)">Hover</button>
+        <button class="btn btn-primary" disabled>Disabled</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn-ghost">Ghost</button>
+      </div>
+      <div style="background:var(--smoke);padding:24px;margin-top:16px;display:flex;gap:14px;flex-wrap:wrap">
+        <button class="btn btn-ondark">On dark</button>
+        <button class="btn btn-ondark" style="background:var(--surface)">Hover</button>
+      </div>
+      <p class="lab" style="margin-top:10px">Use Tab para ver o foco (outline 2px terracota escura, offset 3px).</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Ateliê Barro Vivo</h4>
+        <p style="color:#cfc9bd;font-size:15px">Um forno, duas rodas e tempo de sobra. Peças torneadas à mão, uma de cada vez, na Serra da Mantiqueira.</p>
+      </div>
+      <div>
+        <h4>Navegar</h4>
+        <a href="#colecao">Coleção</a>
+        <a href="#processo">Processo</a>
+        <a href="#atelie">Ateliê</a>
+        <a href="#visita">Visita</a>
+      </div>
+      <div>
+        <h4>Visite</h4>
+        <a href="#">Estrada do Barro, 108</a>
+        <a href="#">Quinta a sábado, 10h–17h</a>
+        <a href="#">ola@barrovivo.com</a>
+      </div>
+      <div>
+        <h4>Lotes do mês</h4>
+        <p style="color:#cfc9bd;font-size:15px;margin-bottom:12px">Receba os drops de produção limitada.</p>
+        <form onsubmit="return false" style="display:flex;gap:12px;flex-wrap:wrap">
+          <input type="email" placeholder="seu@email.com" aria-label="E-mail para newsletter" style="flex:1;min-width:180px;background:transparent;border:none;border-bottom:1px solid rgba(245,240,232,.4);color:var(--text-on-dark);padding:12px 0;font-family:var(--sans);font-size:15px">
+          <button class="btn btn-ondark" type="button">Assinar</button>
+        </form>
+      </div>
+    </div>
+    <p class="manifesto-sign">Da roda para a sua mesa, sem pressa.</p>
+    <p class="legal">© 2026 Ateliê Barro Vivo. Cada peça varia levemente — é assim que deve ser. Enviamos com dupla proteção e carinho de quem fez.</p>
+  </div>
+</footer>
+
+<script>
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.15});
+  document.querySelectorAll('.reveal,.clip').forEach(function(el){if(reduce){el.classList.add('in')}else{io.observe(el)}});
+
+  // custom cursor (pointer:fine only)
+  var fine=window.matchMedia('(pointer:fine)').matches;
+  if(fine && !reduce){
+    var dot=document.getElementById('cur'),ring=document.getElementById('cur-ring');
+    var mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
+    function loop(){rx+=(mx-rx)*0.18;ry+=(my-ry)*0.18;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)}
+    loop();
+    document.querySelectorAll('[data-view],a,button').forEach(function(el){
+      el.addEventListener('mouseenter',function(){ring.classList.add('on')});
+      el.addEventListener('mouseleave',function(){ring.classList.remove('on')});
+    });
+  }else{
+    var c=document.getElementById('cur'),cr=document.getElementById('cur-ring');
+    if(c)c.style.display='none';if(cr)cr.style.display='none';
+  }
+
+  // subtle parallax
+  if(!reduce){
+    var media=[].slice.call(document.querySelectorAll('.hero-media,.piece-img,.atelier-img'));
+    var tick=false;
+    window.addEventListener('scroll',function(){
+      if(tick)return;tick=true;
+      requestAnimationFrame(function(){
+        var vh=window.innerHeight;
+        media.forEach(function(m){
+          var r=m.getBoundingClientRect();
+          var prog=Math.max(-1,Math.min(1,(r.top+r.height/2-vh/2)/vh));
+          m.style.backgroundPosition='center calc(50% + '+(prog*-14)+'px)';
+        });
+        tick=false;
+      });
+    },{passive:true});
+  }
+
+  // testimonials
+  var qs=[
+    ['Comprei uma travessa e ganhei uma história. Cada peça que levo para os projetos dos meus clientes carrega uma conversa sobre o ofício.','Helena M. — decoradora, São Paulo'],
+    ['A imperfeição é o que me conquistou. Nada é igual, e isso é justamente o valor.','Bruno A. — colecionador, Rio de Janeiro'],
+    ['Visitei o ateliê e saí com três peças e uma amizade. Slow living de verdade.','Tereza L. — arquiteta, Belo Horizonte']
+  ];
+  var i=0,qt=document.getElementById('q-text'),qc=document.getElementById('q-cite');
+  function show(n){i=(n+qs.length)%qs.length;qt.textContent=qs[i][0];qc.textContent=qs[i][1]}
+  document.getElementById('prev').addEventListener('click',function(){show(i-1)});
+  document.getElementById('next').addEventListener('click',function(){show(i+1)});
+</script>
+</body>
+</html>
