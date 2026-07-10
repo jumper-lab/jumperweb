@@ -1,5 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
+import bundledPosts from '../../data/blog-posts.json';
 
 export type BlogStatus = 'published' | 'draft' | 'archived';
 export interface BlogPost {
@@ -20,11 +21,15 @@ const postsPath = fileURLToPath(new URL('../../data/blog-posts.json', import.met
 export const slugify = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 export async function readPosts(): Promise<BlogPost[]> {
+  if (import.meta.env.PROD) return bundledPosts as BlogPost[];
+
   const content = await readFile(postsPath, 'utf8');
   return JSON.parse(content) as BlogPost[];
 }
 
 export async function writePosts(posts: BlogPost[]) {
+  if (import.meta.env.PROD) throw new Error('Blog editing is not available in the serverless runtime.');
+
   await writeFile(postsPath, `${JSON.stringify(posts, null, 2)}\n`, 'utf8');
 }
 

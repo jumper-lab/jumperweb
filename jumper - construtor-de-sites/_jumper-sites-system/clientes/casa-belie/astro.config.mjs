@@ -8,6 +8,9 @@ export default defineConfig({
   adapter: vercel(),
   integrations: [sitemap()],
   image: {
+    service: {
+      entrypoint: 'astro/assets/services/noop',
+    },
     responsiveStyles: true,
   },
 });
