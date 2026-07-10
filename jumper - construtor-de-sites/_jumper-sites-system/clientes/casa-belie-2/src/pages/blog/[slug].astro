@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import CtaFinal from '../../components/CtaFinal.astro';
+import { getPostBySlug } from '../../lib/blogStore.js';
+
+const { slug } = Astro.params;
+const post = await getPostBySlug(slug);
+if (!post) return Astro.redirect('/blog/', 302);
+---
+<Base title={`${post.title} — Casa Beliê`} description={post.excerpt}>
+  <article>
+    <div class="hero-page hero-int" style="background:var(--lav-veu)">
+      <div class="shell inner">
+        <p class="hand data">{post.dateLabel}</p>
+        <h1>{post.title}</h1>
+      </div>
+    </div>
+    <section>
+      <div class="shell corpo">
+        {post.cover && <img class="capa" src={post.cover} alt="" width="1200" height="675" loading="lazy" />}
+        <div class="prosa" set:html={post.body} />
+        <p class="volta"><a href="/blog/">← Todas as novidades</a></p>
+      </div>
+    </section>
+  </article>
+  <CtaFinal />
+</Base>
+
+<style>
+  .inner{width:100%;padding-top:140px;padding-bottom:clamp(40px,7vh,72px)}
+  .data{color:var(--verde);font-size:1.4rem;margin-bottom:8px}
+  h1{font-size:clamp(2rem,4.6vw,3.3rem);max-width:22ch}
+  .corpo{max-width:760px}
+  .capa{border-radius:18px;margin-bottom:32px;height:auto}
+  .prosa :global(p){margin-bottom:20px;font-size:1.1rem}
+  .prosa :global(em){font-style:italic}
+  .prosa :global(img){border-radius:14px;margin:24px 0}
+  .prosa :global(h2),.prosa :global(h3){margin:32px 0 12px}
+  .volta{margin-top:40px}
+  .volta a{color:var(--lav-prof);font-weight:800;text-decoration:none}
+  .volta a:hover{text-decoration:underline}
+</style>

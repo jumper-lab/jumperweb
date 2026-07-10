@@ -1,0 +1,84 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import facade from '../assets/facade-instagram.jpg';
+import playSpace from '../assets/play-space-instagram.jpg';
+import doorway from '../assets/doorway-instagram.jpg';
+import childPlay from '../assets/child-play-instagram.jpg';
+import celebration from '../assets/celebration-instagram.jpg';
+import heroEspaco from '../assets/hero-espaco-hires.jpg';
+
+const galleryItems: any[] = [
+  {
+    image: facade,
+    alt: 'Fachada clara com esquadrias azuis e quintal verde da Casa Beliê',
+    caption: 'Fachada e quintal verde',
+    sizes: '(max-width:760px) 100vw, 38vw',
+    position: 'center 50%',
+  },
+  {
+    image: playSpace,
+    alt: 'Ambiente com plantas, mesas de madeira e brinquedo suspenso',
+    caption: 'Espaços de encontro e brincar',
+    sizes: '(max-width:760px) 100vw, 42vw',
+    position: 'center 42%',
+  },
+  {
+    image: doorway,
+    alt: 'Portas abertas entre os ambientes internos e o quintal',
+    caption: 'A casa se abre para o quintal',
+    sizes: '(max-width:760px) 100vw, 38vw',
+    position: 'center 52%',
+  },
+  {
+    image: celebration,
+    alt: 'Mesa de festa com bolo, flores e decoração afetiva',
+    caption: 'Festa afetiva, sem excesso',
+    sizes: '(max-width:760px) 100vw, 40vw',
+    position: 'center 46%',
+  },
+  {
+    type: 'video',
+    src: '/videos/tour-entrada-casa-belie.mp4',
+    poster: facade,
+    alt: 'Vídeo de tour pela entrada da Casa Beliê',
+    caption: 'Um tour pela entrada da casa',
+    sizes: '(max-width:760px) 100vw, 38vw',
+    position: 'center 32%',
+  },
+  {
+    image: childPlay,
+    alt: 'Criança participando de atividade com tinta na Casa Beliê',
+    caption: 'Atividades que deixam marcas boas',
+    sizes: '(max-width:760px) 100vw, 40vw',
+    position: 'center 28%',
+  },
+];
+
+const playInvites = [
+  { title: 'Mini Laranjeiras', text: 'Uma maquete do bairro para os pequenos explorarem histórias em escala de criança.' },
+  { title: 'Brinquedão', text: 'Escorrega e piscina de bolinhas para gastar energia com segurança.' },
+  { title: 'Parede de escalada', text: 'Um desafio vertical para crianças que gostam de testar coragem e movimento.' },
+  { title: 'Vila Beliê', text: 'Casinha, bombeiros, mercadinho e outros cantinhos de faz de conta.' },
+  { title: 'Oficina de criação', text: 'Espaço para materiais, invenções, plantio, pipa, miçangas e propostas manuais.' },
+  { title: 'Área molhada', text: 'Chuveirão e brincadeiras refrescantes para dias de calor.' },
+  { title: 'Tanque de areia', text: 'A prainha Beliê para brincar de areia o ano todo.' },
+  { title: 'Muro de pintura', text: 'Liberdade para criar grande, com tinta, gesto e corpo inteiro.' },
+  { title: 'Rede de balanço', text: 'Um respiro no meio da festa, para descansar sem sair da brincadeira.' },
+  { title: 'Espaço baby', text: 'Painel sensorial e propostas mais tranquilas para crianças menores.' },
+  { title: 'Sala de jogos', text: 'Ping-pong, totó, air game e jogos de mesa, convidando crianças maiores e adultos.' },
+  { title: 'Quintal verde', text: 'Contato com plantas, luz natural e circulação em plena cidade.' },
+  { title: 'Camarim', text: 'Um canto de fantasia e beleza para pequenos artistas entrarem no personagem.' },
+  { title: 'Futebol e cabana', text: 'Espaço para correr, se esconder, imaginar e voltar para a roda.' },
+];
+---
+<BaseLayout title="O espaço da Casa Beliê" description="Conheça a casa, o quintal verde e os ambientes de brincar da Casa Beliê em Laranjeiras, Rio de Janeiro." currentPath="/espaco/">
+  <PageHero eyebrow="Casa + quintal" title="Uma casa inteira para descobrir." lead="Cerca de 800 m², luz natural, plantas e muitos caminhos para uma infância em movimento." image={heroEspaco} imageAlt="Corredor iluminado da Casa Beliê com plantas suspensas, mesas e gramado" objectPosition="center bottom" tone="green" />
+  <section class="section section-paper after-hero" id="depois-do-hero"><div class="space-facts shell" data-reveal><h2>O espaço não serve de fundo. Ele participa da brincadeira.</h2><div class="space-fact"><strong>800 m²</strong><span>de casa, quintal e diferentes ambientes</span></div><div class="space-fact"><strong>2 andares</strong><span>com áreas para crianças e adultos</span></div></div></section>
+  <section class="section section-mist"><div class="shell"><div class="section-head" data-reveal><div><span class="eyebrow"><i></i>Festas reais</span><h2>Um percurso aberto, do salão ao quintal.</h2></div><p>Os ambientes mudam de ritmo sem separar a celebração: encontro, comida, brincadeira e descanso continuam conectados. Clique nas imagens para ver sem cortes.</p></div><div class="gallery-grid gallery-grid--space" data-reveal>{galleryItems.map((item) => <figure class:list={[item.type === 'video' && 'gallery-video-vertical']}>{item.type === 'video' ? <video src={item.src} poster={item.poster.src} controls preload="metadata" playsinline aria-label={item.alt}></video> : <button class="gallery-trigger" type="button" data-lightbox-src={item.image.src} data-lightbox-alt={item.alt} data-lightbox-caption={item.caption} aria-label={`Ampliar imagem: ${item.caption}`}><Image src={item.image} alt={item.alt} widths={[420,700,980,1280]} sizes={item.sizes} format="webp" quality={84} style={`object-position:${item.position}`} /></button>}<figcaption>{item.caption}</figcaption></figure>)}</div></div></section>
+  <section class="section section-paper"><div class="shell"><div class="section-head" data-reveal><div><span class="eyebrow"><i></i>Cantinhos para explorar</span><h2>Cada idade encontra um convite.</h2></div><p>A casa combina movimento, natureza, faz de conta, criação manual, jogo sem telas e cantos de pausa para a festa respirar.</p></div><div class="format-list" data-reveal>{playInvites.map((item, index) => <article class="format-row"><span>{String(index + 1).padStart(2, '0')}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div></div></section>
+  <section class="section section-blue"><div class="media-split shell"><div class="media-copy" data-reveal><span class="eyebrow"><i></i>Laranjeiras</span><h2>No coração de um bairro que também tem ritmo de casa.</h2><p>A Casa Beliê fica em uma rua bucólica de Laranjeiras, com acesso fácil e sensação de respiro dentro da cidade. Visitas e atendimento acontecem por agendamento.</p><a class="button button-primary" href="/contato/">Agendar uma conversa</a></div><div class="contact-note" data-reveal><span class="kicker">Localização</span><h3>Rua Glicério, 131<br />Laranjeiras — Rio de Janeiro</h3><p>O endereço aparece nos canais públicos da marca. Para visita, a equipe confirma horário e orientações de chegada no atendimento.</p></div></div></section>
+  <CtaBand title="Venha imaginar a festa dentro da casa." text="Agende uma conversa e descubra como os ambientes podem receber o seu encontro." />
+</BaseLayout>

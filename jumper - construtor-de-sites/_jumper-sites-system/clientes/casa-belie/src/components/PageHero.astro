@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  objectPosition?: string;
+  videoSrc?: string;
+  align?: 'left' | 'center';
+  tone?: 'plum' | 'green';
+}
+const { eyebrow, title, lead, image, imageAlt = '', objectPosition = 'center', videoSrc, align = 'left', tone = 'plum' } = Astro.props;
+---
+<section class:list={['page-hero', `page-hero--${align}`, `page-hero--${tone}`, !image && 'page-hero--type']}>
+  {image && <Image class="page-hero-media" style={`object-position:${objectPosition}`} src={image} alt={imageAlt} widths={[720, 960, 1280, 1600, 1920, 2200, 2400]} sizes="100vw" loading="eager" fetchpriority="high" decoding="async" format="webp" quality={94} />}
+  {image && videoSrc && <video class="page-hero-media page-hero-video" style={`object-position:${objectPosition}`} src={videoSrc} poster={image.src} autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>}
+  <div class="page-hero-shade"></div>
+  <div class="page-hero-content shell">
+    <span class="eyebrow eyebrow-light"><i></i>{eyebrow}</span>
+    <h1>{title}</h1>
+    <p>{lead}</p>
+  </div>
+  <a class="scroll-cue" href="#depois-do-hero">Descobrir <span aria-hidden="true">↓</span></a>
+</section>

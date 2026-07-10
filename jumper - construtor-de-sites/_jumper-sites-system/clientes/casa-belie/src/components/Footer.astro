@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import logoBelie from '../assets/logo-belie.png';
+
+const whatsapp = 'https://wa.me/5521960154917?text=Oi%21%20Vi%20o%20site%20da%20Casa%20Beli%C3%AA%20e%20queria%20conversar%20sobre%20uma%20festa.';
+const instagram = 'https://www.instagram.com/casabelie/';
+---
+<footer class="site-footer">
+  <div class="footer-axis" aria-hidden="true"><span></span></div>
+  <div class="footer-grid shell">
+    <div class="footer-intro">
+      <Image class="footer-mark" src={logoBelie} alt="" width={64} height={64} loading="lazy" aria-hidden="true" />
+      <a class="footer-brand" href="/">Casa Beliê</a>
+      <p>Um belo lugar para viver o que realmente importa.</p>
+      <a class="footer-social" href={instagram} target="_blank" rel="noreferrer" aria-label="Abrir Instagram da Casa Beliê">
+        <span aria-hidden="true">◎</span>
+        @casabelie
+      </a>
+      <span class="footer-hand-note hand-note" aria-hidden="true">até logo ♡</span>
+    </div>
+    <div>
+      <h2>Conheça</h2>
+      <a href="/sobre/">A casa</a><a href="/festas/">Festas</a><a href="/espaco/">O espaço</a><a href="/blog/">Novidades</a>
+    </div>
+    <div>
+      <h2>Vamos conversar</h2>
+      <a href={whatsapp} target="_blank" rel="noreferrer">Pedir orçamento</a><a href="/contato/">Contato</a><a href={instagram} target="_blank" rel="noreferrer">Instagram @casabelie</a>
+    </div>
+    <div>
+      <h2>Onde estamos</h2>
+      <p>Laranjeiras<br />Rio de Janeiro — RJ</p>
+      <p>Atendimento por agendamento.</p>
+    </div>
+  </div>
+  <div class="footer-bottom shell">
+    <span>© {new Date().getFullYear()} Casa Beliê - Designed and developed by Jumper Studio®</span>
+    <a href="/politica-de-privacidade/">Política de privacidade</a>
+  </div>
+</footer>

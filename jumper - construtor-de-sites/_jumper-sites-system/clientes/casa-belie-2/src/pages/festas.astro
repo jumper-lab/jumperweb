@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import Star from '../components/Star.astro';
+import CtaFinal from '../components/CtaFinal.astro';
+
+const servicos = [
+  { num: '01', nome: 'Festa Beliê completa', desc: 'Espaço, buffet, decoração afetiva, recreação, atividades e equipe. Você chega, celebra e leva as memórias — a gente cuida de todo o resto.', destaque: true },
+  { num: '02', nome: 'Festas escolares & encontros de turma', desc: 'Formato mais curto e prático para escolas, turmas e grupos de famílias.' },
+  { num: '03', nome: 'Eventos familiares', desc: 'Aniversários de todas as idades, batizados, encontros de família e datas afetivas.' },
+  { num: '04', nome: 'Oficinas & experiências sazonais', desc: 'Roda de brincar, colônia de férias, arraiá, musicalização e encontros temáticos no quintal.' },
+  { num: '05', nome: 'Extras & upgrades', desc: 'Bubble house, inflável, teatro de fantoches e upgrades de decoração — consulte a disponibilidade da temporada.' },
+];
+
+const passos = [
+  { passo: '1', titulo: 'Você conta a festa', desc: 'Data, idade, tamanho da turma e o jeito da criança.' },
+  { passo: '2', titulo: 'A gente desenha junto', desc: 'Tema, decoração afetiva, cardápio e brincadeiras — tudo com a sua cara.' },
+  { passo: '3', titulo: 'Só viver', desc: 'No dia, a equipe cuida de tudo. Sua família só aproveita.' },
+];
+---
+<Base title="Festas na Casa Beliê — pacote completo em Laranjeiras" description="Festa infantil completa: espaço, buffet, decoração afetiva, recreação e equipe. Também festas escolares, eventos familiares e oficinas.">
+  <HeroInterno kicker="Festas & experiências" headline="A festa inteira, resolvida com afeto." strokeWord="resolvida" sub="Sem preços de tabela e sem pacote engessado: cada festa é desenhada com a família, e o orçamento chega pelo WhatsApp." surface="var(--brisa)" starColor="#3D5A34" />
+
+  <section>
+    <div class="shell">
+      <div class="lista">
+        {servicos.map((f, i) => (
+          <div class="row reveal" style={`transition-delay:${i * 0.06}s`}>
+            <span class="num">{f.num}{f.destaque && <svg viewBox="0 0 90 60" class="stroke draw" style="--len:230" aria-hidden="true"><path d="M12 30 C 10 12, 40 6, 55 8 C 76 10, 84 22, 82 34 C 80 50, 52 56, 34 52 C 18 49, 10 40, 13 31" stroke="#B9A5D8" stroke-width="2.5" /></svg>}</span>
+            <span><h3>{f.nome}</h3><p>{f.desc}</p></span>
+          </div>
+        ))}
+      </div>
+      <p class="nota-precos reveal">Sem preços públicos: cada orçamento é personalizado. <span class="nota-hand" aria-hidden="true">é rapidinho, promete</span></p>
+    </div>
+  </section>
+
+  <section class="mostra">
+    <div class="shell mostra-grid">
+      <figure class="reveal">
+        <img src="/images/r-mesa-1000.jpg" srcset="/images/r-mesa-600.jpg 600w, /images/r-mesa-1000.jpg 1000w" sizes="(max-width:760px) 92vw, 31vw" width="1000" height="1250" alt="Mesa de bolo de uma festa de 1 aninho com tema circo, montada na Casa Beliê" loading="lazy" />
+      </figure>
+      <figure class="reveal" style="transition-delay:.08s">
+        <img src="/images/r-avo-1000.jpg" srcset="/images/r-avo-600.jpg 600w, /images/r-avo-1000.jpg 1000w" sizes="(max-width:760px) 92vw, 31vw" width="1000" height="639" alt="Avô mostra um sapinho para a neta no quintal da Casa Beliê" loading="lazy" />
+      </figure>
+      <figure class="reveal" style="transition-delay:.16s">
+        <img src="/images/r-hero-900.jpg" srcset="/images/r-hero-900.jpg 900w, /images/r-hero-1600.jpg 1600w" sizes="(max-width:760px) 92vw, 31vw" width="1206" height="1600" alt="Mesa de doces com bolo de azulejo, limões e arco de balões azul e amarelo na Casa Beliê" loading="lazy" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="como">
+    <div class="shell">
+      <span class="kicker k-lav reveal"><Star /> Como funciona</span>
+      <h2 class="reveal">Três passos até a festa.</h2>
+      <div class="passos">
+        {passos.map((p, i) => (
+          <div class="passo reveal" style={`transition-delay:${i * 0.1}s`}>
+            <span class="serif n">{p.passo}</span>
+            <h3>{p.titulo}</h3>
+            <p>{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaFinal />
+</Base>
+
+<style>
+  .lista{max-width:900px}
+  .row{display:grid;grid-template-columns:76px 1fr;gap:clamp(16px,3vw,40px);align-items:center;
+    padding:28px 12px;border-bottom:1px solid rgba(58,52,64,.12);
+    transition:background .35s var(--ease),padding-left .35s var(--ease)}
+  .row:hover{background:var(--brisa);padding-left:24px;border-radius:16px}
+  .num{position:relative;font-family:"Fraunces",serif;font-size:1.6rem;color:var(--mata);text-align:center}
+  .num svg{position:absolute;inset:-10px -8px;width:calc(100% + 16px);height:calc(100% + 20px)}
+  .row h3{font-size:1.35rem;margin-bottom:3px}
+  .row p{color:var(--ink-suave);font-size:.96rem;max-width:58ch}
+  @media(max-width:640px){.row{grid-template-columns:1fr}.num{display:none}}
+  .nota-precos{margin-top:26px;color:var(--ink-suave)}
+  .nota-precos .nota-hand{color:var(--verde);margin-left:8px;transform:rotate(-2deg)}
+
+  .mostra{padding-top:0}
+  .mostra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
+  @media(max-width:760px){.mostra-grid{grid-template-columns:1fr 1fr}.mostra figure:last-child{grid-column:1/-1}}
+  .mostra figure{margin:0}
+  .mostra img{width:100%;border-radius:18px;object-fit:cover;aspect-ratio:4/5;box-shadow:0 18px 40px -22px rgba(58,52,64,.35)}
+  .como{background:var(--lav-veu)}
+  .passos{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px);margin-top:40px}
+  @media(max-width:780px){.passos{grid-template-columns:1fr}}
+  .passo{background:#fff;border-radius:20px;padding:32px;border:1px solid rgba(58,52,64,.06)}
+  .passo .n{display:block;font-size:2.2rem;color:var(--lav-prof);margin-bottom:10px}
+  .passo h3{font-size:1.2rem;margin-bottom:8px}
+  .passo p{color:var(--ink-suave);font-size:.95rem}
+</style>

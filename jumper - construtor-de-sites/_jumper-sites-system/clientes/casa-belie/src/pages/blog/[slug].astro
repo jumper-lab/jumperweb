@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { readPosts } from '../../lib/blogStore';
+const post = (await readPosts()).find((item) => item.slug === Astro.params.slug && item.status === 'published');
+if (!post) return Astro.redirect('/404/', 302);
+const paragraphs = post.content.split(/\n\s*\n/).filter(Boolean);
+---
+<BaseLayout title={post.title} description={post.excerpt} currentPath="/blog/">
+  <article>
+    <header class="article-shell" style="padding-top:calc(var(--header-h) + 90px);padding-bottom:48px"><a class="article-back" href="/blog/">← Voltar para novidades</a><span class="eyebrow" style="margin-top:38px"><i></i>Novidades do quintal</span><h1>{post.title}</h1><p class="article-lead">{post.excerpt}</p><span class="article-meta">{post.author} · {new Date(post.publishedAt || post.updatedAt).toLocaleDateString('pt-BR')}</span></header>
+    {post.image && <div class="shell" style="overflow:hidden;border-radius:36px 36px 8px 36px;max-height:620px"><img src={post.image} alt="Celebração e infância livre na Casa Beliê" style="width:100%;height:100%;object-fit:cover" /></div>}
+    <div class="article-shell article-body">{paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
+  </article>
+  <CtaBand title="Quer viver essa ideia na prática?" text="Conte para a Casa Beliê como você imagina a próxima celebração." />
+</BaseLayout>

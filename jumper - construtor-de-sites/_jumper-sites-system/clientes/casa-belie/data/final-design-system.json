@@ -1,0 +1,164 @@
+{
+  "schema_version": "3.0.0",
+  "stage": "final_design_system",
+  "design_system_id": "casa-belie-v1",
+  "design_system_name": "Casa de Quintal Editorial",
+  "client_truth": {
+    "business": "Casa de festas infantil autoral em Laranjeiras com festa completa, quintal verde, luz natural e brincar livre sem telas.",
+    "audience": "Famílias da Zona Sul do Rio que querem beleza, segurança e praticidade sem excesso visual ou hiperestimulação.",
+    "promise": "A família celebra presente enquanto as crianças brincam de verdade, em uma casa cuidada de ponta a ponta.",
+    "non_negotiables": ["fotos reais em primeiro lugar", "infância livre", "natureza e luz", "lavanda da marca", "CTA para orçamento", "sem preços públicos", "sem promessas ou provas não confirmadas"]
+  },
+  "visual_thesis": "A Casa Beliê será apresentada como uma celebração real vivida no quintal: fotografia imersiva ocupa toda a tela, a copy nasce dentro da cena sobre uma luz quente e translúcida que deixa a cor da imagem aparecer, e lavanda/verde orientam a leitura sem criar painéis rígidos — uma linguagem afetiva que mostra família, infância e festa antes de explicar serviços.",
+  "signature_element": {
+    "name": "Eixo Casa–Quintal",
+    "description": "Uma linha lavanda com acento verde que conduz o olhar entre mensagem, fotografia e próxima ação, sem dividir a cena nem criar caixa branca.",
+    "applications": ["eyebrow e rail de provas do hero", "linha de orientação da galeria", "marcadores de capítulos e números", "transição do CTA final"],
+    "rule": "Usar como eixo compositivo em até quatro contextos; nunca cercar todos os elementos nem virar moldura repetitiva."
+  },
+  "repertoire_used": [
+    {"source": "01.1 Padaria Artesanal Warm", "principle": "proximidade humana, fotografia real e narrativa de origem", "adaptation": "calor vem da casa e do quintal, sem terracota dominante nem layout herdado"},
+    {"source": "01.2 Clínica Pediátrica Friendly", "principle": "reduzir ansiedade do adulto e manter legibilidade infantil-adulta", "adaptation": "confiança por clareza, não por ilustração ou estética hospitalar"},
+    {"source": "01.3 Floricultura Delicada", "principle": "ritmo editorial, ar e galeria assimétrica", "adaptation": "usar assimetria e respiro sem herdar arcos; fotografia é festa real e espaço, não botânica"},
+    {"source": "site e Instagram da Casa Beliê", "principle": "paleta, logo, quintal, luz e linguagem de presença", "adaptation": "preservar essência e corrigir narrativa desatualizada sem copiar o WordPress"}
+  ],
+  "global_reference_repertoire": [],
+  "anti_generic_decisions": [
+    "Não usar hero centralizado com blobs, gradiente ou ilustração infantil genérica.",
+    "Não repetir título central + subtítulo + três cards em todas as seções.",
+    "Não usar mascotes, emojis, neon, confete digital ou arco-íris saturado.",
+    "Não transformar cada serviço em card idêntico; priorizar narrativa e fotografia.",
+    "Não usar fotos de banco com crianças posadas quando houver acervo real.",
+    "Não usar depoimentos, preços, promoções ou números não confirmados.",
+    "Não infantilizar o texto dirigido aos responsáveis."
+  ],
+  "tokens": {
+    "colors": {
+      "lavender_brand": {"value": "#B9A5D8", "role": "marca, traços e momentos pontuais; não usar como fundo dominante nem texto pequeno"},
+      "lavender_deep": {"value": "#6A5497", "role": "ações, links e texto de destaque sobre superfícies claras"},
+      "lavender_mist": {"value": "#F1ECF8", "role": "superfície afetiva leve"},
+      "quintal": {"value": "#7E935B", "role": "verde sálvia/oliva do Instagram, detalhes, bordas e estados interativos"},
+      "quintal_deep": {"value": "#466344", "role": "verde profundo do Instagram para seções escuras, rodapé e texto/ícones verdes"},
+      "paper": {"value": "#FDFAF4", "role": "fundo principal"},
+      "sand": {"value": "#F3EAD9", "role": "superfície quente"},
+      "window_blue": {"value": "#DFEAF0", "role": "superfície fria pontual"},
+      "ink": {"value": "#3A3440", "role": "texto principal"},
+      "ink_soft": {"value": "#6E6577", "role": "texto secundário"},
+      "wood": {"value": "#7D5E49", "role": "detalhes e links alternativos"},
+      "error": {"value": "#A44A47", "role": "erros de formulário"},
+      "white": {"value": "#FFFFFF", "role": "texto em ação lavanda profunda"}
+    },
+    "contrast_verification": {
+      "ink_on_paper": "11.55:1 — AAA",
+      "ink_soft_on_paper": "5.32:1 — AA",
+      "lavender_deep_on_paper": "6.06:1 — AA",
+      "white_on_lavender_deep": "6.31:1 — AA",
+      "quintal_deep_on_paper": "6.44:1 — AA/AAA para texto normal",
+      "ink_on_lavender_mist": "10.37:1 — AAA",
+      "ink_on_sand": "10.07:1 — AAA",
+      "ink_on_window_blue": "9.84:1 — AAA",
+      "error_on_paper": "5.47:1 — AA",
+      "restriction": "Lavanda é momento de marca, não atmosfera dominante. Texto funcional usa #6A5497, #466344 ou #3A3440 conforme o fundo."
+    },
+    "typography": {
+      "display": {"family": "Fraunces", "fallback": "Georgia, serif", "weights": [350, 450, 600], "reason": "serifa calorosa e contemporânea usada majoritariamente em 350 para ficar mais próxima da delicadeza visual da marca no Instagram"},
+      "body": {"family": "Manrope", "fallback": "system-ui, sans-serif", "weights": [400, 500, 600, 700], "reason": "clareza geométrica com curvas amistosas; ações e navegação usam 600, evitando peso 800"},
+      "h1": "clamp(2.65rem, 1.58rem + 4.2vw, 5.85rem)",
+      "h2": "clamp(2rem, 1.38rem + 2.15vw, 3.75rem)",
+      "h3": "clamp(1.35rem, 1.15rem + 0.7vw, 1.9rem)",
+      "body_size": "clamp(1rem, 0.97rem + 0.15vw, 1.125rem)",
+      "display_line_height": "1.02–1.12",
+      "body_line_height": "1.65–1.75",
+      "measure": "46–68ch"
+    },
+    "spacing": {"2xs": "4px", "xs": "8px", "sm": "12px", "md": "20px", "lg": "32px", "xl": "48px", "2xl": "72px", "3xl": "104px", "4xl": "144px", "section": "clamp(72px, 8vw, 144px)"},
+    "radius": {"small": "10px", "medium": "20px", "large": "36px", "doorway": "48% 48% 16px 16px / 28% 28% 16px 16px", "pill": "999px"},
+    "shadows": {"paper": "0 8px 30px rgba(47,43,50,.07)", "floating": "0 24px 70px rgba(94,71,125,.13)", "rule": "sombras raras; profundidade principalmente por sobreposição, cor e escala"},
+    "motion": {"instant": "140ms", "fast": "220ms", "base": "420ms", "slow": "700ms", "ease": "cubic-bezier(.22,1,.36,1)", "reduced_motion": "remover translação/parallax e manter mudanças de cor instantâneas"}
+  },
+  "boldness_budget": [
+    "Hero: cena real de celebração em 100vh, full-bleed, com texto integrado à fotografia e entrada coreografada.",
+    "Galeria: sequência editorial irregular guiada pelo Eixo Casa–Quintal.",
+    "CTA final: bloco amplo lavanda com uma abertura visual para o mapa/endereço."
+  ],
+  "hero_direction": {
+    "concept": "A infância acontece aqui",
+    "composition": "Hero inteiro com 100vh/100svh e fotografia full-bleed. A família e a festa permanecem no centro/direita; um véu quente em paper nasce da área da copy e se dissolve na fotografia com opacidade moderada, sem embranquecer demais a cena. Texto principal usa ink sobre luz translúcida; ações mantêm lavanda profunda como ponto de conversão.",
+    "message_order": ["rótulo Casa de festas infantil · Laranjeiras", "H1 Um quintal inteiro para a infância acontecer.", "texto de apoio", "CTA Quero uma festa Beliê", "link Ver festas reais", "microprova festa completa · brincar livre · cerca de 800 m²"],
+    "media": "Imagem de uma família celebrando na Casa Beliê, extraída do Instagram oficial @casabelie. O crop exclui o texto incorporado na parte inferior do cover e preserva crianças, bolo, flores e expressão de alegria. Uso final depende de autorização.",
+    "viewport_coverage": {
+      "mobile": "height: 100svh; fotografia permanece full-bleed, crop prioriza rostos e bolo, gradiente sobe da base e conteúdo fica ancorado abaixo do centro sem cobrir as expressões",
+      "tablet": "height: 100svh; fotografia full-bleed, copy no terço inferior esquerdo e sujeitos no centro/direita",
+      "desktop": "height: 100svh e width: 100%; foto full-bleed, copy em até 7 colunas à esquerda e cena preservada no centro/direita",
+      "desktop_wide": "height: 100svh e width: 100%; imagem cobre sem esticar, headline mantém até 10ch e o véu claro nunca passa de 62% da largura",
+      "short_landscape": "height: 100svh; reduzir escala tipográfica e gaps por media query de altura, preservando CTA e prova"
+    },
+    "transition": "A base termina com um rail translúcido de provas e o Eixo Casa–Quintal segue para o manifesto; não existe faixa branca entre hero e próxima seção."
+  },
+  "navigation_direction": {
+    "desktop": "Header de 76px padronizado em todas as páginas: no topo, fundo 0% de opacidade, sem filete, sombra ou blur; ao rolar, vidro paper 92% aparece em fade suave com blur, texto ink, logo à esquerda, cinco links e CTA lavanda profundo.",
+    "mobile": "Header começa sem fundo com logo + botão de menu 48px; ao rolar, recebe vidro paper translúcido em fade. Painel em paper ocupando a tela, links grandes Fraunces e CTA fixado no fim; focus trap e Esc.",
+    "states": "Sublinhado deslocado lavanda/verde no hover e current; focus-visible de 3px; CTA com hover para #49345F."
+  },
+  "media_direction": {
+    "priority": ["imagens do Instagram oficial @casabelie", "imagens autorais geradas para a marca quando o Instagram não resolver", "Pexels somente em último caso"],
+    "ai_images": "Permitidas como segunda opção. Devem ser claramente tratadas como provisórias, derivadas da arquitetura, paleta e proposta da Casa Beliê; não gerar rostos identificáveis nem simular uma festa real ocorrida.",
+    "hero_asset": "data/design-system-previews/assets/instagram-dwh5-family-hero-landscape-1672.webp",
+    "hero_asset_mobile": "data/design-system-previews/assets/instagram-dwh5-family-mobile-1080.webp",
+    "hero_asset_master": "data/design-system-previews/assets/instagram-dwh5-family-hero-landscape-master.png",
+    "hero_source": "https://www.instagram.com/reel/DWH5_7pEcK4/",
+    "website_images": "não utilizar",
+    "treatment": "Cor natural, luz quente-suave, sem filtro roxo. Preserve verdes, madeira e tons claros. Desktop usa restauração horizontal derivada da imagem oficial; mobile preserva o enquadramento vertical original. Entregar WebP responsivo com JPEG fallback, sem carregar o master PNG no navegador.",
+    "children_safety": "Não usar imagem com criança identificável sem confirmação de autorização; nessas situações preferir espaço vazio, detalhes ou crops sem rosto.",
+    "video": "Opcional em página Espaço, sem autoplay com som; poster otimizado e controles visíveis.",
+    "fallback": "Se Instagram e geração autoral não resolverem, selecionar Pexels com assunto e crop coerentes; documentar como provisório e evitar qualquer imagem genérica de buffet."
+  },
+  "section_system": [
+    {"name": "manifesto", "page": "home", "role": "fixar posicionamento", "anatomy": "frase grande em 7 colunas + lista curta de fatos em 3 colunas, sem cards"},
+    {"name": "experiencia", "page": "home", "role": "mostrar o que torna a festa diferente", "anatomy": "tríptico fotográfico irregular com legendas laterais e uma única área de texto"},
+    {"name": "festa_completa", "page": "home/festas", "role": "explicar oferta", "anatomy": "linha narrativa numerada atravessando espaço, buffet, decoração, recreação e equipe; sem grid uniforme"},
+    {"name": "espaco", "page": "home/espaco", "role": "vender o lugar real", "anatomy": "galeria assimétrica em ritmo aberto-fechado-detalhe guiada pelo Eixo Casa–Quintal"},
+    {"name": "fundadoras", "page": "sobre", "role": "construir confiança", "anatomy": "duas colunas editoriais com retratos públicos do Instagram recortados como avatares; confirmar autorização final antes de publicação definitiva"},
+    {"name": "prova", "page": "home", "role": "prova social honesta", "anatomy": "até haver depoimentos, mostrar fatos verificáveis e convite para Instagram; não simular citações"},
+    {"name": "blog", "page": "novidades", "role": "autoridade e SEO local", "anatomy": "destaque editorial grande + lista de artigos, não três cards iguais"},
+    {"name": "cta_final", "page": "all", "role": "conversão", "anatomy": "faixa manteiga com pergunta humana, botão lavanda e microcopy manuscrita de atendimento por agendamento"}
+  ],
+  "component_language": {
+    "buttons": "Pill moderado, Manrope 600; primário #6A5497/#FFF usado somente como ação; secundário transparente; hover com contorno gestual que é desenhado progressivamente ao redor do botão, usando terracota escura ou verde profundo conforme contraste; seta animada e elevação; active com compressão; focus, disabled e loading preservados.",
+    "cards": "Somente quando o conteúdo pedir agrupamento; raios variados conforme função, sem sombra universal.",
+    "forms": "Labels sempre visíveis, campos 52px+, feedback em texto e cor, seletor de tipo de evento e CTA 'Enviar pedido de orçamento'.",
+    "gallery": "Lista semântica, imagens com dimensões, zoom opcional operável por teclado, legendas reais.",
+    "facts": "Números grandes Fraunces com linha dupla lavanda/verde; somente dados confirmados.",
+    "icons": "Lucide linha 1.5px quando necessário, sempre acompanhados por texto; sem emoji."
+  },
+  "responsive_rules": {
+    "mobile_320_479": "Hero 100svh; tipografia sem viúvas; galeria vira sequência de uma coluna sem deslocamentos laterais; CTA full-width; menu fullscreen.",
+    "tablet_480_1023": "Hero ainda vertical, com foto e painel sobrepostos; grids passam a duas colunas somente quando preservam leitura; margens 32–48px.",
+    "desktop_1024_1439": "Grid de 12 colunas, container 1240px, assimetrias e sobreposições completas; navegação inline.",
+    "desktop_wide_1440_plus": "Container de texto não cresce; fotografia e superfícies podem sangrar; respiro aumenta sem criar faixas mortas.",
+    "global": "Nenhum scroll horizontal, alvos >=44px, line length <=68ch, imagens com aspect-ratio reservado. Na Home, cada grande capítulo usa min-height:100svh e centralização vertical; heróis internos usam altura padronizada clamp(620px,82svh,820px) no desktop/tablet e clamp(540px,76svh,680px) no mobile; carrosséis horizontais compactam mural, fundadoras e novidades no mobile sem cortar conteúdo. Em telas baixas a seção pode crescer somente quando o conteúdo não couber com segurança."
+  },
+  "empty_space_review": {
+    "intentional": "Respiros enquadram fotografia, manifesto e transições entre casa/quintal; cada vazio deve apontar para um elemento ou revelar a próxima seção.",
+    "watchpoints": ["base do hero em mobile", "entre galeria e festa completa", "páginas internas com pouco conteúdo", "ausência temporária de retratos/depoimentos", "desktop ultrawide"],
+    "rule": "Se faltar mídia ou conteúdo, recompor a seção e reduzir sua altura; nunca deixar placeholder vazio ou padding compensatório."
+  },
+  "accessibility_floor": {
+    "standard": "WCAG 2.2 AA",
+    "contrast": "Usar somente pares verificados; lavanda clara e verde médio não carregam texto pequeno.",
+    "focus": "outline 3px #6A5497 com offset 3px; em fundo escuro usar #FFFFFF.",
+    "touch": "mínimo 44x44px, preferencialmente 48px",
+    "semantics": "um h1 por página, landmarks, headings sem saltos, skip-link, menus e diálogos operáveis por teclado",
+    "motion": "respeitar prefers-reduced-motion e nunca esconder conteúdo sem JS"
+  },
+  "performance_floor": {
+    "images": "Astro Image, AVIF/WebP, srcset, dimensões, hero prioritário e lazy abaixo da dobra",
+    "fonts": "somente pesos usados de Fraunces e Manrope, font-display swap, preconnect",
+    "javascript": "menu, galeria e feedback de formulário apenas; sem biblioteca de animação",
+    "targets": {"LCP": "<2.5s", "INP": "<200ms", "CLS": "<0.1"}
+  },
+  "quality_gate": {
+    "fail_if": ["o hero não comunica festa infantil, família e brincar livre em 5 segundos", "a seção hero não ocupa exatamente a primeira tela", "texto ou gradiente cobrem rostos e gestos essenciais", "a foto escolhida não segue a prioridade Instagram > geração autoral > Pexels", "o lavanda compromete contraste", "há cards uniformes repetidos", "qualquer dado pendente aparece como confirmado", "o mobile parece apenas desktop empilhado", "existe vazio com aparência de asset ausente", "o Eixo Casa–Quintal não aparece em pelo menos três pontos"],
+    "success_tests": ["em 5 segundos entende-se casa de festas infantil em Laranjeiras, diferencial e ação", "o print sem logo ainda comunica quintal, infância livre e festa afetiva", "cada capítulo principal da Home forma uma dobra completa e legível", "frente a concorrentes locais o site parece mais calmo, autoral e confiável"]
+  }
+}

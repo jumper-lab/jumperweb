@@ -1,0 +1,133 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+import facade from '../assets/facade-instagram.jpg';
+import foundersSocias from '../assets/founders-socias-instagram.jpg';
+
+const whatsapp = 'https://wa.me/5521960154917?text=Oi%21%20Vi%20o%20site%20da%20Casa%20Beli%C3%AA%20e%20queria%20conversar%20sobre%20uma%20festa.';
+
+const celebrationRows = [
+  { number: '01', title: 'A casa recebe', text: 'Dois andares, quintal, ambientes climatizados, buffet e operação preparados para crianças e adultos.' },
+  { number: '02', title: 'A brincadeira acontece', text: 'Recreação sem telas, muro de pintura, areia, área molhada, Vila Beliê, jogos, oficina e faz de conta.' },
+  { number: '03', title: 'A família aproveita', text: 'Decoração afetiva, atividades e equipe presente cuidam do caminho para que ninguém precise coordenar a festa.' },
+];
+---
+<BaseLayout title="Casa Beliê — Festa infantil com quintal em Laranjeiras" description="Festas infantis completas em Laranjeiras, com quintal verde, luz natural, brincar livre e uma experiência afetiva sem telas." currentPath="/">
+  <section class="home-hero" aria-labelledby="hero-title">
+    <div class="home-hero-media">
+      <picture>
+        <source media="(min-width: 761px)" type="image/webp" srcset="/images/hero-family-desktop.webp" />
+        <source type="image/webp" srcset="/images/hero-family-mobile.webp" />
+        <img src="/images/hero-family-desktop.webp" width="1672" height="941" fetchpriority="high" decoding="async" alt="Família com duas crianças celebrando diante de um bolo, flores e balões na Casa Beliê" />
+      </picture>
+    </div>
+    <div class="home-hero-shade" aria-hidden="true"></div><div class="home-hero-veil" aria-hidden="true"></div>
+    <div class="home-hero-content">
+      <span class="eyebrow eyebrow-light"><i></i>Casa de festas infantil · Laranjeiras</span>
+      <h1 id="hero-title"><span>Um quintal inteiro</span><span>para a infância</span><span class="hero-mark">acontecer.</span></h1>
+      <p class="hero-lead">Festas completas com brincar livre, luz natural e nenhuma tela entre as crianças e as memórias.</p>
+      <div class="hero-actions">
+        <a class="button button-light" href={whatsapp} target="_blank" rel="noreferrer">Quero uma festa Beliê</a>
+        <a class="button button-ghost-hero" href="#mural">Conhecer a casa</a>
+      </div>
+    </div>
+    <div class="hero-rail" aria-label="Destaques da Casa Beliê">
+      <div class="hero-rail-marquee">
+        <div class="hero-rail-track">
+          <div class="hero-rail-group">
+            <span>Festa completa</span><span>Brincar livre</span><span>Cerca de 800 m²</span><span>Luz natural</span><span>Sem telas</span>
+          </div>
+          <div class="hero-rail-group" aria-hidden="true">
+            <span>Festa completa</span><span>Brincar livre</span><span>Cerca de 800 m²</span><span>Luz natural</span><span>Sem telas</span>
+          </div>
+        </div>
+      </div>
+      <a class="hero-source" href="https://www.instagram.com/reel/DWH5_7pEcK4/" target="_blank" rel="noreferrer">Imagem oficial @casabelie</a>
+    </div>
+  </section>
+
+  <section class="section welcome-section after-hero home-fold" id="depois-do-hero">
+    <div class="welcome-grid shell" data-reveal>
+      <div>
+        <span class="eyebrow"><i></i>Uma casa que celebra junto</span>
+        <p class="manifesto-quote">Aqui, cada encontro é recebido como quem abre a própria casa: com beleza, simplicidade e <em>afeto.</em></p>
+        <span class="hand-note hand-note-green" aria-hidden="true">criança livre, adulto tranquilo :)</span>
+      </div>
+      <ul class="fact-list" aria-label="Diferenciais da Casa Beliê">
+        <li><i class="fact-icon fact-icon--space" aria-hidden="true"><span></span></i><div><strong>800 m²</strong><span>de casa, quintal e cantinhos para explorar</span></div></li>
+        <li><i class="fact-icon fact-icon--screenfree" aria-hidden="true"><span></span></i><div><strong>Sem telas</strong><span>porque a brincadeira já tem tudo para acontecer</span></div></li>
+        <li><i class="fact-icon fact-icon--complete" aria-hidden="true"><span></span></i><div><strong>Completa</strong><span>espaço, buffet, decoração, recreação e equipe</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section memory-section home-fold" id="mural">
+    <div class="shell">
+      <div class="memory-heading" data-reveal>
+        <div><span class="eyebrow eyebrow-light"><i></i>O mural do quintal</span><h2>Cada festa deixa uma história na casa.</h2></div>
+        <p>Movimento, tinta, plantas e portas abertas. Um pedaço real da Casa Beliê contado pelas imagens do Instagram oficial.</p>
+      </div>
+      <div class="memory-wall">
+        <figure class="memory-card memory-card-video" data-reveal><span class="memory-tape" aria-hidden="true"></span><video src="/videos/festa-sophia-casa-belie.mp4" controls preload="metadata" playsinline aria-label="Vídeo da festa da Sophia na Casa Beliê"></video><figcaption>a festa da Sophia em movimento</figcaption></figure>
+        <figure class="memory-card memory-card-video" data-reveal><span class="memory-tape" aria-hidden="true"></span><video src="/videos/festa-belie-momento-1.mp4" controls preload="metadata" playsinline aria-label="Vídeo de festa real na Casa Beliê"></video><figcaption>brincadeira que vira memória</figcaption></figure>
+        <figure class="memory-card memory-card-video" data-reveal><span class="memory-tape" aria-hidden="true"></span><video src="/videos/festa-belie-momento-2.mp4" controls preload="metadata" playsinline aria-label="Vídeo de celebração infantil na Casa Beliê"></video><figcaption>celebrar sem perder o movimento</figcaption></figure>
+      </div>
+      <span class="memory-signature hand-note" aria-hidden="true">memórias em movimento</span>
+    </div>
+  </section>
+
+  <section class="section celebration-section home-fold">
+    <div class="shell">
+      <div class="section-head section-head-compact" data-reveal><div><span class="eyebrow"><i></i>Festa completa</span><h2>Você chega para celebrar. A casa cuida do resto.</h2></div><p>A experiência é organizada em camadas simples para a família viver o dia com presença, sem administrar fornecedores.</p></div>
+      <div class="celebration-list" data-reveal>
+        {celebrationRows.map((item) => (
+          <a class="celebration-row" href="/festas/">
+            <span class="celebration-number">{item.number}</span>
+            <span class="celebration-copy"><strong>{item.title}</strong><small>{item.text}</small></span>
+            <span class="celebration-arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+      <a class="text-link text-link-strong" href="/festas/" data-reveal>Ver todas as festas e experiências</a>
+    </div>
+  </section>
+
+  <section class="section house-section home-fold">
+    <div class="house-grid shell">
+      <figure class="house-postcard" data-reveal><span class="memory-tape" aria-hidden="true"></span><Image src={facade} alt="Projeto da fachada e do quintal verde da Casa Beliê em Laranjeiras" widths={[640,960,1200]} sizes="(max-width:1020px) 100vw, 56vw" format="webp" quality={84} /><figcaption class="hand-note">a casa fica no coração de Laranjeiras</figcaption></figure>
+      <div class="house-copy" data-reveal><span class="eyebrow"><i></i>Casa + quintal</span><h2>Um endereço feito para explorar sem pressa.</h2><p>Luz natural, áreas verdes e diferentes ambientes deixam a festa respirar — por dentro e por fora.</p><ul class="feature-lines"><li>Quintal verde, área molhada e tanque de areia</li><li>Vila Beliê, brinquedão, escalada e cabana</li><li>Oficina, muro de pintura, sala de jogos e espaço baby</li></ul><a class="button button-outline" href="/espaco/">Conhecer o espaço</a></div>
+    </div>
+  </section>
+
+  <section class="section founders-section home-fold">
+    <div class="founders-story shell">
+      <div class="founders-title" data-reveal>
+        <span class="eyebrow"><i></i>Quem abre a porta</span>
+        <h2>Duas mães de casas que já fizeram muita festa.</h2>
+      </div>
+      <figure class="founders-polaroid" data-reveal>
+        <span class="memory-tape" aria-hidden="true"></span>
+        <Image src={foundersSocias} alt="Isabela e Cecília sorrindo juntas em foto publicada pela Casa Beliê" widths={[520,760,1080]} sizes="(max-width: 1020px) 86vw, 36vw" format="webp" quality={86} />
+        <figcaption>Isabela & Cecília ♡</figcaption>
+      </figure>
+      <div class="founders">
+        <article class="founder" data-reveal><h3>Isabela</h3><p>Fundadora da Madame Girafa, referência em festas afetivas e personalizadas no Rio de Janeiro desde 2014.</p></article>
+        <article class="founder" data-reveal><h3>Cecília</h3><p>Sócia da Vila Pindorama, casa de festas em Icaraí reconhecida pela proposta lúdica e acolhedora.</p></article>
+        <span class="founders-note hand-note" aria-hidden="true">a gente cuida como se fosse da nossa família</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section news-section home-fold">
+    <div class="shell">
+      <div class="section-head section-head-compact" data-reveal><div><span class="eyebrow"><i></i>Novidades do quintal</span><h2>Ideias para celebrar com mais presença.</h2></div><a class="text-link text-link-strong" href="/blog/">Ler todas as novidades</a></div>
+      <div class="news-grid" data-reveal>
+        <a class="news-card news-card-feature" href="/blog/por-que-uma-festa-sem-telas-cria-memorias/"><span class="article-meta">Brincar livre · 6 min</span><h3>Por que uma festa sem telas cria memórias diferentes</h3><p>Quando o quintal vira convite, a brincadeira nasce do encontro — e a festa deixa de disputar atenção com uma tela.</p><span class="news-action">Continuar lendo <i aria-hidden="true">→</i></span></a>
+        <a class="news-card" href="/blog/como-escolher-uma-casa-de-festas-em-laranjeiras/"><span class="article-meta">Planejamento · 5 min</span><h3>Como escolher uma casa de festas infantil em Laranjeiras</h3><p>Espaço, segurança e praticidade importam. Mas a sensação da família naquele dia também.</p><span class="news-action">Ler artigo <i aria-hidden="true">→</i></span></a>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand fullHeight title="Vamos abrir a casa para a sua festa?" text="Conte a data, a idade e o tamanho da turma. A conversa começa por aí — com calma e carinho." />
+</BaseLayout>

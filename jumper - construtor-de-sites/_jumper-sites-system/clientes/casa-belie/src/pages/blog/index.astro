@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import heroBlog from '../../assets/hero-blog-hires.jpg';
+import { readPosts } from '../../lib/blogStore';
+const posts = (await readPosts()).filter((post) => post.status === 'published').sort((a,b) => String(b.publishedAt).localeCompare(String(a.publishedAt)));
+const [feature, ...rest] = posts;
+---
+<BaseLayout title="Novidades do quintal" description="Ideias sobre festa afetiva, brincar livre, infância sem telas e celebrações em Laranjeiras." currentPath="/blog/">
+  <PageHero eyebrow="Novidades do quintal" title="Ideias para celebrar com mais presença." lead="Textos da Casa Beliê sobre brincar livre, escolhas de festa e uma infância com espaço para acontecer." image={heroBlog} imageAlt="Campinho de futebol infantil dentro da Casa Beliê" objectPosition="center 62%" tone="green" />
+  <section class="section section-paper after-hero" id="depois-do-hero"><div class="blog-grid shell" data-reveal>{feature && <a class="post-card post-card--feature" href={`/blog/${feature.slug}/`}><div class="post-card-image"><img src={feature.image || '/images/hero-family-desktop.webp'} alt="Celebração familiar na Casa Beliê" loading="lazy" /></div><span class="article-meta">Artigo em destaque</span><h2>{feature.title}</h2><p>{feature.excerpt}</p><span class="text-link">Continuar lendo</span></a>}<div>{rest.map((post) => <a class="post-card" href={`/blog/${post.slug}/`}><span class="article-meta">Casa Beliê · {new Date(post.publishedAt || post.updatedAt).toLocaleDateString('pt-BR')}</span><h3>{post.title}</h3><p>{post.excerpt}</p><span class="text-link">Ler artigo</span></a>)}</div></div></section>
+  <CtaBand title="Uma ideia virou vontade de celebrar?" text="A Casa Beliê ajuda a transformar a intenção em um encontro completo." />
+</BaseLayout>

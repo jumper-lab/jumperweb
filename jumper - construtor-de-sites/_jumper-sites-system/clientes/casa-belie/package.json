@@ -1,0 +1,23 @@
+{
+  "name": "casa-belie-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "node ./dist/server/entry.mjs",
+    "build": "astro check && astro build && node ./scripts/copy-runtime-data.mjs",
+    "preview": "astro preview",
+    "doctor": "node ./scripts/doctor.mjs"
+  },
+  "dependencies": {
+    "@astrojs/node": "^11.0.2",
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.0.7",
+    "sharp": "^0.35.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^5.9.3"
+  }
+}

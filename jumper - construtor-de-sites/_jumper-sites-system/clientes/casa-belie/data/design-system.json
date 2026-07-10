@@ -1,0 +1,34 @@
+{
+  "schema_version": "3.0.0",
+  "stage": "initial_design_system",
+  "client": "Casa Beliê",
+  "personality": {
+    "code": "A",
+    "name": "Acolhedor familiar",
+    "interpretation": "Acolhimento editorial, natural e autoral; infantil sem infantilização visual."
+  },
+  "briefing_preferences": {
+    "primary_color": "Lavanda/lilás claro da marca",
+    "support_colors": ["verde quintal", "off-white", "areia", "madeira clara", "azul suave das esquadrias", "terracota muito leve"],
+    "visual_mode": "claro",
+    "motion": "discreto",
+    "tone": "casual e amistoso",
+    "media": "fotos reais oficiais como prioridade",
+    "avoid": ["neon", "cores primárias saturadas", "preto pesado", "gradientes digitais", "excesso de rosa ou roxo", "visual de buffet tradicional", "mascotes", "games e telas como atrativo"]
+  },
+  "initial_inferences": {
+    "first_impression": "Uma casa bonita e viva, onde o quintal e a infância livre substituem o excesso.",
+    "hero_type": "Mídia real imersiva com painel editorial de mensagem e ação.",
+    "signature_candidate": "Eixo Casa–Quintal — linha lavanda com acento verde marcando o encontro entre conteúdo editorial e fotografia.",
+    "conversion": "Orçamento por WhatsApp com linguagem de conversa, sem pressão promocional.",
+    "trust": "Espaço real, cerca de 800 m², localização em Laranjeiras e experiência das fundadoras; dados sensíveis permanecem pendentes de confirmação."
+  },
+  "references_from_briefing": [
+    {"url": "https://casabelie.com.br/", "use": "essência da marca, quintal, luz natural e acervo real; não copiar layout"},
+    {"url": "https://www.instagram.com/casabelie/", "use": "linguagem viva, eventos e bastidores"},
+    {"url": "https://www.brunaguerson.com/portfolio/festa-infantil/1674993-festa-bernardo-theodoro-rj", "use": "fotografia de festa real, condicionada a autorização"}
+  ],
+  "sites_to_avoid": [
+    {"url": "https://espoletabuffetinfantil.com.br/espoleta-play/", "reason": "não assumir linguagem comercial saturada de buffet/parque indoor"}
+  ]
+}

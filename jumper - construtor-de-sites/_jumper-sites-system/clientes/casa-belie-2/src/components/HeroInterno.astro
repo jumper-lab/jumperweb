@@ -1,0 +1,22 @@
+---
+// Primeira dobra das páginas internas: dominante (>=62svh), superfície alternada,
+// headline com palavra sublinhada pelo Traço Beliê.
+import Star from './Star.astro';
+const { kicker, headline, strokeWord, sub = '', surface = 'var(--lav-veu)', starColor = '#6A5497' } = Astro.props;
+const [before, after] = headline.split(strokeWord);
+---
+<div class="hero-page hero-int" style={`background:${surface}`}>
+  <div class="shell inner">
+    <span class="kicker k-lav"><Star color={starColor} /> {kicker}</span>
+    <h1>
+      {before}<span class="u-giz">{strokeWord}<svg viewBox="0 0 320 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 15 C 50 8, 95 19, 150 12 S 250 9, 314 14" /></svg></span>{after}
+    </h1>
+    {sub && <p class="lead">{sub}</p>}
+  </div>
+</div>
+
+<style>
+  .inner{width:100%;padding-top:140px;padding-bottom:clamp(40px,7vh,80px)}
+  h1{font-size:clamp(2.3rem,5.4vw,3.9rem);max-width:18ch;margin:16px 0 14px}
+  .lead{font-size:1.1rem}
+</style>

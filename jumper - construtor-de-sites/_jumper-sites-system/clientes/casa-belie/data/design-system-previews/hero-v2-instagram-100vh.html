@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hero v2 — Casa Beliê</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,350;9..144,450;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--lavender:#b6a1d8;--plum:#5e477d;--plum-dark:#49345f;--green:#59674a;--paper:#fbf9f4;--ink:#2f2b32;--soft:#5e565f;--rule:#dad3cc;--serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,sans-serif}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans)}
+    body{min-width:320px}
+    a{color:inherit}
+    .hero{position:relative;height:100vh;height:100svh;min-height:0;overflow:hidden;background:var(--paper);display:grid;grid-template-columns:minmax(0,46%) minmax(0,54%)}
+    .nav{position:absolute;z-index:5;inset:0 0 auto 0;height:clamp(64px,8.2vh,82px);display:grid;grid-template-columns:46% 54%;align-items:center;border-bottom:1px solid rgba(47,43,50,.12)}
+    .brand{align-self:stretch;display:flex;align-items:center;padding-left:clamp(26px,5vw,82px);font:600 clamp(1.25rem,1.5vw,1.65rem)/1 var(--serif);text-decoration:none;letter-spacing:-.02em}
+    .nav-right{height:100%;display:flex;align-items:center;justify-content:flex-end;gap:clamp(18px,2.2vw,38px);padding:0 clamp(26px,4vw,68px);color:#fff;background:linear-gradient(90deg,rgba(47,43,50,.35),rgba(47,43,50,.12));text-shadow:0 1px 14px rgba(0,0,0,.24)}
+    .nav-right a{text-decoration:none;font-size:.86rem;font-weight:600}
+    .nav-right a:not(.nav-cta){padding:14px 0;border-bottom:1px solid transparent}
+    .nav-right a:not(.nav-cta):hover{border-color:#fff}
+    .nav-cta{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:999px;background:var(--plum);box-shadow:0 8px 22px rgba(47,43,50,.18);text-shadow:none}
+    .content{position:relative;z-index:2;width:100%;height:100%;min-width:0;min-height:0;overflow:hidden;padding:clamp(112px,14vh,148px) clamp(28px,5vw,84px) clamp(24px,4.5vh,48px);display:flex;flex-direction:column;justify-content:flex-start}
+    .content::after{content:"";position:absolute;right:-8px;top:0;width:8px;height:100%;background:linear-gradient(90deg,var(--lavender) 0 72%,var(--green) 72% 100%);z-index:3}
+    .eyebrow{display:flex;align-items:center;gap:13px;color:var(--green);font-size:clamp(.68rem,.75vw,.78rem);font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:34px;height:2px;background:var(--green)}
+    h1{max-width:10.2ch;margin:clamp(18px,3vh,32px) 0 clamp(16px,2.4vh,26px);font:450 clamp(3rem,4.35vw,4.85rem)/.97 var(--serif);letter-spacing:-.048em;text-wrap:balance}
+    .lead{max-width:56ch;margin:0;color:var(--soft);font-size:clamp(.96rem,1.12vw,1.12rem);line-height:1.68}
+    .actions{display:flex;align-items:center;gap:clamp(18px,2vw,30px);margin-top:clamp(22px,3.2vh,38px)}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;border-radius:999px;background:var(--plum);color:#fff;text-decoration:none;font-weight:700;box-shadow:0 10px 28px rgba(94,71,125,.2);transition:background .22s ease,transform .22s ease}
+    .button:hover{background:var(--plum-dark);transform:translateY(-2px)}
+    .text-link{font-size:.94rem;color:var(--plum);font-weight:700;text-decoration-color:var(--lavender);text-decoration-thickness:2px;text-underline-offset:6px}
+    .facts{margin-top:auto;padding-top:clamp(16px,2.5vh,26px);border-top:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;gap:16px;color:var(--green);font-size:clamp(.67rem,.72vw,.76rem);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+    .facts span:last-child{color:var(--soft);letter-spacing:0;text-transform:none;font-weight:500}
+    .media{position:relative;width:100%;height:100%;min-width:0;min-height:0;overflow:hidden;background:var(--green)}
+    .media img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 52%;filter:saturate(.92) contrast(.98)}
+    .media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(47,43,50,.06),transparent 24%),linear-gradient(0deg,rgba(47,43,50,.16),transparent 34%);pointer-events:none}
+    .source{position:absolute;z-index:2;right:clamp(18px,2.4vw,38px);bottom:clamp(18px,2.6vh,28px);padding:8px 12px;background:rgba(47,43,50,.7);color:#fff;font-size:.68rem;letter-spacing:.04em;text-decoration:none;backdrop-filter:blur(8px)}
+    :focus-visible{outline:3px solid var(--lavender);outline-offset:4px}
+
+    @media(max-width:780px){
+      .hero{grid-template-columns:1fr;grid-template-rows:42% 58%;height:100vh;height:100svh}
+      .nav{height:64px;display:flex;justify-content:space-between;border-bottom-color:rgba(255,255,255,.25);color:#fff;text-shadow:0 1px 16px rgba(0,0,0,.35)}
+      .brand{padding-left:20px}
+      .nav-right{padding:0 18px;background:none;gap:14px}
+      .nav-right a:not(.nav-cta){display:none}
+      .nav-cta{min-height:42px;padding:0 18px}
+      .media{grid-row:1}
+      .media img{object-position:50% 55%}
+      .source{right:12px;bottom:10px;padding:6px 8px;font-size:.6rem}
+      .content{grid-row:2;padding:clamp(20px,3.4vh,34px) 20px 14px;justify-content:center}
+      .content::after{top:-6px;right:0;width:100%;height:6px;background:linear-gradient(90deg,var(--lavender) 0 76%,var(--green) 76% 100%)}
+      .eyebrow{font-size:.63rem;gap:9px}.eyebrow::before{width:24px}
+      h1{max-width:12ch;margin:clamp(10px,1.9vh,18px) 0 10px;font-size:clamp(2.12rem,10.6vw,3.5rem);line-height:.96}
+      .lead{font-size:clamp(.8rem,3.2vw,.96rem);line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+      .actions{margin-top:clamp(12px,2vh,20px);gap:16px}.button{min-height:46px;padding:0 22px;font-size:.88rem}.text-link{font-size:.82rem}
+      .facts{margin-top:clamp(16px,2.5vh,24px);padding-top:10px;font-size:.58rem;letter-spacing:.08em}.facts span:last-child{display:none}
+    }
+    @media(max-width:390px){.hero{grid-template-rows:39% 61%}.nav-right .nav-cta{padding:0 14px;font-size:.78rem}.content{padding-inline:16px}h1{font-size:clamp(2rem,10.4vw,2.55rem)}.lead{-webkit-line-clamp:2}.actions{gap:12px}.button{padding:0 18px}.text-link{font-size:.76rem}}
+    @media(min-width:781px) and (max-height:720px){.content{padding-top:86px;padding-bottom:20px}h1{font-size:clamp(2.8rem,4.2vw,4.35rem);margin-block:14px}.lead{font-size:.92rem;line-height:1.5}.actions{margin-top:18px}.facts{padding-top:12px}.nav{height:62px}}
+    @media(max-height:620px) and (max-width:780px){.hero{grid-template-rows:36% 64%}h1{font-size:clamp(1.9rem,9vw,2.45rem)}.lead{-webkit-line-clamp:2}.actions{margin-top:10px}.facts{padding-top:7px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <section class="hero" aria-labelledby="hero-title">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="#">Casa Beliê</a>
+      <div class="nav-right"><a href="#">A casa</a><a href="#">Festas</a><a href="#">Galeria</a><a class="nav-cta" href="#">Pedir orçamento</a></div>
+    </nav>
+    <div class="content">
+      <div class="eyebrow">Casa de festas em Laranjeiras</div>
+      <h1 id="hero-title">Festa bonita é criança livre e família presente.</h1>
+      <p class="lead">Quintal verde, luz natural e uma festa completa para brincar de verdade — sem telas, sem excesso e sem a família precisar cuidar de tudo.</p>
+      <div class="actions"><a class="button" href="#">Pedir orçamento</a><a class="text-link" href="#">Conhecer o espaço</a></div>
+      <div class="facts"><span>Cerca de 800 m² · quintal verde · sem telas</span><span>Atendimento por agendamento</span></div>
+    </div>
+    <div class="media">
+      <img src="assets/instagram-dqecyqnjqck-cover.jpg" alt="Ambiente real da Casa Beliê com mesas, plantas e estrutura de brincar">
+      <a class="source" href="https://www.instagram.com/reel/DQEcyQnjQck/">Imagem oficial @casabelie</a>
+    </div>
+  </section>
+</body>
+</html>

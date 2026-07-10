@@ -1,0 +1,220 @@
+{
+  "schema_version": "3.0.0",
+  "stage": "visual_quality_audit",
+  "status": "approved_with_fixes",
+  "success_tests": {
+    "five_seconds": {
+      "status": "passed",
+      "reason": "A primeira dobra comunica casa de festas infantil em Laranjeiras, família, bolo, flores, brincar livre, festa completa e CTA de orçamento sem depender do restante da página."
+    },
+    "screenshot": {
+      "status": "passed",
+      "reason": "Mesmo sem depender do logo, a fotografia de celebração, a headline sobre infância e a prova de festa completa identificam o segmento e a personalidade afetiva/editorial."
+    },
+    "competitor": {
+      "status": "passed_with_caveat",
+      "reason": "A direção é mais calma, específica e editorial que a anatomia comum de buffets infantis; a ressalva é que a versão final ainda depende de arquivos fotográficos originais e autorizados do cliente."
+    }
+  },
+  "first_fold": {
+    "status": "passed",
+    "home": "Hero full-bleed com 100svh em 320, 390, 768, 1024 e 1440; menu legível, CTA visível, fotografia responsiva e zero overflow.",
+    "internal_pages": "Heroes full-width padronizados em clamp(620px,82svh,820px) no desktop/tablet e clamp(540px,76svh,680px) no mobile, com tipografia dominante, mídia específica e pista da próxima seção.",
+    "menu": "Fundo do header com opacidade 0 no topo; vidro paper translúcido aparece em fade suave após scroll, CTA preenchido e painel mobile fullscreen com foco e Escape.",
+    "home_chapters": "Hero, abertura, mural, festa completa, casa, fundadoras, novidades e CTA final ocupam 100svh em 1280x720, sem overflow ou conteúdo cortado. Em mobile, blocos densos usam trilhos horizontais e podem crescer apenas quando a altura segura exigir."
+  },
+  "visual_checks": {
+    "typography": "passed — Fraunces e Manrope têm hierarquia clara, escala fluida e comprimentos de linha controlados.",
+    "composition": "passed — manifesto, galeria, jornada, mídia dividida, fundadoras, blog e CTA usam anatomias diferentes.",
+    "rhythm": "passed — alternância de paper, lavanda, areia, azul e ameixa cria narrativa sem repetir padding ou cards universais.",
+    "media": "passed_with_caveat — mídia real do Instagram oficial, crops sem texto incorporado e hero restaurado; autorização final pendente.",
+    "signature": "passed — Eixo Casa–Quintal aparece no hero, eyebrows, jornada, galeria, CTA e footer.",
+    "anti_slop": "passed — sem blobs genéricos, emojis, grids de três cards repetidos, neon, mascotes, depoimentos fictícios ou fotos de banco."
+  },
+  "functional_checks": {
+    "links": "passed — rotas públicas, posts, navegação, Instagram e CTAs possuem destino.",
+    "forms": "passed — formulário de contato valida campos obrigatórios, informa erro em texto e prepara mensagem de WhatsApp.",
+    "states": "passed — header rolado, menu mobile, hover, focus-visible, erros de formulário e estados do admin verificados.",
+    "responsive": {
+      "320x568": "passed — hero 568px, ações dentro da viewport, rail iniciado em 522px e scrollWidth 320px.",
+      "390x844": "passed — imagem vertical selecionada, menu fullscreen e rotas internas sem overflow.",
+      "768x1024": "passed — hero Home 1024px; heroes internos 799px; scrollWidth 768px.",
+      "1024x768": "passed — navegação inline, hero Home 768px e rotas internas sem overflow.",
+      "1440x900": "passed — composição completa, fotografia nítida e containers controlados."
+    },
+    "accessibility": "passed_with_caveat — landmarks, skip-link, um h1 por página, alvos 44px+, foco visível, labels, erros associados e reduced-motion. Auditoria automática WCAG dedicada ainda não foi executada.",
+    "performance": "passed — hero WebP entre 58 KB e 155 KB por viewport, Astro Image abaixo da dobra, JS restrito a menu, reveal, formulário e admin; npm audit sem vulnerabilidades."
+  },
+  "blog_validation": {
+    "admin_locked_before_password": "passed",
+    "wrong_password_401": "passed",
+    "correct_password": "passed",
+    "create_and_delete_test_post": "passed",
+    "archive_hidden_from_public_blog": "passed",
+    "upload_and_remove_test_image": "passed",
+    "build_after_tests": "passed"
+  },
+  "deep_review_passes": [
+    {
+      "pass": 1,
+      "focus": "Impacto, direção e conteúdo",
+      "found": [
+        "Três assets do Instagram estavam mapeados para funções erradas após o primeiro crop.",
+        "A imagem vertical do hero precisava de art direction separada da versão desktop.",
+        "O menu original do preview tinha contraste insuficiente sobre áreas claras da foto."
+      ],
+      "fixed": [
+        "Mapeamento corrigido para porta, criança em atividade e apresentação/tour.",
+        "Picture responsivo entrega hero horizontal no desktop e vertical no mobile.",
+        "Menu recebeu vidro ameixa, texto reforçado e CTA lavanda preenchido."
+      ]
+    },
+    {
+      "pass": 2,
+      "focus": "Responsividade, funcionamento e segurança",
+      "found": [
+        "Dependências Astro 5 apresentavam avisos de segurança no npm audit.",
+        "O crop da hero de Festas cortava excessivamente a área superior.",
+        "O fallback local do blog precisava estar restrito ao modo de desenvolvimento."
+      ],
+      "fixed": [
+        "Astro e adapter Node atualizados para versões sem vulnerabilidades conhecidas; npm audit retorna zero.",
+        "Object-position específico aplicado à página Festas.",
+        "Fallback de senha limitado a import.meta.env.DEV e documentado no README."
+      ]
+    },
+    {
+      "pass": 3,
+      "focus": "Calor de marca, componentes e ritmo da página",
+      "found": [
+        "Os botões estavam corretos, mas discretos demais para traduzir a personalidade afetiva e brincante da Casa Beliê.",
+        "A sequência de cinco etapas da festa tinha boa informação, porém criava uma composição longa e pouco interativa.",
+        "A fotografia aparecia de forma editorial, mas faltava um gesto visual reconhecível que ligasse infância, memória e quintal."
+      ],
+      "fixed": [
+        "Botões ganharam setas, microinterações, maior peso e hierarquia mais clara entre ações primárias, contornadas e sobre fotografia.",
+        "A oferta foi condensada em três linhas interativas, com números desenhados e ações circulares, preservando a explicação comercial.",
+        "Foi criado um mural com fotografias oficiais, legendas manuscritas e blocos verde, manteiga e lavanda; CTA, fundadoras, novidades e rodapé foram alinhados à mesma linguagem.",
+        "A revisão renderizada em 1280px confirmou imagens carregadas, zero overflow horizontal, alvos de ação com 56px e hierarquia semântica preservada."
+      ]
+    },
+    {
+      "pass": 4,
+      "focus": "Peso cromático e microinterações de conversão",
+      "found": [
+        "O roxo profundo ainda aparecia com peso excessivo na atmosfera do hero, no header e nos fundos de segurança.",
+        "Os botões tinham elevação e movimento de seta, mas faltava um gesto visual mais evidente durante o hover e o clique."
+      ],
+      "fixed": [
+        "A paleta foi recalibrada para #FDFAF4, #F3EAD9, #F7E8C9 e verdes do Instagram #7E935B/#466344; a lavanda profunda #6A5497 ficou concentrada em ações e destaques.",
+        "Os overlays do hero e das páginas internas passaram de ameixa para verde-neutro, reduzindo o peso sem perder contraste sobre a fotografia.",
+        "Botões receberam contorno terracota gestual animado, seta com trajetória, elevação no hover e compressão scale(.97) no active, com redução de movimento preservada."
+      ]
+    },
+    {
+      "pass": 5,
+      "focus": "Leitura da anotação e paginação por dobras",
+      "found": [
+        "A anotação manuscrita do hero ficava sobre flores e pessoas, com uma seta que adicionava ruído e reduzia a leitura.",
+        "Mural, festa, casa e outros capítulos tinham alturas diferentes, enfraquecendo a percepção de uma narrativa por telas."
+      ],
+      "fixed": [
+        "A seta foi removida e a anotação passou para o alto direito, sobre uma superfície paper translúcida com blur, contraste e distância dos rostos.",
+        "Todos os oito capítulos principais da Home foram organizados em 100svh; números foram incorporados à dobra das fundadoras e as seções densas foram compactadas sem cortar conteúdo.",
+        "A validação em 1280x720 confirmou oito dobras de 720px, sem overflow horizontal; mural, festas, casa, fundadoras, novidades e CTA foram examinados individualmente."
+      ]
+    },
+    {
+      "pass": 6,
+      "focus": "Leveza da primeira dobra",
+      "found": [
+        "Mesmo após reduzir o roxo profundo, a hero ainda transmitia peso por causa do overlay verde-neutro escuro e da faixa superior escurecida do menu.",
+        "A fotografia estava correta e deveria ser preservada; o problema era a atmosfera ao redor dela."
+      ],
+      "fixed": [
+        "O overlay da hero foi substituído por um véu quente em paper que nasce na área da copy e se dissolve na fotografia, mantendo leitura sem escurecer a cena.",
+        "Texto, rail e menu da home passaram a usar ink sobre superfícies claras translúcidas; o CTA principal concentra a lavanda profunda.",
+        "No mobile, o gradiente claro sobe da base para proteger a leitura sem cobrir rostos ou transformar a foto em fundo escuro."
+      ]
+    },
+    {
+      "pass": 7,
+      "focus": "Integração da frase manuscrita e visibilidade do menu",
+      "found": [
+        "A frase manuscrita do hero tinha boa posição, mas o fundo em caixa parecia uma etiqueta sobreposta e quebrava a integração com a fotografia.",
+        "O menu da home ainda estava transparente demais sobre trechos claros da foto."
+      ],
+      "fixed": [
+        "A caixa, borda, blur e sombra de card foram removidos; a frase passou a ser texto solto com sombra clara mínima para manter leitura.",
+        "O header inicial da home ficou mais opaco, com paper em 90%, filete mais definido e botão de menu com fundo menos transparente."
+      ]
+    },
+    {
+      "pass": 8,
+      "focus": "Desenho de botões e heróis internos",
+      "found": [
+        "O contorno do hover nos botões entrava inteiro, parecendo uma moldura surgindo pronta em vez de um gesto desenhado.",
+        "Os heróis das páginas internas tinham alturas e crops menos consistentes entre Sobre, Festas, Espaço, Blog e Contato.",
+        "Algumas imagens oficiais do Instagram precisavam de foco por página para preservar assunto, arquitetura, mesa e rosto sem cortes duros."
+      ],
+      "fixed": [
+        "O hover dos botões passou a usar uma máscara cônica com variável animada, revelando o traço progressivamente ao redor da ação.",
+        "A cor do traço foi ajustada para terracota escura por padrão e verde profundo nos botões contornados/ghost, melhorando contraste em fundos claros.",
+        "Os heróis internos foram padronizados em altura responsiva e os crops foram ajustados: portas em Sobre, mesa/bolo em Festas, fachada em Espaço/Blog e imagem vertical no Contato.",
+        "O componente PageHero passou a gerar WebP em qualidade 86 e inclui largura 1920 para preservar nitidez em telas largas quando o asset permitir."
+      ]
+    },
+    {
+      "pass": 9,
+      "focus": "Conteúdo público de negócio e conversão",
+      "found": [
+        "O acesso direto ao Instagram foi limitado por throttling, mas trechos públicos indexados, site oficial e material público de apresentação trouxeram informações comerciais mais ricas.",
+        "As páginas internas ainda resumiam demais a oferta e não mostravam todo o repertório de ambientes, brincadeiras, serviços, extras e cardápio que ajudam o responsável a decidir."
+      ],
+      "fixed": [
+        "A Home passou a antecipar com mais clareza casa de dois andares, ambientes climatizados, buffet, recreação sem telas, muro de pintura, areia, área molhada, Vila Beliê, jogos, oficina e equipe.",
+        "Festas recebeu blocos de itens incluídos e possibilidades de extras/cardápio sem publicar valores.",
+        "Espaço recebeu uma lista ampla de convites de brincar: Mini Laranjeiras, brinquedão, escalada, Vila Beliê, oficina, área molhada, tanque de areia, muro de pintura, rede, baby, sala de jogos, quintal, camarim, futebol e cabana.",
+        "Sobre ganhou a narrativa de casa antiga em Laranjeiras, presença e contramão do mundo acelerado.",
+        "Contato e Espaço passaram a exibir Rua Glicério, 131 — Laranjeiras, mantendo confirmação de visita e dados operacionais pelo atendimento."
+      ]
+    },
+    {
+      "pass": 10,
+      "focus": "Padronização do menu e dos heróis",
+      "found": [
+        "O menu da Home estava coerente, mas ainda um pouco sólido demais; nas páginas internas, menu e heróis mantinham uma linguagem mais escura que destoava da Home.",
+        "O véu claro da Home resolvia leitura, mas reduzia demais a saturação percebida da fotografia."
+      ],
+      "fixed": [
+        "O menu no topo de todas as páginas passou para vidro paper translúcido com texto ink, CTA lavanda e mesmo comportamento visual da Home.",
+        "A hero da Home recebeu menos opacidade branca e filtro de saturação/contraste para a fotografia aparecer com mais vida.",
+        "Os heróis internos com imagem passaram para o mesmo sistema da Home: texto escuro, véu quente translúcido, imagem mais saturada e scroll cue escuro.",
+        "Heróis tipográficos sem imagem preservam contraste claro sobre fundo escuro."
+      ]
+    },
+    {
+      "pass": 11,
+      "focus": "Peso tipográfico",
+      "found": [
+        "A tipografia do site estava mais pesada que a linguagem visual usada pela Casa Beliê no Instagram.",
+        "Títulos, CTAs, notas manuscritas, números e microtextos usavam pesos 450, 700 ou 800 em excesso."
+      ],
+      "fixed": [
+        "Fraunces passou a usar peso 350 nos títulos e números principais, com escala ligeiramente menor e line-height mais arejado.",
+        "Botões, navegação, labels e links de ação foram reduzidos para Manrope 600.",
+        "Notas e legendas manuscritas em Kalam passaram de 700 para 400.",
+        "Microtextos como rail, scroll cue, eyebrows e metadados perderam peso e espaçamento excessivo."
+      ]
+    }
+  ],
+  "known_issues": [
+    "Imagens com crianças e demais fotos do Instagram precisam de autorização formal antes da publicação.",
+    "O hero desktop é uma restauração/expansão por IA a partir do cover oficial; substituir pelo arquivo original horizontal em alta se o cliente fornecer.",
+    "WhatsApp, e-mail, CEP, horário, pacotes, valores e dados comerciais finais ainda precisam de confirmação.",
+    "O blog atual grava em JSON e filesystem local; produção exige hospedagem persistente ou migração para banco/object storage.",
+    "Google Fonts é dependência externa; fontes locais podem ser adotadas numa etapa de hardening de performance e privacidade.",
+    "Analytics, Meta Pixel, Google Ads e mapa não foram configurados porque faltam IDs e dados definitivos."
+  ],
+  "final_recommendation": "Aprovado para apresentação e revisão do cliente. Publicação definitiva somente após autorizações de imagem, confirmação dos dados comerciais e definição de infraestrutura persistente para o blog."
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": "3.0.0",
+  "client": {
+    "name": "Casa Beliê",
+    "slug": "casa-belie",
+    "segment": "Casa de festas infantil e espaço de eventos familiares em Laranjeiras, RJ",
+    "short_description": "Uma casa de festas infantil com quintal verde, luz natural e celebrações afetivas, charmosas e sem telas."
+  },
+  "conversion": {
+    "primary_goal": "whatsapp",
+    "primary_cta": "Pedir orçamento",
+    "whatsapp": {
+      "value": "+55 21 96015-4917",
+      "url": "https://wa.me/5521960154917",
+      "status": "provisorio_confirmar_antes_de_publicar"
+    },
+    "email": {
+      "value": "isabelaperdigao@gmail.com",
+      "status": "publico_no_registro_do_dominio_confirmar_uso_comercial"
+    }
+  },
+  "positioning": {
+    "core_message": "Um belo lugar para viver o que realmente importa.",
+    "hero_headline": "Um quintal inteiro para a infância acontecer.",
+    "hero_support": "Festas completas em Laranjeiras, com brincar livre, luz natural e nenhuma tela entre as crianças e as memórias.",
+    "client_voice": "Aqui, cada encontro é recebido como quem abre a própria casa: com beleza, simplicidade e afeto, para que as crianças brinquem de verdade e as famílias vivam o que importa.",
+    "differentiators": ["cerca de 800 m²", "quintal verde e luz natural", "brincar livre sem telas", "festa completa com curadoria afetiva", "experiência de Isabela e Cecília"]
+  },
+  "audience": {
+    "primary": "Pais, mães e famílias da Zona Sul do Rio que valorizam estética, segurança, presença e praticidade.",
+    "problem": "Querem celebrar sem cair em uma festa engessada, barulhenta, artificial ou igual a todas as outras.",
+    "desired_result": "Crianças envolvidas, adultos tranquilos, beleza nas fotos e uma experiência resolvida de ponta a ponta.",
+    "not_for": "Quem busca games, telas, neon, balada infantil, excesso de estímulos ou somente o menor preço."
+  },
+  "services": [
+    {"name": "Festa Beliê completa", "priority": 1, "description": "Espaço, buffet, decoração afetiva, recreação, atividades e equipe.", "status": "confirmar_pacotes_e_itens_atuais"},
+    {"name": "Festas escolares e encontros de turma", "priority": 2, "description": "Formato prático para escolas, turmas e famílias."},
+    {"name": "Eventos familiares", "priority": 3, "description": "Aniversários, batizados, encontros e datas afetivas."},
+    {"name": "Oficinas e experiências sazonais", "priority": 4, "description": "Férias, arraiá, rodas de brincar e atividades temáticas."}
+  ],
+  "space_features": ["quintal verde", "luz natural", "área molhada/prainha", "tanque de areia", "muro de pintura", "vila/casinha", "brinquedão", "espaço baby e sensorial"],
+  "team": [
+    {"name": "Isabela", "role": "Fundadora da Madame Girafa e sócia da Casa Beliê", "status": "foto_publica_instagram_localizada; confirmar autorização final"},
+    {"name": "Cecília", "role": "Sócia da Vila Pindorama e da Casa Beliê", "status": "foto_publica_instagram_localizada; confirmar nome completo e autorização final"}
+  ],
+  "location": {
+    "address": "Rua General Glicério, 131 - Laranjeiras, Rio de Janeiro - RJ",
+    "map_url": "https://www.google.com/maps/search/?api=1&query=Casa%20Beli%C3%AA%20Rua%20General%20Glic%C3%A9rio%20131%20Laranjeiras%20Rio%20de%20Janeiro",
+    "status": "confirmar_numero_cep_e_google_business_antes_de_publicar",
+    "hours": "Atendimento por agendamento",
+    "hours_status": "confirmar_horario_oficial"
+  },
+  "proof": {
+    "publishable_now": ["Casa com cerca de 800 m²", "fundadoras com repertório em festas afetivas e espaços lúdicos"],
+    "pending": ["depoimentos autorizados", "nota e link do Google Business", "alegação de 1.000 avaliações", "números atuais do Instagram"]
+  },
+  "media": {
+    "priority": ["Instagram oficial @casabelie", "imagens autorais geradas para a marca", "Pexels como último recurso"],
+    "logo": "logo oficial em selo circular lilás incorporada ao header, rodapé e favicon",
+    "hero": {
+      "local_preview_asset": "data/design-system-previews/assets/instagram-dwh5-family-hero-landscape-1672.webp",
+      "local_preview_asset_mobile": "data/design-system-previews/assets/instagram-dwh5-family-mobile-1080.webp",
+      "source_post": "https://www.instagram.com/reel/DWH5_7pEcK4/",
+      "source_account": "https://www.instagram.com/casabelie/",
+      "description": "Família celebrando na Casa Beliê, com crianças, bolo, flores e atmosfera afetiva.",
+      "status": "extraido_do_instagram_oficial_para_preview; versão desktop restaurada e expandida com IA a partir da foto oficial; confirmar arquivo original em alta e autorização de uso no site"
+    },
+    "instagram_candidates": [
+      "https://www.instagram.com/reel/DQEcyQnjQck/",
+      "https://www.instagram.com/reel/DZicOtSPKkM/",
+      "https://www.instagram.com/p/DL3WB2mPjeI/",
+      "https://www.instagram.com/p/DRxyZIOEbbK/"
+    ],
+    "website_images": "proibidas_por_direcao_do_cliente",
+    "ai": "segunda_opcao_quando_instagram_nao_resolver",
+    "pexels": "ultima_opcao"
+  },
+  "pages": ["home", "sobre", "festas", "espaco-galeria", "novidades", "contato", "politica-de-privacidade", "404"],
+  "blog": {
+    "enabled": true,
+    "frequency": "2 posts por mês",
+    "initial_topics": [
+      "Como escolher uma casa de festas infantil em Laranjeiras sem abrir mão do brincar livre",
+      "Por que a Casa Beliê não tem telas: o valor das brincadeiras que criam memórias",
+      "Festa afetiva, quintal verde e luz natural: ideias para uma celebração infantil mais bonita, leve e verdadeira"
+    ]
+  },
+  "do_not_publish_without_confirmation": ["CNPJ", "CEP", "horário oficial", "pacotes e preços", "promoções", "depoimentos", "nota do Google", "1.000 avaliações", "autorizações de imagens com crianças"]
+}

@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Admin do blog" description="Painel de novidades da Casa Beliê." currentPath="/admin/" noIndex={true}>
+  <section class="admin-page">
+    <div class="admin-shell">
+      <form class="admin-login" data-login-form>
+        <span class="eyebrow"><i></i>Área reservada</span>
+        <h1>Novidades da Casa Beliê</h1>
+        <p>Digite a senha administrativa para acessar posts, rascunhos e o editor.</p>
+        <div class="field"><label for="admin-password">Senha</label><input id="admin-password" type="password" autocomplete="current-password" required /><span class="field-error" data-login-error></span></div>
+        <button class="button button-primary" type="submit">Entrar no painel</button>
+      </form>
+
+      <div class="admin-app" data-admin-app aria-hidden="true">
+        <div class="admin-toolbar"><div><span class="eyebrow"><i></i>Blog autônomo</span><h2 style="margin:10px 0 0">Posts e novidades</h2></div><button class="button button-primary" type="button" data-new-post>Novo post</button></div>
+        <div class="admin-columns">
+          <aside class="admin-panel"><h3>Conteúdo</h3><div class="admin-list" data-post-list></div></aside>
+          <section class="admin-panel">
+            <form class="admin-editor" data-editor>
+              <input type="hidden" name="id" />
+              <div class="field"><label for="post-title">Título</label><input id="post-title" name="title" required /></div>
+              <div class="field"><label for="post-slug">Slug</label><input id="post-slug" name="slug" placeholder="gerado a partir do título" /></div>
+              <div class="field"><label for="post-excerpt">Resumo</label><textarea id="post-excerpt" name="excerpt" required></textarea></div>
+              <div class="field"><label for="post-content">Conteúdo</label><textarea id="post-content" name="content" style="min-height:280px" required></textarea></div>
+              <div class="field"><label for="post-author">Autoria</label><input id="post-author" name="author" value="Casa Beliê" /></div>
+              <div class="field"><label for="post-image">Caminho da imagem</label><input id="post-image" name="image" placeholder="/uploads/blog/imagem.webp" /></div>
+              <div class="field"><label for="post-upload">Subir imagem</label><input id="post-upload" name="upload" type="file" accept="image/*" /><button class="button button-outline" type="button" data-upload>Enviar imagem</button></div>
+              <div class="field"><label for="post-status">Status</label><select id="post-status" name="status"><option value="draft">Rascunho</option><option value="published">Publicado</option><option value="archived">Arquivado</option></select></div>
+              <div class="admin-actions"><button class="button button-primary" type="submit">Salvar post</button><button class="button button-outline" type="button" data-archive>Arquivar</button><button class="button button-outline" type="button" data-delete>Excluir</button></div>
+              <p class="form-status" role="status" aria-live="polite" data-admin-status></p>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    // @ts-nocheck
+    const loginForm = document.querySelector('[data-login-form]');
+    const loginError = document.querySelector('[data-login-error]');
+    const adminApp = document.querySelector('[data-admin-app]');
+    const list = document.querySelector('[data-post-list]');
+    const editor = document.querySelector('[data-editor]');
+    const adminStatus = document.querySelector('[data-admin-status]');
+    let password = '';
+    let posts = [];
+
+    const field = (name) => editor.elements.namedItem(name);
+    const fillEditor = (post = {}) => {
+      ['id','title','slug','excerpt','content','author','image','status'].forEach((name) => {
+        if (field(name)) field(name).value = post[name] || (name === 'author' ? 'Casa Beliê' : name === 'status' ? 'draft' : '');
+      });
+      adminStatus.textContent = post.id ? `Editando “${post.title}”.` : 'Novo post em branco.';
+    };
+    const renderPosts = () => {
+      list.textContent = '';
+      posts.forEach((post) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'admin-post';
+        const title = document.createElement('strong');
+        title.textContent = post.title;
+        const meta = document.createElement('span');
+        meta.textContent = `${post.status} · ${new Date(post.updatedAt).toLocaleDateString('pt-BR')}`;
+        button.append(title, meta);
+        button.addEventListener('click', () => fillEditor(post));
+        list.append(button);
+      });
+    };
+    const loadPosts = async () => {
+      const response = await fetch('/api/blog-posts', { headers: { 'x-blog-password': password } });
+      if (!response.ok) throw new Error('Senha incorreta.');
+      posts = await response.json();
+      renderPosts();
+    };
+    loginForm?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      password = document.getElementById('admin-password').value;
+      loginError.textContent = '';
+      try {
+        await loadPosts();
+        loginForm.hidden = true;
+        adminApp.classList.add('is-authenticated');
+        adminApp.setAttribute('aria-hidden', 'false');
+        fillEditor();
+      } catch (error) { loginError.textContent = error.message; }
+    });
+    document.querySelector('[data-new-post]')?.addEventListener('click', () => fillEditor());
+    editor?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const data = Object.fromEntries(new FormData(editor));
+      delete data.upload;
+      adminStatus.textContent = 'Salvando…';
+      const response = await fetch('/api/blog-posts', { method: 'POST', headers: { 'content-type': 'application/json', 'x-blog-password': password }, body: JSON.stringify(data) });
+      const result = await response.json();
+      if (!response.ok) { adminStatus.textContent = result.error || 'Não foi possível salvar.'; return; }
+      await loadPosts(); fillEditor(result); adminStatus.textContent = 'Post salvo.';
+    });
+    document.querySelector('[data-archive]')?.addEventListener('click', () => { field('status').value = 'archived'; editor.requestSubmit(); });
+    document.querySelector('[data-delete]')?.addEventListener('click', async () => {
+      const id = field('id').value;
+      if (!id || !confirm('Excluir este post definitivamente?')) return;
+      const response = await fetch('/api/blog-posts', { method: 'DELETE', headers: { 'content-type': 'application/json', 'x-blog-password': password }, body: JSON.stringify({ id }) });
+      if (!response.ok) { adminStatus.textContent = 'Não foi possível excluir.'; return; }
+      await loadPosts(); fillEditor(); adminStatus.textContent = 'Post excluído.';
+    });
+    document.querySelector('[data-upload]')?.addEventListener('click', async () => {
+      const input = field('upload');
+      if (!input.files?.length) { adminStatus.textContent = 'Escolha uma imagem primeiro.'; return; }
+      const body = new FormData(); body.append('image', input.files[0]);
+      adminStatus.textContent = 'Enviando imagem…';
+      const response = await fetch('/api/blog-upload', { method: 'POST', headers: { 'x-blog-password': password }, body });
+      const result = await response.json();
+      if (!response.ok) { adminStatus.textContent = result.error || 'Falha no upload.'; return; }
+      field('image').value = result.path; adminStatus.textContent = 'Imagem enviada e adicionada ao post.';
+    });
+  </script>
+</BaseLayout>

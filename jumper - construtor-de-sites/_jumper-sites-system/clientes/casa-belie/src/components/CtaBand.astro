@@ -1,0 +1,14 @@
+---
+interface Props { title?: string; text?: string; fullHeight?: boolean }
+const { title = 'A próxima memória pode começar aqui.', text = 'Conte como você imagina esse dia. A Casa Beliê cuida da conversa a partir daí.', fullHeight = false } = Astro.props;
+const whatsapp = 'https://wa.me/5521960154917?text=Oi%21%20Vi%20o%20site%20da%20Casa%20Beli%C3%AA%20e%20queria%20conversar%20sobre%20uma%20festa.';
+---
+<section class:list={['cta-band', fullHeight && 'cta-band--full']} data-reveal>
+  <div class="cta-band-inner shell">
+    <span class="eyebrow"><i></i>Vamos celebrar</span>
+    <h2>{title}</h2>
+    <p>{text}</p>
+    <a class="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Pedir orçamento no WhatsApp</a>
+    <span class="cta-hand-note hand-note" aria-hidden="true">respondemos em horário comercial :)</span>
+  </div>
+</section>

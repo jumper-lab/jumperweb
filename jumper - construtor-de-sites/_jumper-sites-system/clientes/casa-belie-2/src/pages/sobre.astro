@@ -1,0 +1,87 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import Star from '../components/Star.astro';
+import CtaFinal from '../components/CtaFinal.astro';
+---
+<Base title="Sobre a Casa Beliê — nossa história em Laranjeiras" description="Como nasceu a Casa Beliê: beleza e simplicidade juntas, num espaço de infância livre criado por Isabela (Madame Girafa) e Cecília (Vila Pindorama).">
+  <HeroInterno kicker="Sobre a Beliê" headline="Beleza e simplicidade andam juntas aqui." strokeWord="juntas" sub="A história de uma casa em Laranjeiras feita para a infância acontecer de verdade." surface="var(--lav-veu)" />
+
+  <section>
+    <div class="shell duas">
+      <div class="reveal">
+        <span class="kicker k-verde"><Star color="#3D5A34" /> Como tudo começou</span>
+        <h2>Uma casa, duas mães de festa e um desejo simples.</h2>
+      </div>
+      <div class="texto reveal" style="transition-delay:.1s">
+        <p>A Casa Beliê nasceu do desejo de oferecer um espaço onde beleza e simplicidade andam juntas. Em vez de festas excessivas e hiperestimulantes, criamos encontros com propósito: estética minimalista, afeto, brincar livre e ausência de telas.</p>
+        <p>A casa ocupa um endereço no coração de Laranjeiras, numa rua bucólica e de fácil acesso — com quintal verde, luz natural, área molhada, tanque de areia, muro de pintura e muitos cantinhos para explorar.</p>
+        <p>À frente estão <strong>Isabela</strong>, fundadora da Madame Girafa, referência em festas afetivas e personalizadas no Rio de Janeiro, e <strong>Cecília</strong>, sócia da Vila Pindorama em Icaraí, reconhecida pela proposta lúdica e acolhedora em Niterói.</p>
+      </div>
+    </div>
+    <figure class="casa-foto reveal">
+      <img src="/images/r-fachada-1400.jpg" srcset="/images/r-fachada-800.jpg 800w, /images/r-fachada-1400.jpg 1400w" sizes="(max-width:1200px) 92vw, 1100px" width="1400" height="650" alt="Fachada da Casa Beliê em Laranjeiras: casarão com esquadrias azuis, varal de luzes e mesinhas no quintal" loading="lazy" />
+      <figcaption class="nota-hand" aria-hidden="true">a nossa casa, no coração de Laranjeiras</figcaption>
+    </figure>
+  </section>
+
+  <section class="sem-telas">
+    <div class="shell dupla">
+      <div class="reveal">
+        <span class="kicker" style="color:var(--manteiga)"><Star color="#F7E8C9" /> A nossa escolha</span>
+        <h2>Por que não tem tela na Beliê?</h2>
+        <p class="lead">Porque criança envolvida em brincadeira de verdade não sente falta. O que a gente oferece no lugar: areia, tinta, água, grama, fantasia e tempo livre — os brinquedos que criam memória.</p>
+        <span class="nota-hand" aria-hidden="true">e os adultos conversam em paz :)</span>
+      </div>
+      <figure class="pintura reveal" style="transition-delay:.1s">
+        <img src="/images/r-pintura-1400.jpg" srcset="/images/r-pintura-800.jpg 800w, /images/r-pintura-1400.jpg 1400w" sizes="(max-width:880px) 92vw, 46vw" width="1400" height="816" alt="Criança pintando no muro de pintura da Casa Beliê, ajudada por uma recreadora" loading="lazy" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="fund">
+    <div class="shell dupla">
+      <figure class="fund-foto reveal">
+        <div class="polaroid" style="transform:rotate(-1.4deg)">
+          <span class="tape" aria-hidden="true"></span>
+          <img src="/images/r-socias-1080.jpg" srcset="/images/r-socias-640.jpg 640w, /images/r-socias-1080.jpg 1080w" sizes="(max-width:880px) 92vw, 46vw" width="1080" height="520" alt="Isabela e Cecília, sócias da Casa Beliê, abraçadas e sorrindo" loading="lazy" />
+          <span class="cap">Isabela &amp; Cecília ♡</span>
+        </div>
+      </figure>
+      <div class="reveal" style="transition-delay:.1s">
+        <span class="kicker k-lav"><Star /> Quem abre a porta</span>
+        <h2>Duas sócias, uma casa cheia de afeto.</h2>
+        <p class="lead">Isabela e Cecília se uniram para criar um lugar que elas mesmas gostariam de ter para os próprios filhos: bonito, seguro e sem pressa. Cada festa é acompanhada de perto, com o cuidado de quem recebe em casa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shell">
+      <span class="kicker k-terra reveal"><Star color="#D98E6A" /> Honestidade</span>
+      <h2 class="reveal">Pra quem a Beliê não é.</h2>
+      <p class="lead reveal">Se a festa dos sonhos tem games, telão e balada infantil, a Beliê não vai ser a casa certa — e tudo bem. A gente faz festa de quintal, conversa e brincadeira.</p>
+    </div>
+  </section>
+
+  <CtaFinal headline="Quer conhecer a casa de perto?" sub="Agende uma visita pelo WhatsApp e venha tomar um café no quintal." nota="a porta está aberta" />
+</Base>
+
+<style>
+  .duas{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(32px,5vw,80px);align-items:start}
+  @media(max-width:880px){.duas{grid-template-columns:1fr}}
+  .texto p{margin-bottom:18px;max-width:60ch}
+  .casa-foto{margin:clamp(40px,6vw,72px) 0 0}
+  .casa-foto img{width:100%;border-radius:20px;aspect-ratio:1400/650;object-fit:cover;box-shadow:0 24px 48px -24px rgba(58,52,64,.4)}
+  .casa-foto figcaption{color:var(--verde);font-size:1.3rem;transform:rotate(-1.5deg);margin-top:14px;display:inline-block}
+  .dupla{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+  @media(max-width:880px){.dupla{grid-template-columns:1fr}}
+  .sem-telas{background:var(--mata);color:var(--papel)}
+  .sem-telas h2{color:var(--papel)}
+  .sem-telas .lead{color:rgba(253,250,244,.82)}
+  .sem-telas .nota-hand{color:var(--manteiga);transform:rotate(-2deg);margin-top:16px}
+  .pintura img{width:100%;border-radius:18px;aspect-ratio:1400/816;object-fit:cover;box-shadow:0 20px 44px -22px rgba(0,0,0,.5)}
+  .fund{background:var(--lav-veu)}
+  .fund-foto{margin:0}
+  .fund-foto img{width:100%;aspect-ratio:1080/520;object-fit:cover}
+</style>
